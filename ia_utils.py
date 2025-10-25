@@ -572,3 +572,58 @@ Respuesta (Sólo la lista JSON ["True", "False", ...]):
         return None
     except Exception as e:
         print(f"Error API IA (Aprendizaje Lote T/F): {e}"); return None
+    
+def extraer_solucion_ordenar(texto_error_modal, frases_desordenadas):
+    """
+    Lee el texto de un modal de error para TIPO 1 (Ordenar) y extrae la secuencia correcta.
+    'frases_desordenadas' es la lista de frases que se mostraron.
+    Retorna una lista de strings: ["Frase1", "Frase2", ...]
+    """
+    print(f"IA (Aprendizaje Ordenar): Analizando texto de error...")
+    num_frases = len(frases_desordenadas)
+    frases_str = ", ".join(f'"{f}"' for f in frases_desordenadas)
+    
+    prompt = f"""
+Rol: Experto en extracción de datos.
+Analiza el [Texto de Error] de un pop-up de una pregunta de ordenar.
+Este texto contiene la secuencia correcta para {num_frases} frases/palabras.
+Las frases originales desordenadas eran: {frases_str}.
+
+Tu tarea es devolver SÓLO una lista JSON de strings, donde cada string es la palabra/frase en el ORDEN CORRECTO.
+La lista debe tener exactamente {num_frases} elementos y usar el texto exacto de las frases originales.
+
+[Texto de Error]:
+"{texto_error_modal}"
+
+---
+Respuesta (Sólo la lista JSON ["palabra_1", "palabra_2", ...]):
+"""
+    try:
+        response = model.generate_content(prompt)
+        respuesta_texto = obtener_texto_de_respuesta(response) # Usamos el extractor robusto
+        if respuesta_texto is None: return None
+
+        if respuesta_texto.startswith("```json"): respuesta_texto = respuesta_texto[7:]
+        if respuesta_texto.endswith("```"): respuesta_texto = respuesta_texto[:-3]
+        respuesta_texto = respuesta_texto.strip()
+
+        if not respuesta_texto.startswith("[") or not respuesta_texto.endswith("]"):
+            print(f"IA (Aprendizaje Ordenar) no es lista: {respuesta_texto}"); return None
+        
+        solucion_lista = json.loads(respuesta_texto)
+        
+        # Verificamos longitud y contenido
+        if (isinstance(solucion_lista, list) and 
+            len(solucion_lista) == num_frases and 
+            all(f in frases_desordenadas for f in solucion_lista)): # Comprueba que todas las frases extraídas estuvieran en las originales
+            
+            print(f"IA (Aprendizaje Ordenar) extrajo: {solucion_lista}")
+            return solucion_lista
+        else:
+            print(f"IA (Aprendizaje Ordenar) inválido, incompleto o no coincide con frases original. Resp: {solucion_lista}"); return None
+            
+    except json.JSONDecodeError as e:
+        print(f"Error parse JSON IA (Aprendizaje Ordenar): {e}\nResp: {respuesta_texto}")
+        return None
+    except Exception as e:
+        print(f"Error API IA (Aprendizaje Ordenar): {e}"); return None

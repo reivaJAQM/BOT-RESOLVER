@@ -77,5 +77,216 @@
         "quickly",
         "angrily",
         "luckily"
+    ],
+    "The rain hurt the butterfly.  hurt the butterfly?|Samantha called to her father.  called to her father?||Who|What": {
+        "The rain hurt the butterfly.  hurt the butterfly?": "What",
+        "Samantha called to her father.  called to her father?": "Who"
+    },
+    "book|?|Who|read|the|will": [
+        "Who",
+        "will",
+        "read",
+        "the",
+        "book",
+        "?"
+    ],
+    "?|window|Who|brokes|the": [
+        "Who",
+        "brokes",
+        "the",
+        "window",
+        "?"
+    ],
+    "read|the|book|will|Who|?": [
+        "Who",
+        "will",
+        "read",
+        "the",
+        "book",
+        "?"
+    ],
+    "Julia loves to play chess.  loves to play chess?|The money was on the desk.  was on the desk?||Who|What": {
+        "Julia loves to play chess.  loves to play chess?": "Who",
+        "The money was on the desk.  was on the desk?": "What"
+    },
+    "likes|professor|the|Who|new|?": [
+        "Who",
+        "likes",
+        "the",
+        "new",
+        "professor",
+        "?"
+    ],
+    "0:book|read|will|Who|the|?|2:the|Who|washes|?|car": [
+        [
+            "Who",
+            "will",
+            "read",
+            "the",
+            "book",
+            "?"
+        ],
+        [
+            "Who",
+            "washes",
+            "the",
+            "car",
+            "?"
+        ]
+    ],
+    "Marcos is from Panamá.  is from Panamá?|Miranda's passport was found on the ground.  was found on the ground?||What|Who": {
+        "Marcos is from Panamá.  is from Panamá?": "Who",
+        "Miranda's passport was found on the ground.  was found on the ground?": "What"
+    },
+    "The rain hurt the butterfly.  hurt the butterfly?|Samantha called to her father.  called to her father?||What|Who": {
+        "The rain hurt the butterfly.  hurt the butterfly?": "What",
+        "Samantha called to her father.  called to her father?": "Who"
+    },
+    "0:window|Who|?|the|brokes|2:What|end|at the|of the|?|happened|story": [
+        [
+            "Who",
+            "brokes",
+            "the",
+            "window",
+            "?"
+        ],
+        [
+            "What",
+            "happened",
+            "at the",
+            "end",
+            "of the",
+            "story",
+            "?"
+        ]
+    ],
+    "Julia loves to play chess.  loves to play chess?|The money was on the desk.  was on the desk?||What|Who": {
+        "Julia loves to play chess.  loves to play chess?": "Who",
+        "The money was on the desk.  was on the desk?": "What"
+    },
+    "0:is|the|What|garage|in|?|2:Ice cream|Who|?|loves": [
+        [
+            "What",
+            "is",
+            "in",
+            "the",
+            "garage",
+            "?"
+        ],
+        [
+            "Who",
+            "loves",
+            "Ice cream",
+            "?"
+        ]
+    ],
+    "0:professor|Who|the|new|?|likes|2:?|bread|Who|buying|some|is": [
+        [
+            "Who",
+            "likes",
+            "the",
+            "new",
+            "professor",
+            "?"
+        ],
+        [
+            "Who",
+            "is",
+            "buying",
+            "some",
+            "bread",
+            "?"
+        ]
+    ],
+    "0:wallet|Who|bought|?|a|2:dropped|Who|?|glass|the": [
+        [
+            "Who",
+            "bought",
+            "a",
+            "wallet",
+            "?"
+        ],
+        [
+            "Who",
+            "dropped",
+            "the",
+            "glass",
+            "?"
+        ]
+    ],
+    "0:Who|bought|a|?|car|new|2:told|you|?|that|Who": [
+        [
+            "Who",
+            "bought",
+            "a",
+            "new",
+            "car",
+            "?"
+        ],
+        [
+            "Who",
+            "told",
+            "you",
+            "that",
+            "?"
+        ]
+    ],
+    "0:Who|?|meet|John|did|2:lose|What|did|?|John": [
+        [
+            "Who",
+            "did",
+            "John",
+            "meet",
+            "?"
+        ],
+        [
+            "What",
+            "did",
+            "John",
+            "lose",
+            "?"
+        ]
+    ],
+    "0:THIS WATER IS NOT WARM": [
+        "ENOUGH"
+    ],
+    "0:I CAN'T MAKE A HAMBURGUER. THERE ISN'T": [
+        "ENOUGH"
+    ],
+    "0:SOMEWHERE": [
+        "SOMEBODY"
+    ],
+    "0:I GAVE": [
+        "EVERYTHING"
+    ],
+    "0:THERE IS": [
+        "SOMEONE"
+    ],
+    "0:KAREN WOULDN'T FOLLOW YOU": [
+        "ANYWHERE"
+    ],
+    "0:I BOUGHT": [
+        "EVERYTHING"
+    ],
+    "0:DO YOU LIVE": [
+        "ANYWHERE"
+    ],
+    "0:I WOULD LIKE TO GO": [
+        "SOMEWHERE"
+    ],
+    "0:I DON'T KNOW": [
+        "ANYTHING"
+    ],
+    "0:I HAVE": [
+        "SOMETHING"
+    ],
+    "0:SOMEONE": [
+        "SOMEONE"
+    ],
+    "0:DO": [
+        "WHERE"
+    ],
+    "0:DO YOU KNOW": [
+        "WHEN"
     ]
 }
