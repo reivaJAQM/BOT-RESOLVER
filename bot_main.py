@@ -34,7 +34,27 @@ except Exception as e:
 # --- INICIO DE LA MEMORIA DEL BOT ---
 preguntas_ya_vistas = {}
 opciones_ya_vistas = {}
-soluciones_correctas = {} # --- NUEVA MEMORIA PARA RESPUESTAS APRENDIDAS ---
+soluciones_correctas = {} # --- MEMORIA PARA RESPUESTAS APRENDIDAS ---
+MEMORIA_FILE = "memoria_bot.json"
+
+# --- ¡NUEVA LÓGICA DE PERSISTENCIA! ---
+try:
+    with open(MEMORIA_FILE, 'r', encoding='utf-8') as f:
+        soluciones_correctas = json.load(f)
+    print(f"¡Memoria cargada! {len(soluciones_correctas)} soluciones conocidas.")
+except FileNotFoundError:
+    print("No se encontró memoria previa (memoria_bot.json). Empezando de cero.")
+except json.JSONDecodeError:
+    print("Error al leer la memoria. Empezando de cero.")
+
+def guardar_memoria_en_disco():
+    """Guarda el diccionario 'soluciones_correctas' en el archivo JSON."""
+    try:
+        with open(MEMORIA_FILE, 'w', encoding='utf-8') as f:
+            json.dump(soluciones_correctas, f, indent=4, ensure_ascii=False)
+        print("      ¡Memoria actualizada en disco!")
+    except Exception as e:
+        print(f"      ERROR CRÍTICO al guardar memoria: {e}")
 # --- FIN DE LA MEMORIA DEL BOT ---
 
 if ia_utils.model is None:
@@ -221,7 +241,8 @@ try:
                             boton_true = caja.find_element(*sel.SELECTOR_BOTON_TRUE_TF)
                             boton_false = caja.find_element(*sel.SELECTOR_BOTON_FALSE_TF)
                             if texto_afirmacion:
-                                lista_afirmaciones_texto.append(texto_afirmacion)
+                                clave_unica_afirmacion = f"{k}:{texto_afirmacion}" # <-- ¡CLAVE ÚNICA!
+                                lista_afirmaciones_texto.append(clave_unica_afirmacion) # <-- ¡CAMBIADO!
                                 elementos_cajas_botones.append((caja, boton_true, boton_false))
                             else: print(f"Warn: Caja {k+1} sin texto.")
                         except (NoSuchElementException, TimeoutException) as e_inner:
@@ -284,7 +305,11 @@ try:
                         driver.execute_script("arguments[0].scrollIntoViewIfNeeded(true);", caja); time.sleep(0.1)
                         try:
                             idea_elem = caja.find_element(*sel.SELECTOR_PARAGRAPH_IDEA_TEXT); idea_texto = idea_elem.text.strip()
-                            if idea_texto: lista_ideas_texto.append(idea_texto); elementos_cajas.append(caja); print(f"      Idea {k+1}: '{idea_texto}'")
+                            if idea_texto: 
+                                clave_unica_idea = f"{k}:{idea_texto}" # <-- ¡CLAVE ÚNICA!
+                                lista_ideas_texto.append(clave_unica_idea); # <-- ¡CAMBIADO!
+                                elementos_cajas.append(caja); 
+                                print(f"      Idea {k+1}: '{idea_texto}'")
                             else: print(f"Warn: Caja {k+1} sin texto.")
                         except (NoSuchElementException, TimeoutException) as e: print(f"Error leyendo idea {k+1}: {e}"); continue
                     if not lista_ideas_texto: raise Exception("No ideas recolectadas.")
@@ -377,7 +402,15 @@ try:
                             if not real_pregunta: raise Exception(f"Texto vacío tarjeta {k+1}.")
                             opciones_elementos = caja.find_elements(*sel.SELECTOR_ANSWER_Q_BOTONES); opciones = [e.text.strip() for e in opciones_elementos if e.text.strip()]
                             if not opciones: raise Exception(f"No opciones tarjeta {k+1}.")
-                            print(f"      Tarea {k+1}: '{real_pregunta}' Ops: {opciones}"); lista_de_tareas.append({"pregunta": real_pregunta, "opciones": opciones}); lista_de_preguntas.append(real_pregunta); elementos_cajas.append(caja)
+                            
+                            # --- ¡NUEVA CLAVE ÚNICA CON ÍNDICE! ---
+                            clave_unica_pregunta = f"{k}:{real_pregunta}"
+                            # --- FIN NUEVA CLAVE ---
+
+                            print(f"      Tarea {k+1}: '{real_pregunta}' Ops: {opciones}"); 
+                            lista_de_tareas.append({"pregunta": real_pregunta, "opciones": opciones}); 
+                            lista_de_preguntas.append(clave_unica_pregunta); # <-- ¡CAMBIADO!
+                            elementos_cajas.append(caja)
                         except Exception as e: print(f"Error procesando tarjeta {k+1}: {e}"); raise
                     if not lista_de_tareas: raise Exception("No tareas recolectadas.")
                     clave_pregunta = "|".join(lista_de_preguntas)
@@ -439,17 +472,22 @@ try:
                 boton_ok = wait_long.until(EC.element_to_be_clickable(sel.SELECTOR_OK))
                 try:
                     titulo_modal = driver.find_element(*sel.SELECTOR_MODAL_TITULO).text.lower()
+                    
+                    # --- CASO 1: RESPUESTA INCORRECTA (APRENDE LA SOLUCIÓN) ---
                     if "incorrect" in titulo_modal or "oops" in titulo_modal:
                         print("      Respuesta INCORRECTA detectada. Buscando solución...")
                         contenido_modal = driver.find_element(*sel.SELECTOR_MODAL_CONTENIDO).text
-                        preguntas_para_ia = None; opciones_para_ia = None
+                        preguntas_para_ia = None; opciones_para_ia = None; solucion_aprendida = None
+
+                        # Identificar qué tipo de clave/pregunta buscar
                         if tipo_pregunta == "TIPO_6_PARAGRAPH": clave_pregunta = "|".join(lista_ideas_texto); preguntas_para_ia = lista_ideas_texto
                         elif tipo_pregunta == "TIPO_7_OM_CARD": clave_pregunta = "|".join(lista_de_preguntas); preguntas_para_ia = lista_de_preguntas
                         elif tipo_pregunta == "TIPO_DEFAULT_OM" and clave_pregunta in opciones_ya_vistas: opciones_para_ia = opciones_ya_vistas[clave_pregunta]
-                        elif tipo_pregunta == "TIPO_5_TF_SINGLE": opciones_para_ia = ["True", "False"] # clave_pregunta ya está definida
+                        elif tipo_pregunta == "TIPO_5_TF_SINGLE": opciones_para_ia = ["True", "False"]
                         elif tipo_pregunta == "TIPO_3_TF_MULTI": clave_pregunta = "|".join(lista_afirmaciones_texto); preguntas_para_ia = lista_afirmaciones_texto
                         elif tipo_pregunta == "TIPO_2_COMPLETAR" and clave_pregunta in opciones_ya_vistas: opciones_para_ia = opciones_ya_vistas[clave_pregunta]
 
+                        # Extraer solución LOTE (T3, T6, T7)
                         if clave_pregunta and preguntas_para_ia and contenido_modal:
                             if tipo_pregunta == "TIPO_3_TF_MULTI":
                                 print("      Enviando texto a IA (Lote T/F) para extraer solución..."); solucion_lista_ordenada = ia_utils.extraer_solucion_lote_tf(contenido_modal, preguntas_para_ia)
@@ -459,15 +497,48 @@ try:
                                     solucion_lista_ordenada = [str(solucion.get(p)).strip() for p in preguntas_para_ia]
                                     if None in solucion_lista_ordenada or 'none' in [s.lower() for s in solucion_lista_ordenada]: print(f"      IA (Lote Genérico) no pudo mapear solución: {solucion}"); solucion_lista_ordenada = None
                                 else: solucion_lista_ordenada = None
-                            if solucion_lista_ordenada: print(f"      ¡SOLUCIÓN LOTE APRENDIDA! -> {solucion_lista_ordenada}"); soluciones_correctas[clave_pregunta] = solucion_lista_ordenada
+                            
+                            if solucion_lista_ordenada: 
+                                print(f"      ¡SOLUCIÓN LOTE APRENDIDA! -> {solucion_lista_ordenada}"); 
+                                solucion_aprendida = solucion_lista_ordenada
                             else: print("      IA (Lote) no pudo extraer o validar la solución.")
+                        
+                        # Extraer solución SIMPLE (T2, T5, Default)
                         elif clave_pregunta and opciones_para_ia and contenido_modal:
-                            print("      Enviando texto a IA (Simple) para extraer solución..."); solucion = ia_utils.extraer_solucion_simple(contenido_modal, opciones_para_ia)
-                            if solucion: print(f"      ¡SOLUCIÓN SIMPLE APRENDIDA! -> {solucion}"); soluciones_correctas[clave_pregunta] = solucion
+                            print("      Enviando texto a IA (Simple) para extraer solución..."); solucion_simple = ia_utils.extraer_solucion_simple(contenido_modal, opciones_para_ia)
+                            if solucion_simple: 
+                                print(f"      ¡SOLUCIÓN SIMPLE APRENDIDA! -> {solucion_simple}"); 
+                                solucion_aprendida = solucion_simple
                             else: print("      IA (Simple) no pudo extraer solución.")
                         else: print(f"      No se implementó aprendizaje para ({tipo_pregunta}) o clave/opciones no encontradas.")
-                    elif "correct" in titulo_modal: print("      Respuesta CORRECTA detectada.")
-                except Exception as e: print(f"      WARN: No se pudo leer modal o aprender. {e}")
+
+                        # --- ¡GUARDADO EN MEMORIA (SI APRENDIÓ ALGO)! ---
+                        if clave_pregunta and solucion_aprendida:
+                            soluciones_correctas[clave_pregunta] = solucion_aprendida
+                            guardar_memoria_en_disco() # <-- ¡GUARDAMOS EN DISCO!
+                    
+                    # --- CASO 2: RESPUESTA CORRECTA (GUARDA EL ACIERTO) ---
+                    elif "correct" in titulo_modal or "great" in titulo_modal:
+                        print(f"      Respuesta CORRECTA detectada (Modal: {titulo_modal}).")
+                        
+                        # Verificamos si la clave es válida y si NO la teníamos ya guardada
+                        if clave_pregunta and clave_pregunta not in soluciones_correctas:
+                            print(f"      Guardando nuevo acierto en memoria...")
+                            try:
+                                # La respuesta que dimos ya está en 'preguntas_ya_vistas'
+                                respuesta_correcta = preguntas_ya_vistas[clave_pregunta]
+                                soluciones_correctas[clave_pregunta] = respuesta_correcta
+                                print(f"      ¡SOLUCIÓN (por acierto) APRENDIDA! -> {respuesta_correcta}")
+                                guardar_memoria_en_disco() # <-- ¡GUARDAMOS EN DISCO!
+                            except KeyError:
+                                print(f"      WARN: Acierto, pero no se encontró la respuesta en 'preguntas_ya_vistas' para clave: {clave_pregunta}")
+                            except Exception as e_acierto:
+                                print(f"      WARN: Error guardando acierto: {e_acierto}")
+                        elif clave_pregunta:
+                            print("      La solución ya estaba en memoria. No se necesita guardar.")
+                        
+                except Exception as e: 
+                    print(f"      WARN: No se pudo leer modal o aprender. {e}")
 
                 print("Clic OK..."); boton_ok.click()
                 print("Respuesta enviada! Esperando que desaparezca modal..."); wait_long.until(EC.invisibility_of_element_located(sel.SELECTOR_OK))

@@ -1,0 +1,81 @@
+{
+    "0:ADJECTIVES ENDING|1:ADJECTIVES ENDING": [
+        "ed",
+        "ing"
+    ],
+    "0:Daniel likes to cook. He thinks cooking is": [
+        "Amazing"
+    ],
+    "0:Reading is my favorite hobby. It's really": [
+        "Interesting"
+    ],
+    "0:Rafael was": [
+        "Disappointed"
+    ],
+    "0:Steve is": [
+        "Embarrassed"
+    ],
+    "0:I'm so": [
+        "Excited"
+    ],
+    "0:Denise is": [
+        "Bored"
+    ],
+    "0:Luana enjoys to make handcrafts. She feels": [
+        "Relaxed"
+    ],
+    "0:The directions are very": [
+        "Confusing"
+    ],
+    "0:Roberth likes classic music. He thinks it is": [
+        "Relaxing"
+    ],
+    "0:Carmen spoke so": [
+        "quietly"
+    ],
+    "0:My favorite soccer team lost a match, but I don't think that they play": [
+        "badly"
+    ],
+    "0:Amanda takes her medicine": [
+        "dangerously"
+    ],
+    "0:My brother drives quite": [
+        "easily"
+    ],
+    "0:HONEST|1:JEALOUS|2:KIND|3:LAZY": [
+        "honestly",
+        "jealously",
+        "kindly",
+        "lazily"
+    ],
+    "0:GLAD|1:GOOD|2:HAPPY|3:HARD": [
+        "gladly",
+        "well",
+        "happily",
+        "hard"
+    ],
+    "0:FAST|1:FURIOUS|2:GENEROUS|3:GENTLE": [
+        "fast",
+        "furiously",
+        "generously",
+        "gently"
+    ],
+    "0:CAREFUL|1:CALM|2:CERTAIN|3:BRAVE": [
+        "carefully",
+        "calmly",
+        "certainly",
+        "bravely"
+    ],
+    "0:BAD|1:CORRECT|2:EASY|3:EXTREME": [
+        "badly",
+        "correctly",
+        "easily",
+        "extremely"
+    ],
+    "0:TERRIBLE|1:QUICK|2:ANGRY|3:LUCKY": [
+        "terribly",
+        "quickly",
+        "angrily",
+        "luckily"
+    ]
+}
