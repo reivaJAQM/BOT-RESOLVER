@@ -67,10 +67,10 @@ try:
         # --- 1. ENCONTRAR Y EMPEZAR LA SIGUIENTE LECCIÓN ---
         try:
             print("Buscando la siguiente lección disponible...")
-            wait_long.until(EC.presence_of_element_located(sel.SELECTOR_LECCION_READING))
+            wait_long.until(EC.presence_of_element_located(sel.SELECTOR_LECCION_DISPONIBLE))
             driver.execute_script("window.scrollTo(0, document.body.scrollHeight);"); time.sleep(0.5)
 
-            leccion = wait_long.until(EC.element_to_be_clickable(sel.SELECTOR_LECCION_READING))
+            leccion = wait_long.until(EC.element_to_be_clickable(sel.SELECTOR_LECCION_DISPONIBLE))
             print("      Lección encontrada. Haciendo scroll...")
             driver.execute_script("arguments[0].scrollIntoView(true);", leccion); time.sleep(0.5)
             leccion.click()
@@ -95,7 +95,7 @@ try:
                 try:
                     boton_continue = wait_short.until(EC.element_to_be_clickable(sel.SELECTOR_CONTINUE))
                     print("FIN DE LA LECCIÓN! Clic CONTINUE..."); boton_continue.click()
-                    print("Esperando regreso a la página de lecciones..."); wait_long.until(EC.presence_of_element_located(sel.SELECTOR_LECCION_READING))
+                    print("Esperando regreso a la página de lecciones..."); wait_long.until(EC.presence_of_element_located(sel.SELECTOR_LECCION_DISPONIBLE))
                     print("Página de lecciones cargada. Buscando siguiente lección..."); time.sleep(2); break
                 except TimeoutException:
                     print("Test continúa...")
@@ -477,7 +477,7 @@ try:
                 # --- PLAN V: SKIP EN LUGAR DE REFRESH ---
                 print(f"Error inesperado o Timeout: {e}")
                 try:
-                    wait_short.until(EC.element_to_be_clickable(sel.SELECTOR_CONTINUE)).click(); print("      FIN detectado tras error! Yendo a siguiente lección."); wait_long.until(EC.presence_of_element_located(sel.SELECTOR_LECCION_READING)); break
+                    wait_short.until(EC.element_to_be_clickable(sel.SELECTOR_CONTINUE)).click(); print("      FIN detectado tras error! Yendo a siguiente lección."); wait_long.until(EC.presence_of_element_located(sel.SELECTOR_LECCION_DISPONIBLE)); break
                 except (TimeoutException, NoSuchElementException):
                     print("      El test no ha terminado. Intentando 'SKIP'...");
                     try:
