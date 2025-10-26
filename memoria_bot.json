@@ -1,0 +1,133 @@
+{
+    "CHOOSE THE BEST OPTION: 789 IS EQUAL TO": "700 + 80 + 9",
+    "CHOOSE THE CORRECT OPTION: HOW IS THE FOLLOWING NUMBER WRITTEN IN DIGITS: 'FOURTEEN' ?": "14",
+    "0:Four hundred fifty-eight ___ 60 + 600 + 3": [
+        "<"
+    ],
+    "0:The mathematical symbol, which represents a quantity given as a fraction in 100 equal parts is: ___": [
+        "Percentage"
+    ],
+    "0:'Natural numbers have a first and last element'": [
+        "False"
+    ],
+    "CHOOSE THE OPTION THAT USES <(GREATER THAN),> (LESS THAN) OR = (EQUAL) SIGNS CORRECTLY.": "22 < 15 + 9",
+    "0:What number is missing to complete the multiplication: 6X ___ = 54": [
+        "9"
+    ],
+    "CIRCLE THE CORRECT OPTION.": "Twenty-four thousand one hundred and fifty-seven",
+    "CHOOSE THE BEST OPTION: WHICH OF THE FOLLOWING IS TRUE?": "700 is a group of seventy tens.",
+    "0:I'm sorry I lied to you. Do you want to get ___ together with me?": [
+        "Back"
+    ],
+    "0:We are not together now. she took the kids and moved to her home town. We are ___": [
+        "Separated"
+    ],
+    "0:She is not my wife. We are ___": [
+        "Just friends"
+    ],
+    "CHOOSE THE CORRECT OPTION: THEY HAVE A LOT IN COMMON MEANS...": "they share similar ideas and interests.",
+    "0:If you fancy him, why don't you ask him ___ on a date?": [
+        "out"
+    ],
+    "0:Carlos and I had a big row, but we ___ yesterday so we're happy again.": [
+        "made up"
+    ],
+    "CHOOSE THE CORRECT WORD: DO YOU GET ON WELL WITH HER?": "Yes, we have a lot in common.",
+    "READ AND COMPLETE THE SENTENCE: IF THEY ______ (NOT ARGUE) SO MUCH, THEY ______ (BE) A LOT HAPPIER": "did not argue/were",
+    "0:Tomorrow, we will have a barbecue in the ___|1:The ___ was dirty after dinner.|2:The family meets in the ___ every Friday.": [
+        "Garden",
+        "Kitchen",
+        "Living room"
+    ],
+    "0:Where do you take a shower? ___": [
+        "In the bathroom"
+    ],
+    "0:my|can|a|find|I|tree|garden|in|2:I|sofa|find|can|room|living|my|a|in": [
+        [
+            "I",
+            "can",
+            "find",
+            "a",
+            "tree",
+            "in",
+            "my",
+            "garden"
+        ],
+        [
+            "I",
+            "can",
+            "find",
+            "a",
+            "sofa",
+            "in",
+            "my",
+            "living",
+            "room"
+        ]
+    ],
+    "T4:MATCH THE HALVES WITH A LINE.||Bathroom|Garage|Kitchen|Living room": [
+        "Kitchen",
+        "Bathroom",
+        "Garage",
+        "Living room"
+    ],
+    "CHOOSE THE CORRECT SENTENCE.": "This is my garden. It has got blue, green and red flowers",
+    "READ. CHOOSE THE CORRECT SENTENCE.": "This is my dining room. It has got four brown chairs and a brown table.",
+    "0:than|ones|safer|Concrete|are|walls|much|wooden|2:flowers|That|has|beautiful|some|balcony": [
+        [
+            "Concrete",
+            "walls",
+            "are",
+            "much",
+            "safer",
+            "than",
+            "wooden",
+            "ones"
+        ],
+        [
+            "That",
+            "balcony",
+            "has",
+            "some",
+            "beautiful",
+            "flowers"
+        ]
+    ],
+    "T4:READ THE FOLLOWING RIDDLE AND MATCH THEM WITH THE RIGHT WORD. WHAT IS IT?||Apartment|Cottage|Gated community": [
+        "Apartment",
+        "Gated community",
+        "Cottage"
+    ],
+    "0:A bed is in the bedroom ___|1:A sofa is in the bathroom ___|2:A chair is in the kitchen ___": [
+        "TRUE",
+        "FALSE",
+        "TRUE"
+    ],
+    "0:Juan always falls asleep during ___": [
+        "History"
+    ],
+    "0:My brother always practices ___ on weekends": [
+        "English"
+    ],
+    "LOOK AT THE PICTURE AND SELECT THE CORRECT WORD: WHAT ARE THEY?": "Teachers",
+    "T8:LOOK AT THE FOLLOWING PICTURES. MATCH THE PICTURES WITH THE WORDS.||Music|Science": [
+        "Music",
+        "Science"
+    ],
+    "0:Do vocabulary exercises and use them in a sentence is ___": [
+        "English"
+    ],
+    "TN:LOOK AT THE FOLLOWING PICTURES. MATCH THE PICTURES WITH THE WORDS.||Biology|Geography": [
+        "Geography",
+        "Biology"
+    ],
+    "0:Learn about the past is ___": [
+        "History"
+    ],
+    "LOOK AT THE PICTURE AND SELEC THE CORRECT WORD: HOW DO YOU SAY THIS IN ENGLISH?": "Ruler",
+    "T4:MATCH THE SENTENCES WITH THE CORRECT SUBJECT IT DESCRIBES.||Art|Mathematics|Physical education": [
+        "Physical education",
+        "Mathematics",
+        "Art"
+    ]
+}
