@@ -692,3 +692,76 @@ Diccionario de Solución ({{clave: opcion}}):
         return None
     except Exception as e:
         print(f"Error API IA (Aprendizaje Emparejar): {e}"); return None
+    
+def extraer_solucion_lote_completar(texto_error_modal, tareas_lista):
+    """
+    Lee el texto de un modal de error para TIPO 2 (Completar Lote) y extrae la secuencia correcta.
+    'tareas_lista' es la lista de tareas: [{"frase": "...", "opciones": [...]}, ...]
+    Retorna una lista de strings: ["respuesta_1", "respuesta_2", ...]
+    """
+    print(f"IA (Aprendizaje Lote Completar): Analizando texto de error...")
+    
+    tareas_str = ""
+    for i, tarea in enumerate(tareas_lista):
+        opciones_str = ", ".join(f'"{op}"' for op in tarea['opciones'])
+        tareas_str += f"Tarea {i+1} (Frase: \"{tarea['frase']}\") - Opciones: [{opciones_str}]\n"
+    
+    prompt = f"""
+Rol: Experto en extracción de datos.
+Analiza el [Texto de Error] de un pop-up. Este texto contiene la solución correcta para un ejercicio de completar frases.
+Las tareas originales (en orden) y sus opciones eran:
+{tareas_str}
+
+Tu tarea es devolver SÓLO una lista JSON de strings, donde cada string es la opción correcta para cada tarea, en el orden correcto.
+
+[Texto de Error]:
+"{texto_error_modal}"
+
+---
+Respuesta (Sólo la lista JSON ["opcion_correcta_1", "opcion_correcta_2", ...]):
+"""
+    try:
+        response = model.generate_content(prompt)
+        respuesta_texto = obtener_texto_de_respuesta(response) # Usamos el extractor robusto
+        if respuesta_texto is None: return None
+
+        if respuesta_texto.startswith("```json"): respuesta_texto = respuesta_texto[7:]
+        if respuesta_texto.endswith("```"): respuesta_texto = respuesta_texto[:-3]
+        respuesta_texto = respuesta_texto.strip()
+
+        if not respuesta_texto.startswith("[") or not respuesta_texto.endswith("]"):
+            print(f"IA (Aprendizaje Lote Completar) no es lista: {respuesta_texto}"); return None
+        
+        solucion_lista = json.loads(respuesta_texto)
+        
+        # Verificamos longitud
+        if isinstance(solucion_lista, list) and len(solucion_lista) == len(tareas_lista):
+            # Verificamos que cada respuesta esté en sus opciones
+            respuestas_verificadas = []
+            for i, respuesta_ia in enumerate(solucion_lista):
+                opciones_originales = tareas_lista[i]['opciones']
+                respuesta_ia_limpia = str(respuesta_ia).strip().strip('"\'., ')
+                
+                if respuesta_ia_limpia in opciones_originales:
+                    respuestas_verificadas.append(respuesta_ia_limpia)
+                else:
+                    # Intento de match normalizado
+                    resp_lower = respuesta_ia_limpia.lower()
+                    encontrado = False
+                    for op in opciones_originales:
+                        if op.strip('"\'., ').lower() == resp_lower:
+                            respuestas_verificadas.append(op) # Guardamos la original
+                            encontrado = True; break
+                    if not encontrado:
+                        print(f"IA (Aprendizaje Lote Completar) Tarea {i+1}: '{respuesta_ia}' no en {opciones_originales}"); return None
+            
+            print(f"IA (Aprendizaje Lote Completar) extrajo: {respuestas_verificadas}")
+            return respuestas_verificadas
+        else:
+            print(f"IA (Aprendizaje Lote Completar) inválido o incompleto: {solucion_lista}"); return None
+            
+    except json.JSONDecodeError as e:
+        print(f"Error parse JSON IA (Aprendizaje Lote Completar): {e}\nResp: {respuesta_texto}")
+        return None
+    except Exception as e:
+        print(f"Error API IA (Aprendizaje Lote Completar): {e}"); return None
