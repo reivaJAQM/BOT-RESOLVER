@@ -8,8 +8,19 @@ SELECTOR_INICIA_SESION_VERDE = (By.XPATH, "//button[text()='Inicia Sesión']")
 SELECTOR_USUARIO_INPUT = (By.ID, "mail-address")
 SELECTOR_PASSWORD_INPUT = (By.ID, "password")
 SELECTOR_ACCEDER_AMARILLO = (By.XPATH, "//button[text()='Iniciar sesión']")
-# --- ¡MODIFICADO! Unificado Reading y Grammar ---
-SELECTOR_LECCION_DISPONIBLE = (By.XPATH, "//img[(contains(@src, 'Reading') or contains(@src, 'Grammar') or contains(@src, 'teacher')) and ../div[@class='bfill' and not(contains(@style, 'height: 100%'))]]")
+SELECTOR_LECCION_DISPONIBLE = (By.XPATH, 
+    # Grupo 1: Busca Reading, Grammar, Teacher (como antes)
+    "(//img[(contains(@src, 'Reading') or contains(@src, 'Grammar') or contains(@src, 'teacher')) and ../div[@class='bfill' and not(contains(@style, 'height: 100%'))]])" +
+    
+    # --- O ---
+    " | " + 
+    
+    # Grupo 2: Lógica específica para "Writing"
+    # 1. Busca la imagen 'Writing' que no esté completa
+    # 2. Sube a su ancestro 'tooltip'
+    # 3. Verifica que ese ancestro contenga un h2 con el texto exacto (y en minúsculas) 'writing'
+    "(//img[contains(@src, 'Writing') and ../div[@class='bfill' and not(contains(@style, 'height: 100%'))] and ancestor::div[contains(@class, 'tooltip')][1]//h2[normalize-space()='writing']])"
+)
 SELECTOR_BOTON_START = (By.XPATH, "//a[text()='Start']")
 SELECTOR_CONTEXTO = (By.CLASS_NAME, "overflow-y-auto")
 SELECTOR_PREGUNTA = (By.XPATH, "//*[contains(@class, 'text-green-700')]")
