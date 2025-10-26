@@ -33,7 +33,13 @@ SELECTOR_CHECK = (By.XPATH, "//button[translate(normalize-space(text()), 'CHECK'
 SELECTOR_CONTINUE = (By.XPATH, "//button[normalize-space()='CONTINUE']")
 SELECTOR_PARAGRAPH_CAJAS = (By.XPATH, "//div[contains(@class, 'card')][.//button[normalize-space()='1']]") # TIPO 6: Cajas con botones numéricos
 SELECTOR_PARAGRAPH_IDEA_TEXT = (By.XPATH, ".//span[1]") # TIPO 6: El texto de la idea
-SELECTOR_ANSWER_Q_CAJAS = (By.XPATH, "//div[contains(@class, 'card')][.//span][count(.//button) > 1 and not(.//button[normalize-space()='True'])]") # TIPO 7: Cajas OM
+
+# --- ¡INICIO DE LA CORRECCIÓN! ---
+# TIPO 7: Cajas OM - MODIFICADO para no coincidir con TIPO 2
+# Ahora ignora botones que estén dentro de un span inline-block (típico de TIPO 2)
+SELECTOR_ANSWER_Q_CAJAS = (By.XPATH, "//div[contains(@class, 'card')][.//span[1]][count(.//button[not(ancestor::span[contains(@class,'inline-block')])]) > 1 and not(.//button[normalize-space()='True'])]")
+# --- FIN DE LA CORRECCIÓN! ---
+
 SELECTOR_ANSWER_Q_TEXTO = (By.XPATH, ".//span[1]") # TIPO 7: El texto de la pregunta dentro de la caja
 SELECTOR_ANSWER_Q_BOTONES = (By.XPATH, ".//button") # TIPO 7: Los botones de opciones dentro de la caja
 SELECTOR_OK = (By.CLASS_NAME, "swal2-confirm") # Botón OK del modal
