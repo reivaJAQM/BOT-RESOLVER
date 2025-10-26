@@ -9,7 +9,7 @@ SELECTOR_USUARIO_INPUT = (By.ID, "mail-address")
 SELECTOR_PASSWORD_INPUT = (By.ID, "password")
 SELECTOR_ACCEDER_AMARILLO = (By.XPATH, "//button[text()='Iniciar sesión']")
 # --- ¡MODIFICADO! Unificado Reading y Grammar ---
-SELECTOR_LECCION_DISPONIBLE = (By.XPATH, "//img[(contains(@src, 'Reading') or contains(@src, 'Grammar')) and ../div[@class='bfill' and not(contains(@style, 'height: 100%'))]]")
+SELECTOR_LECCION_DISPONIBLE = (By.XPATH, "//img[(contains(@src, 'Reading') or contains(@src, 'Grammar') or contains(@src, 'teacher')) and ../div[@class='bfill' and not(contains(@style, 'height: 100%'))]]")
 SELECTOR_BOTON_START = (By.XPATH, "//a[text()='Start']")
 SELECTOR_CONTEXTO = (By.CLASS_NAME, "overflow-y-auto")
 SELECTOR_PREGUNTA = (By.XPATH, "//*[contains(@class, 'text-green-700')]")
@@ -26,6 +26,7 @@ SELECTOR_BOTON_TRUE_TF = (By.XPATH, ".//button[normalize-space()='True']") # Tru
 SELECTOR_BOTON_FALSE_TF = (By.XPATH, ".//button[normalize-space()='False']") # True/False Múltiple
 SELECTOR_DEFINICIONES_AZULES_XPATH = (By.XPATH, "//span[contains(@class, 'cardCheck')]") # Emparejar (Spans azules movibles)
 SELECTOR_FILAS_EMPAREJAR = (By.XPATH, "//div[contains(@class, 'grid grid-cols-2')][.//button[contains(text(), 'Waiting answer')]]") # Emparejar (Contenedor de palabra y destino)
+SELECTOR_IMAGEN_EMPAREJAR = (By.XPATH, "//div[contains(@class, 'grid grid-cols-2')][.//img]") # TIPO 8: Busca la fila que contiene una imagen
 SELECTOR_PALABRA_CLAVE_TAG = "h2" # Emparejar - Usamos TAG_NAME para palabra clave
 # SELECTOR_DESTINO_EMPAREJAR_XPATH = (By.XPATH, ".//button[contains(text(), 'Waiting answer')]") # Emparejar (No necesario con cola)
 SELECTOR_CHECK = (By.XPATH, "//button[translate(normalize-space(text()), 'CHECK', 'check')='check']")
@@ -57,3 +58,4 @@ SELECTOR_PALABRA_CLAVE_CSS = "h2" # Emparejar
 SELECTOR_MARK_TF_TEXT = (By.XPATH, "//div[contains(@class, 'card')]//span[@class='inline-block'][1]")
 SELECTOR_MARK_TF_TRUE = (By.XPATH, "//div[contains(@class, 'card')]//button[normalize-space()='True']")
 SELECTOR_MARK_TF_FALSE = (By.XPATH, "//div[contains(@class, 'card')]//button[normalize-space()='False']")
+SELECTOR_AUDIO = (By.TAG_NAME, "audio")

@@ -627,3 +627,68 @@ Respuesta (Sólo la lista JSON ["palabra_1", "palabra_2", ...]):
         return None
     except Exception as e:
         print(f"Error API IA (Aprendizaje Ordenar): {e}"); return None
+
+def extraer_solucion_emparejar(texto_error_modal, claves_lista, definiciones_lista):
+    """
+    Lee el texto de un modal de error para TIPO 4/8 (Emparejar) y extrae los pares correctos.
+    'claves_lista' son las claves (palabras <h2> o IDs de imagen 'alt'/'src')
+    'definiciones_lista' son las opciones (los spans azules)
+    Retorna un diccionario: {clave: definicion_correcta}
+    """
+    print(f"IA (Aprendizaje Emparejar): Analizando texto de error...")
+    claves_str = ", ".join(f'"{c}"' for c in claves_lista)
+    defs_str = ", ".join(f'"{d}"' for d in definiciones_lista)
+    
+    prompt = f"""
+Rol: Experto en extracción de datos.
+Analiza el [Texto de Error] de un pop-up. Este texto contiene la solución correcta para un ejercicio de emparejamiento.
+
+Las [Claves] (los elementos de la izquierda) eran: {claves_str}
+Las [Opciones] (los elementos de la derecha) eran: {defs_str}
+
+Tu tarea es devolver SÓLO un diccionario JSON que mapee CADA clave de la [Claves] a su opción correcta de [Opciones], basándote en la solución del [Texto de Error].
+
+[Texto de Error]:
+"{texto_error_modal}"
+
+---
+Diccionario de Solución ({{clave: opcion}}):
+"""
+    try:
+        response = model.generate_content(prompt)
+        respuesta_texto = obtener_texto_de_respuesta(response) # Usamos el extractor robusto
+        if respuesta_texto is None: return None
+
+        if respuesta_texto.startswith("```json"): respuesta_texto = respuesta_texto[7:]
+        if respuesta_texto.endswith("```"): respuesta_texto = respuesta_texto[:-3]
+        respuesta_texto = respuesta_texto.strip()
+
+        if not respuesta_texto.startswith("{") or not respuesta_texto.endswith("}"):
+            print(f"IA (Aprendizaje Emparejar) no es dicc: {respuesta_texto}"); return None
+        
+        solucion_dict = json.loads(respuesta_texto)
+        
+        # Verificamos validez
+        if (isinstance(solucion_dict, dict) and 
+            len(solucion_dict) == len(claves_lista) and 
+            all(c in solucion_dict for c in claves_lista) and 
+            all(d in definiciones_lista for d in solucion_dict.values())): 
+            
+            print(f"IA (Aprendizaje Emparejar) extrajo: {solucion_dict}")
+            return solucion_dict
+        else:
+            # A veces la IA devuelve el GUID con/sin espacio
+            claves_lista_alt = [c + " " for c in claves_lista] + [c.strip() for c in claves_lista]
+            if (isinstance(solucion_dict, dict) and 
+                len(solucion_dict) == len(claves_lista) and 
+                all(d in definiciones_lista for d in solucion_dict.values())):
+                print(f"IA (Aprendizaje Emparejar) [WARN]: Las claves no coincidían exacto, pero se validó el formato. {solucion_dict}")
+                return solucion_dict
+
+            print(f"IA (Aprendizaje Emparejar) inválido o incompleto: {solucion_dict}"); return None
+            
+    except json.JSONDecodeError as e:
+        print(f"Error parse JSON IA (Aprendizaje Emparejar): {e}\nResp: {respuesta_texto}")
+        return None
+    except Exception as e:
+        print(f"Error API IA (Aprendizaje Emparejar): {e}"); return None

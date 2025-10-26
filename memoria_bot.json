@@ -1,20 +1,50 @@
 {
-    "DO YOU KNOW ___ THE POLICE STATION IS?": "WHERE",
-    "DO YOU KNOW ___ IS THE TEACHER'S DAY?": "WHEN",
-    "DO YOU KNOW ___ THE BUS STOP IS?": "WHERE",
-    "DO YOU KNOW ___ WE CANNOT ENTER IF WE ARE 18?": "WHY",
-    "DO YOU KNOW ___ IS OUR NEXT EXAM?": "WHEN",
-    "DO YOU KNOW ___ THIS ROAD GO?": "WHERE",
-    "DO YOU KNOW ___ SHE WAS CRYING?": "WHY",
-    "DO YOU KNOW ___ HE WENT TO?": "WHERE",
-    "DO YOU KNOW ___ HE LOOKS SAD?": "WHY",
-    "MICHELLE HAS ___ BROTHERS BUT JUST ONE SISTER.": "MANY",
-    "I HAVE ___ COUSINS THAT SPEAK FRENCH, THE REST OF THEM SPEAK ENGLISH.": "A FEW",
-    "PEOPLE DON'T WRITE ___ LETTERS NOWADAYS.": "MANY",
-    "HE FOUND ___ COOKIES UNDER HIS BED. HE ATE HIS 2 COOKIES AFTER THAT": "A FEW",
-    "JULIA ATE ___ CHIPS, SHE WASN'T VERY HUNGRY.": "A FEW",
-    "KARLA TOOK ___ DAYS OFF FROM WORK. SHE HAD TO BE IN BED FOR SIX DAYS.": "SEVERAL",
-    "THERE WAS A CAR ACCIDENT LAST NIGHT. LUCKILY ___ OF THEM WERE HURT.": "FEW",
-    "YESTERDAY, THE CLASS WAS QUIET. ___ STUDENTS WERE ABSENT.": "SEVERAL",
-    "ISABEL WENT ON VACATION. SHE TOOK ___ PICTURES.": "SEVERAL"
+    "WHAT CAN BE INFERRED ABOUT CARLOS'S SHOPPING LIST?": "Carlos bought exactly what he needed except for one item.",
+    "T4:MATCH EACH ITEM CARLOS BOUGHT WITH ITS COST:||1 euro|2 euros|3 euros": [
+        "1 euro",
+        "2 euros",
+        "3 euros"
+    ],
+    "HOW MUCH DOES THE BREAD COST?": "Two euros",
+    "CARLOS BOUGHT THREE ITEMS AT THE SUPERMARKET. BASED ON THEIR PRICES, WHICH OF THE FOLLOWING IS THE CORRECT TOTAL COST FOR JUST THE MILK AND THE BREAD?": "Four euros",
+    "WHAT DID CARLOS BUY AT THE SUPERMARKET?": "Milk, bread, and apples",
+    "T4:FILL IN THE BLANKS:||eggs|six": [
+        "six",
+        "eggs"
+    ],
+    "WHY DOES CARLOS NEED TO GO BACK TO THE SUPERMARKET?": "To buy eggs",
+    "WHAT DID CARLOS FORGET TO BUY?": "Eggs",
+    "HOW MUCH DID CARLOS PAY IN TOTAL?": "Six euros",
+    "WHAT DOES LAURA ENJOY ABOUT SPENDING TIME AT THE LIBRARY?": "The library’s quiet atmosphere",
+    "ACCORDING TO LAURA, WHICH STATEMENT BEST DESCRIBES HER FEELINGS ABOUT THE BOOKS SHE BORROWED?": "She finds the history book very interesting, but does not mention her opinion about the science book.",
+    "HOW MANY BOOKS DOES LAURA PLAN TO READ THIS WEEK?": "Two",
+    "WHAT IS THE LIBRARY LIKE?": "Quiet",
+    "WHAT ARE THE SUBJECTS OF THE BOOKS LAURA BORROWED?": "History and science",
+    "HOW DOES LAURA FEEL ABOUT THE LIBRARY?": "It is quiet and enjoyable",
+    "T4:MATCH EACH STATEMENT WITH ITS CORRESPONDING DETAIL FROM THE SCRIPT||Quiet|Read both books this week": [
+        "Quiet",
+        "Read both books this week"
+    ],
+    "T4:FILL IN THE BLANKS:||history|quiet|two": [
+        "two",
+        "history",
+        "quiet"
+    ],
+    "WHAT DID LAURA DO AT THE LIBRARY?": "Borrowed two books",
+    "WHAT DID JOHN DO FIRST DURING HIS VISIT TO THE PARK?": "He walked for about an hour.",
+    "T4:COMPLETE THE FOLLOWING SENTENCES BASED ON JOHN’S VISIT TO THE PARK:||about an hour|fresh|people jogging": [
+        "about an hour",
+        "people jogging",
+        "fresh"
+    ],
+    "T4:FILL IN THE BLANKS||bench|jogging|walk": [
+        "walk",
+        "jogging",
+        "bench"
+    ],
+    "WHAT DID JOHN EAT?": "A sandwich",
+    "WHAT DID JOHN DO AFTER WALKING?": "Sat on a bench to rest",
+    "WHAT DID JOHN SEE AT THE PARK?": "People jogging and children playing",
+    "WHAT DID JOHN DO AT THE PARK?": "Went for a walk",
+    "HOW LONG DID JOHN WALK?": "For about an hour"
 }
