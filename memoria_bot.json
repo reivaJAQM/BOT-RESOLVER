@@ -117,10 +117,6 @@
     "0:Do vocabulary exercises and use them in a sentence is ___": [
         "English"
     ],
-    "TN:LOOK AT THE FOLLOWING PICTURES. MATCH THE PICTURES WITH THE WORDS.||Biology|Geography": [
-        "Geography",
-        "Biology"
-    ],
     "0:Learn about the past is ___": [
         "History"
     ],
@@ -129,5 +125,117 @@
         "Physical education",
         "Mathematics",
         "Art"
+    ],
+    "T2_BATCH:SELECT THE CORRECT WORD": {
+        "Juan always falls asleep during ___": "History"
+    },
+    "T2_BATCH:pregunta_sin_titulo_": {
+        "My brother always practices ___ on weekends": "English"
+    },
+    "T2_BATCH:COMPLETE THE SENTENCE WITH THE BEST OPTION": {
+        "Do vocabulary exercises and use them in a sentence is ___": "English"
+    },
+    "T8:LOOK AT THE FOLLOWING PICTURES. MATCH THE PICTURES WITH THE WORDS.||Biology|Geography": [
+        "Geography",
+        "Biology"
+    ],
+    "CHOOSE THE RIGHT ANSWER ACCORDING TO THE QUESTION: A PERSON ON HOLIDAY IS A:": "Tourist",
+    "CHOOSE THE BEST OPTION TO ANSWER THE FOLLOWING QUESTION: WHAT DO YOU LIKE TO DO IN YOUR SUMMER VACATIONS?": "Watching movies and hiking",
+    "CHOOSE THE RIGHT ANSWER ACCORDING TO THE QUESTION: WHAT DO PEOPLE COMMONLY WEAR AT VALENTINE'S DAY?": "Red Clothes",
+    "0:A holiday is a period when a break is taken from work or studies.": [
+        "True"
+    ],
+    "CHOOSE THE BEST OPTION TO ANSWER THE FOLLOWING QUESTION: WHAT IS YOUR FAVORITE ACTIVITY TO DO ON A HOT SUMMER VACATION?": "Go swimming",
+    "CHOOSE THE BEST OPTION TO ANSWER THE FOLLOWING QUESTION: WHERE DO YOU USUALLY GO ON HOLYDAYS?": "Camping",
+    "READ THE SENTENCES AND CHOOSE THE BEST OPTION TO THE FOLLOWING QUESTION: WHAT DID YOU DO IN MEXICO?": "We visited the Frida Kahlo Museum",
+    "CHOOSE THE BEST OPTION TO ANSWER THE FOLLOWING QUESTION: WHO DO YOU GO WITH?": "With my Family",
+    "T4:MATCH THE TWO COLUMNS TO COMPLETE THE MEANINGS:||Cottage|Destination|Excursion|Guide": [
+        "Excursion",
+        "Cottage",
+        "Guide",
+        "Destination"
+    ],
+    "CHOOSE THE RIGHT ANSWER ACCORDING TO THE QUESTION: WHAT DO YOU NEED TO TRAVEL TO ANOTHER COUNTRY?": "Passport",
+    "T2_BATCH:ACCORDING TO THE INFORMATION PROVIDED CHOOSE THE RIGHT OPTION TO COMPLETE THE SENTENCE.": {
+        "My favorite season is ___ because it is hot and sunny.": "Summer"
+    },
+    "READ AND CHOOSE THE INFORMATION YOU SHOULD NOT INCLUDE IN AN INVITATION.": "Music, food",
+    "CHOOSE THE RIGHT OPTION TO ANSWER THE QUESTION: WHAT DO YOU USUALLY DO AT CHRISTMAS'EVE?": "Give gifts",
+    "READ AND CHOOSE THE INFORMATION YOU SHOULD INCLUDE IN AN INVITATION": "Date",
+    "T2_BATCH:CHOOSE THE BEST ANSWER FOR THE QUESTION: WHAT DO YOU CELEBRATE ON THIS DAYS?": {
+        "October 31st. ___": "Halloween"
+    },
+    "COMPLETE AND CHOOSE THE BEST OPTION: NEW YEAR'S EVE IS CELEBRATED ON:": "December 31st",
+    "T2_BATCH:COMPLETE THE FOLLOWING SENTENCE WITH THE CORRECT VERB: (GIVE, BRING)": {
+        "You need to ___ a gift.": "bring"
+    },
+    "0:On December 31st we celebrate Christmas Party|1:On December 25th we celebrate Christmas": [
+        "False",
+        "True"
+    ],
+    "READ AND CHOOSE THE RIGHT OCCASION.": "Valentine's day",
+    "READ AND CHOOSE THE THINGS THAT YOU NEED FOR A PARTY.": "Invitation, food, music, place",
+    "T2_BATCH:CHOOSE THE BEST OPTION TO COMPLETE THE SENTENCE.": {
+        "Do not be late for your English exam. You ___ be at school on time.": "Must"
+    },
+    "T2_BATCH:CHOOSE THE BEST OPTION TO COMPLETE THE QUESTION.": {
+        "___ we leave or do you want to wait?": "do"
+    },
+    "T4:COMPLETE THE FOLLOWING SENTENCES USING THE INFORMATION PROVIDED.||do exercises|drink milk|sick|the dentist": [
+        "sick",
+        "drink milk",
+        "the dentist",
+        "do exercises"
+    ],
+    "READ THE ARTICLE. CHOOSE THE BEST OPTION TO ANSWER THE QUESTION: WHAT IS THE TOPIC ABOUT?": "General information about obesity",
+    "T8:LOOK AT THE PICTURES AND MATCH THEM WITH THE WORDS.||dancing|doing exercises|drink water": [
+        "dancing",
+        "drink water",
+        "doing exercises"
+    ],
+    "T4:READ AND MATCH SOME ADVICE WITH THE ADVISOR.||Doctor|Police officer|Teacher": [
+        "Doctor",
+        "Teacher",
+        "Police officer"
+    ],
+    "0:This is some advice 'You should see the doctor'.": [
+        "True"
+    ],
+    "T2_BATCH:COMPLETE WITH THE CORRECT PHRASES THE FOLLOWING EMAIL": {
+        "___ , Ana. I hope.": "Dear",
+        "You are ___ our meeting is about the Tuitions.": "doing well",
+        "It is becoming longer. Could you buy the snacks and drinks for them, please? ___": "thank you"
+    },
+    "CHOOSE THE BEST OPTION TO ANSWER THE QUESTION: HOW DID YOU NOT SEND A FORMAL LETTER?": "By hand",
+    "T4:IDENTIFY AND CHOOSE THE BEST OPTION FOR THE OPENING AND ENDING OF THESE EMAILS.||Ending|Opening": [
+        "Opening",
+        "Ending"
+    ],
+    "READ THE ACTIVITIES AND CHOOSE THE PHRASES OR WORDS USED TO WRITE LETTERS.": "Dear, thanks, see you",
+    "CHOOSE THE BEST OPTION TO COMPLETE INFORMATION: A FORMAL LETTER SHOULD START WITH THE FOLLOWING PHRASE:": "Dear Mrs. Bidden",
+    "CHOOSE THE BEST OPTION TO COMPLETE INFORMATION: START A FORMAL LETTER WITH:": "Dear Sir or Madam",
+    "T4:READ THESE 2 EMAILS. WHICH OF THEM ARE FORMAL OR INFORMAL?||Formal|Informal": [
+        "Informal",
+        "Formal"
+    ],
+    "CHOOSE THE BEST OPTION TO ANSWER THE FOLLOWING QUESTION: HAVE YOUR EVER WRITTEN A FORMAL LETTER?": "Yes, I have",
+    "0:An informal email is: It straight to the point, less detailed and it uses passive voice.": [
+        "False"
+    ],
+    "CHOOSE THE BEST OPTION TO ANSWER THE QUESTION: WHICH OF THE FOLLOWING WOULD BE A SUITABLE GREETING?": "Dear Mr. Hopkins",
+    "0:like|She|blading|roller|doesn't|2:likes|play|tennis|She": [
+        [
+            "She",
+            "doesn't",
+            "like",
+            "roller",
+            "blading"
+        ],
+        [
+            "She",
+            "likes",
+            "play",
+            "tennis"
+        ]
     ]
 }
