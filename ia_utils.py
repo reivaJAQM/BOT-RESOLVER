@@ -81,19 +81,22 @@ def obtener_orden_correcto(contexto, frases, titulo_pregunta=""):
     frases_texto = "\n".join(f'- "{f}"' for f in frases)
     contexto_real = contexto if contexto else titulo_pregunta
     if not contexto_real: contexto_real = "Forma una oración coherente." # Fallback
-    prompt = f"""Rol: Experto en gramática y orden de oraciones.
-Analiza la [Instrucción/Contexto] y las [Palabras Desordenadas].
-Forma una oración o frase coherente.
-Responde SÓLO con una lista Python que contenga TODAS las palabras en el orden correcto (texto exacto, sin añadir puntuación).
-IMPORTANTE: La lista de respuesta DEBE tener exactamente el mismo número de elementos que la lista de [Palabras Desordenadas]. No omitas ninguna palabra, ni siquiera los signos de puntuación como '?'.
+    prompt = f"""Rol: Reordenador de listas.
+Tu única tarea es reordenar los elementos de la [Lista Desordenada] para formar una oración coherente, basada en la [Instrucción].
+Responde SÓLO con una lista Python.
+    
+REGLAS ESTRICTAS:
+1.  La lista de respuesta debe contener el TEXTO EXACTO de los elementos de la [Lista Desordenada].
+2.  NO alteres, añadas, omitas o modifiques NINGÚN string (ej. si la lista te da "the stadium", DEBES usar "the stadium", NO "to the stadium").
+3.  La lista de respuesta debe tener exactamente {len(frases)} elementos.
 ---
-[Instrucción/Contexto]
+[Instrucción]
 {contexto_real}
 
-[Palabras Desordenadas]
+[Lista Desordenada]
 {frases_texto}
 ---
-Lista Ordenada (Debe tener {len(frases)} elementos):"""
+Lista Ordenada (Responde SÓLO con la lista Python):"""
     try:
         response = model.generate_content(prompt)
         # --- CORRECCIÓN GLOBAL ---

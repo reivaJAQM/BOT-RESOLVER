@@ -7,6 +7,7 @@
 import time
 import json
 import random
+import copy
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.edge.service import Service as EdgeService
@@ -131,6 +132,7 @@ try:
         lista_de_tareas_escribir = []; lista_palabras_desordenadas_raw = []; lista_frases_t11 = []
         imagen_hash = ""; audio_hash = ""; contexto_hash = "" # Añadimos reseteo de hashes
         # --- FIN MODIFICACIÓN HASH ---
+        respuesta_fue_incorrecta = False
 
         while True:
             # Use 12 spaces for indentation
@@ -271,7 +273,14 @@ try:
                             print(f"Warn: Contenedor {k+1} sin frases. Omitiendo.")
                             continue
                         print(f"      Tarea {k+1} Frases: {frases_des_individual}")
-                        clave_ind = "|".join(frases_des_individual)
+                        
+                        # --- ¡INICIO CORRECCIÓN CLAVE INESTABLE TIPO 1! ---
+                        # Ordenamos las frases alfabéticamente para crear una clave estable
+                        # que no dependa del orden en que Selenium las encuentre.
+                        frases_ordenadas_para_clave = sorted(frases_des_individual)
+                        clave_ind = "|".join(frases_ordenadas_para_clave) 
+                        # --- ¡FIN CORRECCIÓN CLAVE INESTABLE TIPO 1! ---
+                        
                         lista_de_claves_individuales.append(f"{k}:{clave_ind}")
                         lista_de_tareas_ordenar.append({"frases": frases_des_individual,"map_id_a_texto": map_id_a_texto_individual,"contenedor_elem": contenedor})
                     if not lista_de_tareas_ordenar: raise Exception("No se recolectaron tareas TIPO 1 válidas.")
@@ -300,18 +309,40 @@ try:
                     exito_global = True
                     js = "var c=arguments[0],ids=arguments[1],m={};for(let i=0;i<c.children.length;i++){let o=c.children[i],d=o.firstElementChild;if(d&&d.getAttribute('data-rbd-draggable-id')){m[d.getAttribute('data-rbd-draggable-id')]=o;}}while(c.firstChild)c.removeChild(c.firstChild);ids.forEach(id=>{if(m[id])c.appendChild(m[id]);else console.error('JS Err ID:',id);});console.log('JS OK.');"
                     for orden_ia, tarea in zip(lista_ordenes_ia, lista_de_tareas_ordenar):
-                        # --- ¡INICIO CORRECCIÓN MAPEO TIPO 1 (Case-Insensitive)! ---
-                        # 1. Creamos un mapa donde las CLAVES (texto original) están en minúscula
-                        map_texto_lower_a_id = {v.lower().strip(): k for k, v in tarea["map_id_a_texto"].items()}
                         
-                        # 2. Buscamos el ID usando la versión en minúscula de la respuesta de la IA
-                        ids_ok = [map_texto_lower_a_id.get(t.lower().strip()) for t in orden_ia]
+                        # --- ¡INICIO 2DA CORRECCIÓN MAPEO TIPO 1 (Manejo de Duplicados)! ---
                         
-                        # 3. Filtramos por si algún 'None' se coló
-                        ids_ok_filtrado = [id_val for id_val in ids_ok if id_val] 
+                        # 1. Creamos un mapa que almacena LISTAS de IDs por cada texto
+                        #    (para manejar frases duplicadas como 'going')
+                        map_texto_lower_a_ids_lista = {}
+                        for id_val, texto_val in tarea["map_id_a_texto"].items():
+                            texto_lower = texto_val.lower().strip()
+                            if texto_lower not in map_texto_lower_a_ids_lista:
+                                map_texto_lower_a_ids_lista[texto_lower] = []
+                            map_texto_lower_a_ids_lista[texto_lower].append(id_val)
                         
-                        if len(ids_ok_filtrado) != len(tarea["frases"]):
-                        # --- ¡FIN CORRECCIÓN MAPEO TIPO 1! ---
+                        # 2. Hacemos una copia para poder "consumir" los IDs con .pop()
+                        map_ids_disponibles = copy.deepcopy(map_texto_lower_a_ids_lista)
+                        
+                        ids_ok_filtrado = []
+                        mapeo_fallido = False
+                        
+                        # 3. Iteramos por la solución de la IA y consumimos los IDs
+                        for texto_ia in orden_ia:
+                            texto_ia_lower = texto_ia.lower().strip()
+                            
+                            if texto_ia_lower in map_ids_disponibles and map_ids_disponibles[texto_ia_lower]:
+                                # Tomamos el primer ID disponible y lo removemos de la lista
+                                id_para_usar = map_ids_disponibles[texto_ia_lower].pop(0)
+                                ids_ok_filtrado.append(id_para_usar)
+                            else:
+                                # Si la IA nos da un texto que no existe o ya se usaron todos sus IDs
+                                print(f"Error Mapeo T1: No hay ID disponible para '{texto_ia}' (Buscando: '{texto_ia_lower}')")
+                                mapeo_fallido = True
+                                break
+                        
+                        if mapeo_fallido or len(ids_ok_filtrado) != len(tarea["frases"]):
+                        # --- ¡FIN 2DA CORRECCIÓN MAPEO TIPO 1! ---
                             print(f"Error: Fallo mapeo IDs JS para tarea {tarea['frases']}"); exito_global = False; continue
                         try:
                             driver.execute_script(js, tarea["contenedor_elem"], ids_ok_filtrado); time.sleep(0.5)
@@ -997,6 +1028,7 @@ try:
                     # --- CASO 1: INCORRECTA ---
                     if "incorrect" in titulo_modal or "oops" in titulo_modal:
                         # Use 24 spaces for indentation
+                        respuesta_fue_incorrecta = True
                         print("      Respuesta INCORRECTA detectada. Buscando solución...")
                         contenido_modal = driver.find_element(*sel.SELECTOR_MODAL_CONTENIDO).text
                         preguntas_para_ia = None; opciones_para_ia = None; solucion_aprendida = None
@@ -1379,6 +1411,22 @@ try:
 
                 print("Clic OK..."); boton_ok.click()
                 print("Respuesta enviada! Esperando que desaparezca modal..."); wait_long.until(EC.invisibility_of_element_located(sel.SELECTOR_OK))
+
+                # --- ¡INICIO LÓGICA DE REFRESCO! ---
+                if respuesta_fue_incorrecta:
+                    print("      Respuesta fue incorrecta. Refrescando la página para resetear estado...")
+                    try:
+                        driver.refresh()
+                        # Damos tiempo a que la página cargue tras el refresco
+                        wait_long.until(EC.presence_of_element_located(sel.SELECTOR_CHECK))
+                        respuesta_fue_incorrecta = False # Reseteamos el flag
+                        pregunta_actual_texto = "" # Reseteamos el texto
+                        print("      Página refrescada. Reintentando...")
+                    except Exception as e_refresh:
+                        print(f"      ERROR CRÍTICO: No se pudo refrescar la página: {e_refresh}")
+                        raise # Detener el bot si no puede refrescar
+                # --- ¡FIN LÓGICA DE REFRESCO! ---
+
                 print("Modal desaparecido. Cargando siguiente pregunta..."); time.sleep(0.5)
 
             except (TimeoutException, Exception) as e:
