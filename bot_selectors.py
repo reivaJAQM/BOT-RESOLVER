@@ -68,3 +68,9 @@ SELECTOR_MARK_TF_TEXT = (By.XPATH, "//div[contains(@class, 'card')]//span[@class
 SELECTOR_MARK_TF_TRUE = (By.XPATH, "//div[contains(@class, 'card')]//button[normalize-space()='True']")
 SELECTOR_MARK_TF_FALSE = (By.XPATH, "//div[contains(@class, 'card')]//button[normalize-space()='False']")
 SELECTOR_AUDIO = (By.TAG_NAME, "audio")
+
+# --- Selectores para TIPO 10: Escribir Palabra Ordenada ---
+# Busca el <p> que contiene las letras desordenadas (ajusta si la clase cambia)
+SELECTOR_LETRAS_DESORDENADAS = (By.XPATH, "//p[contains(@class, 'text-justify') and contains(@class, 'uppercase')]") 
+# Busca el <input> de tipo texto donde se escribe la respuesta
+SELECTOR_INPUT_ESCRIBIR = (By.XPATH, "//input[@type='text'][contains(@class, 'shadow')]")

@@ -237,5 +237,90 @@
             "play",
             "tennis"
         ]
-    ]
+    ],
+    "0:like|She|roller|doesn't|blading|2:likes|tennis|She|play": [
+        [
+            "She",
+            "doesn't",
+            "like",
+            "roller",
+            "blading"
+        ],
+        [
+            "She",
+            "likes",
+            "play",
+            "tennis"
+        ]
+    ],
+    "0:blading|She|like|doesn't|roller|2:tennis|She|likes|play": [
+        [
+            "She",
+            "doesn't",
+            "like",
+            "roller",
+            "blading"
+        ],
+        [
+            "She",
+            "likes",
+            "play",
+            "tennis"
+        ]
+    ],
+    "T10_BATCH:ORDER AND FORM THE WORD ACCORDING TO THE SPORT.||CCEROS|GIPNPNGO|KBASBLLAET": [
+        "SOCCER",
+        "BASKETBALL",
+        "PINGPONG"
+    ],
+    "T2_BATCH:COMPLETE THE SENTENCES.": {
+        "She ___ listening to music.": "is",
+        "He ___ running today.": "is",
+        "I ___ snowboarding in Canada.": "am"
+    },
+    "LOOK AT THE PICTURE AND ANSWER THE QUESTION: WHAT IS SHE DOING?": "SHE IS WORKING ON THE COMPUTER.",
+    "0:Can I use my hands to play football?": [
+        "False"
+    ],
+    "0:roller|doesn't|She|blading|like|2:tennis|likes|play|She": [
+        [
+            "She",
+            "doesn't",
+            "like",
+            "roller",
+            "blading"
+        ],
+        [
+            "She",
+            "likes",
+            "play",
+            "tennis"
+        ]
+    ],
+    "T8:MATCH THE CORRECT THING WITH A LINE.||Basket|Bat|Cricket|Roller skates": [
+        "Bat",
+        "Cricket",
+        "Roller skates",
+        "Basket"
+    ],
+    "T2_BATCH:COMPLETE THE SENTENCE.": {
+        "I never do ___": "swimming",
+        "What do you need to play tennis? ___": "the racket"
+    },
+    "0:blading|doesn't|like|She|roller|2:She|likes|tennis|play": [
+        [
+            "She",
+            "doesn't",
+            "like",
+            "roller",
+            "blading"
+        ],
+        [
+            "She",
+            "likes",
+            "play",
+            "tennis"
+        ]
+    ],
+    "LOOK AT THE PICTURE AND COMPLETE THE SENTENCE: WE ARE PLAYING ________": "VOLLEYBALL"
 }

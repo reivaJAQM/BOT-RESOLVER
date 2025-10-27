@@ -765,3 +765,155 @@ Respuesta (Sólo la lista JSON ["opcion_correcta_1", "opcion_correcta_2", ...]):
         return None
     except Exception as e:
         print(f"Error API IA (Aprendizaje Lote Completar): {e}"); return None
+    
+def obtener_palabra_ordenada(letras_desordenadas):
+    """
+    Toma un string de letras desordenadas (ej. 'CCEROS') y le pide a la IA
+    que devuelva la palabra correcta (ej. 'SOCCER').
+    """
+    print(f"IA (Ordenar Palabra): Ordenando '{letras_desordenadas}'...")
+    # Limpiamos barras '/' y espacios por si acaso
+    letras_limpias = "".join(letras_desordenadas.split('/')).replace(" ", "")
+    
+    prompt = f"""
+Rol: Experto en anagramas y vocabulario.
+Analiza las [Letras Desordenadas].
+Encuentra la palabra correcta en inglés que se forma con esas letras.
+Responde SÓLO con la palabra ordenada.
+
+[Letras Desordenadas]:
+{letras_limpias}
+
+---
+Palabra Ordenada:
+"""
+    try:
+        response = model.generate_content(prompt)
+        respuesta_texto = obtener_texto_de_respuesta(response) # Usamos el extractor robusto
+        if respuesta_texto is None: return None
+
+        palabra_ordenada = respuesta_texto.strip().upper() # Convertimos a mayúsculas por consistencia
+        
+        # Validación simple: ¿usa las mismas letras? (Aproximado)
+        if sorted(palabra_ordenada) == sorted(letras_limpias.upper()):
+            print(f"IA (Ordenar Palabra) devolvió: '{palabra_ordenada}'")
+            return palabra_ordenada
+        else:
+            print(f"Error IA (Ordenar Palabra): La respuesta '{palabra_ordenada}' no usa las mismas letras que '{letras_limpias}'.")
+            # Devolvemos la respuesta de la IA igualmente, puede que la validación sea muy simple
+            return palabra_ordenada 
+            
+    except Exception as e:
+        print(f"Error API IA (Ordenar Palabra): {e}"); return None
+    
+# --- Funciones para TIPO 10 (Lote) ---
+
+def obtener_palabras_ordenadas_lote(lista_palabras_desordenadas):
+    """
+    Toma una lista de strings desordenados (ej. ['CCEROS', 'NITESN']) y pide a la IA
+    que devuelva una lista de las palabras correctas (ej. ['SOCCER', 'TENNIS']).
+    """
+    print(f"IA (Ordenar Palabra Lote): Ordenando {len(lista_palabras_desordenadas)} palabras...")
+    palabras_texto = "\n".join(f'- "{p}"' for p in lista_palabras_desordenadas)
+    
+    prompt = f"""
+Rol: Experto en anagramas y vocabulario.
+Analiza cada palabra en la [Lista de Palabras Desordenadas].
+Encuentra la palabra correcta en inglés que se forma con las letras de CADA palabra.
+Responde SÓLO con una lista JSON de strings, donde cada string es la palabra ordenada correcta, en el mismo orden que la lista original.
+
+[Lista de Palabras Desordenadas]:
+{palabras_texto}
+
+---
+Respuesta (Sólo la lista JSON de palabras ordenadas):
+"""
+    try:
+        response = model.generate_content(prompt)
+        respuesta_texto = obtener_texto_de_respuesta(response) 
+        if respuesta_texto is None: return None
+
+        if respuesta_texto.startswith("```json"): respuesta_texto = respuesta_texto[7:]
+        if respuesta_texto.endswith("```"): respuesta_texto = respuesta_texto[:-3]
+        respuesta_texto = respuesta_texto.strip()
+
+        if not respuesta_texto.startswith("[") or not respuesta_texto.endswith("]"):
+            print(f"IA (Ordenar Lote) no es lista: {respuesta_texto}"); return None
+        
+        lista_ordenada = json.loads(respuesta_texto)
+        
+        # Validación básica de longitud
+        if isinstance(lista_ordenada, list) and len(lista_ordenada) == len(lista_palabras_desordenadas):
+            # Convertir todo a mayúsculas para consistencia
+            lista_ordenada_upper = [str(p).strip().upper() for p in lista_ordenada]
+            print(f"IA (Ordenar Lote) devolvió: {lista_ordenada_upper}")
+            return lista_ordenada_upper
+        else:
+            print(f"IA (Ordenar Lote) inválida o longitud incorrecta. Resp: {lista_ordenada}"); return None
+            
+    except json.JSONDecodeError as e:
+        print(f"Error parse JSON IA (Ordenar Lote): {e}\nResp: {respuesta_texto}")
+        return None
+    except Exception as e:
+        print(f"Error API IA (Ordenar Lote): {e}"); return None
+
+def extraer_solucion_lote_escribir(texto_error_modal, palabras_desordenadas_lista):
+    """
+    Lee el texto de un modal de error para TIPO 10 (Escribir Lote) y extrae la secuencia correcta.
+    'palabras_desordenadas_lista' es la lista de palabras como se mostraron (ej. ['CCEROS', 'NITESN'])
+    Retorna una lista de strings: ["SOCCER", "TENNIS", ...]
+    """
+    print(f"IA (Aprendizaje Lote Escribir): Analizando texto de error...")
+    num_palabras = len(palabras_desordenadas_lista)
+    palabras_str = ", ".join(f'"{p}"' for p in palabras_desordenadas_lista)
+    
+    prompt = f"""
+Rol: Experto en extracción de datos.
+Analiza el [Texto de Error] de un pop-up. Este texto contiene la solución correcta para un ejercicio de ordenar letras y escribir {num_palabras} palabras.
+Las palabras desordenadas originales eran (en orden): {palabras_str}.
+
+Tu tarea es devolver SÓLO una lista JSON de strings, donde cada string es la palabra ORDENADA correcta, correspondiendo en orden a las palabras desordenadas originales.
+
+[Texto de Error]:
+"{texto_error_modal}"
+
+---
+Respuesta (Sólo la lista JSON ["PALABRA1", "PALABRA2", ...]):
+"""
+    try:
+        response = model.generate_content(prompt)
+        respuesta_texto = obtener_texto_de_respuesta(response) 
+        if respuesta_texto is None: return None
+
+        if respuesta_texto.startswith("```json"): respuesta_texto = respuesta_texto[7:]
+        if respuesta_texto.endswith("```"): respuesta_texto = respuesta_texto[:-3]
+        respuesta_texto = respuesta_texto.strip()
+
+        if not respuesta_texto.startswith("[") or not respuesta_texto.endswith("]"):
+            print(f"IA (Aprendizaje Lote Escribir) no es lista: {respuesta_texto}"); return None
+        
+        solucion_lista = json.loads(respuesta_texto)
+        
+        # Verificamos longitud
+        if isinstance(solucion_lista, list) and len(solucion_lista) == num_palabras:
+             # Convertir todo a mayúsculas para consistencia y validar letras (aprox)
+            respuestas_verificadas = []
+            for i, palabra_ia in enumerate(solucion_lista):
+                palabra_ia_upper = str(palabra_ia).strip().upper()
+                original_upper = palabras_desordenadas_lista[i].upper()
+                if sorted(palabra_ia_upper) == sorted("".join(original_upper.split('/')).replace(" ", "")):
+                     respuestas_verificadas.append(palabra_ia_upper)
+                else:
+                     print(f"IA (Aprendizaje Lote Escribir) WARN Tarea {i+1}: '{palabra_ia_upper}' no usa las mismas letras que '{original_upper}'. Se usará igualmente.")
+                     respuestas_verificadas.append(palabra_ia_upper) # Lo añadimos igual, puede ser un error de la web
+
+            print(f"IA (Aprendizaje Lote Escribir) extrajo: {respuestas_verificadas}")
+            return respuestas_verificadas
+        else:
+            print(f"IA (Aprendizaje Lote Escribir) inválido o incompleto: {solucion_lista}"); return None
+            
+    except json.JSONDecodeError as e:
+        print(f"Error parse JSON IA (Aprendizaje Lote Escribir): {e}\nResp: {respuesta_texto}")
+        return None
+    except Exception as e:
+        print(f"Error API IA (Aprendizaje Lote Escribir): {e}"); return None
