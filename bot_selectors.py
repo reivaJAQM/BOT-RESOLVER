@@ -30,7 +30,7 @@ SELECTOR_LINEAS_COMPLETAR = (By.XPATH, "//div[contains(@class,'card') and .//but
 SELECTOR_SPANS_LINEA = (By.XPATH, "./div/span[@class='inline-block']") # Completar (No usado directamente)
 SELECTOR_BOTONES_OPCION_COMPLETAR = (By.XPATH, ".//button[contains(@class,'text-gray-700')]") # Completar
 SELECTOR_CAJAS_TF = (By.XPATH, "//div[contains(@class, 'card')][.//button[normalize-space()='True']]") # True/False Múltiple
-SELECTOR_TEXTO_AFIRMACION_TF = (By.XPATH, ".//span[@class='inline-block'][1]") # True/False Múltiple
+SELECTOR_TEXTO_AFIRMACION_TF = (By.XPATH, ".//span[1]") # True/False Múltiple (Cambiado para ser más robusto)
 SELECTOR_BOTON_TRUE_TF = (By.XPATH, ".//button[normalize-space()='True']") # True/False Múltiple
 SELECTOR_BOTON_FALSE_TF = (By.XPATH, ".//button[normalize-space()='False']") # True/False Múltiple
 SELECTOR_DEFINICIONES_AZULES_XPATH = (By.XPATH, "//span[contains(@class, 'cardCheck')]") # Emparejar (Spans azules movibles)
@@ -64,7 +64,7 @@ SELECTOR_PALABRA_CLAVE_CSS = "h2" # Emparejar
 # SELECTOR_DESTINO_EMPAREJAR_CSS = "button" # Emparejar (No necesario con cola)
 
 # --- Selectores para TIPO 5: Single True/False ("Mark T/F") ---
-SELECTOR_MARK_TF_TEXT = (By.XPATH, "//div[contains(@class, 'card')]//span[@class='inline-block'][1]")
+SELECTOR_MARK_TF_TEXT = (By.XPATH, "//div[contains(@class, 'card')]//span[1]")
 SELECTOR_MARK_TF_TRUE = (By.XPATH, "//div[contains(@class, 'card')]//button[normalize-space()='True']")
 SELECTOR_MARK_TF_FALSE = (By.XPATH, "//div[contains(@class, 'card')]//button[normalize-space()='False']")
 SELECTOR_AUDIO = (By.TAG_NAME, "audio")
@@ -74,3 +74,8 @@ SELECTOR_AUDIO = (By.TAG_NAME, "audio")
 SELECTOR_LETRAS_DESORDENADAS = (By.XPATH, "//p[contains(@class, 'text-justify') and contains(@class, 'uppercase')]") 
 # Busca el <input> de tipo texto donde se escribe la respuesta
 SELECTOR_INPUT_ESCRIBIR = (By.XPATH, "//input[@type='text'][contains(@class, 'shadow')]")
+
+# --- Selectores para TIPO 11: Escribir desde Opciones ---
+# (Usa el mismo selector de INPUT que TIPO 10: SELECTOR_INPUT_ESCRIBIR)
+# Busca el texto <p> que está en la misma 'fila' (grid) que el input
+SELECTOR_FRASE_T11 = (By.XPATH, "./ancestor::div[contains(@class,'grid')]//p[1]")

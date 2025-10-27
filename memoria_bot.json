@@ -504,5 +504,611 @@
             "teacher"
         ]
     ],
-    "DEFAULT:READ AND CHOOOSE THE CORRECT SENTENCE.||CTX:Those is great house....Those is great house.||||That great house is.|That is a great house.|That is a house great.|Those is great house.": "That is a great house."
+    "DEFAULT:READ AND CHOOOSE THE CORRECT SENTENCE.||CTX:Those is great house....Those is great house.||||That great house is.|That is a great house.|That is a house great.|Those is great house.": "That is a great house.",
+    "T5:TRUE OR FALSE: MARK FELT GREAT AFTER EXERCISING AND HAD A PROTEIN SHAKE AFTER HIS WORKOUT.||CTX:True...True||False|True": "True",
+    "T5:TRUE OR FALSE: MARK ONLY DID A 15-MINUTE WORKOUT ON THE TREADMILL TODAY.||CTX:True...True||False|True": "False",
+    "T9:HOW OFTEN DOES MARK GO TO THE GYM?||CTX:Once a week...Once a week||||Once a week|Three times a week|Twice a week": "Three times a week",
+    "T9:WHAT DID MARK DO FIRST AT THE GYM?||CTX:Lifted weights...Lifted weights||||Did a workout on the treadmill|Lifted weights|Took a shower": "Did a workout on the treadmill",
+    "T5:TRUE OR FALSE: MARK'S WORKOUT ROUTINE INCLUDED LIFTING WEIGHTS BEFORE DOING THE TREADMILL EXERCISE.||CTX:True...True||False|True": "False",
+    "T9:HOW DOES MARK FEEL AFTER EXERCISING?||CTX:Tired and weak...Tired and weak||||Great|Hungry|Tired and weak": "Great",
+    "T4:FILL IN THE BLANKS||30|shower|three|weights": [
+        "three",
+        "30",
+        "weights",
+        "shower"
+    ],
+    "T9:WHAT DID MARK DO AFTER HIS WORKOUT?||CTX:Ate a meal...Ate a meal||||Ate a meal|Took a shower|Went for a run": "Took a shower",
+    "T9:HOW LONG DID MARK LIFT WEIGHTS?||CTX:15 minutes...15 minutes||||15 minutes|30 minutes|45 minutes": "30 minutes",
+    "T4:MATCH THE DEFINITION WITH THE ILLNESS.||An act of coughing|Feel ache in your stomach|Get red and hot|Have swollen throat": [
+        "An act of coughing",
+        "Get red and hot",
+        "Feel ache in your stomach",
+        "Have swollen throat"
+    ],
+    "DEFAULT:CHOOSE THE BEST OPTION TO ANSWER THE QUESTION: ARE YOU TAKING ANY MEDICATION LILY?||CTX:No. I am not...No. I am not||||No, I do no|No. I am not|Yes, only two tablets": "Yes, only two tablets",
+    "T8:IDENTIFY THE ILLNESSES ACCORDING TO EACH PICTURE. COMPLETE THEIR NAMES UNDER EACH PICTURE.||Headache|Stomachache|toothache": [
+        "Stomachache",
+        "Headache",
+        "toothache"
+    ],
+    "T8:LOOK AT THE PICTURES. DO YOU KNOW THESE ILLNESSES? COMPLETE THEIR NAMES UNDER EACH PICTURE.||Cough|Got fever|Toothache": [
+        "Cough",
+        "Got fever",
+        "Toothache"
+    ],
+    "DEFAULT:CHOOSE THE BEST OPTION TO ANSWER THE QUESTION: WHICH OF THE OPTIONS BELOW IS AN EXAMPLE OF TRANSMISSIBLE DISEASE?||CTX:Obesity...Obesity||||Cholera|Obesity|Tooth decay": "Cholera",
+    "DEFAULT:CHOOSE THE BEST OPTION TO ANSWER THE QUESTION: WHICH SYSTEM OF THE BODY IS INFECTED BY HIV?||CTX:Digestive...Digestive||||Digestive|Immune|Nervous": "Immune",
+    "DEFAULT:CHOOSE THE BEST OPTION TO ANSWER THE QUESTION: WHICH ILLNESSES DO YOU KNOW?||CTX:Cough...Cough||||Broken leg|Cough|Fever": "Cough",
+    "T2_BATCH:READ THE FORM AND WRITE TRUE OR FALSE NEXT TO THE STATEMENTS.( T OR F)||CTX:...": {
+        "Gerardo is forty years old ___": "FALSE",
+        "He is allergy to the salty food ___": "TRUE",
+        "He does not take any medicine ___": "FALSE",
+        "He lives in Portoviejo ___": "TRUE"
+    },
+    "T4:MATCH THE PHRASES ON THE LEFT WITH THE CORRECT ENDING ON THE RIGHT.||I could send your invitation.|not being able to attend your event.|the vaccination campaign.|your help with my homework.": [
+        "not being able to attend your event.",
+        "your help with my homework.",
+        "I could send your invitation.",
+        "the vaccination campaign."
+    ],
+    "DEFAULT:CHOOSE THE RIGHT OPTION TO COMPLETE THE INFORMATION: I AM ______ BUT YOU ARE SITTING ON MY SOFA.||CTX:Pardon...Pardon||||Excuse|Have|Pardon|Sorry": "Sorry",
+    "DEFAULT:CHOOSE THE RIGHT OPTION TO COMPLETE THE INFORMATION: THE CORRECT DEFINITION OF AN EMAIL IS ______||CTX:It is a method to exchanging messages through elec...to exchanging messages through electronic devices.||||It is a method to exchanging messages through electronic devices.|Written messages sending by post office": "It is a method to exchanging messages through electronic devices.",
+    "T4:MATCH THE PHRASES ON THE LEFT WITH THE APPROPRIATE RESPONSE ON THE RIGHT. CHOOSE BETWEEN 'THANKS' AND 'APOLOGY'.||apology|thanks": [
+        "thanks",
+        "apology"
+    ],
+    "DEFAULT:CHOOSE THE RIGHT OPTION TO COMPLETE THE INFORMATION: I WOULD LIKE TO ______ . FOR MY FAULT. I SHOULD NOT DONE HAVE THAT.||CTX:Forgive...Forgive||||Accept|Apologize|Forgive|Sorry": "Apologize",
+    "T2_BATCH:READ THE FOLLOWING EMAIL AND COMPLETE THE INFORMATION.||CTX:...": {
+        "The writer's name is ___": "Antonietta",
+        "The receiver's name is ___": "Mauricio"
+    },
+    "DEFAULT:CHOOSE THE RIGHT OPTION TO ANSWER THE QUESTION: WHICH ONE OF BELOW IS APOLOGIZING AND MAKING A PROMISE?||CTX:I am terribly sorry. I shouldn't have done that....I am terribly sorry. I shouldn't have done that.||||I am ashamed of being late.|I am terribly sorry. I shouldn't have done that.|Please forgive me to forget your birthday.": "I am terribly sorry. I shouldn't have done that.",
+    "DEFAULT:CHOOSE THE RIGHT OPTION TO COMPLETE THE INFORMATION: LINCON: I AM SO ______ . I AM LATE. THERE WAS SO MUCH TRAFFIC.||CTX:Excuse...Excuse||||Apologize|Excuse|Forgive|Sorry": "Sorry",
+    "DEFAULT:CHOOSE THE RIGHT OPTION TO COMPLETE THE INFORMATION: PLEASE ______ . MY SINCERE APOLOGIES FOR THE MISTAKE. IT WILL NOT HAPPEN AGAIN.||CTX:Pardon...Pardon||||Accept|Excuse|Have|Pardon": "Accept",
+    "DEFAULT:CHOOSE THE BEST OPTION: IS ANITA AKIMOTO FROM CHINA?||CTX:Yes, she does...Yes, she does||||No, she is not.|Yes, Anita is.|Yes, she does": "No, she is not.",
+    "DEFAULT:CHOOSE THE BEST OPTION: WHAT IS YOUR NATIONALITY?||CTX:I am Italian...I am Italian||||I am Italian|I am Italy|I am from Italian": "I am Italian",
+    "DEFAULT:CHOOSE THE BEST OPTION: WHERE ARE YOU FROM?||CTX:I am American...I am American||||I am American|I am United States|I am from the United States": "I am from the United States",
+    "DEFAULT:CHOOSE THE BEST OPTION: JUAN IS FROM MEXICO. HE IS||CTX:Korean...Korean||||Guatemalan|Korean|Mexican": "Mexican",
+    "DEFAULT:CHOOSE THE BEST OPTION: TAMARA IS FROM RUSSIA: SHE IS||CTX:Canadian...Canadian||||Canadian|Russa|Russian": "Russian",
+    "T2_BATCH:LOOK AT THE PICTURE (FLAG) AND THE INFORMATION PROVIDED TO FILL IN THE BLANKS||CTX:...": {
+        "My name is Liz. I am 22 years old. I was born in ___": "England",
+        "I am ___": "English"
+    },
+    "T4:COMPLETE THE SENTENCES WITH THE COUNTRIES ABOUT YOUR NATIONALITY.||AUSTRALIA|CHINA|ITALY": [
+        "AUSTRALIA",
+        "ITALY",
+        "CHINA"
+    ],
+    "T4:MATCH THE COLUMNS ABOUT ECUADOR AND ITS REGIONS.||Amazon or Orient Region|Coast or Litoral Region|Galapagos Islands|Highland Region": [
+        "Galapagos Islands",
+        "Coast or Litoral Region",
+        "Highland Region",
+        "Amazon or Orient Region"
+    ],
+    "T8:ACCORDING TO THESE PICTURES, IDENTIFY THE COUNTRIES: COMPLETE THE INFORMATION||Brazil|Colombia|Peru": [
+        "Brazil",
+        "Colombia",
+        "Peru"
+    ],
+    "T8:LOOK AT THE PICTURES. DO YOU KNOW WHICH COUNTRIES ARE THEM? CHOOSE THE RIGHT NAMES.||Brazil|Canada|Ecuador": [
+        "Ecuador",
+        "Canada",
+        "Brazil"
+    ],
+    "DEFAULT:CHOOSE THE BEST OPTION TO ANSWER THE QUESTION: WHAT IS YOUR FAVORITE DRINK?||CTX:Chicken soup...Chicken soup||||Chicken soup|Milkshake|jelly": "Milkshake",
+    "DEFAULT:CHOOSE THE RIGHT INGREDIENTS FOR PREPARING A CEVICHE.||CTX:Fish, lemon. Salt, oil, sugar, water...Fish, lemon. Salt, oil, sugar, water||||Fish, lemon. Salt, oil, sugar, water|Fish, water, salt, lemons, oil, tomatoes, onions, mustard|Fish, water, salt, oil, lemon, onions, tomatoes, honey": "Fish, water, salt, lemons, oil, tomatoes, onions, mustard",
+    "DEFAULT:CHOOSE THE INGREDIENTS TO PREPARE A 'TUNA SANDWICH'||CTX:Tuna fish, mustard, salt, lemons, bread...Tuna fish, mustard, salt, lemons, bread||||Tuna fish, mustard, lemon, sugar, tomatoes|Tuna fish, mustard, salt, lemons, bread|Tuna fish, tomatoes, onions, mustard, lemons": "Tuna fish, mustard, salt, lemons, bread",
+    "T8:LABEL THE PICTURES WITH THEIR NAMES.||Tomatoes|honey|meat": [
+        "Tomatoes",
+        "honey",
+        "meat"
+    ],
+    "DEFAULT:CHOOSE THE ADEQUATE OPTION TO ANSWER THE QUESTION: WHAT IS YOUR FAVORITE FOOD?||CTX:Shrimp soup...Shrimp soup||||Mustard|Shrimp soup|Sugar": "Shrimp soup",
+    "DEFAULT:CHOOSE THE CORRECT INGREDIENTS FOR MAKING AN OMELET ACCORDING TO THE RECIPE: TO PREPARE AN OMELETE, WE NEED THE FOLLOWING INGREDIENTS:||CTX:Eggs, salt, oil, vinegar, coke...Eggs, salt, oil, vinegar, coke||||Eggs, salt, oil, vinegar, coke|Oil, mustard, tomato sauce, candies|Salt, eggs, oil, bacon|Vinegar, mustard, eggs, tomato sauce, milk": "Salt, eggs, oil, bacon",
+    "DEFAULT:CHOOSE THE BEST OPTION TO COMPLETE THE INFORMATIO: A PERSON WHO PREPARES IN A RESTAURANT THE FOOD IS CALLED:||CTX:Chef...Chef||||Barman|Chef|Waiter": "Chef",
+    "DEFAULT:CHOOSE THE ADEQUATE OPTION TO COMPLETE THE INFORMATION: A PERSON WHO SERVES ALCOHOLIC BEVERAGES IN A RESTAURANT IS CALLED A:||CTX:Chef...Chef||||Barman|Chef|Waiter": "Barman",
+    "T4:LOOK AT THE TEXTS. IDENTIFY WHAT TYPE OF TEXTS ARE THEY? CHOOSE THE RIGHT ANSWER.||a letter|a recipe|a simple description": [
+        "a letter",
+        "a recipe",
+        "a simple description"
+    ],
+    "DEFAULT:CHOOSE AND CIRCLE THE RIGHT INGREDIENTS TO PREPARE “CEVICHE”.||CTX:Fish, lemons, vinegar, mustard, tomato sauce, salt...tard, tomato sauce, salt, honey, onions, cucumber.||||Fish, lemons, salt, oil, mustard, tomato sauce, onions.|Fish, lemons, vinegar, mustard, tomato sauce, salt, honey, onions, cucumber.": "Fish, lemons, salt, oil, mustard, tomato sauce, onions.",
+    "DEFAULT:LOOK AT THE PICTURE. WHAT MONTH OF THE YEAR IS IT?||CTX:January...January||||December|January|November": "December",
+    "DEFAULT:CHOOSE THE RIGHT OPTION TO ANSWER THE QUESTION: WHAT ARE THE TWO WEEKEND DAYS?||CTX:Thursday Friday...Thursday Friday||||Saturday Sunday|Thursday Friday": "Saturday Sunday",
+    "T2_BATCH:COMPLETE THE SENTENCE.||CTX:...": {
+        "I've been waiting for your phone call ___": "since yesterday"
+    },
+    "DEFAULT:CHOOSE THE RIGHT OPTION TO ANSWER THE QUESTION: WHAT DAY COMES BEFORE THURSDAY?||CTX:Friday...Friday||||Friday|Monday|Saturday|Wednesday": "Wednesday",
+    "T2_BATCH:CHOOSE THE BEST OPTION||CTX:...": {
+        "In which month do we celebrate Christmas? ___": "December",
+        "What is the first month of the year? ___": "January"
+    },
+    "DEFAULT:CHOOSE THE RIGHT OPTION TO ANSWER THE QUESTION: WHICH OF THE FOLLOWING SENTENCES IS CORRECT?||CTX:I'm so tired. I have worked since 6 o'clockthis mo...ed. I have worked since 6 o'clockthis morning ago!||||I'm so tired. I have been working for 6 o'clockthis morning!|I'm so tired. I have been working since 6 o'clock this morning!|I'm so tired. I have worked since 6 o'clockthis morning ago!": "I'm so tired. I have been working since 6 o'clock this morning!",
+    "DEFAULT:CHOOSE THE RIGHT OPTION TO ANSWER THE QUESTION: WHICH OF THE FOLLOWING SENTENCES IS CORRECT?||CTX:He has been writing that book now for two years....He has been writing that book now for two years.||||He has been writing that book now for two years.|He have been writes this book now for two years.": "He has been writing that book now for two years.",
+    "DEFAULT:CHOOSE THE BEST OPTION: WHAT PAIR OF DAYS ARE IN ORDER?||CTX:Thursday Sunday...Thursday Sunday||||Saturday Friday|Thursday Sunday|Tuesday Monday|Wednesday Thursday": "Wednesday Thursday",
+    "DEFAULT:CHOOSE THE RIGHT OPTION TO ANSWER THE QUESTION: IN WHICH MONTH DO WE CELEBRATE HALLOWEEN?||CTX:October...October||||November|October": "October",
+    "DEFAULT:CHOOSE THE MAIN IDEA: WHAT IS THE CONVESATION ABOUT?||CTX:The man is sick...The man is sick||||The man is sick|The man is very good|They are really good friends": "The man is sick",
+    "DEFAULT:CHOOSE THE CORRECT SENTENCE||CTX:In order to stay healthy, you need to exercise reg...r to stay healthy, you need to exercise regularly.||||In order to stay health, you need to exercise regularly.|In order to stay healthy, you need to exercise regularly.": "In order to stay healthy, you need to exercise regularly.",
+    "DEFAULT:CHOOSE THE RIGHT SENTENCE||CTX:I'm in good health....I'm in good health.||||I am in good healthy.|I'm in good health.": "I'm in good health.",
+    "0:day|I|of|eat|fruit|portions|5|every|2:leg|crutches|She's|her|needs|broken|and": [
+        [
+            "I",
+            "eat",
+            "5",
+            "portions",
+            "of",
+            "fruit",
+            "every",
+            "day"
+        ],
+        [
+            "She's",
+            "broken",
+            "her",
+            "leg",
+            "and",
+            "needs",
+            "crutches"
+        ]
+    ],
+    "T2_BATCH:CHOOSE THE CORRECT WORD||CTX:...": {
+        "The doctor gave me an ___ to relieve the pain.": "Injection",
+        "I have a headache. I'll take ___": "an aspirin"
+    },
+    "T2_BATCH:CHOOSE THE BEST OPTION.||CTX:...": {
+        "The lady has a fever and a cough. She is ___": "ill",
+        "He is sick. He does not have ___": "energy"
+    },
+    "T8:MATCH THE CORRECT THING WITH A LINE||I have the flu|I've got a terrible headache|I've got a terrible stomach": [
+        "I've got a terrible stomach",
+        "I've got a terrible headache",
+        "I have the flu"
+    ],
+    "DEFAULT:CHOOSE THE BEST OPTION TO ANSWER THE QUESTION: WHAT DO THESE PICTURES REPRESENT?||CTX:Feelings...Feelings||||Emoticons|Feelings|health problems": "health problems",
+    "0:Other healthy habits may make up for smoking.|1:There are good ways to manage stress without smoking.": [
+        "False",
+        "True"
+    ],
+    "T2_BATCH:LOOK AT THE PICTURE AND COMPLETE THE SENTENCE WITH FEVER/STOMACHACHE.||CTX:...": {
+        "I have a ___": "fever"
+    },
+    "DEFAULT:CHOOSE THE VERB CORRECTLY TO COMPLETE THE SENTENCE||CTX:Fligh_______ at eight...Fligh_______ at eight||||arrive|arrives|you arrive": "arrives",
+    "T4:MATCH THE INFORMATION TO COMPLETE THE SENTENCES||airport|beach|train station": [
+        "beach",
+        "airport",
+        "train station"
+    ],
+    "T2_BATCH:CHOOSE THE VERB CORRECTLY TO COMPLETE THE SENTENCE||CTX:...": {
+        "My family and I ___ to Madrid.": "travel"
+    },
+    "0:Flights|cheaper|are|in|winter|2:like|my|hotel|I|room": [
+        [
+            "Flights",
+            "are",
+            "cheaper",
+            "in",
+            "winter"
+        ],
+        [
+            "I",
+            "like",
+            "my",
+            "hotel",
+            "room"
+        ]
+    ],
+    "T2_BATCH:COMPLETE THE SENTENCE||CTX:...": {
+        "Robert takes a plane trip. Now he goes to the ___": "airport",
+        "The plane reached the destination on time. Now, the passengers ___ on the plane.": "disembark"
+    },
+    "0:Alberto travels to an island by motorcycle.|1:The subway has a train.|2:There are ships in the sea.": [
+        "False",
+        "True",
+        "True"
+    ],
+    "DEFAULT:CHOOSE THE BEST OPTION: WHICH SENTENCES IS CORRECT.||CTX:Every passenger is in his seat....Every passenger is in his seat.||||Every passenger are in his seat.|Every passenger has in his seat.|Every passenger is in his seat.": "Every passenger is in his seat.",
+    "T2_BATCH:CHOOSE DE BEST OPTION||CTX:...": {
+        "My mum and dad have booked a ___ Greece for our holidays this August.": "trip",
+        "Excuse me, I'm a bit lost. Can you tell me the best ___ to the bus station?": "way"
+    },
+    "T10_BATCH:COMPLETE THE WORDS WITH THE CORRECT VOWELS.||T_M_T_|_PPL_|_R_NG_|_V_C_D_": [
+        "APPLE",
+        "TOMATO",
+        "AVOCADO",
+        "ORANGE"
+    ],
+    "T2_BATCH:CHOOSE AND COMPLETE THE CORRECT ANSWER.||CTX:...": {
+        "The most common type of pasta is ___": "Spaghetti"
+    },
+    "0:are|and I|Tomorrow|my best friend|to eat|with chili|going|chicken wings": [
+        [
+            "Tomorrow",
+            "my best friend",
+            "and I",
+            "are",
+            "going",
+            "to eat",
+            "chicken wings",
+            "with chili"
+        ]
+    ],
+    "DEFAULT:CHOOSE THE RIGHT SENTENCE: WICH THE SENTENCES IS CORRECT.||CTX:I will go to eat rice and beans....I will go to eat rice and beans.||||I does go to eat rice and beans.|I were going to eat rice and beans.|I will go to eat rice and beans.": "I will go to eat rice and beans.",
+    "T2_BATCH:COMPLETE THE SENTENCES||CTX:...": {
+        "Let's buy ___ burgers for us.": "meat",
+        "My favorite food is ___ with salad.": "fish"
+    },
+    "T4:MATCH THE RIGHT THING WITH A LINE||banana|chili|fish|meat|rice|tomato": [
+        "chili",
+        "rice",
+        "fish",
+        "tomato",
+        "meat",
+        "banana"
+    ],
+    "DEFAULT:CHOOSE THE RIGHT OPTION ACCORDING TO THE REGISTRATION FORM. WHICH ASPECTS ARE ASKED IN A PATIENT REGISTRATION FORM?||CTX:PATIENT REGISTRATION FORM Name: __________________...__ Monthly ______ Occasionally ______ Never ______||||frequency of drugs|frequency of medication|medication, alcohol, drugs": "medication, alcohol, drugs",
+    "T2_BATCH:TRUE OR FALSE. ACCORDING TO THE REGISTRATION FORM AMONG THE CONDITIONS ARE:||CTX:PATIENT REGISTRATION FORM Name: __________________...__ Monthly ______ Occasionally ______ Never ______": {
+        "Cardiac disease, epilepsy, cancer, asthma, diabetes, psychiatric disorder and hypertension. ___": "TRUE"
+    },
+    "DEFAULT:READ THE PATIENT REGISTRATION FORM. WHAT INFORMATION DOES IT REQUEST? CHOOSE THE BEST OPTION.||CTX:PATIENT REGISTRATION FORM Name: __________________...__ Monthly ______ Occasionally ______ Never ______||||Academic information|Medical information|Personal information": "Medical information",
+    "T4:MATCH THE WORDS ACCORDING TO ANY CHARACTERISTIC IN COMMON.||asthma|inches|pounds|sick person": [
+        "sick person",
+        "inches",
+        "asthma",
+        "pounds"
+    ],
+    "T4:MATCH THE QUESTIONS WITH THEIR ANSWERS.||Because I feel very tired and I have a terrible back pain.|Carlos Alberto Mendoza|On August 29th, 1998|On Pedro Gual St. Portoviejo": [
+        "Carlos Alberto Mendoza",
+        "On August 29th, 1998",
+        "On Pedro Gual St. Portoviejo",
+        "Because I feel very tired and I have a terrible back pain."
+    ],
+    "DEFAULT:READ THIS SHORT ARTICLE. CHOOSE THE MAIN OPTION TO COMPLETE THE IDEA: THIS TEXT IS ABOUT||CTX:When you travel to your job or study center by usi...k while traveling if you do not meet one of these.||||People who commute to their job or university by bus.|People who don't like to travel by bus.|People who have terrible habits when they travel by bus.": "People who commute to their job or university by bus.",
+    "DEFAULT:READ THE PARAGRAPH. MATCH THE PARAGRAGH WITH THE RIGHT IDEA.||CTX:They start talking about the weather, politicians ...th the situation until you reach your destination.||||Children as passengers|Different unpleasant passengers|Passengers bigger than you|Passengers who like to talk a lot": "Passengers who like to talk a lot",
+    "T2_BATCH:READ THIS SHORT ARTICLE. COMPLETE THE SENTENCES WITH THE RIGHT INFORMATION.||CTX:When you travel to your job or study center by usi...k while traveling if you do not meet one of these.": {
+        "You can find ___ passengers in a bus.": "Talkative",
+        "___ passengers don't respect your space and they usually have a lot of hand luggage with them.": "Invader",
+        "There are ___ people that fall asleep on your shoulder.": "Unpleasant",
+        "___ passengers even ask for personal information.": "Unlikeable"
+    },
+    "DEFAULT:READ THE TEXT AGAIN AND ANSWER THE QUESTIONS: WHAT IS THE WORST HABIT OF AN INVADER?||CTX:When you travel to your job or study center by usi...k while traveling if you do not meet one of these.||||They don't respect your space .|They fall asleep on your shoulder.": "They don't respect your space .",
+    "DEFAULT:READ THE PARAGRAPH. MATCH THE PARAGRAGH WITH THE RIGHT IDEA.||CTX:When you travel to your job or study center by usi...t to you. Here there is a list of the most common:||||Children as passengers|Different unpleasant passengers|Passengers bigger than you|Passengers who like to talk a lot": "Different unpleasant passengers",
+    "DEFAULT:ACCORDING TO THE PICTURE, CHOOSE THE CORRECT OPTION: WHAT TYPE OF PASSENGER IS?||CTX:Quiet passenger...Quiet passenger||||Quiet passenger|Talkative passenger": "Quiet passenger",
+    "DEFAULT:READ THE TEXT AGAIN AND ANSWER THE QUESTIONS: WHAT DO THE CHILDREN USUALLY DO WHEN THEY TRAVEL BY BUS?||CTX:When you travel to your job or study center by usi...k while traveling if you do not meet one of these.||||They always were quiet.|They usually spend the time by moving around their seats and they cry a lot.": "They usually spend the time by moving around their seats and they cry a lot.",
+    "DEFAULT:READ THE PARAGRAPH. MATCH THE PARAGRAGH WITH THE RIGHT IDEA.||CTX:They are not necessarily big, but they take up all...kable that they even fall asleep on your shoulder.||||Children as passengers|Different unpleasant passengers|Passengers bigger than you|Passengers who like to talk a lot": "Passengers bigger than you",
+    "DEFAULT:READ THE PARAGRAPH. MATCH THE PARAGRAGH WITH THE RIGHT IDEA.||CTX:They usually spend the time by moving around their...k while traveling if you do not meet one of these.||||Children as passengers|Different unpleasant passengers|Passengers bigger than you|Passengers who like to talk a lot": "Children as passengers",
+    "0:Now, she helps people in the community.|One day, my grandmother didn't feel well.|After a few months, my granny felt better.|My grandmother started a routine.|Dr. Ponce recommended eating healthier and exercising.|She has tea meetings with friends on Friday afternoons.": [
+        [
+            "One day, my grandmother didn't feel well.",
+            "Dr. Ponce recommended eating healthier and exercising.",
+            "My grandmother started a routine.",
+            "After a few months, my granny felt better.",
+            "Now, she helps people in the community.",
+            "She has tea meetings with friends on Friday afternoons."
+        ]
+    ],
+    "DEFAULT:READ THE PARAGRAGH AND MATCH IT WITH THE IDEA THAT BEST DESCRIBE IT.||CTX:Dr. Ponce did some blood tests on my grandmother. ...ld exercise every day for thirty minutes at least.||||A special routine|Discovering the health problem|Last results|When the problem started": "Discovering the health problem",
+    "DEFAULT:READ THE PARAGRAGH AND MATCH IT WITH THE IDEA THAT BEST DESCRIBE IT.||CTX:Months went on and my grandmother feels better now...ey usually have a cup of tea on Friday afternoons.||||A special routine|Discovering the health problem|Last results|When the problem started": "Last results",
+    "DEFAULT:READ THE PARAGRAGH AND MATCH IT WITH THE IDEA THAT BEST DESCRIBE IT.||CTX:My granny wanted to feel better, so she followed h... finally, she went back home for a healthy dinner.||||A special routine|Discovering the health problem|Last results|When the problem started": "A special routine",
+    "0:Now, she helps people in the community.|She has tea meetings with friends on Friday afternoons.|One day, my grandmother didn't feel well.|Dr. Ponce recommended eating healthier and exercising.|My grandmother started a routine.|After a few months, my granny felt better.": [
+        [
+            "One day, my grandmother didn't feel well.",
+            "Dr. Ponce recommended eating healthier and exercising.",
+            "My grandmother started a routine.",
+            "After a few months, my granny felt better.",
+            "Now, she helps people in the community.",
+            "She has tea meetings with friends on Friday afternoons."
+        ]
+    ],
+    "DEFAULT:READ THE PARAGRAGH AND MATCH IT WITH THE IDEA THAT BEST DESCRIBE IT.||CTX:My grandmother is a well-liked person in the neigh...o see Dr. Ponce to know what the problem could be.||||A special routine|Discovering the health problem|Last results|When the problem started": "When the problem started",
+    "DEFAULT:READ THE TEXT AGAIN ANSWER THE FOLLOWING QUESTIONS: WHY DID MY GRANDMOTHER DECIDE TO VISIT DR PONCE?||CTX:My grandmother is a well-liked person in the neigh...ey usually have a cup of tea on Friday afternoons.||||Because she didn't feel so well.|Because she is the girlfriend of the Dr.|Because she wanted to a buy a pizza.": "Because she didn't feel so well.",
+    "0:The grandmother went to sleep when she started to feel bad.|1:Dr. Ponce did some blood tests to the grandmother.|2:Dr. Ponce advised her to eat healthy food and do exercises.": [
+        "False",
+        "True",
+        "True"
+    ],
+    "DEFAULT:READ THE TEXT. CHOOSE AN APPROPRIATE TITLE FOR IT.||CTX:My grandmother is a well-liked person in the neigh...ey usually have a cup of tea on Friday afternoons.||||A special routine|Blood test results|My grandmother's medical appointment": "A special routine",
+    "T4:MATCH THE HALVES TO COMPLETE THE SENTENCES.||eggs and tea for breakfast|for a healthy dinner|for one hour|with some chicken or fish": [
+        "eggs and tea for breakfast",
+        "with some chicken or fish",
+        "for one hour",
+        "for a healthy dinner"
+    ],
+    "DEFAULT:READ THE TEXT AGAIN AND CHOOSE THE CORRECT OPTION TO ANSWER THE QUESTIONS: WHY DID THE HARE LOSE THE RACE?||CTX:There was once a hare who made fun of a tortoise b... win the race. An Aesop’s Fable. Taken from Eureka||||Because the hare got sick.|Because the hare to take a little nap.|Because the tortoise wore turbo shoes.": "Because the hare to take a little nap.",
+    "DEFAULT:READ THE PARAGRAPH AND MATCH IT WITH THE BEST IDEA||CTX:\"I can get where I’m going sooner than you think,\"...e, and with that he challenged the hare to a race.||||Beginning of the fable|Crossing the finish line|Excessive hare's confidence|Tortoise's challenge": "Tortoise's challenge",
+    "DEFAULT:READ THE PARAGRAPH AND MATCH IT WITH THE BEST IDEA||CTX:The hare thought this was a great joke. The race b... nap while he waited for the tortoise to catch up.||||Beginning of the fable|Crossing the finish line|Excessive hare's confidence|Tortoise's challenge": "Crossing the finish line",
+    "T2_BATCH:MARK TRUE (T) OR FALSE (F)||CTX:There was once a hare who made fun of a tortoise b... win the race. An Aesop’s Fable. Taken from Eureka": {
+        "The race was in a park ___": "F",
+        "The hare wins the race ___": "F"
+    },
+    "DEFAULT:LOOK AT THE PICTURES. ANSWER THE QUESTION: WHAT IS THE FABLE THAT YOU REMEMBER WITH THIS PICTURE?||CTX:The ant and the grasshopper...The ant and the grasshopper||||The ant and the grasshopper|The hare and the tortoise|The mouse and the lion": "The hare and the tortoise",
+    "DEFAULT:READ THE TEXT AND COMPLETE THE SENTENCE: THE HARE MADE FUN OF A TORTOISE _______||CTX:There was once a hare who made fun of a tortoise b... win the race. An Aesop’s Fable. Taken from Eureka||||Because he was too slow.|Slowly and steadily.|Was soon far ahead.": "Because he was too slow.",
+    "T4:MATCH THE HALVES TO COMPLETE THE IDEAS.||I am going sonner than you think'|a little nap|crossing the finish line|get anywhere'": [
+        "get anywhere'",
+        "I am going sonner than you think'",
+        "a little nap",
+        "crossing the finish line"
+    ],
+    "T2_BATCH:COMPLETE THE SENTENCES WITH THE CORRECT PAST FORM||CTX:...": {
+        "THE MIXER BROKE DOWN WHEN I WAS ___ DINNER.": "COOKING"
+    },
+    "T2_BATCH:COMPLETE THE SENTENCES WITH THE PRESENT PERFECT FORM.||CTX:...": {
+        "PAUL ___ AN ACCIDENT.": "HAS HAD"
+    },
+    "DEFAULT:CHOOSE THE RIGHT SENTENCES WITH THE PRESENT CONTINUOUS FOR FUTURE||CTX:JIM IS TAKING THE DOG FOR A WALK TONIGHT....JIM IS TAKING THE DOG FOR A WALK TONIGHT.||||JIM IS TAKING THE DOG FOR A WALK TONIGHT.|JIM TAKES THE DOG FOR A WALK TONIGHT.": "JIM IS TAKING THE DOG FOR A WALK TONIGHT.",
+    "DEFAULT:CHOOSE THE RIGHT SENTENCES WITH THE PRESENT CONTINUOUS FOR FUTURE||CTX:ARE YOU READY FOR SCHOOL?...ARE YOU READY FOR SCHOOL?||||ARE YOU GETTING READY FOR NEXT CLASS?|ARE YOU READY FOR SCHOOL?": "ARE YOU GETTING READY FOR NEXT CLASS?",
+    "DEFAULT:CHOOSE THE RIGHT SENTENCES WITH THE PRESENT CONTINUOUS FOR FUTURE||CTX:WE ARE HAVING A STAFF MEETING NEXT MONDAY....WE ARE HAVING A STAFF MEETING NEXT MONDAY.||||WE ARE HAVING A STAFF MEETING NEXT MONDAY.|WE HAVE A STAFF MEETING NEXT MONDAY.": "WE ARE HAVING A STAFF MEETING NEXT MONDAY.",
+    "DEFAULT:CHOOSE THE RIGHT SENTENCES WITH THE PRESENT CONTINUOUS FOR FUTURE||CTX:I AM LEAVING TOMORROW....I AM LEAVING TOMORROW.||||I AM LEAVING TOMORROW.|I LEAVE TOMORROW.": "I AM LEAVING TOMORROW.",
+    "DEFAULT:CHOOSE THE RIGHT SENTENCES WITH THE PRESENT CONTINUOUS FOR FUTURE||CTX:THEY ARE PLANNING A TRIP TO PUYO NEXT YEAR....THEY ARE PLANNING A TRIP TO PUYO NEXT YEAR.||||THEY ARE PLANNING A TRIP TO PUYO NEXT YEAR.|THEY PLAN A TRIP TO PUYO.": "THEY ARE PLANNING A TRIP TO PUYO NEXT YEAR.",
+    "DEFAULT:CHOOSE THE RIGHT SENTENCES WITH THE PRESENT CONTINUOUS FOR FUTURE||CTX:LUIS AND ALBERT GOES TO THE BEACH....LUIS AND ALBERT GOES TO THE BEACH.||||LUIS AND ALBERT ARE GOING TO THE BEACH IN THE SUMMER.|LUIS AND ALBERT GOES TO THE BEACH.": "LUIS AND ALBERT ARE GOING TO THE BEACH IN THE SUMMER.",
+    "DEFAULT:CHOOSE THE RIGHT SENTENCES WITH THE PRESENT CONTINUOUS FOR FUTURE||CTX:I AM STUDYING FOR THE EXAM THIS WEEKEND....I AM STUDYING FOR THE EXAM THIS WEEKEND.||||I AM STUDYING FOR THE EXAM THIS WEEKEND.|I AM STUDYING FOR THE EXAM.": "I AM STUDYING FOR THE EXAM THIS WEEKEND.",
+    "DEFAULT:CHOOSE THE RIGHT SENTENCES WITH THE PRESENT CONTINUOUS FOR FUTURE||CTX:I SEND MY CURRICULUM VITAE TOMORROW....I SEND MY CURRICULUM VITAE TOMORROW.||||I AM SENDING MY CURRICULUM VITAE TOMORROW.|I SEND MY CURRICULUM VITAE TOMORROW.": "I AM SENDING MY CURRICULUM VITAE TOMORROW.",
+    "DEFAULT:CHOOSE THE RIGHT SENTENCES WITH THE PRESENT CONTINUOUS FOR FUTURE||CTX:I WILL GO TO THE PARTY IN THE EVENING....I WILL GO TO THE PARTY IN THE EVENING.||||I AM GOING TO THE PARTY IN THE EVENING.|I WILL GO TO THE PARTY IN THE EVENING.": "I AM GOING TO THE PARTY IN THE EVENING.",
+    "T2_BATCH:CHOOSE THE BEST OPTION TO COMPLEMENT THE CLAUSES.||CTX:...": {
+        "I SELECT A MOVIE ___ THE KIDS COME HOME.": "WHEN",
+        "I PICK UP SOME SNACKS ___ MY FATHER ARRIVES.": "BEFORE",
+        "___ WE LEFT, WE VISITED OUR FRIENDS.": "BEFORE",
+        "___ I MADE THE PRESENTATION, I HAD PRACTICED IT.": "BEFORE",
+        "___ I TOOK A SHOWER, I DRESSED UP.": "AFTER",
+        "FIRST, I GET UP ___ THAT I GET A SHOWER.": "AFTER",
+        "___ I AM OLD ENOUGH. I WANT TO HAVE MY OWN COMPANY.": "BEFORE",
+        "___ SOMEBODY TAKES MY STUFF, I GET REALLY ANGRY.": "WHEN",
+        "SHE BRUSHED HER TEETH ___ SHE WENT TO SLEEP.": "BEFORE",
+        "___ WE HAVE DISCUSSED THE PROBLEM, WE CAN MAKE A DECISION.": "AFTER"
+    },
+    "T9:HOW MUCH DOES IT COST TO SEND THE PACKAGE?||CTX:Five dollars...Five dollars||||Fifteen dollars|Five dollars|Ten dollars": "Ten dollars",
+    "T9:WHY DID EMILY GO TO THE POST OFFICE?||CTX:To buy stamps...To buy stamps||||To buy stamps|To send a package|To withdraw money": "To send a package",
+    "T9:WHO IS THE PACKAGE FOR?||CTX:Emily’s colleague...Emily’s colleague||||Emily’s colleague|Her family member|Her friend": "Her friend",
+    "T9:HOW MIGHT EMILY HAVE FELT AFTER THE POST OFFICE CLERK HELPED HER WITH THE FORMS?||CTX:Frustrated due to the extra effort required....Frustrated due to the extra effort required.||||Frustrated due to the extra effort required.|Indifferent as it was part of her routine.|Relieved because she received assistance.": "Relieved because she received assistance.",
+    "T5:TRUE OR FALSE: EMILY’S PACKAGE IS EXPECTED TO ARRIVE IN TWO WEEKS.||CTX:True...True||False|True": "False",
+    "T9:BASED ON THE AUDIO, WHY MIGHT EMILY HAVE CHOSEN TO SEND THE PACKAGE VIA THE POST OFFICE RATHER THAN ANOTHER METHOD?||CTX:She might have wanted a more personal delivery....She might have wanted a more personal delivery.||||She might have wanted a more personal delivery.|The post office offered the most affordable shipping option.|The post office was the only option available.": "The post office offered the most affordable shipping option.",
+    "T9:HOW MUCH DOES THE PACKAGE WEIGH?||CTX:One kilogram...One kilogram||||One kilogram|Three kilograms|Two kilograms": "Two kilograms",
+    "T9:HOW LONG WILL IT TAKE FOR THE PACKAGE TO ARRIVE?||CTX:A few days...A few days||||A few days|A week|Two weeks": "A week",
+    "T9:BASED ON TOM’S REVIEW, WHICH OF THE FOLLOWING STATEMENTS ABOUT THE STEAK AND VEGETABLES CAN BE INFERRED?||CTX:The steak was overcooked and the vegetables were b...teak was overcooked and the vegetables were bland.||||The steak was cooked to Tom’s liking, and the vegetables were of high quality.|The steak was overcooked and the vegetables were bland.|The steak was undercooked, but Tom liked the vegetables.": "The steak was cooked to Tom’s liking, and the vegetables were of high quality.",
+    "T9:CONSIDERING TOM’S DESCRIPTION OF THE MEAL AND SERVICE, WHAT MIGHT BE INFERRED ABOUT HIS OVERALL DINING EXPERIENCE?||CTX:He found the experience unsatisfactory due to high...d the experience unsatisfactory due to high costs.||||He found the experience unsatisfactory due to high costs.|He thought the meal was average but was indifferent to the service.|He was likely impressed with both the quality of the food and the level of service.": "He was likely impressed with both the quality of the food and the level of service.",
+    "T9:HOW MUCH WAS THE TOTAL BILL?||CTX:Fifteen dollars...Fifteen dollars||||Fifteen dollars|Thirty-five dollars|Twenty-five dollars": "Twenty-five dollars",
+    "T9:HOW WAS THE SERVICE AT THE RESTAURANT?||CTX:Poor...Poor||||Average|Excellent|Poor": "Excellent",
+    "T9:WHAT DID TOM ORDER FOR DINNER?||CTX:Pizza and soda...Pizza and soda||||Pasta and water|Pizza and soda|Steak with vegetables and red wine": "Steak with vegetables and red wine",
+    "T5:TRUE OR FALSE: TOM HAD A STEAK AND A DESSERT WITH HIS DINNER.||CTX:True...True||False|True": "False",
+    "T9:WHAT WAS TOM’S DRINK?||CTX:White wine...White wine||||Beer|Red wine|White wine": "Red wine",
+    "T9:HOW WAS THE STEAK COOKED?||CTX:Overcooked...Overcooked||||Overcooked|Perfectly cooked|Raw": "Perfectly cooked",
+    "0:MP3|this|player|brother's|my|isn't|2:are|neighbors|those|my|4:is|Miguel's|teacher|that": [
+        [
+            "This",
+            "isn't",
+            "my",
+            "brother's",
+            "MP3",
+            "player"
+        ],
+        [
+            "Those",
+            "are",
+            "my",
+            "neighbors"
+        ],
+        [
+            "That",
+            "is",
+            "Miguel's",
+            "teacher"
+        ]
+    ],
+    "0:phone|is|your|this|2:these|are|her|keys|4:these|Simon's|are|photos|6:card|is|Andy's|that|school|ID": [
+        [
+            "this",
+            "is",
+            "your",
+            "phone"
+        ],
+        [
+            "These",
+            "are",
+            "her",
+            "keys"
+        ],
+        [
+            "These",
+            "are",
+            "Simon's",
+            "photos"
+        ],
+        [
+            "That",
+            "is",
+            "Andy's",
+            "school",
+            "ID",
+            "card"
+        ]
+    ],
+    "0:isn't|player|my|brother's|MP3|this|2:my|neighbors|those|are|4:Miguel's|that|is|teacher": [
+        [
+            "this",
+            "isn't",
+            "my",
+            "brother's",
+            "MP3",
+            "player"
+        ],
+        [
+            "Those",
+            "are",
+            "my",
+            "neighbors"
+        ],
+        [
+            "that",
+            "is",
+            "Miguel's",
+            "teacher"
+        ]
+    ],
+    "0:your|phone|is|this|2:are|her|keys|these|4:Simon's|are|photos|these|6:Andy's|school|ID|card|is|that": [
+        [
+            "this",
+            "is",
+            "your",
+            "phone"
+        ],
+        [
+            "These",
+            "are",
+            "her",
+            "keys"
+        ],
+        [
+            "These",
+            "are",
+            "Simon's",
+            "photos"
+        ],
+        [
+            "That",
+            "is",
+            "Andy's",
+            "school",
+            "ID",
+            "card"
+        ]
+    ],
+    "DEFAULT:READ AND SELECT THE CORRECT SENTENCE.||CTX:THAT IS MY FATHER....THAT IS MY FATHER.||||THAT IS MY FATHER.|THOSE IS MY FATHER.": "THAT IS MY FATHER.",
+    "DEFAULT:READ AND SELECT THE CORRECT SENTENCE.||CTX:THIS ARE MY SISTERS....THIS ARE MY SISTERS.||||THESE ARE MY SISTERS.|THIS ARE MY SISTERS.": "THESE ARE MY SISTERS.",
+    "DEFAULT:READ AND SELECT THE CORRECT SENTENCE.||CTX:THIS IS A BEAUTIFUL CITY....THIS IS A BEAUTIFUL CITY.||||THESE IS A BEATIFUL CITY.|THIS IS A BEAUTIFUL CITY.": "THIS IS A BEAUTIFUL CITY.",
+    "DEFAULT:READ AND SELECT THE CORRECT SENTENCE.||CTX:THIS IS MY HOUSE....THIS IS MY HOUSE.||||THESE IS MY HOUSE.|THIS IS MY HOUSE.": "THIS IS MY HOUSE.",
+    "0:player|isn't|MP3|brother's|my|this|2:neighbors|are|those|my|4:Miguel's|is|that|teacher": [
+        [
+            "This",
+            "isn't",
+            "my",
+            "brother's",
+            "MP3",
+            "player"
+        ],
+        [
+            "Those",
+            "are",
+            "my",
+            "neighbors"
+        ],
+        [
+            "That",
+            "is",
+            "Miguel's",
+            "teacher"
+        ]
+    ],
+    "0:phone|is|this|your|2:keys|her|these|are|4:Simon's|photos|these|are|6:Andy's|ID|card|school|is|that": [
+        [
+            "this",
+            "is",
+            "your",
+            "phone"
+        ],
+        [
+            "these",
+            "are",
+            "her",
+            "keys"
+        ],
+        [
+            "these",
+            "are",
+            "Simon's",
+            "photos"
+        ],
+        [
+            "that",
+            "is",
+            "Andy's",
+            "school",
+            "ID",
+            "card"
+        ]
+    ],
+    "DEFAULT:READ AND SELECT THE CORRECT SENTENCE.||CTX:THESE ARE MY FRIENDS....THESE ARE MY FRIENDS.||||THESE ARE MY FRIENDS.|THIS ARE MY FRIENDS.": "THESE ARE MY FRIENDS.",
+    "DEFAULT:READ AND SELECT THE CORRECT SENTENCE.||CTX:THAT CAR IS RED....THAT CAR IS RED.||||THAT CAR IS RED.|THOSE CAR IS RED.": "THAT CAR IS RED.",
+    "T2_BATCH:READ AND SELECT THE CORRECT OPTION.||CTX:...": {
+        "___ books are blue.": "These",
+        "___ pencil is new.": "This",
+        "___ pencils are new.": "These",
+        "___ book is purple.": "That",
+        "___ car is old.": "That"
+    },
+    "T2_BATCH:READ THE WORDS AND ACCORTHING TO THEM CHOOSE THE CORRECT DEMONSTRATIVE PRONOUNS.||CTX:...": {
+        "___ bike.": "That",
+        "___ car.": "This",
+        "___ clouds.": "These",
+        "___ trees.": "Those"
+    },
+    "0:my|isn't|MP3|player|brother's|this|2:my|those|are|neighbors|4:Miguel's|that|teacher|is": [
+        [
+            "This",
+            "isn't",
+            "my",
+            "brother's",
+            "MP3",
+            "player"
+        ],
+        [
+            "Those",
+            "are",
+            "my",
+            "neighbors"
+        ],
+        [
+            "that",
+            "is",
+            "Miguel's",
+            "teacher"
+        ]
+    ],
+    "0:this|phone|your|is|2:her|these|are|keys|4:these|are|photos|Simon's|6:ID|Andy's|is|school|that|card": [
+        [
+            "this",
+            "is",
+            "your",
+            "phone"
+        ],
+        [
+            "These",
+            "are",
+            "her",
+            "keys"
+        ],
+        [
+            "These",
+            "are",
+            "Simon's",
+            "photos"
+        ],
+        [
+            "That",
+            "is",
+            "Andy's",
+            "school",
+            "ID",
+            "card"
+        ]
+    ],
+    "DEFAULT:READ AND SELECT THE CORRECT SENTENCE.||CTX:THOSE PENCILS ARE MINE....THOSE PENCILS ARE MINE.||||THAT PENCILS ARE MINE.|THOSE PENCILS ARE MINE.": "THOSE PENCILS ARE MINE.",
+    "T4:READ THE SENTENCES AND SELECT THE DEMONSTRATIVE PRONOUNS FROM THE BOX TO COMPLETE THEM.||That|These|This|Those": [
+        "This",
+        "Those",
+        "That",
+        "These"
+    ],
+    "DEFAULT:READ AND SELECT THE CORRECT SENTENCE.||CTX:That are the new English teachers....That are the new English teachers.||||That are the new English teachers.|This is the new English teachers.|Those are the new English teachers.|Those is the new English teachers.": "Those are the new English teachers.",
+    "T2_BATCH:READ THE SENTENCES AND CHOOSE THE CORRECT PREPOSITION FOR EACH SENTENCE.||CTX:...": {
+        "My son is ___ school today.": "at",
+        "We always go to school ___ foot.": "on",
+        "There are four cats ___ the roof.": "on",
+        "The party is ___ the second floor.": "in"
+    },
+    "T4:READ THE SENTENCES AND SELECT THE DEMONSTRATIVE PRONOUNS FROM THE BOX TO COMPLETE THEM.||am|are|is|isn't": [
+        "is",
+        "are",
+        "am",
+        "isn't"
+    ],
+    "DEFAULT:IN THE FOLLOWING PICTURE, COMPLETE THE SENTENCES WITH THE CORRECT PREPOSITION OF PLACE.||CTX:1.ON 2.IN 3.NEXT TO 4.UNDER 5.BEHIND 6.IN FRONT OF...1.ON 2.IN 3.NEXT TO 4.UNDER 5.BEHIND 6.IN FRONT OF||||1.IN 2.ON 3.NEXT TO 4.UNDER 5.BEHIND 6.IN FRONT OF|1.ON 2.IN 3.NEXT TO 4.BEHIND 5.UNDER 6.IN FRONT OF|1.ON 2.IN 3.NEXT TO 4.UNDER 5.BEHIND 6.IN FRONT OF": "1.ON 2.IN 3.NEXT TO 4.UNDER 5.BEHIND 6.IN FRONT OF"
 }

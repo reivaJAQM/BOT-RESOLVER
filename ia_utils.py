@@ -77,9 +77,22 @@ def obtener_respuesta_opcion_multiple(contexto, pregunta, opciones):
         print("No coincidencia."); return None
     except Exception as e: print(f"Error API (OM): {e}"); return None
 
-def obtener_orden_correcto(contexto, frases):
+def obtener_orden_correcto(contexto, frases, titulo_pregunta=""):
     frases_texto = "\n".join(f'- "{f}"' for f in frases)
-    prompt = f'Rol: Experto en ordenar eventos.\nAnaliza contexto, ordena frases. Responde SÓLO lista Python frases ordenadas (texto exacto).\n---\n[Contexto]\n{contexto}\n\n[Frases desordenadas]\n{frases_texto}\n---\nLista Ordenada:'
+    contexto_real = contexto if contexto else titulo_pregunta
+    if not contexto_real: contexto_real = "Forma una oración coherente." # Fallback
+    prompt = f"""Rol: Experto en gramática y orden de oraciones.
+Analiza la [Instrucción/Contexto] y las [Palabras Desordenadas].
+Forma una oración o frase coherente.
+Responde SÓLO con una lista Python que contenga las palabras en el orden correcto (texto exacto, sin añadir puntuación).
+---
+[Instrucción/Contexto]
+{contexto_real}
+
+[Palabras Desordenadas]
+{frases_texto}
+---
+Lista Ordenada:"""
     try:
         response = model.generate_content(prompt)
         # --- CORRECCIÓN GLOBAL ---
@@ -92,9 +105,30 @@ def obtener_orden_correcto(contexto, frases):
         respuesta_texto = respuesta_texto.strip()
         
         if not respuesta_texto.startswith("[") or not respuesta_texto.endswith("]"): print(f"IA (Ord) no es lista: {respuesta_texto}"); return None
+        
         lista_ordenada = ast.literal_eval(respuesta_texto)
-        if isinstance(lista_ordenada, list) and len(lista_ordenada) == len(frases) and all(f in lista_ordenada for f in frases): return lista_ordenada
-        else: print(f"IA (Ord) inválida o incompleta."); return None
+        
+        # --- ¡INICIO CORRECCIÓN VALIDACIÓN TIPO 1 (Case-Insensitive)! ---
+        if not isinstance(lista_ordenada, list):
+            print(f"IA (Ord) no es lista."); return None
+            
+        if len(lista_ordenada) != len(frases):
+            print(f"IA (Ord) longitud no coincide: {len(lista_ordenada)} vs {len(frases)}"); return None
+
+        # Comparamos en minúsculas para evitar fallos por capitalización
+        # Usamos sorted() en ambas para asegurar que la comparación sea de contenido, no de orden
+        frases_lower_sorted = sorted([f.lower().strip() for f in frases])
+        lista_ordenada_lower_sorted = sorted([l.lower().strip() for l in lista_ordenada])
+
+        if frases_lower_sorted == lista_ordenada_lower_sorted:
+            # Si las listas (normalizadas y ordenadas) son idénticas, la respuesta es válida.
+            # Devolvemos la lista ORIGINAL (con mayúsculas/minúsculas) de la IA.
+            return lista_ordenada
+        else:
+            print(f"IA (Ord) inválida o incompleta. Frases: {frases_lower_sorted} vs Resp: {lista_ordenada_lower_sorted}"); 
+            return None
+        # --- FIN CORRECCIÓN VALIDACIÓN TIPO 1 ---
+
     except (SyntaxError, ValueError) as e: print(f"Error parse IA (Ord): {e}\nResp: {respuesta_texto}"); return None
     except Exception as e: print(f"Error API (Ord): {e}"); return None
 
@@ -137,20 +171,21 @@ def obtener_true_false(contexto, afirmacion):
     except Exception as e: print(f"Error API IA (T/F): {e}"); return None
 
 def obtener_emparejamientos(palabras, definiciones):
-    palabras_texto = "\n".join(f"- {p}" for p in palabras)
-    definiciones_texto = "\n".join(f'- "{d}"' for d in definiciones)
+    palabras_texto = "\n".join(f"{p}" for p in palabras) # <-- Sin "- "
+    definiciones_texto = "\n".join(f'"{d}"' for d in definiciones) # <-- Sin "- "
     prompt = f"""
 Rol: Experto en emparejamientos.
 Analiza [Lista_Clave] (los destinos fijos) y [Lista_Opciones] (las opciones movibles).
 Determina qué Opción corresponde a cada Clave.
-Responde SÓLO con un diccionario Python {{clave_exacta: opcion_correcta_exacta}}.
+Responde SÓLO con un diccionario Python.
+IMPORTANTE: Las claves (keys) del diccionario deben ser el TEXTO EXACTO de la [Lista_Clave], sin añadir, quitar o modificar caracteres (ni paréntesis, comas, etc.).
 ---
 [Lista_Clave]
 {palabras_texto}
 [Lista_Opciones]
 {definiciones_texto}
 ---
-Diccionario de Pares ({{clave: opcion}}):
+Diccionario de Pares ({{clave_exacta_de_lista_clave: opcion_correcta}}):
 """
     try:
         response = model.generate_content(prompt)
@@ -164,7 +199,12 @@ Diccionario de Pares ({{clave: opcion}}):
         if respuesta_texto.endswith("```"): respuesta_texto = respuesta_texto[:-3]
         respuesta_texto = respuesta_texto.strip()
         if not respuesta_texto.startswith("{") or not respuesta_texto.endswith("}"): print(f"IA (Emp) no es dicc: {respuesta_texto}"); return None
-        pares = json.loads(respuesta_texto)
+        
+        # --- ¡CAMBIO AQUÍ! ---
+        # Usamos ast.literal_eval en lugar de json.loads para 
+        # aceptar las comillas simples que devuelve la IA.
+        pares = ast.literal_eval(respuesta_texto) 
+        
         if (isinstance(pares, dict) and 
             len(pares) == len(palabras) and 
             all(p in pares for p in palabras) and 
@@ -173,7 +213,9 @@ Diccionario de Pares ({{clave: opcion}}):
         else: 
             print(f"IA (Emp) inválido o incompleto. Resp: {respuesta_texto}"); 
             return None
-    except json.JSONDecodeError as e: print(f"Error parse JSON IA (Emp): {e}\nResp: {respuesta_texto}"); return None
+    
+    # --- ¡Y CAMBIO AQUÍ! ---
+    except (SyntaxError, ValueError) as e: print(f"Error parse AST IA (Emp): {e}\nResp: {respuesta_texto}"); return None
     except Exception as e: print(f"Error API IA (Emp): {e}"); return None
 
 def obtener_true_false_lote(contexto, afirmaciones_lista):
@@ -917,3 +959,108 @@ Respuesta (Sólo la lista JSON ["PALABRA1", "PALABRA2", ...]):
         return None
     except Exception as e:
         print(f"Error API IA (Aprendizaje Lote Escribir): {e}"); return None
+    
+# --- Funciones para TIPO 11 (Escribir desde Opciones) ---
+
+def obtener_respuestas_escribir_opciones_lote(contexto, titulo_pregunta, tareas_lista):
+    """
+    Toma una lista de frases incompletas (ej. 'The party is ___ Friday') y
+    usa el título (ej. '...USING IN - ON - AT') para encontrar las opciones
+    y rellenar los huecos.
+    """
+    print(f"IA (Escribir Opciones Lote): Enviando {len(tareas_lista)} frases...")
+    tareas_texto = "\n".join(f'- "{t["frase"]}"' for t in tareas_lista)
+    # Usamos el título como contexto principal porque contiene las opciones (IN, ON, AT)
+    contexto_real = titulo_pregunta if titulo_pregunta else contexto
+    if not contexto_real: contexto_real = "Complete the sentence"
+    
+    prompt = f"""Rol: Experto en gramática y preposiciones.
+Analiza la [Instrucción/Contexto] para determinar las opciones de palabras (ej: IN, ON, AT, BEFORE, AFTER, etc.).
+Luego, para cada [Tarea], completa la frase (donde está '___') usando SÓLO una de esas opciones.
+Responde SÓLO con una lista JSON de strings (las palabras correctas), en el mismo orden que la lista de tareas.
+
+[Instrucción/Contexto]:
+{contexto_real}
+
+[Lista de Tareas]:
+{tareas_texto}
+---
+Respuesta (Sólo la lista JSON):
+"""
+    try:
+        response = model.generate_content(prompt)
+        respuesta_texto = obtener_texto_de_respuesta(response) 
+        if respuesta_texto is None: return None
+
+        if respuesta_texto.startswith("```json"): respuesta_texto = respuesta_texto[7:]
+        if respuesta_texto.endswith("```"): respuesta_texto = respuesta_texto[:-3]
+        respuesta_texto = respuesta_texto.strip()
+
+        if not respuesta_texto.startswith("[") or not respuesta_texto.endswith("]"):
+            print(f"IA (Escribir Opciones Lote) no es lista: {respuesta_texto}"); return None
+        
+        lista_respuestas = json.loads(respuesta_texto)
+        
+        if isinstance(lista_respuestas, list) and len(lista_respuestas) == len(tareas_lista):
+            # Devolvemos las respuestas en MAYÚSCULAS por consistencia
+            lista_respuestas_upper = [str(p).strip().upper() for p in lista_respuestas]
+            print(f"IA (Escribir Opciones Lote) devolvió: {lista_respuestas_upper}")
+            return lista_respuestas_upper
+        else:
+            print(f"IA (Escribir Opciones Lote) inválida o longitud incorrecta. Resp: {lista_respuestas}"); return None
+            
+    except json.JSONDecodeError as e:
+        print(f"Error parse JSON IA (Escribir Opciones Lote): {e}\nResp: {respuesta_texto}")
+        return None
+    except Exception as e:
+        print(f"Error API IA (Escribir Opciones Lote): {e}"); return None
+
+def extraer_solucion_lote_escribir_opciones(texto_error_modal, tareas_lista):
+    """
+    Aprende del error del TIPO 11.
+    """
+    print(f"IA (Aprendizaje Lote Escribir Opciones): Analizando texto de error...")
+    num_tareas = len(tareas_lista)
+    tareas_str = "\n".join(f'- "{t["frase"]}"' for t in tareas_lista)
+    
+    prompt = f"""
+Rol: Experto en extracción de datos.
+Analiza el [Texto de Error] de un pop-up. Contiene la solución para {num_tareas} frases.
+Las frases originales eran:
+{tareas_str}
+
+Tu tarea es devolver SÓLO una lista JSON de strings, donde cada string es la palabra correcta (ej: IN, ON, AT)
+que completaba cada frase, en el orden correcto.
+
+[Texto de Error]:
+"{texto_error_modal}"
+
+---
+Respuesta (Sólo la lista JSON ["PALABRA1", "PALABRA2", ...]):
+"""
+    try:
+        response = model.generate_content(prompt)
+        respuesta_texto = obtener_texto_de_respuesta(response) 
+        if respuesta_texto is None: return None
+
+        if respuesta_texto.startswith("```json"): respuesta_texto = respuesta_texto[7:]
+        if respuesta_texto.endswith("```"): respuesta_texto = respuesta_texto[:-3]
+        respuesta_texto = respuesta_texto.strip()
+
+        if not respuesta_texto.startswith("[") or not respuesta_texto.endswith("]"):
+            print(f"IA (Aprendizaje Lote Escribir Opciones) no es lista: {respuesta_texto}"); return None
+        
+        solucion_lista = json.loads(respuesta_texto)
+        
+        if isinstance(solucion_lista, list) and len(solucion_lista) == num_tareas:
+            solucion_lista_upper = [str(p).strip().upper() for p in solucion_lista]
+            print(f"IA (Aprendizaje Lote Escribir Opciones) extrajo: {solucion_lista_upper}")
+            return solucion_lista_upper
+        else:
+            print(f"IA (Aprendizaje Lote Escribir Opciones) inválido o incompleto: {solucion_lista}"); return None
+            
+    except json.JSONDecodeError as e:
+        print(f"Error parse JSON IA (Aprendizaje Lote Escribir Opciones): {e}\nResp: {respuesta_texto}")
+        return None
+    except Exception as e:
+        print(f"Error API IA (Aprendizaje Lote Escribir Opciones): {e}"); return None

@@ -1,9 +1,8 @@
 # bot_main.py
 # Script principal que orquesta el bot.
 # ¡Refactorizado con "Plan Maestro" y "Plan S"!
-# --- ¡ACTUALIZADO CON TIPO 10 (Lote) y Correcciones Anteriores! (Indentación Final Revisada v3) ---
-# --- ¡CORREGIDO BUG DE APRENDIZAJE EN ACIERTOS (T5, T9, DEFAULT)! ---
-# --- ¡ACTUALIZADO CON HASH DE CONTEXTO PARA CLAVES ÚNICAS (T2, T5, T9, DEFAULT)! ---
+# --- ¡ACTUALIZADO CON TIPO 11 (Escribir Opciones) y TODAS las correcciones! ---
+# --- (T1, T2, T3/T5, T4, T10, T11) ---
 
 import time
 import json
@@ -128,7 +127,8 @@ try:
         # --- INICIO MODIFICACIÓN HASH ---
         tipo_pregunta = ""; clave_pregunta = None; lista_ideas_texto = []; lista_de_preguntas = []; lista_afirmaciones_texto = []; frases_des = []; lista_de_claves_individuales = []; lista_de_tareas_ordenar = []
         palabras_clave = []; definiciones = []; lista_de_tareas_completar = []
-        lista_de_tareas_escribir = []; lista_palabras_desordenadas_raw = []
+        # --- ¡AÑADIDO PARA TIPO 11! ---
+        lista_de_tareas_escribir = []; lista_palabras_desordenadas_raw = []; lista_frases_t11 = []
         imagen_hash = ""; audio_hash = ""; contexto_hash = "" # Añadimos reseteo de hashes
         # --- FIN MODIFICACIÓN HASH ---
 
@@ -163,13 +163,30 @@ try:
                 print("Detectando tipo de pregunta por contenido...")
 
                 # El ORDEN es crucial
-                letras_elem = driver.find_elements(*sel.SELECTOR_LETRAS_DESORDENADAS)
+                
+                # --- ¡INICIO CORRECCIÓN DETECCIÓN T10 / T11 / T3 / T5! ---
+                letras_elem_t10 = driver.find_elements(*sel.SELECTOR_LETRAS_DESORDENADAS)
                 input_elem = driver.find_elements(*sel.SELECTOR_INPUT_ESCRIBIR)
-                if len(letras_elem) > 0 and len(input_elem) > 0 and len(letras_elem) == len(input_elem): print("      Contenido detectado: [TIPO 10]"); tipo_pregunta = "TIPO_10_ESCRIBIR" # Check matching counts
+                
+                if len(input_elem) > 0 and len(letras_elem_t10) > 0 and len(input_elem) == len(letras_elem_t10):
+                    print("      Contenido detectado: [TIPO 10]"); tipo_pregunta = "TIPO_10_ESCRIBIR" # T10 (Anagrama)
+                elif len(input_elem) > 0 and len(letras_elem_t10) == 0:
+                     print("      Contenido detectado: [TIPO 11]"); tipo_pregunta = "TIPO_11_ESCRIBIR_OPCIONES" # T11 (Completar escribiendo)
+                
                 elif len(driver.find_elements(*sel.SELECTOR_ANSWER_Q_CAJAS)) > 0: print("      Contenido detectado: [TIPO 7]"); tipo_pregunta = "TIPO_7_OM_CARD"
                 elif len(driver.find_elements(*sel.SELECTOR_PARAGRAPH_CAJAS)) > 0: print("      Contenido detectado: [TIPO 6]"); tipo_pregunta = "TIPO_6_PARAGRAPH"
-                elif len(driver.find_elements(*sel.SELECTOR_CAJAS_TF)) > 0: print("      Contenido detectado: [TIPO 3]"); tipo_pregunta = "TIPO_3_TF_MULTI"
-                elif len(driver.find_elements(*sel.SELECTOR_MARK_TF_TRUE)) > 0: print("      Contenido detectado: [TIPO 5]"); tipo_pregunta = "TIPO_5_TF_SINGLE"
+                
+                # --- LÓGICA DE DETECCIÓN MEJORADA (T3 vs T5) ---
+                elif len(driver.find_elements(*sel.SELECTOR_CAJAS_TF)) > 0: 
+                    num_cajas_tf = len(driver.find_elements(*sel.SELECTOR_CAJAS_TF))
+                    if num_cajas_tf > 1:
+                        print(f"      Contenido detectado: [TIPO 3] ({num_cajas_tf} cajas)"); 
+                        tipo_pregunta = "TIPO_3_TF_MULTI"
+                    else:
+                        print(f"      Contenido detectado: [TIPO 5] ({num_cajas_tf} caja)"); 
+                        tipo_pregunta = "TIPO_5_TF_SINGLE"
+                # --- ¡FIN CORRECCIÓN DETECCIÓN! ---
+
                 elif len(driver.find_elements(*sel.SELECTOR_LINEAS_COMPLETAR)) > 0: print("      Contenido detectado: [TIPO 2]"); tipo_pregunta = "TIPO_2_COMPLETAR"
                 elif len(driver.find_elements(*sel.SELECTOR_CONTENEDOR_ORDENAR)) > 0: print("      Contenido detectado: [TIPO 1]"); tipo_pregunta = "TIPO_1_ORDENAR"
                 elif len(driver.find_elements(*sel.SELECTOR_IMAGEN_EMPAREJAR)) > 0: print("      Contenido detectado: [TIPO 8]"); tipo_pregunta = "TIPO_8_IMAGEN"
@@ -268,7 +285,9 @@ try:
                         exito_ia_individual = True
                         for i, tarea in enumerate(lista_de_tareas_ordenar):
                             print(f"      IA (Ord) para Tarea {i+1}...")
-                            orden_ia_individual = ia_utils.obtener_orden_correcto(contexto, tarea["frases"])
+                            # --- ¡INICIO CORRECCIÓN TIPO 1 (Contexto/Título)! ---
+                            orden_ia_individual = ia_utils.obtener_orden_correcto(contexto, tarea["frases"], pregunta_actual_texto)
+                            # --- ¡FIN CORRECCIÓN TIPO 1! ---
                             if not orden_ia_individual:
                                 print(f"Error IA (Ord) Tarea {i+1}."); exito_ia_individual = False; break
                             lista_ordenes_ia.append(orden_ia_individual)
@@ -281,12 +300,21 @@ try:
                     exito_global = True
                     js = "var c=arguments[0],ids=arguments[1],m={};for(let i=0;i<c.children.length;i++){let o=c.children[i],d=o.firstElementChild;if(d&&d.getAttribute('data-rbd-draggable-id')){m[d.getAttribute('data-rbd-draggable-id')]=o;}}while(c.firstChild)c.removeChild(c.firstChild);ids.forEach(id=>{if(m[id])c.appendChild(m[id]);else console.error('JS Err ID:',id);});console.log('JS OK.');"
                     for orden_ia, tarea in zip(lista_ordenes_ia, lista_de_tareas_ordenar):
-                        map_texto_a_id = {v: k for k, v in tarea["map_id_a_texto"].items()}
-                        ids_ok = [map_texto_a_id.get(t) for t in orden_ia if map_texto_a_id.get(t)]
-                        if len(ids_ok) != len(tarea["frases"]):
+                        # --- ¡INICIO CORRECCIÓN MAPEO TIPO 1 (Case-Insensitive)! ---
+                        # 1. Creamos un mapa donde las CLAVES (texto original) están en minúscula
+                        map_texto_lower_a_id = {v.lower().strip(): k for k, v in tarea["map_id_a_texto"].items()}
+                        
+                        # 2. Buscamos el ID usando la versión en minúscula de la respuesta de la IA
+                        ids_ok = [map_texto_lower_a_id.get(t.lower().strip()) for t in orden_ia]
+                        
+                        # 3. Filtramos por si algún 'None' se coló
+                        ids_ok_filtrado = [id_val for id_val in ids_ok if id_val] 
+                        
+                        if len(ids_ok_filtrado) != len(tarea["frases"]):
+                        # --- ¡FIN CORRECCIÓN MAPEO TIPO 1! ---
                             print(f"Error: Fallo mapeo IDs JS para tarea {tarea['frases']}"); exito_global = False; continue
                         try:
-                            driver.execute_script(js, tarea["contenedor_elem"], ids_ok); time.sleep(0.5)
+                            driver.execute_script(js, tarea["contenedor_elem"], ids_ok_filtrado); time.sleep(0.5)
                         except JavascriptException as e:
                             print(f"Error JS en TIPO 1 Lote: {e}"); exito_global = False; continue
                     print("JS OK (Lote).")
@@ -509,7 +537,9 @@ try:
                         if len(map_texto_def_a_elemento) != len(definiciones): print("Warn: No se mapearon elementos def.")
                     except (JavascriptException, TimeoutException) as e: raise Exception(f"Error extrayendo def: {e}")
                     print(f"      Definiciones encontradas: {definiciones}"); print("      Extrayendo palabras clave (en orden)...")
-                    js_get_keywords = f"let k=[];document.querySelectorAll('{sel.SELECTOR_FILAS_EMPAREJAR_CSS}').forEach(r=>{{let e=r.querySelector('{sel.SELECTOR_PALABRA_CLAVE_CSS}');if(e)k.push(e.innerText.replace(/_/g,'').replace(/:/g,'').replace(/\s+/g, ' ').trim());}});return k;"
+                    # --- ¡INICIO CORRECCIÓN TIPO 4 (JS Clean)! ---
+                    js_get_keywords = f"let k=[];document.querySelectorAll('{sel.SELECTOR_FILAS_EMPAREJAR_CSS}').forEach(r=>{{let e=r.querySelector('{sel.SELECTOR_PALABRA_CLAVE_CSS}');if(e)k.push(e.innerText.replace(/_/g,'').replace(/:/g,'').replace(/'/g,'').replace(/\s+/g, ' ').trim());}});return k;"
+                    # --- ¡FIN CORRECCIÓN TIPO 4! ---
                     try:
                         palabras_clave = driver.execute_script(js_get_keywords); palabras_clave = [p.strip() for p in palabras_clave if p]
                         if not palabras_clave: raise Exception("JS no encontró palabras clave.")
@@ -547,12 +577,18 @@ try:
                 elif tipo_pregunta == "TIPO_5_TF_SINGLE":
                     # Use 20 spaces for indentation
                     print("Tipo: MARK TRUE/FALSE (Single).");
-                    # ... (Lógica TIPO 5 completa) ...
+                    # --- ¡INICIO 3RA REFACTORIZACIÓN TIPO 5 (Global Selectors)! ---
                     try:
-                        texto_afirmacion_elem = wait_long.until(EC.visibility_of_element_located(sel.SELECTOR_MARK_TF_TEXT)); texto_afirmacion = texto_afirmacion_elem.text.strip()
-                        boton_true = wait_long.until(EC.presence_of_element_located(sel.SELECTOR_MARK_TF_TRUE)); boton_false = wait_long.until(EC.presence_of_element_located(sel.SELECTOR_MARK_TF_FALSE))
-                        if not texto_afirmacion: raise Exception("No texto afirmación.")
-                        print(f"      Afirmación: '{texto_afirmacion}'");
+                        # 1. Usamos el TÍTULO como texto de la afirmación
+                        texto_afirmacion = pregunta_actual_texto.strip()
+                        if not texto_afirmacion: raise Exception("No texto afirmación (leído de título).")
+                        
+                        # 2. Buscamos los botones GLOBALMENTE (no relativo)
+                        #    usando los selectores TIPO 5 que restauramos
+                        boton_true = wait_long.until(EC.presence_of_element_located(sel.SELECTOR_MARK_TF_TRUE))
+                        boton_false = wait_long.until(EC.presence_of_element_located(sel.SELECTOR_MARK_TF_FALSE))
+
+                        print(f"      Afirmación (de Título): '{texto_afirmacion}'");
                         opciones_t5 = ["True", "False"]
                         titulo_limpio_t5 = texto_afirmacion.strip()
                         # --- INICIO MODIFICACIÓN HASH DE CONTEXTO ---
@@ -569,9 +605,18 @@ try:
                             if respuesta_tf_ia: preguntas_ya_vistas[clave_pregunta] = respuesta_tf_ia
                         if not respuesta_tf_ia: raise Exception("IA (T/F) falló.")
                         print(f"      IA decidió: {respuesta_tf_ia}"); boton_a_clicar = boton_true if respuesta_tf_ia == "True" else boton_false
-                        print(f"      Clic en '{respuesta_tf_ia}'..."); wait_long.until(EC.element_to_be_clickable(boton_a_clicar)); driver.execute_script("arguments[0].click();", boton_a_clicar); time.sleep(0.3)
-                    except (NoSuchElementException, TimeoutException) as e: print(f"Error T/F (Single) elems: {e}"); raise Exception("Fallo resolver Mark T/F.")
-                    except Exception as e: print(f"Error T/F (Single) lógica: {e}"); raise
+                        
+                        print(f"      Clic en '{respuesta_tf_ia}'..."); 
+                        wait_long.until(EC.element_to_be_clickable(boton_a_clicar)); 
+                        driver.execute_script("arguments[0].click();", boton_a_clicar); time.sleep(0.3)
+                    
+                    except (NoSuchElementException, TimeoutException) as e: 
+                        print(f"Error T/F (Single) elems: {e}"); 
+                        raise Exception("Fallo resolver Mark T/F.")
+                    except Exception as e: 
+                        print(f"Error T/F (Single) lógica: {e}"); 
+                        raise
+                    # --- ¡FIN 3RA REFACTORIZACIÓN TIPO 5! ---
 
                 # --- TIPO 7: ANSWER THE QUESTION (OM in a Card) ---
                 elif tipo_pregunta == "TIPO_7_OM_CARD":
@@ -796,6 +841,91 @@ try:
                             print(f"Error al escribir en input TIPO 10: {e}");
                             exito_global = False; break
                     if not exito_global: raise Exception("Fallo al escribir en inputs TIPO 10.")
+                
+                # --- ¡INICIO LÓGICA TIPO 11! ---
+                # --- LÓGICA TIPO 11 (ESCRIBIR OPCIONES) ---
+                elif tipo_pregunta == "TIPO_11_ESCRIBIR_OPCIONES":
+                    # Use 20 spaces for indentation
+                    print("Tipo: ESCRIBIR OPCIONES (TIPO 11 - Lote).");
+                    input_elems = wait_long.until(EC.presence_of_all_elements_located(sel.SELECTOR_INPUT_ESCRIBIR))
+                    if not input_elems:
+                        raise Exception("Error TIPO 11: No se encontraron inputs.")
+                    
+                    num_tareas = len(input_elems)
+                    print(f"Encontradas {num_tareas} tareas TIPO 11.")
+                    lista_de_tareas_escribir = [] # Reusamos variable de T10
+                    lista_frases_t11 = [] # Nueva lista para guardar las frases
+                    
+                    for i, input_elem_actual in enumerate(input_elems):
+                        try:
+                            # Use 24 spaces for indentation
+                            # Buscamos la frase relativa al input
+                            driver.execute_script("arguments[0].scrollIntoViewIfNeeded(true);", input_elem_actual); time.sleep(0.1)
+                            frase_elem = input_elem_actual.find_element(*sel.SELECTOR_FRASE_T11)
+                            frase_texto = frase_elem.text.strip()
+                            if not frase_texto: raise Exception("Frase T11 vacía.")
+                            
+                            # Reemplazamos el input (que está vacío) con '___'
+                            # Asumimos que el input está al final o donde está el <input>
+                            frase_para_ia = frase_texto + " ___" # Simplificación
+                            print(f"      Tarea {i+1}: Frase='{frase_para_ia}'")
+                            
+                            lista_de_tareas_escribir.append({"frase": frase_para_ia, "input_elem": input_elem_actual})
+                            lista_frases_t11.append(frase_para_ia) # Para aprendizaje
+
+                        except (NoSuchElementException, TimeoutException) as e_t11:
+                             # Use 24 spaces for indentation
+                             print(f"WARN TIPO 11: Tarea {i+1} sin frase. Omitiendo. ({e_t11})")
+                             continue
+
+                    if not lista_de_tareas_escribir: raise Exception("No se recolectaron tareas TIPO 11 válidas.")
+                    
+                    titulo_limpio = pregunta_actual_texto.strip()
+                    frases_clave_str = "|".join(sorted([t["frase"] for t in lista_de_tareas_escribir]))
+                    # --- INICIO MODIFICACIÓN HASH DE CONTEXTO ---
+                    clave_pregunta = f"T11_BATCH:{titulo_limpio}||{contexto_hash}||{frases_clave_str}"
+                    # --- FIN MODIFICACIÓN HASH DE CONTEXTO ---
+
+                    respuestas_lote_ia = []
+                    if clave_pregunta in soluciones_correctas:
+                        # Use 24 spaces for indentation
+                        print("      SOLUCIÓN LOTE TIPO 11 ENCONTRADA en memoria.");
+                        respuestas_lote_ia = soluciones_correctas[clave_pregunta]
+                    else:
+                        # Use 24 spaces for indentation
+                        print("      Llamando a IA (Escribir Opciones Lote)...")
+                        # Pasamos el título como contexto clave (IN, ON, AT)
+                        tareas_para_ia = [{"frase": t["frase"]} for t in lista_de_tareas_escribir]
+                        respuestas_ia_temp = ia_utils.obtener_respuestas_escribir_opciones_lote(contexto, pregunta_actual_texto, tareas_para_ia)
+                        
+                        if not respuestas_ia_temp or len(respuestas_ia_temp) != len(lista_de_tareas_escribir):
+                            # Use 28 spaces for indentation
+                            raise Exception("Fallo IA (Escribir Opciones Lote) o nº resp no coincide.")
+                        respuestas_lote_ia = respuestas_ia_temp
+                        preguntas_ya_vistas[clave_pregunta] = respuestas_lote_ia
+                    
+                    print(f"Palabras (Opciones) a escribir: {respuestas_lote_ia}")
+                    exito_global = True
+                    if len(respuestas_lote_ia) != len(lista_de_tareas_escribir):
+                        # Use 24 spaces for indentation
+                        print("Error crítico T11: Número de respuestas IA no coincide con tareas.")
+                        raise Exception("Fallo TIPO 11 - Mismatch respuestas/tareas")
+                    
+                    for palabra_correcta, tarea in zip(respuestas_lote_ia, lista_de_tareas_escribir):
+                        try:
+                            # Use 28 spaces for indentation
+                            input_actual = tarea["input_elem"]
+                            print(f"      Escribiendo '{palabra_correcta}'...");
+                            wait_short.until(EC.element_to_be_clickable(input_actual))
+                            input_actual.clear()
+                            input_actual.send_keys(palabra_correcta)
+                            time.sleep(0.3)
+                        except Exception as e:
+                            # Use 28 spaces for indentation
+                            print(f"Error al escribir en input TIPO 11: {e}");
+                            exito_global = False; break
+                    if not exito_global: raise Exception("Fallo al escribir en inputs TIPO 11.")
+                # --- ¡FIN LÓGICA TIPO 11! ---
 
                 # --- TIPO DEFAULT: OPCIÓN MÚLTIPLE ---
                 elif tipo_pregunta == "TIPO_DEFAULT_OM":
@@ -933,6 +1063,17 @@ try:
                              clave_pregunta = f"T10_BATCH:{titulo_limpio}||{claves_ordenadas_str}"
                              preguntas_para_ia = lista_palabras_desordenadas_raw
                              print(f"      Preparando aprendizaje para TIPO 10. Clave: {clave_pregunta[:50]}...")
+                        
+                        # --- ¡INICIO APRENDIZAJE TIPO 11 (Incorrecto)! ---
+                        elif tipo_pregunta == "TIPO_11_ESCRIBIR_OPCIONES":
+                             # Use 28 spaces for indentation
+                             titulo_limpio = pregunta_actual_texto.strip()
+                             frases_clave_str = "|".join(sorted([t["frase"] for t in lista_de_tareas_escribir]))
+                             clave_pregunta = f"T11_BATCH:{titulo_limpio}||{contexto_hash}||{frases_clave_str}"
+                             preguntas_para_ia = [{"frase": f} for f in lista_frases_t11] # Usamos la lista de frases
+                             print(f"      Preparando aprendizaje para TIPO 11. Clave: {clave_pregunta[:50]}...")
+                        # --- ¡FIN APRENDIZAJE TIPO 11! ---
+
                         elif tipo_pregunta == "TIPO_4_EMPAREJAR" or tipo_pregunta == "TIPO_8_IMAGEN":
                              # Use 28 spaces for indentation
                              titulo_limpio = pregunta_actual_texto.strip()
@@ -948,7 +1089,7 @@ try:
                                  clave_pregunta = None
 
                         # 2. Extraer solución
-                        if tipo_pregunta in ["TIPO_1_ORDENAR", "TIPO_2_COMPLETAR", "TIPO_3_TF_MULTI", "TIPO_6_PARAGRAPH", "TIPO_7_OM_CARD", "TIPO_10_ESCRIBIR"] and clave_pregunta and contenido_modal:
+                        if tipo_pregunta in ["TIPO_1_ORDENAR", "TIPO_2_COMPLETAR", "TIPO_3_TF_MULTI", "TIPO_6_PARAGRAPH", "TIPO_7_OM_CARD", "TIPO_10_ESCRIBIR", "TIPO_11_ESCRIBIR_OPCIONES"] and clave_pregunta and contenido_modal:
                             # Use 28 spaces for indentation
                             solucion_lista_ordenada = None
                             if preguntas_para_ia is None:
@@ -982,6 +1123,15 @@ try:
                                 # Use 32 spaces for indentation
                                 print("      Enviando texto a IA (Lote Escribir) para extraer solución...");
                                 solucion_lista_ordenada = ia_utils.extraer_solucion_lote_escribir(contenido_modal, preguntas_para_ia)
+                            
+                            # --- ¡INICIO APRENDIZAJE TIPO 11 (Incorrecto)! ---
+                            elif tipo_pregunta == "TIPO_11_ESCRIBIR_OPCIONES":
+                                # Use 32 spaces for indentation
+                                print("      Enviando texto a IA (Lote Escribir Opciones) para extraer solución...");
+                                # preguntas_para_ia ya es [{"frase": ...}]
+                                solucion_lista_ordenada = ia_utils.extraer_solucion_lote_escribir_opciones(contenido_modal, preguntas_para_ia)
+                            # --- ¡FIN APRENDIZAJE TIPO 11! ---
+
                             else: # Para T6 y T7
                                 # Use 32 spaces for indentation
                                 print("      Enviando texto a IA (Lote Genérico) para extraer solución..."); solucion = ia_utils.extraer_solucion_del_error(contenido_modal, preguntas_para_ia)
@@ -1071,8 +1221,31 @@ try:
                         # --- GUARDADO EN MEMORIA ---
                         if clave_pregunta and solucion_aprendida:
                             # Use 28 spaces for indentation
-                            soluciones_correctas[clave_pregunta] = solucion_aprendida
-                            guardar_memoria_en_disco()
+                            
+                            # --- ¡INICIO DE LA CORRECCIÓN TIPO 2 APRENDIZAJE (Incorrecto)! ---
+                            if tipo_pregunta == "TIPO_2_COMPLETAR" and clave_pregunta in soluciones_correctas:
+                                # Use 32 spaces for indentation
+                                print("      FUSIONANDO aprendizaje TIPO 2 en memoria existente...")
+                                # 'solucion_aprendida' es un dict (ej: {'frase_nueva': 'resp_nueva'})
+                                # 'soluciones_correctas[clave_pregunta]' es el dict existente
+                                memoria_existente = soluciones_correctas[clave_pregunta]
+                                if isinstance(memoria_existente, dict) and isinstance(solucion_aprendida, dict):
+                                    # Use 36 spaces for indentation
+                                    memoria_existente.update(solucion_aprendida) # Fusionamos el nuevo dict con el viejo
+                                    soluciones_correctas[clave_pregunta] = memoria_existente
+                                    print(f"      Memoria T2 fusionada: {solucion_aprendida}")
+                                else:
+                                    # Use 36 spaces for indentation
+                                    print("      WARN: No se pudo fusionar T2, tipos no son dict. Sobrescribiendo...")
+                                    soluciones_correctas[clave_pregunta] = solucion_aprendida
+                            else:
+                                # Use 32 spaces for indentation
+                                # Comportamiento original (sobrescribir o crear nuevo)
+                                # (Esto se aplica a TIPO 2 la primera vez, y a todos los demás tipos)
+                                soluciones_correctas[clave_pregunta] = solucion_aprendida
+                            # --- ¡FIN DE LA CORRECCIÓN TIPO 2 APRENDIZAJE (Incorrecto)! ---
+
+                            guardar_memoria_en_disco() # Guardamos el resultado (fusionado o nuevo)
 
                     # --- CASO 2: RESPUESTA CORRECTA ---
                     elif "correct" in titulo_modal or "great" in titulo_modal:
@@ -1099,6 +1272,20 @@ try:
                                  # Use 32 spaces for indentation
                                  print("WARN Acierto T10: 'lista_de_tareas_escribir' vacía. No se puede generar clave.")
                                  clave_pregunta = None
+                        
+                        # --- ¡INICIO APRENDIZAJE TIPO 11 (Correcto)! ---
+                        elif tipo_pregunta == "TIPO_11_ESCRIBIR_OPCIONES":
+                             # Use 28 spaces for indentation
+                             titulo_limpio = pregunta_actual_texto.strip()
+                             if lista_de_tareas_escribir: # Reusamos esta variable
+                                 frases_clave_str = "|".join(sorted([t["frase"] for t in lista_de_tareas_escribir]))
+                                 clave_pregunta = f"T11_BATCH:{titulo_limpio}||{contexto_hash}||{frases_clave_str}"
+                             else:
+                                 # Use 32 spaces for indentation
+                                 print("WARN Acierto T11: 'lista_de_tareas_escribir' vacía. No se puede generar clave.")
+                                 clave_pregunta = None
+                        # --- ¡FIN APRENDIZAJE TIPO 11! ---
+
                         elif clave_pregunta:
                             # Use 28 spaces for indentation
                            # (Este 'elif' ahora capturará T2, T5, T9, Default y los demás
@@ -1107,31 +1294,84 @@ try:
                         # --- FIN DE LA CORRECCIÓN ---
 
 
-                        if clave_pregunta and clave_pregunta not in soluciones_correctas:
+                        # --- ¡INICIO CORRECCIÓN APRENDIZAJE TIPO 2 (Correcto)! ---
+                        if clave_pregunta:
                             # Use 28 spaces for indentation
-                            print(f"      Guardando nuevo acierto en memoria...")
-                            try:
-                                # Use 32 spaces for indentation
-                                respuesta_correcta = preguntas_ya_vistas[clave_pregunta]
-                                if isinstance(respuesta_correcta, str):
-                                    respuesta_correcta = respuesta_correcta.strip()
-                                if tipo_pregunta == "TIPO_10_ESCRIBIR" and isinstance(respuesta_correcta, list):
-                                    respuesta_correcta = [p.upper() for p in respuesta_correcta]
-                                elif tipo_pregunta == "TIPO_10_ESCRIBIR" and isinstance(respuesta_correcta, str):
-                                    respuesta_correcta = respuesta_correcta.upper()
-
-                                soluciones_correctas[clave_pregunta] = respuesta_correcta
-                                print(f"      ¡SOLUCIÓN (por acierto) APRENDIDA! -> {respuesta_correcta}")
-                                guardar_memoria_en_disco()
-                            except KeyError:
+                            respuesta_correcta_actual = preguntas_ya_vistas.get(clave_pregunta)
+                            
+                            if respuesta_correcta_actual is None:
                                 # Use 32 spaces for indentation
                                 print(f"      WARN: Acierto, pero no se encontró la respuesta en 'preguntas_ya_vistas' para clave: {clave_pregunta}")
-                            except Exception as e_acierto:
+                            
+                            # --- ¡INICIO DE LA CORRECCIÓN TIPO 2 ACIERTO! ---
+                            elif tipo_pregunta == "TIPO_2_COMPLETAR":
                                 # Use 32 spaces for indentation
-                                print(f"      WARN: Error guardando acierto: {e_acierto}")
-                        elif clave_pregunta:
-                            # Use 28 spaces for indentation
-                            print("      La solución ya estaba en memoria. No se necesita guardar.")
+                                print("      Procesando acierto para TIPO 2 (Dict)...")
+                                # respuesta_correcta_actual es el DICT {"frase_actual": "resp_actual"}
+                                if not isinstance(respuesta_correcta_actual, dict):
+                                    # Use 36 spaces for indentation
+                                    print(f"      ERROR Acierto T2: La respuesta guardada no es un dict: {respuesta_correcta_actual}")
+                                
+                                elif clave_pregunta in soluciones_correctas:
+                                    # Use 36 spaces for indentation
+                                    # La clave principal (título) ya existe. Fusionamos.
+                                    memoria_existente = soluciones_correctas[clave_pregunta]
+                                    nuevas_frases_count = 0
+                                    for frase, respuesta in respuesta_correcta_actual.items():
+                                        # Use 40 spaces for indentation
+                                        if frase not in memoria_existente:
+                                            # Use 44 spaces for indentation
+                                            memoria_existente[frase] = respuesta
+                                            print(f"      ¡SOLUCIÓN T2 (frase) APRENDIDA! -> {frase}: {respuesta}")
+                                            nuevas_frases_count += 1
+                                    
+                                    if nuevas_frases_count > 0:
+                                        # Use 40 spaces for indentation
+                                        soluciones_correctas[clave_pregunta] = memoria_existente # Actualizamos el dict fusionado
+                                        guardar_memoria_en_disco()
+                                    else:
+                                        # Use 40 spaces for indentation
+                                        print("      La solución T2 (frase) ya estaba en memoria. No se necesita guardar.")
+                                
+                                else:
+                                    # Use 36 spaces for indentation
+                                    # La clave principal (título) NO existe. Guardamos el dict nuevo.
+                                    print(f"      Guardando nuevo acierto (Lote T2 Completo) en memoria...")
+                                    soluciones_correctas[clave_pregunta] = respuesta_correcta_actual
+                                    print(f"      ¡SOLUCIÓN (por acierto T2) APRENDIDA! -> {respuesta_correcta_actual}")
+                                    guardar_memoria_en_disco()
+                            # --- FIN DE LA CORRECCIÓN TIPO 2 ACIERTO ---
+                            
+                            # --- LÓGICA ORIGINAL PARA TODOS LOS DEMÁS TIPOS (T1, T3, T4... T10, T11, Default) ---
+                            elif clave_pregunta not in soluciones_correctas:
+                                # Use 32 spaces for indentation
+                                print(f"      Guardando nuevo acierto en memoria (Tipo: {tipo_pregunta})...")
+                                try:
+                                    # Use 36 spaces for indentation
+                                    # Limpieza (la lógica original estaba un poco dispersa, la unificamos aquí)
+                                    if isinstance(respuesta_correcta_actual, str):
+                                        respuesta_correcta_actual = respuesta_correcta_actual.strip()
+                                    if tipo_pregunta == "TIPO_10_ESCRIBIR" and isinstance(respuesta_correcta_actual, list):
+                                         respuesta_correcta_actual = [p.upper() for p in respuesta_correcta_actual]
+                                    elif tipo_pregunta == "TIPO_10_ESCRIBIR" and isinstance(respuesta_correcta_actual, str):
+                                         respuesta_correcta_actual = respuesta_correcta_actual.upper()
+                                    
+                                    # --- ¡INICIO APRENDIZAJE TIPO 11 (Correcto)! ---
+                                    elif tipo_pregunta == "TIPO_11_ESCRIBIR_OPCIONES" and isinstance(respuesta_correcta_actual, list):
+                                         respuesta_correcta_actual = [p.upper() for p in respuesta_correcta_actual]
+                                    # --- ¡FIN APRENDIZAJE TIPO 11! ---
+
+                                    soluciones_correctas[clave_pregunta] = respuesta_correcta_actual
+                                    print(f"      ¡SOLUCIÓN (por acierto) APRENDIDA! -> {respuesta_correcta_actual}")
+                                    guardar_memoria_en_disco()
+                                except Exception as e_acierto:
+                                    # Use 36 spaces for indentation
+                                    print(f"      WARN: Error guardando acierto: {e_acierto}")
+                            
+                            elif clave_pregunta: # (Este 'elif' es el original)
+                                # Use 32 spaces for indentation
+                                print("      La solución ya estaba en memoria. No se necesita guardar.")
+                        # --- ¡FIN CORRECCIÓN APRENDIZAJE TIPO 2 (Correcto)! ---
 
                 except Exception as e:
                     # Use 20 spaces for indentation
