@@ -84,7 +84,8 @@ def obtener_orden_correcto(contexto, frases, titulo_pregunta=""):
     prompt = f"""Rol: Experto en gramática y orden de oraciones.
 Analiza la [Instrucción/Contexto] y las [Palabras Desordenadas].
 Forma una oración o frase coherente.
-Responde SÓLO con una lista Python que contenga las palabras en el orden correcto (texto exacto, sin añadir puntuación).
+Responde SÓLO con una lista Python que contenga TODAS las palabras en el orden correcto (texto exacto, sin añadir puntuación).
+IMPORTANTE: La lista de respuesta DEBE tener exactamente el mismo número de elementos que la lista de [Palabras Desordenadas]. No omitas ninguna palabra, ni siquiera los signos de puntuación como '?'.
 ---
 [Instrucción/Contexto]
 {contexto_real}
@@ -92,7 +93,7 @@ Responde SÓLO con una lista Python que contenga las palabras en el orden correc
 [Palabras Desordenadas]
 {frases_texto}
 ---
-Lista Ordenada:"""
+Lista Ordenada (Debe tener {len(frases)} elementos):"""
     try:
         response = model.generate_content(prompt)
         # --- CORRECCIÓN GLOBAL ---

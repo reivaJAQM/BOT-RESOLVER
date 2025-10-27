@@ -1110,5 +1110,326 @@
         "am",
         "isn't"
     ],
-    "DEFAULT:IN THE FOLLOWING PICTURE, COMPLETE THE SENTENCES WITH THE CORRECT PREPOSITION OF PLACE.||CTX:1.ON 2.IN 3.NEXT TO 4.UNDER 5.BEHIND 6.IN FRONT OF...1.ON 2.IN 3.NEXT TO 4.UNDER 5.BEHIND 6.IN FRONT OF||||1.IN 2.ON 3.NEXT TO 4.UNDER 5.BEHIND 6.IN FRONT OF|1.ON 2.IN 3.NEXT TO 4.BEHIND 5.UNDER 6.IN FRONT OF|1.ON 2.IN 3.NEXT TO 4.UNDER 5.BEHIND 6.IN FRONT OF": "1.ON 2.IN 3.NEXT TO 4.UNDER 5.BEHIND 6.IN FRONT OF"
+    "DEFAULT:IN THE FOLLOWING PICTURE, COMPLETE THE SENTENCES WITH THE CORRECT PREPOSITION OF PLACE.||CTX:1.ON 2.IN 3.NEXT TO 4.UNDER 5.BEHIND 6.IN FRONT OF...1.ON 2.IN 3.NEXT TO 4.UNDER 5.BEHIND 6.IN FRONT OF||||1.IN 2.ON 3.NEXT TO 4.UNDER 5.BEHIND 6.IN FRONT OF|1.ON 2.IN 3.NEXT TO 4.BEHIND 5.UNDER 6.IN FRONT OF|1.ON 2.IN 3.NEXT TO 4.UNDER 5.BEHIND 6.IN FRONT OF": "1.ON 2.IN 3.NEXT TO 4.UNDER 5.BEHIND 6.IN FRONT OF",
+    "T11_BATCH:READ AND COMPLETE THE FOLLOWING SENTENCES USING IN – ON – AT.||CTX:...||MY KEYS ARE ___|MY KEYS ARE ___|MY KEYS ARE ___|MY KEYS ARE ___|MY KEYS ARE ___": [
+        "IN",
+        "ON",
+        "AT",
+        "ON",
+        "AT"
+    ],
+    "DEFAULT:READ THE SENTENCE AND CHOOSE THE CORRECT OPTION TO COMPLETE IT. I _____ GET UP EARLY ON WEEKENDS.||CTX:Doesn't...Doesn't||||Am not|Doesn't|Don't": "Don't",
+    "DEFAULT:READ THE SENTENCE AND CHOOSE THE CORRECT OPTION TO COMPLETE IT. SHE ..... COOK DINNER ON WEEKENDS.||CTX:Doesn't...Doesn't||||Am not|Doesn't|Don't": "Doesn't",
+    "DEFAULT:READ THE SENTENCE AND CHOOSE THE CORRECT OPTION TO COMPLETE IT. MY BROTHERS AND I ......GO TO BED LATE.||CTX:Doesn't...Doesn't||||Am not|Doesn't|Don't": "Don't",
+    "DEFAULT:READ THE SENTENCE AND CHOOSE THE CORRECT OPTION TO COMPLETE IT. HE ___________ LIKE ICE CREAM.||CTX:Doesn't...Doesn't||||Doesn't|Don't|Is not": "Doesn't",
+    "DEFAULT:READ THE SENTENCE AND CHOOSE THE CORRECT OPTION TO COMPLETE IT. WE ___________ TIME TO STUDY A LANGUAGE.||CTX:Don't...Don't||||Are not|Doesn't|Don't": "Don't",
+    "DEFAULT:READ THE SENTENCE AND CHOOSE THE CORRECT OPTION TO COMPLETE IT. THEY ___________ GO TO THE CHURCH ON MONDAYS.||CTX:Don't...Don't||||Are not|Doesn't|Don't": "Don't",
+    "DEFAULT:READ THE SENTENCE AND CHOOSE THE CORRECT OPTION TO COMPLETE IT. IT ___________ RAIN IN SUMMER.||CTX:Doesn't...Doesn't||||Doesn't|Don't|Is not": "Doesn't",
+    "DEFAULT:READ THE SENTENCE AND CHOOSE THE CORRECT OPTION TO COMPLETE IT. SHE ___________ NEED HELP.||CTX:Doesn't...Doesn't||||Doesn't|Don't|Is not": "Doesn't",
+    "DEFAULT:READ THE SENTENCE AND CHOOSE THE CORRECT OPTION TO COMPLETE IT. MARCIA ___________ LIVE IN PORTOVIEJO. SHE LIVES IN MANTA.||CTX:Doesn't...Doesn't||||Doesn't|Don't|Is not": "Doesn't",
+    "DEFAULT:READ THE SENTENCE AND CHOOSE THE CORRECT OPTION TO COMPLETE IT. MY PARENTS ___________ SPEAK ENGLISH.||CTX:Doesn't...Doesn't||||Doesn't|Don't|Is not": "Don't",
+    "T4:READ THE SENTENCTES AND CHOOSE FROM THE WORDS IN THE BOX TO COMPLETE THEM.||am|are|is|isn't": [
+        "is",
+        "are",
+        "am",
+        "isn't"
+    ],
+    "0:is|he|man|good|a|2:they|are|friendly|4:raining|it|outside|is|6:home|are|we|not|at": [
+        [
+            "he",
+            "is",
+            "a",
+            "good",
+            "man"
+        ],
+        [
+            "They",
+            "are",
+            "friendly"
+        ],
+        [
+            "it",
+            "is",
+            "raining",
+            "outside"
+        ],
+        [
+            "we",
+            "are",
+            "not",
+            "at",
+            "home"
+        ]
+    ],
+    "DEFAULT:READ THE SENTENCES AND CHOOSE THE CORRECT OPTION TO COMPLETE THEM.||CTX:It is summer time....It is summer time.||||I am your friends.|It am summer time.|It is summer time.|She are a nice person.": "It is summer time.",
+    "DEFAULT:READ THE SENTENCES AND CHOOSE THE CORRECT OPTION WITHOUT A MISTAKE.||CTX:We is student in this class....We is student in this class.||||He is a student in this class.|He is students in this class.|We are student in this class.|We is student in this class.": "He is a student in this class.",
+    "DEFAULT:READ THE SENTENCE AND CHOOSE THE CORRECT OPTION TO COMPLETE IT. I ___________ HAVE ANY BROTHERS OR SISTERS.||CTX:Doesn't...Doesn't||||Are not|Doesn't|Don't": "Don't",
+    "DEFAULT:READ THE SENTENCES AND CHOOSE THE CORRECT OPTION WITHOUT A MISTAKE.||CTX:She is good friends....She is good friends.||||He are a good friend.|He is a great friend.|She is good friends.|They are the best friend.": "He is a great friend.",
+    "DEFAULT:READ THE SENTENCE AND CHOOSE THE CORRECT OPTION TO COMPLETE IT. DOGS ___________ WHISTLE. THEY BARK.||CTX:Doesn't...Doesn't||||Are not|Doesn't|Don't": "Don't",
+    "T4:READ AND CHOOSE THE CORRECT QUESTION WORD FROM THE WORD BOX TO COMPLETE THE QUESTION.||How|When|Where|Why": [
+        "When",
+        "Where",
+        "How",
+        "Why"
+    ],
+    "DEFAULT:READ THE QUESTIONS AND CHOOSE THE CORRECT ONE.||CTX:When do you do for a living?...When do you do for a living?||||How do you do for a living?|What do you do for a living?|When do you do for a living?|Where do you do for a living?": "What do you do for a living?",
+    "T4:READ THE QUESTIONS. THEN MATCH THE ANSWERS TO THEM.||I drink a lot of water|I have a lot of friends|I have one sister|I have seven brothers|I have ten dollars": [
+        "I have seven brothers",
+        "I have one sister",
+        "I have ten dollars",
+        "I drink a lot of water",
+        "I have a lot of friends"
+    ],
+    "0:how|many|are|bananas|there|?|the|in|basket|2:a|days|many|how|in|?|year|are|there|4:you|money|much|?|need|do|how|6:honey|the|tin|is|much|?|in|there|how": [
+        [
+            "how",
+            "many",
+            "bananas",
+            "are",
+            "there",
+            "in",
+            "the",
+            "basket",
+            "?"
+        ],
+        [
+            "how",
+            "many",
+            "days",
+            "are",
+            "there",
+            "in",
+            "a",
+            "year",
+            "?"
+        ],
+        [
+            "how",
+            "much",
+            "money",
+            "do",
+            "you",
+            "need",
+            "?"
+        ],
+        [
+            "how",
+            "much",
+            "honey",
+            "is",
+            "there",
+            "in",
+            "the",
+            "tin",
+            "?"
+        ]
+    ],
+    "T4:ANSWER THE FOLLOWING QUESTIONS ABOUT ADELE. USE THE CLUES UNDERLINED IN THE ARTICLE.||Adele drinks tea.|Hello, Someone like you, Skyfall, Rolling in the deep.|She only eats vegetables, fruits, almonds and dairy products.": [
+        "She only eats vegetables, fruits, almonds and dairy products.",
+        "Adele drinks tea.",
+        "Hello, Someone like you, Skyfall, Rolling in the deep."
+    ],
+    "0:what|he|eat|?|does|2:he|where|?|live|does|4:what|to|do|does|he|?|like|6:you|?|go|where|do": [
+        [
+            "what",
+            "does",
+            "he",
+            "eat",
+            "?"
+        ],
+        [
+            "where",
+            "does",
+            "he",
+            "live",
+            "?"
+        ],
+        [
+            "what",
+            "does",
+            "he",
+            "like",
+            "to",
+            "do",
+            "?"
+        ],
+        [
+            "where",
+            "do",
+            "you",
+            "go",
+            "?"
+        ]
+    ],
+    "T9:LISTEN TO THE AUDIO AND SELECT THE APPROPRIATE OPTION: THE CASHIER SCANS YOUR ITEMS AND TELLS YOU THE TOTAL________||CTX:size...size||||color|cost|size|weight": "cost",
+    "T9:LISTEN TO THE AUDIO AND SELECT THE APPROPRIATE OPTION: AT THE GROCERY STORE, YOU PICK WHAT YOU WANT AND PUT IT IN YOUR __________||CTX:cart...cart||||basket|cart|hand|pocket": "cart",
+    "T9:LISTEN TO THE AUDIO AND SELECT THE APPROPRIATE OPTION: SOME PEOPLE USE A SHOPPING _______ TO REMEMBER WHAT THEY NEED.||CTX:cart...cart||||bag|box|cart|list": "list",
+    "T9:LISTEN TO THE AUDIO AND SELECT THE APPROPRIATE OPTION: AFTER SHOPPING, YOU GO TO THE ______ TO PAY||CTX:manager...manager||||cashier|driver|manager|teacher": "cashier",
+    "T9:LISTEN TO THE AUDIO AND SELECT THE APPROPRIATE OPTION: A GROCERY STORE IS A PLACE WHERE YOU BUY________||CTX:clothes...clothes||||books|clothes|food|toys": "food",
+    "T9:ACCORDING TO THE AUDIO, SELECT THE RIGHT OPTION: WHY IS ECUADOR CALLED A NATURE PARADISE?||CTX:It has large cities...It has large cities||||It has amazing nature for exploring|It has large cities|It is close to the ocean|It is very cold": "It has amazing nature for exploring",
+    "T9:ACCORDING TO THE AUDIO, SELECT THE RIGHT OPTION: WHAT CAN YOU SEE IN THE ANDES MOUNTAINS?||CTX:Oceans...Oceans||||Dunes|Oceans|Skyscrapers|Volcanoes": "Volcanoes",
+    "T9:ACCORDING TO THE AUDIO, SELECT THE RIGHT OPTION: WHERE IS ECUADOR LOCATED?||CTX:North America...North America||||Asia|Europe|North America|South America": "South America",
+    "T9:ACCORDING TO THE AUDIO, SELECT THE RIGHT OPTION: WHAT ARE THE GALÁPAGOS ISLANDS FAMOUS FOR?||CTX:Beautiful beaches...Beautiful beaches||||Beautiful beaches|Large cities|Tall mountains|Unique animals like giant tortoises": "Unique animals like giant tortoises",
+    "T9:ACCORDING TO THE AUDIO, SELECT THE RIGHT OPTION: WHAT CAN YOU FIND IN THE AMAZON RAINFOREST?||CTX:Deserts...Deserts||||Deserts|Ice and snow|Many plants and animals|Tall buildings": "Many plants and animals",
+    "T9:ACCORDING TO THE AUDIO, SELECT THE RIGHT OPTION: WHAT IS THE UNIVERSITY FOR?||CTX:Learning, growing, and discovering who you want to...rning, growing, and discovering who you want to be||||Eating and sleeping|Learning, growing, and discovering who you want to be|Playing games|Watching movies": "Learning, growing, and discovering who you want to be",
+    "T9:ACCORDING TO THE AUDIO, SELECT THE RIGHT OPTION: WHO WILL HELP YOU UNDERSTAND IMPORTANT IDEAS?||CTX:Friends...Friends||||Coaches|Friends|Parents|Professors": "Professors",
+    "T9:ACCORDING TO THE AUDIO, SELECT THE RIGHT OPTION: WHAT CAN YOU CHOOSE TO STUDY AT THE UNIVERSITY?||CTX:Movies...Movies||||Cooking|Different subjects like science, art, or history|Movies|Shopping": "Different subjects like science, art, or history",
+    "T9:ACCORDING TO THE AUDIO, SELECT THE RIGHT OPTION: WHAT CAN YOU DO AT THE UNIVERSITY?||CTX:Sleep all day...Sleep all day||||Learn new things|Play video games|Sleep all day|Travel the world": "Learn new things",
+    "T9:ACCORDING TO THE AUDIO, SELECT THE RIGHT OPTION: WHERE CAN YOU MAKE FRIENDS AND EXPLORE YOUR INTERESTS AT THE UNIVERSITY?||CTX:In the cafeteria...In the cafeteria||||At home|In clubs, sports teams, and libraries|In the cafeteria|In the parking lot": "In clubs, sports teams, and libraries",
+    "T9:LISTEN TO THE AUDIO AND MATCH THE PROFESSION WITH THE CORRECT DEFINITION: CHEF.||CTX:Cooks food...Cooks food||||Cooks food|Designs machines|Helps sick people|Saves people from fires": "Cooks food",
+    "T9:LISTEN TO THE AUDIO AND MATCH THE PROFESSION WITH THE CORRECT DEFINITION: TEACHER.||CTX:Teaches students...Teaches students||||Drives a bus|Keeps the community safe|Saves people from fires|Teaches students": "Teaches students",
+    "T9:LISTEN TO THE AUDIO AND MATCH THE PROFESSION WITH THE CORRECT DEFINITION: POLICE OFFICER.||CTX:Teaches students...Teaches students||||Cooks food|Drives a train|Keeps the community safe|Teaches students": "Keeps the community safe",
+    "T9:LISTEN TO THE AUDIO AND MATCH THE PROFESSION WITH THE CORRECT DEFINITION: FIREFIGHTER.||CTX:Keeps the community safe...Keeps the community safe||||Builds houses|Cooks food|Keeps the community safe|Saves people from fires": "Saves people from fires",
+    "T9:LISTEN TO THE AUDIO AND MATCH THE PROFESSION WITH THE CORRECT DEFINITION: DOCTOR.||CTX:Designs buildings...Designs buildings||||Cooks food|Designs buildings|Helps sick people|Teaches students": "Helps sick people",
+    "T4:READ THE SENTENCES. MATCH THE WORDS ACCORDING TO THE MEANING.||Hate|Like|Prefer": [
+        "Hate",
+        "Prefer",
+        "Like"
+    ],
+    "T2_BATCH:LOOK AT THE PICTURE. READ THE E-MAIL AND THE QUESTIONS. THEN DECIDE THEY ARE TRUE (T) OR FALSE (F).||CTX:...": {
+        "Does he live in Cuenca? ___": "T",
+        "Is he 20 years old? ___": "F",
+        "Does he study engineering? ___": "F",
+        "Does he love reading? ___": "T",
+        "Does he like outdoors activities? ___": "F"
+    },
+    "DEFAULT:READ AND CHOOSE THE BEST OPTION: THESE ACTIVITIES ARE CARRIED OUT INSIDE A SPACE. THEY ARE LIMITED TO THE CONDITIONS OF THE PLACE WHERE THEY ARE HELD, TO THE NUMBER OF PEOPLE PARTICIPATING IN THE ACTIVITIES, AMONG OTHER FACTORS.||CTX:Outdoor Activities...Outdoor Activities||||Indoor Activities|Outdoor Activities": "Indoor Activities",
+    "DEFAULT:READ AND CHOOSE THE CORRECT OPTION: HOW DID FAITHI HARB DIE?||CTX:A soldier killed him....A soldier killed him.||||A soldier killed him.|Along Gaza's border.|His grandfather shot him.|In a street in Gaza City.": "In a street in Gaza City.",
+    "DEFAULT:READ AND CHOOSE THE BEST OPTION TO COMPLETE THE SENTENCE. THE WRITER´S PRINCIPAL IDEA IS:||CTX:To protest along Gaza's border....To protest along Gaza's border.||||To protest along Gaza's border.|To protest on a street in Gaza City.|To read the news.|To save people from the war, and give them a safe place.": "To save people from the war, and give them a safe place.",
+    "DEFAULT:READ AND CHOOSE THE MAIN IDEA OF THIS READING.||CTX:People's wounds....People's wounds.||||Gazans's depression.|Israeli snipers.|People's wounds.|Spring in Gaza.": "Gazans's depression.",
+    "DEFAULT:READ AND CHOOSE THE CORRECT. WHEN THE WRITER EXPRESS 'GIVE THEM A SAFETY PLACE TO STAY IN' HE REFERS TO:||CTX:Give them a place far away from danger....Give them a place far away from danger.||||Give them a place along Gaza's border.|Give them a place far away from danger.|Give them a place in Gaza City.|Give them a place on a busy street.": "Give them a place far away from danger.",
+    "DEFAULT:READ AND CHOOSE THE CORRECT ANSWER: FAITHI HARB WENT TO PROTEST IN:||CTX:Summer...Summer||||Fall|Spring|Summer|Winter": "Spring",
+    "DEFAULT:READ AND CHOOSE THE INCORRECT SENTENCE.||CTX:The writer is worried about his grandfather....The writer is worried about his grandfather.||||The writer is worried about Gazan people.|The writer is worried about Israeli snipers.|The writer is worried about his grandfather.|The writer is worried about soldiers.": "The writer is worried about Gazan people.",
+    "DEFAULT:READ ABOUT FAITHI HARB AND CHOOSE THE CORRECT ALTERNATIVE:||CTX:He wanted to commit suicide....He wanted to commit suicide.||||He lived in a safety place.|He shot a soldier.|He shot his grandfather.|He wanted to commit suicide.": "He wanted to commit suicide.",
+    "DEFAULT:READ AND CHOOSE THE CORRECT. HOW OLD WAS FAITHI?||CTX:Forty two....Forty two.||||Forty two.|Twelve.|Twenty two.|Twenty.": "Twenty two.",
+    "DEFAULT:READ AND CHOOSE THE CORRECT ANSWER. ACCORDING TO THE READING: WHAT IS KILLING GAZA PEOPLE?||CTX:People's wounds....People's wounds.||||Depression.|Israeli snipers.|People's wounds.|Soldiers.": "Depression.",
+    "DEFAULT:READ THE LETTER AND CHOOSE THE ANSWER THAT REFERS TO “BEST WHISHES”.||CTX:Date...Date||||Closing|Date|Greeting|Signature": "Closing",
+    "DEFAULT:READ THE LETTER AND CHOOSE THE BEST OPTION TO REFERS TO: 'AMANDA;'||CTX:Date...Date||||Closing|Date|Greeting|Signature": "Signature",
+    "DEFAULT:READ THE LETTER AND CHOOSE THE CORRECT EVENT:||CTX:Graduation...Graduation||||Baby shower|Birthday|Getting a new job|Graduation": "Graduation",
+    "DEFAULT:READ THE LETTER AND CHOOSE THE OPTION TO REFER TO: 'MANTA, JULY 19TH, 2021;' REFERS TO:||CTX:Date...Date||||Closing|Date|Greeting|Signature": "Date",
+    "DEFAULT:READ THE LETTER: WHICH OPTION CORRESPONDS TO “DEAR AMANDA”:||CTX:Date...Date||||Closing|Date|Greeting|Signature": "Greeting",
+    "DEFAULT:WHICH PART OF THE LETTER REFERS TO “JOSEPH”:||CTX:Date...Date||||Closing|Date|Greeting|Signature": "Signature",
+    "DEFAULT:READ THE LETTER AND CHOOSE THE OPTION REFERS TO: “YOURS SINCERELY”.||CTX:Date...Date||||Closing|Date|Greeting|Signature": "Closing",
+    "DEFAULT:READ THE LETTER. THE PART: 'DEAR DANIEL;' REFERS TO:||CTX:Date...Date||||Closing|Date|Greeting|Signature": "Greeting",
+    "DEFAULT:READ THE LETTER. THE PART: 'CHONE, JULY 29TH, 2021;' REFERS TO:||CTX:Date...Date||||Closing|Date|Greeting|Signature": "Date",
+    "DEFAULT:READ AND CHOOSE THE CORRECT ANSWER: WHAT IS THE MAIN IDEA OF THE TEXT?||CTX:How to clean microwaves....How to clean microwaves.||||A description of microwaves.|How microwaves work.|How to clean microwaves.|How to repair microwaves.": "A description of microwaves.",
+    "T5:READ AND MARK TRUE OR FALSE:||CTX:...||False|True": "False",
+    "DEFAULT:READ AND CHOOSE THE INCORRECT SENTENCE. MICROWAVES _______||CTX:Heat energy directly....Heat energy directly.||||Are easy to repair.|Are efficient.|Are quick.|Heat energy directly.": "Are easy to repair.",
+    "DEFAULT:READ AND CHOOSE THE CORRECT WORDS TO COMPLETE THE SENTENCE ABOUT MICROWAVES: NEVER TRY TO _____ YOUR OWN MICROWAVE. IT IS A COMPLEX APPLIANCE THAT ________ A MAGNETRON, HIGH VOLTAGE TRANSFORMER, ______ PROTECTORS, AND COMPLICATED CIRCUITS.||CTX:Includes - thermal - repair...Includes - thermal - repair||||Includes - thermal - repair|Repair - includes - thermal|Repair - thermal - includes|Thermal - includes - repair": "Repair - includes - thermal",
+    "DEFAULT:READ AND CHOOSE THE CORRECT WORDS TO COMPLETE THE SENTENCE ABOUT MICROWAVES: THE MICROWAVE ________ WHEN THE HIGH VOLTAGE IS CONVERTED TO _________ OF ELECTROMAGNETIC ENERGY, WHICH IS A COMBINATION OF _________ AND MAGNETIC ENERGY.||CTX:Electrical - works - waves...Electrical - works - waves||||Electrical - waves - works|Electrical - works - waves|Waves - works - electrical|Works - waves - electrical": "Works - waves - electrical",
+    "DEFAULT:READ AND CHOOSE THE WRONG ANSWER: HOW DO MICROWAVES WORK?||CTX:They channel heat energy directly to the molecules...heat energy directly to the molecules inside food.||||Microwaves heat food by radiation.|They channel heat energy directly to the molecules inside food.|They works when the high voltage is converted to waves of electromagnetic energy.|This energy is in the frecuency band of x-rays.": "This energy is in the frecuency band of x-rays.",
+    "DEFAULT:READ AND CHOOSE THE CORRECT WORDS TO COMPLETE THE SENTENCE ABOUT MICROWAVES: WHEN THE ______ IS OPENED OR THE ________ REACHES ZERO, THE ________ AUTOMATICALLY STOPS, SO NO MICROWAVE RADIATION LEAVES THE OVES.||CTX:Door - timer - energy...Door - timer - energy||||Door - energy - timer|Door - timer - energy|Energy - timer - door|Timer - door - energy": "Door - timer - energy",
+    "DEFAULT:READ THE LETTER AND CHOOSE THE CORRECT OPTION: PATRICIA WOULD LIKE TO KNOW:||CTX:What is the objective of the course?...What is the objective of the course?||||If there are available places.|If they have an academic group.|What is the objective of the course?|What is the principal topic of the course?": "If there are available places.",
+    "DEFAULT:READ THE LETTER. THE PART: 'YOURS SINCERELY' REFERS TO:||CTX:Date...Date||||Closing|Date|Greeting|Signature": "Closing",
+    "DEFAULT:READ THE LETTER AND CHOOSE THE CORRECT ONE. PATRICIA HOPES:||CTX:Pay some money....Pay some money.||||Be part of the Academic Group.|Be part of the Investigation Department.|Pay at the University.|Pay some money.": "Be part of the Academic Group.",
+    "DEFAULT:READ THE LETTER. THE PART: 'PATRICIA MEJIA;' REFERS TO:||CTX:Date...Date||||Closing|Date|Greeting|Signature": "Signature",
+    "DEFAULT:READ THE LETTER AND CHOOSE THE CORRECT. PATRICIA IS WRITING TO:||CTX:Public Relations Department...Public Relations Department||||Computing Department|Designing Department|Investigation Department|Public Relations Department": "Investigation Department",
+    "DEFAULT:READ THE LETTER AND CHOOSE THE CORRECT OPTION: PATRICIA IS INTERESTED IN:||CTX:A Scientific Writing Course...A Scientific Writing Course||||A Computing Course|A Designing Course|A Scientific Writing Course|A Writing Article Course": "A Scientific Writing Course",
+    "DEFAULT:READ THE LETTER AND CHOOSE THE CORRECT EVENT.||CTX:Meeting with Friends....Meeting with Friends.||||Getting a new job.|Interested in a course.|Interested in the University.|Meeting with Friends.": "Interested in a course.",
+    "DEFAULT:READ THE LETTER AND CHOOSE THE OPTION THAT REFERS TO: 'CHONE, JULY 29TH, 2021;' REFERS TO:||CTX:Date...Date||||Closing|Date|Greeting|Signature": "Date",
+    "DEFAULT:COMPLETE WITH THE CORRECT WORD: THIS IS THE MAIN TUNA PORT IN ECUADOR _______||CTX:Guayaquil...Guayaquil||||Guayaquil|Manta|Portoviejo|Quito": "Manta",
+    "DEFAULT:COMPLETE WITH THE CORRECT WORD: THE AMAZON REGION HAS A LOT OF _______||CTX:Jungles...Jungles||||Jungles|Volcanos|beaches|buildings": "Jungles",
+    "DEFAULT:COMPLETE WITH THE CORRECT WORD: PEOPLE CAN PRACTICE EXTREME SPORTS IN _______||CTX:Portoviejo...Portoviejo||||Baños|Guayaquil|Portoviejo|Quevedo": "Baños",
+    "DEFAULT:COMPLETE WITH THE CORRECT WORD: THIS PROVINCE IS LOCATED OUTSIDE OF CONTINENTAL EQUATOR _______||CTX:Manabí...Manabí||||El Oro|Esmeraldas|Galapagos islands|Manabí": "Galapagos islands",
+    "DEFAULT:COMPLETE WITH THE CORRECT WORD: THE CAJAS NATIONAL PARK IS LOCATED IN THE PROVINCE OF _______||CTX:Azuay...Azuay||||Azuay|Cañar|Guayas|Manabí": "Azuay",
+    "DEFAULT:COMPLETE WITH THE CORRECT WORD: THE THREE PRINCIPAL CITIES IN ECUADOR ARE _______||CTX:Quito, Cuenca and Manta...Quito, Cuenca and Manta||||Cuenca, Guayaquil and Manta|Guayaquil, Quito and Cuenca|Quito, Cuenca and Manta|Quito, Guayaquil and Manta": "Guayaquil, Quito and Cuenca",
+    "DEFAULT:COMPLETE WITH THE CORRECT WORD: THIS IS THE CAPITAL CITY OF ECUADOR _______||CTX:Cuenca...Cuenca||||Cuenca|Guayaquil|Manta|Quito": "Quito",
+    "DEFAULT:COMPLETE WITH THE CORRECT WORD: THIS IS THE PRINCIPAL ECONOMIC CITY IN ECUADOR _______||CTX:Ambato...Ambato||||Ambato|Cuenca|Guayaquil|Portoviejo": "Guayaquil",
+    "DEFAULT:COMPLETE WITH THE CORRECT WORD: THE BEACH MORE VISITED IN ECUADOR IS _______||CTX:Montañita...Montañita||||Guayaquil|Machala|Montañita|Quito": "Montañita",
+    "DEFAULT:COMPLETE WITH THE CORRECT WORD: COTOPAXI VOLCANO IS NEAR _______||CTX:Cuenca...Cuenca||||Cuenca|Guayaquil|Loja|Loja": "Loja",
+    "DEFAULT:CHOOSE THE BEST OPTION TO COMPLETE THE SENTENCE: THIS IS A CLOTH FOR WOMEN:||CTX:Tie...Tie||||Polo shirt|Shirt|Skirt|Tie": "Skirt",
+    "DEFAULT:COMPLETE WITH THE CORRECT WORD: JUAN´S HANDS ARE COLD. HE NEEDS TO WEAR SOME _______||CTX:T-shirt...T-shirt||||Glasses|Gloves|T-shirt|Tie": "Gloves",
+    "DEFAULT:COMPLETE WITH THE CORRECT WORD: JOSÉ CANNOT SEE VERY WELL. HE NEEDS TO BUY SOME _______||CTX:Glasses...Glasses||||Glasses|Jeans|Shoes|Trousers": "Glasses",
+    "DEFAULT:CHOOSE TH BEST ALTERNATIVE TO COMPLETE THE SENTENCE: LAURA GOES TO THE UNIVERSITY EVERY DAY. SHE NEEDS A _______||CTX:Computer...Computer||||Camera|Cellphone|Computer|Watch": "Computer",
+    "DEFAULT:CHOOSE THE BEST OPTION: THIS IS A CLOTH FOR MEN _______||CTX:Dress...Dress||||Blouse|Dress|Skirt|Tie": "Tie",
+    "DEFAULT:COMPLETE WITH THE CORRECT WORD: JULIO NEEDS TO KNOW THE TIME. HE WANTS TO BUY A _______||CTX:Watch...Watch||||Chain|Hat|Tie|Watch": "Watch",
+    "DEFAULT:COMPLETE WITH THE CORRECT WORD: DAVID IS GOING TO THE BEACH. HE IS WEARING A BATHING _______||CTX:Tie...Tie||||Gloves|Shirt|Suit|Tie": "Suit",
+    "DEFAULT:COMPLETE WITH THE CORRECT WORD: MY MOTHER IS A FANATIC OF THE BARCELONA SOCCER TEAM. SHE IS WEARING A _______ T-SHIRT.||CTX:Green...Green||||Black|Blue|Green|Yellow": "Yellow",
+    "DEFAULT:COMPLETE WITH THE CORRECT WORD: MY DAD NEEDS TO WEAR A TIE. HE NEEDS TO BUY A _______||CTX:T-shirt...T-shirt||||Blouse|Shirt|T-shirt|Watch": "Shirt",
+    "DEFAULT:COMPLETE WITH THE CORRECT WORD: MY KIDS ARE GOING TO PLAY SOCCER. THEY ARE WEARING A PAIR OF _______||CTX:Suit...Suit||||Shoes|Suit|Tie|Under wear": "Shoes",
+    "DEFAULT:CHOOSE THE CORRECT DEFINITION OF THE WORDS BELOW: TO KNOW WHY OR HOW SOMETHING HAPPENS OR WORKS? REFERS TO?||CTX:Class...Class||||Class|Subject|Teachers|Textbook": "Teachers",
+    "DEFAULT:COMPLETE WITH THE CORRECT WORD: JUAN IS A GOOD STUDENT. HE GETS GOOD _______||CTX:Books...Books||||Books|Class|Grades|Notebooks": "Grades",
+    "DEFAULT:READ AND CHOOSE THE BEST DEFINITION OF THE FOLLOWING SENTENCE: “LOOK AT SOMETHING”.||CTX:T-shirt...T-shirt||||Blouse|T-shirt|Textbook|Watch": "Watch",
+    "DEFAULT:MATCH WITH THE DEFINITIONS PRESENTED. CHOOSE THE CORRECT OPTION: TO STOP BEING ACTIVE IN ORDER TO RELAX AND GET BACK YOUR STRENGTH _______||CTX:Subject...Subject||||Stress|Subject|Teacher|Textbook": "Stress",
+    "DEFAULT:CHOOSE THE CORRECT OPTION: DAVID IS GOOD AT CHEMISTRY. HE STUDIES AT A _______||CTX:Teacher...Teacher||||Grades|School of Sciences|Subject|Teacher": "School of Sciences",
+    "DEFAULT:MATCH WITH THE DEFINITIONS PRESENTED, CHOOSE THE CORRECT OPTION: TO DIRECT YOUR ATTENTION OR YOUR EFFORTS TOWARDS A PARTICULAR ACTIVITY, PROBLEM OR FACT:||CTX:Stress...Stress||||Stress|Subject|Teacher|Textbook": "Subject",
+    "DEFAULT:MATCH WITH THE DEFINITIONS PRESENTED. CHOOSE THE CORRECT OPTION: A SHORT PIECE OF WRITING _______||CTX:Grades...Grades||||Certification|Grades|Notes|Textbook": "Certification",
+    "DEFAULT:COMPLETE WITH THE CORRECT WORD: ANA LIKES NUMBERS. HER FAVORITE _______ IS MATH.||CTX:Subject...Subject||||School|Science|Subject|Teacher": "Subject",
+    "DEFAULT:CHOOSE THE CORRECT OPTION: JUAN STUDIES SCIENCE AND _______||CTX:Social Studies...Social Studies||||Class|Social Studies|Stress|Teacher": "Social Studies",
+    "DEFAULT:MATCH WITH THE DEFINITIONS PRESENTED. CHOOSE THE CORRECT OPTION: TO HEAT A CONTAINER SO THE LIQUID IN IT _______||CTX:Oven...Oven||||Boil|Freezer|Oven|Pan": "Boil",
+    "DEFAULT:MATCH WITH THE DEFINITIONS PRESENTED. CHOOSE THE CORRECT OPTION: QUALITY OF THE FOOD WHEN YOU PUT IT IN YOUR MOUTH _______||CTX:Taste...Taste||||Dish|Oven|Salt|Taste": "Taste",
+    "DEFAULT:MATCH WITH THE DEFINITIONS PRESENTED. CHOOSE THE CORRECT OPTION: A TOOL FOR CUTTING FOOD IN PIECES _______||CTX:Knife...Knife||||Cook|Fork|Knife|Spoon": "Knife",
+    "DEFAULT:MATCH WITH THE DEFINITIONS PRESENTED. CHOOSE THE CORRECT OPTION: A PIECE OF EQUIPMENT THAT YOU COOK FOOD USING A PAN _______||CTX:Knife...Knife||||Freezer|Knife|Refrigerator|Stove": "Stove",
+    "DEFAULT:MATCH WITH THE DEFINITIONS PRESENTED. CHOOSE THE CORRECT OPTION: TO MAKE A LIQUID FLOW OUT OF A CONTAINER _______||CTX:Pan...Pan||||Fork|Glass|Pan|Pour": "Pour",
+    "DEFAULT:MATCH WITH THE DEFINITIONS PRESENTED. CHOOSE THE CORRECT OPTION: A PIECE OF EQUIPMENT THAT YOU COOK FOOD INSIDE _______||CTX:Boil...Boil||||Boil|Cook|Knife|Oven": "Oven",
+    "DEFAULT:MATCH WITH THE DEFINITIONS PRESENTED. CHOOSE THE CORRECT OPTION: A METAL CONTAINER THAT YOU USE FOR COOKING _______||CTX:Pan...Pan||||Cook|Knife|Oven|Pan": "Pan",
+    "DEFAULT:MATCH WITH THE DEFINITIONS PRESENTED. CHOOSE THE CORRECT OPTION: A SET OF INSTRUCTIONS THAT TELL YOU HOW TO COOK SOMETHING _______||CTX:Menu...Menu||||Dish|Menu|Napkin|Recipe": "Recipe",
+    "DEFAULT:MATCH WITH THE DEFINITIONS PRESENTED. CHOOSE THE CORRECT OPTION: A SMALL TOOL FOR PICKING UP AND EATING FOOD _______||CTX:Dish...Dish||||Dish|Fork|Knife|Oven": "Fork",
+    "DEFAULT:FILL IN THE GAPS USING THE CORRECT WORDS:||CTX:garbage - clothes - drink - pollution...garbage - clothes - drink - pollution||||clothes - drink - garbage - pollution|drink - pollution - garbage - clothes|garbage - clothes - drink - pollution|pollution - garbage - clothes - drink": "pollution - garbage - clothes - drink",
+    "DEFAULT:WHAT IS THE BEST HEADLINE FOR THIS PARAGRAPH? CHOOSE THE BEST ONE.||CTX:IMPORTANCE OF PLANTS AND OXYGEN...IMPORTANCE OF PLANTS AND OXYGEN||||IMPORTANCE OF PLANTS AND OXYGEN|IMPORTANCE OF WASHING CLOTHES|IMPORTANCE OF WATER FOR HUMANS": "IMPORTANCE OF WATER FOR HUMANS",
+    "DEFAULT:READ THE TEXT AND FILL IN THE BLANKS USING THE CORRECT WORDS:||CTX:resource - live - water - need...resource - live - water - need||||live - water - resource - need|need - resource - live - water|resource - live - water - need|water - live - resource - need": "resource - live - water - need",
+    "T4:MATCH THE WORDS AND THEIR MEANING:||Clean|Hepatitis|Pollution|Water Pollution": [
+        "Water Pollution",
+        "Hepatitis",
+        "Clean",
+        "Pollution"
+    ],
+    "DEFAULT:READ THE TEXT AND FILL IN THE GAPS USING THE CORRECT WORDS:||CTX:Ground - rain - lakes - drought...Ground - rain - lakes - drought||||Drought - lakes - rain - ground|Ground - rain - lakes - drought|Lakes - rain - ground - drought|Rain - ground - lakes - drought": "Rain - ground - lakes - drought",
+    "DEFAULT:WHAT IS THE PARAGRAPH ABOUT? CHOOSE THE BEST OPTION: THERE IS VERY LITTLE CLEAN WATER AVAILABLE ON EARTH BUT WE CARELESSLY WASTE WATER. WE SHOULD SAVE WATER AND KEEP CLEAN THE ONE WE HAVE.||CTX:We should take care of water...We should take care of water||||Water will be polluted|We should take care of water|true is not polluted": "We should take care of water",
+    "T4:MATCH THE WORDS AND THEIR DEFINITION:||Chlorinate|Dam|Jaundice|Pollution": [
+        "Pollution",
+        "Jaundice",
+        "Chlorinate",
+        "Dam"
+    ],
+    "DEFAULT:READ THE TEXT AND FILL IN THE GAPS USING THE CORRECT WORDS:||CTX:filter - should - drink - Boiling...filter - should - drink - Boiling||||boiling - drink - should - Filter|drink - boiling - filter - Should|filter - should - drink - Boiling|should - drink - filter - Boiling": "should - drink - filter - Boiling",
+    "DEFAULT:READ THE TEXT. CHOOSE THE BEST OPTION:||CTX:LAKES...LAKES||||JAUNDICE|LAKES|POLLUTION": "POLLUTION",
+    "T4:MATCH THE WORDS AND THEIR MEANING:||Lake|Pond|Rain|River": [
+        "Lake",
+        "Pond",
+        "River",
+        "Rain"
+    ],
+    "T4:MATCH THE DEFINITIONS WITH THE CORRECT OPTIONS:||Burner|Coil|Dial|Wire": [
+        "Dial",
+        "Wire",
+        "Burner",
+        "Coil"
+    ],
+    "T4:MATCH THE WORDS AND THEIR SYNONYMS:||Appliance|Convenient|Dangerous|Weak": [
+        "Dangerous",
+        "Weak",
+        "Appliance",
+        "Convenient"
+    ],
+    "T4:MATCH THE WORDS AND THEIR MEANING:||Dangerous|Gas|Kitchen|Stove": [
+        "Stove",
+        "Gas",
+        "Dangerous",
+        "Kitchen"
+    ],
+    "DEFAULT:WHAT IS THE PARAGRAPH ABOUT? CHOOSE THE BEST OPTION: MANY PEOPLE STILL PREFER TO COOK ON A GAS STOVE BECAUSE, IN OUR COUNTRY, GAS IS CHEAPER THAN ELECTRICITY, EVEN THOUGH IT CAN BE DANGEROUS.||CTX:Gas stoves are more convenient...Gas stoves are more convenient||||Appliances can be dangerous|Gas stoves are more convenient|Gas stoves are more expensive": "Gas stoves are more convenient",
+    "DEFAULT:READ THE TEXT AND FILL IN THE BLANKS USING THE CORRECT WORDS:||CTX:burner - wire - dial - coil...burner - wire - dial - coil||||burner - wire - dial - coil|coil - dial - wire - burner|dial - coil - wire - burner|wire - dial - burner - coil": "coil - dial - wire - burner",
+    "DEFAULT:READ THE TEXT AND FILL IN THE GAPS USING THE CORRECT WORDS: MANY PEOPLE STILL PREFER TO ______ IN A GAS STOVE BECAUSE, IN OUR COUNTRY, GAS IS ______ THAN ELECTRICITY, EVEN THOUGH IT _____ BE _______.||CTX:can - cook - cheaper - dangerous...can - cook - cheaper - dangerous||||can - cook - cheaper - dangerous|cheaper - dangerous - can - cook|cook - cheaper - can - dangerous|dangerous - can - cook - cheaper": "cook - cheaper - can - dangerous",
+    "DEFAULT:WHAT IS THE BEST HEADLINE FOR THIS PARAGRAPH? CHOOSE THE BEST ONE.||CTX:HOW TO COOK PROPERLY...HOW TO COOK PROPERLY||||HOW TO BUILD AN ELECTRIC STOVE|HOW TO COOK PROPERLY|PARTS OF AN ELECTRICAL STOVE": "PARTS OF AN ELECTRICAL STOVE",
+    "DEFAULT:READ THE TEXT. CHOOSE THE BEST OPTION:||CTX:BENEFIT IN ALL ASPECTS...BENEFIT IN ALL ASPECTS||||ADVANTAGE|BENEFIT IN ALL ASPECTS|WASTE OF TIME AND MONEY": "WASTE OF TIME AND MONEY",
+    "DEFAULT:FILL IN THE GAPS USING THE CORRECT WORDS.||CTX:cook - different - energy - stoves...cook - different - energy - stoves||||cook - different - energy - stoves|different - stoves - cook - energy|energy - different - cook - stoves|stoves - energy - cook - different": "different - stoves - cook - energy",
+    "DEFAULT:READ THE TEXT AND FILL IN THE BLANKS USING THE CORRECT WORDS:||CTX:switch - romantic - cooking - stoves...switch - romantic - cooking - stoves||||cooking - romantic - stoves - switch|romantic -stoves - switch - cooking|stoves - romantic - cooking - switch|switch - romantic - cooking - stoves": "cooking - romantic - stoves - switch",
+    "DEFAULT:FILL IN THE GAPS USING THE CORRECT WORDS.||CTX:pain - problems - back - prescription...pain - problems - back - prescription||||back - pain - problems - prescription|pain - problems - back - prescription|prescription - back - true - pain|problems - prescription - back - pain": "back - pain - problems - prescription",
+    "DEFAULT:READ THE TEXT AND FILL IN THE GAPS USING THE CORRECT WORDS:||CTX:days - ibuprofen - tablet - meals...days - ibuprofen - tablet - meals||||days - ibuprofen - tablet - meals|ibuprofen - days - tablet - meals|meals - tablet - days - ibuprofen|tablet - ibuprofen - days - meals": "ibuprofen - days - tablet - meals",
+    "DEFAULT:WHAT IS THE BEST HEADLINE FOR THIS PARAGRAPH? CHOOSE THE BEST ONE||CTX:HOW TO TAKE LESSONS...HOW TO TAKE LESSONS||||HOW TO TAKE LESSONS|MEDICAL APPOINTMENT|MEDICAL PRESCRIPTION": "MEDICAL PRESCRIPTION",
+    "DEFAULT:WHAT IS THE PARAGRAPH ABOUT? CHOOSE THE BEST OPTION:||CTX:A conversation between 2 businessmen...A conversation between 2 businessmen||||A conversation between 2 businessmen|A conversation between 2 professionals|Instructions given by a Doctor": "Instructions given by a Doctor",
+    "DEFAULT:READ THE TEXT AND FILL IN THE BLANKS USING THE CORRECT WORDS:||CTX:medicine - give - flu - pharmacy...medicine - give - flu - pharmacy||||flu - medicine - pharmacy - give|give - medicine - flu - pharmacy|medicine - give - flu - pharmacy|pharmacy - give - flu - medicine": "give - medicine - flu - pharmacy",
+    "T4:MATCH THE WORDS AND THEIR DEFINITION:||Daily|Prescription|Tablet|Treatment": [
+        "Treatment",
+        "Prescription",
+        "Daily",
+        "Tablet"
+    ],
+    "T4:MATCH THE WORDS AND THEIR SYNONYMS||doctor|hospital|pill|talk": [
+        "doctor",
+        "talk",
+        "hospital",
+        "pill"
+    ]
 }
