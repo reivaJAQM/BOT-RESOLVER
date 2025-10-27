@@ -1,7 +1,7 @@
 # bot_main.py
 # Script principal que orquesta el bot.
 # ¡Refactorizado con "Plan Maestro" y "Plan S"!
-# --- ¡ACTUALIZADO CON TIPO 10 (Lote) y Correcciones Anteriores! (Indentación Final Revisada) ---
+# --- ¡ACTUALIZADO CON TIPO 10 (Lote) y Correcciones Anteriores! (Indentación Final Revisada v3) ---
 
 import time
 import json
@@ -217,7 +217,7 @@ try:
                 if tipo_pregunta == "TIPO_1_ORDENAR":
                     # Use 20 spaces for indentation
                     print("Tipo: ORDENAR (Múltiple).")
-                    # ... (Lógica TIPO 1 completa aquí) ...
+                    # ... (Lógica TIPO 1 completa) ...
                     contenedores = wait_long.until(EC.presence_of_all_elements_located(sel.SELECTOR_CONTENEDOR_ORDENAR))
                     if not contenedores: raise Exception("No se encontraron contenedores TIPO 1.")
                     print(f"Encontrados {len(contenedores)} contenedores para ordenar.")
@@ -285,25 +285,29 @@ try:
                 elif tipo_pregunta == "TIPO_2_COMPLETAR":
                     # Use 20 spaces for indentation
                     print("Tipo: COMPLETAR PALABRAS (Lote).");
-                    # ... (Lógica TIPO 2 completa aquí) ...
                     lineas = wait_long.until(EC.presence_of_all_elements_located(sel.SELECTOR_LINEAS_COMPLETAR))
                     if not lineas: raise Exception("No se encontraron líneas.")
                     print(f"Encontradas {len(lineas)} líneas (tareas).")
                     lista_de_tareas_completar = []
                     for i, linea in enumerate(lineas):
+                        # Use 24 spaces for indentation
                         print(f"\nRecolectando línea {i+1}...")
                         driver.execute_script("arguments[0].scrollIntoViewIfNeeded(true);", linea); time.sleep(0.1)
                         spans = linea.find_elements(By.XPATH, "./div/span[@class='inline-block']")
                         botones_en_linea = linea.find_elements(*sel.SELECTOR_BOTONES_OPCION_COMPLETAR)
                         opciones_palabra = [b.text.strip() for b in botones_en_linea if b.text.strip()]
                         if not opciones_palabra:
+                            # Use 28 spaces for indentation
                             print(f"Warn: Línea {i+1} sin opciones. Omitiendo.")
                             continue
                         frase_para_ia = ""; placeholder_colocado = False
                         for j, span in enumerate(spans):
+                            # Use 28 spaces for indentation
                             if not span.find_elements(*sel.SELECTOR_BOTONES_OPCION_COMPLETAR):
+                                # Use 32 spaces for indentation
                                 frase_para_ia += span.text.strip() + " "
                             elif not placeholder_colocado:
+                                # Use 32 spaces for indentation
                                 frase_para_ia += "___ "
                                 placeholder_colocado = True
                         frase_para_ia = ' '.join(frase_para_ia.split())
@@ -315,24 +319,31 @@ try:
                     clave_pregunta = f"T2_BATCH:{titulo_limpio}"
                     respuestas_lote_ia = []
                     if clave_pregunta in soluciones_correctas:
+                        # Use 24 spaces for indentation
                         print("      SOLUCIÓN LOTE TIPO 2 ENCONTRADA en memoria (Dict).");
                         dict_soluciones = soluciones_correctas[clave_pregunta]
                         mapeo_ok = True
                         for tarea in lista_de_tareas_completar:
+                            # Use 28 spaces for indentation
                             frase_key = tarea["frase"]
                             if frase_key in dict_soluciones:
+                                # Use 32 spaces for indentation
                                 respuestas_lote_ia.append(dict_soluciones[frase_key])
                             else:
+                                # Use 32 spaces for indentation
                                 print(f"      ERROR Memoria T2: No se encontró la frase '{frase_key}' en el dict de soluciones.");
                                 respuestas_lote_ia = []
                                 mapeo_ok = False; break
                         if not mapeo_ok:
+                             # Use 28 spaces for indentation
                              print("      Fallo mapeo de memoria T2, llamando a IA...")
                     if not respuestas_lote_ia:
+                        # Use 24 spaces for indentation
                         print("      Llamando a IA (Lote Completar) para TIPO 2...")
                         tareas_para_ia = [{"frase": t["frase"], "opciones": t["opciones"]} for t in lista_de_tareas_completar]
                         respuestas_ia_temp = ia_utils.obtener_palabras_correctas_lote(contexto, tareas_para_ia)
                         if not respuestas_ia_temp or len(respuestas_ia_temp) != len(lista_de_tareas_completar):
+                            # Use 28 spaces for indentation
                             raise Exception("Fallo IA (Completar Lote) o nº resp no coincide.")
                         respuestas_lote_ia = respuestas_ia_temp
                         frases_clave = [t["frase"] for t in lista_de_tareas_completar]
@@ -340,17 +351,24 @@ try:
                     print(f"Respuestas TIPO 2 a aplicar (lote): {respuestas_lote_ia}")
                     exito_global = True
                     for respuesta_ia, tarea in zip(respuestas_lote_ia, lista_de_tareas_completar):
+                        # Use 24 spaces for indentation
                         boton_clic = None
                         for b in tarea["botones"]:
+                            # Use 28 spaces for indentation
                             if b.text.strip() == respuesta_ia:
+                                # Use 32 spaces for indentation
                                 boton_clic = b; break
                         if boton_clic:
+                            # Use 28 spaces for indentation
                             try:
+                                # Use 32 spaces for indentation
                                 print(f"      Clic en '{respuesta_ia}'...");
                                 driver.execute_script("arguments[0].click();", boton_clic); time.sleep(0.4)
                             except Exception as e:
+                                # Use 32 spaces for indentation
                                 print(f"Error clic T2: {e}"); exito_global = False; break
                         else:
+                            # Use 28 spaces for indentation
                             print(f"Error CRÍTICO T2: Botón '{respuesta_ia}' no encontrado.");
                             exito_global = False; break
                     if not exito_global: raise Exception("Fallo al completar palabras (Lote).")
@@ -359,7 +377,7 @@ try:
                 elif tipo_pregunta == "TIPO_3_TF_MULTI":
                     # Use 20 spaces for indentation
                     print("Tipo: TRUE/FALSE MÚLTIPLE.")
-                    # ... (Lógica TIPO 3 completa aquí) ...
+                    # ... (Lógica TIPO 3 completa) ...
                     cajas_afirmacion = wait_extra_long.until(EC.presence_of_all_elements_located(sel.SELECTOR_CAJAS_TF))
                     if not cajas_afirmacion: raise Exception("No se encontraron cajas True/False.")
                     print(f"Encontradas {len(cajas_afirmacion)} afirmaciones.")
@@ -423,7 +441,7 @@ try:
                 elif tipo_pregunta == "TIPO_6_PARAGRAPH":
                     # Use 20 spaces for indentation
                     print("Tipo: MATCH IDEA TO PARAGRAPH.");
-                    # ... (Lógica TIPO 6 completa aquí) ...
+                    # ... (Lógica TIPO 6 completa) ...
                     cajas_ideas = wait_extra_long.until(EC.presence_of_all_elements_located(sel.SELECTOR_PARAGRAPH_CAJAS))
                     if not cajas_ideas: raise Exception("No cajas ideas.")
                     print(f"Encontradas {len(cajas_ideas)} ideas."); lista_ideas_texto = []; elementos_cajas = []
@@ -463,7 +481,7 @@ try:
                 elif tipo_pregunta == "TIPO_4_EMPAREJAR":
                     # Use 20 spaces for indentation
                     print("Tipo: EMPAREJAR PALABRAS.");
-                    # ... (Lógica TIPO 4 completa aquí) ...
+                    # ... (Lógica TIPO 4 completa) ...
                     exito_global = True; print("      Extrayendo definiciones (JS)...")
                     js_get_defs = f"return Array.from(document.querySelectorAll('{sel.SELECTOR_DEFINICIONES_AZULES_CSS}')).map(el => el.innerText.trim());"
                     try:
@@ -515,17 +533,21 @@ try:
                 elif tipo_pregunta == "TIPO_5_TF_SINGLE":
                     # Use 20 spaces for indentation
                     print("Tipo: MARK TRUE/FALSE (Single).");
-                    # ... (Lógica TIPO 5 completa aquí) ...
+                    # ... (Lógica TIPO 5 completa) ...
                     try:
                         texto_afirmacion_elem = wait_long.until(EC.visibility_of_element_located(sel.SELECTOR_MARK_TF_TEXT)); texto_afirmacion = texto_afirmacion_elem.text.strip()
                         boton_true = wait_long.until(EC.presence_of_element_located(sel.SELECTOR_MARK_TF_TRUE)); boton_false = wait_long.until(EC.presence_of_element_located(sel.SELECTOR_MARK_TF_FALSE))
                         if not texto_afirmacion: raise Exception("No texto afirmación.")
-                        print(f"      Afirmación: '{texto_afirmacion}'"); clave_pregunta = texto_afirmacion.strip(); opciones_ya_vistas[clave_pregunta] = ["True", "False"]
+                        print(f"      Afirmación: '{texto_afirmacion}'");
+                        opciones_t5 = ["True", "False"]
+                        titulo_limpio_t5 = texto_afirmacion.strip()
+                        clave_pregunta = f"T5:{titulo_limpio_t5}||" + "|".join(sorted(opciones_t5))
+                        opciones_ya_vistas[clave_pregunta] = opciones_t5
                         if clave_pregunta in soluciones_correctas: print("      SOLUCIÓN ENCONTRADA."); respuesta_tf_ia = soluciones_correctas[clave_pregunta]
                         else:
                             if clave_pregunta in preguntas_ya_vistas:
                                 respuesta_anterior = preguntas_ya_vistas[clave_pregunta]; respuesta_tf_ia = "False" if respuesta_anterior == "True" else "True"
-                                print(f"      WARN: Pregunta repetida. Anterior: '{respuesta_anterior}'. Forzando: '{respuesta_tf_ia}'")
+                                print(f"      WARN: Pregunta repetida (T5). Anterior: '{respuesta_anterior}'. Forzando: '{respuesta_tf_ia}'")
                             else: print("      IA (T/F)..."); respuesta_tf_ia = ia_utils.obtener_true_false(contexto, texto_afirmacion)
                             if respuesta_tf_ia: preguntas_ya_vistas[clave_pregunta] = respuesta_tf_ia
                         if not respuesta_tf_ia: raise Exception("IA (T/F) falló.")
@@ -538,7 +560,7 @@ try:
                 elif tipo_pregunta == "TIPO_7_OM_CARD":
                     # Use 20 spaces for indentation
                     print("Tipo: ANSWER THE QUESTION (OM in Card).");
-                    # ... (Lógica TIPO 7 completa aquí) ...
+                    # ... (Lógica TIPO 7 completa) ...
                     cajas_preguntas = wait_extra_long.until(EC.presence_of_all_elements_located(sel.SELECTOR_ANSWER_Q_CAJAS))
                     if not cajas_preguntas: raise Exception("No cajas 'Answer Question'.")
                     print(f"Encontradas {len(cajas_preguntas)} tarjetas."); lista_de_tareas = []; lista_de_preguntas = []; elementos_cajas = []
@@ -581,7 +603,7 @@ try:
                 elif tipo_pregunta == "TIPO_8_IMAGEN":
                     # Use 20 spaces for indentation
                     print("Tipo: EMPAREJAR IMAGEN (TIPO 8).");
-                    # ... (Lógica TIPO 8 completa aquí) ...
+                    # ... (Lógica TIPO 8 completa) ...
                     exito_global = True; print("      Extrayendo definiciones (JS)...")
                     js_get_defs = f"return Array.from(document.querySelectorAll('{sel.SELECTOR_DEFINICIONES_AZULES_CSS}')).map(el => el.innerText.trim());"
                     try:
@@ -652,11 +674,13 @@ try:
                 elif tipo_pregunta == "TIPO_9_AUDIO":
                     # Use 20 spaces for indentation
                     print("Tipo: AUDIO (TIPO 9).");
-                    # ... (Lógica TIPO 9 completa aquí) ...
+                    # ... (Lógica TIPO 9 completa) ...
                     opciones_elementos = wait_long.until(EC.presence_of_all_elements_located(sel.SELECTOR_OPCIONES))
                     opciones = [e.text.strip() for e in opciones_elementos if e.text and e.is_displayed()]
                     if not opciones: raise Exception("No opciones visibles (TIPO 9).")
-                    clave_pregunta = pregunta_actual_texto.strip() if "pregunta_sin_titulo" not in pregunta_actual_texto else contexto[:150]
+                    titulo_limpio_t9 = pregunta_actual_texto.strip() if "pregunta_sin_titulo" not in pregunta_actual_texto else contexto[:150]
+                    opciones_limpias_sorted_t9 = sorted([o.strip() for o in opciones])
+                    clave_pregunta = f"T9:{titulo_limpio_t9}||" + "|".join(opciones_limpias_sorted_t9)
                     print(f"Resolviendo: {pregunta_actual_texto}\nOpciones: {opciones}");
                     opciones_ya_vistas[clave_pregunta] = opciones
                     if clave_pregunta in soluciones_correctas:
@@ -687,6 +711,7 @@ try:
                 elif tipo_pregunta == "TIPO_10_ESCRIBIR":
                     # Use 20 spaces for indentation
                     print("Tipo: ESCRIBIR PALABRA ORDENADA (TIPO 10 - Lote).");
+                    # ... (Lógica TIPO 10 completa) ...
                     letras_elems = wait_long.until(EC.presence_of_all_elements_located(sel.SELECTOR_LETRAS_DESORDENADAS))
                     input_elems = wait_long.until(EC.presence_of_all_elements_located(sel.SELECTOR_INPUT_ESCRIBIR))
                     if not letras_elems or not input_elems or len(letras_elems) != len(input_elems):
@@ -696,7 +721,6 @@ try:
                     lista_de_tareas_escribir = []
                     lista_palabras_desordenadas_raw = []
                     for i in range(num_tareas):
-                        # Use 24 spaces for indentation
                         letras_desordenadas_raw = letras_elems[i].text.strip()
                         input_elem_actual = input_elems[i]
                         if not letras_desordenadas_raw:
@@ -712,11 +736,9 @@ try:
                     clave_pregunta = f"T10_BATCH:{titulo_limpio}||{claves_ordenadas_str}"
                     respuestas_lote_ia = []
                     if clave_pregunta in soluciones_correctas:
-                        # Use 24 spaces for indentation
                         print("      SOLUCIÓN LOTE TIPO 10 ENCONTRADA en memoria.");
                         respuestas_lote_ia = soluciones_correctas[clave_pregunta]
                     else:
-                        # Use 24 spaces for indentation
                         print("      Llamando a IA (Ordenar Palabra Lote)...")
                         respuestas_ia_temp = ia_utils.obtener_palabras_ordenadas_lote(lista_palabras_desordenadas_raw)
                         if not respuestas_ia_temp or len(respuestas_ia_temp) != len(lista_de_tareas_escribir):
@@ -729,9 +751,7 @@ try:
                         print("Error crítico T10: Número de respuestas IA no coincide con tareas.")
                         raise Exception("Fallo TIPO 10 - Mismatch respuestas/tareas")
                     for palabra_correcta, tarea in zip(respuestas_lote_ia, lista_de_tareas_escribir):
-                        # Use 24 spaces for indentation
                         try:
-                            # Use 28 spaces for indentation
                             input_actual = tarea["input_elem"]
                             print(f"      Escribiendo '{palabra_correcta}'...");
                             wait_short.until(EC.element_to_be_clickable(input_actual))
@@ -739,11 +759,9 @@ try:
                             input_actual.send_keys(palabra_correcta)
                             time.sleep(0.3)
                         except Exception as e:
-                            # Use 28 spaces for indentation
                             print(f"Error al escribir en input TIPO 10: {e}");
                             exito_global = False; break
                     if not exito_global: raise Exception("Fallo al escribir en inputs TIPO 10.")
-                # --- FIN LÓGICA TIPO 10 ---
 
                 # --- TIPO DEFAULT: OPCIÓN MÚLTIPLE ---
                 elif tipo_pregunta == "TIPO_DEFAULT_OM":
@@ -752,15 +770,18 @@ try:
                     opciones_elementos = wait_long.until(EC.presence_of_all_elements_located(sel.SELECTOR_OPCIONES))
                     opciones = [e.text.strip() for e in opciones_elementos if e.text and e.is_displayed()]
                     if not opciones: raise Exception("No opciones visibles.")
-                    clave_pregunta = pregunta_actual_texto.strip() if "pregunta_sin_titulo" not in pregunta_actual_texto else contexto[:150]
-                    print(f"Resolviendo: {pregunta_actual_texto}\nOpciones: {opciones}"); opciones_ya_vistas[clave_pregunta] = opciones
+                    titulo_limpio_def = pregunta_actual_texto.strip() if "pregunta_sin_titulo" not in pregunta_actual_texto else contexto[:150]
+                    opciones_limpias_sorted_def = sorted([o.strip() for o in opciones])
+                    clave_pregunta = f"DEFAULT:{titulo_limpio_def}||" + "|".join(opciones_limpias_sorted_def)
+                    print(f"Resolviendo: {pregunta_actual_texto}\nOpciones: {opciones}");
+                    opciones_ya_vistas[clave_pregunta] = opciones
                     if clave_pregunta in soluciones_correctas: print("      SOLUCIÓN ENCONTRADA."); respuesta_ia = soluciones_correctas[clave_pregunta]
                     else:
                         # Use 24 spaces for indentation
                         opciones_para_ia = list(opciones)
                         if clave_pregunta in preguntas_ya_vistas:
                             # Use 28 spaces for indentation
-                            respuesta_anterior = preguntas_ya_vistas[clave_pregunta]; print(f"      WARN: Pregunta repetida. Anterior: ('{respuesta_anterior}').")
+                            respuesta_anterior = preguntas_ya_vistas[clave_pregunta]; print(f"      WARN: Pregunta repetida (Default). Anterior: ('{respuesta_anterior}').")
                             if respuesta_anterior in opciones_para_ia: opciones_para_ia.remove(respuesta_anterior); print(f"      Reintentando con: {opciones_para_ia}")
                             if not opciones_para_ia: print("      ERROR: Se agotaron opciones."); opciones_para_ia = list(opciones)
                         print("IA (OM)..."); respuesta_ia = ia_utils.obtener_respuesta_opcion_multiple(contexto, pregunta, opciones_para_ia)
@@ -795,7 +816,7 @@ try:
                         contenido_modal = driver.find_element(*sel.SELECTOR_MODAL_CONTENIDO).text
                         preguntas_para_ia = None; opciones_para_ia = None; solucion_aprendida = None
 
-                        # 1. Preparar datos
+                        # 1. Preparar datos (Claves corregidas y limpias)
                         if tipo_pregunta == "TIPO_6_PARAGRAPH":
                             # Use 28 spaces for indentation
                             clave_pregunta = "|".join([p.strip() for p in lista_ideas_texto]); preguntas_para_ia = [idea.split(":", 1)[1] for idea in lista_ideas_texto]
@@ -815,15 +836,33 @@ try:
                             clave_pregunta = "|".join([p.strip() for p in lista_afirmaciones_texto]); preguntas_para_ia = [afirm.split(":", 1)[1] for afirm in lista_afirmaciones_texto]
                         elif (tipo_pregunta == "TIPO_DEFAULT_OM" or tipo_pregunta == "TIPO_9_AUDIO"):
                             # Use 28 spaces for indentation
-                            clave_pregunta = clave_pregunta.strip()
-                            if clave_pregunta in opciones_ya_vistas:
-                                 # Use 32 spaces for indentation
-                                 opciones_para_ia = opciones_ya_vistas[clave_pregunta]
-                            else: print(f"WARN Learn Prep: Clave '{clave_pregunta}' no en opciones_ya_vistas para {tipo_pregunta}")
+                            titulo_limpio = pregunta_actual_texto.strip() if "pregunta_sin_titulo" not in pregunta_actual_texto else contexto[:150]
+                            current_opciones = []
+                            try:
+                                # Use 32 spaces for indentation
+                                opciones_elems_current = driver.find_elements(*sel.SELECTOR_OPCIONES)
+                                current_opciones = [e.text.strip() for e in opciones_elems_current if e.text and e.is_displayed()]
+                            except:
+                                # Use 32 spaces for indentation
+                                print(f"WARN Learn Prep: No se pudieron leer opciones para {tipo_pregunta}")
+                            if current_opciones:
+                                # Use 32 spaces for indentation
+                                opciones_limpias_sorted = sorted(current_opciones)
+                                prefix = "T9" if tipo_pregunta == "TIPO_9_AUDIO" else "DEFAULT"
+                                clave_pregunta = f"{prefix}:{titulo_limpio}||" + "|".join(opciones_limpias_sorted)
+                                opciones_para_ia = current_opciones # Usar opciones actuales para aprendizaje
+                                print(f"      Preparando aprendizaje para {tipo_pregunta}. Clave: {clave_pregunta[:50]}...")
+                            else:
+                                # Use 32 spaces for indentation
+                                print(f"WARN Learn Prep: No hay opciones disponibles para {tipo_pregunta}")
+                                clave_pregunta = None
                         elif tipo_pregunta == "TIPO_5_TF_SINGLE":
                             # Use 28 spaces for indentation
-                            clave_pregunta = clave_pregunta.strip()
-                            opciones_para_ia = ["True", "False"]
+                            titulo_limpio = pregunta_actual_texto.strip()
+                            opciones_t5 = ["True", "False"]
+                            clave_pregunta = f"T5:{titulo_limpio}||" + "|".join(sorted(opciones_t5))
+                            opciones_para_ia = opciones_t5
+                            print(f"      Preparando aprendizaje para TIPO 5. Clave: {clave_pregunta[:50]}...")
                         elif tipo_pregunta == "TIPO_10_ESCRIBIR":
                              # Use 28 spaces for indentation
                              titulo_limpio = pregunta_actual_texto.strip()
@@ -846,10 +885,13 @@ try:
                                  clave_pregunta = None
 
                         # 2. Extraer solución
-                        if tipo_pregunta in ["TIPO_1_ORDENAR", "TIPO_2_COMPLETAR", "TIPO_3_TF_MULTI", "TIPO_6_PARAGRAPH", "TIPO_7_OM_CARD", "TIPO_10_ESCRIBIR"] and clave_pregunta and preguntas_para_ia and contenido_modal:
+                        if tipo_pregunta in ["TIPO_1_ORDENAR", "TIPO_2_COMPLETAR", "TIPO_3_TF_MULTI", "TIPO_6_PARAGRAPH", "TIPO_7_OM_CARD", "TIPO_10_ESCRIBIR"] and clave_pregunta and contenido_modal:
                             # Use 28 spaces for indentation
                             solucion_lista_ordenada = None
-                            if tipo_pregunta == "TIPO_3_TF_MULTI":
+                            if preguntas_para_ia is None:
+                                # Use 32 spaces for indentation
+                                print("      ERROR Aprendizaje Lote: 'preguntas_para_ia' no está definida.")
+                            elif tipo_pregunta == "TIPO_3_TF_MULTI":
                                 # Use 32 spaces for indentation
                                 print("      Enviando texto a IA (Lote T/F) para extraer solución..."); solucion_lista_ordenada = ia_utils.extraer_solucion_lote_tf(contenido_modal, preguntas_para_ia)
                             elif tipo_pregunta == "TIPO_2_COMPLETAR":
@@ -900,7 +942,7 @@ try:
                                     if not mapeo_fallido: solucion_lista_ordenada = solucion_lista_ordenada_temp
                                     else: solucion_lista_ordenada = None
                                 else: solucion_lista_ordenada = None
-                            
+
                             if solucion_lista_ordenada:
                                 # Use 32 spaces for indentation
                                 print(f"      ¡SOLUCIÓN LOTE APRENDIDA! -> {solucion_lista_ordenada}");
@@ -918,9 +960,9 @@ try:
 
                         elif (tipo_pregunta == "TIPO_4_EMPAREJAR" or tipo_pregunta == "TIPO_8_IMAGEN") and clave_pregunta and contenido_modal:
                             # Use 28 spaces for indentation
-                            tipo_num_str = ''.join(filter(str.isdigit, tipo_pregunta))
-                            print(f"      Enviando texto a IA (Aprendizaje Emparejar TIPO {tipo_num_str}) para extraer solución...");
-                            try:
+                             tipo_num_str = ''.join(filter(str.isdigit, tipo_pregunta))
+                             print(f"      Enviando texto a IA (Aprendizaje Emparejar TIPO {tipo_num_str}) para extraer solución...");
+                             try:
                                 # Use 32 spaces for indentation
                                 dict_solucion = ia_utils.extraer_solucion_emparejar(contenido_modal, palabras_clave, definiciones)
                                 if dict_solucion:
@@ -943,7 +985,7 @@ try:
                                 else:
                                     # Use 36 spaces for indentation
                                     solucion_aprendida = None
-                            except NameError:
+                             except NameError:
                                 # Use 32 spaces for indentation
                                 print("      Error: 'palabras_clave' o 'definiciones' no definidas. No se puede aprender.")
                                 solucion_aprendida = None
@@ -973,7 +1015,46 @@ try:
                     elif "correct" in titulo_modal or "great" in titulo_modal:
                         # Use 24 spaces for indentation
                         print(f"      Respuesta CORRECTA detectada (Modal: {titulo_modal}).")
-                        if clave_pregunta: clave_pregunta = clave_pregunta.strip()
+                        
+                        # Regenerar clave correcta para guardar el acierto
+                        if tipo_pregunta == "TIPO_5_TF_SINGLE":
+                            # Use 28 spaces for indentation
+                            titulo_limpio = pregunta_actual_texto.strip()
+                            opciones_t5 = ["True", "False"]
+                            clave_pregunta = f"T5:{titulo_limpio}||" + "|".join(sorted(opciones_t5))
+                        elif tipo_pregunta == "TIPO_9_AUDIO" or tipo_pregunta == "TIPO_DEFAULT_OM":
+                             # Use 28 spaces for indentation
+                             titulo_limpio = pregunta_actual_texto.strip() if "pregunta_sin_titulo" not in pregunta_actual_texto else contexto[:150]
+                             current_opciones = []
+                             try:
+                                 # Use 32 spaces for indentation
+                                 opciones_elems_current = driver.find_elements(*sel.SELECTOR_OPCIONES)
+                                 current_opciones = [e.text.strip() for e in opciones_elems_current if e.text and e.is_displayed()]
+                             except:
+                                 # Use 32 spaces for indentation
+                                 print("WARN Acierto: No se pudieron leer opciones para generar clave T9/Default.")
+                                 clave_pregunta = None
+                             if current_opciones:
+                                 # Use 32 spaces for indentation
+                                 opciones_limpias_sorted = sorted([o.strip() for o in current_opciones])
+                                 prefix = "T9" if tipo_pregunta == "TIPO_9_AUDIO" else "DEFAULT"
+                                 clave_pregunta = f"{prefix}:{titulo_limpio}||" + "|".join(opciones_limpias_sorted)
+                             else: clave_pregunta = None
+                        elif tipo_pregunta == "TIPO_10_ESCRIBIR":
+                             # Use 28 spaces for indentation
+                             titulo_limpio = pregunta_actual_texto.strip()
+                             if lista_de_tareas_escribir:
+                                 # Use 32 spaces for indentation
+                                 claves_ordenadas_str = "|".join(sorted([t["letras_clave"] for t in lista_de_tareas_escribir]))
+                                 clave_pregunta = f"T10_BATCH:{titulo_limpio}||{claves_ordenadas_str}"
+                             else:
+                                 # Use 32 spaces for indentation
+                                 print("WARN Acierto T10: 'lista_de_tareas_escribir' vacía. No se puede generar clave.")
+                                 clave_pregunta = None
+                        elif clave_pregunta:
+                            # Use 28 spaces for indentation
+                           clave_pregunta = clave_pregunta.strip()
+
                         if clave_pregunta and clave_pregunta not in soluciones_correctas:
                             # Use 28 spaces for indentation
                             print(f"      Guardando nuevo acierto en memoria...")
@@ -1037,5 +1118,4 @@ except Exception as e:
 finally:
     # Use 4 spaces for indentation
     print("\nProceso terminado. Cerrando en 20 seg."); time.sleep(20); driver.quit()
-
 
