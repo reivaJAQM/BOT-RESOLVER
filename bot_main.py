@@ -2,6 +2,8 @@
 # Script principal que orquesta el bot.
 # ¡Refactorizado con "Plan Maestro" y "Plan S"!
 # --- ¡ACTUALIZADO CON TIPO 10 (Lote) y Correcciones Anteriores! (Indentación Final Revisada v3) ---
+# --- ¡CORREGIDO BUG DE APRENDIZAJE EN ACIERTOS (T5, T9, DEFAULT)! ---
+# --- ¡ACTUALIZADO CON HASH DE CONTEXTO PARA CLAVES ÚNICAS (T2, T5, T9, DEFAULT)! ---
 
 import time
 import json
@@ -123,9 +125,12 @@ try:
 
         # --- BUCLE DE PREGUNTAS (INTERNO) ---
         pregunta_actual_texto = ""
+        # --- INICIO MODIFICACIÓN HASH ---
         tipo_pregunta = ""; clave_pregunta = None; lista_ideas_texto = []; lista_de_preguntas = []; lista_afirmaciones_texto = []; frases_des = []; lista_de_claves_individuales = []; lista_de_tareas_ordenar = []
         palabras_clave = []; definiciones = []; lista_de_tareas_completar = []
         lista_de_tareas_escribir = []; lista_palabras_desordenadas_raw = []
+        imagen_hash = ""; audio_hash = ""; contexto_hash = "" # Añadimos reseteo de hashes
+        # --- FIN MODIFICACIÓN HASH ---
 
         while True:
             # Use 12 spaces for indentation
@@ -180,6 +185,12 @@ try:
                     # Use 20 spaces for indentation
                     print("Warn: No contexto."); contexto = ""
 
+                # --- INICIO MODIFICACIÓN HASH DE CONTEXTO ---
+                # Creamos un hash simple del contexto para diferenciar preguntas
+                # con el mismo título pero diferente párrafo.
+                contexto_hash = f"CTX:{contexto[:50]}...{contexto[-50:]}"
+                # --- FIN MODIFICACIÓN HASH DE CONTEXTO ---
+                
                 try:
                     # Use 20 spaces for indentation
                     pregunta_elemento = wait_long.until(EC.presence_of_element_located(sel.SELECTOR_PREGUNTA))
@@ -316,7 +327,10 @@ try:
                         lista_de_tareas_completar.append({"frase": frase_para_ia,"opciones": opciones_palabra,"botones": botones_en_linea})
                     if not lista_de_tareas_completar: raise Exception("No se recolectaron tareas TIPO 2 válidas.")
                     titulo_limpio = pregunta_actual_texto.strip()
-                    clave_pregunta = f"T2_BATCH:{titulo_limpio}"
+                    # --- INICIO MODIFICACIÓN HASH DE CONTEXTO ---
+                    clave_pregunta = f"T2_BATCH:{titulo_limpio}||{contexto_hash}"
+                    # --- FIN MODIFICACIÓN HASH DE CONTEXTO ---
+                    
                     respuestas_lote_ia = []
                     if clave_pregunta in soluciones_correctas:
                         # Use 24 spaces for indentation
@@ -541,7 +555,10 @@ try:
                         print(f"      Afirmación: '{texto_afirmacion}'");
                         opciones_t5 = ["True", "False"]
                         titulo_limpio_t5 = texto_afirmacion.strip()
-                        clave_pregunta = f"T5:{titulo_limpio_t5}||" + "|".join(sorted(opciones_t5))
+                        # --- INICIO MODIFICACIÓN HASH DE CONTEXTO ---
+                        clave_pregunta = f"T5:{titulo_limpio_t5}||{contexto_hash}||" + "|".join(sorted(opciones_t5))
+                        # --- FIN MODIFICACIÓN HASH DE CONTEXTO ---
+                        
                         opciones_ya_vistas[clave_pregunta] = opciones_t5
                         if clave_pregunta in soluciones_correctas: print("      SOLUCIÓN ENCONTRADA."); respuesta_tf_ia = soluciones_correctas[clave_pregunta]
                         else:
@@ -674,13 +691,30 @@ try:
                 elif tipo_pregunta == "TIPO_9_AUDIO":
                     # Use 20 spaces for indentation
                     print("Tipo: AUDIO (TIPO 9).");
-                    # ... (Lógica TIPO 9 completa) ...
                     opciones_elementos = wait_long.until(EC.presence_of_all_elements_located(sel.SELECTOR_OPCIONES))
                     opciones = [e.text.strip() for e in opciones_elementos if e.text and e.is_displayed()]
                     if not opciones: raise Exception("No opciones visibles (TIPO 9).")
+                    
+                    # --- INICIO: HASHING por AUDIO para TIPO_9 ---
+                    audio_hash = "" # Reseteamos por si acaso
+                    try:
+                        audio_elem = driver.find_element(*sel.SELECTOR_AUDIO)
+                        audio_src = audio_elem.get_attribute("src")
+                        if audio_src:
+                            # Extraemos el GUID del audio
+                            nombre_archivo = audio_src.split('/')[-1].split('?')[0]
+                            audio_hash = f"AUD:{nombre_archivo}"
+                            print(f"      Audio detectado. Añadiendo hash a la clave: {audio_hash}")
+                    except Exception as e_aud:
+                        print(f"      WARN: No se pudo extraer hash de audio: {e_aud}")
+                    # --- FIN: HASHING por AUDIO ---
+                    
                     titulo_limpio_t9 = pregunta_actual_texto.strip() if "pregunta_sin_titulo" not in pregunta_actual_texto else contexto[:150]
                     opciones_limpias_sorted_t9 = sorted([o.strip() for o in opciones])
-                    clave_pregunta = f"T9:{titulo_limpio_t9}||" + "|".join(opciones_limpias_sorted_t9)
+                    # --- INICIO MODIFICACIÓN HASH DE CONTEXTO ---
+                    clave_pregunta = f"T9:{titulo_limpio_t9}||{contexto_hash}||{audio_hash}||" + "|".join(opciones_limpias_sorted_t9)
+                    # --- FIN MODIFICACIÓN HASH DE CONTEXTO ---
+                    
                     print(f"Resolviendo: {pregunta_actual_texto}\nOpciones: {opciones}");
                     opciones_ya_vistas[clave_pregunta] = opciones
                     if clave_pregunta in soluciones_correctas:
@@ -770,9 +804,30 @@ try:
                     opciones_elementos = wait_long.until(EC.presence_of_all_elements_located(sel.SELECTOR_OPCIONES))
                     opciones = [e.text.strip() for e in opciones_elementos if e.text and e.is_displayed()]
                     if not opciones: raise Exception("No opciones visibles.")
+                    
+                    # --- INICIO: HASHING por IMAGEN para DEFAULT_OM ---
+                    imagen_hash = "" # Reseteamos por si acaso
+                    try:
+                        # Intentamos encontrar imágenes dentro del área principal de la pregunta
+                        imagenes_en_pregunta = driver.find_elements(By.XPATH, "//div[contains(@class,'card')]//img")
+                        if imagenes_en_pregunta:
+                            # Usamos la primera imagen encontrada
+                            img_src = imagenes_en_pregunta[0].get_attribute("src")
+                            if img_src:
+                                # Extraemos el GUID de la imagen (ej: 'image-guid-12345.png')
+                                nombre_archivo = img_src.split('/')[-1].split('?')[0]
+                                imagen_hash = f"IMG:{nombre_archivo}"
+                                print(f"      Imagen detectada. Añadiendo hash a la clave: {imagen_hash}")
+                    except Exception as e_img:
+                        print(f"      WARN: No se pudo extraer hash de imagen: {e_img}")
+                    # --- FIN: HASHING por IMAGEN ---
+
                     titulo_limpio_def = pregunta_actual_texto.strip() if "pregunta_sin_titulo" not in pregunta_actual_texto else contexto[:150]
                     opciones_limpias_sorted_def = sorted([o.strip() for o in opciones])
-                    clave_pregunta = f"DEFAULT:{titulo_limpio_def}||" + "|".join(opciones_limpias_sorted_def)
+                    # --- INICIO MODIFICACIÓN HASH DE CONTEXTO ---
+                    clave_pregunta = f"DEFAULT:{titulo_limpio_def}||{contexto_hash}||{imagen_hash}||" + "|".join(opciones_limpias_sorted_def)
+                    # --- FIN MODIFICACIÓN HASH DE CONTEXTO ---
+                    
                     print(f"Resolviendo: {pregunta_actual_texto}\nOpciones: {opciones}");
                     opciones_ya_vistas[clave_pregunta] = opciones
                     if clave_pregunta in soluciones_correctas: print("      SOLUCIÓN ENCONTRADA."); respuesta_ia = soluciones_correctas[clave_pregunta]
@@ -829,7 +884,9 @@ try:
                         elif tipo_pregunta == "TIPO_2_COMPLETAR":
                             # Use 28 spaces for indentation
                             titulo_limpio = pregunta_actual_texto.strip()
-                            clave_pregunta = f"T2_BATCH:{titulo_limpio}";
+                            # --- INICIO MODIFICACIÓN HASH DE CONTEXTO ---
+                            clave_pregunta = f"T2_BATCH:{titulo_limpio}||{contexto_hash}";
+                            # --- FIN MODIFICACIÓN HASH DE CONTEXTO ---
                             preguntas_para_ia = lista_de_tareas_completar
                         elif tipo_pregunta == "TIPO_3_TF_MULTI":
                             # Use 28 spaces for indentation
@@ -840,8 +897,7 @@ try:
                             current_opciones = []
                             try:
                                 # Use 32 spaces for indentation
-                                opciones_elems_current = driver.find_elements(*sel.SELECTOR_OPCIONES)
-                                current_opciones = [e.text.strip() for e in opciones_elems_current if e.text and e.is_displayed()]
+                                current_opciones = opciones # Usamos la variable 'opciones' guardada
                             except:
                                 # Use 32 spaces for indentation
                                 print(f"WARN Learn Prep: No se pudieron leer opciones para {tipo_pregunta}")
@@ -849,8 +905,13 @@ try:
                                 # Use 32 spaces for indentation
                                 opciones_limpias_sorted = sorted(current_opciones)
                                 prefix = "T9" if tipo_pregunta == "TIPO_9_AUDIO" else "DEFAULT"
-                                clave_pregunta = f"{prefix}:{titulo_limpio}||" + "|".join(opciones_limpias_sorted)
-                                opciones_para_ia = current_opciones # Usar opciones actuales para aprendizaje
+                                # --- INICIO MODIFICACIÓN HASH DE CONTEXTO (APRENDIZAJE) ---
+                                hash_extra = ""
+                                if tipo_pregunta == "TIPO_9_AUDIO": hash_extra = audio_hash
+                                else: hash_extra = imagen_hash
+                                clave_pregunta = f"{prefix}:{titulo_limpio}||{contexto_hash}||{hash_extra}||" + "|".join(opciones_limpias_sorted)
+                                # --- FIN MODIFICACIÓN HASH DE CONTEXTO (APRENDIZAJE) ---
+                                opciones_para_ia = current_opciones 
                                 print(f"      Preparando aprendizaje para {tipo_pregunta}. Clave: {clave_pregunta[:50]}...")
                             else:
                                 # Use 32 spaces for indentation
@@ -860,7 +921,9 @@ try:
                             # Use 28 spaces for indentation
                             titulo_limpio = pregunta_actual_texto.strip()
                             opciones_t5 = ["True", "False"]
-                            clave_pregunta = f"T5:{titulo_limpio}||" + "|".join(sorted(opciones_t5))
+                            # --- INICIO MODIFICACIÓN HASH DE CONTEXTO ---
+                            clave_pregunta = f"T5:{titulo_limpio}||{contexto_hash}||" + "|".join(sorted(opciones_t5))
+                            # --- FIN MODIFICACIÓN HASH DE CONTEXTO ---
                             opciones_para_ia = opciones_t5
                             print(f"      Preparando aprendizaje para TIPO 5. Clave: {clave_pregunta[:50]}...")
                         elif tipo_pregunta == "TIPO_10_ESCRIBIR":
@@ -1017,31 +1080,16 @@ try:
                         print(f"      Respuesta CORRECTA detectada (Modal: {titulo_modal}).")
                         
                         # Regenerar clave correcta para guardar el acierto
-                        if tipo_pregunta == "TIPO_5_TF_SINGLE":
-                            # Use 28 spaces for indentation
-                            titulo_limpio = pregunta_actual_texto.strip()
-                            opciones_t5 = ["True", "False"]
-                            clave_pregunta = f"T5:{titulo_limpio}||" + "|".join(sorted(opciones_t5))
-                        elif tipo_pregunta == "TIPO_9_AUDIO" or tipo_pregunta == "TIPO_DEFAULT_OM":
+                        
+                        # --- INICIO DE LA CORRECCIÓN (BUG Guardado Acierto) ---
+                        # (La 'clave_pregunta' original generada antes del CHECK
+                        # ya incluye el HASH de contexto/imagen/audio si aplica,
+                        # así que usamos esa directamente.)
+                        
+                        if tipo_pregunta == "TIPO_10_ESCRIBIR":
                              # Use 28 spaces for indentation
-                             titulo_limpio = pregunta_actual_texto.strip() if "pregunta_sin_titulo" not in pregunta_actual_texto else contexto[:150]
-                             current_opciones = []
-                             try:
-                                 # Use 32 spaces for indentation
-                                 opciones_elems_current = driver.find_elements(*sel.SELECTOR_OPCIONES)
-                                 current_opciones = [e.text.strip() for e in opciones_elems_current if e.text and e.is_displayed()]
-                             except:
-                                 # Use 32 spaces for indentation
-                                 print("WARN Acierto: No se pudieron leer opciones para generar clave T9/Default.")
-                                 clave_pregunta = None
-                             if current_opciones:
-                                 # Use 32 spaces for indentation
-                                 opciones_limpias_sorted = sorted([o.strip() for o in current_opciones])
-                                 prefix = "T9" if tipo_pregunta == "TIPO_9_AUDIO" else "DEFAULT"
-                                 clave_pregunta = f"{prefix}:{titulo_limpio}||" + "|".join(opciones_limpias_sorted)
-                             else: clave_pregunta = None
-                        elif tipo_pregunta == "TIPO_10_ESCRIBIR":
-                             # Use 28 spaces for indentation
+                             # (Esta lógica se mantiene porque 'lista_de_tareas_escribir'
+                             #  sí existe en memoria y no depende del DOM)
                              titulo_limpio = pregunta_actual_texto.strip()
                              if lista_de_tareas_escribir:
                                  # Use 32 spaces for indentation
@@ -1053,7 +1101,11 @@ try:
                                  clave_pregunta = None
                         elif clave_pregunta:
                             # Use 28 spaces for indentation
+                           # (Este 'elif' ahora capturará T2, T5, T9, Default y los demás
+                           #  tipos, usando la clave original que ya estaba guardada)
                            clave_pregunta = clave_pregunta.strip()
+                        # --- FIN DE LA CORRECCIÓN ---
+
 
                         if clave_pregunta and clave_pregunta not in soluciones_correctas:
                             # Use 28 spaces for indentation
@@ -1118,4 +1170,8 @@ except Exception as e:
 finally:
     # Use 4 spaces for indentation
     print("\nProceso terminado. Cerrando en 20 seg."); time.sleep(20); driver.quit()
+
+
+
+
 
