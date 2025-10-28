@@ -1,7 +1,7 @@
 # ia_utils.py
 # Contiene toda la lógica para comunicarse con la API de IA.
 # ¡ACTUALIZADO CON MANEJO DE ERRORES GLOBAL!
-# ¡ACTUALIZADO CON VALIDACIÓN OM MEJORADA PARA PREFIJOS (a), 1.)!
+# ¡ACTUALIZADO CON VALIDACIÓN OM MEJORADA PARA PREFIJOS (a), 1.) + DEBUG!
 
 import google.generativeai as genai
 import ast
@@ -85,7 +85,7 @@ def obtener_respuesta_opcion_multiple(contexto, pregunta, opciones):
 
         # 2. Intento de Coincidencia Ignorando Prefijos Comunes (a), 1., etc.)
         #    Regex para buscar prefijos como "a) ", "1. ", "A. " al inicio de la opción
-        prefix_regex = re.compile(r"^\s*([a-zA-Z]\)|\d+\.)\s*")
+        prefix_regex = re.compile(r"^\s*([a-zA-Z]|\d+)\.\s*") # <-- LÍNEA CORREGIDA (Usa \. para el punto literal)
 
         for opcion_original in opciones:
             # Use 12 spaces for indentation
@@ -93,10 +93,21 @@ def obtener_respuesta_opcion_multiple(contexto, pregunta, opciones):
             opcion_sin_prefijo = prefix_regex.sub("", opcion_original).strip()
             opcion_sin_prefijo_lower = opcion_sin_prefijo.lower()
 
-            # Comparar la respuesta limpia de la IA (lower) con la opción sin prefijo (lower)
-            if respuesta_ia_lower == opcion_sin_prefijo_lower:
+            # Normalizar espacios (replace multiple spaces with one) y limpiar puntuación/ends
+            respuesta_ia_compare = ' '.join(respuesta_ia_lower.split()).rstrip('.?! ').strip()
+            opcion_compare = ' '.join(opcion_sin_prefijo_lower.split()).rstrip('.?! ').strip()
+
+            # --- DEBUGGING ---
+            print(f"      DEBUG Compare:")
+            print(f"      IA (len {len(respuesta_ia_compare)}): '{respuesta_ia_compare}'")
+            print(f"      Opt (len {len(opcion_compare)}): '{opcion_compare}'")
+            print(f"      Son iguales?: {respuesta_ia_compare == opcion_compare}")
+            # --- FIN DEBUGGING ---
+
+            # Comparar las versiones limpias
+            if respuesta_ia_compare == opcion_compare:
                 # Use 16 spaces for indentation
-                print(f"Coincidencia sin prefijo encontrada: IA='{respuesta_limpia_ia}' -> Opción='{opcion_original}'")
+                print(f"Coincidencia sin prefijo/puntuación/espacios encontrada: IA='{respuesta_limpia_ia}' -> Opción='{opcion_original}'")
                 # ¡Devolver la OPCIÓN ORIGINAL con prefijo para que el bot principal la encuentre!
                 return opcion_original
 
@@ -106,7 +117,11 @@ def obtener_respuesta_opcion_multiple(contexto, pregunta, opciones):
         for opcion_original in opciones:
              # Use 12 spaces for indentation
              opcion_limpia_lower = opcion_original.strip('"\'., ').lower()
-             if respuesta_ia_lower == opcion_limpia_lower:
+             # Añadimos normalización de espacios aquí también por si acaso
+             respuesta_ia_norm_simple = ' '.join(respuesta_ia_lower.split()).rstrip('.?! ').strip()
+             opcion_norm_simple = ' '.join(opcion_limpia_lower.split()).rstrip('.?! ').strip()
+
+             if respuesta_ia_norm_simple == opcion_norm_simple:
                   # Use 16 spaces for indentation
                   print(f"Coincidencia normalizada simple encontrada: '{opcion_original}'")
                   return opcion_original # Devolvemos la original
@@ -595,13 +610,18 @@ Respuesta (Sólo la lista JSON de respuestas correctas):
                     op_sin_prefijo = prefix_regex_om.sub("", op_original).strip()
                     op_sin_prefijo_lower = op_sin_prefijo.lower()
 
-                    if palabra_ia_sin_prefijo_lower == op_sin_prefijo_lower:
+                    # Limpiar puntuación final y normalizar espacios ANTES de comparar
+                    respuesta_compare = ' '.join(palabra_ia_sin_prefijo_lower.split()).rstrip('.?! ').strip()
+                    opcion_compare = ' '.join(op_sin_prefijo_lower.split()).rstrip('.?! ').strip()
+
+                    if respuesta_compare == opcion_compare:
                         # Use 24 spaces for indentation
-                        respuestas_verificadas.append(op_original)
+                        respuestas_verificadas.append(op_original) # Guarda la original
                         encontrado = True
                         break
                 if not encontrado:
                     # Use 20 spaces for indentation
+                    # Fallback por si la IA devuelve la opción con prefijo
                     if palabra_ia_limpia in opciones_tarea_originales:
                          # Use 24 spaces for indentation
                          print(f"      Alerta IA (OM Lote): Tarea {i+1} - IA devolvió '{palabra_ia_limpia}' con prefijo, encontrada exacto.")
@@ -610,7 +630,7 @@ Respuesta (Sólo la lista JSON de respuestas correctas):
 
                 if not encontrado:
                     # Use 20 spaces for indentation
-                    print(f"Error IA (OM Lote): Tarea {i+1} - '{palabra_ia_limpia}' no coincide con ninguna opción (ni sin prefijo) en {opciones_tarea_originales}")
+                    print(f"Error IA (OM Lote): Tarea {i+1} - '{palabra_ia_limpia}' no coincide con ninguna opción (ni sin prefijo/puntuación) en {opciones_tarea_originales}")
                     return None
 
             print(f"IA (OM Lote): Recibidas {len(respuestas_verificadas)} respuestas verificadas.")
@@ -653,18 +673,21 @@ Respuesta Correcta (Sólo el string de la opción):
 
         respuesta_limpia = respuesta_texto.strip('"\'., ')
 
-        # Validación mejorada (ignora prefijos)
+        # Validación mejorada (ignora prefijos y puntuación final + normaliza espacios)
         prefix_regex_learn = re.compile(r"^\s*([a-zA-Z]\)|\d+\.)\s*")
         respuesta_sin_prefijo_lower = prefix_regex_learn.sub("", respuesta_limpia).lower()
+        respuesta_compare = ' '.join(respuesta_sin_prefijo_lower.split()).rstrip('.?! ').strip()
+
 
         for op_original in opciones_lista:
             # Use 12 spaces for indentation
             op_sin_prefijo = prefix_regex_learn.sub("", op_original).strip()
             op_sin_prefijo_lower = op_sin_prefijo.lower()
+            opcion_compare = ' '.join(op_sin_prefijo_lower.split()).rstrip('.?! ').strip()
 
-            if respuesta_sin_prefijo_lower == op_sin_prefijo_lower:
+            if respuesta_compare == opcion_compare:
                 # Use 16 spaces for indentation
-                print(f"IA (Aprendizaje Simple) extrajo (match sin prefijo): '{op_original}'")
+                print(f"IA (Aprendizaje Simple) extrajo (match sin prefijo/puntuación/espacios): '{op_original}'")
                 return op_original # Devolver la original
 
         # Fallback si la IA devuelve la opción con prefijo y coincide exacto
@@ -673,7 +696,7 @@ Respuesta Correcta (Sólo el string de la opción):
              print(f"IA (Aprendizaje Simple) extrajo (match exacto con prefijo): '{respuesta_limpia}'")
              return respuesta_limpia
 
-        print(f"IA (Aprendizaje Simple) falló. Respuesta '{respuesta_limpia}' no en {opciones_lista} (ni sin prefijo)")
+        print(f"IA (Aprendizaje Simple) falló. Respuesta '{respuesta_limpia}' no en {opciones_lista} (ni normalizada)")
         return None
 
     except Exception as e:

@@ -557,7 +557,11 @@
         "I work in a school and help people to learn. I am a doctor. ___": "F",
         "I work in a hospital and help the doctor. I am a nurse. ___": "T",
         "I feel bored when I have nothing to do. ___": "T",
-        "She feels sad when she receives presents. ___": "F"
+        "She feels sad when she receives presents. ___": "F",
+        "On planet Earth there are 2 moons. ___": "F",
+        "We need a little water. ___": "T",
+        "The subject in which you study the past of something is called Physical Education. ___": "F",
+        "The study of use of the rules about how words change their form and combine with other words to make sentences is called Grammar. ___": "T"
     },
     "T11_BATCH:PUT IN ORDER THE FOLLOWING LETTERS TO CREATE WORDS RELATED TO PROFESSIONS.||CTX:...||NESTCPIETROI ___|NESTCPIETROI ___|NESTCPIETROI ___": [
         "RECEPTIONIST",
@@ -606,5 +610,294 @@
         ]
     ],
     "DEFAULT:READ THE QUESTION AND CHOOSE THE BEST ANSWER: A. HOW DO YOU FEEL WHEN YOU HAVE AN EXAM? B. I FEEL ______||CTX:happy...happy||||happy|invidious|nervous|playful.": "nervous",
-    "DEFAULT:WHICH SENTENCE IS CORRECT?||CTX:He a smart boy is....He a smart boy is.||||He a smart boy is.|He is a smart boy.|He is smart a boy.": "He is a smart boy."
+    "DEFAULT:WHICH SENTENCE IS CORRECT?||CTX:He a smart boy is....He a smart boy is.||||He a smart boy is.|He is a smart boy.|He is smart a boy.": "He is a smart boy.",
+    "T4:MATCH THE DEFINITION TO THE RIGHT EMOTION WORD.||envidious|happy": [
+        "envidious",
+        "happy"
+    ],
+    "T2_BATCH:CHOOSE THE BEST OPTION TO COMPLETE THE SENTENCES.||CTX:...": {
+        "I would like to spend more time doing things that make me ___": "happy",
+        "She is ___ about her job interview.": "nervous",
+        "There is ___ milk in the refrigerator.": "a little",
+        "I need ___ minutes.": "a few"
+    },
+    "DEFAULT:CHOOSE A, B, OR C, ACCORDING TO THE PICTURE.||CTX:a. Something that makes me happy is having a lot o...hing that makes me happy is having a lot of money.||IMG_DIM:360x240||a. Something that makes me happy is having a lot of money.|b. Something that makes me sad is seeing children working in the streets.|c. Something that puts me in a bad mood is not finishing my homework on time.": "a. Something that makes me happy is having a lot of money.",
+    "T11_BATCH:PUT IN ORDER THE FOLLOWING LETTERS TO CREATE WORDS RELATED TO EMOTIONS WORDS.||CTX:...||IDVNUSIEO ___|IDVNUSIEO ___|IDVNUSIEO ___": [
+        "ENVIDIOUS",
+        "ANGRY",
+        "WINKY"
+    ],
+    "0:There|a|are|books|few|on|table|the": [
+        [
+            "There",
+            "are",
+            "a",
+            "few",
+            "books",
+            "on",
+            "the",
+            "table"
+        ]
+    ],
+    "0:60 minutes|An hour|has|2:She|a few awards|won|4:I|a lot of friends|have": [
+        [
+            "An hour",
+            "has",
+            "60 minutes"
+        ],
+        [
+            "She",
+            "won",
+            "a few awards"
+        ],
+        [
+            "I",
+            "have",
+            "a lot of friends"
+        ]
+    ],
+    "DEFAULT:WHICH SENTENCE IS CORRECT?||CTX:He has few photos on Instagram....He has few photos on Instagram.||||He has few on Instagram photos.|He has few on photos Instagram.|He has few photos on Instagram.": "He has few photos on Instagram.",
+    "T4:MATCH THE SENTENCE WITH THE RIGHT OPTION.||countable nouns|plural countable nouns|singular uncountable nouns": [
+        "countable nouns",
+        "plural countable nouns",
+        "singular uncountable nouns"
+    ],
+    "0:English|I|I'm|a|little|sorry|speak": [
+        [
+            "I'm",
+            "sorry",
+            "I",
+            "speak",
+            "a",
+            "little",
+            "English"
+        ]
+    ],
+    "DEFAULT:CHOOSE A, B, OR C, ACCORDING TO THE PICTURE.||CTX:a. I have coffee with a little milk....a. I have coffee with a little milk.||IMG_DIM:360x240||a. I have coffee with a little milk.|b. She likes a few songs by Shakira.|c. We need a little water.": "a. I have coffee with a little milk.",
+    "DEFAULT:READ THE QUESTION AND CHOOSE THE BEST ANSWER: HOW MANY MINUTES ARE THERE IN TWO HOURS?||CTX:30 minutes...30 minutes||||120 minutes|220 minutes|30 minutes|60 minutes": "120 minutes",
+    "T11_BATCH:PUT IN ORDER THE FOLLOWING LETTERS TO CREATE WORDS RELATED TO QUANTIFIERS.||CTX:...||GUHENO ___|GUHENO ___|GUHENO ___": [
+        "ENOUGH",
+        "FEW",
+        "LITTLE"
+    ],
+    "0:English|My|favorite|is|subject": [
+        [
+            "My",
+            "favorite",
+            "subject",
+            "is",
+            "English"
+        ]
+    ],
+    "0:English|My favorite subject|is|2:She|a good student|was|4:Martha|finished|school with good gradesave": [
+        [
+            "My favorite subject",
+            "is",
+            "English"
+        ],
+        [
+            "She",
+            "was",
+            "a good student"
+        ],
+        [
+            "Martha",
+            "finished",
+            "school with good gradesave"
+        ]
+    ],
+    "DEFAULT:WHICH SENTENCE IS CORRECT?||CTX:Which did subject you hate?...Which did subject you hate?||||Which did subject you hate?|Which subject did you hate?|Which you hate subject did?": "Which subject did you hate?",
+    "DEFAULT:CHOOSE A, B, OR C, ACCORDING TO THE PICTURE.||CTX:a. When I was in school, I used to get bad grades....a. When I was in school, I used to get bad grades.||IMG_DIM:260x240||a. When I was in school, I used to get bad grades.|b. My favorite subject is Math. I love numbers.|c. I hated grammar, because I didn´t like English.": "b. My favorite subject is Math. I love numbers.",
+    "0:Geography is the|and the relationship|and their|between people|environments.|study of places": [
+        [
+            "Geography is the",
+            "study of places",
+            "and the relationship",
+            "between people",
+            "and their",
+            "environments."
+        ]
+    ],
+    "DEFAULT:READ THE QUESTION AND CHOOSE THE BEST ANSWER: IN WHICH SUBJECT SHOULD STUDENTS PAY ATTENTION TO THE RULES AND PUNCTUATION?||CTX:Math...Math||||Art|Grammar|Math|Science": "Grammar",
+    "T11_BATCH:PUT IN ORDER THE FOLLOWING LETTERS TO CREATE WORDS RELATED TO THE LEARNING ENVIRONMENT.||CTX:...||AMRMRAG ___|AMRMRAG ___|AMRMRAG ___": [
+        "GRAMMAR",
+        "SCIENCE",
+        "MATH"
+    ],
+    "DEFAULT:READ THE QUESTION AND CHOOSE THE BEST ANSWER: IN WHICH SUBJECT DO STUDENTS PLAY SPORTS?||CTX:Math...Math||||Art|Geography|Math|Physical Education": "Physical Education",
+    "T4:MATCH THE DEFINITION TO THE RIGHT LEARNING ENVIRONMENT.||Math|Social Studies": [
+        "Math",
+        "Social Studies"
+    ],
+    "T2_BATCH:CHOOSE THE BEST OPTION: HOLIDAY / VACATION TO COMPLETE THE SENTENCE.||CTX:HOLIDAY VACATION, describe period of time when you... time when we are not at work or school each year.": {
+        "The 4th of July is the American national ___": "HOLIDAY",
+        "The students are looking forward for the ___": "VACATIONS",
+        "When I was a child I used to spend my ___ in the country-side with my parents.": "VACATIONS",
+        "Today is the a ___ in my city. The 12th of March is the Foundation of Portoviejo. I will take a rest.": "HOLIDAY"
+    },
+    "T4:WHAT DO YOU USUALLY DO ON A VACATION DAY? ORDER THE SENTENCES ACCORDING TO THE TIME.||I go dancing with my friends.|I go shopping and visit museums.|I go to bed.|I go to hike and to the beach.|I have breakfast.|I wake up and get up.": [
+        "I wake up and get up.",
+        "I have breakfast.",
+        "I go to hike and to the beach.",
+        "I go shopping and visit museums.",
+        "I go dancing with my friends.",
+        "I go to bed."
+    ],
+    "DEFAULT:CLICK ON THE BEST ANSWER: WHERE IS THE FLIGHT TO SEOUL?||CTX:On gate twelve...On gate twelve||||At 4 o’clock|On gate twelve": "On gate twelve",
+    "DEFAULT:CLICK ON THE BEST ANSWER: WHAT TIME IS THE FLIGHT TO BEIJING?||CTX:On Monday...On Monday||||At eleven twenty|On Monday": "At eleven twenty",
+    "T4:MATCH THE PHRASES WITH THE SENTENCES.||Boarding|Cancelled|Delayed|Departed|Final call|Gate change": [
+        "Departed",
+        "Delayed",
+        "Cancelled",
+        "Boarding",
+        "Final call",
+        "Gate change"
+    ],
+    "T4:DRAG AND DROP THE HALVES TO COMPLETE THE SENTENCES.||ENDEMIC SPECIES LIKE ALBATROSES AND BOOBIES.|HIKING, CAMPING, RIDING BIKES OR HORSES.|IN COMFORTABLE SINGLE OR DOUBLE COTTAGES.": [
+        "ENDEMIC SPECIES LIKE ALBATROSES AND BOOBIES.",
+        "IN COMFORTABLE SINGLE OR DOUBLE COTTAGES.",
+        "HIKING, CAMPING, RIDING BIKES OR HORSES."
+    ],
+    "DEFAULT:READ THE BROCHURE. WHAT IS IT FOR? CHOOSE THE BEST OPTION.||CTX:Tropical Dry Forest and Spectacular Coral Reef Mac...lso have the privilege to see the humpback whales.||||Information about a holiday package|Information about a hotel|Information about a place": "Information about a place",
+    "T2_BATCH:READ THE INFORMATION IN THE POSTER AND CLICK IF THE STATEMENTS ARE TRUE OR FALSE.||CTX:Come and join our lunchtime yoga class with experi...nly take a maximum of 20 in the room, so book now!": {
+        "Sam Holden is the yoga teacher. ___": "FALSE",
+        "The yoga class is once a week. ___": "TRUE",
+        "The class is at lunchtime in room. ___": "TRUE",
+        "You need to bring yoga mats to the class. ___": "FALSE"
+    },
+    "DEFAULT:READ THE TEXT AND CLICK ON THE SIMILAR IDEA TO THE BOLD WORD: ON THE SECOND PARAGRAPH; WHAT DOES MOVED IN MEAN?||CTX:Dear Frank, Thanks a lot for your letter. I feel r... Write me soon and tell me about you. Love, Martha||||depart|establish|take out residence": "establish",
+    "0:She|and|black|curly,|glasses.|hair|has|she|wears": [
+        [
+            "She",
+            "has",
+            "curly,",
+            "black",
+            "hair",
+            "and",
+            "she",
+            "wears",
+            "glasses."
+        ]
+    ],
+    "T2_BATCH:READ THIS DESCRIPTION AND CLICK IF THE STATEMENTS ARE TRUE OR FALSE.||CTX:Hello my name is Monica. I am very attractive. My ...r, and started to dance while it was being served.": {
+        "Monica and her brother are attractive. ___": "TRUE",
+        "Monica´s mom and dad are bad people. ___": "FALSE",
+        "Monica´s best friend is not smart. ___": "FALSE",
+        "Martita is tall as her husband. ___": "FALSE",
+        "Monica´s best friend has brown eyes. ___": "TRUE"
+    },
+    "DEFAULT:READ THE TEXT AND CLICK ON THE SIMILAR IDEA TO THE BOLD WORD: ON THE FOURTH PARAGRAPH; WHAT DOES STAY IN MEAN?||CTX:continue...continue||IMG_DIM:176x240||continue|leave|move": "continue",
+    "T11_BATCH:PUT IN ORDER THE FOLLOWING LETTERS TO CREATE ADJECTIVES.||CTX:...||LLTA ___|LLTA ___|LLTA ___|LLTA ___|LLTA ___": [
+        "TALL",
+        "BROWN",
+        "SHORT",
+        "CURLY",
+        "FRIENDLY"
+    ],
+    "T4:DRAG AND DROP THE WORDS TO THE CORRECT SPACE.||blue|long|tall|thin|young": [
+        "tall",
+        "thin",
+        "young",
+        "long",
+        "blue"
+    ],
+    "DEFAULT:CHOOSE THE BEST OPTION ACCORDING TO THIS ARTICLE: THIS ARTICLE DESCRIBES ______||CTX:Hello, my name is Monica. I am very attractive. My... her husband. Martita is smart and has brown eyes.||||appearance|both: appearance and personality|personality": "both: appearance and personality",
+    "DEFAULT:READ THE TEXT AND CLICK ON THE BEST PROMPT: THIS READING IS ABOUT _______||CTX:The description of a nice place...The description of a nice place||IMG_DIM:176x240||The description of a nice person|The description of a nice place": "The description of a nice person",
+    "T4:READ THE QUESTIONS AND ANSWERS AND MATCH THEM.||Can you add vanilla syrup to your coffee drinks?|Do they sell cheesecakes?|How much does the regular Latte cost?|What’s Lulu’s Cafeteria address?": [
+        "What’s Lulu’s Cafeteria address?",
+        "How much does the regular Latte cost?",
+        "Can you add vanilla syrup to your coffee drinks?",
+        "Do they sell cheesecakes?"
+    ],
+    "T4:READ THE DESCRIPTION OF THESE COFFEE DRINKS, DRAG AND DROP THEIR NAMES.||Cappuccino|Latte|Mocaccino": [
+        "Mocaccino",
+        "Latte",
+        "Cappuccino"
+    ],
+    "DEFAULT:READ THE TEXT AND CHOOSE THE CORRECT ANSWER: WHAT WERE MR. MACIAS AND HIS FRIENDS CELEBRATING?||CTX:AT THE COFFEE SHOP At seven-thirty in the evening,...r a pleasant dinner, they returned to their homes.||||A bachelor party|A birthday party|A graduation party|A wedding anniversary": "A birthday party",
+    "T4:MATCH THE DEFINITIONS WITH THE VOCABULARY.||a sauce to put on salad|changes every day|comes with|cooked in the oven|not from a shop|without meat": [
+        "a sauce to put on salad",
+        "comes with",
+        "not from a shop",
+        "changes every day",
+        "cooked in the oven",
+        "without meat"
+    ],
+    "T4:MATCH THE WORDS WITH THE DEFINITIONS.||GO HOME|HAVE DINNER|TO DANCE|WAITER AND WAITRESS|WEARING A UNIFORM": [
+        "WEARING A UNIFORM",
+        "WAITER AND WAITRESS",
+        "TO DANCE",
+        "HAVE DINNER",
+        "GO HOME"
+    ],
+    "DEFAULT:READ THE PIECE OF TEXT AND CHOOSE THE BEST OPTION TO COMPLETE THE SENTENCE: WHAT DID MR. MACIAS AND HIS FRIENDS DECIDE TO EAT?||CTX:Broiled chicken...Broiled chicken||IMG_DIM:676x240||Broiled chicken|Broiled pork|Broiled steak": "Broiled steak",
+    "DEFAULT:READ THE PIECE OF TEXT AND CHOOSE THE BEST OPTION TO COMPLETE THE SENTENCE: HOW MANY PEOPLE WERE AT THE TABLE IN THE COFFEE SHOP?||CTX:AT THE COFFEE SHOP At seven-thirty in the evening....eemed very elegant. A waiter is wearing a uniform…||||Eight people|Four people|Seven people": "Eight people",
+    "T2_BATCH:READ THE INFORMATION IN THE POSTER AND CLICK IF THE STATEMENTS ARE TRUE OR FALSE.||CTX:RESTAURANT MENU MARTHA’S KITCHEN Meat an fish Gril... Cup of tea $ 1,50 Beer $ 3,00 Orange juice $ 2,00": {
+        "The fish is the same every day. ___": "FALSE",
+        "You can choose what comes with the steak. ___": "TRUE",
+        "The pizza has meat on it. ___": "FALSE",
+        "Soup is served with bread. ___": "TRUE",
+        "They make the ice cream themselves. ___": "FALSE",
+        "The cheapest drink is coffee. ___": "FALSE"
+    },
+    "DEFAULT:READ THE TEXT AND CHOOSE THE CORRECT ANSWER: HOW DID DR. LOOR EXAMINE BOBBY?||CTX:TALKING ABOUT SICKNESS AND HEALTH Bobby Zambrano w... really think so? Bobby's mother looked very glad.||||Dr. Loor looked at his body.|Dr. Loor looked at his throat.|Dr. Loor took his pressure.|Dr. Loor watched his eyes.": "Dr. Loor looked at his throat.",
+    "DEFAULT:WHICH SENTENCE HAS THE SAME MEANING AS THIS ONE?: IF YOU DON’T CARE YOURSELF, FLU CAN BE A SERIOUS ILLNESS.||CTX:The flu comes and goes for some people....The flu comes and goes for some people.||||The flu can be a serious illness if you don’t treat it on time.|The flu comes and goes for some people.|The flu is a serious illness but don’t worry if you have it.": "The flu can be a serious illness if you don’t treat it on time.",
+    "T4:MATCH THE QUESTIONS AND ANSWERS.||High fever, cough, sore throat, muscular pain.|It is transmitted specially in winter because the germs spread easily with cold and windy days.|Wash your hands often.": [
+        "It is transmitted specially in winter because the germs spread easily with cold and windy days.",
+        "High fever, cough, sore throat, muscular pain.",
+        "Wash your hands often."
+    ],
+    "DEFAULT:READ THE TEXT AND ANSWER THE QUESTION. CHOOSE THE BEST OPTION.: BOBBY HAD IN THE MORNING _______||CTX:A glass of water...A glass of water||IMG_DIM:676x240||A cup of coffee|A cup of hot chocolate|A glass of water|Milk": "Milk",
+    "DEFAULT:READ THE TEXT AND ANSWER THE QUESTION. CHOOSE THE BEST OPTION.: THE DOCTOR ASKED BOBBY “HOW DO YOU FELL NOW? AND BOBBY ANSWERED _______||CTX:TALKING ABOUT SICKNESS AND HEALTH. Bobby Zambrano ... really think so? Bobby's mother looked very glad.||||Fine|Not bad|Not well|Terrible": "Terrible",
+    "T2_BATCH:READ THE TEXT ABOUT SICKNESS, THEN WATCH THE SENTENCES AND CHOOSE IF THEY ARE TRUE OR FALSE.||CTX:...": {
+        "Bobby had a cup of coffee for breakfast. ___": "FALSE",
+        "Dr. Loor told Bobby “you will die”. ___": "FALSE",
+        "Dr. Loor talked with Bobby’s mother. ___": "TRUE",
+        "Dr. Loor said “Bobby has a very common sickness”. ___": "TRUE"
+    },
+    "T2_BATCH:READ THE TEXT AND MARK TRUE OR FALSE.||CTX:The flu is a type of virus and medicine doesn´t ki...t care yourself, the flu can be a serious illness.": {
+        "Is medicine able to kill the flu virus? ___": "FALSE",
+        "Flu is transmitted especially in summer? ___": "FALSE",
+        "Fever, cough, sore throat are fly symptoms? ___": "TRUE"
+    },
+    "DEFAULT:READ THE TEXT AND ANSWER THE QUESTION. CHOOSE THE BEST OPTION. THIS TEXT IS ABOUT:||CTX:Have you ever had the flu? If your answer is yes, ... glass or eat with the same spoon from an infected||||Tropical illness|When to go to the doctor if you have flu|hat is the flu and how to treat it": "hat is the flu and how to treat it",
+    "T2_BATCH:CHOOSE THE BEST OPTION IN THE FOLLOWING SENTENCES USING THE GERUND FOR EACH VERB:||CTX:...": {
+        "My best friends like bikes. They love ___": "Riding a bike",
+        "My father practices basketball. He likes ___": "playing",
+        "The best thing about ___ the bus is that I don´t need to drive.": "taking"
+    },
+    "T2_BATCH:READ THE TEXT AND CHOOSE IF THE VERB IS GERUND OR INFINITIVE TO COMPLETE IT.||CTX:...": {
+        "Hello, my name is Caroline. I 1. ___ gardening,": "like",
+        "because I feel in contact with the plants. 2. ___ is my passion that I learned from my grandmother.": "gardening",
+        "I ___ doing other activities different of these.": "hate",
+        "I enjoy ___ natural juices.": "drinking",
+        "By this reason I like 5. ___ some different types of trees with fruit.": "planting",
+        "And I love 6. ___ vegetables of the same way.": "eating"
+    },
+    "0:Reading|a|activity|is|relaxing|very": [
+        [
+            "Reading",
+            "is",
+            "a",
+            "very",
+            "relaxing",
+            "activity"
+        ]
+    ],
+    "0:I|in|love|net|surfing|the": [
+        [
+            "I",
+            "love",
+            "surfing",
+            "in",
+            "the",
+            "net"
+        ]
+    ],
+    "T2_BATCH:ARE THESE SENTENCES CORRECT (TRUE) OR INCORRECT (FALSE)?||CTX:...": {
+        "We stopped talking because someone interrupted us. ___": "TRUE",
+        "Know how to speak English is amazing! ___": "FALSE",
+        "I hate bing cold. I find it really depressing. ___": "FALSE",
+        "Martin enjoys writing good poems. ___": "TRUE"
+    }
 }
