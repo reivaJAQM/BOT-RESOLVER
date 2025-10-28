@@ -514,5 +514,97 @@
             "Michelle Obama is famous for promoting healthy eating in children."
         ]
     ],
-    "DEFAULT:WHICH SENTENCE IS CORRECT?||CTX:Someone who shares knowledge with her/his students...ares knowledge with her/his students is a teacher.||||Someone share knowledge with who her/his students is a teacher.|Someone who share knowledge with her/his students is a teacher.|Someone who shares knowledge with her/his students is a teacher.": "Someone who shares knowledge with her/his students is a teacher."
+    "DEFAULT:WHICH SENTENCE IS CORRECT?||CTX:Someone who shares knowledge with her/his students...ares knowledge with her/his students is a teacher.||||Someone share knowledge with who her/his students is a teacher.|Someone who share knowledge with her/his students is a teacher.|Someone who shares knowledge with her/his students is a teacher.": "Someone who shares knowledge with her/his students is a teacher.",
+    "DEFAULT:CHOOSE A, B, OR C: WHERE DOES AN ARTIST WORK?||CTX:a) restaurant...a) restaurant||||a) restaurant|b) studio|c) airport": "b) studio",
+    "DEFAULT:CHOOSE A, B, OR C: PERSON WHO TAKES CARE OF OUR TEETH||CTX:a) Lawyer....a) Lawyer.||IMG_DIM:360x240||a) Lawyer.|b) A dentist.|c) A nurse.": "b) A dentist.",
+    "DEFAULT:CHOOSE A, B, OR C: WHO AM I?||CTX:a) I help sick people....a) I help sick people.||IMG_DIM:360x240||a) I help sick people.|b) I work in a bank.|c) I am a teacher.": "a) I help sick people.",
+    "0:The dentist|clean|helps|keep|your teeth|2:Engineer|I|an|to be|wish|4:English|I|am|teacher|your": [
+        [
+            "The dentist",
+            "helps",
+            "keep",
+            "your teeth",
+            "clean"
+        ],
+        [
+            "I",
+            "wish",
+            "to be",
+            "an",
+            "Engineer"
+        ],
+        [
+            "I",
+            "am",
+            "your",
+            "English",
+            "teacher"
+        ]
+    ],
+    "DEFAULT:READ THE QUESTION AND CHOOSE THE BEST ANSWER: WHERE DOES A RECEPTIONIST WORK?||CTX:bakery...bakery||||bakery|hospital|office": "office",
+    "T4:CHOOSE THE BEST OPTION TO COMPLETE THE SENTENCES.||engineer|receptionist|teacher": [
+        "teacher",
+        "engineer",
+        "receptionist"
+    ],
+    "T4:MATCH THE DEFINITION TO THE RIGHT PROFESSION.||Dentist|Doctor|Soldier": [
+        "Doctor",
+        "Soldier",
+        "Dentist"
+    ],
+    "T2_BATCH:MARK TRUE (T) OR FALSE (F)||CTX:...": {
+        "I work in an office and answer the phone. I am a secretary. ___": "T",
+        "I work in a school and help people to learn. I am a doctor. ___": "F",
+        "I work in a hospital and help the doctor. I am a nurse. ___": "T",
+        "I feel bored when I have nothing to do. ___": "T",
+        "She feels sad when she receives presents. ___": "F"
+    },
+    "T11_BATCH:PUT IN ORDER THE FOLLOWING LETTERS TO CREATE WORDS RELATED TO PROFESSIONS.||CTX:...||NESTCPIETROI ___|NESTCPIETROI ___|NESTCPIETROI ___": [
+        "RECEPTIONIST",
+        "ACTOR",
+        "MECHANIC"
+    ],
+    "0:He|feels|happy|2:She|is|very jealous|4:My mother|feels|proud of me": [
+        [
+            "He",
+            "feels",
+            "happy"
+        ],
+        [
+            "She",
+            "is",
+            "very jealous"
+        ],
+        [
+            "My mother",
+            "feels",
+            "proud of me"
+        ]
+    ],
+    "0:Even though|He|I|angry|bought|he|him|is|sports shoes|the|wanted": [
+        [
+            "Even though",
+            "I",
+            "bought",
+            "him",
+            "the",
+            "sports shoes",
+            "he",
+            "wanted",
+            "He",
+            "is",
+            "angry"
+        ]
+    ],
+    "0:I|I'm dizzy|I´m|pregnant|think": [
+        [
+            "I'm dizzy",
+            "I",
+            "think",
+            "I´m",
+            "pregnant"
+        ]
+    ],
+    "DEFAULT:READ THE QUESTION AND CHOOSE THE BEST ANSWER: A. HOW DO YOU FEEL WHEN YOU HAVE AN EXAM? B. I FEEL ______||CTX:happy...happy||||happy|invidious|nervous|playful.": "nervous",
+    "DEFAULT:WHICH SENTENCE IS CORRECT?||CTX:He a smart boy is....He a smart boy is.||||He a smart boy is.|He is a smart boy.|He is smart a boy.": "He is a smart boy."
 }
