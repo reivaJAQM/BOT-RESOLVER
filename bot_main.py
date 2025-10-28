@@ -3,8 +3,10 @@
 # ¡Refactorizado con "Plan Maestro" y "Plan S"!
 # --- ¡ACTUALIZADO CON TIPO 11 (Escribir Opciones) y TODAS las correcciones! ---
 # --- (T1, T2, T3/T5, T4, T10, T11) ---
-# --- ¡ACTUALIZADO CON LÓGICA ANTI-BUCLE (No refrescar en error, solo en repetición)! ---
+# --- ¡ACTUALIZADO CON LÓGICA ANTI-BUCLE v2 (Posición Corregida)! ---
 # --- ¡ACTUALIZADO CON HASH DE IMAGEN ROBUSTO v4 (Priorizar ALT, fallback Dimensiones + ÍNDICE DESAMBIGUACIÓN, fallback Vacío)! ---
+# --- ¡ACTUALIZADO CON CLAVE TIPO 2 ÚNICA (Incluye Frases)! ---
+# --- ¡ACTUALIZADO CON HASH DE CUERPO PREGUNTA (Body Hash)! ---
 
 import time
 import json
@@ -132,10 +134,11 @@ try:
         pregunta_actual_texto = ""
         ultima_clave_pregunta_procesada = ""
 
+        # Resetear variables antes de cada pregunta
         tipo_pregunta = ""; clave_pregunta = None; lista_ideas_texto = []; lista_de_preguntas = []; lista_afirmaciones_texto = []; frases_des = []; lista_de_claves_individuales = []; lista_de_tareas_ordenar = []
         palabras_clave = []; definiciones = []; lista_de_tareas_completar = []
         lista_de_tareas_escribir = []; lista_palabras_desordenadas_raw = []; lista_frases_t11 = []
-        imagen_hash = ""; audio_hash = ""; contexto_hash = ""
+        imagen_hash = ""; audio_hash = ""; contexto_hash = ""; body_hash = "" # Añadido reset body_hash
         respuesta_fue_incorrecta = False
 
         while True:
@@ -236,11 +239,40 @@ try:
                     pregunta = f"pregunta_sin_titulo_{contexto[:50]}";
                     pregunta_actual_texto = pregunta
 
-                # --- Resetear listas/variables específicas de tipo ---
+                # --- ¡NUEVO! Extraer Hash del Cuerpo de la Pregunta (para Default, T9) ---
+                body_text = ""
+                body_hash = ""
+                if tipo_pregunta in ["TIPO_DEFAULT_OM", "TIPO_9_AUDIO"]: # Solo necesario para estos por ahora
+                     # Use 20 spaces for indentation
+                    try:
+                        # Use 24 spaces for indentation
+                        body_element = WebDriverWait(driver, 3).until(
+                            EC.visibility_of_element_located(sel.SELECTOR_CUERPO_PREGUNTA)
+                        )
+                        body_text = body_element.text.strip()
+                        if body_text:
+                            # Use 28 spaces for indentation
+                            cleaned_body = ' '.join(body_text.split())
+                            # Acortar hash para evitar claves excesivamente largas
+                            body_hash = f"BODY:{cleaned_body[:70]}...{cleaned_body[-70:]}" if len(cleaned_body) > 140 else f"BODY:{cleaned_body}"
+                            print(f"      Cuerpo detectado. Hash: {body_hash}")
+                        else:
+                            # Use 28 spaces for indentation
+                            print("      WARN: Cuerpo de pregunta encontrado pero vacío.")
+                    except TimeoutException:
+                        # Use 24 spaces for indentation
+                        print("      WARN: No se encontró cuerpo de pregunta separado (Timeout). body_hash estará vacío.")
+                    except Exception as e_body:
+                        # Use 24 spaces for indentation
+                        print(f"      WARN: Error extrayendo cuerpo de pregunta: {e_body}")
+                # --- FIN Extracción Hash Cuerpo ---
+
+
+                # --- Resetear listas/variables específicas de tipo (SEGUNDA VEZ PARA ASEGURAR) ---
                 lista_ideas_texto = []; lista_de_preguntas = []; lista_afirmaciones_texto = []; frases_des = []; lista_de_claves_individuales = []; lista_de_tareas_ordenar = []
                 palabras_clave = []; definiciones = []; lista_de_tareas_completar = []
                 lista_de_tareas_escribir = []; lista_palabras_desordenadas_raw = []; lista_frases_t11 = []
-                imagen_hash = ""; audio_hash = "" # No resetear contexto_hash aquí
+                imagen_hash = ""; audio_hash = "" # No resetear contexto_hash ni body_hash aquí
 
 
                 # --- TIPO 1: ORDENAR (MÚLTIPLE) ---
@@ -281,6 +313,27 @@ try:
                         lista_de_tareas_ordenar.append({"frases": frases_des_individual,"map_id_a_texto": map_id_a_texto_individual,"contenedor_elem": contenedor})
                     if not lista_de_tareas_ordenar: raise Exception("No se recolectaron tareas TIPO 1 válidas.")
                     clave_pregunta = "|".join(lista_de_claves_individuales)
+
+                    # --- ¡INICIO CHEQUEO DE BUCLE ATASCADO (TIPO 1)! ---
+                    if clave_pregunta and clave_pregunta == ultima_clave_pregunta_procesada:
+                        # Use 24 spaces for indentation
+                        print(f"      ¡ALERTA! PREGUNTA REPETIDA DETECTADA (Clave: {clave_pregunta[:70]}...)")
+                        print("      Se asume que es la última pregunta y está atascada. Refrescando PÁGINA...")
+                        try:
+                            # Use 28 spaces for indentation
+                            driver.refresh()
+                            wait_long.until(EC.presence_of_element_located(sel.SELECTOR_CHECK))
+                            print("      Página refrescada. Reintentando...")
+                            pregunta_actual_texto = ""
+                            ultima_clave_pregunta_procesada = ""
+                            respuesta_fue_incorrecta = False
+                            continue
+                        except Exception as e_refresh:
+                            # Use 28 spaces for indentation
+                            print(f"      ERROR CRÍTICO: No se pudo refrescar tras detectar bucle: {e_refresh}")
+                            raise
+                    # --- ¡FIN CHEQUEO DE BUCLE ATASCADO! ---
+
                     lista_ordenes_ia = []
                     if clave_pregunta in soluciones_correctas:
                         # Use 24 spaces for indentation
@@ -377,8 +430,39 @@ try:
                         print(f"      Tarea {i+1}. Frase: '{frase_para_ia}'. Opciones: {opciones_palabra}");
                         lista_de_tareas_completar.append({"frase": frase_para_ia,"opciones": opciones_palabra,"botones": botones_en_linea})
                     if not lista_de_tareas_completar: raise Exception("No se recolectaron tareas TIPO 2 válidas.")
+
+                    # --- ¡INICIO CORRECCIÓN CLAVE TIPO 2! ---
                     titulo_limpio = pregunta_actual_texto.strip()
-                    clave_pregunta = f"T2_BATCH:{titulo_limpio}||{contexto_hash}"
+                    if lista_de_tareas_completar:
+                        # Use 24 spaces for indentation
+                        frases_para_clave = sorted([t["frase"] for t in lista_de_tareas_completar])
+                        frases_hash_str = "|".join(frases_para_clave)
+                        clave_pregunta = f"T2_BATCH:{titulo_limpio}||{contexto_hash}||FRASES:{frases_hash_str}"
+                    else:
+                        # Use 24 spaces for indentation
+                        clave_pregunta = f"T2_BATCH:{titulo_limpio}||{contexto_hash}||FRASES:NO_TASKS"
+                    print(f"      Clave T2 generada: {clave_pregunta[:100]}...") # Log para verificar
+                    # --- ¡FIN CORRECCIÓN CLAVE TIPO 2! ---
+
+                    # --- ¡INICIO CHEQUEO DE BUCLE ATASCADO (TIPO 2)! ---
+                    if clave_pregunta and clave_pregunta == ultima_clave_pregunta_procesada:
+                        # Use 24 spaces for indentation
+                        print(f"      ¡ALERTA! PREGUNTA REPETIDA DETECTADA (Clave: {clave_pregunta[:70]}...)")
+                        print("      Se asume que es la última pregunta y está atascada. Refrescando PÁGINA...")
+                        try:
+                            # Use 28 spaces for indentation
+                            driver.refresh()
+                            wait_long.until(EC.presence_of_element_located(sel.SELECTOR_CHECK))
+                            print("      Página refrescada. Reintentando...")
+                            pregunta_actual_texto = ""
+                            ultima_clave_pregunta_procesada = ""
+                            respuesta_fue_incorrecta = False
+                            continue
+                        except Exception as e_refresh:
+                            # Use 28 spaces for indentation
+                            print(f"      ERROR CRÍTICO: No se pudo refrescar tras detectar bucle: {e_refresh}")
+                            raise
+                    # --- ¡FIN CHEQUEO DE BUCLE ATASCADO! ---
 
                     respuestas_lote_ia = []
                     if clave_pregunta in soluciones_correctas:
@@ -394,7 +478,7 @@ try:
                                 respuestas_lote_ia.append(dict_soluciones[frase_key])
                             else:
                                 # Use 32 spaces for indentation
-                                print(f"      ERROR Memoria T2: No se encontró la frase '{frase_key}' en el dict de soluciones.");
+                                print(f"      ERROR Memoria T2: No se encontró la frase '{frase_key}' en el dict de soluciones para la clave principal '{clave_pregunta[:70]}...'.");
                                 respuestas_lote_ia = []
                                 mapeo_ok = False; break
                         if not mapeo_ok:
@@ -409,8 +493,8 @@ try:
                             # Use 28 spaces for indentation
                             raise Exception("Fallo IA (Completar Lote) o nº resp no coincide.")
                         respuestas_lote_ia = respuestas_ia_temp
-                        frases_clave = [t["frase"] for t in lista_de_tareas_completar]
-                        preguntas_ya_vistas[clave_pregunta] = dict(zip(frases_clave, respuestas_lote_ia))
+                        frases_clave_actual = [t["frase"] for t in lista_de_tareas_completar]
+                        preguntas_ya_vistas[clave_pregunta] = dict(zip(frases_clave_actual, respuestas_lote_ia))
                     print(f"Respuestas TIPO 2 a aplicar (lote): {respuestas_lote_ia}")
                     exito_global = True
                     for respuesta_ia, tarea in zip(respuestas_lote_ia, lista_de_tareas_completar):
@@ -432,7 +516,7 @@ try:
                                 print(f"Error clic T2: {e}"); exito_global = False; break
                         else:
                             # Use 28 spaces for indentation
-                            print(f"Error CRÍTICO T2: Botón '{respuesta_ia}' no encontrado.");
+                            print(f"Error CRÍTICO T2: Botón '{respuesta_ia}' no encontrado en opciones {tarea['opciones']}.");
                             exito_global = False; break
                     if not exito_global: raise Exception("Fallo al completar palabras (Lote).")
 
@@ -468,6 +552,27 @@ try:
                             print(f"Error leyendo caja {k+1}: {e_inner}"); raise Exception(f"Fallo crítico al leer caja T/F {k+1}")
                     if not lista_afirmaciones_texto: raise Exception("No se pudieron recolectar afirmaciones T/F.")
                     clave_pregunta = "|".join(lista_afirmaciones_texto)
+
+                    # --- ¡INICIO CHEQUEO DE BUCLE ATASCADO (TIPO 3)! ---
+                    if clave_pregunta and clave_pregunta == ultima_clave_pregunta_procesada:
+                        # Use 24 spaces for indentation
+                        print(f"      ¡ALERTA! PREGUNTA REPETIDA DETECTADA (Clave: {clave_pregunta[:70]}...)")
+                        print("      Se asume que es la última pregunta y está atascada. Refrescando PÁGINA...")
+                        try:
+                            # Use 28 spaces for indentation
+                            driver.refresh()
+                            wait_long.until(EC.presence_of_element_located(sel.SELECTOR_CHECK))
+                            print("      Página refrescada. Reintentando...")
+                            pregunta_actual_texto = ""
+                            ultima_clave_pregunta_procesada = ""
+                            respuesta_fue_incorrecta = False
+                            continue
+                        except Exception as e_refresh:
+                            # Use 28 spaces for indentation
+                            print(f"      ERROR CRÍTICO: No se pudo refrescar tras detectar bucle: {e_refresh}")
+                            raise
+                    # --- ¡FIN CHEQUEO DE BUCLE ATASCADO! ---
+
                     respuestas_tf_lote = []
                     if clave_pregunta in soluciones_correctas:
                         # Use 24 spaces for indentation
@@ -537,6 +642,27 @@ try:
                         except (NoSuchElementException, TimeoutException) as e: print(f"Error leyendo idea {k+1}: {e}"); continue
                     if not lista_ideas_texto: raise Exception("No ideas recolectadas.")
                     clave_pregunta = "|".join(lista_ideas_texto)
+
+                    # --- ¡INICIO CHEQUEO DE BUCLE ATASCADO (TIPO 6)! ---
+                    if clave_pregunta and clave_pregunta == ultima_clave_pregunta_procesada:
+                        # Use 24 spaces for indentation
+                        print(f"      ¡ALERTA! PREGUNTA REPETIDA DETECTADA (Clave: {clave_pregunta[:70]}...)")
+                        print("      Se asume que es la última pregunta y está atascada. Refrescando PÁGINA...")
+                        try:
+                            # Use 28 spaces for indentation
+                            driver.refresh()
+                            wait_long.until(EC.presence_of_element_located(sel.SELECTOR_CHECK))
+                            print("      Página refrescada. Reintentando...")
+                            pregunta_actual_texto = ""
+                            ultima_clave_pregunta_procesada = ""
+                            respuesta_fue_incorrecta = False
+                            continue
+                        except Exception as e_refresh:
+                            # Use 28 spaces for indentation
+                            print(f"      ERROR CRÍTICO: No se pudo refrescar tras detectar bucle: {e_refresh}")
+                            raise
+                    # --- ¡FIN CHEQUEO DE BUCLE ATASCADO! ---
+
                     if clave_pregunta in soluciones_correctas: print("      SOLUCIÓN ENCONTRADA."); respuestas_lote_ia = soluciones_correctas[clave_pregunta]
                     else:
                         # Use 24 spaces for indentation
@@ -587,6 +713,27 @@ try:
                     titulo_limpio = pregunta_actual_texto.strip()
                     defs_limpias_sorted = sorted([d.strip() for d in definiciones])
                     clave_pregunta = f"T4:{titulo_limpio}||" + "|".join(defs_limpias_sorted)
+
+                    # --- ¡INICIO CHEQUEO DE BUCLE ATASCADO (TIPO 4)! ---
+                    if clave_pregunta and clave_pregunta == ultima_clave_pregunta_procesada:
+                        # Use 24 spaces for indentation
+                        print(f"      ¡ALERTA! PREGUNTA REPETIDA DETECTADA (Clave: {clave_pregunta[:70]}...)")
+                        print("      Se asume que es la última pregunta y está atascada. Refrescando PÁGINA...")
+                        try:
+                            # Use 28 spaces for indentation
+                            driver.refresh()
+                            wait_long.until(EC.presence_of_element_located(sel.SELECTOR_CHECK))
+                            print("      Página refrescada. Reintentando...")
+                            pregunta_actual_texto = ""
+                            ultima_clave_pregunta_procesada = ""
+                            respuesta_fue_incorrecta = False
+                            continue
+                        except Exception as e_refresh:
+                            # Use 28 spaces for indentation
+                            print(f"      ERROR CRÍTICO: No se pudo refrescar tras detectar bucle: {e_refresh}")
+                            raise
+                    # --- ¡FIN CHEQUEO DE BUCLE ATASCADO! ---
+
                     if clave_pregunta in soluciones_correctas:
                         # Use 24 spaces for indentation
                         print("      SOLUCIÓN ENCONTRADA en memoria.");
@@ -635,6 +782,26 @@ try:
                         titulo_limpio_t5 = texto_afirmacion.strip()
                         clave_pregunta = f"T5:{titulo_limpio_t5}||{contexto_hash}||" + "|".join(sorted(opciones_t5))
 
+                        # --- ¡INICIO CHEQUEO DE BUCLE ATASCADO (TIPO 5)! ---
+                        if clave_pregunta and clave_pregunta == ultima_clave_pregunta_procesada:
+                            # Use 28 spaces for indentation
+                            print(f"      ¡ALERTA! PREGUNTA REPETIDA DETECTADA (Clave: {clave_pregunta[:70]}...)")
+                            print("      Se asume que es la última pregunta y está atascada. Refrescando PÁGINA...")
+                            try:
+                                # Use 32 spaces for indentation
+                                driver.refresh()
+                                wait_long.until(EC.presence_of_element_located(sel.SELECTOR_CHECK))
+                                print("      Página refrescada. Reintentando...")
+                                pregunta_actual_texto = ""
+                                ultima_clave_pregunta_procesada = ""
+                                respuesta_fue_incorrecta = False
+                                continue
+                            except Exception as e_refresh:
+                                # Use 32 spaces for indentation
+                                print(f"      ERROR CRÍTICO: No se pudo refrescar tras detectar bucle: {e_refresh}")
+                                raise
+                        # --- ¡FIN CHEQUEO DE BUCLE ATASCADO! ---
+
                         opciones_ya_vistas[clave_pregunta] = opciones_t5
                         if clave_pregunta in soluciones_correctas: print("      SOLUCIÓN ENCONTRADA."); respuesta_tf_ia = soluciones_correctas[clave_pregunta]
                         else:
@@ -661,7 +828,7 @@ try:
                         print(f"Error T/F (Single) lógica: {e}");
                         raise
 
-                # --- TIPO 7: ANSWER THE QUESTION (OM in a Card) ---
+                # --- TIPO 7: ANSWER THE QUESTION ---
                 elif tipo_pregunta == "TIPO_7_OM_CARD":
                     # Use 20 spaces for indentation
                     print("Tipo: ANSWER THE QUESTION (OM in Card).");
@@ -686,6 +853,27 @@ try:
                         except Exception as e: print(f"Error procesando tarjeta {k+1}: {e}"); raise
                     if not lista_de_tareas: raise Exception("No tareas recolectadas.")
                     clave_pregunta = "|".join([p.strip() for p in lista_de_preguntas])
+
+                    # --- ¡INICIO CHEQUEO DE BUCLE ATASCADO (TIPO 7)! ---
+                    if clave_pregunta and clave_pregunta == ultima_clave_pregunta_procesada:
+                        # Use 24 spaces for indentation
+                        print(f"      ¡ALERTA! PREGUNTA REPETIDA DETECTADA (Clave: {clave_pregunta[:70]}...)")
+                        print("      Se asume que es la última pregunta y está atascada. Refrescando PÁGINA...")
+                        try:
+                            # Use 28 spaces for indentation
+                            driver.refresh()
+                            wait_long.until(EC.presence_of_element_located(sel.SELECTOR_CHECK))
+                            print("      Página refrescada. Reintentando...")
+                            pregunta_actual_texto = ""
+                            ultima_clave_pregunta_procesada = ""
+                            respuesta_fue_incorrecta = False
+                            continue
+                        except Exception as e_refresh:
+                            # Use 28 spaces for indentation
+                            print(f"      ERROR CRÍTICO: No se pudo refrescar tras detectar bucle: {e_refresh}")
+                            raise
+                    # --- ¡FIN CHEQUEO DE BUCLE ATASCADO! ---
+
                     if clave_pregunta in soluciones_correctas: print("      SOLUCIÓN ENCONTRADA."); respuestas_lote_ia = soluciones_correctas[clave_pregunta]
                     else:
                         # Use 24 spaces for indentation
@@ -801,6 +989,26 @@ try:
                     claves_unicas_ordenados_str = "|".join(sorted(palabras_clave))
                     clave_pregunta = f"T8:{titulo_limpio}||{claves_unicas_ordenados_str}||" + "|".join(defs_limpias_sorted)
 
+                    # --- ¡INICIO CHEQUEO DE BUCLE ATASCADO (TIPO 8)! ---
+                    if clave_pregunta and clave_pregunta == ultima_clave_pregunta_procesada:
+                        # Use 24 spaces for indentation
+                        print(f"      ¡ALERTA! PREGUNTA REPETIDA DETECTADA (Clave: {clave_pregunta[:70]}...)")
+                        print("      Se asume que es la última pregunta y está atascada. Refrescando PÁGINA...")
+                        try:
+                            # Use 28 spaces for indentation
+                            driver.refresh()
+                            wait_long.until(EC.presence_of_element_located(sel.SELECTOR_CHECK))
+                            print("      Página refrescada. Reintentando...")
+                            pregunta_actual_texto = ""
+                            ultima_clave_pregunta_procesada = ""
+                            respuesta_fue_incorrecta = False
+                            continue
+                        except Exception as e_refresh:
+                            # Use 28 spaces for indentation
+                            print(f"      ERROR CRÍTICO: No se pudo refrescar tras detectar bucle: {e_refresh}")
+                            raise
+                    # --- ¡FIN CHEQUEO DE BUCLE ATASCADO! ---
+
                     print(f"DEBUG: Generated Key T8: '{clave_pregunta}'")
                     if clave_pregunta in soluciones_correctas:
                         # Use 24 spaces for indentation
@@ -876,7 +1084,27 @@ try:
 
                     titulo_limpio_t9 = pregunta_actual_texto.strip() if "pregunta_sin_titulo" not in pregunta_actual_texto else contexto[:150]
                     opciones_limpias_sorted_t9 = sorted([o.strip() for o in opciones])
-                    clave_pregunta = f"T9:{titulo_limpio_t9}||{contexto_hash}||{audio_hash}||" + "|".join(opciones_limpias_sorted_t9)
+                    clave_pregunta = f"T9:{titulo_limpio_t9}||{contexto_hash}||{body_hash}||{audio_hash}||" + "|".join(opciones_limpias_sorted_t9) # body_hash añadido
+
+                    # --- ¡INICIO CHEQUEO DE BUCLE ATASCADO (TIPO 9)! ---
+                    if clave_pregunta and clave_pregunta == ultima_clave_pregunta_procesada:
+                        # Use 24 spaces for indentation
+                        print(f"      ¡ALERTA! PREGUNTA REPETIDA DETECTADA (Clave: {clave_pregunta[:70]}...)")
+                        print("      Se asume que es la última pregunta y está atascada. Refrescando PÁGINA...")
+                        try:
+                            # Use 28 spaces for indentation
+                            driver.refresh()
+                            wait_long.until(EC.presence_of_element_located(sel.SELECTOR_CHECK))
+                            print("      Página refrescada. Reintentando...")
+                            pregunta_actual_texto = ""
+                            ultima_clave_pregunta_procesada = ""
+                            respuesta_fue_incorrecta = False
+                            continue
+                        except Exception as e_refresh:
+                            # Use 28 spaces for indentation
+                            print(f"      ERROR CRÍTICO: No se pudo refrescar tras detectar bucle: {e_refresh}")
+                            raise
+                    # --- ¡FIN CHEQUEO DE BUCLE ATASCADO! ---
 
                     print(f"Resolviendo: {pregunta_actual_texto}\nOpciones: {opciones}");
                     opciones_ya_vistas[clave_pregunta] = opciones
@@ -939,6 +1167,27 @@ try:
                     titulo_limpio = pregunta_actual_texto.strip()
                     claves_ordenadas_str = "|".join(sorted([t["letras_clave"] for t in lista_de_tareas_escribir]))
                     clave_pregunta = f"T10_BATCH:{titulo_limpio}||{claves_ordenadas_str}"
+
+                    # --- ¡INICIO CHEQUEO DE BUCLE ATASCADO (TIPO 10)! ---
+                    if clave_pregunta and clave_pregunta == ultima_clave_pregunta_procesada:
+                        # Use 24 spaces for indentation
+                        print(f"      ¡ALERTA! PREGUNTA REPETIDA DETECTADA (Clave: {clave_pregunta[:70]}...)")
+                        print("      Se asume que es la última pregunta y está atascada. Refrescando PÁGINA...")
+                        try:
+                            # Use 28 spaces for indentation
+                            driver.refresh()
+                            wait_long.until(EC.presence_of_element_located(sel.SELECTOR_CHECK))
+                            print("      Página refrescada. Reintentando...")
+                            pregunta_actual_texto = ""
+                            ultima_clave_pregunta_procesada = ""
+                            respuesta_fue_incorrecta = False
+                            continue
+                        except Exception as e_refresh:
+                            # Use 28 spaces for indentation
+                            print(f"      ERROR CRÍTICO: No se pudo refrescar tras detectar bucle: {e_refresh}")
+                            raise
+                    # --- ¡FIN CHEQUEO DE BUCLE ATASCADO! ---
+
                     respuestas_lote_ia = []
                     if clave_pregunta in soluciones_correctas:
                         # Use 24 spaces for indentation
@@ -1013,6 +1262,26 @@ try:
                     titulo_limpio = pregunta_actual_texto.strip()
                     frases_clave_str = "|".join(sorted([t["frase"] for t in lista_de_tareas_escribir]))
                     clave_pregunta = f"T11_BATCH:{titulo_limpio}||{contexto_hash}||{frases_clave_str}"
+
+                    # --- ¡INICIO CHEQUEO DE BUCLE ATASCADO (TIPO 11)! ---
+                    if clave_pregunta and clave_pregunta == ultima_clave_pregunta_procesada:
+                        # Use 24 spaces for indentation
+                        print(f"      ¡ALERTA! PREGUNTA REPETIDA DETECTADA (Clave: {clave_pregunta[:70]}...)")
+                        print("      Se asume que es la última pregunta y está atascada. Refrescando PÁGINA...")
+                        try:
+                            # Use 28 spaces for indentation
+                            driver.refresh()
+                            wait_long.until(EC.presence_of_element_located(sel.SELECTOR_CHECK))
+                            print("      Página refrescada. Reintentando...")
+                            pregunta_actual_texto = ""
+                            ultima_clave_pregunta_procesada = ""
+                            respuesta_fue_incorrecta = False
+                            continue
+                        except Exception as e_refresh:
+                            # Use 28 spaces for indentation
+                            print(f"      ERROR CRÍTICO: No se pudo refrescar tras detectar bucle: {e_refresh}")
+                            raise
+                    # --- ¡FIN CHEQUEO DE BUCLE ATASCADO! ---
 
                     respuestas_lote_ia = []
                     if clave_pregunta in soluciones_correctas:
@@ -1112,7 +1381,27 @@ try:
 
                     titulo_limpio_def = pregunta_actual_texto.strip() if "pregunta_sin_titulo" not in pregunta_actual_texto else contexto[:150]
                     opciones_limpias_sorted_def = sorted([o.strip() for o in opciones])
-                    clave_pregunta = f"DEFAULT:{titulo_limpio_def}||{contexto_hash}||{imagen_hash}||" + "|".join(opciones_limpias_sorted_def)
+                    clave_pregunta = f"DEFAULT:{titulo_limpio_def}||{contexto_hash}||{body_hash}||{imagen_hash}||" + "|".join(opciones_limpias_sorted_def) # body_hash añadido
+
+                    # --- ¡INICIO CHEQUEO DE BUCLE ATASCADO (DEFAULT)! ---
+                    if clave_pregunta and clave_pregunta == ultima_clave_pregunta_procesada:
+                        # Use 24 spaces for indentation
+                        print(f"      ¡ALERTA! PREGUNTA REPETIDA DETECTADA (Clave: {clave_pregunta[:70]}...)")
+                        print("      Se asume que es la última pregunta y está atascada. Refrescando PÁGINA...")
+                        try:
+                            # Use 28 spaces for indentation
+                            driver.refresh()
+                            wait_long.until(EC.presence_of_element_located(sel.SELECTOR_CHECK))
+                            print("      Página refrescada. Reintentando...")
+                            pregunta_actual_texto = ""
+                            ultima_clave_pregunta_procesada = ""
+                            respuesta_fue_incorrecta = False
+                            continue
+                        except Exception as e_refresh:
+                            # Use 28 spaces for indentation
+                            print(f"      ERROR CRÍTICO: No se pudo refrescar tras detectar bucle: {e_refresh}")
+                            raise
+                    # --- ¡FIN CHEQUEO DE BUCLE ATASCADO! ---
 
                     print(f"Resolviendo: {pregunta_actual_texto}\nOpciones: {opciones}");
                     opciones_ya_vistas[clave_pregunta] = opciones
@@ -1138,30 +1427,17 @@ try:
                     else: raise Exception(f"Botón '{respuesta_ia}' no encontrado.")
                 # --- FIN TIPOS ---
 
-                # --- ¡INICIO CHEQUEO DE BUCLE ATASCADO! ---
-                if clave_pregunta and clave_pregunta == ultima_clave_pregunta_procesada:
-                    # Use 20 spaces for indentation
-                    print(f"      ¡ALERTA! PREGUNTA REPETIDA DETECTADA (Clave: {clave_pregunta[:70]}...)")
-                    print("      Se asume que es la última pregunta y está atascada. Refrescando PÁGINA...")
-                    try:
-                        # Use 24 spaces for indentation
-                        driver.refresh()
-                        wait_long.until(EC.presence_of_element_located(sel.SELECTOR_CHECK))
-                        print("      Página refrescada. Reintentando...")
-                        pregunta_actual_texto = ""
-                        ultima_clave_pregunta_procesada = ""
-                        respuesta_fue_incorrecta = False
-                        continue
-                    except Exception as e_refresh:
-                        # Use 24 spaces for indentation
-                        print(f"      ERROR CRÍTICO: No se pudo refrescar tras detectar bucle: {e_refresh}")
-                        raise
-                # --- ¡FIN CHEQUEO DE BUCLE ATASCADO! ---
-
 
                 # --- Común: CHECK y OK ---
                 print("Clic CHECK...");
                 boton_check = wait_long.until(EC.element_to_be_clickable(sel.SELECTOR_CHECK))
+                try:
+                    # Use 20 spaces for indentation
+                    driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", boton_check)
+                    time.sleep(0.3) # Pequeña pausa
+                except Exception as scroll_e:
+                    # Use 20 spaces for indentation
+                    print(f"      WARN: No se pudo hacer scroll a CHECK: {scroll_e}")
                 boton_check.click(); time.sleep(0.5)
 
                 # --- LÓGICA DE APRENDIZAJE ---
@@ -1179,127 +1455,110 @@ try:
                         contenido_modal = driver.find_element(*sel.SELECTOR_MODAL_CONTENIDO).text
                         preguntas_para_ia = None; opciones_para_ia = None; solucion_aprendida = None
 
-                        # 1. Preparar datos
-                        if tipo_pregunta == "TIPO_6_PARAGRAPH":
-                            # Use 28 spaces for indentation
-                            preguntas_para_ia = [idea.split(":", 1)[1] for idea in lista_ideas_texto]
-                        elif tipo_pregunta == "TIPO_7_OM_CARD":
-                            # Use 28 spaces for indentation
-                            preguntas_para_ia = [preg.split(":", 1)[1] for preg in lista_de_preguntas]
-                        elif tipo_pregunta == "TIPO_1_ORDENAR":
-                            # Use 28 spaces for indentation
-                            preguntas_para_ia = lista_de_tareas_ordenar
-                        elif tipo_pregunta == "TIPO_2_COMPLETAR":
-                            # Use 28 spaces for indentation
-                            preguntas_para_ia = lista_de_tareas_completar
-                        elif tipo_pregunta == "TIPO_3_TF_MULTI":
-                            # Use 28 spaces for indentation
-                            preguntas_para_ia = [afirm.split(":", 1)[1] for afirm in lista_afirmaciones_texto]
-                        elif tipo_pregunta == "TIPO_DEFAULT_OM" or tipo_pregunta == "TIPO_9_AUDIO" or tipo_pregunta == "TIPO_5_TF_SINGLE":
-                            # Use 28 spaces for indentation
-                            try:
-                                # Use 32 spaces for indentation
-                                opciones_para_ia = opciones
-                            except NameError:
-                                # Use 32 spaces for indentation
-                                print(f"WARN Learn Prep Incorrecta: No se pudieron leer opciones para {tipo_pregunta}")
-                                opciones_para_ia = None
-                        elif tipo_pregunta == "TIPO_10_ESCRIBIR":
-                             # Use 28 spaces for indentation
-                             preguntas_para_ia = lista_palabras_desordenadas_raw
-                        elif tipo_pregunta == "TIPO_11_ESCRIBIR_OPCIONES":
-                             # Use 28 spaces for indentation
-                             preguntas_para_ia = [{"frase": f} for f in lista_frases_t11]
-                        elif tipo_pregunta == "TIPO_4_EMPAREJAR" or tipo_pregunta == "TIPO_8_IMAGEN":
-                             # Use 28 spaces for indentation
-                             try:
-                                # Use 32 spaces for indentation
-                                 preguntas_para_ia = palabras_clave
-                                 opciones_para_ia = definiciones
-                             except NameError:
-                                # Use 32 spaces for indentation
-                                 print(f"WARN Learn Prep Incorrecta T4/8: 'palabras_clave' o 'definiciones' no definidas.")
-                                 preguntas_para_ia = None
-                                 opciones_para_ia = None
+                        # 1. Preparar datos (variables locales que deberían existir)
+                        # ... (código existente para preparar preguntas_para_ia/opciones_para_ia) ...
+                        if tipo_pregunta == "TIPO_6_PARAGRAPH": preguntas_para_ia = [idea.split(":", 1)[1] for idea in lista_ideas_texto] if 'lista_ideas_texto' in locals() else None
+                        elif tipo_pregunta == "TIPO_7_OM_CARD": preguntas_para_ia = [preg.split(":", 1)[1] for preg in lista_de_preguntas] if 'lista_de_preguntas' in locals() else None
+                        elif tipo_pregunta == "TIPO_1_ORDENAR": preguntas_para_ia = lista_de_tareas_ordenar if 'lista_de_tareas_ordenar' in locals() else None
+                        elif tipo_pregunta == "TIPO_2_COMPLETAR": preguntas_para_ia = lista_de_tareas_completar if 'lista_de_tareas_completar' in locals() else None
+                        elif tipo_pregunta == "TIPO_3_TF_MULTI": preguntas_para_ia = [afirm.split(":", 1)[1] for afirm in lista_afirmaciones_texto] if 'lista_afirmaciones_texto' in locals() else None
+                        elif tipo_pregunta in ["TIPO_DEFAULT_OM", "TIPO_9_AUDIO", "TIPO_5_TF_SINGLE"]: opciones_para_ia = opciones if 'opciones' in locals() else None
+                        elif tipo_pregunta == "TIPO_10_ESCRIBIR": preguntas_para_ia = lista_palabras_desordenadas_raw if 'lista_palabras_desordenadas_raw' in locals() else None
+                        elif tipo_pregunta == "TIPO_11_ESCRIBIR_OPCIONES": preguntas_para_ia = [{"frase": f} for f in lista_frases_t11] if 'lista_frases_t11' in locals() else None
+                        elif tipo_pregunta in ["TIPO_4_EMPAREJAR", "TIPO_8_IMAGEN"]:
+                            preguntas_para_ia = palabras_clave if 'palabras_clave' in locals() else None
+                            opciones_para_ia = definiciones if 'definiciones' in locals() else None
 
+                        # Regenerar clave correcta para aprendizaje
+                        clave_pregunta_aprendizaje = None
+                        # ... (código existente para regenerar clave_pregunta y asignarla a clave_pregunta_aprendizaje) ...
+                        if tipo_pregunta == "TIPO_6_PARAGRAPH" and 'lista_ideas_texto' in locals(): clave_pregunta_aprendizaje = "|".join([p.strip() for p in lista_ideas_texto])
+                        elif tipo_pregunta == "TIPO_7_OM_CARD" and 'lista_de_preguntas' in locals(): clave_pregunta_aprendizaje = "|".join([p.strip() for p in lista_de_preguntas])
+                        elif tipo_pregunta == "TIPO_1_ORDENAR" and 'lista_de_claves_individuales' in locals(): clave_pregunta_aprendizaje = "|".join([p.strip() for p in lista_de_claves_individuales])
+                        elif tipo_pregunta == "TIPO_2_COMPLETAR" and 'lista_de_tareas_completar' in locals():
+                             titulo_limpio = pregunta_actual_texto.strip()
+                             frases_para_clave = sorted([t["frase"] for t in lista_de_tareas_completar])
+                             frases_hash_str = "|".join(frases_para_clave)
+                             clave_pregunta_aprendizaje = f"T2_BATCH:{titulo_limpio}||{contexto_hash}||FRASES:{frases_hash_str}"
+                        elif tipo_pregunta == "TIPO_3_TF_MULTI" and 'lista_afirmaciones_texto' in locals(): clave_pregunta_aprendizaje = "|".join([p.strip() for p in lista_afirmaciones_texto])
+                        elif tipo_pregunta == "TIPO_DEFAULT_OM" and 'opciones' in locals():
+                            titulo_limpio = pregunta_actual_texto.strip() if "pregunta_sin_titulo" not in pregunta_actual_texto else contexto[:150]
+                            opciones_limpias_sorted = sorted(opciones)
+                            clave_pregunta_aprendizaje = f"DEFAULT:{titulo_limpio}||{contexto_hash}||{body_hash}||{imagen_hash}||" + "|".join(opciones_limpias_sorted)
+                        elif tipo_pregunta == "TIPO_9_AUDIO" and 'opciones' in locals():
+                            titulo_limpio = pregunta_actual_texto.strip() if "pregunta_sin_titulo" not in pregunta_actual_texto else contexto[:150]
+                            opciones_limpias_sorted = sorted(opciones)
+                            clave_pregunta_aprendizaje = f"T9:{titulo_limpio}||{contexto_hash}||{body_hash}||{audio_hash}||" + "|".join(opciones_limpias_sorted)
+                        elif tipo_pregunta == "TIPO_5_TF_SINGLE":
+                            titulo_limpio = pregunta_actual_texto.strip()
+                            clave_pregunta_aprendizaje = f"T5:{titulo_limpio}||{contexto_hash}||True|False"
+                        elif tipo_pregunta == "TIPO_10_ESCRIBIR" and 'lista_de_tareas_escribir' in locals():
+                             titulo_limpio = pregunta_actual_texto.strip()
+                             claves_ordenadas_str = "|".join(sorted([t["letras_clave"] for t in lista_de_tareas_escribir]))
+                             clave_pregunta_aprendizaje = f"T10_BATCH:{titulo_limpio}||{claves_ordenadas_str}"
+                        elif tipo_pregunta == "TIPO_11_ESCRIBIR_OPCIONES" and 'lista_de_tareas_escribir' in locals():
+                             titulo_limpio = pregunta_actual_texto.strip()
+                             frases_clave_str = "|".join(sorted([t["frase"] for t in lista_de_tareas_escribir]))
+                             clave_pregunta_aprendizaje = f"T11_BATCH:{titulo_limpio}||{contexto_hash}||{frases_clave_str}"
+                        elif tipo_pregunta == "TIPO_4_EMPAREJAR" and 'definiciones' in locals():
+                             titulo_limpio = pregunta_actual_texto.strip()
+                             defs_limpias_sorted = sorted(definiciones)
+                             clave_pregunta_aprendizaje = f"T4:{titulo_limpio}||" + "|".join(defs_limpias_sorted)
+                        elif tipo_pregunta == "TIPO_8_IMAGEN" and 'definiciones' in locals() and 'palabras_clave' in locals():
+                             titulo_limpio = pregunta_actual_texto.strip()
+                             defs_limpias_sorted = sorted(definiciones)
+                             claves_unicas_ordenados_str = "|".join(sorted(palabras_clave))
+                             clave_pregunta_aprendizaje = f"T8:{titulo_limpio}||{claves_unicas_ordenados_str}||" + "|".join(defs_limpias_sorted)
 
                         # 2. Extraer solución
-                        if tipo_pregunta in ["TIPO_1_ORDENAR", "TIPO_2_COMPLETAR", "TIPO_3_TF_MULTI", "TIPO_6_PARAGRAPH", "TIPO_7_OM_CARD", "TIPO_10_ESCRIBIR", "TIPO_11_ESCRIBIR_OPCIONES"] and clave_pregunta and contenido_modal and preguntas_para_ia:
+                        if tipo_pregunta in ["TIPO_1_ORDENAR", "TIPO_2_COMPLETAR", "TIPO_3_TF_MULTI", "TIPO_6_PARAGRAPH", "TIPO_7_OM_CARD", "TIPO_10_ESCRIBIR", "TIPO_11_ESCRIBIR_OPCIONES"] and clave_pregunta_aprendizaje and contenido_modal and preguntas_para_ia:
                             # Use 28 spaces for indentation
                             solucion_lista_ordenada = None
-                            if tipo_pregunta == "TIPO_3_TF_MULTI":
-                                # Use 32 spaces for indentation
-                                print("      Enviando texto a IA (Lote T/F) para extraer solución..."); solucion_lista_ordenada = ia_utils.extraer_solucion_lote_tf(contenido_modal, preguntas_para_ia)
+                            if tipo_pregunta == "TIPO_3_TF_MULTI": solucion_lista_ordenada = ia_utils.extraer_solucion_lote_tf(contenido_modal, preguntas_para_ia)
                             elif tipo_pregunta == "TIPO_2_COMPLETAR":
-                                # Use 32 spaces for indentation
-                                print("      Enviando texto a IA (Lote Completar) para extraer solución...");
                                 tareas_aprendizaje_t2 = [{"frase": t["frase"], "opciones": t["opciones"]} for t in preguntas_para_ia]
                                 solucion_lista_ordenada = ia_utils.extraer_solucion_lote_completar(contenido_modal, tareas_aprendizaje_t2)
                             elif tipo_pregunta == "TIPO_1_ORDENAR":
-                                # Use 32 spaces for indentation
-                                print("      Enviando texto a IA (Ordenar Lote) para extraer solución...")
                                 solucion_lote_ordenar = []
                                 exito_aprendizaje_lote = True
                                 for i, tarea_ind in enumerate(preguntas_para_ia):
-                                    # Use 36 spaces for indentation
-                                    print(f"      IA (Aprendizaje Ord) para Tarea {i+1}...")
                                     sol_individual = ia_utils.extraer_solucion_ordenar(contenido_modal, tarea_ind["frases"])
-                                    if not sol_individual:
-                                        # Use 40 spaces for indentation
-                                        print(f"      IA (Aprendizaje Ord) Tarea {i+1} falló.")
-                                        exito_aprendizaje_lote = False; break
+                                    if not sol_individual: exito_aprendizaje_lote = False; break
                                     solucion_lote_ordenar.append(sol_individual)
                                 if exito_aprendizaje_lote: solucion_lista_ordenada = solucion_lote_ordenar
-                                else: solucion_lista_ordenada = None
-                            elif tipo_pregunta == "TIPO_10_ESCRIBIR":
-                                # Use 32 spaces for indentation
-                                print("      Enviando texto a IA (Lote Escribir) para extraer solución...");
-                                solucion_lista_ordenada = ia_utils.extraer_solucion_lote_escribir(contenido_modal, preguntas_para_ia)
-                            elif tipo_pregunta == "TIPO_11_ESCRIBIR_OPCIONES":
-                                # Use 32 spaces for indentation
-                                print("      Enviando texto a IA (Lote Escribir Opciones) para extraer solución...");
-                                solucion_lista_ordenada = ia_utils.extraer_solucion_lote_escribir_opciones(contenido_modal, preguntas_para_ia)
+                            elif tipo_pregunta == "TIPO_10_ESCRIBIR": solucion_lista_ordenada = ia_utils.extraer_solucion_lote_escribir(contenido_modal, preguntas_para_ia)
+                            elif tipo_pregunta == "TIPO_11_ESCRIBIR_OPCIONES": solucion_lista_ordenada = ia_utils.extraer_solucion_lote_escribir_opciones(contenido_modal, preguntas_para_ia)
                             else: # T6 y T7
-                                # Use 32 spaces for indentation
-                                print("      Enviando texto a IA (Lote Genérico) para extraer solución..."); solucion = ia_utils.extraer_solucion_del_error(contenido_modal, preguntas_para_ia)
+                                solucion = ia_utils.extraer_solucion_del_error(contenido_modal, preguntas_para_ia)
                                 if solucion:
-                                    # Use 36 spaces for indentation
                                     solucion_lista_ordenada_temp = []
                                     mapeo_fallido = False
                                     for p_limpio in preguntas_para_ia:
-                                        # Use 40 spaces for indentation
-                                        if p_limpio in solucion:
-                                            # Use 44 spaces for indentation
-                                            solucion_lista_ordenada_temp.append(str(solucion[p_limpio]).strip())
+                                        if p_limpio in solucion: solucion_lista_ordenada_temp.append(str(solucion[p_limpio]).strip())
                                         else:
-                                            # Use 44 spaces for indentation
                                             p_alt1 = p_limpio + " "; p_alt2 = p_limpio.strip()
                                             if p_alt1 in solucion: solucion_lista_ordenada_temp.append(str(solucion[p_alt1]).strip())
                                             elif p_alt2 in solucion: solucion_lista_ordenada_temp.append(str(solucion[p_alt2]).strip())
-                                            else:
-                                                # Use 48 spaces for indentation
-                                                print(f"      IA (Lote Genérico) no pudo mapear solución para: '{p_limpio}'"); mapeo_fallido = True; break
+                                            else: mapeo_fallido = True; break
                                     if not mapeo_fallido: solucion_lista_ordenada = solucion_lista_ordenada_temp
-                                    else: solucion_lista_ordenada = None
-                                else: solucion_lista_ordenada = None
 
                             if solucion_lista_ordenada:
                                 # Use 32 spaces for indentation
                                 print(f"      ¡SOLUCIÓN LOTE APRENDIDA! -> {solucion_lista_ordenada}");
                                 if tipo_pregunta == "TIPO_2_COMPLETAR":
                                     # Use 36 spaces for indentation
-                                    frases_clave = [t["frase"] for t in preguntas_para_ia]
-                                    solucion_aprendida = dict(zip(frases_clave, solucion_lista_ordenada))
+                                    frases_clave_aprender = [t["frase"] for t in preguntas_para_ia]
+                                    solucion_aprendida = dict(zip(frases_clave_aprender, solucion_lista_ordenada))
                                     print(f"      Guardando como DICT: {solucion_aprendida}")
                                 else:
                                     # Use 36 spaces for indentation
-                                    solucion_aprendida = solucion_lista_ordenada # <--- ESTE ES EL ELSE CORREGIDO
+                                    solucion_aprendida = solucion_lista_ordenada
                             else:
                                 # Use 32 spaces for indentation
                                 print("      IA (Lote) no pudo extraer o validar la solución.")
 
 
-                        elif (tipo_pregunta == "TIPO_4_EMPAREJAR" or tipo_pregunta == "TIPO_8_IMAGEN") and clave_pregunta and contenido_modal and preguntas_para_ia and opciones_para_ia:
+                        elif tipo_pregunta in ["TIPO_4_EMPAREJAR", "TIPO_8_IMAGEN"] and clave_pregunta_aprendizaje and contenido_modal and preguntas_para_ia and opciones_para_ia:
                             # Use 28 spaces for indentation
                             tipo_num_str = ''.join(filter(str.isdigit, tipo_pregunta))
                             print(f"      Enviando texto a IA (Aprendizaje Emparejar TIPO {tipo_num_str}) para extraer solución...");
@@ -1326,7 +1585,7 @@ try:
                                 solucion_aprendida = None
 
 
-                        elif tipo_pregunta in ["TIPO_5_TF_SINGLE", "TIPO_DEFAULT_OM", "TIPO_9_AUDIO"] and clave_pregunta and contenido_modal and opciones_para_ia:
+                        elif tipo_pregunta in ["TIPO_5_TF_SINGLE", "TIPO_DEFAULT_OM", "TIPO_9_AUDIO"] and clave_pregunta_aprendizaje and contenido_modal and opciones_para_ia:
                             # Use 28 spaces for indentation
                             print(f"      Enviando texto a IA (Simple) para extraer solución (Tipo: {tipo_pregunta})...");
                             solucion_simple = ia_utils.extraer_solucion_simple(contenido_modal, opciones_para_ia)
@@ -1338,23 +1597,23 @@ try:
 
 
                         # --- GUARDADO EN MEMORIA ---
-                        if clave_pregunta and solucion_aprendida:
+                        if clave_pregunta_aprendizaje and solucion_aprendida:
                            # Use 28 spaces for indentation
-                            if tipo_pregunta == "TIPO_2_COMPLETAR" and clave_pregunta in soluciones_correctas:
+                            if tipo_pregunta == "TIPO_2_COMPLETAR" and clave_pregunta_aprendizaje in soluciones_correctas:
                                 # Use 32 spaces for indentation
-                                memoria_existente = soluciones_correctas[clave_pregunta]
+                                memoria_existente = soluciones_correctas[clave_pregunta_aprendizaje]
                                 if isinstance(memoria_existente, dict) and isinstance(solucion_aprendida, dict):
                                     # Use 36 spaces for indentation
                                     memoria_existente.update(solucion_aprendida)
-                                    soluciones_correctas[clave_pregunta] = memoria_existente
+                                    soluciones_correctas[clave_pregunta_aprendizaje] = memoria_existente
                                     print(f"      Memoria T2 fusionada: {solucion_aprendida}")
                                 else:
                                     # Use 36 spaces for indentation
                                     print("      WARN: No se pudo fusionar T2, tipos no son dict. Sobrescribiendo...")
-                                    soluciones_correctas[clave_pregunta] = solucion_aprendida
+                                    soluciones_correctas[clave_pregunta_aprendizaje] = solucion_aprendida
                             else:
                                 # Use 32 spaces for indentation
-                                soluciones_correctas[clave_pregunta] = solucion_aprendida
+                                soluciones_correctas[clave_pregunta_aprendizaje] = solucion_aprendida
                             guardar_memoria_en_disco()
 
 
@@ -1362,86 +1621,87 @@ try:
                     elif "correct" in titulo_modal or "great" in titulo_modal:
                         # Use 24 spaces for indentation
                         print(f"      Respuesta CORRECTA detectada (Modal: {titulo_modal}).")
-                        # Regenerar clave si es necesario (T8, T10, T11)
+                        clave_pregunta_acierto = None
+
+                        # Regenerar clave correcta para guardar el acierto si es necesario
                         if tipo_pregunta == "TIPO_10_ESCRIBIR":
                              # Use 28 spaces for indentation
                              titulo_limpio = pregunta_actual_texto.strip()
-                             if lista_de_tareas_escribir:
-                                 # Use 32 spaces for indentation
+                             if 'lista_de_tareas_escribir' in locals() and lista_de_tareas_escribir:
                                  claves_ordenadas_str = "|".join(sorted([t["letras_clave"] for t in lista_de_tareas_escribir]))
-                                 clave_pregunta = f"T10_BATCH:{titulo_limpio}||{claves_ordenadas_str}"
-                             else: # Use 32 spaces
-                                 clave_pregunta = None
+                                 clave_pregunta_acierto = f"T10_BATCH:{titulo_limpio}||{claves_ordenadas_str}"
                         elif tipo_pregunta == "TIPO_11_ESCRIBIR_OPCIONES":
                              # Use 28 spaces for indentation
                              titulo_limpio = pregunta_actual_texto.strip()
-                             if lista_de_tareas_escribir:
-                                 # Use 32 spaces for indentation
+                             if 'lista_de_tareas_escribir' in locals() and lista_de_tareas_escribir:
                                  frases_clave_str = "|".join(sorted([t["frase"] for t in lista_de_tareas_escribir]))
-                                 clave_pregunta = f"T11_BATCH:{titulo_limpio}||{contexto_hash}||{frases_clave_str}"
-                             else: # Use 32 spaces
-                                 clave_pregunta = None
+                                 clave_pregunta_acierto = f"T11_BATCH:{titulo_limpio}||{contexto_hash}||{frases_clave_str}"
                         elif tipo_pregunta == "TIPO_8_IMAGEN":
                             # Use 28 spaces for indentation
                             titulo_limpio = pregunta_actual_texto.strip()
-                            if definiciones and palabras_clave:
-                                # Use 32 spaces for indentation
-                                defs_limpias_sorted = sorted([d.strip() for d in definiciones])
-                                claves_unicas_ordenados_str = "|".join(sorted(palabras_clave))
-                                clave_pregunta = f"T8:{titulo_limpio}||{claves_unicas_ordenados_str}||" + "|".join(defs_limpias_sorted)
-                            else: # Use 32 spaces
-                                clave_pregunta = None
-                        elif clave_pregunta:
+                            if 'definiciones' in locals() and 'palabras_clave' in locals():
+                                 defs_limpias_sorted = sorted([d.strip() for d in definiciones])
+                                 claves_unicas_ordenados_str = "|".join(sorted(palabras_clave))
+                                 clave_pregunta_acierto = f"T8:{titulo_limpio}||{claves_unicas_ordenados_str}||" + "|".join(defs_limpias_sorted)
+                        elif tipo_pregunta == "TIPO_2_COMPLETAR":
+                             # Use 28 spaces for indentation
+                             titulo_limpio = pregunta_actual_texto.strip()
+                             if 'lista_de_tareas_completar' in locals() and lista_de_tareas_completar:
+                                 frases_para_clave = sorted([t["frase"] for t in lista_de_tareas_completar])
+                                 frases_hash_str = "|".join(frases_para_clave)
+                                 clave_pregunta_acierto = f"T2_BATCH:{titulo_limpio}||{contexto_hash}||FRASES:{frases_hash_str}"
+                        elif clave_pregunta: # Usar la clave original generada al inicio si no se regeneró
                             # Use 28 spaces for indentation
-                           clave_pregunta = clave_pregunta.strip()
+                           clave_pregunta_acierto = clave_pregunta.strip()
 
                         # --- GUARDADO EN MEMORIA (ACIERTO) ---
-                        if clave_pregunta:
+                        if clave_pregunta_acierto:
                             # Use 28 spaces for indentation
-                            respuesta_correcta_actual = preguntas_ya_vistas.get(clave_pregunta)
+                            respuesta_correcta_actual = preguntas_ya_vistas.get(clave_pregunta_acierto)
                             if respuesta_correcta_actual is None:
                                # Use 32 spaces for indentation
-                               print(f"      WARN: Acierto, pero no se encontró la respuesta en 'preguntas_ya_vistas' para clave: {clave_pregunta}")
+                               print(f"      WARN: Acierto, pero no se encontró la respuesta en 'preguntas_ya_vistas' para clave: {clave_pregunta_acierto}")
                             elif tipo_pregunta == "TIPO_2_COMPLETAR":
                                # Use 32 spaces for indentation
-                                if not isinstance(respuesta_correcta_actual, dict): # Indentación 36
+                                if not isinstance(respuesta_correcta_actual, dict):
                                     print(f"      ERROR Acierto T2: La respuesta guardada no es un dict: {respuesta_correcta_actual}")
-                                elif clave_pregunta in soluciones_correctas: # Indentación 36
-                                    memoria_existente = soluciones_correctas[clave_pregunta]
+                                elif clave_pregunta_acierto in soluciones_correctas:
+                                    memoria_existente = soluciones_correctas[clave_pregunta_acierto]
                                     nuevas_frases_count = 0
-                                    for frase, respuesta in respuesta_correcta_actual.items():
-                                        # Use 40 spaces for indentation
-                                        if frase not in memoria_existente:
-                                            # Use 44 spaces for indentation
-                                            memoria_existente[frase] = respuesta
-                                            print(f"      ¡SOLUCIÓN T2 (frase) APRENDIDA! -> {frase}: {respuesta}")
-                                            nuevas_frases_count += 1
-                                    if nuevas_frases_count > 0:
-                                        # Use 40 spaces for indentation
-                                        soluciones_correctas[clave_pregunta] = memoria_existente
-                                        guardar_memoria_en_disco()
+                                    if isinstance(memoria_existente, dict):
+                                         for frase, respuesta in respuesta_correcta_actual.items():
+                                             if frase not in memoria_existente:
+                                                 memoria_existente[frase] = respuesta
+                                                 print(f"      ¡SOLUCIÓN T2 (frase) APRENDIDA! -> {frase}: {respuesta}")
+                                                 nuevas_frases_count += 1
+                                         if nuevas_frases_count > 0:
+                                             soluciones_correctas[clave_pregunta_acierto] = memoria_existente
+                                             guardar_memoria_en_disco()
+                                         else:
+                                             print("      La solución T2 (frase) ya estaba en memoria. No se necesita guardar.")
                                     else:
-                                        # Use 40 spaces for indentation
-                                        print("      La solución T2 (frase) ya estaba en memoria. No se necesita guardar.")
-                                else: # Indentación 36
+                                        print(f"      WARN Acierto T2: Memoria existente no era dict. Sobrescribiendo con: {respuesta_correcta_actual}")
+                                        soluciones_correctas[clave_pregunta_acierto] = respuesta_correcta_actual
+                                        guardar_memoria_en_disco()
+                                else:
                                     print(f"      Guardando nuevo acierto (Lote T2 Completo) en memoria...")
-                                    soluciones_correctas[clave_pregunta] = respuesta_correcta_actual
+                                    soluciones_correctas[clave_pregunta_acierto] = respuesta_correcta_actual
                                     print(f"      ¡SOLUCIÓN (por acierto T2) APRENDIDA! -> {respuesta_correcta_actual}")
                                     guardar_memoria_en_disco()
-                            elif clave_pregunta not in soluciones_correctas:
+                            elif clave_pregunta_acierto not in soluciones_correctas:
                                # Use 32 spaces for indentation
                                try:
                                     # Use 36 spaces for indentation
-                                    if isinstance(respuesta_correcta_actual, str): # Indentación 40
+                                    if isinstance(respuesta_correcta_actual, str):
                                         respuesta_correcta_actual = respuesta_correcta_actual.strip()
-                                    if tipo_pregunta == "TIPO_10_ESCRIBIR" and isinstance(respuesta_correcta_actual, list): # Indentación 40
+                                    if tipo_pregunta == "TIPO_10_ESCRIBIR" and isinstance(respuesta_correcta_actual, list):
                                          respuesta_correcta_actual = [p.upper() for p in respuesta_correcta_actual]
-                                    elif tipo_pregunta == "TIPO_10_ESCRIBIR" and isinstance(respuesta_correcta_actual, str): # Indentación 40
+                                    elif tipo_pregunta == "TIPO_10_ESCRIBIR" and isinstance(respuesta_correcta_actual, str):
                                          respuesta_correcta_actual = respuesta_correcta_actual.upper()
-                                    elif tipo_pregunta == "TIPO_11_ESCRIBIR_OPCIONES" and isinstance(respuesta_correcta_actual, list): # Indentación 40
+                                    elif tipo_pregunta == "TIPO_11_ESCRIBIR_OPCIONES" and isinstance(respuesta_correcta_actual, list):
                                          respuesta_correcta_actual = [p.upper() for p in respuesta_correcta_actual]
 
-                                    soluciones_correctas[clave_pregunta] = respuesta_correcta_actual
+                                    soluciones_correctas[clave_pregunta_acierto] = respuesta_correcta_actual
                                     print(f"      ¡SOLUCIÓN (por acierto) APRENDIDA! -> {respuesta_correcta_actual}")
                                     guardar_memoria_en_disco()
                                except Exception as e_acierto:
@@ -1450,6 +1710,8 @@ try:
                             else: # Ya estaba en memoria
                                  # Use 32 spaces for indentation
                                  print("      La solución ya estaba en memoria. No se necesita guardar.")
+                        else: # clave_pregunta_acierto es None
+                             print("      WARN Acierto: No se pudo generar/obtener clave para guardar el acierto.")
 
 
                 except Exception as e:
@@ -1459,7 +1721,8 @@ try:
                 print("Clic OK..."); boton_ok.click()
                 print("Respuesta enviada! Esperando que desaparezca modal..."); wait_long.until(EC.invisibility_of_element_located(sel.SELECTOR_OK))
 
-                # --- LÓGICA POST-PREGUNTA (NUEVA) ---
+                # --- LÓGICA POST-PREGUNTA ---
+                # Usar la clave que se GENERÓ al inicio de la iteración actual para guardarla como "última procesada"
                 if clave_pregunta:
                     # Use 20 spaces for indentation
                     ultima_clave_pregunta_procesada = clave_pregunta
@@ -1469,8 +1732,8 @@ try:
                     print("      WARN: No se generó clave_pregunta en esta iteración. Reseteando tracker.")
                     ultima_clave_pregunta_procesada = ""
 
-                respuesta_fue_incorrecta = False
-                pregunta_actual_texto = ""
+                respuesta_fue_incorrecta = False # Resetear siempre después de procesar OK
+                pregunta_actual_texto = "" # Resetear para forzar relectura del título
 
                 print("Modal desaparecido. Cargando siguiente pregunta..."); time.sleep(0.5)
 

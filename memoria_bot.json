@@ -899,5 +899,199 @@
         "Know how to speak English is amazing! ___": "FALSE",
         "I hate bing cold. I find it really depressing. ___": "FALSE",
         "Martin enjoys writing good poems. ___": "TRUE"
-    }
+    },
+    "T2_BATCH:CHOOSE THE BEST OPTION IN THE FOLLOWING SENTENCES USING THE GERUND FOR EACH VERB:||CTX:...||FRASES:My best friends like bikes. They love ___": {
+        "My best friends like bikes. They love ___": "Riding a bike"
+    },
+    "T2_BATCH:READ THE TEXT AND CHOOSE IF THE VERB IS GERUND OR INFINITIVE TO COMPLETE IT.||CTX:...||FRASES:And I love 6. ___ vegetables of the same way.|By this reason I like 5. ___ some different types of trees with fruit.|Hello, my name is Caroline. I 1. ___ gardening,|I ___ doing other activities different of these.|I enjoy ___ natural juices.|because I feel in contact with the plants. 2. ___ is my passion that I learned from my grandmother.": {
+        "Hello, my name is Caroline. I 1. ___ gardening,": "like",
+        "because I feel in contact with the plants. 2. ___ is my passion that I learned from my grandmother.": "gardening",
+        "I ___ doing other activities different of these.": "hate",
+        "I enjoy ___ natural juices.": "drinking",
+        "By this reason I like 5. ___ some different types of trees with fruit.": "planting",
+        "And I love 6. ___ vegetables of the same way.": "eating"
+    },
+    "T2_BATCH:ARE THESE SENTENCES CORRECT (TRUE) OR INCORRECT (FALSE)?||CTX:...||FRASES:I hate bing cold. I find it really depressing. ___|Know how to speak English is amazing! ___|Martin enjoys writing good poems. ___|We stopped talking because someone interrupted us. ___": {
+        "We stopped talking because someone interrupted us. ___": "TRUE",
+        "Know how to speak English is amazing! ___": "FALSE",
+        "I hate bing cold. I find it really depressing. ___": "FALSE",
+        "Martin enjoys writing good poems. ___": "TRUE"
+    },
+    "T2_BATCH:CHOOSE THE BEST OPTION IN THE FOLLOWING SENTENCES USING THE GERUND FOR EACH VERB:||CTX:...||FRASES:My father practices basketball. He likes ___": {
+        "My father practices basketball. He likes ___": "playing"
+    },
+    "T2_BATCH:CHOOSE THE BEST OPTION IN THE FOLLOWING SENTENCES USING THE GERUND FOR EACH VERB:||CTX:...||FRASES:The best thing about ___ the bus is that I don´t need to drive.": {
+        "The best thing about ___ the bus is that I don´t need to drive.": "taking"
+    },
+    "T2_BATCH:CHOOSE IN THE SENTENCES IF IT IS AN ACTIVITY OR AN ACTION:||CTX:...||FRASES:I ride a bike twice a month. ___": {
+        "I ride a bike twice a month. ___": "ACTION"
+    },
+    "0:Swimming|exercise|for|heart|is|the": [
+        [
+            "Swimming",
+            "is",
+            "exercise",
+            "for",
+            "the",
+            "heart"
+        ]
+    ],
+    "T2_BATCH:CHOOSE IN THE SENTENCES IF IT IS AN ACTIVITY OR AN ACTION:||CTX:...||FRASES:Reading books is a great way to entertain yourself. ___": {
+        "Reading books is a great way to entertain yourself. ___": "ACTIVITY"
+    },
+    "DEFAULT:CHOOSE THE CORRECT WORD: HOW _______ IS YOUR HUSBAND?||CTX:Important...Important||||||Attractive|Far|Important|Short": "Attractive",
+    "DEFAULT:CHOOSE THE CORRECT WORD: HOW _______ DO YOU DRIVE?||CTX:Interesting...Interesting||||||Amazing|Interesting|Short|Well": "Well",
+    "0:How|big|is|room?|your": [
+        [
+            "room?",
+            "your",
+            "big",
+            "is",
+            "How"
+        ]
+    ],
+    "T2_BATCH:ARE THESE SENTENCES CORRECT (TRUE) OR INCORRECT (FALSE)?||CTX:...||FRASES:How cheap is your computer? ___|How the girl arrived home? ___|How the worst is your best friend? ___|How ugly is that witch? ___": {
+        "How ugly is that witch? ___": "TRUE",
+        "How the worst is your best friend? ___": "FALSE",
+        "How cheap is your computer? ___": "TRUE",
+        "How the girl arrived home? ___": "FALSE"
+    },
+    "DEFAULT:CHOOSE THE CORRECT WORD: HOW _______ IS YOUR HAIR?||CTX:Long...Long||||||Far|Long|Often|Tall": "Long",
+    "DEFAULT:CHOOSE THE CORRECT WORD: HOW _______ ARE YOU?||CTX:Long...Long||||||Far|Long|Often|Tall": "Tall",
+    "DEFAULT:CHOOSE THE RIGHT WORD IN THE FOLLOWING SENTENCE TO COMPLETE IT: HOW _______ IS YOUR FATHER´S CAR?||CTX:Fast...Fast||||||Far|Fast|Important|Long": "Fast",
+    "0:?|How|another|hard|is|it|language|learn|to": [
+        [
+            "How",
+            "hard",
+            "is",
+            "it",
+            "to",
+            "learn",
+            "another",
+            "language",
+            "?"
+        ]
+    ],
+    "T2_BATCH:CHOOSE THE BEST OPTION IN THE FOLLOWING SENTENCE INDICATING IF THE WORD IS AN ADJECTIVE OR AN ADVERB:||CTX:...||FRASES:Expensive: ___": {
+        "Expensive: ___": "Adjective"
+    },
+    "DEFAULT:CHOOSE THE RIGHT WORD IN THE FOLLOWING SENTENCE TO COMPLETE IT: HOW _______ IS THE ENGLISH CLASS?||CTX:Big...Big||||||Big|Far|Interesting|Often": "Interesting",
+    "DEFAULT:CHOOSE THE CORRECT WORD: HOW _______ IS YOUR FRENCH CLASS?||CTX:Interesting...Interesting||||||Fast|Interesting|Short|Tall": "Interesting",
+    "T2_BATCH:CHOOSE THE BEST OPTION IN THE FOLLOWING SENTENCE INDICATING IF THE WORD IS AN ADJECTIVE OR AN ADVERB.||CTX:...||FRASES:Quickly: ___": {
+        "Quickly: ___": "Adverb"
+    },
+    "DEFAULT:CHOOSE THE CORRECT WORD: HOW _______ DO YOU SPEAK IN ENGLISH?||CTX:Important...Important||||||High|Important|Often|Tall": "Often",
+    "T2_BATCH:ARE THESE SENTENCES CORRECT (TRUE) OR INCORRECT (FALSE)?||CTX:...||FRASES:Any is used in negative sentences. ___|Any is used with count nouns. ___|Some is used in negative sentences. ___|Some is used with count and non-count nouns. ___": {
+        "Some is used in negative sentences. ___": "FALSE",
+        "Any is used in negative sentences. ___": "TRUE",
+        "Some is used with count and non-count nouns. ___": "TRUE",
+        "Any is used with count nouns. ___": "FALSE"
+    },
+    "0:There|any|fridge|in the|isn't|meat": [
+        [
+            "There",
+            "isn't",
+            "any",
+            "meat",
+            "in the",
+            "fridge"
+        ]
+    ],
+    "DEFAULT:WHICH SENTENCE IS CORRECT?||CTX:I have some books....I have some books.||||||I don’t need to buy some fish.|I have some books.|There are any tomatoes in the refrigerator.": "I have some books.",
+    "T2_BATCH:ARE THESE SENTENCES CORRECT (TRUE) OR INCORRECT (FALSE)?||CTX:...||FRASES:Is there some lemonade left? ___|I’m looking for any good music. ___|There are some exercise books on the floor. ___|They didn’t sing any songs. ___": {
+        "There are some exercise books on the floor. ___": "TRUE",
+        "Is there some lemonade left? ___": "FALSE",
+        "They didn’t sing any songs. ___": "TRUE",
+        "I’m looking for any good music. ___": "FALSE"
+    },
+    "0:Do|milk?|some|want|you": [
+        [
+            "Do",
+            "you",
+            "want",
+            "some",
+            "milk?"
+        ]
+    ],
+    "T2_BATCH:CHOOSE SOME OR ANY IN THE FOLLOWING SENTENCES TO COMPLETE THEM.||CTX:...||FRASES:There are ___ tomatoes in the refrigerator.|There isn’t ___ fruit in the fridge.": {
+        "There are ___ tomatoes in the refrigerator.": "SOME",
+        "There isn’t ___ fruit in the fridge.": "ANY"
+    },
+    "T2_BATCH:READ THE TEXT AND CHOOSE SOME OR ANY TO COMPLETE IT.||CTX:...||FRASES:Dear Diary, today I’m very happy. The sun is shining and there’s 1. ___ coffee on the table.|Has the rabbit got 5. ___ food?|I think I will eat a biscuit. Martha is eating an apple but she hasn’t got 3. ___ time. She is going to work.|It’s breakfast time! There isn’t 2. ___ fruit.|Today is Saturday and the rabbit wants 4. ___ water.|Yes, it has. It has got 6. ___ vegetables and a carrot. Well, it’s time to go dear diary…. See you tomorrow!.": {
+        "Dear Diary, today I’m very happy. The sun is shining and there’s 1. ___ coffee on the table.": "SOME",
+        "It’s breakfast time! There isn’t 2. ___ fruit.": "ANY",
+        "I think I will eat a biscuit. Martha is eating an apple but she hasn’t got 3. ___ time. She is going to work.": "ANY",
+        "Today is Saturday and the rabbit wants 4. ___ water.": "SOME",
+        "Has the rabbit got 5. ___ food?": "ANY",
+        "Yes, it has. It has got 6. ___ vegetables and a carrot. Well, it’s time to go dear diary…. See you tomorrow!.": "SOME"
+    },
+    "T2_BATCH:CHOOSE THE BEST OPTION.||CTX:...||FRASES:Are there ___ messages for me?|Did you have ___ free time this weekend?|I can see a road, a man and ___ cow.|You haven’t done ___ work today.": {
+        "Are there ___ messages for me?": "ANY",
+        "You haven’t done ___ work today.": "ANY",
+        "I can see a road, a man and ___ cow.": "SOME",
+        "Did you have ___ free time this weekend?": "ANY"
+    },
+    "0:Miguel|at|gym|the|was|yesterday": [
+        [
+            "Miguel",
+            "was",
+            "at",
+            "the",
+            "gym",
+            "yesterday"
+        ]
+    ],
+    "T4:PUT THE ANSWERS WHERE THEY BELONG.||Guayasamin was a ardent supporter of the Cuban Revolution in general and Fidel Castro in particular.|Guayasamin was given a prize for an entire life of work for peace.|He enjoyed drawing caricatures of his teachers and the children that he played with.": [
+        "He enjoyed drawing caricatures of his teachers and the children that he played with.",
+        "Guayasamin was a ardent supporter of the Cuban Revolution in general and Fidel Castro in particular.",
+        "Guayasamin was given a prize for an entire life of work for peace."
+    ],
+    "T4:PUT THE QUESTIONS WHERE THEY BELONG.||How old was Guayasamin when he started painting?|What was Guayasamin’s inspiration at painting?|Where was Guayasamin born?": [
+        "What was Guayasamin’s inspiration at painting?",
+        "Where was Guayasamin born?",
+        "How old was Guayasamin when he started painting?"
+    ],
+    "T4:READ THE ARTICLE ABOUT OSWALDO GUAYASAMIN. ORDER THE HEADINGS WITH THE PARAGRAPHS.||EARLY LIFE|INITIATION IN PAINTING|POLITICAL BELIEFS": [
+        "INITIATION IN PAINTING",
+        "EARLY LIFE",
+        "POLITICAL BELIEFS"
+    ],
+    "T2_BATCH:ARE THESE SENTENCES CORRECT (TRUE) OR INCORRECT (FALSE)?||CTX:...||FRASES:Ayleen and Mathias was at the beach yesterday. ___|The weather was cold and cloudy. ___": {
+        "The weather was cold and cloudy. ___": "TRUE",
+        "Ayleen and Mathias was at the beach yesterday. ___": "FALSE"
+    },
+    "T2_BATCH:CHOOSE THE CORRECT OPTION (WAS OR WERE)||CTX:...||FRASES:Carlos ___ very famous.|I ___ at home yesterday.|My little sister and brother ___ very ill.|We ___ very successful.": {
+        "I ___ at home yesterday.": "WAS",
+        "We ___ very successful.": "WERE",
+        "Carlos ___ very famous.": "WAS",
+        "My little sister and brother ___ very ill.": "WERE"
+    },
+    "DEFAULT:CHOOSE THE PARAGRAPH WITHOUT ANY MISTAKE.||CTX:Guayasamin started painting from the time he were ...ols of truth in society and injustices around him.||||||Guayasamin dedicated his life to painting; however he were an ardent supporter of the Cuban Revolution in general and Fidel Castro in particular. He were given a prize for an entire life of work for peace by the UNESCO.|Guayasamin started painting from the time he were six years old. Although tragedy molded Guayasamin’s work, it were his friend’s death that inspired him to paint powerful symbols of truth in society and injustices around him.|Guayasamin was born in Quito, Ecuador. His family was poor and his father worked as carpenter. He was the first child of ten children in his family. When he was young, he enjoyed drawing caricatures of his teachers and the children that he played with.": "Guayasamin was born in Quito, Ecuador. His family was poor and his father worked as carpenter. He was the first child of ten children in his family. When he was young, he enjoyed drawing caricatures of his teachers and the children that he played with.",
+    "T2_BATCH:CHOOSE THE CORRECT OPTION.||CTX:...||FRASES:Carolina ___ sick last Friday, so she didn’t go to work.|They ___ at the mall last weekend.": {
+        "Carolina ___ sick last Friday, so she didn’t go to work.": "WAS",
+        "They ___ at the mall last weekend.": "WERE"
+    },
+    "0:GOOD|STUDENTS|THEY|WERE": [
+        [
+            "THEY",
+            "WERE",
+            "GOOD",
+            "STUDENTS"
+        ]
+    ],
+    "T9:LISTEN AGAIN AND COMPLETE THE MISSING WORDS.||CTX:A big dog is 1________ in the 2________ with two k...sing a yellow 3________ and making everyone laugh.||||||1. Ball 2. Yard 3. Playing|1. Playing 2. Yard 3. Ball|1. Yard 2. Playing 3. Ball": "1. Playing 2. Yard 3. Ball",
+    "T4:COMPLETE THE SENTENCES BY FILLING IN THE GAPS.||building|busy|classmate|cousin|house": [
+        "house",
+        "building",
+        "busy",
+        "cousin",
+        "classmate"
+    ],
+    "T9:LISTEN AND CHOOSE THE CORRECT DESCRIPTION||CTX:A big dog is playing in the yard with two kids, ch...kids, chasing a red ball and making everyone laugh||||||A big dog is playing in the yard with two kids, chasing a red ball and making everyone laugh|A big dog is playing in the yard with two kids, chasing a yellow ball and making everyone laugh|A small dog is playing in the yard with two kids, chasing a yellow ball and making everyone laugh": "A big dog is playing in the yard with two kids, chasing a yellow ball and making everyone laugh",
+    "T11_BATCH:TYPE THE SENTENCE YOU HEAR IN THE DICTATION. PAY ATTENTION TO PUNCTUATION.||CTX:...||TYPE THE SENTENCE ___": [
+        "IN"
+    ],
+    "T9:CHOOSE THE SENTENCE YOU HEAR.||CTX:My sister played with her toys in the yard....My sister played with her toys in the yard.||||||My sister played with her toys in the house.|My sister played with her toys in the yard.|My sister plays with her toys in the yard.": "My sister played with her toys in the yard.",
+    "T9:WHERE DOES HER UNCLE LIVE?||CTX:He lives in the city center...He lives in the city center||||||He lives at the beach|He lives in a town|He lives in the city center": "He lives in a town",
+    "T9:THE WOMAN LIVES IN A _____||CTX:House...House||||||Building|Cottage|House": "House"
 }
