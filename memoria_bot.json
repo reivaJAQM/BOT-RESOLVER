@@ -45,5 +45,474 @@
             "to go",
             "to the cinema"
         ]
-    ]
+    ],
+    "T8:LOOK AT THE PICTURES. MATCH THE WORDS WITH THE IMAGES. WHO CAN WORK IN THESE PLACES?||Nurse|Police Officer|Teacher": [
+        "Nurse",
+        "Teacher",
+        "Police Officer"
+    ],
+    "T8:LOOK AT THE PICTURES. CHOOSE THE NAMES OF THESE JOBS ACCORDING TO THE IMAGES.||Dentist|Engineer|Firefighter|Mechanic|Taxi driver": [
+        "Firefighter",
+        "Taxi driver",
+        "Engineer",
+        "Mechanic",
+        "Dentist"
+    ],
+    "T2_BATCH:LOOK AT THE PICTURE AND READ THE TEXT. THEN READ AND COMPLETE THE FORM WITH THE INFORMATION FROM THE TEXT.||CTX:...": {
+        "Name: ___": "Liz",
+        "Country: ___": "Paris",
+        "Age: ___": "twenty-one"
+    },
+    "DEFAULT:LOOK AT THE PICTURE AND READ THE TEXT. THEN READ AND COMPLETE THE SENTENCE: LIZ IS A ______.||CTX:half an hour...half an hour||||half an hour|schedule|tennis player": "tennis player",
+    "DEFAULT:LOOK AT THE PICTURE AND READ THE TEXT. THEN READ AND COMPLETE THE SENTENCE: SHE GETS UP ______.||CTX:half an hour...half an hour||||early|half an hour|schedule": "early",
+    "DEFAULT:LOOK AT THE PICTURE AND READ THE TEXT. THEN READ AND COMPLETE THE SENTENCE: SHE HAS A HEALTHY ______.||CTX:early...early||||breakfast|early|tennis player": "breakfast",
+    "DEFAULT:LOOK AT THE PICTURE AND READ THE TEXT. THEN READ AND COMPLETE THE SENTENCE: SHE SWIMS FOR ABOUT ______.||CTX:half an hour...half an hour||||early|half an hour|schedule": "half an hour",
+    "DEFAULT:LOOK AT THE PICTURE AND READ THE TEXT. THEN READ AND COMPLETE THE SENTENCE: SHE HAS A BUSY ______.||CTX:schedule...schedule||||breakfast|schedule|tennis player": "schedule",
+    "0:She|breakfast|has|2:She|for about half an hour|swims|4:She|a book|reads": [
+        [
+            "She",
+            "has",
+            "breakfast"
+        ],
+        [
+            "She",
+            "swims",
+            "for about half an hour"
+        ],
+        [
+            "She",
+            "reads",
+            "a book"
+        ]
+    ],
+    "T8:LOOK AT THE PICTURES. MATCH THE CORRECT PHRASES WITH THE PICTURES.||Get dressed|Get up|Have breakfast|Have lunch|Take a shower": [
+        "Have lunch",
+        "Have breakfast",
+        "Take a shower",
+        "Get dressed",
+        "Get up"
+    ],
+    "T2_BATCH:LOOK AT THE PICTURE AND READ THE TEXT. THEN ANSWER THE QUESTIONS. MARK TRUE (T) OR FALSE (F).||CTX:...": {
+        "Does Liz live in London? ___": "F",
+        "Is she a tennis player? ___": "T",
+        "Does she train 4 hours in the morning? ___": "T",
+        "Does she get ready for interviews before lunch? ___": "F",
+        "Does she have a healthy breakfast? ___": "T"
+    },
+    "T11_BATCH:READ THE WORDS AND PUT IN ORDER THE FOLLOWING LETTERS TO CREATE WORDS RELATED TO THE PARTS OF THE HOUSE.||CTX:...||IINNDG MORO ___|IINNDG MORO ___|IINNDG MORO ___|IINNDG MORO ___|IINNDG MORO ___|IINNDG MORO ___|IINNDG MORO ___|IINNDG MORO ___": [
+        "DININGROOM",
+        "KITCHEN",
+        "BEDROOM",
+        "LIVINGROOM",
+        "BATHROOM",
+        "BASEMENT",
+        "STUDIO",
+        "YARD"
+    ],
+    "DEFAULT:READ THE WORDS AND CHOOSE IT THAT DOESN´T BELONG TO THE GROUP.||CTX:Bed...Bed||||Bed|bedroom|stairs": "stairs",
+    "DEFAULT:READ THE WORDS AND CHOOSE IT THAT DOESN´T BELONG TO THE GROUP.||CTX:Bathtub...Bathtub||||Bathtub|kitchen|shower": "kitchen",
+    "T8:LOOK AT THE IMAGES. MATCH THE PICTURES WITH THE CORRECT WORDS RELATED TO FURNITURE.||ARMCHAIR|CHAIR|LAMP|SOFA|TELEPHONE|TV": [
+        "ARMCHAIR",
+        "TV",
+        "TELEPHONE",
+        "CHAIR",
+        "LAMP",
+        "SOFA"
+    ],
+    "DEFAULT:LOOK AT THE PICTURE AND CHOOSE THE CORRECT OPTION. WHAT PART OF THE HOUSE IS IT? - THIS IS MY COUSIN'S:||CTX:kitchen...kitchen||||bedroom|kitchen": "bedroom",
+    "DEFAULT:LOOK AT THE PICTURE AND CHOOSE THE CORRECT OPTION. WHAT PART OF THE HOUSE IS IT? - THIS IS MY SISTER'S:||CTX:living room...living room||||garage|living room": "living room",
+    "DEFAULT:LOOK AT THE PICTURE AND CHOOSE THE CORRECT OPTION. WHAT PART OF THE HOUSE IS IT? - THIS IS MY MOM'S:||CTX:laundry room...laundry room||||garden|laundry room": "laundry room",
+    "DEFAULT:LOOK AT THE PICTURE. READ AND CHOOSE THE CORRECT OPTION.||CTX:Picture...Picture||||Bathtub|Lamp|Picture|Plant": "Plant",
+    "DEFAULT:READ THE WORDS AND CHOOSE IT THAT DOESN´T BELONG TO THE GROUP.||CTX:Armchair...Armchair||||Armchair|car|garage": "Armchair",
+    "DEFAULT:LOOK AT THE PICTURE. READ AND CHOOSE THE CORRECT OPTION.||CTX:Rug...Rug||||Clock|Computer|Fridge|Rug": "Clock",
+    "T8:LOOK AT THE IMAGES. MATCH THE WORDS TO THE PICTURES.||bottle|fork|mug|pot|spoon": [
+        "mug",
+        "fork",
+        "bottle",
+        "pot",
+        "spoon"
+    ],
+    "DEFAULT:LOOK AT THE PICTURE. READ AND CHOOSE THE CORRECT OPTION.||CTX:Radio...Radio||||Armchair|Bed|Coach|Radio": "Radio",
+    "DEFAULT:LOOK AT THE PICTURE AND CHOOSE THE CORRECT OPTION. WHAT PART OF THE HOUSE IS IT? - THIS IS ROSE'S:||CTX:bedroom...bedroom||||bathroom|bedroom": "bathroom",
+    "DEFAULT:READ THE WORDS AND CHOOSE IT THAT DOESN´T BELONG TO THE GROUP.||CTX:Oven...Oven||||Oven|chair|refrigerator": "chair",
+    "T4:READ THE SENTENCES AND COMPLETE THEM WITH THE WORDS IN THE BOX.||and|because|first|or|too": [
+        "too",
+        "first",
+        "because",
+        "and",
+        "or"
+    ],
+    "T2_BATCH:READ THE SENTENCES AND CHOOSE THE CORRECT WORD FOR EACH SENTENCE.||CTX:...": {
+        "I am good at cycling ___ swimming.": "and",
+        "The students did the homework ___ they didn´t study.": "but",
+        "My sister always goes to the beach ___ her family.": "with",
+        "I don’t like to drink coffee ___ it’s bad for my health.": "because"
+    },
+    "T2_BATCH:READ THE SENTENCES AND CHOOSE THE CORRECT OPTION TO COMPLETE THEM.||CTX:...": {
+        "Some people believe in ghosts and supernatural phenomena ___ others are skeptical about all that.": "whereas",
+        "She didn’t get the job ___ her brilliant qualifications.": "despite",
+        "“That book you’ve been reading must be very interesting ___ it’s dead boring but I have to read it for school”": "on the contrary",
+        "I’m not going to speak to her ___ she begs me pardon": "although",
+        "Do you live in a town ___ city?": "or",
+        "My family ___ I are happier in our new home.": "and",
+        "We live in this flat ___ it is near the beach.": "because",
+        "I usually have lunch at school ___ not on Friday.": "but"
+    },
+    "DEFAULT:READ AND CHOOSE THE CORRECT OPTION TO COMPLETE THE SENTENCES: PROFESSIONAL SPORTS PEOPLE HAVE TO _____ EVERY DAY.||CTX:score...score||||kick|score|train": "train",
+    "DEFAULT:READ AND CHOOSE THE CORRECT OPTION TO COMPLETE THE SENTENCES: TO PLAY TABLE TENNIS YOU NEED TO HAVE A:||CTX:ball and a racket...ball and a racket||||ball and a helmet|ball and a racket|bar and a ball": "ball and a racket",
+    "DEFAULT:READ AND CHOOSE THE CORRECT DEFINITION FOR THE SPORT VOCABULARY: WHAT IS THE DEFINITION OF BAT?||CTX:The member of a team that is in charge of all the ... of all the other players while playing the sport.||||A game in which a club is used to hit a small ball into a hole in the ground.|A thin long object that is held and used to hit another object, often a ball.|The member of a team that is in charge of all the other players while playing the sport.|The things that are needed to be able to play a sport.": "A thin long object that is held and used to hit another object, often a ball.",
+    "T11_BATCH:FILL IN THE BLANKS WITH THE MISSING VOWELS TO FIND OUT THE NAMES OF THE SPORTS.||CTX:...||F _ _ T B _ L L ___|F _ _ T B _ L L ___|F _ _ T B _ L L ___|F _ _ T B _ L L ___|F _ _ T B _ L L ___|F _ _ T B _ L L ___": [
+        "FOOTBALL",
+        "TENNIS",
+        "BASEBALL",
+        "GOLF",
+        "HOCKEY",
+        "BASKETBALL"
+    ],
+    "DEFAULT:LOOK AT THE PICTURE AND READ THE TEXT. THEN READ AND COMPLETE THE SENTENCE WITH THE RIGHT OPTION. PHONE OPERATORS SHOULD BE:||CTX:Male...Male||||Both|Female|Male": "Female",
+    "DEFAULT:LOOK AT THE PICTURE AND READ THE TEXT. THEN READ AND COMPLETE THE SENTENCE WITH THE RIGHT OPTION. PEOPLE WHO ARE INTERESTED IN THE JOB SHOULD:||CTX:Call for information...Call for information||||Call for information|Drop their CV|Visit the nearest local": "Drop their CV",
+    "DEFAULT:THE MOBILE PHONE IN SUBWAY IS _____||CTX:0300-8400898...0300-8400898||||0300-4809098|0300-8400898": "0300-8400898",
+    "DEFAULT:LOOK AT THE PICTURE AND READ THE TEXT. THEN READ AND COMPLETE THE SENTENCE WITH THE RIGHT OPTION. WHEN IS THE LECTURE ON THE IMPACT OF MOSQUITOES?||CTX:In Wilson International Campus...In Wilson International Campus||||In Wilson International Campus|In the afternoon|On April 25, 2020": "On April 25, 2020",
+    "T8:LOOK AT THE PICTURE AND CHOOSE THE CORRECT TITLE ACCORDDING TO THE ADVERTISEMENT.||Ad for a job|Ad for information about an event": [
+        "Ad for a job",
+        "Ad for information about an event"
+    ],
+    "DEFAULT:LOOK AT THE PICTURE AND READ THE TEXT. THEN READ AND COMPLETE THE SENTENCE WITH THE RIGHT OPTION: THE MOST FAMOUS SPORTS TO PRACTICE IN CRUCITA ARE ____________________.||CTX:Parasailing and paragliding....Parasailing and paragliding.||||Parasailing and paragliding.|Swimming and jogging.": "Parasailing and paragliding.",
+    "DEFAULT:LOOK AT THE PICTURE AND READ THE TEXT. THEN READ AND COMPLETE THE SENTENCE WITH THE RIGHT OPTION: ESTEBAN AND LAURA STUDY AT ____.||CTX:school...school||||school|university": "university",
+    "DEFAULT:LOOK AT THE PICTURE AND READ THE TEXT. THEN READ AND COMPLETE THE SENTENCE WITH THE RIGHT OPTION: CRUCITA IS LOCATED ____________________.||CTX:in the northern highlands of Ecuador....in the northern highlands of Ecuador.||||On Ecuador’s south coast.|in the northern highlands of Ecuador.": "On Ecuador’s south coast.",
+    "DEFAULT:LOOK AT THE PICTURE AND READ THE TEXT. THEN READ AND COMPLETE THE SENTENCE WITH THE RIGHT OPTION: IN CRUCITA PEOPLE ARE VERY ____.||CTX:friendly...friendly||||friendly|unfriendly": "friendly",
+    "DEFAULT:LOOK AT THE PICTURE AND READ THE TEXT. THEN READ AND COMPLETE THE SENTENCE WITH THE RIGHT OPTION: PORTOVIEJO SUFFERED AN ____ IN 2016.||CTX:Tsunami...Tsunami||||Earthquake|Tsunami": "Earthquake",
+    "DEFAULT:LOOK AT THE PICTURE AND READ THE ARTICLE. CHOOSE THE BEST HEADLINE TO THIS ARTICLE.||CTX:People who live in different places...People who live in different places||||Economic resources of two places|Main characteristics of two places|People who live in different places": "Main characteristics of two places",
+    "DEFAULT:READ THE SENTENCE AND MAKE IT TO IMPERATIVE NEGATIVE: STOP AT THE NEXT GAS STATION.||CTX:Not Stop at the next gas station....Not Stop at the next gas station.||||Do not stop at the next gas station.|Not Stop at the next gas station.|Stop not at the next gas station.": "Do not stop at the next gas station.",
+    "DEFAULT:READ THE SENTENCE AND MAKE IT TO IMPERATIVE NEGATIVE: TELL THEM WHAT HAPPENED YESTERDAY.||CTX:Tell don´t what happened yesterday....Tell don´t what happened yesterday.||||Don´t tell them what happened yesterday.|Not tell them what happened yesterday.|Tell don´t what happened yesterday.": "Don´t tell them what happened yesterday.",
+    "T2_BATCH:CHOOSE THE CORRECT VERB FROM THE BOX TO COMPLETE THE IMPERATIVE SENTENCES.||CTX:...": {
+        "___ your shoes.": "Take out",
+        "It's cold outside. ___ the window, please.": "Close",
+        "___ your dirty boots outside": "Leave"
+    },
+    "DEFAULT:USE THE CORRECT IMPERATIVE ACCORDING TO EACH SENTENCE: “I´M SICK, I HAVE A STRONG HEADACHE”||CTX:Go to the doctor...Go to the doctor||||Do your homework|Eat your soup|Go to the doctor": "Go to the doctor",
+    "DEFAULT:READ THE SENTENCE AND USE THE CORRECT IMPERATIVE ACCORDING TO IT. “I'M PUTTING ON WEIGHT, I FEEL TERRIBLE”||CTX:Work more hours...Work more hours||||Don´t do any exercise|Start going to the gym|Work more hours": "Start going to the gym",
+    "T2_BATCH:CHOOSE THE CORRECT OPTION FROM THE BOX TO COMPLETE THE IMPERATIVE SENTENCES.||CTX:...": {
+        "___ candy. It's bad for your teeth.": "Don't eat",
+        "___ here, please.": "Come",
+        "___ this book. It's horrible.": "Don't read"
+    },
+    "T2_BATCH:CHOOSE THE CORRECT VERB FORM FROM THE BOX TO COMPLETE THE IMPERATIVE SENTENCE.||CTX:...": {
+        "___ upstairs.": "Go",
+        "___ in this river. (not/to swim)": "Don't swim",
+        "___ soccer in the garden. (not/to play)": "Don´t play",
+        "___ your cellphone. (to turn off)": "Turn off"
+    },
+    "T2_BATCH:READ THE SENTENCE AND DECIDE WHICH WORD GOES IN THE SPACE?||CTX:...": {
+        "___ talk to John, he’s busy.": "Don't"
+    },
+    "DEFAULT:READ THE SENTECES AND DECIDE WHICH SENTENCE IS BEST FOR A SIGN?||CTX:Visitors must sign in....Visitors must sign in.||||Please sign in, visitors!|Visitor, you must sign in please.|Visitors must sign in.": "Visitors must sign in.",
+    "DEFAULT:READ THE SENTECES AND DECIDE WHICH ONE IS NOT CORRECT?||CTX:Don’t leave the house alone....Don’t leave the house alone.||||Don’t leave the house alone.|Please to take a seat.|Take care when you cross the road.": "Please to take a seat.",
+    "DEFAULT:READ THE SENTENCE AND MAKE IT TO IMPERATIVE NEGATIVE: DRIVE HER TO THE SHOPPING MALL.||CTX:Don’t drive her to the shopping mall....Don’t drive her to the shopping mall.||||Don’t drive her to the shopping mall.|Drive not her to the shopping mall.|Not Drive her to the shopping mall.": "Don’t drive her to the shopping mall.",
+    "T2_BATCH:CHOOSE THE CORRECT VERB FROM THE BOX TO COMPLETE THE IMPERATIVE SENTENCES||CTX:...": {
+        "___ a minute.": "Wait",
+        "___ over here, please.": "Come",
+        "___ the door when you go outside.": "Close",
+        "___ your teacher.": "Ask",
+        "___ me your phone number so that I can call you.": "Give"
+    },
+    "DEFAULT:LOOK AT THE PICTURE AND READ THE TEXT. COMPLETE IT WITH THE CORRECT OPTION.||CTX:can't, can't, can, can, can...can't, can't, can, can, can||||can't, can't, can, can, can|can't, can't, can, can´t, can´t|can't, can, can, can, can|can, can't, can, can, can": "can't, can't, can, can, can",
+    "T2_BATCH:READ THE SENTENCES AND THE CORRECT OPTION (CAN/CAN´T)||CTX:...": {
+        "I ___ come to the party. I am really busy.": "Can't",
+        "I ___ believe it. We won two million dollars.": "Can't",
+        "He ___ jump. His leg hurts so much.": "Can't"
+    },
+    "T2_BATCH:READ THE SENTENCE AND CHOOSE THE WORD TO COMPLETE THE QUESTION.||CTX:...": {
+        "___ you understand Spanish people when you are in Spain?": "Can"
+    },
+    "DEFAULT:READ THE SENTENCES AND CHOOSE WHICH ONE IS NOT CORRECT?||CTX:We can’t see the television....We can’t see the television.||||David can’t come to work today.|I can’t to fix your car, I’m afraid.|We can’t see the television.": "I can’t to fix your car, I’m afraid.",
+    "DEFAULT:READ THE SENTENCES AND CHOOSE WHICH ONE IS NOT CORRECT?||CTX:Where I can put this box?...Where I can put this box?||||What time can you come to the office?|Where I can put this box?|Which sports can you play?": "Where I can put this box?",
+    "DEFAULT:READ AND CHOOSE THE CORRECT COMBINATION IN THE FOLLOWING SENTENCES: PLEASE ___ YOU BUY SOME MILK ON YOUR WAY HOME? I ___ LEAVE THE HOUSE BECAUSE I'M LOOKING AFTER THE BABY.||CTX:Can't/can't...Can't/can't||||Can't/can't|Can/can't": "Can/can't",
+    "DEFAULT:READ AND CHOOSE THE CORRECT COMBINATION IN THE FOLLOWING SENTENCES: HELLO, ___ I HELP YOU'? 'ACTUALLY, NO YOU ___. THIS RESTAURANT IS AWFUL AND WE'VE BEEN WAITING HERE FOR HALF AN HOUR. WE'RE LEAVING.||CTX:Can't/can...Can't/can||||Can't/can|Can/can't": "Can/can't",
+    "DEFAULT:READ THE QUESTION AND CHOOSE THE CORRECT ANSWER?||CTX:No, he can’t....No, he can’t.||||No, he can.|No, he can’t.|No, he don’t can.": "No, he can’t.",
+    "DEFAULT:READ THE SENTENCES AND CHOOSE WHICH ONE IS CORRECT?||CTX:Can you help me please?...Can you help me please?||||Can you help me please?|Can you to help me please?|You can please help me?": "Can you help me please?",
+    "DEFAULT:READ THE SENTENCES AND CHOOSE WHICH ONE IS CORRECT?||CTX:Can you play the violin?...Can you play the violin?||||Can you play the violin?|Play you the violin?|You can play the violin?": "Can you play the violin?",
+    "DEFAULT:READ THE SENTENCES AND CHOOSE WHICH ONE IS CORRECT?||CTX:I can’t to see you today....I can’t to see you today.||||I can’t to see you today.|My parents can come to the party.|We can visiting you at the weekend.": "My parents can come to the party.",
+    "T2_BATCH:READ AND COMPLETE EACH SENTENCE WITH THE CORRECT VERB.||CTX:...": {
+        "Superman ___ high.": "can fly",
+        "Dogs ___": "can bark"
+    },
+    "DEFAULT:READ THE SENTENCE AND CHOOSE THE CORRECT NEGATIVE FORM OF IT. THEY CAN WORK.||CTX:They work can....They work can.||||Can they work?.|Cannot they work.|They can´t work.|They work can.": "They can´t work.",
+    "DEFAULT:READ AND CHOOSE THE CORRECT COMBINATION IN THE FOLLOWING SENTENCES: '___ YOU SWIM'? 'YES, I ___.'||CTX:Can/can't...Can/can't||||Can/can|Can/can't": "Can/can",
+    "T2_BATCH:READ THE SENTENCES AND CHOOSE THE CORRECT PRESENT CONTINUOUS FORM.||CTX:...": {
+        "Julia and Ayleen ___ (play) tennis.": "are playing",
+        "Emily ___ (listen to) music.": "is listening"
+    },
+    "T2_BATCH:READ THE SENTENCE AND CHOOSE WHICH WORD IS NOT THE CORRECT ONE?||CTX:...": {
+        "___ are talking very loudly!": "She"
+    },
+    "DEFAULT:READ THE QUESTIONS AND CHOOSE WHICH IS THE CORRECT ONE?||CTX:What you doing?...What you doing?||||What you doing?|Where is she working?|Where you are staying?": "Where is she working?",
+    "DEFAULT:READ AND ANSWER THE QUESTION WITH THE CORRECT OPTION. WHERE’S JAMES?||CTX:He is work in his office....He is work in his office.||||He is work in his office.|He work in his office.|He’s working in his office.": "He’s working in his office.",
+    "T2_BATCH:READ AND COMPLETE THE SENTENCE WITH THE CORRECT OPTION.||CTX:...": {
+        "Luke ___ politics at university.": "is studying"
+    },
+    "T2_BATCH:READ THE SENTENCES AND CHOOSE THE CORRECT PRESENT PROGRESSIVE FORM.||CTX:...": {
+        "Look! Andy ___ in the garden.": "is working",
+        "She ___ the piano.": "is playing",
+        "Listen! Sue and John ___": "are singing",
+        "His brother ___ a test at the moment.": "is writing",
+        "They (to swim) ___ in the pool.": "Are swimming",
+        "Look! David and Max (to come) ___ home.": "is coming"
+    },
+    "DEFAULT:READ THE WORDS AND CHOOSE WHICH IS A SIGNAL WORD FOR THE PRESENT PROGRESSIVE?||CTX:Often...Often||||Now|Often|Sometimes": "Now",
+    "DEFAULT:READ THE WORDS AND CHOOSE WHICH IS NOT A SIGNAL WORD FOR THE PRESENT PROGRESSIVE?||CTX:Always...Always||||Always|At the moment|Look!": "Always",
+    "DEFAULT:READ THE WORDS AND CHOOSE FROM THE BOX THE CORRECT QUESTION IN PRESENT PROGRESSIVE: WHERE / SHE / TO GO –||CTX:Where is she going?...Where is she going?||||Where does she go?|Where is she going?|Where she is going?": "Where is she going?",
+    "DEFAULT:READ THE WORDS AND CHOOSE FROM THE BOX THE CORRECT QUESTION IN PRESENT PROGRESSIVE: WHAT / YOUR MOTHER / TO DO / NOW –||CTX:What is your mother doing now?...What is your mother doing now?||||What does your mother do?|What is your mother doing now?|What your mother is doing now?": "What is your mother doing now?",
+    "T2_BATCH:READ THE SENTENCES AND CHOOSE FROM THE BOX THE RIGHT OPTION. (SIMPLE PRESENT OR PRESENT PROGRESSIVE).||CTX:...": {
+        "A: ___ the party? B: Yes, very much, thank you.": "Are you enjoying",
+        "Quiet please! I (write) ___ a test.": "am writing",
+        "She usually (walk) ___ to school.": "walks"
+    },
+    "T2_BATCH:READ THE SENTENCES AND COMPLETE THEM WITH THE CORRECT OPTION.||CTX:...": {
+        "Don't give Mary any cheese. She ___ it!": "is eating",
+        "She ___ a shower at the moment.": "is having",
+        "I ___ lunch in the cafeteria every day.": "have",
+        "My dog ___ vegetables.": "does not eat"
+    },
+    "DEFAULT:READ THE SENTENCES AND CHOOSE THE CORRECT FORM OF THE PRESENT TENSE: I _______ THIS LETTER BECAUSE IT _______ TO ME THAT FAR TOO MANY CHANGES _______ PLACE IN THIS COUNTRY THESE DAYS AND, THEREFORE, WE _______ OUR IDENTITY.||CTX:am writing - it seems - are taking - are losing...am writing - it seems - are taking - are losing||||am writing - it seems - are taking - are losing|am writing - it seems - takes - are losing|write - it seeming - are taking - are losing": "am writing - it seems - are taking - are losing",
+    "T2_BATCH:READ THE SENTENCES AND COMPLETE THEM WITH THIS SHORT INFORMATION ABOUT BOB.||CTX:...": {
+        "Bob ___ cigars.": "loves",
+        "Bob ___ one or two cigars everyday.": "smokes",
+        "In fact, he ___ one right now.": "is smoking"
+    },
+    "T9:LISTEN TO THE AUDIO AND FILL IN THE BLANKS WITH THE RIGHT OPTION: IN THE EVENING, I RELAX, WATCH SOME TV, AND THEN GO TO ______.||CTX:work...work||||bed|school|the gym|work": "bed",
+    "T9:ISTEN TO THE AUDIO AND FILL IN THE BLANKS WITH THE RIGHT OPTION: AFTER SCHOOL, I DO MY ______ AND SOMETIMES PLAY WITH MY FRIENDS.||CTX:chores...chores||||chores|cooking|homework|shopping": "homework",
+    "T9:LISTEN TO THE AUDIO AND FILL IN THE BLANKS WITH THE RIGHT OPTION: AT SCHOOL, I STUDY DIFFERENT SUBJECTS LIKE MATH, SCIENCE, AND ______.||CTX:art...art||||English|art|history|music": "English",
+    "T9:LISTEN TO THE AUDIO AND FILL IN THE BLANKS WITH THE RIGHT OPTION: AFTER I GET DRESSED, I EAT ______ FOR BREAKFAST.||CTX:lunch...lunch||||cereal or toast|dinner|lunch|snacks": "cereal or toast",
+    "T9:LISTEN TO THE AUDIO AND FILL IN THE BLANKS WITH THE RIGHT OPTION: EVERY DAY, I WAKE UP ______ IN THE MORNING.||CTX:late...late||||at night|early|in the afternoon|late": "early",
+    "T9:LISTEN TO THE AUDIO AND FILL IN THE BLANKS WITH THE RIGHT OPTION: DANIEL IS GOOD AT SOLVING PROBLEMS AND IS ALWAYS WILLING TO LEND A ______.||CTX:book...book||||book|game|hand|question": "hand",
+    "T9:LISTEN TO THE AUDIO AND FILL IN THE BLANKS WITH THE RIGHT OPTION: HIS FAVORITE COLOR IS ______.||CTX:red...red||||blue|green|red|yellow": "blue",
+    "T9:LISTEN TO THE AUDIO AND FILL IN THE BLANKS WITH THE RIGHT OPTION: DANIEL LIKES TO PLAY ______ AND ENJOYS READING BOOKS ABOUT ADVENTURE.||CTX:basketball...basketball||||baseball|basketball|soccer|tennis": "soccer",
+    "T9:LISTEN TO THE AUDIO AND FILL IN THE BLANKS WITH THE RIGHT OPTION: DANIEL USUALLY DRESSES IN ______ AND A T-SHIRT.||CTX:shorts...shorts||||a suit|jeans|pajamas|shorts": "jeans",
+    "T9:LISTEN TO THE AUDIO AND CHOOSE THE RIGHT OPTION TO ANSWER THE QUESTION: WHAT IS OUTSIDE CARLO'S HOUSE?||CTX:A swimming pool...A swimming pool||||A garage|A playground|A small garden|A swimming pool": "A small garden",
+    "T9:LISTEN TO THE AUDIO AND CHOOSE THE RIGHT OPTION TO ANSWER THE QUESTION: WHAT DOES CARLO'S FAMILY DO TOGETHER IN THE KITCHEN?||CTX:Play games...Play games||||Cook meals|Play games|Read books|Watch TV": "Cook meals",
+    "T9:LISTEN TO THE AUDIO AND CHOOSE THE RIGHT OPTION TO ANSWER THE QUESTION: WHERE DOES CARLO LIKE TO WATCH TV?||CTX:In his bedroom...In his bedroom||||In his bedroom|In the garden|In the kitchen|In the living room": "In the living room",
+    "T9:LISTEN TO THE AUDIO AND CHOOSE THE RIGHT OPTION TO ANSWER THE QUESTION: WHAT COLOR ARE THE WALLS IN CARLO'S HOUSE?||CTX:Green...Green||||Green|Light blue|White|Yellow": "Light blue",
+    "T9:LISTEN TO THE AUDIO AND CHOOSE THE RIGHT OPTION TO ANSWER THE QUESTION: WHY IS EATING FRUITS DAILY IMPORTANT?||CTX:They are unhealthy...They are unhealthy||||They are expensive|They are hard to find|They are unhealthy|They have vitamins and fiber": "They have vitamins and fiber",
+    "T9:LISTEN TO THE AUDIO AND CHOOSE THE RIGHT OPTION TO ANSWER THE QUESTION: WHAT IS A CHARACTERISTIC OF ORANGES?||CTX:Soft and sweet...Soft and sweet||||Crunchy|Juicy|Soft and sweet|Sour": "Juicy",
+    "T9:LISTEN TO THE AUDIO AND CHOOSE THE RIGHT OPTION TO ANSWER THE QUESTION: WHICH FRUIT IS SMALL AND RED?||CTX:Orange...Orange||||Banana|Orange|Pineapple|Strawberry": "Strawberry",
+    "T9:LISTEN TO THE AUDIO AND CHOOSE THE RIGHT OPTION TO ANSWER THE QUESTION: WHAT COLOR ARE BANANAS USUALLY?||CTX:Red...Red||||Blue|Green|Red|Yellow": "Yellow",
+    "T11_BATCH:ORDER THE LETTERS TO FORM WORDS ABOUT THE PARTS OF THE HOUSE.||CTX:...||MEDORBO ___|MEDORBO ___|MEDORBO ___|MEDORBO ___": [
+        "BEDROOM",
+        "KITCHEN",
+        "LIVINGROOM",
+        "GARAGE"
+    ],
+    "0:There|and a small|are|bathroom.|two bedrooms": [
+        [
+            "There",
+            "are",
+            "two bedrooms",
+            "and a small",
+            "bathroom."
+        ]
+    ],
+    "T2_BATCH:LOOK AT THE PICTURE. READ THE SENTENCES AND CHOOSE TRUE OR FALSE.||CTX:...": {
+        "The TV is in the living room. ___": "TRUE",
+        "There is a wahing machine in the bathroom. ___": "TRUE",
+        "There are two sofas in the living room. ___": "FALSE",
+        "There is a big dining room in the house. ___": "FALSE",
+        "She lives in a big house. ___": "TRUE",
+        "There are two bedrooms in her place. ___": "FALSE"
+    },
+    "DEFAULT:CHOOSE THE CORRECT NAME OF THE PICTURE.||CTX:bathroom...bathroom||IMG:f7094f3e-6645-4062-b81e-a11596112ddc||bathroom|bedroom|dining room|living room": "dining room",
+    "T4:COMPLETE WITH EACH OF THE PARTS OF THE HOUSE RELATED TO THE WORDS.||bathroom|bedroom|dining room|garage|garden|kitchen|living room": [
+        "living room",
+        "dining room",
+        "bedroom",
+        "kitchen",
+        "bathroom"
+    ],
+    "T2_BATCH:READ THE TEXT AND WRITE TRUE OR FALSE NEXT TO THE STATEMENTS.||CTX:I'm Marcos, I live in a small apartment near the u...here because I'm photographer, so I love pictures.": {
+        "Marcos lives in a big house. ___": "FALSE",
+        "He lives near the university. ___": "TRUE"
+    },
+    "DEFAULT:CHOOSE THE CORRECT NAME OF THE PICTURE.||CTX:bathroom...bathroom||IMG:afddf4e1-7cbe-4f61-9ba5-a0fabc46e36d||bathroom|bedroom|dining room|living room": "bathroom",
+    "T4:MATCH THE CORRESPONDING LETTER TO COMPLETE THE SENTENCES.||a. a small sofa and a TV.|b. two bedrooms and a big bathroom.|c. a small bed.|d. small and clear with two windows.": [
+        "b. two bedrooms and a big bathroom.",
+        "a. a small sofa and a TV.",
+        "d. small and clear with two windows.",
+        "c. a small bed."
+    ],
+    "DEFAULT:CHOOSE THE CORRECT NAME OF THE PICTURE.||CTX:bathroom...bathroom||IMG:31c5570c-162a-4997-ba0d-4d0515652949||bathroom|bedroom|dining room|living room": "dining room",
+    "T4:MATCH THE CORRESPONDING LETTER TO COMPLETE THE SENTENCES.||bathroom|bedroom|kitchen|living room": [
+        "living room",
+        "bathroom",
+        "kitchen",
+        "bedroom"
+    ],
+    "DEFAULT:CHOOSE THE CORRECT NAME OF THE PICTURE.||CTX:bathroom...bathroom||IMG_DIM:432x240||bathroom|bedroom|dining room|living room": "dining room",
+    "DEFAULT:CHOOSE THE CORRECT NAME OF THE PICTURE.||CTX:bathroom...bathroom||IMG_DIM:180x240||bathroom|bedroom|dining room|living room": "bathroom",
+    "DEFAULT:CHOOSE THE CORRECT NAME OF THE PICTURE.||CTX:bathroom...bathroom||IMG_DIM:400x240||bathroom|bedroom|dining room|living room": "living room",
+    "DEFAULT:CHOOSE THE CORRECT NAME OF THE PICTURE.||CTX:bathroom...bathroom||IMG_DIM:240x240||bathroom|bedroom|dining room|living room": "bedroom",
+    "0:?|Is|a|garage|house|in|there|your": [
+        [
+            "Is",
+            "there",
+            "a",
+            "garage",
+            "in",
+            "your",
+            "house",
+            "?"
+        ]
+    ],
+    "T2_BATCH:LOOK AT THE PICTURE. READ THE SENTENCES AND CHOOSE THE BEST OPTION.||CTX:...": {
+        "This ___ has a very low ceiling. Mind your head!": "attic",
+        "Dad’s in the ___ cutting the lawn.": "garden",
+        "I do not want to live with my parents. I have to rent an ___ on my own.": "apartment",
+        "My grandpa has a lot of old souvenirs in the ___": "basement"
+    },
+    "T11_BATCH:ORDER THE LETTERS TO FORM WORDS ABOUT THE PARTS OF THE HOUSE.||CTX:...||BICAN ___|BICAN ___|BICAN ___": [
+        "CABIN",
+        "DUPLEX",
+        "HOUSE"
+    ],
+    "T4:MATCH THE WORDS WITH THEIR MEANING.||Apartment|Attic|Basement|Garden": [
+        "Garden",
+        "Apartment",
+        "Attic",
+        "Basement"
+    ],
+    "DEFAULT:CHOOSE THE CORRECT NAME OF THE PICTURE.||CTX:house...house||IMG_DIM:320x240||apartment building|cabin|duplex|house": "duplex",
+    "DEFAULT:CHOOSE THE CORRECT NAME OF THE PICTURE.||CTX:house...house||IMG_DIM:398x240||apartment building|cabin|duplex|house": "house",
+    "DEFAULT:CHOOSE THE CORRECT NAME OF THE PICTURE.||CTX:house...house||IMG_DIM:240x240||apartment building|cabin|duplex|house": "apartment building",
+    "T4:MATCH THE NAMES WITH THE CHARACTERISTICS OF EACH LIVING PLACE.||apartment building|cabin|duplex|house": [
+        "apartment building",
+        "cabin",
+        "duplex",
+        "house"
+    ],
+    "DEFAULT:CHOOSE THE CORRECT NAME OF THE PICTURE.||CTX:house...house||IMG_DIM:339x240||apartment building|cabin|duplex|house": "cabin",
+    "T4:READ THE FOLLOWING PARAGRAPHS. CHOOSE AND DRAG THE BEST HEADING FOR EACH CASE.||A footballer|A housewife|A zookeeper": [
+        "A housewife",
+        "A zookeeper",
+        "A footballer"
+    ],
+    "DEFAULT:READ THE PARAGRAPH 3 AND CHOOSE THE CORRECT ANSWER TO THE QUESTION: WHAT DOES HE DO AFTER LUNCH?||CTX:A footballer. My name is Arturo. I'm 25 years old ...because my day starts at 5 o'clock in the morning.||||He continues to work.|No, takes a rest.": "He continues to work.",
+    "DEFAULT:READ THE PARAGRAPH 3 AND CHOOSE THE CORRECT ANSWER TO THE QUESTION: IS ARTURO 30 YEARS OLD?||CTX:A footballer. My name is Arturo. I'm 25 years old ...because my day starts at 5 o'clock in the morning.||||No, he isn't.|Yes, he is.": "No, he isn't.",
+    "T2_BATCH:READ THE PARAGRAPH AND ANSWER TRUE OR FALSE TO THE STATEMENTS.||CTX:My name is Andrea. I work very hard every day. In ...epare dinner and help my kids with their homework.": {
+        "Andrea does not work on Sundays. ___": "FALSE",
+        "She eats breakfast at home. ___": "TRUE",
+        "She does not have children. ___": "FALSE"
+    },
+    "DEFAULT:READ THE PARAGRAPH 3 AND CHOOSE THE CORRECT ANSWER TO THE QUESTION: DOES HE WAKE UP AT TEN O´CLOCK IN THE MORNING?||CTX:A footballer. My name is Arturo. I'm 25 years old ...because my day starts at 5 o'clock in the morning.||||No, he doesn't.|Yes, he does.": "No, he doesn't.",
+    "T4:READ THE PARAGRAPH AND COMPLETE IT WITH WORDS FORM THE BOX.||animals|cages|interesting|menu|vitamins": [
+        "interesting",
+        "animals",
+        "menu",
+        "vitamins",
+        "cages"
+    ],
+    "T4:WHAT ARE THE DUTIES OF THESE PEOPLE? MATCH THE DEFINITION WITH THE APPROPRIATE JOB OR OCCUPATION.||A firefighter|A housewife|A police officer|A student": [
+        "A student",
+        "A housewife",
+        "A firefighter",
+        "A police officer"
+    ],
+    "T4:READ THE FOLLOWING DESCRIPTIONS. MATCH THE LETTER WITH THE CORRECT JOB.||athlete|doctor|engineer|journalist|teacher|waiter": [
+        "engineer",
+        "doctor",
+        "teacher",
+        "waiter",
+        "journalist",
+        "athlete"
+    ],
+    "T2_BATCH:READ THE SENTENCES AND CHOOSE TRUE OR FALSE.||CTX:...": {
+        "A doctor practices exercise a lot. ___": "FALSE",
+        "A secretary drives a bus. ___": "FALSE",
+        "A vet helps animals. ___": "TRUE",
+        "A mechanic repairs vehicles. ___": "TRUE"
+    },
+    "T11_BATCH:ORDER THE LETTERS TO WRITE WORDS ABOUT JOBS.||CTX:...||CAHCNIEM ___|CAHCNIEM ___|CAHCNIEM ___|CAHCNIEM ___": [
+        "MECHANIC",
+        "DOCTOR",
+        "JOURNALIST",
+        "DRIVER"
+    ],
+    "T4:CHOOSE THE CORRECT CHARACTERISTIC FOR THESE PEOPLE.||caring|enthusiastic|organized|strong": [
+        "organized",
+        "enthusiastic",
+        "strong",
+        "caring"
+    ],
+    "T8:MATCH THE OCCUPATION ACCORDING TO THE PICTURES.||IMG_DIM:240x240|IMG_DIM:259x240|IMG_DIM:382x240|IMG_DIM:568x240||doctor|mechanic|painter|teacher": [
+        "mechanic",
+        "teacher",
+        "painter",
+        "doctor"
+    ],
+    "T2_BATCH:READ THE SENTENCES AND CHOOSE TRUE OR FALSE.||CTX:My brother Julio has an interesting job. He's a pe... he can use the gymnasium!!! That's why he is fit.": {
+        "My brother’s job is boring. ___": "FALSE",
+        "He is a programmer. ___": "FALSE",
+        "Amelia is a famous footballer. ___": "FALSE",
+        "Amelia does her laundry. ___": "FALSE",
+        "My brother can see Amelia´s competitions. ___": "TRUE"
+    },
+    "T2_BATCH:READ THE STATEMENTS AND ANSWER TRUE OR FALSE.||CTX:...": {
+        "A lawyer defends people. ___": "TRUE",
+        "A pilot sells houses. ___": "FALSE",
+        "A waiter teaches in a school. ___": "FALSE",
+        "A doctor maintains public security. ___": "FALSE"
+    },
+    "DEFAULT:CHOOSE THE CORRECT OPTION: A PERSON WORKS IN HOSPITAL AND HELPS DOCTORS.||CTX:a teacher...a teacher||||a driver|a firefighter|a nurse|a teacher": "a nurse",
+    "DEFAULT:CHOOSE THE CORRECT OPTION: A PERSON WHO RESCUES PEOPLE FROM FIRES.||CTX:a teacher...a teacher||||a driver|a firefighter|a nurse|a teacher": "a firefighter",
+    "DEFAULT:CHOOSE THE CORRECT OPTION: HE/SHE WORKS IN A SCHOOL AND TEACHES STUDENTS.||CTX:a teacher...a teacher||||a driver|a firefighter|a nurse|a teacher": "a teacher",
+    "DEFAULT:CHOOSE THE CORRECT OPTION: A PERSON WHO DRIVES A BUS.||CTX:a teacher...a teacher||||a driver|a firefighter|a nurse|a teacher": "a driver",
+    "T11_BATCH:ORDER THE LETTERS TO WRITE WORDS ABOUT JOBS AND OCCUPATIONS.||CTX:...||OPTE ___|OPTE ___|OPTE ___|OPTE ___": [
+        "POET",
+        "NURSE",
+        "SECRETARY",
+        "TEACHER"
+    ],
+    "T8:MATCH THE PICTURES WITH THE HOUSE DUTIES.||IMG_DIM:160x240|IMG_DIM:360x240|IMG_DIM:360x240_1|IMG_DIM:360x240_2|IMG_DIM:360x240_3||DANCER|NURSE|POET|SECRETARY|TRAINER": [
+        "SECRETARY",
+        "DANCER",
+        "POET",
+        "NURSE",
+        "TRAINER"
+    ],
+    "0:She|clean|has|house|the|to": [
+        [
+            "She",
+            "has",
+            "to",
+            "clean",
+            "the",
+            "house"
+        ]
+    ],
+    "0:Shakira|a singer|is|2:Doctors|help|people|4:Dentists|take care|teeth": [
+        [
+            "Shakira",
+            "is",
+            "a singer"
+        ],
+        [
+            "Doctors",
+            "help",
+            "people"
+        ],
+        [
+            "Dentists",
+            "take care",
+            "teeth"
+        ]
+    ],
+    "0:Barack Obama loves her wife.|His husband was the 1st black president of the USA.|Michelle Obama is a lawyer.|Michelle Obama is famous for promoting healthy eating in children.|She is a black woman.|She is the wife of the American politician.": [
+        [
+            "Michelle Obama is a lawyer.",
+            "She is a black woman.",
+            "She is the wife of the American politician.",
+            "His husband was the 1st black president of the USA.",
+            "Barack Obama loves her wife.",
+            "Michelle Obama is famous for promoting healthy eating in children."
+        ]
+    ],
+    "DEFAULT:WHICH SENTENCE IS CORRECT?||CTX:Someone who shares knowledge with her/his students...ares knowledge with her/his students is a teacher.||||Someone share knowledge with who her/his students is a teacher.|Someone who share knowledge with her/his students is a teacher.|Someone who shares knowledge with her/his students is a teacher.": "Someone who shares knowledge with her/his students is a teacher."
 }
