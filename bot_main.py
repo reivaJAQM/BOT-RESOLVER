@@ -1,8 +1,9 @@
 # bot_main.py
 # Script principal que orquesta el bot.
 # ¡Refactorizado con "Plan Maestro" y "Plan S"!
-# --- ¡ACTUALIZADO CON TIPO 11 (Escribir Opciones) y TODAS las correcciones! ---
-# --- (T1, T2, T3/T5, T4, T10, T11) ---
+# --- ¡ACTUALIZADO CON TIPO 12 (DICTADO) y LÓGICA DE ROTACIÓN DE RESPUESTAS! ---
+# --- ¡ACTUALIZADO CON FUNCIÓN DE APRENDIZAJE T12 DEDICADA! ---
+# --- (T1, T2, T3/T5, T4, T10, T11, T12) ---
 # --- ¡ACTUALIZADO CON LÓGICA ANTI-BUCLE v2 (Posición Corregida)! ---
 # --- ¡ACTUALIZADO CON HASH DE IMAGEN ROBUSTO v4 (Priorizar ALT, fallback Dimensiones + ÍNDICE DESAMBIGUACIÓN, fallback Vacío)! ---
 # --- ¡ACTUALIZADO CON CLAVE TIPO 2 ÚNICA (Incluye Frases)! ---
@@ -137,7 +138,7 @@ try:
         # Resetear variables antes de cada pregunta
         tipo_pregunta = ""; clave_pregunta = None; lista_ideas_texto = []; lista_de_preguntas = []; lista_afirmaciones_texto = []; frases_des = []; lista_de_claves_individuales = []; lista_de_tareas_ordenar = []
         palabras_clave = []; definiciones = []; lista_de_tareas_completar = []
-        lista_de_tareas_escribir = []; lista_palabras_desordenadas_raw = []; lista_frases_t11 = []
+        lista_de_tareas_escribir = []; lista_palabras_desordenadas_raw = []; lista_frases_t11 = []; lista_frases_t12 = [] # T12 AÑADIDO
         imagen_hash = ""; audio_hash = ""; contexto_hash = ""; body_hash = "" # Añadido reset body_hash
         respuesta_fue_incorrecta = False
 
@@ -171,11 +172,17 @@ try:
                 time.sleep(1)
                 print("Detectando tipo de pregunta por contenido...")
 
+                # --- ¡INICIO LÓGICA DE DETECCIÓN T12! ---
                 # El ORDEN es crucial
                 letras_elem_t10 = driver.find_elements(*sel.SELECTOR_LETRAS_DESORDENADAS)
                 input_elem = driver.find_elements(*sel.SELECTOR_INPUT_ESCRIBIR)
+                audio_elem = driver.find_elements(*sel.SELECTOR_AUDIO) # <-- Comprobar audio
 
-                if len(input_elem) > 0 and len(letras_elem_t10) > 0 and len(input_elem) == len(letras_elem_t10):
+                if len(input_elem) > 0 and len(audio_elem) > 0:
+                    print("      Contenido detectado: [TIPO 12 DICTADO]"); tipo_pregunta = "TIPO_12_DICTADO"
+                # --- FIN LÓGICA T12 ---
+                
+                elif len(input_elem) > 0 and len(letras_elem_t10) > 0 and len(input_elem) == len(letras_elem_t10):
                     print("      Contenido detectado: [TIPO 10]"); tipo_pregunta = "TIPO_10_ESCRIBIR"
                 elif len(input_elem) > 0 and len(letras_elem_t10) == 0:
                      print("      Contenido detectado: [TIPO 11]"); tipo_pregunta = "TIPO_11_ESCRIBIR_OPCIONES"
@@ -193,8 +200,9 @@ try:
                 elif len(driver.find_elements(*sel.SELECTOR_CONTENEDOR_ORDENAR)) > 0: print("      Contenido detectado: [TIPO 1]"); tipo_pregunta = "TIPO_1_ORDENAR"
                 elif len(driver.find_elements(*sel.SELECTOR_IMAGEN_EMPAREJAR)) > 0: print("      Contenido detectado: [TIPO 8]"); tipo_pregunta = "TIPO_8_IMAGEN"
                 elif len(driver.find_elements(*sel.SELECTOR_FILAS_EMPAREJAR)) > 0: print("      Contenido detectado: [TIPO 4]"); tipo_pregunta = "TIPO_4_EMPAREJAR"
-                elif len(driver.find_elements(*sel.SELECTOR_AUDIO)) > 0: print("      Contenido detectado: [TIPO 9]"); tipo_pregunta = "TIPO_9_AUDIO"
+                elif len(audio_elem) > 0: print("      Contenido detectado: [TIPO 9]"); tipo_pregunta = "TIPO_9_AUDIO" # T9 ahora va después de T12
                 else: print("      No se detectó contenido especial. Se asume [DEFAULT]"); tipo_pregunta = "TIPO_DEFAULT_OM"
+                # --- ¡FIN LÓGICA DE DETECCIÓN! ---
 
                 print("Leyendo datos (Contexto y Título)...")
                 try:
@@ -271,7 +279,7 @@ try:
                 # --- Resetear listas/variables específicas de tipo (SEGUNDA VEZ PARA ASEGURAR) ---
                 lista_ideas_texto = []; lista_de_preguntas = []; lista_afirmaciones_texto = []; frases_des = []; lista_de_claves_individuales = []; lista_de_tareas_ordenar = []
                 palabras_clave = []; definiciones = []; lista_de_tareas_completar = []
-                lista_de_tareas_escribir = []; lista_palabras_desordenadas_raw = []; lista_frases_t11 = []
+                lista_de_tareas_escribir = []; lista_palabras_desordenadas_raw = []; lista_frases_t11 = []; lista_frases_t12 = [] # T12 AÑADIDO
                 imagen_hash = ""; audio_hash = "" # No resetear contexto_hash ni body_hash aquí
 
 
@@ -1056,6 +1064,8 @@ try:
                     opciones = [e.text.strip() for e in opciones_elementos if e.text and e.is_displayed()]
                     if not opciones: raise Exception("No opciones visibles (TIPO 9).")
 
+                    # --- Lógica de HASH de AUDIO (original, blob) ---
+                    # (Como pediste, no tocamos T9)
                     audio_hash = ""
                     try:
                         # Use 24 spaces for indentation
@@ -1319,9 +1329,123 @@ try:
                             time.sleep(0.3)
                         except Exception as e:
                             # Use 28 spaces for indentation
-                            print(f"Error al escribir en input TIPO 11: {e}");
+                            print(f"Error al escribir in input TIPO 11: {e}");
                             exito_global = False; break
                     if not exito_global: raise Exception("Fallo al escribir en inputs TIPO 11.")
+
+                # --- ¡INICIO TIPO 12! ---
+                # --- TIPO 12: DICTADO (ESCRIBIR + AUDIO) ---
+                elif tipo_pregunta == "TIPO_12_DICTADO":
+                    # Use 20 spaces for indentation
+                    print("Tipo: DICTADO (TIPO 12 - Lote).");
+                    input_elems = wait_long.until(EC.presence_of_all_elements_located(sel.SELECTOR_INPUT_ESCRIBIR))
+                    if not input_elems:
+                        raise Exception("Error TIPO 12: No se encontraron inputs.")
+                    
+                    # ¡NO INTENTAMOS SACAR HASH DE AUDIO! (src="blob:..." es inútil)
+                    print("      Audio detectado (T12). El hash de audio se omitirá de la clave.")
+                    audio_hash = "" # Dejar vacío.
+
+                    num_tareas = len(input_elems)
+                    print(f"Encontradas {num_tareas} tareas TIPO 12.")
+                    lista_de_tareas_escribir = []
+                    lista_frases_t12 = [] # Usamos t12 para diferenciar de t11
+
+                    for i, input_elem_actual in enumerate(input_elems):
+                        # Use 24 spaces for indentation
+                        try:
+                            # Use 28 spaces for indentation
+                            driver.execute_script("arguments[0].scrollIntoViewIfNeeded(true);", input_elem_actual); time.sleep(0.1)
+                            # Reusamos el selector de T11, asumiendo que es un <p> cercano
+                            frase_elem = input_elem_actual.find_element(*sel.SELECTOR_FRASE_T11) 
+                            frase_texto = frase_elem.text.strip()
+                            if not frase_texto: frase_texto = "TYPE_THE_SENTENCE_PLACEHOLDER" # Fallback
+
+                            frase_para_ia = frase_texto + " ___"
+                            print(f"      Tarea {i+1}: Frase='{frase_para_ia}'")
+                            lista_de_tareas_escribir.append({"frase": frase_para_ia, "input_elem": input_elem_actual})
+                            lista_frases_t12.append(frase_para_ia)
+
+                        except (NoSuchElementException, TimeoutException) as e_t12:
+                             # Use 28 spaces for indentation
+                             print(f"WARN TIPO 12: Tarea {i+1} sin frase (normal). Usando fallback. ({e_t12})")
+                             frase_para_ia = "TYPE_THE_SENTENCE_PLACEHOLDER ___"
+                             lista_de_tareas_escribir.append({"frase": frase_para_ia, "input_elem": input_elem_actual})
+                             lista_frases_t12.append(frase_para_ia)
+
+                    if not lista_de_tareas_escribir: raise Exception("No se recolectaron tareas TIPO 12 válidas.")
+
+                    titulo_limpio = pregunta_actual_texto.strip()
+                    frases_clave_str = "|".join(sorted([t["frase"] for t in lista_de_tareas_escribir]))
+                    
+                    # --- ¡CLAVE BASADA SÓLO EN TEXTO! ---
+                    clave_pregunta = f"T12_DICTADO:{titulo_limpio}||{contexto_hash}||{frases_clave_str}"
+                    print(f"      Clave T12 generada: {clave_pregunta}")
+
+                    # --- ¡INICIO LÓGICA DE ROTACIÓN T12! ---
+                    respuestas_lote_ia = [] # Inicializar
+                    if clave_pregunta in soluciones_correctas:
+                        # Use 24 spaces for indentation
+                        print("      SOLUCIÓN(ES) T12 ENCONTRADA(S) en memoria.");
+                        lista_soluciones = soluciones_correctas[clave_pregunta] # Es una lista de listas, ej: [ ["FRASE A"], ["FRASE B"] ]
+                        ultimo_intento = preguntas_ya_vistas.get(clave_pregunta) # Es una lista, ej: ["FRASE A"]
+
+                        # Auto-corrección de memoria antigua (si guardamos mal antes)
+                        if not isinstance(lista_soluciones, list) or (lista_soluciones and not isinstance(lista_soluciones[0], list)):
+                            # Use 28 spaces for indentation
+                            print(f"      WARN: Solución T12 no era lista de listas. Auto-corrigiendo. '{lista_soluciones}'")
+                            if isinstance(lista_soluciones, list) and not (lista_soluciones and isinstance(lista_soluciones[0], list)):
+                                # Use 32 spaces for indentation
+                                lista_soluciones = [lista_soluciones] # Convertir ["A"] a [ ["A"] ]
+                            else:
+                                # Use 32 spaces for indentation
+                                lista_soluciones = [ [str(lista_soluciones)] ] # Convertir "A" a [ ["A"] ]
+                            soluciones_correctas[clave_pregunta] = lista_soluciones
+                            # No guardar en disco aquí, esperar al aprendizaje si falla
+                        
+                        if ultimo_intento and ultimo_intento in lista_soluciones:
+                            # Use 28 spaces for indentation
+                            indice = lista_soluciones.index(ultimo_intento)
+                            indice_nuevo = (indice + 1) % len(lista_soluciones) # Rotar
+                            respuestas_lote_ia = lista_soluciones[indice_nuevo]
+                            print(f"      Rotando. Último intento: '{ultimo_intento[0]}'. Nuevo intento: '{respuestas_lote_ia[0]}'")
+                        else:
+                            # Use 28 spaces for indentation
+                            respuestas_lote_ia = lista_soluciones[0]
+                            print(f"      Iniciando desde el principio de la lista. Intentando: '{respuestas_lote_ia[0]}'")
+                    
+                    else:
+                        # Use 24 spaces for indentation
+                        print("      No hay solución T12. El bot no puede oír. Escribiendo '???' y esperando aprender.")
+                        respuestas_lote_ia = ["???"] * len(lista_de_tareas_escribir) # ej: ["???"]
+                    
+                    # Guardar el intento actual (que es una lista, ej: ["???"] o ["RESPUESTA A"])
+                    preguntas_ya_vistas[clave_pregunta] = respuestas_lote_ia
+                    # --- FIN LÓGICA DE ROTACIÓN T12 ---
+
+                    print(f"Frases (Dictado) a escribir: {respuestas_lote_ia}")
+                    exito_global = True
+                    if len(respuestas_lote_ia) != len(lista_de_tareas_escribir):
+                        # Use 24 spaces for indentation
+                        print("Error crítico T12: Número de respuestas IA no coincide con tareas.")
+                        raise Exception("Fallo TIPO 12 - Mismatch respuestas/tareas")
+
+                    for palabra_correcta, tarea in zip(respuestas_lote_ia, lista_de_tareas_escribir):
+                        # Use 24 spaces for indentation
+                        try:
+                            # Use 28 spaces for indentation
+                            input_actual = tarea["input_elem"]
+                            print(f"      Escribiendo '{palabra_correcta}'...");
+                            wait_short.until(EC.element_to_be_clickable(input_actual))
+                            input_actual.clear()
+                            input_actual.send_keys(palabra_correcta)
+                            time.sleep(0.3)
+                        except Exception as e:
+                            # Use 28 spaces for indentation
+                            print(f"Error al escribir en input TIPO 12: {e}");
+                            exito_global = False; break
+                    if not exito_global: raise Exception("Fallo al escribir en inputs TIPO 12.")
+                # --- ¡FIN TIPO 12! ---
 
                 # --- TIPO DEFAULT: OPCIÓN MÚLTIPLE ---
                 elif tipo_pregunta == "TIPO_DEFAULT_OM":
@@ -1456,7 +1580,6 @@ try:
                         preguntas_para_ia = None; opciones_para_ia = None; solucion_aprendida = None
 
                         # 1. Preparar datos (variables locales que deberían existir)
-                        # ... (código existente para preparar preguntas_para_ia/opciones_para_ia) ...
                         if tipo_pregunta == "TIPO_6_PARAGRAPH": preguntas_para_ia = [idea.split(":", 1)[1] for idea in lista_ideas_texto] if 'lista_ideas_texto' in locals() else None
                         elif tipo_pregunta == "TIPO_7_OM_CARD": preguntas_para_ia = [preg.split(":", 1)[1] for preg in lista_de_preguntas] if 'lista_de_preguntas' in locals() else None
                         elif tipo_pregunta == "TIPO_1_ORDENAR": preguntas_para_ia = lista_de_tareas_ordenar if 'lista_de_tareas_ordenar' in locals() else None
@@ -1465,13 +1588,13 @@ try:
                         elif tipo_pregunta in ["TIPO_DEFAULT_OM", "TIPO_9_AUDIO", "TIPO_5_TF_SINGLE"]: opciones_para_ia = opciones if 'opciones' in locals() else None
                         elif tipo_pregunta == "TIPO_10_ESCRIBIR": preguntas_para_ia = lista_palabras_desordenadas_raw if 'lista_palabras_desordenadas_raw' in locals() else None
                         elif tipo_pregunta == "TIPO_11_ESCRIBIR_OPCIONES": preguntas_para_ia = [{"frase": f} for f in lista_frases_t11] if 'lista_frases_t11' in locals() else None
+                        elif tipo_pregunta == "TIPO_12_DICTADO": preguntas_para_ia = [{"frase": f} for f in lista_frases_t12] if 'lista_frases_t12' in locals() else None # ¡NUEVO T12!
                         elif tipo_pregunta in ["TIPO_4_EMPAREJAR", "TIPO_8_IMAGEN"]:
                             preguntas_para_ia = palabras_clave if 'palabras_clave' in locals() else None
                             opciones_para_ia = definiciones if 'definiciones' in locals() else None
 
                         # Regenerar clave correcta para aprendizaje
                         clave_pregunta_aprendizaje = None
-                        # ... (código existente para regenerar clave_pregunta y asignarla a clave_pregunta_aprendizaje) ...
                         if tipo_pregunta == "TIPO_6_PARAGRAPH" and 'lista_ideas_texto' in locals(): clave_pregunta_aprendizaje = "|".join([p.strip() for p in lista_ideas_texto])
                         elif tipo_pregunta == "TIPO_7_OM_CARD" and 'lista_de_preguntas' in locals(): clave_pregunta_aprendizaje = "|".join([p.strip() for p in lista_de_preguntas])
                         elif tipo_pregunta == "TIPO_1_ORDENAR" and 'lista_de_claves_individuales' in locals(): clave_pregunta_aprendizaje = "|".join([p.strip() for p in lista_de_claves_individuales])
@@ -1488,7 +1611,7 @@ try:
                         elif tipo_pregunta == "TIPO_9_AUDIO" and 'opciones' in locals():
                             titulo_limpio = pregunta_actual_texto.strip() if "pregunta_sin_titulo" not in pregunta_actual_texto else contexto[:150]
                             opciones_limpias_sorted = sorted(opciones)
-                            clave_pregunta_aprendizaje = f"T9:{titulo_limpio}||{contexto_hash}||{body_hash}||{audio_hash}||" + "|".join(opciones_limpias_sorted)
+                            clave_pregunta_aprendizaje = f"T9:{titulo_limpio}||{contexto_hash}||{body_hash}||{audio_hash}||" + "|".join(opciones_limpias_sorted) # T9 Mantiene su lógica original
                         elif tipo_pregunta == "TIPO_5_TF_SINGLE":
                             titulo_limpio = pregunta_actual_texto.strip()
                             clave_pregunta_aprendizaje = f"T5:{titulo_limpio}||{contexto_hash}||True|False"
@@ -1500,6 +1623,13 @@ try:
                              titulo_limpio = pregunta_actual_texto.strip()
                              frases_clave_str = "|".join(sorted([t["frase"] for t in lista_de_tareas_escribir]))
                              clave_pregunta_aprendizaje = f"T11_BATCH:{titulo_limpio}||{contexto_hash}||{frases_clave_str}"
+                        # --- ¡NUEVO T12 APRENDIZAJE! ---
+                        elif tipo_pregunta == "TIPO_12_DICTADO" and 'lista_de_tareas_escribir' in locals():
+                             titulo_limpio = pregunta_actual_texto.strip()
+                             frases_clave_str = "|".join(sorted([t["frase"] for t in lista_de_tareas_escribir]))
+                             # ¡audio_hash OMITIDO INTENCIONALMENTE!
+                             clave_pregunta_aprendizaje = f"T12_DICTADO:{titulo_limpio}||{contexto_hash}||{frases_clave_str}"
+                        # --- FIN NUEVO T12 ---
                         elif tipo_pregunta == "TIPO_4_EMPAREJAR" and 'definiciones' in locals():
                              titulo_limpio = pregunta_actual_texto.strip()
                              defs_limpias_sorted = sorted(definiciones)
@@ -1511,7 +1641,7 @@ try:
                              clave_pregunta_aprendizaje = f"T8:{titulo_limpio}||{claves_unicas_ordenados_str}||" + "|".join(defs_limpias_sorted)
 
                         # 2. Extraer solución
-                        if tipo_pregunta in ["TIPO_1_ORDENAR", "TIPO_2_COMPLETAR", "TIPO_3_TF_MULTI", "TIPO_6_PARAGRAPH", "TIPO_7_OM_CARD", "TIPO_10_ESCRIBIR", "TIPO_11_ESCRIBIR_OPCIONES"] and clave_pregunta_aprendizaje and contenido_modal and preguntas_para_ia:
+                        if tipo_pregunta in ["TIPO_1_ORDENAR", "TIPO_2_COMPLETAR", "TIPO_3_TF_MULTI", "TIPO_6_PARAGRAPH", "TIPO_7_OM_CARD", "TIPO_10_ESCRIBIR", "TIPO_11_ESCRIBIR_OPCIONES", "TIPO_12_DICTADO"] and clave_pregunta_aprendizaje and contenido_modal and preguntas_para_ia:
                             # Use 28 spaces for indentation
                             solucion_lista_ordenada = None
                             if tipo_pregunta == "TIPO_3_TF_MULTI": solucion_lista_ordenada = ia_utils.extraer_solucion_lote_tf(contenido_modal, preguntas_para_ia)
@@ -1527,7 +1657,14 @@ try:
                                     solucion_lote_ordenar.append(sol_individual)
                                 if exito_aprendizaje_lote: solucion_lista_ordenada = solucion_lote_ordenar
                             elif tipo_pregunta == "TIPO_10_ESCRIBIR": solucion_lista_ordenada = ia_utils.extraer_solucion_lote_escribir(contenido_modal, preguntas_para_ia)
-                            elif tipo_pregunta == "TIPO_11_ESCRIBIR_OPCIONES": solucion_lista_ordenada = ia_utils.extraer_solucion_lote_escribir_opciones(contenido_modal, preguntas_para_ia)
+                            
+                            # --- ¡INICIO EXTRACCIÓN SEPARADA T11/T12! ---
+                            elif tipo_pregunta == "TIPO_11_ESCRIBIR_OPCIONES":
+                                solucion_lista_ordenada = ia_utils.extraer_solucion_lote_escribir_opciones(contenido_modal, preguntas_para_ia)
+                            elif tipo_pregunta == "TIPO_12_DICTADO":
+                                solucion_lista_ordenada = ia_utils.extraer_solucion_lote_dictado(contenido_modal, preguntas_para_ia) # <-- LLAMADA A NUEVA FUNCIÓN
+                            # --- ¡FIN EXTRACCIÓN SEPARADA! ---
+                            
                             else: # T6 y T7
                                 solucion = ia_utils.extraer_solucion_del_error(contenido_modal, preguntas_para_ia)
                                 if solucion:
@@ -1596,25 +1733,63 @@ try:
                             else: print("      IA (Simple) no pudo extraer solución.")
 
 
-                        # --- GUARDADO EN MEMORIA ---
+                        # --- ¡INICIO LÓGICA DE GUARDADO T12! ---
                         if clave_pregunta_aprendizaje and solucion_aprendida:
                            # Use 28 spaces for indentation
-                            if tipo_pregunta == "TIPO_2_COMPLETAR" and clave_pregunta_aprendizaje in soluciones_correctas:
+                           
+                           # 1. Normalizar la solución aprendida
+                           solucion_individual_aprendida = None
+                           if tipo_pregunta in ["TIPO_9_AUDIO", "TIPO_DEFAULT_OM", "TIPO_5_TF_SINGLE"]:
+                                solucion_individual_aprendida = str(solucion_aprendida).strip()
+                           else: # T1, T3, T4, T6, T7, T8, T10, T11, T12...
+                                solucion_individual_aprendida = solucion_aprendida # Es una lista, ej: ["A", "B"] o ["FRASE"]
+                           
+                           # 2. Obtener lista de soluciones existente
+                           lista_existente = soluciones_correctas.get(clave_pregunta_aprendizaje)
+                           
+                           # 3. Lógica de guardado
+                           if tipo_pregunta == "TIPO_2_COMPLETAR": # T2 usa Dict, lógica especial
                                 # Use 32 spaces for indentation
-                                memoria_existente = soluciones_correctas[clave_pregunta_aprendizaje]
-                                if isinstance(memoria_existente, dict) and isinstance(solucion_aprendida, dict):
-                                    # Use 36 spaces for indentation
-                                    memoria_existente.update(solucion_aprendida)
-                                    soluciones_correctas[clave_pregunta_aprendizaje] = memoria_existente
+                                if isinstance(lista_existente, dict) and isinstance(solucion_aprendida, dict):
+                                    lista_existente.update(solucion_aprendida)
+                                    soluciones_correctas[clave_pregunta_aprendizaje] = lista_existente
                                     print(f"      Memoria T2 fusionada: {solucion_aprendida}")
                                 else:
-                                    # Use 36 spaces for indentation
-                                    print("      WARN: No se pudo fusionar T2, tipos no son dict. Sobrescribiendo...")
                                     soluciones_correctas[clave_pregunta_aprendizaje] = solucion_aprendida
-                            else:
+                                    print(f"      Memoria T2 guardada/sobrescrita: {solucion_aprendida}")
+                                guardar_memoria_en_disco()
+                           
+                           elif tipo_pregunta == "TIPO_12_DICTADO":
                                 # Use 32 spaces for indentation
-                                soluciones_correctas[clave_pregunta_aprendizaje] = solucion_aprendida
-                            guardar_memoria_en_disco()
+                                # ¡LÓGICA DE ROTACIÓN T12!
+                                # `solucion_individual_aprendida` es una lista, ej: ["FRASE A"]
+                                
+                                if not isinstance(lista_existente, list):
+                                    # Use 36 spaces for indentation
+                                    print(f"      Memoria T12 no era lista. Creando nueva lista.")
+                                    lista_existente = []
+                                
+                                if solucion_individual_aprendida not in lista_existente:
+                                    # Use 36 spaces for indentation
+                                    print(f"      ¡Nueva solución T12 aprendida! Añadiendo a la lista: {solucion_individual_aprendida}")
+                                    lista_existente.append(solucion_individual_aprendida)
+                                    soluciones_correctas[clave_pregunta_aprendizaje] = lista_existente
+                                    guardar_memoria_en_disco()
+                                else:
+                                    # Use 36 spaces for indentation
+                                    print("      WARN: La solución T12 aprendida ya estaba en la lista. No se guarda.")
+                                    
+                           else: # T1, T3, T4, T5, T6, T7, T8, T9, T10, T11, DEFAULT
+                                # Use 32 spaces for indentation
+                                # Lógica de guardado estándar (sobrescribir)
+                                soluciones_correctas[clave_pregunta_aprendizaje] = solucion_individual_aprendida
+                                print(f"      Memoria guardada (Estándar): {solucion_individual_aprendida}")
+                                guardar_memoria_en_disco()
+                        
+                        else: # No se pudo aprender
+                           # Use 28 spaces for indentation
+                           print("      WARN: No se pudo aprender la solución (clave o solución vacía).")
+                        # --- ¡FIN LÓGICA DE GUARDADO T12! ---
 
 
                     # --- CASO 2: RESPUESTA CORRECTA ---
@@ -1636,6 +1811,16 @@ try:
                              if 'lista_de_tareas_escribir' in locals() and lista_de_tareas_escribir:
                                  frases_clave_str = "|".join(sorted([t["frase"] for t in lista_de_tareas_escribir]))
                                  clave_pregunta_acierto = f"T11_BATCH:{titulo_limpio}||{contexto_hash}||{frases_clave_str}"
+                        # --- ¡NUEVO T12 ACIERTO! ---
+                        elif tipo_pregunta == "TIPO_12_DICTADO":
+                             # Use 28 spaces for indentation
+                             titulo_limpio = pregunta_actual_texto.strip()
+                             if 'lista_de_tareas_escribir' in locals() and lista_de_tareas_escribir:
+                                 # Use 32 spaces for indentation
+                                 frases_clave_str = "|".join(sorted([t["frase"] for t in lista_de_tareas_escribir]))
+                                 # ¡audio_hash OMITIDO INTENCIONALMENTE!
+                                 clave_pregunta_acierto = f"T12_DICTADO:{titulo_limpio}||{contexto_hash}||{frases_clave_str}"
+                        # --- FIN NUEVO T12 ---
                         elif tipo_pregunta == "TIPO_8_IMAGEN":
                             # Use 28 spaces for indentation
                             titulo_limpio = pregunta_actual_texto.strip()
@@ -1654,15 +1839,18 @@ try:
                             # Use 28 spaces for indentation
                            clave_pregunta_acierto = clave_pregunta.strip()
 
-                        # --- GUARDADO EN MEMORIA (ACIERTO) ---
+                        # --- ¡INICIO LÓGICA DE GUARDADO T12 (ACIERTO)! ---
                         if clave_pregunta_acierto:
                             # Use 28 spaces for indentation
                             respuesta_correcta_actual = preguntas_ya_vistas.get(clave_pregunta_acierto)
+                            
                             if respuesta_correcta_actual is None:
                                # Use 32 spaces for indentation
                                print(f"      WARN: Acierto, pero no se encontró la respuesta en 'preguntas_ya_vistas' para clave: {clave_pregunta_acierto}")
+                            
                             elif tipo_pregunta == "TIPO_2_COMPLETAR":
                                # Use 32 spaces for indentation
+                               # (La lógica T2 existente está bien)
                                 if not isinstance(respuesta_correcta_actual, dict):
                                     print(f"      ERROR Acierto T2: La respuesta guardada no es un dict: {respuesta_correcta_actual}")
                                 elif clave_pregunta_acierto in soluciones_correctas:
@@ -1688,21 +1876,38 @@ try:
                                     soluciones_correctas[clave_pregunta_acierto] = respuesta_correcta_actual
                                     print(f"      ¡SOLUCIÓN (por acierto T2) APRENDIDA! -> {respuesta_correcta_actual}")
                                     guardar_memoria_en_disco()
+                            
                             elif clave_pregunta_acierto not in soluciones_correctas:
                                # Use 32 spaces for indentation
+                               # ¡NUEVO ACIERTO! Debemos guardarlo en el formato correcto.
                                try:
                                     # Use 36 spaces for indentation
-                                    if isinstance(respuesta_correcta_actual, str):
-                                        respuesta_correcta_actual = respuesta_correcta_actual.strip()
+                                    solucion_a_guardar = None
+                                    
+                                    # Normalizar respuesta (ej. mayúsculas)
                                     if tipo_pregunta == "TIPO_10_ESCRIBIR" and isinstance(respuesta_correcta_actual, list):
                                          respuesta_correcta_actual = [p.upper() for p in respuesta_correcta_actual]
-                                    elif tipo_pregunta == "TIPO_10_ESCRIBIR" and isinstance(respuesta_correcta_actual, str):
-                                         respuesta_correcta_actual = respuesta_correcta_actual.upper()
                                     elif tipo_pregunta == "TIPO_11_ESCRIBIR_OPCIONES" and isinstance(respuesta_correcta_actual, list):
                                          respuesta_correcta_actual = [p.upper() for p in respuesta_correcta_actual]
+                                    elif tipo_pregunta == "TIPO_12_DICTADO" and isinstance(respuesta_correcta_actual, list): # ¡NUEVO T12!
+                                         respuesta_correcta_actual = [p.upper() for p in respuesta_correcta_actual]
+                                    elif isinstance(respuesta_correcta_actual, str):
+                                         respuesta_correcta_actual = respuesta_correcta_actual.strip()
+                                    
+                                    # ¡Envolver en lista de listas para T12!
+                                    if tipo_pregunta == "TIPO_12_DICTADO":
+                                        # Use 40 spaces for indentation
+                                        # `respuesta_correcta_actual` es una lista, ej: ["FRASE A"]
+                                        # La guardamos como lista de listas: [ ["FRASE A"] ]
+                                        solucion_a_guardar = [respuesta_correcta_actual]
+                                        print(f"      ¡SOLUCIÓN (por acierto T12) APRENDIDA! Guardando como lista de listas -> {solucion_a_guardar}")
+                                    else:
+                                        # Use 40 spaces for indentation
+                                        # Es otro tipo (T1, T3, T4, T5, T9, T10, T11, DEFAULT...).
+                                        solucion_a_guardar = respuesta_correcta_actual
+                                        print(f"      ¡SOLUCIÓN (por acierto Estándar) APRENDIDA! -> {solucion_a_guardar}")
 
-                                    soluciones_correctas[clave_pregunta_acierto] = respuesta_correcta_actual
-                                    print(f"      ¡SOLUCIÓN (por acierto) APRENDIDA! -> {respuesta_correcta_actual}")
+                                    soluciones_correctas[clave_pregunta_acierto] = solucion_a_guardar
                                     guardar_memoria_en_disco()
                                except Exception as e_acierto:
                                     # Use 36 spaces for indentation
@@ -1712,7 +1917,7 @@ try:
                                  print("      La solución ya estaba en memoria. No se necesita guardar.")
                         else: # clave_pregunta_acierto es None
                              print("      WARN Acierto: No se pudo generar/obtener clave para guardar el acierto.")
-
+                        # --- ¡FIN LÓGICA DE GUARDADO T12 (ACIERTO)! ---
 
                 except Exception as e:
                     # Use 20 spaces for indentation

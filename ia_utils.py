@@ -1247,3 +1247,58 @@ Respuesta (Sólo la lista JSON ["PALABRA1", "PALABRA2", ...]):
     except Exception as e:
         # Use 8 spaces for indentation
         print(f"Error API IA (Aprendizaje Lote Escribir Opciones): {e}"); return None
+    
+# --- ¡NUEVA FUNCIÓN DE APRENDIZAJE PARA TIPO 12! ---
+def extraer_solucion_lote_dictado(texto_error_modal, tareas_lista):
+    """Extrae la(s) frase(s) completa(s) de un error de dictado TIPO 12."""
+    print(f"IA (Aprendizaje Lote DICTADO T12): Analizando texto de error...")
+    num_tareas = len(tareas_lista) # Generalmente 1
+
+    prompt = f"""
+Rol: Experto en extracción de datos.
+Analiza el [Texto de Error] de un pop-up. Este texto contiene la(s) oración(es) correcta(s) de un ejercicio de dictado.
+La respuesta correcta es la oración completa que el usuario debía escribir.
+
+Tu tarea es devolver SÓLO una lista JSON de strings, donde cada string es la ORACIÓN COMPLETA correcta.
+Limpia la respuesta de comillas o prefijos como "Respuesta: ".
+La lista debe tener {num_tareas} elemento(s).
+
+[Texto de Error]:
+"{texto_error_modal}"
+
+---
+Respuesta (Sólo la lista JSON ["ORACIÓN COMPLETA 1", ...]):
+"""
+    try:
+        # Use 8 spaces for indentation
+        response = model.generate_content(prompt)
+        respuesta_texto = obtener_texto_de_respuesta(response)
+        if respuesta_texto is None: return None
+
+        if respuesta_texto.startswith("```json"): respuesta_texto = respuesta_texto[7:]
+        if respuesta_texto.endswith("```"): respuesta_texto = respuesta_texto[:-3]
+        respuesta_texto = respuesta_texto.strip()
+
+        if not respuesta_texto.startswith("[") or not respuesta_texto.endswith("]"):
+            # Use 12 spaces for indentation
+            print(f"IA (Aprendizaje Lote Dictado) no es lista: {respuesta_texto}"); return None
+
+        solucion_lista = json.loads(respuesta_texto)
+
+        if isinstance(solucion_lista, list) and len(solucion_lista) == num_tareas:
+            # Use 12 spaces for indentation
+            # Limpiamos comillas dobles y convertimos a MAYÚSCULAS
+            solucion_lista_limpia = [str(p).strip().strip('"').upper() for p in solucion_lista]
+            print(f"IA (Aprendizaje Lote Dictado) extrajo: {solucion_lista_limpia}")
+            return solucion_lista_limpia
+        else:
+            # Use 12 spaces for indentation
+            print(f"IA (Aprendizaje Lote Dictado) inválido o incompleto (esperaba {num_tareas}, recibió {len(solucion_lista)}): {solucion_lista}"); return None
+
+    except json.JSONDecodeError as e:
+        # Use 8 spaces for indentation
+        print(f"Error parse JSON IA (Aprendizaje Lote Dictado): {e}\nResp: {respuesta_texto}")
+        return None
+    except Exception as e:
+        # Use 8 spaces for indentation
+        print(f"Error API IA (Aprendizaje Lote Dictado): {e}"); return None

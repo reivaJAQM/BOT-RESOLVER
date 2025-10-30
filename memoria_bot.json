@@ -1088,10 +1088,306 @@
         "classmate"
     ],
     "T9:LISTEN AND CHOOSE THE CORRECT DESCRIPTION||CTX:A big dog is playing in the yard with two kids, ch...kids, chasing a red ball and making everyone laugh||||||A big dog is playing in the yard with two kids, chasing a red ball and making everyone laugh|A big dog is playing in the yard with two kids, chasing a yellow ball and making everyone laugh|A small dog is playing in the yard with two kids, chasing a yellow ball and making everyone laugh": "A big dog is playing in the yard with two kids, chasing a yellow ball and making everyone laugh",
-    "T11_BATCH:TYPE THE SENTENCE YOU HEAR IN THE DICTATION. PAY ATTENTION TO PUNCTUATION.||CTX:...||TYPE THE SENTENCE ___": [
-        "IN"
-    ],
     "T9:CHOOSE THE SENTENCE YOU HEAR.||CTX:My sister played with her toys in the yard....My sister played with her toys in the yard.||||||My sister played with her toys in the house.|My sister played with her toys in the yard.|My sister plays with her toys in the yard.": "My sister played with her toys in the yard.",
+    "T12_DICTADO:TYPE THE SENTENCE YOU HEAR IN THE DICTATION. PAY ATTENTION TO PUNCTUATION.||CTX:...||TYPE THE SENTENCE ___": [
+        [
+            "ILIVEINAHOUSEANDMYCOUSINLIVESINADORMITORYINASCHOOL"
+        ],
+        [
+            "MYUNCLELIVESINANAPARTMENT"
+        ]
+    ],
     "T9:WHERE DOES HER UNCLE LIVE?||CTX:He lives in the city center...He lives in the city center||||||He lives at the beach|He lives in a town|He lives in the city center": "He lives in a town",
-    "T9:THE WOMAN LIVES IN A _____||CTX:House...House||||||Building|Cottage|House": "House"
+    "T9:THE WOMAN LIVES IN A _____||CTX:House...House||||||Building|Cottage|House": "House",
+    "T9:WHAT TYPE OF SALAD TYPICALLY ACCOMPANIES THE MEALS?||CTX:A large mixed salad...A large mixed salad||||||A fruit salad|A large mixed salad|A small salad": "A small salad",
+    "T9:WHAT TYPES OF CARBOHYDRATES ARE MENTIONED IN THE AUDIO?||CTX:White rice, pasta, and quinoa...White rice, pasta, and quinoa||||||Beans, bread, and corn|White rice, pasta, and quinoa|White rice, potatoes, and plantains": "White rice, potatoes, and plantains",
+    "T9:THE ADDRESS OF THE INTERNATIONAL CAFE IS __________||CTX:On Pedro Gual Street...On Pedro Gual Street||||||On Manabí Avenue|On Pedro Gual Street|On Tamarindos Avenue": "On Manabí Avenue",
+    "T4:LISTEN TO THE CLIPS OF THE RESTAURANT AD AND COMPLETE THE SENTENCES.||International Café|many kinds of": [
+        "International Café",
+        "many kinds of"
+    ],
+    "T9:LISTEN AGAIN AND ANSWER THE QUESTION. WHAT ARE THE MAIN INGREDIENTS COMMONLY FOUND IN LUNCH AND DINNER IN ECUADOR?||CTX:Cheese, bread, and soup...Cheese, bread, and soup||||||Cheese, bread, and soup|Meat, pork, or fish with rice, potatoes, or plantains|Pasta, beans, and vegetables": "Meat, pork, or fish with rice, potatoes, or plantains",
+    "T9:MARK THE CORRECT ANSWER. ON SUNDAYS, CAN YOU EAT BREAKFAST AT THE CAFE?||CTX:YES...YES||||||NO|YES": "NO",
+    "T9:WHAT KIND OF ECUADORIAN FOOD DO THEY HAVE AT THE CAFE?||CTX:Just ceviches...Just ceviches||||||Ceviches, encebollados and empanadas|Hot dogs and french fries, but no hamburgers|Just ceviches": "Ceviches, encebollados and empanadas",
+    "T9:LISTEN AND CHOOSE THE CORRECT SENTENCE.||CTX:Lunch and dinner are usually quite similar across ..., and a small salad normally accompanies the meal.||||||Lunch and dinner are usually quite similar across Ecuador and revolve around a source of protein, be it meat, pork, or fish. Carbs will come in the form of white rice, potatoes, or plantains, and a small salad normally accompanies the meal|Lunch and dinner are usually quite similar across Ecuador and revolve around a source of protein, be it meat, pork, or fish. Carbs will come in the form of white rice, tomatoes, or plantains, and a small salad normally accompanies the meal.|Lunch and dinner are usually very different across Ecuador and revolve around a source of protein, be it meat, pork, or fish. Carbs will come in the form of white rice, potatoes, or plantains, and a small salad normally accompanies the meal.": "Lunch and dinner are usually quite similar across Ecuador and revolve around a source of protein, be it meat, pork, or fish. Carbs will come in the form of white rice, potatoes, or plantains, and a small salad normally accompanies the meal",
+    "T2_BATCH:CHOOSE THE CORRECT ANSWER TO RESPOND TO THE QUESTIONS ACCORDING TO THE READING.||CTX:Dear Mr. Balda, It is a pleasure to write you back...or the position. Yours sincerely, Andrea Gorozabel||FRASES:Does Andrea study Pedagogy? ___|Does she like pets? ___|Is Mr. Balda applying for a job? ___|Is Mr. Balda from Calceta? ___": {
+        "Is Mr. Balda applying for a job? ___": "No, he isn’t",
+        "Does Andrea study Pedagogy? ___": "Yes, she does",
+        "Does she like pets? ___": "No, she doesn’t",
+        "Is Mr. Balda from Calceta? ___": "No, he isn’t"
+    },
+    "DEFAULT:READ THE DESCRIPTION AND CHOOSE THE CORRECT JOB: TO SERVE PEOPLE FOOD AND DRINKS.||CTX:A teacher...A teacher||||||A chef|A secretary|A teacher|A waiter": "A waiter",
+    "T8:MATCH THE OCCUPATION ACCORDING TO THE PICTURES.||IMG_DIM:204x240|IMG_DIM:230x240|IMG_DIM:232x240|IMG_DIM:240x240||accountant|doctor|secretary|teacher": [
+        "secretary",
+        "teacher",
+        "accountant",
+        "doctor"
+    ],
+    "DEFAULT:READ THE DESCRIPTION AND CHOOSE THE CORRECT JOB: TO ARRANGE APPOINTMENTS, TYPE LETTERS AND ORGANIZE MEETINGS.||CTX:A teacher...A teacher||||||A chef|A secretary|A teacher|A waiter": "A secretary",
+    "T2_BATCH:READ THE TEXT. THEN ANSWER TRUE OR FALSE TO THE STATEMENTS.||CTX:It is a pleasure to write you back about the job y...or the position. Yours sincerely, Andrea Gorozabel||FRASES:Andrea is applying for a job. ___|Andrea loves pets. ___|Mr. Balda is applying for a job, too. ___|She lives in Calceta. ___|She studies Medicine. ___": {
+        "Andrea is applying for a job. ___": "TRUE",
+        "She studies Medicine. ___": "FALSE",
+        "Mr. Balda is applying for a job, too. ___": "FALSE",
+        "Andrea loves pets. ___": "FALSE",
+        "She lives in Calceta. ___": "FALSE"
+    },
+    "DEFAULT:READ THE DESCRIPTION AND CHOOSE THE CORRECT JOB: TO TEACH PEOPLE. THEY WORK IN A SCHOOL.||CTX:A teacher...A teacher||||||A chef|A secretary|A teacher|A waiter": "A teacher",
+    "T4:MATCH THE CORRESPONDING ANSWER TO COMPLETE THE CHART.||052934487|25|Andrea|Calceta|Los Olivos|Pedagogy": [
+        "Andrea",
+        "25",
+        "Calceta",
+        "Pedagogy",
+        "Los Olivos",
+        "052934487"
+    ],
+    "T11_BATCH:ORDER THE LETTERS TO WRITE WORDS ABOUT JOBS AND OCCUPATIONS IN A BANK.||CTX:...||ANGRAEM ___|ANGRAEM ___|ANGRAEM ___": [
+        "MANAGER",
+        "CASHIER",
+        "SECRETARY"
+    ],
+    "DEFAULT:READ THE DESCRIPTION AND CHOOSE THE CORRECT JOB: PREPARE AND COOK FOOD.||CTX:A teacher...A teacher||||||A chef|A secretary|A teacher|A waiter": "A chef",
+    "0:Chicago|Chris Evans|born|in|was": [
+        [
+            "Chris Evans",
+            "was",
+            "born",
+            "in",
+            "Chicago"
+        ]
+    ],
+    "0:She|blond|hair|has": [
+        [
+            "She",
+            "has",
+            "blond",
+            "hair"
+        ]
+    ],
+    "T4:MATCH THE OPPOSITE OF EACH ADJECTIVE ABOUT PHYSICAL APPEARANCE.||fat|short|weak|white": [
+        "short",
+        "white",
+        "fat",
+        "weak"
+    ],
+    "T2_BATCH:ANSWER TRUE OR FALSE TO THE FOLLOWING STATEMENT BASED ON THE PICTURE.||CTX:...||FRASES:Ashton Kutcher has blond hair. ___": {
+        "Ashton Kutcher has blond hair. ___": "FALSE"
+    },
+    "T2_BATCH:ANSWER TRUE OR FALSE TO THE FOLLOWING STATEMENT BASED ON THE PICTURE.||CTX:...||FRASES:Paris Hilton is a fat woman. ___": {
+        "Paris Hilton is a fat woman. ___": "FALSE"
+    },
+    "T2_BATCH:ANSWER TRUE OR FALSE TO THE FOLLOWING STATEMENT BASED ON THE PICTURE.||CTX:...||FRASES:Samuel Jackson is African American actor. ___": {
+        "Samuel Jackson is African American actor. ___": "TRUE"
+    },
+    "T2_BATCH:READ THE TEXT. THEN ANSWER TRUE OR FALSE TO THE STATEMENTS.||CTX:Chris Evans is a famous actor. He is 36 years old....ous as well. He is the popular actor Mike Capuano.||FRASES:Chris Evans was born in Chicago. ___|He has short hair. ___|He is European. ___|He starred in Captain America. ___|His eyes are green. ___": {
+        "Chris Evans was born in Chicago. ___": "FALSE",
+        "He is European. ___": "FALSE",
+        "He has short hair. ___": "TRUE",
+        "His eyes are green. ___": "FALSE",
+        "He starred in Captain America. ___": "TRUE"
+    },
+    "T8:MATCH THE OCCUPATION ACCORDING TO THE PICTURES.||IMG_DIM:165x240|IMG_DIM:427x240|IMG_DIM:442x240||He has dark skin. He is Ecuadorian.|He is an actor. He is medium height.|He is in his thirties. He is Colombian.": [
+        "He is an actor. He is medium height.",
+        "He has dark skin. He is Ecuadorian.",
+        "He is in his thirties. He is Colombian."
+    ],
+    "T2_BATCH:READ THE TEXT. THEN ANSWER TRUE OR FALSE TO THE STATEMENTS.||CTX:Chris Evans is a famous actor. He is 36 years old....ous as well. He is the popular actor Mike Capuano.||FRASES:Did he play Captain America, a science fiction character? ___|Does he have 3 sisters? ___|Is Chris Evans an actor? ___|Was he born in Canada? ___": {
+        "Is Chris Evans an actor? ___": "Yes, he is.",
+        "Was he born in Canada? ___": "No, he wasn’t.",
+        "Did he play Captain America, a science fiction character? ___": "Yes, he did.",
+        "Does he have 3 sisters? ___": "No, he doesn’t."
+    },
+    "DEFAULT:COMPLETE THE SENTENCES WITH THE CORRESPONDING SPECIAL OCCASION: MY GIRLFRIEND GAVE ME A CARD FOR ____________.||CTX:Wedding...Wedding||||||Birthday|Christmas|Valentine’s day|Wedding": "Valentine’s day",
+    "DEFAULT:COMPLETE THE SENTENCES WITH THE CORRESPONDING SPECIAL OCCASION: NEXT MONTH, WE WILL ATTEND MY SON´S ____________.||CTX:Wedding...Wedding||||||Birthday|Christmas|Valentine’s day|Wedding": "Wedding",
+    "DEFAULT:READ THE QUESTIONS. CHOOSE THE CORRECT ANSWER: DO LOVERS EXPRESS AFFECTION ON VALENTINE'S DAY WITH GIFTS?||CTX:No, they don´t....No, they don´t.||||||No, they don´t.|Yes, they do.": "Yes, they do.",
+    "T4:READ THE NAMES OF HOLIDAYS. WHAT DO PEOPLE DO ON THESE OCCASIONS? MATCH THE CORRESPONDING ANSWER.||Blow a candle and eat some cake.|Kiss and say how much we love her.|The family gets together to have a special dinner.|We say how much we appreciate a friend.": [
+        "Kiss and say how much we love her.",
+        "The family gets together to have a special dinner.",
+        "We say how much we appreciate a friend.",
+        "Blow a candle and eat some cake."
+    ],
+    "DEFAULT:READ THE DEFINITION AND CHOOSE THE CORRECT ANSWER: CEREMONY IN WHICH TWO PEOPLE ARE UNITED IN MARRIAGE.||CTX:Wedding...Wedding||||||Birthday|Christmas|Valentine’s day|Wedding": "Wedding",
+    "DEFAULT:READ THE QUESTIONS. CHOOSE THE CORRECT ANSWER: DO CATHOLIC PEOPLE CELEBRATE CHRISTMAS IN JANUARY?||CTX:Yes, they do....Yes, they do.||||||No, they don´t.|Yes, they do.": "No, they don´t.",
+    "T11_BATCH:ORDER THE LETTERS TO WRITE WORDS ABOUT SPECIAL OCCASIONS.||CTX:...||DYATHBIR ___|DYATHBIR ___|DYATHBIR ___": [
+        "BIRTHDAY",
+        "CHRISTMAS",
+        "WEDDING"
+    ],
+    "DEFAULT:READ THE QUESTIONS. CHOOSE THE CORRECT ANSWER: DO MOST PEOPLE CELEBRATE THEIR BIRTHDAY WITH A PARTY?||CTX:Yes, they do....Yes, they do.||||||No, they don´t.|Yes, they do.": "Yes, they do.",
+    "T8:LOOK AT THE PICTURES. MATCH THE CORRECT OCCASION FOR EACH PICTURE.||IMG_DIM:361x240|IMG_DIM:364x240||Happy Anniversary|Happy Birthday": [
+        "Happy Birthday",
+        "Happy Anniversary"
+    ],
+    "DEFAULT:READ THE DEFINITION AND CHOOSE THE CORRECT ANSWER: CHRISTIAN FESTIVAL CELEBRATING THE BIRTH OF JESUS.||CTX:Wedding...Wedding||||||Birthday|Christmas|Valentine’s day|Wedding": "Christmas",
+    "DEFAULT:READ THE DEFINITION AND CHOOSE THE CORRECT ANSWER: THE DAY OF A PERSON'S BIRTH.||CTX:Wedding...Wedding||||||Birthday|Christmas|Valentine’s day|Wedding": "Birthday",
+    "T8:LOOK AT THE PICTURES. GRAB THE CORRESPONDING NAME OF THE OCCASION UNDER EACH ONE.||IMG_DIM:239x240|IMG_DIM:268x240|IMG_DIM:282x240|IMG_DIM:335x240||Birthday|Christmas|Mother’s day|Valentine’s day": [
+        "Birthday",
+        "Valentine’s day",
+        "Christmas",
+        "Mother’s day"
+    ],
+    "DEFAULT:READ THE DEFINITION AND CHOOSE THE CORRECT ANSWER: LOVERS EXPRESS THEIR AFFECTION WITH GREETINGS AND GIFTS.||CTX:Wedding...Wedding||||||Birthday|Christmas|Valentine’s day|Wedding": "Valentine’s day",
+    "T2_BATCH:CHOOSE IF THESE SENTENCES ARE CORRECT OR INCORRECT.||CTX:...||FRASES:I always play soccer or volleyball on the beach. ___|I didn’t study so I got a bad grade. ___|I love tea and coffee. ___|I want to eat pizza so hamburgers. ___": {
+        "I love tea and coffee. ___": "CORRECT",
+        "I want to eat pizza so hamburgers. ___": "INCORRECT",
+        "I always play soccer or volleyball on the beach. ___": "CORRECT",
+        "I didn’t study so I got a bad grade. ___": "CORRECT"
+    },
+    "0:I|my friends|or|play|soccer|volleyball|with": [
+        [
+            "I",
+            "play",
+            "soccer",
+            "or",
+            "volleyball",
+            "with",
+            "my friends"
+        ]
+    ],
+    "T2_BATCH:READ THE DEFINITION. CHOOSE THE CORRESPONDING ANSWER.||CTX:...||FRASES:It is used to suggest a contrast: ___|It is used to suggest that only one possibility can be realized: ___|One action follows another in the chronological order: ___": {
+        "One action follows another in the chronological order: ___": "and",
+        "It is used to suggest a contrast: ___": "but",
+        "It is used to suggest that only one possibility can be realized: ___": "or"
+    },
+    "T2_BATCH:CHOOSE THE CORRECT CONNECTOR TO GIVE MEANING TO THE SENTENCE.||CTX:...||FRASES:I have a sister ___ a brother.|it was a very sunny day, ___ we went.": {
+        "I have a sister ___ a brother.": "and",
+        "it was a very sunny day, ___ we went.": "so"
+    },
+    "T2_BATCH:COMPLETE THE SENTENCES USING THE APPROPRIATE WORD.||CTX:...||FRASES:At night, it is cold on the beach, ___ I always wear a warm sweater.|Let's go to the beach, ___ we surf and finally we can eat something.|Mary always has toasts ___ milk for breakfast.": {
+        "Mary always has toasts ___ milk for breakfast.": "and",
+        "Let's go to the beach, ___ we surf and finally we can eat something.": "then",
+        "At night, it is cold on the beach, ___ I always wear a warm sweater.": "so"
+    },
+    "T2_BATCH:ANSWER THE QUESTIONS ACCORDING TO THE READING.||CTX:...||FRASES:Does she hate seafood? ___|Does she love going to the beach? ___|Does she work in a clinic? ___|Is Melissa a nurse? ___": {
+        "Is Melissa a nurse? ___": "No, she isn’t",
+        "Does she work in a clinic? ___": "No, she doesn’t",
+        "Does she love going to the beach? ___": "Yes, she does",
+        "Does she hate seafood? ___": "No, she doesn’t"
+    },
+    "T2_BATCH:READ THE TEXT. THEN ANSWER TRUE OR FALSE TO THE STATEMENTS.||CTX:...||FRASES:Melissa goes to the beach in the afternoon ___|She has fruits and vegetables for lunch ___|She has lunch on the beach ___|She loves to play sports on the beach ___": {
+        "Melissa goes to the beach in the afternoon ___": "FALSE",
+        "She loves to play sports on the beach ___": "TRUE",
+        "She has lunch on the beach ___": "TRUE",
+        "She has fruits and vegetables for lunch ___": "FALSE"
+    },
+    "T8:LOOK AT THE PICTURES. GRAB THE CORRESPONDING NAME OF THE OCCASION UNDER EACH ONE.||IMG_DIM:305x240|IMG_DIM:360x240|IMG_DIM:361x240||Beach|Mall|Park": [
+        "Mall",
+        "Park",
+        "Beach"
+    ],
+    "DEFAULT:CHOOSE THE CORRECT ONE.||CTX:A square has four sides....A square has four sides.||||||A circle has a square.|A square has four sides.|A triangle has two sides.": "A square has four sides.",
+    "T2_BATCH:ARE THESE SENTENCES CORRECT (TRUE) OR INCORRECT (FALSE)?||CTX:...||FRASES:Her room is twenty circle meters. ___|My English teacher is part of a select social circle and most of the time goes to the “tennis club”. ___|The area is approximately 100 circle kilometers. ___|The triangle has 3 sides. ___": {
+        "My English teacher is part of a select social circle and most of the time goes to the “tennis club”. ___": "TRUE",
+        "Her room is twenty circle meters. ___": "FALSE",
+        "The triangle has 3 sides. ___": "TRUE",
+        "The area is approximately 100 circle kilometers. ___": "FALSE"
+    },
+    "T4:MATCH THE DEFINITION TO THE RIGHT SHAPES AND FORMS WORDS.||circle|triangle": [
+        "circle",
+        "triangle"
+    ],
+    "DEFAULT:READ THE QUESTION AND CHOOSE THE BEST ANSWER: HOW MANY SIDES DOES A TRIANGLE HAVE?||CTX:one...one||||||five|four|one|three": "three",
+    "DEFAULT:WHICH SENTENCE IS CORRECT?||CTX:The area of the office is 35 meters square....The area of the office is 35 meters square.||||||The area of the office is 35 meters square.|The area of the office is 35 square meters.|The area of the office is square meters 35.": "The area of the office is 35 square meters.",
+    "0:Martina|a|drew|rectangle|right": [
+        [
+            "Martina",
+            "drew",
+            "a",
+            "right",
+            "rectangle"
+        ]
+    ],
+    "DEFAULT:READ THE QUESTION AND CHOOSE THE BEST ANSWER: HOW MANY SIDES DOES A SQUARE HAVE?||CTX:one...one||||||five|four|one|three": "four",
+    "0:danger|denotes|red|the|triangle": [
+        [
+            "the",
+            "red",
+            "triangle",
+            "denotes",
+            "danger"
+        ]
+    ],
+    "T2_BATCH:CHOOSE THE BEST OPTION TO COMPLETE THE SENTENCES.||CTX:...||FRASES:A ball looks like a ___|He is having a Dorito. It is a great example of a ___": {
+        "He is having a Dorito. It is a great example of a ___": "triangle",
+        "A ball looks like a ___": "circle"
+    },
+    "0:The moon|circles|the earth|2:The small triangle|in the center|is|4:The rooms|all very square|are": [
+        [
+            "The moon",
+            "circles",
+            "the earth"
+        ],
+        [
+            "The small triangle",
+            "is",
+            "in the center"
+        ],
+        [
+            "The rooms",
+            "are",
+            "all very square"
+        ]
+    ],
+    "0:You|in the class|mustn´t sleep|2:You|can see|the starts|4:You|must pay attention|to the teacher": [
+        [
+            "You",
+            "mustn´t sleep",
+            "in the class"
+        ],
+        [
+            "You",
+            "can see",
+            "the starts"
+        ],
+        [
+            "You",
+            "must pay attention",
+            "to the teacher"
+        ]
+    ],
+    "DEFAULT:CHOOSE THE CORRECT OPTION (POSSIBILITY): MY FRIEND ________ ME THIS WEEK.||CTX:can run...can run||||||can eat|can go|can run|can visit": "can visit",
+    "DEFAULT:CHOOSE THE CORRECT OPTION (POSSIBILITY): THE FLORIST ________ THE BOUQUET EARLY.||CTX:can deliver...can deliver||||||can cook|can deliver|can eat|can swim": "can deliver",
+    "DEFAULT:WHICH SENTENCE IS CORRECT?||CTX:You must listen to the teacher....You must listen to the teacher.||||||You must listen the to teacher.|You must listen to the teacher.|You must to listen the teacher.": "You must listen to the teacher.",
+    "DEFAULT:CHOOSE A, B, OR C, ACCORDING TO THE PICTURE.||CTX:She must go to bed after 11 pm....She must go to bed after 11 pm.||||IMG_DIM:360x240||She must do her homework.|She must go to bed after 11 pm.|She must play video games.": "She must do her homework.",
+    "T4:MATCH THE DEFINITION TO THE RIGHT MODAL WORD.||can/can´t|must": [
+        "must",
+        "can/can´t"
+    ],
+    "DEFAULT:CHOOSE THE BEST OPTION TO COMPLETE THE SENTENCES: YOU __________ PLAY IN CLASS.||CTX:must...must||||||must|mustn´t": "mustn´t",
+    "T2_BATCH:ARE THESE SENTENCES TRUE OR FALSE?||CTX:...||FRASES:Mothers can cook for their children. ___|Mothers can take care their children. ___|Pets can talk. ___|Pets can work. ___": {
+        "Mothers can take care their children. ___": "TRUE",
+        "Mothers can cook for their children. ___": "TRUE",
+        "Pets can talk. ___": "FALSE",
+        "Pets can work. ___": "FALSE"
+    },
+    "DEFAULT:CHOOSE THE BEST OPTION TO COMPLETE THE SENTENCES: HE __________ HAVE CHANGED CLOTHES DURING THE NIGHT.||CTX:can...can||||||can|must": "must",
+    "T2_BATCH:ARE THESE SENTENCES TRUE OR FALSE?||CTX:...||FRASES:Kids can destroy things at home. ___|Kids can help at home. ___|Kids must go to the supermarket alone. ___|Kids must respect their parents. ___": {
+        "Kids must go to the supermarket alone. ___": "FALSE",
+        "Kids must respect their parents. ___": "TRUE",
+        "Kids can destroy things at home. ___": "FALSE",
+        "Kids can help at home. ___": "TRUE"
+    },
+    "0:My favorite sport|is|swimming|2:Michael|goes swimming|on weekends|4:I|find swimming|very therapeutic": [
+        [
+            "My favorite sport",
+            "is",
+            "swimming"
+        ],
+        [
+            "Michael",
+            "goes swimming",
+            "on weekends"
+        ],
+        [
+            "I",
+            "find swimming",
+            "very therapeutic"
+        ]
+    ],
+    "DEFAULT:WHICH SENTENCE IS CORRECT?||CTX:Swimming is my favorite form of exercise....Swimming is my favorite form of exercise.||||||Swimming is my favorite form of exercise.|Swimming is my form of favorite exercise.|Swimming of exercise is my favorite form.": "Swimming is my favorite form of exercise.",
+    "DEFAULT:CHOOSE THE CORRECT ONE: WHERE DO TENNIS PLAYERS PLAY?||CTX:Tennis players play on the tennis court....Tennis players play on the tennis court.||||||Tennis players play on the tennis court.|Tennis players play on the tennis field.": "Tennis players play on the tennis court.",
+    "T11_BATCH:PUT IN ORDER THE FOLLOWING LETTERS TO CREATE WORDS RELATED TO SPORTS.||CTX:...||NTESNI ___|NTESNI ___|NTESNI ___": [
+        "IN",
+        "AT",
+        "IN"
+    ]
 }
