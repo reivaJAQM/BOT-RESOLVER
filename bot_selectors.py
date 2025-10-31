@@ -79,3 +79,6 @@ SELECTOR_INPUT_ESCRIBIR = (By.XPATH, "//input[@type='text'][contains(@class, 'sh
 # (Usa el mismo selector de INPUT que TIPO 10: SELECTOR_INPUT_ESCRIBIR)
 # Busca el texto <p> que está en la misma 'fila' (grid) que el input
 SELECTOR_FRASE_T11 = (By.XPATH, "./ancestor::div[contains(@class,'grid')]//p[1]")
+# --- Selector para el "Cuerpo" de la pregunta (T9 / Default) ---
+# Busca un párrafo <p> dentro de la tarjeta principal que no sea el título
+SELECTOR_CUERPO_PREGUNTA = (By.XPATH, "//div[contains(@class, 'card')]//p[contains(@class, 'text-justify')]")

@@ -176,8 +176,24 @@ try:
                     print("      Contenido detectado: [TIPO 10]"); tipo_pregunta = "TIPO_10_ESCRIBIR"
                 elif len(input_elem) > 0 and len(letras_elem_t10) == 0:
                      print("      Contenido detectado: [TIPO 11]"); tipo_pregunta = "TIPO_11_ESCRIBIR_OPCIONES"
+                
+                # --- ¡NUEVO ORDEN DE DETECCIÓN! ---
+                # Priorizar los tipos estructurales (Emparejar, Ordenar) antes que los tipos de contenido (Audio)
+                
                 elif len(driver.find_elements(*sel.SELECTOR_ANSWER_Q_CAJAS)) > 0: print("      Contenido detectado: [TIPO 7]"); tipo_pregunta = "TIPO_7_OM_CARD"
                 elif len(driver.find_elements(*sel.SELECTOR_PARAGRAPH_CAJAS)) > 0: print("      Contenido detectado: [TIPO 6]"); tipo_pregunta = "TIPO_6_PARAGRAPH"
+                
+                # ¡MOVER TIPO 8 y TIPO 4 AQUÍ! (ANTES DE TIPO 9)
+                elif len(driver.find_elements(*sel.SELECTOR_IMAGEN_EMPAREJAR)) > 0: 
+                    print("      Contenido detectado: [TIPO 8]"); tipo_pregunta = "TIPO_8_IMAGEN"
+                elif len(driver.find_elements(*sel.SELECTOR_FILAS_EMPAREJAR)) > 0: 
+                    print("      Contenido detectado: [TIPO 4]"); tipo_pregunta = "TIPO_4_EMPAREJAR"
+
+                # TIPO 9 (Audio) ahora va DESPUÉS de los tipos de emparejar
+                # (Así, si una pregunta es T4 + Audio, se detecta como T4, que es correcto)
+                elif len(audio_elem) > 0: 
+                    print("      Contenido detectado: [TIPO 9]"); tipo_pregunta = "TIPO_9_AUDIO"
+
                 elif len(driver.find_elements(*sel.SELECTOR_CAJAS_TF)) > 0:
                     num_cajas_tf = len(driver.find_elements(*sel.SELECTOR_CAJAS_TF))
                     if num_cajas_tf > 1:
@@ -186,14 +202,12 @@ try:
                     else:
                         print(f"      Contenido detectado: [TIPO 5] ({num_cajas_tf} caja)");
                         tipo_pregunta = "TIPO_5_TF_SINGLE"
+                
                 elif len(driver.find_elements(*sel.SELECTOR_LINEAS_COMPLETAR)) > 0: print("      Contenido detectado: [TIPO 2]"); tipo_pregunta = "TIPO_2_COMPLETAR"
                 elif len(driver.find_elements(*sel.SELECTOR_CONTENEDOR_ORDENAR)) > 0: print("      Contenido detectado: [TIPO 1]"); tipo_pregunta = "TIPO_1_ORDENAR"
-                elif len(driver.find_elements(*sel.SELECTOR_IMAGEN_EMPAREJAR)) > 0: print("      Contenido detectado: [TIPO 8]"); tipo_pregunta = "TIPO_8_IMAGEN"
-                elif len(driver.find_elements(*sel.SELECTOR_FILAS_EMPAREJAR)) > 0: print("      Contenido detectado: [TIPO 4]"); tipo_pregunta = "TIPO_4_EMPAREJAR"
-                elif len(audio_elem) > 0: print("      Contenido detectado: [TIPO 9]"); tipo_pregunta = "TIPO_9_AUDIO" # T9 ahora va después de T12
+                
                 else: print("      No se detectó contenido especial. Se asume [DEFAULT]"); tipo_pregunta = "TIPO_DEFAULT_OM"
                 # --- ¡FIN LÓGICA DE DETECCIÓN! ---
-
                 print("Leyendo datos (Contexto y Título)...")
                 try:
                     # Use 20 spaces for indentation
@@ -778,17 +792,53 @@ try:
                     print("Tipo: MARK TRUE/FALSE (Single).");
                     try:
                         # Use 24 spaces for indentation
-                        # --- ¡INICIO CORRECCIÓN T5! ---
-                        # Leer la afirmación real desde la tarjeta, no desde el título de la página
-                        texto_afirmacion_elem = wait_long.until(EC.presence_of_element_located(sel.SELECTOR_MARK_TF_TEXT))
-                        texto_afirmacion = texto_afirmacion_elem.text.strip()
-                        if not texto_afirmacion: raise Exception("No se pudo leer el texto de la afirmación TIPO 5.")
-                        # --- FIN CORRECCIÓN T5! ---
-                        
-                        boton_true = wait_long.until(EC.presence_of_element_located(sel.SELECTOR_MARK_TF_TRUE))
-                        boton_false = wait_long.until(EC.presence_of_element_located(sel.SELECTOR_MARK_TF_FALSE))
+                        # --- ¡INICIO CORRECCIÓN T5 (Intento 3)! ---
+                        # 1. Encontrar la tarjeta T/F
+                        caja_tf_single = wait_long.until(EC.presence_of_element_located(sel.SELECTOR_CAJAS_TF))
+                        driver.execute_script("arguments[0].scrollIntoViewIfNeeded(true);", caja_tf_single); time.sleep(0.1)
 
-                        print(f"      Afirmación (de Tarjeta): '{texto_afirmacion}'"); # <-- Log corregido
+                        # 2. Encontrar el texto (Lógica Robusta con Fallbacks)
+                        texto_afirmacion = ""
+                        try:
+                            # Intento A: Selector estándar (span[1], usado por T3, T6, T7)
+                            texto_afirmacion_elem = caja_tf_single.find_element(*sel.SELECTOR_TEXTO_AFIRMACION_TF) # .//span[1]
+                            print("      Texto encontrado (Intento A: span[1])")
+                            wait_short.until(EC.visibility_of(texto_afirmacion_elem))
+                            texto_afirmacion = texto_afirmacion_elem.text.strip()
+                        except NoSuchElementException:
+                            # Use 32 spaces for indentation
+                            print("      WARN: .//span[1] (Selector T3) falló. Intentando .//p[normalize-space(.)]...")
+                            try:
+                                # Intento B: Primer párrafo <p> con texto
+                                texto_afirmacion_elem = caja_tf_single.find_element(By.XPATH, ".//p[normalize-space(.)]")
+                                print("      Texto encontrado (Intento B: p[normalize-space(.)])")
+                                wait_short.until(EC.visibility_of(texto_afirmacion_elem))
+                                texto_afirmacion = texto_afirmacion_elem.text.strip()
+                            except NoSuchElementException:
+                                # Use 36 spaces for indentation
+                                print("      WARN: No se encontró texto (span/p) DENTRO de la tarjeta.")
+                                # ¡FALLBACK! Usar el título de la página que ya leímos.
+                                if pregunta_actual_texto:
+                                    # Use 40 spaces for indentation
+                                    print(f"      Usando FALLBACK: Título de la página ('{pregunta_actual_texto}')")
+                                    texto_afirmacion = pregunta_actual_texto
+                                    # Limpiar prefijos comunes que vienen en el título
+                                    if texto_afirmacion.lower().startswith("true or false:"):
+                                        # Use 44 spaces for indentation
+                                        texto_afirmacion = texto_afirmacion[14:].strip()
+                                else:
+                                    # Use 40 spaces for indentation
+                                    print("      ERROR: No se encontró texto en tarjeta NI en Título de página.")
+                                    raise # Lanzar el error si nada funciona
+                        
+                        # 3. Extraer botones (siempre están en la caja)
+                        if not texto_afirmacion: raise Exception("No se pudo leer el texto de la afirmación TIPO 5 (ni en tarjeta ni en título).")
+                        
+                        boton_true = caja_tf_single.find_element(*sel.SELECTOR_BOTON_TRUE_TF)
+                        boton_false = caja_tf_single.find_element(*sel.SELECTOR_BOTON_FALSE_TF)
+                        # --- FIN CORRECCIÓN T5! ---
+
+                        print(f"      Afirmación (Final): '{texto_afirmacion}'");
                         opciones_t5 = ["True", "False"]
                         titulo_limpio_t5 = texto_afirmacion.strip()
                         clave_pregunta = f"T5:{titulo_limpio_t5}||{contexto_hash}||" + "|".join(sorted(opciones_t5))

@@ -241,7 +241,7 @@ def obtener_emparejamientos(palabras, definiciones):
     palabras_texto = "\n".join(f'- "{p}"' for p in palabras)
     definiciones_texto = "\n".join(f'- "{d}"' for d in definiciones)
     
-    # --- ¡NUEVO PROMPT ESTRICTO! ---
+    # --- ¡INICIO DE LA MODIFICACIÓN! ---
     prompt = f"""
 Rol: Emparejador de datos estricto.
 Tu única tarea es crear un diccionario Python.
@@ -249,7 +249,7 @@ Te daré dos listas: [LISTA_CLAVE] y [LISTA_OPCIONES].
 
 REGLAS ABSOLUTAS:
 1.  El diccionario de respuesta debe tener exactamente {len(palabras)} pares.
-2.  Las 'keys' (claves) del diccionario deben ser COPIADAS EXACTAMENTE de [LISTA_CLAVE]. NO modifiques, fusiones, corrijas o alteres los strings de [LISTA_CLAVE] de ninguna manera.
+2.  Las 'keys' (claves) del diccionario deben ser COPIADAS EXACTAMENTE de [LISTA_CLAVE]. ¡Es vital que uses el texto exacto, INCLUSO SI CONTIENE ERRORES ORTOGRÁFICOS! (Ej: si [LISTA_CLAVE] dice "a profesional", DEBES usar "a profesional" como clave, NO "a professional").
 3.  Los 'values' (valores) del diccionario deben ser strings tomados de [LISTA_OPCIONES].
 
 [LISTA_CLAVE] (Estas deben ser las 'keys' exactas)
@@ -260,7 +260,7 @@ REGLAS ABSOLUTAS:
 ---
 Diccionario de Pares (Responde SÓLO el diccionario Python):
 """
-    # --- FIN PROMPT ---
+    # --- FIN DE LA MODIFICACIÓN ---
     
     try:
         # Use 8 spaces for indentation
