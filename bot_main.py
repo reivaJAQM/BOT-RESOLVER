@@ -1,14 +1,3 @@
-# bot_main.py
-# Script principal que orquesta el bot.
-# ¡Refactorizado con "Plan Maestro" y "Plan S"!
-# --- ¡ACTUALIZADO CON TIPO 12 (DICTADO) y LÓGICA DE ROTACIÓN DE RESPUESTAS! ---
-# --- ¡ACTUALIZADO CON FUNCIÓN DE APRENDIZAJE T12 DEDICADA! ---
-# --- (T1, T2, T3/T5, T4, T10, T11, T12) ---
-# --- ¡ACTUALIZADO CON LÓGICA ANTI-BUCLE v2 (Posición Corregida)! ---
-# --- ¡ACTUALIZADO CON HASH DE IMAGEN ROBUSTO v4 (Priorizar ALT, fallback Dimensiones + ÍNDICE DESAMBIGUACIÓN, fallback Vacío)! ---
-# --- ¡ACTUALIZADO CON CLAVE TIPO 2 ÚNICA (Incluye Frases)! ---
-# --- ¡ACTUALIZADO CON HASH DE CUERPO PREGUNTA (Body Hash)! ---
-
 import time
 import json
 import random
@@ -139,6 +128,7 @@ try:
         tipo_pregunta = ""; clave_pregunta = None; lista_ideas_texto = []; lista_de_preguntas = []; lista_afirmaciones_texto = []; frases_des = []; lista_de_claves_individuales = []; lista_de_tareas_ordenar = []
         palabras_clave = []; definiciones = []; lista_de_tareas_completar = []
         lista_de_tareas_escribir = []; lista_palabras_desordenadas_raw = []; lista_frases_t11 = []; lista_frases_t12 = [] # T12 AÑADIDO
+        lista_frases_t11_raw = [] # AÑADIDO PARA FIX T11
         imagen_hash = ""; audio_hash = ""; contexto_hash = ""; body_hash = "" # Añadido reset body_hash
         respuesta_fue_incorrecta = False
 
@@ -280,6 +270,7 @@ try:
                 lista_ideas_texto = []; lista_de_preguntas = []; lista_afirmaciones_texto = []; frases_des = []; lista_de_claves_individuales = []; lista_de_tareas_ordenar = []
                 palabras_clave = []; definiciones = []; lista_de_tareas_completar = []
                 lista_de_tareas_escribir = []; lista_palabras_desordenadas_raw = []; lista_frases_t11 = []; lista_frases_t12 = [] # T12 AÑADIDO
+                lista_frases_t11_raw = [] # AÑADIDO PARA FIX T11
                 imagen_hash = ""; audio_hash = "" # No resetear contexto_hash ni body_hash aquí
 
 
@@ -780,12 +771,17 @@ try:
                     print("Tipo: MARK TRUE/FALSE (Single).");
                     try:
                         # Use 24 spaces for indentation
-                        texto_afirmacion = pregunta_actual_texto.strip()
-                        if not texto_afirmacion: raise Exception("No texto afirmación (leído de título).")
+                        # --- ¡INICIO CORRECCIÓN T5! ---
+                        # Leer la afirmación real desde la tarjeta, no desde el título de la página
+                        texto_afirmacion_elem = wait_long.until(EC.presence_of_element_located(sel.SELECTOR_MARK_TF_TEXT))
+                        texto_afirmacion = texto_afirmacion_elem.text.strip()
+                        if not texto_afirmacion: raise Exception("No se pudo leer el texto de la afirmación TIPO 5.")
+                        # --- FIN CORRECCIÓN T5! ---
+                        
                         boton_true = wait_long.until(EC.presence_of_element_located(sel.SELECTOR_MARK_TF_TRUE))
                         boton_false = wait_long.until(EC.presence_of_element_located(sel.SELECTOR_MARK_TF_FALSE))
 
-                        print(f"      Afirmación (de Título): '{texto_afirmacion}'");
+                        print(f"      Afirmación (de Tarjeta): '{texto_afirmacion}'"); # <-- Log corregido
                         opciones_t5 = ["True", "False"]
                         titulo_limpio_t5 = texto_afirmacion.strip()
                         clave_pregunta = f"T5:{titulo_limpio_t5}||{contexto_hash}||" + "|".join(sorted(opciones_t5))
@@ -1246,6 +1242,7 @@ try:
                     print(f"Encontradas {num_tareas} tareas TIPO 11.")
                     lista_de_tareas_escribir = []
                     lista_frases_t11 = []
+                    lista_frases_t11_raw = [] # ¡NUEVO! Para guardar las letras desordenadas (ej. "NTESNI")
 
                     for i, input_elem_actual in enumerate(input_elems):
                         # Use 24 spaces for indentation
@@ -1253,14 +1250,15 @@ try:
                             # Use 28 spaces for indentation
                             driver.execute_script("arguments[0].scrollIntoViewIfNeeded(true);", input_elem_actual); time.sleep(0.1)
                             frase_elem = input_elem_actual.find_element(*sel.SELECTOR_FRASE_T11)
-                            frase_texto = frase_elem.text.strip()
-                            if not frase_texto: raise Exception("Frase T11 vacía.")
+                            frase_texto_raw = frase_elem.text.strip() # ¡NUEVO!
+                            if not frase_texto_raw: raise Exception("Frase T11 vacía.")
 
-                            frase_para_ia = frase_texto + " ___"
-                            print(f"      Tarea {i+1}: Frase='{frase_para_ia}'")
+                            frase_para_ia = frase_texto_raw + " ___" # Para la clave de memoria
+                            print(f"      Tarea {i+1}: Frase='{frase_para_ia}' (Raw='{frase_texto_raw}')")
 
                             lista_de_tareas_escribir.append({"frase": frase_para_ia, "input_elem": input_elem_actual})
                             lista_frases_t11.append(frase_para_ia)
+                            lista_frases_t11_raw.append(frase_texto_raw) # ¡NUEVO!
 
                         except (NoSuchElementException, TimeoutException) as e_t11:
                              # Use 28 spaces for indentation
@@ -1299,14 +1297,26 @@ try:
                         print("      SOLUCIÓN LOTE TIPO 11 ENCONTRADA en memoria.");
                         respuestas_lote_ia = soluciones_correctas[clave_pregunta]
                     else:
-                        # Use 24 spaces for indentation
-                        print("      Llamando a IA (Escribir Opciones Lote)...")
-                        tareas_para_ia = [{"frase": t["frase"]} for t in lista_de_tareas_escribir]
-                        respuestas_ia_temp = ia_utils.obtener_respuestas_escribir_opciones_lote(contexto, pregunta_actual_texto, tareas_para_ia)
-
-                        if not respuestas_ia_temp or len(respuestas_ia_temp) != len(lista_de_tareas_escribir):
-                            # Use 28 spaces for indentation
-                            raise Exception("Fallo IA (Escribir Opciones Lote) o nº resp no coincide.")
+                        # --- ¡NUEVA LÓGICA DE BIFURCACIÓN T11! ---
+                        titulo_lower = pregunta_actual_texto.lower()
+                        if "order the letters" in titulo_lower or "put in order" in titulo_lower:
+                            # Use 24 spaces for indentation
+                            print("      ¡T11 detectado como ANAGRAMA (T10)! Llamando a IA (Ordenar Palabra Lote)...")
+                            # Usamos 'lista_frases_t11_raw' (ej: "NTESNI")
+                            respuestas_ia_temp = ia_utils.obtener_palabras_ordenadas_lote(lista_frases_t11_raw)
+                            if not respuestas_ia_temp or len(respuestas_ia_temp) != len(lista_de_tareas_escribir):
+                                raise Exception("Fallo IA (Ordenar Lote, vía T11) o nº resp no coincide.")
+                        
+                        else:
+                            # Use 24 spaces for indentation
+                            print("      Llamando a IA (Escribir Opciones Lote)...")
+                            # Usamos 'tareas_para_ia' (ej: "Frase ___")
+                            tareas_para_ia = [{"frase": t["frase"]} for t in lista_de_tareas_escribir]
+                            respuestas_ia_temp = ia_utils.obtener_respuestas_escribir_opciones_lote(contexto, pregunta_actual_texto, tareas_para_ia)
+                            if not respuestas_ia_temp or len(respuestas_ia_temp) != len(lista_de_tareas_escribir):
+                                raise Exception("Fallo IA (Escribir Opciones Lote) o nº resp no coincide.")
+                        # --- FIN LÓGICA DE BIFURCACIÓN ---
+                        
                         respuestas_lote_ia = respuestas_ia_temp
                         preguntas_ya_vistas[clave_pregunta] = respuestas_lote_ia
 
@@ -1381,6 +1391,11 @@ try:
                     # --- ¡CLAVE BASADA SÓLO EN TEXTO! ---
                     clave_pregunta = f"T12_DICTADO:{titulo_limpio}||{contexto_hash}||{frases_clave_str}"
                     print(f"      Clave T12 generada: {clave_pregunta}")
+
+                    # --- CHEQUEO DE BUCLE ATASCADO (TIPO 12) ---
+                    # ¡ELIMINADO! La lógica de rotación maneja esto.
+                    # (Como pediste en el mensaje anterior)
+                    # --- FIN CHEQUEO DE BUCLE ATASCADO ---
 
                     # --- ¡INICIO LÓGICA DE ROTACIÓN T12! ---
                     respuestas_lote_ia = [] # Inicializar
@@ -1660,9 +1675,27 @@ try:
                             
                             # --- ¡INICIO EXTRACCIÓN SEPARADA T11/T12! ---
                             elif tipo_pregunta == "TIPO_11_ESCRIBIR_OPCIONES":
-                                solucion_lista_ordenada = ia_utils.extraer_solucion_lote_escribir_opciones(contenido_modal, preguntas_para_ia)
+                                # --- ¡BIFURCACIÓN T11! ---
+                                titulo_lower = pregunta_actual_texto.lower()
+                                if "order the letters" in titulo_lower or "put in order" in titulo_lower:
+                                    print("      Usando extractor T10 (Anagrama) para T11...")
+                                    preguntas_para_ia_raw = lista_frases_t11_raw if 'lista_frases_t11_raw' in locals() else None
+                                    if preguntas_para_ia_raw:
+                                        solucion_lista_ordenada = ia_utils.extraer_solucion_lote_escribir(contenido_modal, preguntas_para_ia_raw)
+                                    else:
+                                        print(f"      ERROR APRENDIZAJE: No se encontraron frases raw T11 para la IA.")
+                                else:
+                                    if preguntas_para_ia:
+                                        solucion_lista_ordenada = ia_utils.extraer_solucion_lote_escribir_opciones(contenido_modal, preguntas_para_ia)
+                                    else:
+                                        print(f"      ERROR APRENDIZAJE: No se encontraron frases T11 para la IA.")
+
                             elif tipo_pregunta == "TIPO_12_DICTADO":
-                                solucion_lista_ordenada = ia_utils.extraer_solucion_lote_dictado(contenido_modal, preguntas_para_ia) # <-- LLAMADA A NUEVA FUNCIÓN
+                                if preguntas_para_ia:
+                                    # --- ¡CAMBIO CLAVE! LLAMAR A LA NUEVA FUNCIÓN ---
+                                    solucion_lista_ordenada = ia_utils.extraer_solucion_lote_dictado(contenido_modal, preguntas_para_ia) 
+                                else:
+                                    print(f"      ERROR APRENDIZAJE: No se encontraron frases T12 para la IA.")
                             # --- ¡FIN EXTRACCIÓN SEPARADA! ---
                             
                             else: # T6 y T7
@@ -1971,4 +2004,3 @@ except Exception as e:
 finally:
     # Use 4 spaces for indentation
     print("\nProceso terminado. Cerrando en 20 seg."); time.sleep(20); driver.quit()
-

@@ -238,22 +238,30 @@ def obtener_true_false(contexto, afirmacion):
 
 def obtener_emparejamientos(palabras, definiciones):
     """Obtiene los emparejamientos correctos entre palabras clave y definiciones."""
-    palabras_texto = "\n".join(f"{p}" for p in palabras)
-    definiciones_texto = "\n".join(f'"{d}"' for d in definiciones)
+    palabras_texto = "\n".join(f'- "{p}"' for p in palabras)
+    definiciones_texto = "\n".join(f'- "{d}"' for d in definiciones)
+    
+    # --- ¡NUEVO PROMPT ESTRICTO! ---
     prompt = f"""
-Rol: Experto en emparejamientos.
-Analiza [Lista_Clave] (los destinos fijos, pueden ser texto o identificadores como IMG_DIM:...) y [Lista_Opciones] (las opciones movibles).
-Determina qué Opción corresponde a cada Clave.
-Responde SÓLO con un diccionario Python.
-IMPORTANTE: Las claves (keys) del diccionario deben ser el TEXTO EXACTO de la [Lista_Clave], sin añadir, quitar o modificar caracteres.
----
-[Lista_Clave]
+Rol: Emparejador de datos estricto.
+Tu única tarea es crear un diccionario Python.
+Te daré dos listas: [LISTA_CLAVE] y [LISTA_OPCIONES].
+
+REGLAS ABSOLUTAS:
+1.  El diccionario de respuesta debe tener exactamente {len(palabras)} pares.
+2.  Las 'keys' (claves) del diccionario deben ser COPIADAS EXACTAMENTE de [LISTA_CLAVE]. NO modifiques, fusiones, corrijas o alteres los strings de [LISTA_CLAVE] de ninguna manera.
+3.  Los 'values' (valores) del diccionario deben ser strings tomados de [LISTA_OPCIONES].
+
+[LISTA_CLAVE] (Estas deben ser las 'keys' exactas)
 {palabras_texto}
-[Lista_Opciones]
+
+[LISTA_OPCIONES] (Estos deben ser los 'values')
 {definiciones_texto}
 ---
-Diccionario de Pares ({{clave_exacta_de_lista_clave: opcion_correcta}}):
+Diccionario de Pares (Responde SÓLO el diccionario Python):
 """
+    # --- FIN PROMPT ---
+    
     try:
         # Use 8 spaces for indentation
         response = model.generate_content(prompt)
@@ -276,13 +284,16 @@ Diccionario de Pares ({{clave_exacta_de_lista_clave: opcion_correcta}}):
 
         if (isinstance(pares, dict) and
             len(pares) == len(palabras) and
-            claves_recibidas_set == claves_esperadas_set and # Todas las claves esperadas están y no hay extras
-            valores_recibidos_set.issubset(definiciones_set)): # Todos los valores recibidos son definiciones válidas
+            claves_recibidas_set == claves_esperadas_set and # ¡Esta validación ahora debería pasar!
+            valores_recibidos_set.issubset(definiciones_set)):
             # Use 12 spaces for indentation
             return pares
         else:
             # Use 12 spaces for indentation
             print(f"IA (Emp) inválido o incompleto. Claves esperadas: {len(palabras)}, Recibidas: {len(pares)}. Resp: {respuesta_texto[:200]}...");
+            print(f"      Claves esperadas (Set): {claves_esperadas_set}")
+            print(f"      Claves recibidas (Set): {claves_recibidas_set}")
+            print(f"      ¿Sets iguales?: {claves_recibidas_set == claves_esperadas_set}")
             return None
 
     except (SyntaxError, ValueError) as e: print(f"Error parse AST IA (Emp): {e}\nResp: {respuesta_texto}"); return None
