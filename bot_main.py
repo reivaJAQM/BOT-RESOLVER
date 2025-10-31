@@ -709,9 +709,16 @@ try:
                         if not palabras_clave: raise Exception("JS no encontró palabras clave.")
                     except (JavascriptException, TimeoutException) as e: raise Exception(f"Error extrayendo palabras: {e}")
                     print(f"      Palabras clave encontradas (en orden): {palabras_clave}");
+                    
                     titulo_limpio = pregunta_actual_texto.strip()
                     defs_limpias_sorted = sorted([d.strip() for d in definiciones])
-                    clave_pregunta = f"T4:{titulo_limpio}||" + "|".join(defs_limpias_sorted)
+                    
+                    # --- ¡INICIO CORRECCIÓN CLAVE T4! ---
+                    # Añadimos las palabras clave (ordenadas) a la clave para diferenciar preguntas
+                    # con el mismo título pero diferentes frases.
+                    palabras_clave_limpias_sorted = sorted([p.strip() for p in palabras_clave])
+                    clave_pregunta = f"T4:{titulo_limpio}||KW:" + "|".join(palabras_clave_limpias_sorted) + "||DEF:" + "|".join(defs_limpias_sorted)
+                    # --- ¡FIN CORRECCIÓN CLAVE T4! ---
 
                     # --- ¡INICIO CHEQUEO DE BUCLE ATASCADO (TIPO 4)! ---
                     if clave_pregunta and clave_pregunta == ultima_clave_pregunta_procesada:
@@ -1436,7 +1443,7 @@ try:
                     
                     # Guardar el intento actual (que es una lista, ej: ["???"] o ["RESPUESTA A"])
                     preguntas_ya_vistas[clave_pregunta] = respuestas_lote_ia
-                    # --- FIN LÓGICA DE ROTACIÓN T12 ---
+                    # --- FIN LÓGICA DE ROTACIÓN T12! ---
 
                     print(f"Frases (Dictado) a escribir: {respuestas_lote_ia}")
                     exito_global = True
@@ -1628,8 +1635,13 @@ try:
                             opciones_limpias_sorted = sorted(opciones)
                             clave_pregunta_aprendizaje = f"T9:{titulo_limpio}||{contexto_hash}||{body_hash}||{audio_hash}||" + "|".join(opciones_limpias_sorted) # T9 Mantiene su lógica original
                         elif tipo_pregunta == "TIPO_5_TF_SINGLE":
-                            titulo_limpio = pregunta_actual_texto.strip()
-                            clave_pregunta_aprendizaje = f"T5:{titulo_limpio}||{contexto_hash}||True|False"
+                            # Corrección T5: Usar el texto de la afirmación, no el título de la página
+                            if 'texto_afirmacion' in locals() and texto_afirmacion:
+                                titulo_limpio_t5 = texto_afirmacion.strip()
+                                clave_pregunta_aprendizaje = f"T5:{titulo_limpio_t5}||{contexto_hash}||True|False"
+                            else:
+                                print("      ERROR APRENDIZAJE T5: 'texto_afirmacion' no estaba definido.")
+                                clave_pregunta_aprendizaje = None
                         elif tipo_pregunta == "TIPO_10_ESCRIBIR" and 'lista_de_tareas_escribir' in locals():
                              titulo_limpio = pregunta_actual_texto.strip()
                              claves_ordenadas_str = "|".join(sorted([t["letras_clave"] for t in lista_de_tareas_escribir]))
@@ -1645,13 +1657,18 @@ try:
                              # ¡audio_hash OMITIDO INTENCIONALMENTE!
                              clave_pregunta_aprendizaje = f"T12_DICTADO:{titulo_limpio}||{contexto_hash}||{frases_clave_str}"
                         # --- FIN NUEVO T12 ---
-                        elif tipo_pregunta == "TIPO_4_EMPAREJAR" and 'definiciones' in locals():
+                        
+                        # --- ¡INICIO CORRECCIÓN CLAVE T4 (APRENDIZAJE)! ---
+                        elif tipo_pregunta == "TIPO_4_EMPAREJAR" and 'definiciones' in locals() and 'palabras_clave' in locals(): # Añadido 'palabras_clave'
                              titulo_limpio = pregunta_actual_texto.strip()
-                             defs_limpias_sorted = sorted(definiciones)
-                             clave_pregunta_aprendizaje = f"T4:{titulo_limpio}||" + "|".join(defs_limpias_sorted)
+                             defs_limpias_sorted = sorted([d.strip() for d in definiciones])
+                             palabras_clave_limpias_sorted = sorted([p.strip() for p in palabras_clave])
+                             clave_pregunta_aprendizaje = f"T4:{titulo_limpio}||KW:" + "|".join(palabras_clave_limpias_sorted) + "||DEF:" + "|".join(defs_limpias_sorted)
+                        # --- ¡FIN CORRECCIÓN CLAVE T4 (APRENDIZAJE)! ---
+                        
                         elif tipo_pregunta == "TIPO_8_IMAGEN" and 'definiciones' in locals() and 'palabras_clave' in locals():
                              titulo_limpio = pregunta_actual_texto.strip()
-                             defs_limpias_sorted = sorted(definiciones)
+                             defs_limpias_sorted = sorted([d.strip() for d in definiciones])
                              claves_unicas_ordenados_str = "|".join(sorted(palabras_clave))
                              clave_pregunta_aprendizaje = f"T8:{titulo_limpio}||{claves_unicas_ordenados_str}||" + "|".join(defs_limpias_sorted)
 
@@ -1832,46 +1849,60 @@ try:
                         clave_pregunta_acierto = None
 
                         # Regenerar clave correcta para guardar el acierto si es necesario
-                        if tipo_pregunta == "TIPO_10_ESCRIBIR":
-                             # Use 28 spaces for indentation
-                             titulo_limpio = pregunta_actual_texto.strip()
-                             if 'lista_de_tareas_escribir' in locals() and lista_de_tareas_escribir:
-                                 claves_ordenadas_str = "|".join(sorted([t["letras_clave"] for t in lista_de_tareas_escribir]))
-                                 clave_pregunta_acierto = f"T10_BATCH:{titulo_limpio}||{claves_ordenadas_str}"
-                        elif tipo_pregunta == "TIPO_11_ESCRIBIR_OPCIONES":
-                             # Use 28 spaces for indentation
-                             titulo_limpio = pregunta_actual_texto.strip()
-                             if 'lista_de_tareas_escribir' in locals() and lista_de_tareas_escribir:
-                                 frases_clave_str = "|".join(sorted([t["frase"] for t in lista_de_tareas_escribir]))
-                                 clave_pregunta_acierto = f"T11_BATCH:{titulo_limpio}||{contexto_hash}||{frases_clave_str}"
-                        # --- ¡NUEVO T12 ACIERTO! ---
-                        elif tipo_pregunta == "TIPO_12_DICTADO":
-                             # Use 28 spaces for indentation
-                             titulo_limpio = pregunta_actual_texto.strip()
-                             if 'lista_de_tareas_escribir' in locals() and lista_de_tareas_escribir:
+                        # (Primero, verificar si la clave ya se generó en la lógica principal)
+                        if 'clave_pregunta' in locals() and clave_pregunta:
+                             clave_pregunta_acierto = clave_pregunta.strip()
+                        
+                        if clave_pregunta_acierto is None:
+                            # Use 28 spaces for indentation
+                            print("      WARN Acierto: 'clave_pregunta' no estaba definida. Regenerando clave para guardar acierto...")
+                            if tipo_pregunta == "TIPO_10_ESCRIBIR":
                                  # Use 32 spaces for indentation
-                                 frases_clave_str = "|".join(sorted([t["frase"] for t in lista_de_tareas_escribir]))
-                                 # ¡audio_hash OMITIDO INTENCIONALMENTE!
-                                 clave_pregunta_acierto = f"T12_DICTADO:{titulo_limpio}||{contexto_hash}||{frases_clave_str}"
-                        # --- FIN NUEVO T12 ---
-                        elif tipo_pregunta == "TIPO_8_IMAGEN":
-                            # Use 28 spaces for indentation
-                            titulo_limpio = pregunta_actual_texto.strip()
-                            if 'definiciones' in locals() and 'palabras_clave' in locals():
-                                 defs_limpias_sorted = sorted([d.strip() for d in definiciones])
-                                 claves_unicas_ordenados_str = "|".join(sorted(palabras_clave))
-                                 clave_pregunta_acierto = f"T8:{titulo_limpio}||{claves_unicas_ordenados_str}||" + "|".join(defs_limpias_sorted)
-                        elif tipo_pregunta == "TIPO_2_COMPLETAR":
-                             # Use 28 spaces for indentation
-                             titulo_limpio = pregunta_actual_texto.strip()
-                             if 'lista_de_tareas_completar' in locals() and lista_de_tareas_completar:
-                                 frases_para_clave = sorted([t["frase"] for t in lista_de_tareas_completar])
-                                 frases_hash_str = "|".join(frases_para_clave)
-                                 clave_pregunta_acierto = f"T2_BATCH:{titulo_limpio}||{contexto_hash}||FRASES:{frases_hash_str}"
-                        elif clave_pregunta: # Usar la clave original generada al inicio si no se regeneró
-                            # Use 28 spaces for indentation
-                           clave_pregunta_acierto = clave_pregunta.strip()
-
+                                 titulo_limpio = pregunta_actual_texto.strip()
+                                 if 'lista_de_tareas_escribir' in locals() and lista_de_tareas_escribir:
+                                     claves_ordenadas_str = "|".join(sorted([t["letras_clave"] for t in lista_de_tareas_escribir]))
+                                     clave_pregunta_acierto = f"T10_BATCH:{titulo_limpio}||{claves_ordenadas_str}"
+                            elif tipo_pregunta == "TIPO_11_ESCRIBIR_OPCIONES":
+                                 # Use 32 spaces for indentation
+                                 titulo_limpio = pregunta_actual_texto.strip()
+                                 if 'lista_de_tareas_escribir' in locals() and lista_de_tareas_escribir:
+                                     frases_clave_str = "|".join(sorted([t["frase"] for t in lista_de_tareas_escribir]))
+                                     clave_pregunta_acierto = f"T11_BATCH:{titulo_limpio}||{contexto_hash}||{frases_clave_str}"
+                            # --- ¡NUEVO T12 ACIERTO! ---
+                            elif tipo_pregunta == "TIPO_12_DICTADO":
+                                 # Use 32 spaces for indentation
+                                 titulo_limpio = pregunta_actual_texto.strip()
+                                 if 'lista_de_tareas_escribir' in locals() and lista_de_tareas_escribir:
+                                     # Use 36 spaces for indentation
+                                     frases_clave_str = "|".join(sorted([t["frase"] for t in lista_de_tareas_escribir]))
+                                     # ¡audio_hash OMITIDO INTENCIONALMENTE!
+                                     clave_pregunta_acierto = f"T12_DICTADO:{titulo_limpio}||{contexto_hash}||{frases_clave_str}"
+                            # --- FIN NUEVO T12 ---
+                            elif tipo_pregunta == "TIPO_8_IMAGEN":
+                                # Use 32 spaces for indentation
+                                titulo_limpio = pregunta_actual_texto.strip()
+                                if 'definiciones' in locals() and 'palabras_clave' in locals():
+                                     defs_limpias_sorted = sorted([d.strip() for d in definiciones])
+                                     claves_unicas_ordenados_str = "|".join(sorted(palabras_clave))
+                                     clave_pregunta_acierto = f"T8:{titulo_limpio}||{claves_unicas_ordenados_str}||" + "|".join(defs_limpias_sorted)
+                            elif tipo_pregunta == "TIPO_2_COMPLETAR":
+                                 # Use 32 spaces for indentation
+                                 titulo_limpio = pregunta_actual_texto.strip()
+                                 if 'lista_de_tareas_completar' in locals() and lista_de_tareas_completar:
+                                     frases_para_clave = sorted([t["frase"] for t in lista_de_tareas_completar])
+                                     frases_hash_str = "|".join(frases_para_clave)
+                                     clave_pregunta_acierto = f"T2_BATCH:{titulo_limpio}||{contexto_hash}||FRASES:{frases_hash_str}"
+                            
+                            # --- ¡INICIO CORRECCIÓN CLAVE T4 (ACIERTOS)! ---
+                            elif tipo_pregunta == "TIPO_4_EMPAREJAR":
+                                # Use 32 spaces for indentation
+                                titulo_limpio = pregunta_actual_texto.strip()
+                                if 'definiciones' in locals() and 'palabras_clave' in locals():
+                                     defs_limpias_sorted = sorted([d.strip() for d in definiciones])
+                                     palabras_clave_limpias_sorted = sorted([p.strip() for p in palabras_clave])
+                                     clave_pregunta_acierto = f"T4:{titulo_limpio}||KW:" + "|".join(palabras_clave_limpias_sorted) + "||DEF:" + "|".join(defs_limpias_sorted)
+                            # --- ¡FIN CORRECCIÓN CLAVE T4 (ACIERTOS)! ---
+                        
                         # --- ¡INICIO LÓGICA DE GUARDADO T12 (ACIERTO)! ---
                         if clave_pregunta_acierto:
                             # Use 28 spaces for indentation
