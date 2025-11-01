@@ -6597,7 +6597,8 @@
         "Anna's birthday"
     ],
     "T5:Anna had been waiting all night for Sunday.||CTX:...||True|False": [
-        "Anna's birthday"
+        "Anna's birthday",
+        "Anna's grandfather had in his hands a big box."
     ],
     "T5:That morning, Anna woke up very late.||CTX:...||False|True": [
         "False"
@@ -8413,5 +8414,1132 @@
     ],
     "T9:HOW MUCH DOES THE MAN WANT TO SPEND?||CTX:15 pounds...15 pounds||||||15 pounds|16 pounds|50 pounds": [
         "15 pounds"
-    ]
+    ],
+    "T9:WHAT’S THE RESULT OF THE PHONE CALL?||CTX:The customer books a table for Saturday....The customer books a table for Saturday.||||||The customer books a table for Saturday.|The customer books a table for Sunday.|The customer doesn’t book a table at the Thai Garden.": [
+        "The customer doesn’t book a table at the Thai Garden."
+    ],
+    "T9:WHAT IS THE PILOT DOING?||CTX:welcoming the passengers on the flight...welcoming the passengers on the flight||||||thanking the passengers for travelling with her airline|warning the passengers that the plane might move suddenly soon|welcoming the passengers on the flight": [
+        "warning the passengers that the plane might move suddenly soon"
+    ],
+    "T9:HOW DOES THE CUSTOMER FEEL?||CTX:She’s satisfied with every aspect of the meal....She’s satisfied with every aspect of the meal.||||||She’s not satisfied with the drink.|She’s not satisfied with the food.|She’s satisfied with every aspect of the meal.": [
+        "She’s not satisfied with the drink."
+    ],
+    "T9:WHAT KIND OF CHARITY DOES SHE SUPPORT?||CTX:a homeless charity...a homeless charity||||||a children’s charity|a homeless charity|an animal charity": [
+        "an animal charity"
+    ],
+    "T9:WHERE IS HE?||CTX:in a supermarket...in a supermarket||||||in a market place|in a supermarket|in the kitchen of a restaurant": [
+        "in the kitchen of a restaurant"
+    ],
+    "T9:WHY IS HE GIVING INFORMATION?||CTX:to tell people there is a problem on the trains...to tell people there is a problem on the trains||||||to tell people there is a problem on the trains|to tell people they might be delayed on the roads|to tell people they might not fly today": [
+        "to tell people they might be delayed on the roads"
+    ],
+    "T9:WHAT ARE THE TWO PEOPLE DOING?||CTX:thanking...thanking||||||complaining|persuading|thanking": [
+        "persuading"
+    ],
+    "T9:WHAT IS THE MAN DOING?||CTX:buying a train ticket...buying a train ticket||||||buying a train ticket|getting directions to the station|planning a journey": [
+        "getting directions to the station"
+    ],
+    "T9:WHAT IS THE RESULT OF THE CONVERSATION?||CTX:The woman gives money to the charity....The woman gives money to the charity.||||||The woman doesn’t give money to the charity.|The woman gives money to the charity.|The woman will give money to charity the following day.": [
+        "The woman doesn’t give money to the charity."
+    ],
+    "T9:WHO IS THE WOMAN?||CTX:the swimmer’s mother...the swimmer’s mother||||||a news reporter|the swimmer’s mother|the swimmer’s teacher": [
+        "a news reporter"
+    ],
+    "T2_BATCH:CHOOSE THE CORRECT OPTION TO COMPLETE THE SENTENCE.||CTX:...||FRASES:___ day of my life was when I woke up late and I missed my flight to London.": {
+        "___ day of my life was when I woke up late and I missed my flight to London.": "The worst"
+    },
+    "T2_BATCH:CHOOSE THE CORRECT OPTION TO COMPLETE THE SENTENCE.||CTX:...||FRASES:I think swimming is ___ ice skating.": {
+        "I think swimming is ___ ice skating.": "easier than"
+    },
+    "DEFAULT:READ THE TEXT QUICKLY AND ANSWER THE QUESTION: WHAT FEATURES DID THE DEVICE HAVE?||CTX:Smaller, cheaper and modern...Smaller, cheaper and modern||||IMG_DIM:676x240||Expensiver, cheaper and modern|More expensive, more small and modern|Smaller, cheaper and modern|Smaller, more expensive and modern": [
+        "Smaller, cheaper and modern"
+    ],
+    "DEFAULT:READ THE TEXT QUICKLY AND ANSWER THE QUESTION: HOW MANY DEVICES DID SHE COMPARE?||CTX:Only one...Only one||||IMG_DIM:676x240||More than a dozen|Only one|Three or four|Two or three": [
+        "Three or four"
+    ],
+    "0:The tea|a bit|more bitter|tastes|than|the others": [
+        [
+            [
+                "The tea",
+                "tastes",
+                "a bit",
+                "more bitter",
+                "than",
+                "the others"
+            ]
+        ]
+    ],
+    "0:Could|more|please?|slowly,|speak|you": [
+        [
+            [
+                "Could",
+                "you",
+                "speak",
+                "more",
+                "slowly,",
+                "please?"
+            ]
+        ]
+    ],
+    "DEFAULT:READ THE TEXT QUICKLY AND ANSWER THE QUESTION: WHAT DID THE AUTHOR COMPARE?||CTX:Houses...Houses||||IMG_DIM:676x240||Cars|Cellphone|Houses|Shopping centers": [
+        "Cellphone"
+    ],
+    "T2_BATCH:CHOOSE THE CORRECT OPTION TO COMPLETE THE SENTENCE.||CTX:...||FRASES:I'm having a wonderful time in L. A. The weather is ___ and drier.": {
+        "I'm having a wonderful time in L. A. The weather is ___ and drier.": "hotter"
+    },
+    "DEFAULT:READ THE TEXT QUICKLY AND ANSWER THE QUESTION: WHERE DID SHE GO?||CTX:She goes to the shopping center...She goes to the shopping center||||IMG_DIM:676x240||She did go to the shopping center|She go to the shopping center|She goes to the shopping center|She went to the shopping center": [
+        "She went to the shopping center"
+    ],
+    "T2_BATCH:READ THE SENTENCES AND CHOOSE THE BEST ANSWER:||CTX:...||FRASES:We ___ ourselves playing playstation.": {
+        "We ___ ourselves playing playstation.": "amused"
+    },
+    "T2_BATCH:READ THE SENTENCES AND CHOOSE THE BEST ANSWER:||CTX:...||FRASES:Look at my little dog, he is playing with his toys, How ___ !": {
+        "Look at my little dog, he is playing with his toys, How ___ !": "adorable"
+    },
+    "T2_BATCH:READ THE SENTENCES AND CHOOSE THE BEST ANSWER:||CTX:...||FRASES:A: Welcome to my house! B: Thank you, I am ___ to finally meet you.": {
+        "A: Welcome to my house! B: Thank you, I am ___ to finally meet you.": "glad"
+    },
+    "T2_BATCH:READ THE SENTENCES AND CHOOSE THE BEST ANSWER:||CTX:...||FRASES:He was a very ___ boy when he was little.": {
+        "He was a very ___ boy when he was little.": "cheerful"
+    },
+    "T2_BATCH:READ THE SENTENCES AND CHOOSE THE BEST ANSWER:||CTX:...||FRASES:Her parents are ___ of her, she is the best in the class.": {
+        "Her parents are ___ of her, she is the best in the class.": "proud"
+    },
+    "T2_BATCH:READ THE SENTENCES AND CHOOSE THE BEST ANSWER:||CTX:...||FRASES:He's very ___ in nuclear projects. Every year got 10!": {
+        "He's very ___ in nuclear projects. Every year got 10!": "interested"
+    },
+    "T2_BATCH:READ THE SENTENCES AND CHOOSE THE BEST ANSWER:||CTX:...||FRASES:The audience was very ___ by her performance, She did very good!": {
+        "The audience was very ___ by her performance, She did very good!": "electrified"
+    },
+    "T2_BATCH:READ THE SENTENCES AND CHOOSE THE BEST ANSWER:||CTX:...||FRASES:Tom was verY ___ about his new ps5.": {
+        "Tom was verY ___ about his new ps5.": "enthusiastic"
+    },
+    "T2_BATCH:READ THE SENTENCES AND CHOOSE THE BEST ANSWER:||CTX:...||FRASES:Michelle won a trip to Europe, she looked very ___": {
+        "Michelle won a trip to Europe, she looked very ___": "enthusiastic"
+    },
+    "T2_BATCH:READ THE SENTENCES AND CHOOSE THE BEST ANSWER:||CTX:...||FRASES:Samantha is looking forward to the weekend, she seems to be ___": {
+        "Samantha is looking forward to the weekend, she seems to be ___": "excited"
+    },
+    "T5:Mrs. Leyva ordered a pink cotton blouse.||CTX:...||False|True": [
+        "False"
+    ],
+    "DEFAULT:READ THE LETTER AND CHOOSE THE BEST ANSWER: WHAT DOES MRS. LEYVA REQUEST?||CTX:refund the postage...refund the postage||||IMG_DIM:645x240||facilities,charges|refund the postage": [
+        "refund the postage"
+    ],
+    "DEFAULT:READ THE LETTER AND CHOOSE THE BEST ANSWER: MRS. LEYVA PLACED THE ORDER ON _______||CTX:On July...On July||||IMG_DIM:645x240||February 15th|January 12th|On July": [
+        "February 15th"
+    ],
+    "DEFAULT:READ THE LETTER AND CHOOSE THE BEST ANSWER: WHAT INFORMATION DOES THE SALES MANAGER ENQUIRIES?||CTX:refund the postage...refund the postage||||IMG_DIM:393x240||facilities,charges|refund the postage": [
+        "facilities,charges"
+    ],
+    "DEFAULT:READ THE LETTER AND CHOOSE THE BEST ANSWER: WHEN WILL BE THE CONVENTION?||CTX:On July...On July||||IMG_DIM:393x240||February 15th|January 12th|On July": [
+        "On July"
+    ],
+    "T5:The blouse color Mrs. Leyva received was blue.||CTX:...||False|True": [
+        "True"
+    ],
+    "T5:Mrs. Leyva paid €24 for the blouse.||CTX:...||False|True": [
+        "False"
+    ],
+    "DEFAULT:READ THE LETTER AND CHOOSE THE BEST ANSWER: WHEN THE SALES MANAGER SENT THE LETTER?||CTX:On July...On July||||IMG_DIM:393x240||February 15th|January 12th|On July": [
+        "January 12th"
+    ],
+    "T4:DRAG AND DROP THE KIND OF LETTER WITH ITS DEFINITION.||KW:a letter, memo, or email that conveys negative or unpleasant information-information that is likely to disappoint.|a written letter in which someone reports a bad experience or situation, to express dissatisfaction or a negative opinion.|an audio recording sent by postal mail to a recipient.|is a letter that is used when one person/party wishes to express appreciation to another.|is a professional, formal letter that is sent by one company to another.||DEF:Audio letter|Bad news letter|Business letter|Complaint letter|Thank you letter": [
+        [
+            "Business letter",
+            "Bad news letter",
+            "Audio letter",
+            "Complaint letter",
+            "Thank you letter"
+        ]
+    ],
+    "T5:The sales manager is seeking a venue for a sales convention.||CTX:...||False|True": [
+        "True"
+    ],
+    "T5:The manager expects 60 delegates.||CTX:...||False|True": [
+        "False"
+    ],
+    "DEFAULT:CHOOSE THE CORRECT: IT IS A GREAT PLACE FOR VISITORS WHO WANT TO LEARN TO SURF.||CTX:Quilotoa...Quilotoa||||||Cotopaxi|Montañita|Quilotoa|Tena": [
+        "Montañita"
+    ],
+    "DEFAULT:CHOOSE THE CORRECT: THIS LITTLE VILLAGE IS HOME TO SOME GREAT RESORTS AND SOME OF THE MOST BEAUTIFUL OCEANSIDE PROPERTY IN THE WORD.||CTX:Quilotoa...Quilotoa||||||Cotopaxi|Montañita|Quilotoa|Tena": [
+        "Montañita"
+    ],
+    "DEFAULT:CHOOSE THE CORRECT: IT IS ONE OF THE BEST PLACES IN ECUADOR TO GO WHITE WATER RAFTING.||CTX:Quilotoa...Quilotoa||||||Cotopaxi|Montañita|Quilotoa|Tena": [
+        "Tena"
+    ],
+    "DEFAULT:CHOOSE THE CORRECT: IN THIS PLACE YOU CAN OBSERVE ONE OF THE MOST BIO DIVERSE COLLECTIONS OF SPICE PLANTS ON THE PLANET.||CTX:Quilotoa...Quilotoa||||||Cajas National Park|Cotopaxi|Quilotoa|Tena": [
+        "Cajas National Park"
+    ],
+    "DEFAULT:CHOOSE THE CORRECT: IT IS THE SECOND HIGHEST MOUNTAIN PEAK IN ECUADOR.||CTX:Quilotoa...Quilotoa||||||Cajas|Cotopaxi|Quilotoa|Tena": [
+        "Cotopaxi"
+    ],
+    "DEFAULT:CHOOSE THE CORRECT: THIS LAKE IS AMAZING. THE COLOR SHIFTS BETWEEN THE MOST EYE CATCHING BLUES AND GREENS AS THE SUN CHANGES ANGLES ALONG ITS SURFACE.||CTX:Quilotoa...Quilotoa||||||Cajas|Cotopaxi|Quilotoa|Tena": [
+        "Quilotoa"
+    ],
+    "DEFAULT:CHOOSE THE CORRECT: THIS LAKE IS MORE THAN 250 METERS DEEP.||CTX:Quilotoa...Quilotoa||||||Cajas|Cotopaxi|Quilotoa|Tena": [
+        "Quilotoa"
+    ],
+    "DEFAULT:CHOOSE THE CORRECT: THIS PLACE FEATURES MORE THAN 250 LAKE FOR VISITORS TO EXPLORE.||CTX:Quilotoa...Quilotoa||||||Cajas National Park|Cotopaxi|Quilotoa|Tena": [
+        "Cajas National Park"
+    ],
+    "DEFAULT:CHOOSE THE CORRECT: IT IS VERY NEAR QUITO, WHICH MAKES IT A GREAT HIKING EXPERIENCE FOR VISITORS.||CTX:Quilotoa...Quilotoa||||||Cajas|Cotopaxi|Quilotoa|Tena": [
+        "Cotopaxi"
+    ],
+    "DEFAULT:CHOOSE THE CORRECT: THIS LAKE HOLDS STUNNINGLY BEAUTIFUL WATER WHERE PEOPLE CAN RELAX, SAILING ON IT.||CTX:Quilotoa...Quilotoa||||||Cajas|Cotopaxi|Quilotoa|Tena": [
+        "Quilotoa"
+    ],
+    "T4:COMPLETE THE TEXT WITH THE EXPRESSIONS FROM THE BOX.||KW:Mike was at a department store and he was holding a watch when accidentally broke it. He didnt have the money to pay for it, so he put it back on the shelf and left the shop. Mike didnt what he did.||DEF:feel good about|felt guilty|get into trouble|upset with": [
+        [
+            "feel good about"
+        ]
+    ],
+    "T4:DRAW A LINE TO JOIN THE SENTENCES||KW:Ill travel to Baños on Holiday next week|My daughter hates the darkness|My younger brother took my money|You are working too much||DEF:I am excited to visit a new place.|I am very angry with him.|She still is in fear of it.|You look so tired.": [
+        [
+            "I am very angry with him.",
+            "I am excited to visit a new place.",
+            "She still is in fear of it.",
+            "You look so tired."
+        ]
+    ],
+    "T11_BATCH:PUT IN ORDER THE FOLLOWING LETTERS TO GUESS THE HIDDEN WORD.||CTX:...||TIDSGSU ___|TIDSGSU ___|TIDSGSU ___|TIDSGSU ___": [
+        [
+            "DISGUST",
+            "BAFFLED",
+            "AMUSED",
+            "BEFRIEND"
+        ]
+    ],
+    "T4:MATCH THE DEFINITIONS TO THE RIGHT WORD.||KW:is a strong feeling that someone has produced by an external or internal agent.|is the fact of feeling something physical.|is the feeling of being pleased or happy.|is the feeling of being unhappy, especially because something bad has happened.||DEF:Emotion|Feeling|Happiness|Sadness": [
+        [
+            "Emotion",
+            "Feeling",
+            "Happiness",
+            "Sadness"
+        ]
+    ],
+    "T4:CHOOSE THE BEST OPTION TO COMPLETE THE SENTENCES.||KW:My grandparent was always and he saw the best in every situation.|The doctor had a manner with plenty of knowledge.|Victor and his team were after the match loss.||DEF:confident|dejected|optimistic": [
+        [
+            "dejected",
+            "optimistic",
+            "confident"
+        ]
+    ],
+    "T4:COMPLETE THE TEXT WITH THE EXPRESSIONS FROM THE BOX.||KW:Anna saw two classmates looking at each others papers during an exam. She didn’t know what to do. She knew it was wrong to cheat, but she didnt want her friends to She told what happened to her mom.||DEF:feel good about|felt guilty|get into trouble|upset with": [
+        [
+            "get into trouble"
+        ]
+    ],
+    "T4:COMPLETE THE TEXT WITH THE EXPRESSIONS FROM THE BOX.||KW:My best friend lent me her favorite necklace. I wore it to a party last Saturday. But when I got home, it wasnt on my neck. Ive lost it. Now, she is me.||DEF:feel good about|felt guilty|get into trouble|upset with": [
+        [
+            "upset with"
+        ]
+    ],
+    "DEFAULT:READ THE PARAGRAPH AND SELECT THE SENTENCE THAT BETTER FITS THE TEXT.||CTX:The future bride was surprised because of the prop...uture bride was surprised because of the proposal.||||IMG_DIM:676x240||The future bride was disappointed and disgusted.|The future bride was surprised because of the proposal.|The future bride was terrified by the moment and people around.": [
+        "The future bride was surprised because of the proposal."
+    ],
+    "DEFAULT:READ THE PARAGRAPH AND SELECT THE SENTENCE THAT BETTER FITS THE TEXT.||CTX:She had a stunning life, and she won't be honored ...ng life, and she won't be honored by the dwellers.||||IMG_DIM:676x240||She had a charmed life, and she will be honored by the dwellers.|She had a resentful life, so his name is not remembered by the dwellers.|She had a stunning life, and she won't be honored by the dwellers.": [
+        "She had a charmed life, and she will be honored by the dwellers."
+    ],
+    "DEFAULT:CHOOSE THE BEST ANSWER, WHAT IS THE MEANING OF THE FOLLOWING WORD? POLICE OFFICER||CTX:A person who works for the victims....A person who works for the victims.||||||A person who works for the judges.|A person who works for the mafia.|A person who works for the police force.|A person who works for the victims.": [
+        "A person who works for the police force."
+    ],
+    "DEFAULT:CHOOSE THE BEST ANSWER, WHAT IS THE MEANING OF THE FOLLOWING WORD? HANDCUFFS||CTX:A pair of lockable metal rings for securing a pris...able metal rings for securing a prisoner's wrists.||||||A pair of lockable cardboard rings for securing a prisoner's wrists.|A pair of lockable metal rings for securing a lawyer's wrists.|A pair of lockable metal rings for securing a prisoner's wrists.|A pair of lockable metal rings for securing an innocent's wrists.": [
+        "A pair of lockable metal rings for securing a prisoner's wrists."
+    ],
+    "DEFAULT:CHOOSE THE BEST ANSWER, WHAT IS THE MEANING OF THE FOLLOWING WORD? DEFENSE ATTORNEY||CTX:The judge who works for the defendant....The judge who works for the defendant.||||||The judge who works for the defendant.|The lawyer who works for the defendant.|The police officer who works for the defendant.|The witness who works for the defendant.": [
+        "The lawyer who works for the defendant."
+    ],
+    "DEFAULT:CHOOSE THE BEST ANSWER, WHAT IS THE MEANING OF THE FOLLOWING WORD? DETECTIVE||CTX:The person who is in charge of judge a crime....The person who is in charge of judge a crime.||||||The person who is in charge of investigate a crime.|The person who is in charge of investigate to a victim.|The person who is in charge of judge a crime.|The person who is not in charge of investigate a crime.": [
+        "The person who is in charge of investigate a crime."
+    ],
+    "DEFAULT:CHOOSE THE BEST ANSWER, WHAT IS THE MEANING OF THE FOLLOWING WORD? JUDGE||CTX:The person in court who does not make the decision...e person in court who does not make the decisions.||||||The person in court who does not make the decisions.|The person in court who makes the decisions.|The person in the street who makes the decisions.|The person on TV who makes the decisions.": [
+        "The person in court who makes the decisions."
+    ],
+    "DEFAULT:CHOOSE THE BEST ANSWER, WHAT IS THE MEANING OF THE FOLLOWING WORD? WITNESS||CTX:The person who has not seen a crime or has informa...erson who has not seen a crime or has information.||||||The person who has not seen a crime or has information.|The person who has seen a crime or has information.|The person who has seen a crime or has no information.|The person who has seen a crime or has the victims.": [
+        "The person who has seen a crime or has information."
+    ],
+    "DEFAULT:CHOOSE THE BEST ANSWER, WHAT IS THE MEANING OF THE FOLLOWING WORD? JAIL||CTX:The place of confinement for people who had done s...nfinement for people who had done something wrong.||||||The place of confinement for people who had done something good|The place of confinement for people who had done something wrong.|The place of confinement for people who hadn't done something bad.|The place of confinement for people who has done something good.": [
+        "The place of confinement for people who had done something wrong."
+    ],
+    "DEFAULT:CHOOSE THE BEST ANSWER, WHAT IS THE MEANING OF THE FOLLOWING WORD? DEFENDANT||CTX:The person in a court who is accused of not having...who is accused of not having done something wrong.||||||The person in a court who is accused of having done something good.|The person in a court who is accused of having done something wrong.|The person in a court who is accused of not having done something wrong.|The person in a court who isn't accused of having done something wrong.": [
+        "The person in a court who is accused of having done something wrong."
+    ],
+    "DEFAULT:CHOOSE THE BEST ANSWER, WHAT IS THE MEANING OF THE FOLLOWING WORD? SUSPECT||CTX:The person who the police think is guilty....The person who the police think is guilty.||||||The person who the police think is free.|The person who the police think is guilty.|The person who the police think is innocent.|The person who the police think is nervous.": [
+        "The person who the police think is guilty."
+    ],
+    "DEFAULT:CHOOSE THE BEST ANSWER, WHAT IS THE MEANING OF THE FOLLOWING WORD? BADGE||CTX:A distinctive emblem worn as a mark of victims....A distinctive emblem worn as a mark of victims.||||||A distinctive emblem worn as a mark of criminals.|A distinctive emblem worn as a mark of office.|A distinctive emblem worn as a mark of robbery.|A distinctive emblem worn as a mark of victims.": [
+        "A distinctive emblem worn as a mark of office."
+    ],
+    "T11_BATCH:READ THE WORDS AND MATCH THE OPTIONS AS APPROPIATE:||CTX:...||R-R-E-H-I-D-Y-A-R ___|R-R-E-H-I-D-Y-A-R ___|R-R-E-H-I-D-Y-A-R ___|R-R-E-H-I-D-Y-A-R ___|R-R-E-H-I-D-Y-A-R ___|R-R-E-H-I-D-Y-A-R ___|R-R-E-H-I-D-Y-A-R ___": [
+        [
+            "HAIRDRYER",
+            "TABLET",
+            "FRIDGE",
+            "CALCULATOR",
+            "TELEVISION",
+            "IRON",
+            "FAXMACHINE"
+        ]
+    ],
+    "DEFAULT:CHOOSE THE ELECTRONIC DEVICE FOR THE FOLLOWING DESCRIPTION: AN INSTRUMENT FOR PRODUCING A CURRENT OF AIR.||CTX:Radio...Radio||||||Cooker|Fan|Flash drive|Fruit juicer|Laptop|Radio|Washing machine": [
+        "Fan"
+    ],
+    "DEFAULT:CHOOSE THE ELECTRONIC DEVICE FOR THE FOLLOWING DESCRIPTION: A COMPUTER THAT IS PORTABLE AND SUITABLE FOR USE WHILE TRAVELING.||CTX:Radio...Radio||||||Cooker|Fan|Flash drive|Fruit juicer|Laptop|Radio|Washing machine": [
+        "Laptop"
+    ],
+    "DEFAULT:CHOOSE THE ELECTRONIC DEVICE FOR THE FOLLOWING DESCRIPTION: AN APPLIANCE USED FOR COOKING FOOD.||CTX:Radio...Radio||||||Cooker|Fan|Flash drive|Fruit juicer|Laptop|Radio|Washing machine": [
+        "Cooker"
+    ],
+    "T4:DRAG AND DROP THE PHRASAL VERBS CONNECTED WITH THE USE OF ELECTRONIC DEVICES WITH THEIR OPPOSITES.||KW:put on|turn on|turn up||DEF:put away|turn down|turn off": [
+        [
+            "turn off",
+            "put away",
+            "turn down"
+        ]
+    ],
+    "T4:DRAG AND DROP THE PHRASAL VERBS CONNECTED WITH THE USE OF ELECTRONIC DEVICES WITH THEIR OPPOSITES.||KW:plug in|switch on|take out||DEF:pull out|switch off|take off": [
+        [
+            "take off",
+            "pull out",
+            "switch off"
+        ]
+    ],
+    "DEFAULT:CHOOSE THE ELECTRONIC DEVICE FOR THE FOLLOWING DESCRIPTION: A SMALL ELECTRONIC DEVICE CONTAINING FLASH MEMORY THAT IS USED FOR STORING DATA OR TRANSFERRING IT TO OR FROM A COMPUTER, DIGITAL CAMERA, ETC.||CTX:Radio...Radio||||||Cooker|Fan|Flash drive|Fruit juicer|Laptop|Radio|Washing machine": [
+        "Flash drive"
+    ],
+    "DEFAULT:CHOOSE THE ELECTRONIC DEVICE FOR THE FOLLOWING DESCRIPTION: A DEVICE THAT PLAYS DIGITAL AUDIO FILES.||CTX:Radio...Radio||||||Cooker|Fan|Flash drive|Fruit juicer|Laptop|Radio|Washing machine": [
+        "Radio"
+    ],
+    "DEFAULT:CHOOSE THE ELECTRONIC DEVICE FOR THE FOLLOWING DESCRIPTION: IS A TOOL USED TO EXTRACT JUICE FROM FRUITS, HERBS, LEAFY GREENS AND OTHER TYPES OF VEGETABLES IN A PROCESS.||CTX:Radio...Radio||||||Cooker|Fan|Flash drive|Fruit juicer|Laptop|Radio|Washing machine": [
+        "Fruit juicer"
+    ],
+    "DEFAULT:CHOOSE THE ELECTRONIC DEVICE FOR THE FOLLOWING DESCRIPTION: A MACHINE FOR WASHING CLOTHES, BED LINENS, ETC.||CTX:Radio...Radio||||||Cooker|Fan|Flash drive|Fruit juicer|Laptop|Radio|Washing machine": [
+        "Washing machine"
+    ],
+    "DEFAULT:CHOOSE THE CORRECT DEFINITION: SUNSET||CTX:The time of day when the sun appears above the eas...ay when the sun appears above the eastern horizon.||||||A star that is the center of a planetary system.|It is an obscuring of light, particularly of the sun or moon or a loss of greatness.|The event or time of the disappearance of the upper circumferential edge of the sun as it sets below the horizon.|The time of day when the sun appears above the eastern horizon.": [
+        "The event or time of the disappearance of the upper circumferential edge of the sun as it sets below the horizon."
+    ],
+    "DEFAULT:CHOOSE THE CORRECT DEFINITION: SUNRISE||CTX:The time of day when the sun appears above the eas...ay when the sun appears above the eastern horizon.||||||A star that is the center of a planetary system.|It is an obscuring of light, particularly of the sun or moon or a loss of greatness.|The event or time of the disappearance of the upper circumferential edge of the sun as it sets below the horizon.|The time of day when the sun appears above the eastern horizon.": [
+        "The time of day when the sun appears above the eastern horizon."
+    ],
+    "DEFAULT:CHOOSE THE CORRECT DEFINITION: ECLIPSE||CTX:It is defined as the planet that you live on....It is defined as the planet that you live on.||||||A star that is the center of a planetary system.|It is a large mass that revolves around a star.|It is an obscuring of light, particularly of the sun or moon or a loss of greatness.|It is defined as the planet that you live on.": [
+        "It is an obscuring of light, particularly of the sun or moon or a loss of greatness."
+    ],
+    "DEFAULT:CHOOSE THE CORRECT DEFINITION: PLANET||CTX:It is defined as the planet that you live on....It is defined as the planet that you live on.||||||A star that is the center of a planetary system.|It is a large mass that revolves around a star.|It is an obscuring of light, particularly of the sun or moon or a loss of greatness.|It is defined as the planet that you live on.": [
+        "It is a large mass that revolves around a star."
+    ],
+    "DEFAULT:CHOOSE THE CORRECT DEFINITION: LAND||CTX:The plants of an area or a region; plant life....The plants of an area or a region; plant life.||||||It is a liquid found on Earth that has no odor or taste.|It is the ground or the surface of the Earth.|The elastic, invisible mixture of gases that surrounds the earth.|The plants of an area or a region; plant life.": [
+        "It is the ground or the surface of the Earth."
+    ],
+    "DEFAULT:CHOOSE THE CORRECT DEFINITION: SUN||CTX:It is defined as the planet that you live on....It is defined as the planet that you live on.||||||A star that is the center of a planetary system.|It is a large mass that revolves around a star.|It is an obscuring of light, particularly of the sun or moon or a loss of greatness.|It is defined as the planet that you live on.": [
+        "A star that is the center of a planetary system."
+    ],
+    "DEFAULT:CHOOSE THE CORRECT DEFINITION: VEGETATION||CTX:The plants of an area or a region; plant life....The plants of an area or a region; plant life.||||||It is a liquid found on Earth that has no odor or taste.|It is the ground or the surface of the Earth.|The elastic, invisible mixture of gases that surrounds the earth.|The plants of an area or a region; plant life.": [
+        "The plants of an area or a region; plant life."
+    ],
+    "DEFAULT:CHOOSE THE CORRECT DEFINITION: AIR||CTX:The plants of an area or a region; plant life....The plants of an area or a region; plant life.||||||It is a liquid found on Earth that has no odor or taste.|It is the ground or the surface of the Earth.|The elastic, invisible mixture of gases that surrounds the earth.|The plants of an area or a region; plant life.": [
+        "The elastic, invisible mixture of gases that surrounds the earth."
+    ],
+    "DEFAULT:CHOOSE THE CORRECT DEFINITION: EARTH||CTX:It is defined as the planet that you live on....It is defined as the planet that you live on.||||||A star that is the center of a planetary system.|It is a large mass that revolves around a star.|It is an obscuring of light, particularly of the sun or moon or a loss of greatness.|It is defined as the planet that you live on.": [
+        "It is defined as the planet that you live on."
+    ],
+    "DEFAULT:CHOOSE THE CORRECT DEFINITION: WATER||CTX:The plants of an area or a region; plant life....The plants of an area or a region; plant life.||||||It is a liquid found on Earth that has no odor or taste.|It is the ground or the surface of the Earth.|The elastic, invisible mixture of gases that surrounds the earth.|The plants of an area or a region; plant life.": [
+        "It is a liquid found on Earth that has no odor or taste."
+    ],
+    "0:The writer's dad made new friends in chat rooms.|1:We can't get a lot of information through our computers.|2:Students today are luckier than before.|3:You will also learn using information from the internet.": [
+        [
+            "False",
+            "False",
+            "True",
+            "True"
+        ]
+    ],
+    "T4:DRAG AND DROP THE WORDS IN FRONT OF THEIR DEFINITIONS||KW:Act dishonestly or unfairly.|An area on the internet or other computer network where users can communicate typically dedicated to a particular topic.|Books that contain factual information.|Try to find something by looking or otherwise seeking carefully and thoroughly.||DEF:Cheat|Encyclopedias|Search|Website": [
+        [
+            "Website",
+            "Search",
+            "Encyclopedias",
+            "Cheat"
+        ]
+    ],
+    "0:The new|encyclopedia|pages|runs|several|thousand|to": [
+        [
+            [
+                "The new",
+                "encyclopedia",
+                "runs",
+                "to",
+                "several",
+                "thousand",
+                "pages"
+            ]
+        ]
+    ],
+    "T4:MATCH THE FOLLOWING WORDS WITH THEIR MEANING.||KW:A goal or reason for doing something.|Enjoyment, happiness or satisfaction.|Enthusiasm or excitement for doing something.|Someones memory and the ability to think and feel emotions.||DEF:Mind|Motivation|Pleasure|Purpose": [
+        [
+            "Purpose",
+            "Motivation",
+            "Pleasure",
+            "Mind"
+        ]
+    ],
+    "0:People feel worried when doing funny things.|1:Dolan thinks happiness comes from pleasure and purpose.|2:Things that produce pleasure, makes you sad.|3:Some activities might be motivating because they work for the good of people.": [
+        [
+            "False",
+            "True",
+            "False",
+            "True"
+        ]
+    ],
+    "DEFAULT:READ THE TEXT QUICKLY AND CHOOSE THE BEST TITLE FOR IT.||CTX:1) Do you know what makes you happy? Maybe you hav...t makes you happy. How many of that bring purpose?||||||A list of things that make you happy.|How to achieve happiness?|What is happiness?": [
+        "How to achieve happiness?"
+    ],
+    "0:The writer's dad used email a lot.|1:Today it's harder to find information.|2:The writer thinks homework websites can help you to learn.|3:The writer thinks studying was more fun when her dad was at school.": [
+        [
+            "False",
+            "False",
+            "True",
+            "False"
+        ]
+    ],
+    "DEFAULT:ANSWER THE QUESTION: WHAT IS THE BOOK'S NAME THAT DOLAN WROTE?||CTX:1) Do you know what makes you happy? Maybe you hav...t makes you happy. How many of that bring purpose?||||||Designing Happiness|Happiness by Design|Looking for Happiness": [
+        "Happiness by Design"
+    ],
+    "DEFAULT:READ THE TEXT QUICKLY AND CHOOSE THE BEST TITTLE FOR IT.||CTX:1) Do you know what makes you happy? Maybe you hav...t makes you happy. How many of that bring purpose?||||||Old days in School|School, yesterday and now|Students and Technology": [
+        "School, yesterday and now"
+    ],
+    "DEFAULT:READ THE TEXT AND CHOOSE THE BEST ANSWER: THE LITTLE BOY LOOKED EXTREMELY _______||CTX:Frightened...Frightened||||IMG_DIM:239x240||Angry|Fast|Frightened|Hungry": [
+        "Frightened"
+    ],
+    "DEFAULT:READ THE TEXT AND CHOOSE THE BEST ANSWER: THE MEN WERE VERY _______||CTX:Frightened...Frightened||||IMG_DIM:239x240||Angry|Fast|Frightened|Hungry": [
+        "Angry"
+    ],
+    "DEFAULT:READ THE TEXT AND CHOOSE THE BEST ANSWER: TO WONDER MEANS _______||CTX:To question...To question||||IMG_DIM:239x240||To be surprised|To know|To question|To travel": [
+        "To question"
+    ],
+    "DEFAULT:READ THE TEXT AND CHOOSE THE BEST ANSWER: _______, THERE WAS A LITTLE BOY WHOSE FATHER WAS A SHEPHERD||CTX:Once upon a time...Once upon a time||||IMG_DIM:239x240||A time|Once upon a time|That night|The next night": [
+        "Once upon a time"
+    ],
+    "DEFAULT:READ THE TEXT AND CHOOSE THE BEST ANSWER: TO BE FURIOUS MEANS TO BE _______||CTX:Very hungry...Very hungry||||IMG_DIM:239x240||Very angry|Very fast|Very frightened|Very hungry": [
+        "Very angry"
+    ],
+    "DEFAULT:READ THE TEXT AND CHOOSE THE BEST ANSWER: A SHEPHERD IS _______||CTX:A caretaker of sheep...A caretaker of sheep||||IMG_DIM:239x240||A butcher|A caretaker of sheep|A dog sitter|A farmer": [
+        "A caretaker of sheep"
+    ],
+    "DEFAULT:READ THE TEXT AND CHOOSE THE BEST ANSWER: _______ ALL THE MEN OF THE VILLAGE CAME RUNNING AS FAST AS THEY COULD TO PROTECT THE LITTLE BOY AND THE SHEEP.||CTX:Last night...Last night||||IMG_DIM:239x240||Last night|Of course|Once more|Once upon a time": [
+        "Once more"
+    ],
+    "DEFAULT:READ THE TEXT AND CHOOSE THE BEST ANSWER: THE NEXT NIGHT THERE WAS A FULL _______||CTX:Moon...Moon||||IMG_DIM:239x240||Moon|Moonlight|Sheep|Shepherd": [
+        "Moon"
+    ],
+    "DEFAULT:READ THE TEXT AND CHOOSE THE BEST ANSWER: THE FATHER AND SON WORKED TOGETHER GUARDING THE SHEEP OF THEIR _______||CTX:Country...Country||||IMG_DIM:239x240||Country|Province|Town|Village": [
+        "Village"
+    ],
+    "DEFAULT:READ THE TEXT AND CHOOSE THE BEST ANSWER: TO BE FRIGHTENED MEANS _______||CTX:Very cold...Very cold||||IMG_DIM:239x240||Very angry|Very cold|Very cool|Very scared": [
+        "Very scared"
+    ],
+    "T2_BATCH:READ THE TEXTS AGAIN AND MATCH THE WORDS WITH THEIR DEFINITIONS||CTX:It is difficult for me to prepare before a test. I...an rest enough and be ready in the morning. Laura.||FRASES:___ To become calmer and happier.|___ To stop being active in order to relax and get back your strength.": {
+        "___ To become calmer and happier.": "relax",
+        "___ To stop being active in order to relax and get back your strength.": "rest"
+    },
+    "DEFAULT:READ THE INSTRUCTIONS AND COMPLETE: WHAT DOES HE GET WHEN HE STARTS TO READ?||CTX:It is difficult for me to prepare before a test. I...tes, it is too late. I am already asleep. Mike¡¡¡¡||||||asleep|boring|happy|worried": [
+        "asleep"
+    ],
+    "DEFAULT:READ THE INSTRUCTIONS AND COMPLETE: WHAT DOES THE MUSIC PRODUCE TO LAURA?||CTX:I love to study alone listening to music. I can co...an rest enough and be ready in the morning. Laura.||||||boredom|happiness|relax|stress": [
+        "relax"
+    ],
+    "DEFAULT:READ THE INSTRUCTIONS AND COMPLETE: FOR MIKE IS _______ TO PREAPARE.||CTX:It is difficult for me to prepare before a test. I...tes, it is too late. I am already asleep. Mike¡¡¡¡||||||so easy|so exciting|very confuse|very difficult": [
+        "very difficult"
+    ],
+    "T2_BATCH:READ THE TEXTS AGAIN AND MATCH THE WORDS WITH THEIR DEFINITIONS||CTX:It is difficult for me to prepare before a test. I...an rest enough and be ready in the morning. Laura.||FRASES:___ To direct your attention towards a particular activity.|___ To know why or how something happens or works.": {
+        "___ To direct your attention towards a particular activity.": "concentrate",
+        "___ To know why or how something happens or works.": "understand"
+    },
+    "T2_BATCH:READ THE TEXTS AGAIN AND MATCH THE WORDS WITH THEIR DEFINITIONS||CTX:It is difficult for me to prepare before a test. I...an rest enough and be ready in the morning. Laura.||FRASES:___ A short piece of writing.|___ To find out about something.": {
+        "___ To find out about something.": "check",
+        "___ A short piece of writing.": "note"
+    },
+    "DEFAULT:READ THE INSTRUCTIONS AND COMPLETE: LAURA LEARNS BETTER _______||CTX:I love to study alone listening to music. I can co...an rest enough and be ready in the morning. Laura.||||||completing information|listening to music|practicing at home|with some friends": [
+        "listening to music"
+    ],
+    "DEFAULT:READ THE INSTRUCTIONS AND COMPLETE: WHAT DOES SHE DO TO BE READY IN THE MORNING?||CTX:I love to study alone listening to music. I can co...an rest enough and be ready in the morning. Laura.||||||study|to dance|to get out|to rest": [
+        "to rest"
+    ],
+    "DEFAULT:READ THE INSTRUCTIONS AND COMPLETE: MIKE CHECKS HIS NOTES _______||CTX:It is difficult for me to prepare before a test. I...tes, it is too late. I am already asleep. Mike¡¡¡¡||||||at night|at noon|in the afternoon|in the morning": [
+        "at night"
+    ],
+    "DEFAULT:READ THE CONVERSATION AND COMPLETE THE MISSING WORDS.||CTX:1-scores; 2- certification; 3- understand; 4-stres...; 5-professor; 6- relax; 7-concentrate; 8-subject.||||IMG_DIM:403x240||1-scores; 2- certification; 3- understand; 4-stress; 5-professor; 6- relax; 7-concentrate; 8-subject.|1-scores; 2-concentrate; 3- understand; 4-relax; 5-professor; 6-stress; 7-certification; 8-subject.|1-understand; 2-concentrate; 3-scores; 4-relax; 5-professor; 6- subject; 7-certification; 8-stress.": [
+        "1-scores; 2-concentrate; 3- understand; 4-relax; 5-professor; 6-stress; 7-certification; 8-subject."
+    ],
+    "T5:Columbus was sailing in an unexperted manner.||CTX:On his way to America, Christopher Columbus notice...m outer space are involved. No one knows for sure.||False|True": [
+        "False"
+    ],
+    "T5:Columbus was sailing between Florida and the Island of Bermuda.||CTX:On his way to America, Christopher Columbus notice...m outer space are involved. No one knows for sure.||False|True": [
+        "True"
+    ],
+    "T5:Many people believe that an area of ocean, the Bermuda Triangle, holds an unsolved mystery.||CTX:Many people believe that an area of ocean, the Ber...t's why you won't find it marked on official maps.||False|True": [
+        "True"
+    ],
+    "DEFAULT:CHOOSE THE CORRECT: SOME PEOPLE SAY _______||CTX:On his way to America, Christopher Columbus notice...m outer space are involved. No one knows for sure.||||||is not called the Bermuda Triangle.|no one knows for sure.|some think travel takes place there.|that these things cannot be explained by science.": [
+        "that these things cannot be explained by science."
+    ],
+    "T5:Columbus was the only person to note strange happenings there.||CTX:On his way to America, Christopher Columbus notice...m outer space are involved. No one knows for sure.||False|True": [
+        "False"
+    ],
+    "DEFAULT:CHOOSE THE CORRECT. IN 1945, _______ NAVY PLANES DISAPPEARED WHILE OVER THE TRIANGLE.||CTX:On his way to America, Christopher Columbus notice...m outer space are involved. No one knows for sure.||||||3|5|7|9": [
+        "5"
+    ],
+    "T5:You can find the Bermuda Triangle marked on official maps.||CTX:Many people believe that an area of ocean, the Ber...t's why you won't find it marked on official maps.||False|True": [
+        "False"
+    ],
+    "DEFAULT:CHOOSE THE CORRECT: A LARGE NUMBER OF BOATS AND _______ HAVE VANISHED THERE.||CTX:Many people believe that an area of ocean, the Ber...t's why you won't find it marked on official maps.||||||bykes|cars|planes|trucks": [
+        "planes"
+    ],
+    "DEFAULT:CHOOSE THE CORRECT: MYSTERIOUS ARE LIKELY DUE TO _______||CTX:Many people believe that an area of ocean, the Ber...t's why you won't find it marked on official maps.||||||U.S. Coast Guard|boats and planes|official maps|storms, rough waves, and human mistakes": [
+        "storms, rough waves, and human mistakes"
+    ],
+    "0:I'm not|allowed|come back|go now|had better|home late,|so I|to": [
+        [
+            [
+                "I'm not",
+                "allowed",
+                "to",
+                "come back",
+                "home late,",
+                "so I",
+                "had better",
+                "go now"
+            ]
+        ]
+    ],
+    "0:Kate is|a doctor.|and|consult|had better|looks|pale,|she|weak": [
+        [
+            [
+                "Kate is",
+                "weak",
+                "and",
+                "looks",
+                "pale,",
+                "she",
+                "had better",
+                "consult",
+                "a doctor."
+            ]
+        ]
+    ],
+    "DEFAULT:COMPLETE THE SENTENCES WITH THE CORRECT FORM OF THE VERB: YOU _______ SAY THAT TO YOUR BOSS. HE'LL BE ANGRY WITH YOU.||CTX:had better...had better||||||don't had better|had better|had better not|not had better": [
+        "had better not"
+    ],
+    "DEFAULT:CHOOSE THE CORRECT DEFINITION:||CTX:Had better is a semi-modal verb that induces a str...s if someone does not what is desired or suggested||||||Had better is a semi-modal verb that induces a polite expression, it means, that when we use it, there’s a possibility to get positive or negative results if someone does or doesn't do what is desired or suggested.|Had better is a semi-modal verb that induces a strong expression, it means that when we use it, there’s a possibility to get negative results if someone does what is desired or suggested|Had better is a semi-modal verb that induces a strong expression, it means that when we use it, we think there will be negative results if someone does not what is desired or suggested": [
+        "Had better is a semi-modal verb that induces a strong expression, it means that when we use it, we think there will be negative results if someone does not what is desired or suggested"
+    ],
+    "DEFAULT:COMPLETE THE SENTENCES WITH THE CORRECT FORM OF THE VERB: YOU HAD BETTER _______ THE TICKETS NOW.||CTX:buy...buy||||||bought|buy|had bought|to buy": [
+        "buy"
+    ],
+    "DEFAULT:COMPLETE THE SENTENCES WITH THE CORRECT FORM OF THE VERB: MARCUS HAD BETTER _______ THE TRAIN TO LONDON.||CTX:not miss...not miss||||||doesn't miss|don't miss|not miss|not misses": [
+        "not miss"
+    ],
+    "0:We normally use'd better (contraction) in formal situations.|1:When you use had better, it is followed by the infinitive verb without to.|2:The negative of had better is had better not ('d better not).": [
+        [
+            "False",
+            "True",
+            "True"
+        ]
+    ],
+    "DEFAULT:COMPLETE THE SENTENCES WITH THE CORRECT FORM OF THE VERB: MICHAEL HAD BETTER _______ THIS MEDICINE.||CTX:to take...to take||||||take|taken|to take|took": [
+        "take"
+    ],
+    "T4:MATCH THE QUESTIONS WITH THE SENTENCES||KW:Im always tired and sometimes I fall asleep at my work. What should I do?|Mark and Alan get very thirsty when theyre in the gym. What should they do?|Peter shouted at his daughter today and hes sorry. What should he do?||DEF:He had better apologize to her daughter immediately. She'll leave the country in a few hours.|They had better drink plenty water. Mark and Alan will be dehydrated if they don't.|You had better try and get enough sleep. You won't only perform at your job, but you will also get sick.": [
+        [
+            "They had better drink plenty water. Mark and Alan will be dehydrated if they don't.",
+            "He had better apologize to her daughter immediately. She'll leave the country in a few hours.",
+            "You had better try and get enough sleep. You won't only perform at your job, but you will also get sick."
+        ]
+    ],
+    "T4:DRAW A LINE TO JOIN THE SENTENCES.||KW:It is going to rain.|Its a very important secret.|My mother doesnt like when you smoke in the yard.|Nobody likes you.||DEF:You had better not come to our party.|You had better not smoke over here.|You had better not tell anybody.|You had better take an umbrella.": [
+        [
+            "You had better not tell anybody.",
+            "You had better take an umbrella.",
+            "You had better not come to our party.",
+            "You had better not smoke over here."
+        ]
+    ],
+    "DEFAULT:TRANSFORM THE FOLLOWING SENTENCE INTO REPORTED SPEECH, CHOOSE THE BEST ANSWER: DO YOU LIKE CHOCOLATE?||CTX:She asked me if I liked chocolate....She asked me if I liked chocolate.||||||She asked me if I like chocolate.|She asked me if I liked chocolate.|She asks me if I like chocolate.|She asks me if I liked chocolate.": [
+        "She asked me if I liked chocolate."
+    ],
+    "DEFAULT:TRANSFORM THE FOLLOWING SENTENCE INTO REPORTED SPEECH, CHOOSE THE BEST ANSWER: DO YOU LOVE ME?||CTX:She asked me if I love her....She asked me if I love her.||||||She asked me if I love her.|She asked me if I loved her.|She asks me If I love her.|She asks me if I loved her.": [
+        "She asked me if I loved her."
+    ],
+    "DEFAULT:TRANSFORM THE FOLLOWING SENTENCE INTO REPORTED SPEECH, CHOOSE THE BEST ANSWER: WHERE IS THE POST OFFICE?||CTX:She asked me where the Post Office was....She asked me where the Post Office was.||||||She ask me where the Post Office is.|She asked me where the Post Office is.|She asked me where the Post Office was.|She asks me where the Post Office was.": [
+        "She asked me where the Post Office was."
+    ],
+    "DEFAULT:TRANSFORM THE FOLLOWING SENTENCE INTO REPORTED SPEECH, CHOOSE THE BEST ANSWER: I HAVE TO STUDY AT THE WEEKEND.||CTX:She said that she had to study at the weekend....She said that she had to study at the weekend.||||||She said that she had to study at the weekend.|She said that she has to study at the weekend.|She said that she have to study at the weekend.|She says that she had to study at the weekend.": [
+        "She said that she had to study at the weekend."
+    ],
+    "DEFAULT:TRANSFORM THE FOLLOWING SENTENCE INTO REPORTED SPEECH, CHOOSE THE BEST ANSWER: I LIKE ICE CREAM.||CTX:She said that she likes ice cream....She said that she likes ice cream.||||||She said that she liked ice cream.|She said that she likes ice cream.|She says that she liked ice cream.|She says that she likes ice cream.": [
+        "She said that she liked ice cream."
+    ],
+    "DEFAULT:TRANSFORM THE FOLLOWING SENTENCE INTO REPORTED SPEECH, CHOOSE THE BEST ANSWER: HAVE YOU BEEN TO QUITO BEFORE?||CTX:She asked if I have been to Quito before....She asked if I have been to Quito before.||||||She asked if I had been to Quito before.|She asked if I have been to Quito before.|She asks if I had been to Quito before.|She asks if I have been to Quito before.": [
+        "She asked if I had been to Quito before."
+    ],
+    "DEFAULT:TRANSFORM THE FOLLOWING SENTENCE INTO REPORTED SPEECH, CHOOSE THE BEST ANSWER: CAN YOU TYPE?||CTX:She asked if I can type....She asked if I can type.||||||She ask if I could type.|She asked if I can type.|She asked if I could type.|She asks if I can type.": [
+        "She asked if I could type."
+    ],
+    "DEFAULT:TRANSFORM THE FOLLOWING SENTENCE INTO REPORTED SPEECH, CHOOSE THE BEST ANSWER: DID YOU COME BY TRAIN?||CTX:He asked if I come by train....He asked if I come by train.||||||He asked if I come by train.|He asked if I had come by train.|He asked if I have come by train.|He asks if I have come by train.": [
+        "He asked if I had come by train."
+    ],
+    "DEFAULT:TRANSFORM THE FOLLOWING SENTENCE INTO REPORTED SPEECH, CHOOSE THE BEST ANSWER: I CAN SPEAK PERFECT ENGLISH.||CTX:He said that he can speak perfect English....He said that he can speak perfect English.||||||He said that he can speak perfect English.|He said that he could speak perfect English.|He says that he can speak perfect English.|He says that he could speak perfect English.": [
+        "He said that he could speak perfect English."
+    ],
+    "DEFAULT:TRANSFORM THE FOLLOWING SENTENCE INTO REPORTED SPEECH, CHOOSE THE BEST ANSWER: HAVE YOU GOT A COMPUTER?||CTX:He wanted to know if I had a computer....He wanted to know if I had a computer.||||||He wanted to know if I had a computer.|He wanted to know if I has a computer.|He wanted to know if I have a computer.|He wants to know if I had a computer.": [
+        "He wanted to know if I had a computer."
+    ],
+    "0:The doors|are|at 10pm|locked": [
+        [
+            [
+                "The doors",
+                "are",
+                "locked",
+                "at 10pm"
+            ]
+        ]
+    ],
+    "0:These toys|are|from plastic|made": [
+        [
+            [
+                "These toys",
+                "are",
+                "made",
+                "from plastic"
+            ]
+        ]
+    ],
+    "T2_BATCH:DRAG AND DROP THE CORRECT PASSIVE FORMS TO COMPLETE THE SENTENCES.||CTX:...||FRASES:She ___ in New York.|The project of form 8 ___": {
+        "She ___ in New York.": "is supposed to be",
+        "The project of form 8 ___": "is said to have failed"
+    },
+    "T2_BATCH:DRAG AND DROP THE CORRECT PASSIVE FORMS TO COMPLETE THE SENTENCES.||CTX:...||FRASES:She ___ to Jack's birthday party.|Yesterday a boy ___ in an accident in High Street.": {
+        "She ___ to Jack's birthday party.": "has been invited",
+        "Yesterday a boy ___ in an accident in High Street.": "was injured"
+    },
+    "T2_BATCH:DRAG AND DROP THE CORRECT PASSIVE FORMS TO COMPLETE THE SENTENCES.||CTX:...||FRASES:I ___|The manager ___ about the problem.": {
+        "I ___": "was let go",
+        "The manager ___ about the problem.": "should have told"
+    },
+    "T4:MATCH THE ACTIVE WITH ITS PASSIVE VOICE.||KW:Jack has installed a new computer software.|They expected us to build the road.|Who said it?||DEF:A new computer software has been instaled.|It was said by whom?|We were expected to build the road.": [
+        [
+            "A new computer software has been instaled.",
+            "We were expected to build the road.",
+            "It was said by whom?"
+        ]
+    ],
+    "T4:MATCH THE ACTIVE WITH ITS PASSIVE VOICE.||KW:People said that the President is ill.|The lady gave me the keys.|We must write to her.||DEF:I was given the keys.|It was said that the President is ill.|She must be written to.": [
+        [
+            "It was said that the President is ill.",
+            "She must be written to.",
+            "I was given the keys."
+        ]
+    ],
+    "0:The computers|being|replaced|were": [
+        [
+            [
+                "The computers",
+                "were",
+                "being",
+                "replaced"
+            ]
+        ]
+    ],
+    "0:The penguins|been|fed|have|will": [
+        [
+            [
+                "The penguins",
+                "will",
+                "have",
+                "been",
+                "fed"
+            ]
+        ]
+    ],
+    "DEFAULT:CHOOSE THE CORRECT SENTENCE:||CTX:Since coming to USA, has he met a lot of girls....Since coming to USA, has he met a lot of girls.||||||Since coming to USA, a lot of girls he has met.|Since coming to USA, has he met a lot of girls.|Since coming to USA, he has met a lot of girls.|Since coming to USA, he have met a lot of girls.": [
+        "Since coming to USA, he has met a lot of girls."
+    ],
+    "DEFAULT:CHOOSE THE CORRECT SENTENCE:||CTX:Before leaving for lunch, we watch tv....Before leaving for lunch, we watch tv.||||||Before leaving for lunch, we watch tv.|Before leaving for tv, we watch lunch.|Before leaving lunch, we watch for tv.|Before we leaving for lunch, watch tv.": [
+        "Before leaving for lunch, we watch tv."
+    ],
+    "DEFAULT:CHOOSE THE CORRECT SENTENCE:||CTX:While waiting, about my family I thought....While waiting, about my family I thought.||||||While waiting, I thought about my family.|While waiting, I thought my family about.|While waiting, about my family I thought.|While waiting, thought I about my family.": [
+        "While waiting, I thought about my family."
+    ],
+    "DEFAULT:CHOOSE THE CORRECT SENTENCE:||CTX:After lunch, we sat on the porch....After lunch, we sat on the porch.||||||After lunch, on the porch we sat.|After lunch, we on the porch sat.|After lunch, we sat on the porch.|After lunch, we sat the porch on.": [
+        "After lunch, we sat on the porch."
+    ],
+    "DEFAULT:CHOOSE THE CORRECT SENTENCE:||CTX:Feeling depressed, she went to psychiatrist....Feeling depressed, she went to psychiatrist.||||||Feeling depressed, she the went to psychiatrist.|Feeling depressed, she went to psychiatrist.|Feeling depressed, she went to the psychiatrist.|Feeling depressed, to the psychiatrist she went.": [
+        "Feeling depressed, she went to the psychiatrist."
+    ],
+    "DEFAULT:CHOOSE THE CORRECT SENTENCE:||CTX:Seeing the mistake, I correct it immediately....Seeing the mistake, I correct it immediately.||||||Seeing the mistake, I correct it immediately.|Seeing the mistake, I corrected immediately.|Seeing the mistake, I corrected it immediately.|Seeing the mistake, It corrected immediately.": [
+        "Seeing the mistake, I corrected it immediately."
+    ],
+    "DEFAULT:CHOOSE THE CORRECT SENTENCE:||CTX:Knowing he was wore a shir, he filming today....Knowing he was wore a shir, he filming today.||||||Knowing he was filming today, he wore a shirt.|Knowing he was wore a shir, he filming today.|Knowing he wore a shirt, was filming today.|Knowing was he filming today, he wore a shirt.": [
+        "Knowing he was filming today, he wore a shirt."
+    ],
+    "DEFAULT:CHOOSE THE CORRECT SENTENCE:||CTX:Not knowing my son sleeping, he was phoned....Not knowing my son sleeping, he was phoned.||||||Not knowing my son sleeping, he was phoned.|Not knowing my son was sleeping, he phoned.|Not knowing was my son sleeping, he phoned.|Not was knowing my son sleeping, he phoned.": [
+        "Not knowing my son was sleeping, he phoned."
+    ],
+    "DEFAULT:CHOOSE THE CORRECT SENTENCE:||CTX:Fried in orange, would the chicken taste delicious...Fried in orange, would the chicken taste delicious||||||Fried in orange, the chicken taste would delicious.|Fried in orange, the chicken would taste delicious.|Fried in orange, would the chicken taste delicious|Fried would orange, the chicken taste delicious.": [
+        "Fried in orange, the chicken would taste delicious."
+    ],
+    "DEFAULT:CHOOSE THE CORRECT SENTENCE:||CTX:We stepping on camera, relaxed completely....We stepping on camera, relaxed completely.||||||Stepping on camera, relaxed we completely.|Stepping on camera, we relaxed completely.|Stepping on we camera, relaxed completely.|We stepping on camera, relaxed completely.": [
+        "Stepping on camera, we relaxed completely."
+    ],
+    "T9:WHAT IS THE MAN SPEAKING ABOUT?||CTX:the basic need for people to connect with one anot... basic need for people to connect with one another||||||society’s lack of connected structure|technology that leaves people feeling disconnected|the basic need for people to connect with one another": [
+        "the basic need for people to connect with one another"
+    ],
+    "T9:WHICH GROUP OF PEOPLE IS MOST SERIOUSLY AFFECTED BY LOSING A MOBILE PHONE?||CTX:taxicab driver...taxicab driver||||||businesses|phone owner|taxicab driver": [
+        "businesses"
+    ],
+    "T9:THE SPEAKERS ARE||CTX:complaining...complaining||||||arguing|complaining|volunteering": [
+        "complaining"
+    ],
+    "T9:HOW MANY MEDALS DID THE SPEAKER WIN?||CTX:none...none||||||none|one|two": [
+        "two"
+    ],
+    "T9:WHAT ARE THE SPEAKERS TALKING ABOUT?||CTX:travel...travel||||||crime|fashion|travel": [
+        "crime"
+    ],
+    "T9:WHAT IS THE MAN SUGGESTING?||CTX:It was harder for him when he was a student....It was harder for him when he was a student.||||||He doesn’t know how to help her the computer.|It was harder for him when he was a student.|She needs to work on her research skills.": [
+        "It was harder for him when he was a student."
+    ],
+    "T9:WHAT DOES THE CALLER THINK ABOUT SPORTS?||CTX:It requires less Skill than other pastimes....It requires less Skill than other pastimes.||||||It is more important that the arts.|It receives too much support.|It requires less Skill than other pastimes.": [
+        "It receives too much support."
+    ],
+    "T9:HOW DOES THE MAN FEEL ABOUT MODERN LIFE?||CTX:Things will get worse in the future....Things will get worse in the future.||||||It’s an exciting time to be alive.|Things are changing too future.|Things will get worse in the future.": [
+        "Things are changing too future."
+    ],
+    "T9:THE SPEAKERS ARE||CTX:admiring current fashion trends....admiring current fashion trends.||||||admiring current fashion trends.|predicting future fashion trends.|reflecting on differences in fashion trends.": [
+        "reflecting on differences in fashion trends."
+    ],
+    "T9:WHAT IS THE WOMAN TALKING ABOUT?||CTX:schools...schools||||||museums|schools|toy shop": [
+        "museums"
+    ],
+    "T9:WHAT IS THE MAIN FOCUS OF THE DISCUSSION ABOUT CAPEL HILL?||CTX:its age...its age||||||its age|its colour.|its size": [
+        "its colour."
+    ],
+    "T9:WHO IS THE SPEAKER?||CTX:An author....An author.||||||A book critic.|A publisher.|An author.": [
+        "A book critic."
+    ],
+    "T9:WHY ISN’T TONY VEE ON HIS RADIO SHOW TONIGHT?||CTX:He’s working....He’s working.||||||He’s feeling unwell.|He’s with his wife.|He’s working.": [
+        "He’s with his wife."
+    ],
+    "T9:WHAT IS THE MAN SUGGESTING?||CTX:It was harder for him when he was a student....It was harder for him when he was a student.||||||He doesn’t know how to help her with the computer.|It was harder for him when he was a student.|She needs to work on her research skills.": [
+        "It was harder for him when he was a student."
+    ],
+    "T9:WHAT DOES THE GIRL WANT TO DO NEXT YEAR?||CTX:continue studying...continue studying||||||continue studying|save money|travel abroad": [
+        "travel abroad"
+    ],
+    "T9:THE SPEAKER ARE||CTX:on a plane....on a plane.||||||on a coach.|on a plane.|on a ship.": [
+        "on a ship."
+    ],
+    "T9:THE WOMAN SAYS THE WEATHER RECENTLY HAS BEEN||CTX:cool....cool.||||||cool.|hot.|rainy.": [
+        "hot."
+    ],
+    "T5:Bullying online is also called computer bullying.||CTX:...||False|True": [
+        "True"
+    ],
+    "T5:Cristina's dad is angry about her decision to move to another city.||CTX:...||False|True": [
+        "False"
+    ],
+    "DEFAULT:READ THE LETTER AND CHOOSE THE CORRECT OPTION TO COMPLETE THE SENTENCE. I FEEL VERY _______ AND VERY PROUD OF YOU.||CTX:Lucky...Lucky||||IMG_DIM:421x240||Bad|Excited|Lucky": [
+        "Lucky"
+    ],
+    "T5:Cristina is a little girl.||CTX:...||False|True": [
+        "False"
+    ],
+    "DEFAULT:READ THE LETTER AND CHOOSE THE CORRECT OPTION TO COMPLETE THE SENTENCE. WHY IS HE WRITING HER A LETTER?||CTX:Because she is going to another city to reach her ...e she is going to another city to reach her goals.||||IMG_DIM:421x240||Because she is going to another city to reach her goals.|Because she is going to buy a new house.|Because she is going to get married.": [
+        "Because she is going to another city to reach her goals."
+    ],
+    "DEFAULT:READ THE LETTER AND CHOOSE THE CORRECT OPTION TO COMPLETE THE SENTENCE. I FEEL SO _______ BECAUSE YOU ARE PART OF ME.||CTX:Sad...Sad||||IMG_DIM:421x240||Blessed|Sad|Tired": [
+        "Blessed"
+    ],
+    "DEFAULT:READ THE LETTER AND CHOOSE THE CORRECT OPTION TO COMPLETE THE SENTENCE. WHAT IS THE RELATIONSHIP BETWEEN THE AUTHOR AND CRISTINA?||CTX:He is her father...He is her father||||IMG_DIM:421x240||He is her boyfriend|He is her brother|He is her father": [
+        "He is her father"
+    ],
+    "T5:Cristina's dad wishes the best for her.||CTX:...||False|True": [
+        "True"
+    ],
+    "T5:Cristina's dad is confused about her decision to move to another city.||CTX:...||False|True": [
+        "False"
+    ],
+    "T5:Cristina's dad is going to miss her a lot.||CTX:...||False|True": [
+        "True"
+    ],
+    "T5:Cristina's dad is happy about her decision to move to another city.||CTX:...||False|True": [
+        "True"
+    ],
+    "DEFAULT:READ THE SENTENCES AND CHOOSE THE CORRECT OPTION:||CTX:How about studying together?...How about studying together?||||||How about study together?|How about studying together?|How about studyng together?": [
+        "How about studying together?"
+    ],
+    "DEFAULT:READ THE SENTENCES AND CHOOSE THE CORRECT OPTION:||CTX:How about to dance tomorrow in the morning?...How about to dance tomorrow in the morning?||||||How about dancing tomorrow in the morning?|How about to dance tomorrow in the morning?|How about to dancing tomorrow in the morning?": [
+        "How about dancing tomorrow in the morning?"
+    ],
+    "DEFAULT:READ THE SENTENCES AND CHOOSE THE CORRECT OPTION:||CTX:What about going to the cinema?...What about going to the cinema?||||||What about going to the cinema?|What about to go to the cinema?|What about to going to the cinema?": [
+        "What about going to the cinema?"
+    ],
+    "DEFAULT:READ THE SENTENCES AND CHOOSE THE CORRECT OPTION:||CTX:What about leaving earlier?...What about leaving earlier?||||||What about leaving earlier?|What about to leave earlier?|What about to leaving earlier?": [
+        "What about leaving earlier?"
+    ],
+    "DEFAULT:READ THE SENTENCES AND CHOOSE THE CORRECT OPTION:||CTX:What about to eat fast food this weekend?...What about to eat fast food this weekend?||||||What about eating fast food this weekend?|What about to eat fast food this weekend?|What about to eating fast food this weekend?": [
+        "What about eating fast food this weekend?"
+    ],
+    "0:How|a new book for the children?|about|writing": [
+        [
+            [
+                "How",
+                "about",
+                "writing",
+                "a new book for the children?"
+            ]
+        ]
+    ],
+    "0:What|about|eating out|together?": [
+        [
+            [
+                "What",
+                "about",
+                "eating out",
+                "together?"
+            ]
+        ]
+    ],
+    "0:How|a pie for Marthy's birthday?|about|making": [
+        [
+            [
+                "How",
+                "about",
+                "making",
+                "a pie for Marthy's birthday?"
+            ]
+        ]
+    ],
+    "0:How|about|in the pool with our classmates?|swimming": [
+        [
+            [
+                "How",
+                "about",
+                "swimming",
+                "in the pool with our classmates?"
+            ]
+        ]
+    ],
+    "T4:MATCH THE HALVES TO MAKE SENTENCES.||KW:If I live near the school,|If she goes to the gym,|If you move to New York,||DEF:I will be on time everyday.|she will be in shape.|your parents will miss you.": [
+        [
+            "your parents will miss you.",
+            "I will be on time everyday.",
+            "she will be in shape."
+        ]
+    ],
+    "0:If he|a cold,|has|he will|in bed.|stay": [
+        [
+            [
+                "If he",
+                "has",
+                "a cold,",
+                "he will",
+                "stay",
+                "in bed."
+            ]
+        ]
+    ],
+    "0:My grandmother|be sad|don't visit|her.|if I|will": [
+        [
+            [
+                "My grandmother",
+                "will",
+                "be sad",
+                "if I",
+                "don't visit",
+                "her."
+            ]
+        ]
+    ],
+    "T4:MATCH THE HALVES TO MAKE SENTENCES.||KW:Everything will be OK,|She will go on vacations,|The birds will be free,||DEF:if her boss gives the permission.|if the kid open the jail.|if they make a good decision.": [
+        [
+            "if her boss gives the permission.",
+            "if they make a good decision.",
+            "if the kid open the jail."
+        ]
+    ],
+    "DEFAULT:CHOOSE THE RIGHT SENTENCE||CTX:If I go to the USA, I will go to Miami....If I go to the USA, I will go to Miami.||||||If I go to the USA, I will go to Miami.|If I will go to USA, we will go to Miami.|If we will go to USA, I go to Miami.": [
+        "If I go to the USA, I will go to Miami."
+    ],
+    "0:I will|If my mother|do|prepares|the dinner,|the dishes.": [
+        [
+            [
+                "If my mother",
+                "prepares",
+                "the dinner,",
+                "I will",
+                "do",
+                "the dishes."
+            ]
+        ]
+    ],
+    "T4:MATCH THE HALVES TO MAKE SENTENCES.||KW:If I buy a toy for my baby,|If I dont take my pills,|They will not travel,||DEF:I will have a terrible headache.|If I don't go with them.|he will be happy.": [
+        [
+            "I will have a terrible headache.",
+            "If I don't go with them.",
+            "he will be happy."
+        ]
+    ],
+    "T4:MATCH THE HALVES TO MAKE SENTENCES.||KW:If he drives too fast,|If they wake up earlier,|If we study,||DEF:he will have an accident.|they will have enough time to eat.|we will have good grades.": [
+        [
+            "we will have good grades.",
+            "they will have enough time to eat.",
+            "he will have an accident."
+        ]
+    ],
+    "T4:MATCH THE HALVES TO MAKE SENTENCES.||KW:I will buy some groceries,|Mark will have his house,|The dog will bark you,||DEF:If he works a lot.|If my mother gives me some extra money.|If you bother it.": [
+        [
+            "If he works a lot.",
+            "If you bother it.",
+            "If my mother gives me some extra money."
+        ]
+    ],
+    "T4:MATCH THE HALVES TO MAKE SENTENCES.||KW:If I have more time,|The kids will not see their father,|The soup will be cold,||DEF:I will invite you to eat out.|If he goes to abroad.|If my mother doesn't serve it now.": [
+        [
+            "If he goes to abroad.",
+            "I will invite you to eat out.",
+            "If my mother doesn't serve it now."
+        ]
+    ],
+    "DEFAULT:SELECT THE CORRECT PHRASAL VERB TO COMPLETE: LET'S DO EXERCISE. PLEASE _______.||CTX:Wear off...Wear off||||||Come back|Lie down|Pull out|Wear off": [
+        "Lie down"
+    ],
+    "DEFAULT:SELECT THE CORRECT PHRASAL VERB TO COMPLETE: MY SISTER HAS TOLD ME SHE BOUGHT A NEW APARTMENT. LET'S _______.||CTX:Pull it out...Pull it out||||||Check it out|Cut it out|Pull it out|Spit it out": [
+        "Check it out"
+    ],
+    "DEFAULT:SELECT THE CORRECT PHRASAL VERB TO COMPLETE: THE DIRECTOR IS NOT HERE. CAN YOU _______ ?||CTX:Wash out later...Wash out later||||||Come back later|Cut down later|Keep up later|Wash out later": [
+        "Come back later"
+    ],
+    "DEFAULT:SELECT THE CORRECT PHRASAL VERB TO COMPLETE: I AM LEARNING A LOT. LET'S _______ PRACTICING EVERYDAY.||CTX:Cut out...Cut out||||||Cut out|Keep up|Lie down|Spit out": [
+        "Keep up"
+    ],
+    "DEFAULT:SELECT THE CORRECT PHRASAL VERB TO COMPLETE: MY DAD _______ FROM SMOKING TOO MANY CIGARETTES, SMOKING IS VERY DANGEROUS.||CTX:Pull out...Pull out||||||Cut down|Fall out|Pull out|Wear off": [
+        "Cut down"
+    ],
+    "T2_BATCH:CHOOSE THE RIGHT WORD TO COMPLETE THE PHRASAL VERB.||CTX:...||FRASES:My boy was very tired so he lay ___ on the armchair and he slept.": {
+        "My boy was very tired so he lay ___ on the armchair and he slept.": "down"
+    },
+    "T2_BATCH:CHOOSE THE RIGHT WORD TO COMPLETE THE PHRASAL VERB.||CTX:...||FRASES:I don't keep in touch with Alice. We fell ___ because she yelled at me.": {
+        "I don't keep in touch with Alice. We fell ___ because she yelled at me.": "out"
+    },
+    "DEFAULT:SELECT THE CORRECT PHRASAL VERB TO COMPLETE: THE PILLS FOR THE STOMACHACHE STARTED TO _______ TWO HOURS AGO.||CTX:Wear off...Wear off||||||Check out|Spit out|Wash out|Wear off": [
+        "Wear off"
+    ],
+    "T2_BATCH:CHOOSE THE RIGHT WORD TO COMPLETE THE PHRASAL VERB.||CTX:...||FRASES:The weather kept ___ foggy yesterday.": {
+        "The weather kept ___ foggy yesterday.": "up"
+    },
+    "T2_BATCH:CHOOSE THE RIGHT WORD TO COMPLETE THE PHRASAL VERB.||CTX:...||FRASES:Please be patient. The cocktail effects will wear ___ slowly.": {
+        "Please be patient. The cocktail effects will wear ___ slowly.": "off"
+    },
+    "T2_BATCH:READ THE SENTENCE AND CHOOSE THE BEST ALTERNATIVE:||CTX:...||FRASES:I loved listening to lullabies to sleep. ___": {
+        "I loved listening to lullabies to sleep. ___": "so did I"
+    },
+    "T2_BATCH:READ THE SENTENCE AND CHOOSE THE BEST ALTERNATIVE:||CTX:...||FRASES:Yesterday I was really tired. ___": {
+        "Yesterday I was really tired. ___": "so was I"
+    },
+    "T2_BATCH:READ THE SENTENCE AND CHOOSE THE BEST ALTERNATIVE:||CTX:...||FRASES:I don't read newspapers every day. ___": {
+        "I don't read newspapers every day. ___": "neither did I"
+    },
+    "T2_BATCH:READ THE SENTENCE AND CHOOSE THE BEST ALTERNATIVE:||CTX:...||FRASES:I can't draw and paint very well. ___": {
+        "I can't draw and paint very well. ___": "neither can I"
+    },
+    "T2_BATCH:COMPLETE THE CONVERSATION WITH THE RIGHT OPTION.||CTX:...||FRASES:A: I was thirsty at the end of the competition. B: ___": {
+        "A: I was thirsty at the end of the competition. B: ___": "So was I"
+    },
+    "T2_BATCH:COMPLETE THE CONVERSATION WITH THE RIGHT OPTION.||CTX:...||FRASES:A: I didn't need more time to do the homework. B: ___": {
+        "A: I didn't need more time to do the homework. B: ___": "Neither did I"
+    },
+    "T2_BATCH:COMPLETE THE CONVERSATION WITH THE RIGHT OPTION.||CTX:...||FRASES:A: I liked singing when I was a child. B: ___": {
+        "A: I liked singing when I was a child. B: ___": "So did I"
+    },
+    "T2_BATCH:COMPLETE THE CONVERSATION WITH THE RIGHT OPTION.||CTX:...||FRASES:A: I can't move my ears. B: ___": {
+        "A: I can't move my ears. B: ___": "Neither can I"
+    },
+    "T2_BATCH:COMPLETE THE CONVERSATION WITH THE RIGHT OPTION.||CTX:...||FRASES:A: I wasn't listening to the teacher when she was explaining the lesson. B: ___": {
+        "A: I wasn't listening to the teacher when she was explaining the lesson. B: ___": "Neither was I"
+    },
+    "T9:WHAT IS ONE THING THE SPEAKER IS LIKELY TO DO DURING THE VACATION?||CTX:Go to a museum...Go to a museum||||||Attend a concert|Go to a museum|Take photos of the scenery|Visit a theme park": [
+        "Take photos of the scenery"
+    ],
+    "T9:WHAT CAN YOU INFER ABOUT THE SPEAKER’S FEELINGS TOWARDS THE CITY?||CTX:The speaker enjoys the city...The speaker enjoys the city||||||The speaker dislikes nature|The speaker enjoys the city|The speaker is tired of the city|The speaker wants to move to the city": [
+        "The speaker is tired of the city"
+    ],
+    "T9:WHERE IS THE SPEAKER PLANNING TO GO ON VACATION?||CTX:The beach...The beach||||||A lake|The beach|The city|The mountains": [
+        "The mountains"
+    ],
+    "T9:WHAT WILL THE SPEAKER BRING TO TAKE PICTURES?||CTX:A phone...A phone||||||A camera|A laptop|A phone|A tablet": [
+        "A camera"
+    ],
+    "T9:WHY IS THE SPEAKER LOOKING FORWARD TO THE VACATION?||CTX:To enjoy the quiet and fresh air of the mountains...To enjoy the quiet and fresh air of the mountains||||||To enjoy the quiet and fresh air of the mountains|To go shopping|To meet new people|To try new foods": [
+        "To enjoy the quiet and fresh air of the mountains"
+    ],
+    "T9:WHAT ACTIVITY DOES THE SPEAKER PLAN TO DO DURING THE VACATION?||CTX:Swimming...Swimming||||||Fishing|Hiking|Shopping|Swimming": [
+        "Hiking"
+    ],
+    "T9:THE WORD “SCENERY” MOST LIKELY MEANS:||CTX:The people...The people||||||The animals|The landscape|The people|The weather": [
+        "The landscape"
+    ],
+    "T9:TRUE OR FALSE: THE SPEAKER IS NOT EXCITED ABOUT THE VACATION.||CTX:True...True||||||False|True": [
+        "False"
+    ],
+    "T9:TRUE OR FALSE: THE SPEAKER WILL STAY IN THE CITY DURING THE VACATION.||CTX:True...True||||||False|True": [
+        "False"
+    ],
+    "T9:WHERE WILL THE SPEAKER STAY DURING THE VACATION?||CTX:In a hotel...In a hotel||||||At a friend’s house|In a cabin|In a hotel|In a tent": [
+        "In a cabin"
+    ],
+    "T9:WHAT MIGHT THE SPEAKER DO AFTER BECOMING FLUENT?||CTX:Travel to Spanish-speaking countries...Travel to Spanish-speaking countries||||||Start learning another language|Stop learning|Teach Spanish|Travel to Spanish-speaking countries": [
+        "Travel to Spanish-speaking countries"
+    ],
+    "T9:HOW DOES THE SPEAKER PRACTICE THE LANGUAGE?||CTX:By speaking with friends...By speaking with friends||||||By practicing vocabulary, grammar, and listening|By reading books|By speaking with friends|By watching TV shows": [
+        "By practicing vocabulary, grammar, and listening"
+    ],
+    "T9:WHY DOES THE SPEAKER WANT TO LEARN SPANISH?||CTX:To work in Spain...To work in Spain||||||To talk to Spanish-speaking friends|To travel and communicate with locals|To watch Spanish movies|To work in Spain": [
+        "To travel and communicate with locals"
+    ],
+    "T9:TRUE OR FALSE: THE SPEAKER FINDS LEARNING THE LANGUAGE EASY.||CTX:True...True||||||False|True": [
+        "False"
+    ],
+    "T9:THE WORD “REWARDING” MOST LIKELY MEANS:||CTX:Frustrating...Frustrating||||||Beneficial|Confusing|Difficult|Frustrating": [
+        "Beneficial"
+    ],
+    "T9:WHAT IS THE SPEAKER’S GOAL IN LEARNING THE LANGUAGE?||CTX:To read Spanish books...To read Spanish books||||||To become fluent|To pass an exam|To read Spanish books|To write in Spanish": [
+        "To become fluent"
+    ],
+    "T9:TRUE OR FALSE: THE SPEAKER ONLY PRACTICES SPEAKING THE LANGUAGE.||CTX:True...True||||||False|True": [
+        "False"
+    ],
+    "T9:HOW OFTEN DOES THE SPEAKER STUDY THE LANGUAGE?||CTX:Once a week...Once a week||||||Every day|Every other day|Once a week|Twice a week": [
+        "Every day"
+    ],
+    "T9:WHAT CAN YOU INFER ABOUT THE SPEAKER’S ATTITUDE TOWARDS LEARNING THE LANGUAGE?||CTX:The speaker is frustrated...The speaker is frustrated||||||The speaker is bored|The speaker is determined|The speaker is frustrated|The speaker is unmotivated": [
+        "The speaker is determined"
+    ],
+    "T9:WHAT LANGUAGE IS THE SPEAKER LEARNING?||CTX:French...French||||||French|German|Italian|Spanish": [
+        "Spanish"
+    ],
+    "DEFAULT:READ THE SENTENCE AND CHOOSE THE CORRECT OPTION: THE DANCERS WHO PERFORMED LAST NIGHT DID A GREAT SHOW.||CTX:All the dancers did a great show....All the dancers did a great show.||||||All the dancers did a great show.|Only the dancers that performed last night did a great show.": [
+        "Only the dancers that performed last night did a great show."
+    ],
+    "T2_BATCH:FILL IN THE BLANKS.||CTX:...||FRASES:Jack, ___ retired now spends a lot of time with his grandchildren.": {
+        "Jack, ___ retired now spends a lot of time with his grandchildren.": "who's"
+    },
+    "DEFAULT:READ THE SENTENCE AND CHOOSE THE CORRECT OPTION: HE LENT ME THE BOOK, WHICH I READ IMMEDIATELY.||CTX:There was only one book....There was only one book.||||||There was only one book.|There were several books.": [
+        "There was only one book."
+    ],
+    "DEFAULT:READ THE SENTENCE AND CHOOSE THE CORRECT OPTION: MY STUDENTS, WHO STUDIED HARD PASSED THE EXAM.||CTX:All my students studied hard....All my students studied hard.||||||All my students studied hard.|Only some passed the exam.": [
+        "All my students studied hard."
+    ],
+    "0:I had known|There|a lot of|at|for years|many|of whom|people|the party,|were": [
+        [
+            [
+                "There",
+                "were",
+                "a lot of",
+                "people",
+                "at",
+                "the party,",
+                "many",
+                "of whom",
+                "I had known",
+                "for years"
+            ]
+        ]
+    ],
+    "DEFAULT:READ THE SENTENCE AND CHOOSE THE CORRECT OPTION: HE GAVE ME THE LETTER, WHICH WAS IN A BLUE ENVELOPE.||CTX:There was only one letter, it happened to be blue....There was only one letter, it happened to be blue.||||||There was only one letter, it happened to be blue.|There were several letter of different colors and he gave me the blue one.": [
+        "There was only one letter, it happened to be blue."
+    ],
+    "0:My|aunt,|every day|goes|swimming|who's 60,": [
+        [
+            [
+                "My",
+                "aunt,",
+                "who's 60,",
+                "goes",
+                "swimming",
+                "every day"
+            ]
+        ]
+    ],
+    "0:Bora Bora|I'm|Sandra,|in|is on|looking after|vacations|whose pets": [
+        [
+            [
+                "Sandra,",
+                "whose pets",
+                "I'm",
+                "looking after",
+                "is on",
+                "vacations",
+                "in",
+                "Bora Bora"
+            ]
+        ]
+    ],
+    "T4:READ THE SENTENCE AND FILL IN THE BLANK WITH THE INFORMATION FROM THE BOX.||KW:Which is my favorite month, lasts 29 days this year|Which we love, is always really busy on Sundays.||DEF:February|La Rotonda Park": [
+        [
+            "La Rotonda Park",
+            "February"
+        ]
+    ],
+    "0:The apartment|a bit|is also|is new,|scary|which": [
+        [
+            [
+                "The apartment",
+                "which",
+                "is new,",
+                "is also",
+                "a bit",
+                "scary"
+            ]
+        ]
+    ],
+    "T2_BATCH:READ THE SENTENCE AND CHOOSE THE CORRECT OPTION.||CTX:...||FRASES:___ are used to join 2 or more clauses.": {
+        "___ are used to join 2 or more clauses.": "Relative pronouns"
+    },
+    "T2_BATCH:READ THE SENTENCE AND CHOOSE THE CORRECT OPTION.||CTX:...||FRASES:They chose the ___ option for the exam.": {
+        "They chose the ___ option for the exam.": "right"
+    },
+    "T2_BATCH:READ THE SENTENCE AND CHOOSE THE CORRECT OPTION.||CTX:...||FRASES:I met the person ___ stole my jewelry.": {
+        "I met the person ___ stole my jewelry.": "who"
+    },
+    "T2_BATCH:READ THE SENTENCE AND CHOOSE THE CORRECT OPTION.||CTX:...||FRASES:I talked to the girl ___ car had broken down in front of the shop.": {
+        "I talked to the girl ___ car had broken down in front of the shop.": "whose"
+    },
+    "T2_BATCH:READ THE SENTENCE AND CHOOSE THE CORRECT OPTION.||CTX:...||FRASES:Luis, ___ is a taxi driver, lives on the corner.": {
+        "Luis, ___ is a taxi driver, lives on the corner.": "who"
+    },
+    "T2_BATCH:READ THE SENTENCE AND CHOOSE THE CORRECT OPTION.||CTX:...||FRASES:The bus ___ driver is an old man, and is from Canada.": {
+        "The bus ___ driver is an old man, and is from Canada.": "whose"
+    },
+    "0:My son|broke|gave|grandma|him|his|that|the toy": [
+        [
+            [
+                "My son",
+                "broke",
+                "the toy",
+                "that",
+                "his",
+                "grandma",
+                "gave",
+                "him"
+            ]
+        ]
+    ],
+    "T2_BATCH:READ THE SENTENCE AND CHOOSE THE CORRECT OPTION.||CTX:...||FRASES:The restaurant ___ owner died has now reopened.": {
+        "The restaurant ___ owner died has now reopened.": "whose"
+    },
+    "T2_BATCH:READ THE SENTENCE AND CHOOSE THE CORRECT OPTION.||CTX:...||FRASES:My friend Susan, ___ lives in Calceta, is pregnant.": {
+        "My friend Susan, ___ lives in Calceta, is pregnant.": "who"
+    }
 }

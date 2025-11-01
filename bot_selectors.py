@@ -38,7 +38,7 @@ SELECTOR_FILAS_EMPAREJAR = (By.XPATH, "//div[contains(@class, 'grid grid-cols-2'
 SELECTOR_IMAGEN_EMPAREJAR = (By.XPATH, "//div[contains(@class, 'grid grid-cols-2')][.//img][.//button[contains(text(), 'Waiting answer')]]")
 SELECTOR_PALABRA_CLAVE_TAG = "h2" # Emparejar - Usamos TAG_NAME para palabra clave
 # SELECTOR_DESTINO_EMPAREJAR_XPATH = (By.XPATH, ".//button[contains(text(), 'Waiting answer')]") # Emparejar (No necesario con cola)
-SELECTOR_CHECK = (By.XPATH, "//button[translate(normalize-space(text()), 'CHECK', 'check')='check']")
+SELECTOR_CHECK = (By.XPATH, "//button[translate(normalize-space(text()), 'CHECK', 'check')='check' and not(contains(@class, 'text-gray-700'))]")
 # SELECTOR_NUM_PREGUNTA = (By.XPATH, "//span[contains(text(), 'Question')]") # No usado activamente
 SELECTOR_CONTINUE = (By.XPATH, "//button[normalize-space()='CONTINUE']")
 SELECTOR_PARAGRAPH_CAJAS = (By.XPATH, "//div[contains(@class, 'card')][.//button[normalize-space()='1']]") # TIPO 6: Cajas con botones numéricos
