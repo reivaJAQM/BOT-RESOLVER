@@ -208,6 +208,8 @@ try:
                 
                 else: print("      No se detectó contenido especial. Se asume [DEFAULT]"); tipo_pregunta = "TIPO_DEFAULT_OM"
                 # --- ¡FIN LÓGICA DE DETECCIÓN! ---
+
+
                 print("Leyendo datos (Contexto y Título)...")
                 try:
                     # Use 20 spaces for indentation
@@ -327,31 +329,41 @@ try:
                     if not lista_de_tareas_ordenar: raise Exception("No se recolectaron tareas TIPO 1 válidas.")
                     clave_pregunta = "|".join(lista_de_claves_individuales)
 
-                    # --- ¡INICIO CHEQUEO DE BUCLE ATASCADO (TIPO 1)! ---
-                    if clave_pregunta and clave_pregunta == ultima_clave_pregunta_procesada:
-                        # Use 24 spaces for indentation
-                        print(f"      ¡ALERTA! PREGUNTA REPETIDA DETECTADA (Clave: {clave_pregunta[:70]}...)")
-                        print("      Se asume que es la última pregunta y está atascada. Refrescando PÁGINA...")
-                        try:
-                            # Use 28 spaces for indentation
-                            driver.refresh()
-                            wait_long.until(EC.presence_of_element_located(sel.SELECTOR_CHECK))
-                            print("      Página refrescada. Reintentando...")
-                            pregunta_actual_texto = ""
-                            ultima_clave_pregunta_procesada = ""
-                            respuesta_fue_incorrecta = False
-                            continue
-                        except Exception as e_refresh:
-                            # Use 28 spaces for indentation
-                            print(f"      ERROR CRÍTICO: No se pudo refrescar tras detectar bucle: {e_refresh}")
-                            raise
-                    # --- ¡FIN CHEQUEO DE BUCLE ATASCADO! ---
+                    # --- ¡CHEQUEO DE BUCLE ATASCADO (TIPO 1) ELIMINADO! ---
 
                     lista_ordenes_ia = []
                     if clave_pregunta in soluciones_correctas:
                         # Use 24 spaces for indentation
-                        print("      SOLUCIÓN LOTE TIPO 1 ENCONTRADA en memoria.");
-                        lista_ordenes_ia = soluciones_correctas[clave_pregunta]
+                        print("      SOLUCIÓN(ES) LOTE TIPO 1 ENCONTRADA(S) en memoria.");
+                        # --- INICIO LÓGICA DE ROTACIÓN (LOTE) ---
+                        lista_soluciones_lote = soluciones_correctas[clave_pregunta] # Es una lista de listas, ej: [ [["A"],["B"]], [["C"],["D"]] ]
+                        ultimo_intento_lote = preguntas_ya_vistas.get(clave_pregunta) # Es una lista, ej: [["A"],["B"]]
+
+                        # Auto-corrección de memoria antigua (si guardamos mal antes)
+                        if not isinstance(lista_soluciones_lote, list) or (lista_soluciones_lote and not isinstance(lista_soluciones_lote[0], list)):
+                            # Use 28 spaces for indentation
+                            print(f"      WARN: Solución Lote T1 no era lista de listas. Auto-corrigiendo. '{lista_soluciones_lote}'")
+                            if isinstance(lista_soluciones_lote, list) and not (lista_soluciones_lote and isinstance(lista_soluciones_lote[0], list)):
+                                # Use 32 spaces for indentation
+                                lista_soluciones_lote = [lista_soluciones_lote] # Convertir [["A"],["B"]] a [ [["A"],["B"]] ]
+                            else:
+                                # Use 32 spaces for indentation
+                                lista_soluciones_lote = [ [str(lista_soluciones_lote)] ] # Fallback
+                            soluciones_correctas[clave_pregunta] = lista_soluciones_lote
+                        
+                        if ultimo_intento_lote and ultimo_intento_lote in lista_soluciones_lote:
+                            # Use 28 spaces for indentation
+                            indice = lista_soluciones_lote.index(ultimo_intento_lote)
+                            indice_nuevo = (indice + 1) % len(lista_soluciones_lote) # Rotar
+                            lista_ordenes_ia = lista_soluciones_lote[indice_nuevo]
+                            print(f"      Rotando Lote T1. Último intento: '{ultimo_intento_lote}'. Nuevo intento: '{lista_ordenes_ia}'")
+                        else:
+                            # Use 28 spaces for indentation
+                            lista_ordenes_ia = lista_soluciones_lote[0]
+                            print(f"      Iniciando desde el principio de la lista Lote T1. Intentando: '{lista_ordenes_ia}'")
+                        
+                        preguntas_ya_vistas[clave_pregunta] = lista_ordenes_ia # Guardar este intento (lista)
+                        # --- FIN LÓGICA DE ROTACIÓN (LOTE) ---
                     else:
                         # Use 24 spaces for indentation
                         print("      Llamando a IA individualmente para TIPO 1 (se guardará en lote)...")
@@ -457,30 +469,14 @@ try:
                     print(f"      Clave T2 generada: {clave_pregunta[:100]}...") # Log para verificar
                     # --- ¡FIN CORRECCIÓN CLAVE TIPO 2! ---
 
-                    # --- ¡INICIO CHEQUEO DE BUCLE ATASCADO (TIPO 2)! ---
-                    if clave_pregunta and clave_pregunta == ultima_clave_pregunta_procesada:
-                        # Use 24 spaces for indentation
-                        print(f"      ¡ALERTA! PREGUNTA REPETIDA DETECTADA (Clave: {clave_pregunta[:70]}...)")
-                        print("      Se asume que es la última pregunta y está atascada. Refrescando PÁGINA...")
-                        try:
-                            # Use 28 spaces for indentation
-                            driver.refresh()
-                            wait_long.until(EC.presence_of_element_located(sel.SELECTOR_CHECK))
-                            print("      Página refrescada. Reintentando...")
-                            pregunta_actual_texto = ""
-                            ultima_clave_pregunta_procesada = ""
-                            respuesta_fue_incorrecta = False
-                            continue
-                        except Exception as e_refresh:
-                            # Use 28 spaces for indentation
-                            print(f"      ERROR CRÍTICO: No se pudo refrescar tras detectar bucle: {e_refresh}")
-                            raise
-                    # --- ¡FIN CHEQUEO DE BUCLE ATASCADO! ---
+                    # --- ¡CHEQUEO DE BUCLE ATASCADO (TIPO 2) ELIMINADO! ---
 
                     respuestas_lote_ia = []
                     if clave_pregunta in soluciones_correctas:
                         # Use 24 spaces for indentation
                         print("      SOLUCIÓN LOTE TIPO 2 ENCONTRADA en memoria (Dict).");
+                        # TIPO 2 usa un DICT, no una lista de rotación, porque las claves (frases) son únicas.
+                        # La lógica de rotación no aplica aquí.
                         dict_soluciones = soluciones_correctas[clave_pregunta]
                         mapeo_ok = True
                         for tarea in lista_de_tareas_completar:
@@ -566,30 +562,41 @@ try:
                     if not lista_afirmaciones_texto: raise Exception("No se pudieron recolectar afirmaciones T/F.")
                     clave_pregunta = "|".join(lista_afirmaciones_texto)
 
-                    # --- ¡INICIO CHEQUEO DE BUCLE ATASCADO (TIPO 3)! ---
-                    if clave_pregunta and clave_pregunta == ultima_clave_pregunta_procesada:
-                        # Use 24 spaces for indentation
-                        print(f"      ¡ALERTA! PREGUNTA REPETIDA DETECTADA (Clave: {clave_pregunta[:70]}...)")
-                        print("      Se asume que es la última pregunta y está atascada. Refrescando PÁGINA...")
-                        try:
-                            # Use 28 spaces for indentation
-                            driver.refresh()
-                            wait_long.until(EC.presence_of_element_located(sel.SELECTOR_CHECK))
-                            print("      Página refrescada. Reintentando...")
-                            pregunta_actual_texto = ""
-                            ultima_clave_pregunta_procesada = ""
-                            respuesta_fue_incorrecta = False
-                            continue
-                        except Exception as e_refresh:
-                            # Use 28 spaces for indentation
-                            print(f"      ERROR CRÍTICO: No se pudo refrescar tras detectar bucle: {e_refresh}")
-                            raise
-                    # --- ¡FIN CHEQUEO DE BUCLE ATASCADO! ---
+                    # --- ¡CHEQUEO DE BUCLE ATASCADO (TIPO 3) ELIMINADO! ---
 
                     respuestas_tf_lote = []
                     if clave_pregunta in soluciones_correctas:
                         # Use 24 spaces for indentation
-                        print("      SOLUCIÓN LOTE T/F ENCONTRADA en memoria."); respuestas_tf_lote = soluciones_correctas[clave_pregunta]
+                        print("      SOLUCIÓN(ES) LOTE T/F ENCONTRADA(S) en memoria.");
+                        # --- INICIO LÓGICA DE ROTACIÓN (LOTE) ---
+                        lista_soluciones_lote = soluciones_correctas[clave_pregunta] # Es una lista de listas, ej: [ ["T","F"], ["F","T"] ]
+                        ultimo_intento_lote = preguntas_ya_vistas.get(clave_pregunta) # Es una lista, ej: ["T","F"]
+
+                        # Auto-corrección de memoria antigua (si guardamos mal antes)
+                        if not isinstance(lista_soluciones_lote, list) or (lista_soluciones_lote and not isinstance(lista_soluciones_lote[0], list)):
+                            # Use 28 spaces for indentation
+                            print(f"      WARN: Solución Lote T3 no era lista de listas. Auto-corrigiendo. '{lista_soluciones_lote}'")
+                            if isinstance(lista_soluciones_lote, list) and not (lista_soluciones_lote and isinstance(lista_soluciones_lote[0], list)):
+                                # Use 32 spaces for indentation
+                                lista_soluciones_lote = [lista_soluciones_lote] # Convertir ["T","F"] a [ ["T","F"] ]
+                            else:
+                                # Use 32 spaces for indentation
+                                lista_soluciones_lote = [ [str(lista_soluciones_lote)] ] # Fallback
+                            soluciones_correctas[clave_pregunta] = lista_soluciones_lote
+                        
+                        if ultimo_intento_lote and ultimo_intento_lote in lista_soluciones_lote:
+                            # Use 28 spaces for indentation
+                            indice = lista_soluciones_lote.index(ultimo_intento_lote)
+                            indice_nuevo = (indice + 1) % len(lista_soluciones_lote) # Rotar
+                            respuestas_tf_lote = lista_soluciones_lote[indice_nuevo]
+                            print(f"      Rotando Lote T3. Último intento: '{ultimo_intento_lote}'. Nuevo intento: '{respuestas_tf_lote}'")
+                        else:
+                            # Use 28 spaces for indentation
+                            respuestas_tf_lote = lista_soluciones_lote[0]
+                            print(f"      Iniciando desde el principio de la lista Lote T3. Intentando: '{respuestas_tf_lote}'")
+                        
+                        preguntas_ya_vistas[clave_pregunta] = respuestas_tf_lote # Guardar este intento (lista)
+                        # --- FIN LÓGICA DE ROTACIÓN (LOTE) ---
                     else:
                         # Use 24 spaces for indentation
                         print("      Llamando a IA individualmente (con memoria de intento)...")
@@ -656,27 +663,40 @@ try:
                     if not lista_ideas_texto: raise Exception("No ideas recolectadas.")
                     clave_pregunta = "|".join(lista_ideas_texto)
 
-                    # --- ¡INICIO CHEQUEO DE BUCLE ATASCADO (TIPO 6)! ---
-                    if clave_pregunta and clave_pregunta == ultima_clave_pregunta_procesada:
-                        # Use 24 spaces for indentation
-                        print(f"      ¡ALERTA! PREGUNTA REPETIDA DETECTADA (Clave: {clave_pregunta[:70]}...)")
-                        print("      Se asume que es la última pregunta y está atascada. Refrescando PÁGINA...")
-                        try:
-                            # Use 28 spaces for indentation
-                            driver.refresh()
-                            wait_long.until(EC.presence_of_element_located(sel.SELECTOR_CHECK))
-                            print("      Página refrescada. Reintentando...")
-                            pregunta_actual_texto = ""
-                            ultima_clave_pregunta_procesada = ""
-                            respuesta_fue_incorrecta = False
-                            continue
-                        except Exception as e_refresh:
-                            # Use 28 spaces for indentation
-                            print(f"      ERROR CRÍTICO: No se pudo refrescar tras detectar bucle: {e_refresh}")
-                            raise
-                    # --- ¡FIN CHEQUEO DE BUCLE ATASCADO! ---
+                    # --- ¡CHEQUEO DE BUCLE ATASCADO (TIPO 6) ELIMINADO! ---
 
-                    if clave_pregunta in soluciones_correctas: print("      SOLUCIÓN ENCONTRADA."); respuestas_lote_ia = soluciones_correctas[clave_pregunta]
+                    if clave_pregunta in soluciones_correctas: 
+                        # Use 24 spaces for indentation
+                        print("      SOLUCIÓN(ES) LOTE T6 ENCONTRADA(S).")
+                        # --- INICIO LÓGICA DE ROTACIÓN (LOTE) ---
+                        lista_soluciones_lote = soluciones_correctas[clave_pregunta] # Es una lista de listas, ej: [ ["1","2"], ["2","1"] ]
+                        ultimo_intento_lote = preguntas_ya_vistas.get(clave_pregunta) # Es una lista, ej: ["1","2"]
+
+                        # Auto-corrección de memoria antigua (si guardamos mal antes)
+                        if not isinstance(lista_soluciones_lote, list) or (lista_soluciones_lote and not isinstance(lista_soluciones_lote[0], list)):
+                            # Use 28 spaces for indentation
+                            print(f"      WARN: Solución Lote T6 no era lista de listas. Auto-corrigiendo. '{lista_soluciones_lote}'")
+                            if isinstance(lista_soluciones_lote, list) and not (lista_soluciones_lote and isinstance(lista_soluciones_lote[0], list)):
+                                # Use 32 spaces for indentation
+                                lista_soluciones_lote = [lista_soluciones_lote] # Convertir ["1","2"] a [ ["1","2"] ]
+                            else:
+                                # Use 32 spaces for indentation
+                                lista_soluciones_lote = [ [str(lista_soluciones_lote)] ] # Fallback
+                            soluciones_correctas[clave_pregunta] = lista_soluciones_lote
+                        
+                        if ultimo_intento_lote and ultimo_intento_lote in lista_soluciones_lote:
+                            # Use 28 spaces for indentation
+                            indice = lista_soluciones_lote.index(ultimo_intento_lote)
+                            indice_nuevo = (indice + 1) % len(lista_soluciones_lote) # Rotar
+                            respuestas_lote_ia = lista_soluciones_lote[indice_nuevo]
+                            print(f"      Rotando Lote T6. Último intento: '{ultimo_intento_lote}'. Nuevo intento: '{respuestas_lote_ia}'")
+                        else:
+                            # Use 28 spaces for indentation
+                            respuestas_lote_ia = lista_soluciones_lote[0]
+                            print(f"      Iniciando desde el principio de la lista Lote T6. Intentando: '{respuestas_lote_ia}'")
+                        
+                        preguntas_ya_vistas[clave_pregunta] = respuestas_lote_ia # Guardar este intento (lista)
+                        # --- FIN LÓGICA DE ROTACIÓN (LOTE) ---
                     else:
                         # Use 24 spaces for indentation
                         respuesta_anterior_incorrecta = None
@@ -734,30 +754,40 @@ try:
                     clave_pregunta = f"T4:{titulo_limpio}||KW:" + "|".join(palabras_clave_limpias_sorted) + "||DEF:" + "|".join(defs_limpias_sorted)
                     # --- ¡FIN CORRECCIÓN CLAVE T4! ---
 
-                    # --- ¡INICIO CHEQUEO DE BUCLE ATASCADO (TIPO 4)! ---
-                    if clave_pregunta and clave_pregunta == ultima_clave_pregunta_procesada:
-                        # Use 24 spaces for indentation
-                        print(f"      ¡ALERTA! PREGUNTA REPETIDA DETECTADA (Clave: {clave_pregunta[:70]}...)")
-                        print("      Se asume que es la última pregunta y está atascada. Refrescando PÁGINA...")
-                        try:
-                            # Use 28 spaces for indentation
-                            driver.refresh()
-                            wait_long.until(EC.presence_of_element_located(sel.SELECTOR_CHECK))
-                            print("      Página refrescada. Reintentando...")
-                            pregunta_actual_texto = ""
-                            ultima_clave_pregunta_procesada = ""
-                            respuesta_fue_incorrecta = False
-                            continue
-                        except Exception as e_refresh:
-                            # Use 28 spaces for indentation
-                            print(f"      ERROR CRÍTICO: No se pudo refrescar tras detectar bucle: {e_refresh}")
-                            raise
-                    # --- ¡FIN CHEQUEO DE BUCLE ATASCADO! ---
+                    # --- ¡CHEQUEO DE BUCLE ATASCADO (TIPO 4) ELIMINADO! ---
 
                     if clave_pregunta in soluciones_correctas:
                         # Use 24 spaces for indentation
-                        print("      SOLUCIÓN ENCONTRADA en memoria.");
-                        lista_definiciones_ordenadas = soluciones_correctas[clave_pregunta]
+                        print("      SOLUCIÓN(ES) LOTE T4 ENCONTRADA(S) en memoria.");
+                        # --- INICIO LÓGICA DE ROTACIÓN (LOTE) ---
+                        lista_soluciones_lote = soluciones_correctas[clave_pregunta] # Es una lista de listas, ej: [ ["A","B"], ["B","A"] ]
+                        ultimo_intento_lote = preguntas_ya_vistas.get(clave_pregunta) # Es una lista, ej: ["A","B"]
+
+                        # Auto-corrección de memoria antigua (si guardamos mal antes)
+                        if not isinstance(lista_soluciones_lote, list) or (lista_soluciones_lote and not isinstance(lista_soluciones_lote[0], list)):
+                            # Use 28 spaces for indentation
+                            print(f"      WARN: Solución Lote T4 no era lista de listas. Auto-corrigiendo. '{lista_soluciones_lote}'")
+                            if isinstance(lista_soluciones_lote, list) and not (lista_soluciones_lote and isinstance(lista_soluciones_lote[0], list)):
+                                # Use 32 spaces for indentation
+                                lista_soluciones_lote = [lista_soluciones_lote] # Convertir ["A","B"] a [ ["A","B"] ]
+                            else:
+                                # Use 32 spaces for indentation
+                                lista_soluciones_lote = [ [str(lista_soluciones_lote)] ] # Fallback
+                            soluciones_correctas[clave_pregunta] = lista_soluciones_lote
+                        
+                        if ultimo_intento_lote and ultimo_intento_lote in lista_soluciones_lote:
+                            # Use 28 spaces for indentation
+                            indice = lista_soluciones_lote.index(ultimo_intento_lote)
+                            indice_nuevo = (indice + 1) % len(lista_soluciones_lote) # Rotar
+                            lista_definiciones_ordenadas = lista_soluciones_lote[indice_nuevo]
+                            print(f"      Rotando Lote T4. Último intento: '{ultimo_intento_lote}'. Nuevo intento: '{lista_definiciones_ordenadas}'")
+                        else:
+                            # Use 28 spaces for indentation
+                            lista_definiciones_ordenadas = lista_soluciones_lote[0]
+                            print(f"      Iniciando desde el principio de la lista Lote T4. Intentando: '{lista_definiciones_ordenadas}'")
+                        
+                        preguntas_ya_vistas[clave_pregunta] = lista_definiciones_ordenadas # Guardar este intento (lista)
+                        # --- FIN LÓGICA DE ROTACIÓN (LOTE) ---
                     else:
                         # Use 24 spaces for indentation
                         print("      IA (Emparejar)...")
@@ -800,6 +830,7 @@ try:
                         # 2. Encontrar el texto (Lógica Robusta con Fallbacks)
                         texto_afirmacion = ""
                         try:
+                            # Use 32 spaces for indentation
                             # Intento A: Selector estándar (span[1], usado por T3, T6, T7)
                             texto_afirmacion_elem = caja_tf_single.find_element(*sel.SELECTOR_TEXTO_AFIRMACION_TF) # .//span[1]
                             print("      Texto encontrado (Intento A: span[1])")
@@ -809,6 +840,7 @@ try:
                             # Use 32 spaces for indentation
                             print("      WARN: .//span[1] (Selector T3) falló. Intentando .//p[normalize-space(.)]...")
                             try:
+                                # Use 36 spaces for indentation
                                 # Intento B: Primer párrafo <p> con texto
                                 texto_afirmacion_elem = caja_tf_single.find_element(By.XPATH, ".//p[normalize-space(.)]")
                                 print("      Texto encontrado (Intento B: p[normalize-space(.)])")
@@ -843,36 +875,51 @@ try:
                         titulo_limpio_t5 = texto_afirmacion.strip()
                         clave_pregunta = f"T5:{titulo_limpio_t5}||{contexto_hash}||" + "|".join(sorted(opciones_t5))
 
-                        # --- ¡INICIO CHEQUEO DE BUCLE ATASCADO (TIPO 5)! ---
-                        if clave_pregunta and clave_pregunta == ultima_clave_pregunta_procesada:
-                            # Use 28 spaces for indentation
-                            print(f"      ¡ALERTA! PREGUNTA REPETIDA DETECTADA (Clave: {clave_pregunta[:70]}...)")
-                            print("      Se asume que es la última pregunta y está atascada. Refrescando PÁGINA...")
-                            try:
-                                # Use 32 spaces for indentation
-                                driver.refresh()
-                                wait_long.until(EC.presence_of_element_located(sel.SELECTOR_CHECK))
-                                print("      Página refrescada. Reintentando...")
-                                pregunta_actual_texto = ""
-                                ultima_clave_pregunta_procesada = ""
-                                respuesta_fue_incorrecta = False
-                                continue
-                            except Exception as e_refresh:
-                                # Use 32 spaces for indentation
-                                print(f"      ERROR CRÍTICO: No se pudo refrescar tras detectar bucle: {e_refresh}")
-                                raise
-                        # --- ¡FIN CHEQUEO DE BUCLE ATASCADO! ---
+                        # --- ¡CHEQUEO DE BUCLE ATASCADO (TIPO 5) ELIMINADO! ---
 
                         opciones_ya_vistas[clave_pregunta] = opciones_t5
-                        if clave_pregunta in soluciones_correctas: print("      SOLUCIÓN ENCONTRADA."); respuesta_tf_ia = soluciones_correctas[clave_pregunta]
+                        
+                        respuesta_tf_ia = None # Inicializar
+                        if clave_pregunta in soluciones_correctas: 
+                            # Use 28 spaces for indentation
+                            print("      SOLUCIÓN(ES) T5 ENCONTRADA(S).")
+                            # --- INICIO LÓGICA DE ROTACIÓN (SIMPLE) ---
+                            lista_soluciones = soluciones_correctas[clave_pregunta]
+                            ultimo_intento = preguntas_ya_vistas.get(clave_pregunta)
+
+                            # Auto-corrección de memoria antigua (si guardamos un string en lugar de una lista)
+                            if not isinstance(lista_soluciones, list):
+                                # Use 32 spaces for indentation
+                                print(f"      WARN: Memoria T5 no era lista. Auto-corrigiendo. '{lista_soluciones}'")
+                                lista_soluciones = [lista_soluciones] # Convertir "True" a ["True"]
+                                soluciones_correctas[clave_pregunta] = lista_soluciones
+                            
+                            if ultimo_intento and ultimo_intento in lista_soluciones:
+                                # Use 32 spaces for indentation
+                                indice = lista_soluciones.index(ultimo_intento)
+                                indice_nuevo = (indice + 1) % len(lista_soluciones) # Rotar
+                                respuesta_tf_ia = lista_soluciones[indice_nuevo]
+                                print(f"      Rotando T5. Último intento: '{ultimo_intento}'. Nuevo intento: '{respuesta_tf_ia}'")
+                            else:
+                                # Use 32 spaces for indentation
+                                respuesta_tf_ia = lista_soluciones[0]
+                                print(f"      Iniciando desde el principio de la lista T5. Intentando: '{respuesta_tf_ia}'")
+                            
+                            preguntas_ya_vistas[clave_pregunta] = respuesta_tf_ia # Guardar este intento
+                            # --- FIN LÓGICA DE ROTACIÓN (SIMPLE) ---
                         else:
                             # Use 28 spaces for indentation
                             if clave_pregunta in preguntas_ya_vistas:
                                 # Use 32 spaces for indentation
+                                # Esta lógica de re-intento simple sigue siendo válida si no hay memoria guardada
                                 respuesta_anterior = preguntas_ya_vistas[clave_pregunta]; respuesta_tf_ia = "False" if respuesta_anterior == "True" else "True"
                                 print(f"      WARN: Pregunta repetida (T5). Anterior: '{respuesta_anterior}'. Forzando: '{respuesta_tf_ia}'")
-                            else: print("      IA (T/F)..."); respuesta_tf_ia = ia_utils.obtener_true_false(contexto, texto_afirmacion)
+                            else: 
+                                # Use 32 spaces for indentation
+                                print("      IA (T/F)..."); respuesta_tf_ia = ia_utils.obtener_true_false(contexto, texto_afirmacion)
+                            
                             if respuesta_tf_ia: preguntas_ya_vistas[clave_pregunta] = respuesta_tf_ia
+                        
                         if not respuesta_tf_ia: raise Exception("IA (T/F) falló.")
                         print(f"      IA decidió: {respuesta_tf_ia}"); boton_a_clicar = boton_true if respuesta_tf_ia == "True" else boton_false
 
@@ -915,27 +962,40 @@ try:
                     if not lista_de_tareas: raise Exception("No tareas recolectadas.")
                     clave_pregunta = "|".join([p.strip() for p in lista_de_preguntas])
 
-                    # --- ¡INICIO CHEQUEO DE BUCLE ATASCADO (TIPO 7)! ---
-                    if clave_pregunta and clave_pregunta == ultima_clave_pregunta_procesada:
-                        # Use 24 spaces for indentation
-                        print(f"      ¡ALERTA! PREGUNTA REPETIDA DETECTADA (Clave: {clave_pregunta[:70]}...)")
-                        print("      Se asume que es la última pregunta y está atascada. Refrescando PÁGINA...")
-                        try:
-                            # Use 28 spaces for indentation
-                            driver.refresh()
-                            wait_long.until(EC.presence_of_element_located(sel.SELECTOR_CHECK))
-                            print("      Página refrescada. Reintentando...")
-                            pregunta_actual_texto = ""
-                            ultima_clave_pregunta_procesada = ""
-                            respuesta_fue_incorrecta = False
-                            continue
-                        except Exception as e_refresh:
-                            # Use 28 spaces for indentation
-                            print(f"      ERROR CRÍTICO: No se pudo refrescar tras detectar bucle: {e_refresh}")
-                            raise
-                    # --- ¡FIN CHEQUEO DE BUCLE ATASCADO! ---
+                    # --- ¡CHEQUEO DE BUCLE ATASCADO (TIPO 7) ELIMINADO! ---
 
-                    if clave_pregunta in soluciones_correctas: print("      SOLUCIÓN ENCONTRADA."); respuestas_lote_ia = soluciones_correctas[clave_pregunta]
+                    if clave_pregunta in soluciones_correctas: 
+                        # Use 24 spaces for indentation
+                        print("      SOLUCIÓN(ES) LOTE T7 ENCONTRADA(S).")
+                        # --- INICIO LÓGICA DE ROTACIÓN (LOTE) ---
+                        lista_soluciones_lote = soluciones_correctas[clave_pregunta] # Es una lista de listas, ej: [ ["A","B"], ["B","A"] ]
+                        ultimo_intento_lote = preguntas_ya_vistas.get(clave_pregunta) # Es una lista, ej: ["A","B"]
+
+                        # Auto-corrección de memoria antigua (si guardamos mal antes)
+                        if not isinstance(lista_soluciones_lote, list) or (lista_soluciones_lote and not isinstance(lista_soluciones_lote[0], list)):
+                            # Use 28 spaces for indentation
+                            print(f"      WARN: Solución Lote T7 no era lista de listas. Auto-corrigiendo. '{lista_soluciones_lote}'")
+                            if isinstance(lista_soluciones_lote, list) and not (lista_soluciones_lote and isinstance(lista_soluciones_lote[0], list)):
+                                # Use 32 spaces for indentation
+                                lista_soluciones_lote = [lista_soluciones_lote] # Convertir ["A","B"] a [ ["A","B"] ]
+                            else:
+                                # Use 32 spaces for indentation
+                                lista_soluciones_lote = [ [str(lista_soluciones_lote)] ] # Fallback
+                            soluciones_correctas[clave_pregunta] = lista_soluciones_lote
+                        
+                        if ultimo_intento_lote and ultimo_intento_lote in lista_soluciones_lote:
+                            # Use 28 spaces for indentation
+                            indice = lista_soluciones_lote.index(ultimo_intento_lote)
+                            indice_nuevo = (indice + 1) % len(lista_soluciones_lote) # Rotar
+                            respuestas_lote_ia = lista_soluciones_lote[indice_nuevo]
+                            print(f"      Rotando Lote T7. Último intento: '{ultimo_intento_lote}'. Nuevo intento: '{respuestas_lote_ia}'")
+                        else:
+                            # Use 28 spaces for indentation
+                            respuestas_lote_ia = lista_soluciones_lote[0]
+                            print(f"      Iniciando desde el principio de la lista Lote T7. Intentando: '{respuestas_lote_ia}'")
+                        
+                        preguntas_ya_vistas[clave_pregunta] = respuestas_lote_ia # Guardar este intento (lista)
+                        # --- FIN LÓGICA DE ROTACIÓN (LOTE) ---
                     else:
                         # Use 24 spaces for indentation
                         respuesta_anterior_incorrecta = None
@@ -1050,31 +1110,41 @@ try:
                     claves_unicas_ordenados_str = "|".join(sorted(palabras_clave))
                     clave_pregunta = f"T8:{titulo_limpio}||{claves_unicas_ordenados_str}||" + "|".join(defs_limpias_sorted)
 
-                    # --- ¡INICIO CHEQUEO DE BUCLE ATASCADO (TIPO 8)! ---
-                    if clave_pregunta and clave_pregunta == ultima_clave_pregunta_procesada:
-                        # Use 24 spaces for indentation
-                        print(f"      ¡ALERTA! PREGUNTA REPETIDA DETECTADA (Clave: {clave_pregunta[:70]}...)")
-                        print("      Se asume que es la última pregunta y está atascada. Refrescando PÁGINA...")
-                        try:
-                            # Use 28 spaces for indentation
-                            driver.refresh()
-                            wait_long.until(EC.presence_of_element_located(sel.SELECTOR_CHECK))
-                            print("      Página refrescada. Reintentando...")
-                            pregunta_actual_texto = ""
-                            ultima_clave_pregunta_procesada = ""
-                            respuesta_fue_incorrecta = False
-                            continue
-                        except Exception as e_refresh:
-                            # Use 28 spaces for indentation
-                            print(f"      ERROR CRÍTICO: No se pudo refrescar tras detectar bucle: {e_refresh}")
-                            raise
-                    # --- ¡FIN CHEQUEO DE BUCLE ATASCADO! ---
+                    # --- ¡CHEQUEO DE BUCLE ATASCADO (TIPO 8) ELIMINADO! ---
 
                     print(f"DEBUG: Generated Key T8: '{clave_pregunta}'")
                     if clave_pregunta in soluciones_correctas:
                         # Use 24 spaces for indentation
-                        print("      SOLUCIÓN ENCONTRADA en memoria.");
-                        lista_definiciones_ordenadas = soluciones_correctas[clave_pregunta]
+                        print("      SOLUCIÓN(ES) LOTE T8 ENCONTRADA(S) en memoria.");
+                        # --- INICIO LÓGICA DE ROTACIÓN (LOTE) ---
+                        lista_soluciones_lote = soluciones_correctas[clave_pregunta] # Es una lista de listas, ej: [ ["A","B"], ["B","A"] ]
+                        ultimo_intento_lote = preguntas_ya_vistas.get(clave_pregunta) # Es una lista, ej: ["A","B"]
+
+                        # Auto-corrección de memoria antigua (si guardamos mal antes)
+                        if not isinstance(lista_soluciones_lote, list) or (lista_soluciones_lote and not isinstance(lista_soluciones_lote[0], list)):
+                            # Use 28 spaces for indentation
+                            print(f"      WARN: Solución Lote T8 no era lista de listas. Auto-corrigiendo. '{lista_soluciones_lote}'")
+                            if isinstance(lista_soluciones_lote, list) and not (lista_soluciones_lote and isinstance(lista_soluciones_lote[0], list)):
+                                # Use 32 spaces for indentation
+                                lista_soluciones_lote = [lista_soluciones_lote] # Convertir ["A","B"] a [ ["A","B"] ]
+                            else:
+                                # Use 32 spaces for indentation
+                                lista_soluciones_lote = [ [str(lista_soluciones_lote)] ] # Fallback
+                            soluciones_correctas[clave_pregunta] = lista_soluciones_lote
+                        
+                        if ultimo_intento_lote and ultimo_intento_lote in lista_soluciones_lote:
+                            # Use 28 spaces for indentation
+                            indice = lista_soluciones_lote.index(ultimo_intento_lote)
+                            indice_nuevo = (indice + 1) % len(lista_soluciones_lote) # Rotar
+                            lista_definiciones_ordenadas = lista_soluciones_lote[indice_nuevo]
+                            print(f"      Rotando Lote T8. Último intento: '{ultimo_intento_lote}'. Nuevo intento: '{lista_definiciones_ordenadas}'")
+                        else:
+                            # Use 28 spaces for indentation
+                            lista_definiciones_ordenadas = lista_soluciones_lote[0]
+                            print(f"      Iniciando desde el principio de la lista Lote T8. Intentando: '{lista_definiciones_ordenadas}'")
+                        
+                        preguntas_ya_vistas[clave_pregunta] = lista_definiciones_ordenadas # Guardar este intento (lista)
+                        # --- FIN LÓGICA DE ROTACIÓN (LOTE) ---
                     else:
                         # Use 24 spaces for indentation
                         print("      IA (Emparejar - T8)...")
@@ -1118,7 +1188,6 @@ try:
                     if not opciones: raise Exception("No opciones visibles (TIPO 9).")
 
                     # --- Lógica de HASH de AUDIO (original, blob) ---
-                    # (Como pediste, no tocamos T9)
                     audio_hash = ""
                     try:
                         # Use 24 spaces for indentation
@@ -1149,32 +1218,39 @@ try:
                     opciones_limpias_sorted_t9 = sorted([o.strip() for o in opciones])
                     clave_pregunta = f"T9:{titulo_limpio_t9}||{contexto_hash}||{body_hash}||{audio_hash}||" + "|".join(opciones_limpias_sorted_t9) # body_hash añadido
 
-                    # --- ¡INICIO CHEQUEO DE BUCLE ATASCADO (TIPO 9)! ---
-                    if clave_pregunta and clave_pregunta == ultima_clave_pregunta_procesada:
-                        # Use 24 spaces for indentation
-                        print(f"      ¡ALERTA! PREGUNTA REPETIDA DETECTADA (Clave: {clave_pregunta[:70]}...)")
-                        print("      Se asume que es la última pregunta y está atascada. Refrescando PÁGINA...")
-                        try:
-                            # Use 28 spaces for indentation
-                            driver.refresh()
-                            wait_long.until(EC.presence_of_element_located(sel.SELECTOR_CHECK))
-                            print("      Página refrescada. Reintentando...")
-                            pregunta_actual_texto = ""
-                            ultima_clave_pregunta_procesada = ""
-                            respuesta_fue_incorrecta = False
-                            continue
-                        except Exception as e_refresh:
-                            # Use 28 spaces for indentation
-                            print(f"      ERROR CRÍTICO: No se pudo refrescar tras detectar bucle: {e_refresh}")
-                            raise
-                    # --- ¡FIN CHEQUEO DE BUCLE ATASCADO! ---
+                    # --- ¡CHEQUEO DE BUCLE ATASCADO (TIPO 9) ELIMINADO! ---
 
                     print(f"Resolviendo: {pregunta_actual_texto}\nOpciones: {opciones}");
                     opciones_ya_vistas[clave_pregunta] = opciones
+                    
+                    respuesta_adivinada = None # Inicializar
                     if clave_pregunta in soluciones_correctas:
                         # Use 24 spaces for indentation
-                        print("      SOLUCIÓN ENCONTRADA.");
-                        respuesta_adivinada = soluciones_correctas[clave_pregunta]
+                        print("      SOLUCIÓN(ES) T9 ENCONTRADA(S).");
+                        # --- INICIO LÓGICA DE ROTACIÓN (SIMPLE) ---
+                        lista_soluciones = soluciones_correctas[clave_pregunta]
+                        ultimo_intento = preguntas_ya_vistas.get(clave_pregunta)
+
+                        # Auto-corrección de memoria antigua (si guardamos un string en lugar de una lista)
+                        if not isinstance(lista_soluciones, list):
+                            # Use 28 spaces for indentation
+                            print(f"      WARN: Memoria T9 no era lista. Auto-corrigiendo. '{lista_soluciones}'")
+                            lista_soluciones = [lista_soluciones] # Convertir "Opcion A" a ["Opcion A"]
+                            soluciones_correctas[clave_pregunta] = lista_soluciones
+                        
+                        if ultimo_intento and ultimo_intento in lista_soluciones:
+                            # Use 28 spaces for indentation
+                            indice = lista_soluciones.index(ultimo_intento)
+                            indice_nuevo = (indice + 1) % len(lista_soluciones) # Rotar
+                            respuesta_adivinada = lista_soluciones[indice_nuevo]
+                            print(f"      Rotando T9. Último intento: '{ultimo_intento}'. Nuevo intento: '{respuesta_adivinada}'")
+                        else:
+                            # Use 28 spaces for indentation
+                            respuesta_adivinada = lista_soluciones[0]
+                            print(f"      Iniciando desde el principio de la lista T9. Intentando: '{respuesta_adivinada}'")
+                        
+                        preguntas_ya_vistas[clave_pregunta] = respuesta_adivinada # Guardar este intento
+                        # --- FIN LÓGICA DE ROTACIÓN (SIMPLE) ---
                     else:
                         # Use 24 spaces for indentation
                         opciones_para_adivinar = list(opciones)
@@ -1192,6 +1268,7 @@ try:
                         print("      Adivinando respuesta (Audio)...");
                         respuesta_adivinada = random.choice(opciones_para_adivinar)
                         preguntas_ya_vistas[clave_pregunta] = respuesta_adivinada
+                    
                     print(f"Bot decidió: '{respuesta_adivinada}'"); boton_encontrado = None
                     opciones_visibles = driver.find_elements(*sel.SELECTOR_OPCIONES)
                     for b in opciones_visibles:
@@ -1231,31 +1308,41 @@ try:
                     claves_ordenadas_str = "|".join(sorted([t["letras_clave"] for t in lista_de_tareas_escribir]))
                     clave_pregunta = f"T10_BATCH:{titulo_limpio}||{claves_ordenadas_str}"
 
-                    # --- ¡INICIO CHEQUEO DE BUCLE ATASCADO (TIPO 10)! ---
-                    if clave_pregunta and clave_pregunta == ultima_clave_pregunta_procesada:
-                        # Use 24 spaces for indentation
-                        print(f"      ¡ALERTA! PREGUNTA REPETIDA DETECTADA (Clave: {clave_pregunta[:70]}...)")
-                        print("      Se asume que es la última pregunta y está atascada. Refrescando PÁGINA...")
-                        try:
-                            # Use 28 spaces for indentation
-                            driver.refresh()
-                            wait_long.until(EC.presence_of_element_located(sel.SELECTOR_CHECK))
-                            print("      Página refrescada. Reintentando...")
-                            pregunta_actual_texto = ""
-                            ultima_clave_pregunta_procesada = ""
-                            respuesta_fue_incorrecta = False
-                            continue
-                        except Exception as e_refresh:
-                            # Use 28 spaces for indentation
-                            print(f"      ERROR CRÍTICO: No se pudo refrescar tras detectar bucle: {e_refresh}")
-                            raise
-                    # --- ¡FIN CHEQUEO DE BUCLE ATASCADO! ---
+                    # --- ¡CHEQUEO DE BUCLE ATASCADO (TIPO 10) ELIMINADO! ---
 
                     respuestas_lote_ia = []
                     if clave_pregunta in soluciones_correctas:
                         # Use 24 spaces for indentation
-                        print("      SOLUCIÓN LOTE TIPO 10 ENCONTRADA en memoria.");
-                        respuestas_lote_ia = soluciones_correctas[clave_pregunta]
+                        print("      SOLUCIÓN(ES) LOTE TIPO 10 ENCONTRADA(S) en memoria.");
+                        # --- INICIO LÓGICA DE ROTACIÓN (LOTE) ---
+                        lista_soluciones_lote = soluciones_correctas[clave_pregunta] # Es una lista de listas, ej: [ ["A","B"], ["B","A"] ]
+                        ultimo_intento_lote = preguntas_ya_vistas.get(clave_pregunta) # Es una lista, ej: ["A","B"]
+
+                        # Auto-corrección de memoria antigua (si guardamos mal antes)
+                        if not isinstance(lista_soluciones_lote, list) or (lista_soluciones_lote and not isinstance(lista_soluciones_lote[0], list)):
+                            # Use 28 spaces for indentation
+                            print(f"      WARN: Solución Lote T10 no era lista de listas. Auto-corrigiendo. '{lista_soluciones_lote}'")
+                            if isinstance(lista_soluciones_lote, list) and not (lista_soluciones_lote and isinstance(lista_soluciones_lote[0], list)):
+                                # Use 32 spaces for indentation
+                                lista_soluciones_lote = [lista_soluciones_lote] # Convertir ["A","B"] a [ ["A","B"] ]
+                            else:
+                                # Use 32 spaces for indentation
+                                lista_soluciones_lote = [ [str(lista_soluciones_lote)] ] # Fallback
+                            soluciones_correctas[clave_pregunta] = lista_soluciones_lote
+                        
+                        if ultimo_intento_lote and ultimo_intento_lote in lista_soluciones_lote:
+                            # Use 28 spaces for indentation
+                            indice = lista_soluciones_lote.index(ultimo_intento_lote)
+                            indice_nuevo = (indice + 1) % len(lista_soluciones_lote) # Rotar
+                            respuestas_lote_ia = lista_soluciones_lote[indice_nuevo]
+                            print(f"      Rotando Lote T10. Último intento: '{ultimo_intento_lote}'. Nuevo intento: '{respuestas_lote_ia}'")
+                        else:
+                            # Use 28 spaces for indentation
+                            respuestas_lote_ia = lista_soluciones_lote[0]
+                            print(f"      Iniciando desde el principio de la lista Lote T10. Intentando: '{respuestas_lote_ia}'")
+                        
+                        preguntas_ya_vistas[clave_pregunta] = respuestas_lote_ia # Guardar este intento (lista)
+                        # --- FIN LÓGICA DE ROTACIÓN (LOTE) ---
                     else:
                         # Use 24 spaces for indentation
                         print("      Llamando a IA (Ordenar Palabra Lote)...")
@@ -1328,31 +1415,41 @@ try:
                     frases_clave_str = "|".join(sorted([t["frase"] for t in lista_de_tareas_escribir]))
                     clave_pregunta = f"T11_BATCH:{titulo_limpio}||{contexto_hash}||{frases_clave_str}"
 
-                    # --- ¡INICIO CHEQUEO DE BUCLE ATASCADO (TIPO 11)! ---
-                    if clave_pregunta and clave_pregunta == ultima_clave_pregunta_procesada:
-                        # Use 24 spaces for indentation
-                        print(f"      ¡ALERTA! PREGUNTA REPETIDA DETECTADA (Clave: {clave_pregunta[:70]}...)")
-                        print("      Se asume que es la última pregunta y está atascada. Refrescando PÁGINA...")
-                        try:
-                            # Use 28 spaces for indentation
-                            driver.refresh()
-                            wait_long.until(EC.presence_of_element_located(sel.SELECTOR_CHECK))
-                            print("      Página refrescada. Reintentando...")
-                            pregunta_actual_texto = ""
-                            ultima_clave_pregunta_procesada = ""
-                            respuesta_fue_incorrecta = False
-                            continue
-                        except Exception as e_refresh:
-                            # Use 28 spaces for indentation
-                            print(f"      ERROR CRÍTICO: No se pudo refrescar tras detectar bucle: {e_refresh}")
-                            raise
-                    # --- ¡FIN CHEQUEO DE BUCLE ATASCADO! ---
+                    # --- ¡CHEQUEO DE BUCLE ATASCADO (TIPO 11) ELIMINADO! ---
 
                     respuestas_lote_ia = []
                     if clave_pregunta in soluciones_correctas:
                         # Use 24 spaces for indentation
-                        print("      SOLUCIÓN LOTE TIPO 11 ENCONTRADA en memoria.");
-                        respuestas_lote_ia = soluciones_correctas[clave_pregunta]
+                        print("      SOLUCIÓN(ES) LOTE TIPO 11 ENCONTRADA(S) en memoria.");
+                        # --- INICIO LÓGICA DE ROTACIÓN (LOTE) ---
+                        lista_soluciones_lote = soluciones_correctas[clave_pregunta] # Es una lista de listas, ej: [ ["A","B"], ["B","A"] ]
+                        ultimo_intento_lote = preguntas_ya_vistas.get(clave_pregunta) # Es una lista, ej: ["A","B"]
+
+                        # Auto-corrección de memoria antigua (si guardamos mal antes)
+                        if not isinstance(lista_soluciones_lote, list) or (lista_soluciones_lote and not isinstance(lista_soluciones_lote[0], list)):
+                            # Use 28 spaces for indentation
+                            print(f"      WARN: Solución Lote T11 no era lista de listas. Auto-corrigiendo. '{lista_soluciones_lote}'")
+                            if isinstance(lista_soluciones_lote, list) and not (lista_soluciones_lote and isinstance(lista_soluciones_lote[0], list)):
+                                # Use 32 spaces for indentation
+                                lista_soluciones_lote = [lista_soluciones_lote] # Convertir ["A","B"] a [ ["A","B"] ]
+                            else:
+                                # Use 32 spaces for indentation
+                                lista_soluciones_lote = [ [str(lista_soluciones_lote)] ] # Fallback
+                            soluciones_correctas[clave_pregunta] = lista_soluciones_lote
+                        
+                        if ultimo_intento_lote and ultimo_intento_lote in lista_soluciones_lote:
+                            # Use 28 spaces for indentation
+                            indice = lista_soluciones_lote.index(ultimo_intento_lote)
+                            indice_nuevo = (indice + 1) % len(lista_soluciones_lote) # Rotar
+                            respuestas_lote_ia = lista_soluciones_lote[indice_nuevo]
+                            print(f"      Rotando Lote T11. Último intento: '{ultimo_intento_lote}'. Nuevo intento: '{respuestas_lote_ia}'")
+                        else:
+                            # Use 28 spaces for indentation
+                            respuestas_lote_ia = lista_soluciones_lote[0]
+                            print(f"      Iniciando desde el principio de la lista Lote T11. Intentando: '{respuestas_lote_ia}'")
+                        
+                        preguntas_ya_vistas[clave_pregunta] = respuestas_lote_ia # Guardar este intento (lista)
+                        # --- FIN LÓGICA DE ROTACIÓN (LOTE) ---
                     else:
                         # --- ¡NUEVA LÓGICA DE BIFURCACIÓN T11! ---
                         titulo_lower = pregunta_actual_texto.lower()
@@ -1449,10 +1546,7 @@ try:
                     clave_pregunta = f"T12_DICTADO:{titulo_limpio}||{contexto_hash}||{frases_clave_str}"
                     print(f"      Clave T12 generada: {clave_pregunta}")
 
-                    # --- CHEQUEO DE BUCLE ATASCADO (TIPO 12) ---
-                    # ¡ELIMINADO! La lógica de rotación maneja esto.
-                    # (Como pediste en el mensaje anterior)
-                    # --- FIN CHEQUEO DE BUCLE ATASCADO ---
+                    # --- CHEQUEO DE BUCLE ATASCADO (TIPO 12) ELIMINADO ---
 
                     # --- ¡INICIO LÓGICA DE ROTACIÓN T12! ---
                     respuestas_lote_ia = [] # Inicializar
@@ -1579,29 +1673,39 @@ try:
                     opciones_limpias_sorted_def = sorted([o.strip() for o in opciones])
                     clave_pregunta = f"DEFAULT:{titulo_limpio_def}||{contexto_hash}||{body_hash}||{imagen_hash}||" + "|".join(opciones_limpias_sorted_def) # body_hash añadido
 
-                    # --- ¡INICIO CHEQUEO DE BUCLE ATASCADO (DEFAULT)! ---
-                    if clave_pregunta and clave_pregunta == ultima_clave_pregunta_procesada:
-                        # Use 24 spaces for indentation
-                        print(f"      ¡ALERTA! PREGUNTA REPETIDA DETECTADA (Clave: {clave_pregunta[:70]}...)")
-                        print("      Se asume que es la última pregunta y está atascada. Refrescando PÁGINA...")
-                        try:
-                            # Use 28 spaces for indentation
-                            driver.refresh()
-                            wait_long.until(EC.presence_of_element_located(sel.SELECTOR_CHECK))
-                            print("      Página refrescada. Reintentando...")
-                            pregunta_actual_texto = ""
-                            ultima_clave_pregunta_procesada = ""
-                            respuesta_fue_incorrecta = False
-                            continue
-                        except Exception as e_refresh:
-                            # Use 28 spaces for indentation
-                            print(f"      ERROR CRÍTICO: No se pudo refrescar tras detectar bucle: {e_refresh}")
-                            raise
-                    # --- ¡FIN CHEQUEO DE BUCLE ATASCADO! ---
+                    # --- ¡CHEQUEO DE BUCLE ATASCADO (DEFAULT) ELIMINADO! ---
 
                     print(f"Resolviendo: {pregunta_actual_texto}\nOpciones: {opciones}");
                     opciones_ya_vistas[clave_pregunta] = opciones
-                    if clave_pregunta in soluciones_correctas: print("      SOLUCIÓN ENCONTRADA."); respuesta_ia = soluciones_correctas[clave_pregunta]
+                    
+                    respuesta_ia = None # Inicializar
+                    if clave_pregunta in soluciones_correctas: 
+                        # Use 24 spaces for indentation
+                        print("      SOLUCIÓN(ES) DEFAULT ENCONTRADA(S).");
+                        # --- INICIO LÓGICA DE ROTACIÓN (SIMPLE) ---
+                        lista_soluciones = soluciones_correctas[clave_pregunta]
+                        ultimo_intento = preguntas_ya_vistas.get(clave_pregunta)
+
+                        # Auto-corrección de memoria antigua (si guardamos un string en lugar de una lista)
+                        if not isinstance(lista_soluciones, list):
+                            # Use 28 spaces for indentation
+                            print(f"      WARN: Memoria DEFAULT no era lista. Auto-corrigiendo. '{lista_soluciones}'")
+                            lista_soluciones = [lista_soluciones] # Convertir "Opcion A" a ["Opcion A"]
+                            soluciones_correctas[clave_pregunta] = lista_soluciones
+                        
+                        if ultimo_intento and ultimo_intento in lista_soluciones:
+                            # Use 28 spaces for indentation
+                            indice = lista_soluciones.index(ultimo_intento)
+                            indice_nuevo = (indice + 1) % len(lista_soluciones) # Rotar
+                            respuesta_ia = lista_soluciones[indice_nuevo]
+                            print(f"      Rotando DEFAULT. Último intento: '{ultimo_intento}'. Nuevo intento: '{respuesta_ia}'")
+                        else:
+                            # Use 28 spaces for indentation
+                            respuesta_ia = lista_soluciones[0]
+                            print(f"      Iniciando desde el principio de la lista DEFAULT. Intentando: '{respuesta_ia}'")
+                        
+                        preguntas_ya_vistas[clave_pregunta] = respuesta_ia # Guardar este intento
+                        # --- FIN LÓGICA DE ROTACIÓN (SIMPLE) ---
                     else:
                         # Use 24 spaces for indentation
                         opciones_para_ia = list(opciones)
@@ -1613,6 +1717,7 @@ try:
                         print("IA (OM)..."); respuesta_ia = ia_utils.obtener_respuesta_opcion_multiple(contexto, pregunta, opciones_para_ia)
                         if not respuesta_ia: raise Exception("IA (OM) falló.")
                         preguntas_ya_vistas[clave_pregunta] = respuesta_ia
+                    
                     print(f"IA decidió: '{respuesta_ia}'"); boton_encontrado = None
                     opciones_visibles = driver.find_elements(*sel.SELECTOR_OPCIONES)
                     for b in opciones_visibles:
@@ -1833,7 +1938,7 @@ try:
                             else: print("      IA (Simple) no pudo extraer solución.")
 
 
-                        # --- ¡INICIO LÓGICA DE GUARDADO T12! ---
+                        # --- ¡INICIO NUEVA LÓGICA DE GUARDADO (ROTACIÓN)! ---
                         if clave_pregunta_aprendizaje and solucion_aprendida:
                            # Use 28 spaces for indentation
                            
@@ -1848,7 +1953,7 @@ try:
                            lista_existente = soluciones_correctas.get(clave_pregunta_aprendizaje)
                            
                            # 3. Lógica de guardado
-                           if tipo_pregunta == "TIPO_2_COMPLETAR": # T2 usa Dict, lógica especial
+                           if tipo_pregunta == "TIPO_2_COMPLETAR": # T2 usa Dict, lógica especial (no rota)
                                 # Use 32 spaces for indentation
                                 if isinstance(lista_existente, dict) and isinstance(solucion_aprendida, dict):
                                     lista_existente.update(solucion_aprendida)
@@ -1859,37 +1964,49 @@ try:
                                     print(f"      Memoria T2 guardada/sobrescrita: {solucion_aprendida}")
                                 guardar_memoria_en_disco()
                            
-                           elif tipo_pregunta == "TIPO_12_DICTADO":
+                           # --- ¡NUEVA LÓGICA DE ROTACIÓN PARA CASI TODO! ---
+                           elif tipo_pregunta in [
+                               "TIPO_DEFAULT_OM", "TIPO_9_AUDIO", "TIPO_5_TF_SINGLE", # Tipos Simples
+                               "TIPO_1_ORDENAR", "TIPO_3_TF_MULTI", "TIPO_4_EMPAREJAR", # Tipos Lote (Deterministas pero con IA)
+                               "TIPO_6_PARAGRAPH", "TIPO_7_OM_CARD", # Tipos Lote (IA)
+                               "TIPO_8_IMAGEN", "TIPO_10_ESCRIBIR", "TIPO_11_ESCRIBIR_OPCIONES", # Tipos Lote (IA)
+                               "TIPO_12_DICTADO" # Tipo Lote (Dictado)
+                           ]:
                                 # Use 32 spaces for indentation
-                                # ¡LÓGICA DE ROTACIÓN T12!
-                                # `solucion_individual_aprendida` es una lista, ej: ["FRASE A"]
                                 
+                                # Auto-corrección / Inicialización
                                 if not isinstance(lista_existente, list):
                                     # Use 36 spaces for indentation
-                                    print(f"      Memoria T12 no era lista. Creando nueva lista.")
+                                    print(f"      Memoria no era lista. Creando nueva lista.")
                                     lista_existente = []
-                                
+                                # Validar tipo de contenido (lista de strings vs lista de listas)
+                                elif lista_existente and (type(lista_existente[0]) != type(solucion_individual_aprendida)):
+                                    # Use 36 spaces for indentation
+                                    # Caso especial: la memoria era ["A"] (simple) y aprendimos [["A","B"]] (lote) o viceversa
+                                    print(f"      WARN: Tipo de memoria ({type(lista_existente[0])}) no coincide con solución aprendida ({type(solucion_individual_aprendida)}). Reseteando lista.")
+                                    lista_existente = []
+
                                 if solucion_individual_aprendida not in lista_existente:
                                     # Use 36 spaces for indentation
-                                    print(f"      ¡Nueva solución T12 aprendida! Añadiendo a la lista: {solucion_individual_aprendida}")
+                                    print(f"      ¡Nueva solución aprendida! Añadiendo a la lista: {solucion_individual_aprendida}")
                                     lista_existente.append(solucion_individual_aprendida)
                                     soluciones_correctas[clave_pregunta_aprendizaje] = lista_existente
                                     guardar_memoria_en_disco()
                                 else:
                                     # Use 36 spaces for indentation
-                                    print("      WARN: La solución T12 aprendida ya estaba en la lista. No se guarda.")
-                                    
-                           else: # T1, T3, T4, T5, T6, T7, T8, T9, T10, T11, DEFAULT
+                                    print(f"      WARN: La solución aprendida ({solucion_individual_aprendida}) ya estaba en la lista. No se guarda.")
+                           
+                           else: # ¿Queda alguno?
                                 # Use 32 spaces for indentation
-                                # Lógica de guardado estándar (sobrescribir)
+                                # Lógica de guardado estándar (sobrescribir) - fallback
                                 soluciones_correctas[clave_pregunta_aprendizaje] = solucion_individual_aprendida
-                                print(f"      Memoria guardada (Estándar): {solucion_individual_aprendida}")
+                                print(f"      Memoria guardada (Fallback Estándar): {solucion_individual_aprendida}")
                                 guardar_memoria_en_disco()
                         
                         else: # No se pudo aprender
                            # Use 28 spaces for indentation
                            print("      WARN: No se pudo aprender la solución (clave o solución vacía).")
-                        # --- ¡FIN LÓGICA DE GUARDADO T12! ---
+                        # --- ¡FIN LÓGICA DE GUARDADO! ---
 
 
                     # --- CASO 2: RESPUESTA CORRECTA ---
@@ -1899,13 +2016,13 @@ try:
                         clave_pregunta_acierto = None
 
                         # Regenerar clave correcta para guardar el acierto si es necesario
-                        # (Primero, verificar si la clave ya se generó en la lógica principal)
                         if 'clave_pregunta' in locals() and clave_pregunta:
                              clave_pregunta_acierto = clave_pregunta.strip()
                         
                         if clave_pregunta_acierto is None:
                             # Use 28 spaces for indentation
                             print("      WARN Acierto: 'clave_pregunta' no estaba definida. Regenerando clave para guardar acierto...")
+                            # (Regeneración de claves omitida por brevedad, es la misma que ya tienes)
                             if tipo_pregunta == "TIPO_10_ESCRIBIR":
                                  # Use 32 spaces for indentation
                                  titulo_limpio = pregunta_actual_texto.strip()
@@ -1918,16 +2035,12 @@ try:
                                  if 'lista_de_tareas_escribir' in locals() and lista_de_tareas_escribir:
                                      frases_clave_str = "|".join(sorted([t["frase"] for t in lista_de_tareas_escribir]))
                                      clave_pregunta_acierto = f"T11_BATCH:{titulo_limpio}||{contexto_hash}||{frases_clave_str}"
-                            # --- ¡NUEVO T12 ACIERTO! ---
                             elif tipo_pregunta == "TIPO_12_DICTADO":
                                  # Use 32 spaces for indentation
                                  titulo_limpio = pregunta_actual_texto.strip()
                                  if 'lista_de_tareas_escribir' in locals() and lista_de_tareas_escribir:
-                                     # Use 36 spaces for indentation
                                      frases_clave_str = "|".join(sorted([t["frase"] for t in lista_de_tareas_escribir]))
-                                     # ¡audio_hash OMITIDO INTENCIONALMENTE!
                                      clave_pregunta_acierto = f"T12_DICTADO:{titulo_limpio}||{contexto_hash}||{frases_clave_str}"
-                            # --- FIN NUEVO T12 ---
                             elif tipo_pregunta == "TIPO_8_IMAGEN":
                                 # Use 32 spaces for indentation
                                 titulo_limpio = pregunta_actual_texto.strip()
@@ -1942,8 +2055,6 @@ try:
                                      frases_para_clave = sorted([t["frase"] for t in lista_de_tareas_completar])
                                      frases_hash_str = "|".join(frases_para_clave)
                                      clave_pregunta_acierto = f"T2_BATCH:{titulo_limpio}||{contexto_hash}||FRASES:{frases_hash_str}"
-                            
-                            # --- ¡INICIO CORRECCIÓN CLAVE T4 (ACIERTOS)! ---
                             elif tipo_pregunta == "TIPO_4_EMPAREJAR":
                                 # Use 32 spaces for indentation
                                 titulo_limpio = pregunta_actual_texto.strip()
@@ -1951,9 +2062,8 @@ try:
                                      defs_limpias_sorted = sorted([d.strip() for d in definiciones])
                                      palabras_clave_limpias_sorted = sorted([p.strip() for p in palabras_clave])
                                      clave_pregunta_acierto = f"T4:{titulo_limpio}||KW:" + "|".join(palabras_clave_limpias_sorted) + "||DEF:" + "|".join(defs_limpias_sorted)
-                            # --- ¡FIN CORRECCIÓN CLAVE T4 (ACIERTOS)! ---
                         
-                        # --- ¡INICIO LÓGICA DE GUARDADO T12 (ACIERTO)! ---
+                        # --- ¡INICIO LÓGICA DE GUARDADO (ACIERTO - ROTACIÓN)! ---
                         if clave_pregunta_acierto:
                             # Use 28 spaces for indentation
                             respuesta_correcta_actual = preguntas_ya_vistas.get(clave_pregunta_acierto)
@@ -1964,7 +2074,7 @@ try:
                             
                             elif tipo_pregunta == "TIPO_2_COMPLETAR":
                                # Use 32 spaces for indentation
-                               # (La lógica T2 existente está bien)
+                               # (La lógica T2 de "dict update" está bien, no la tocamos)
                                 if not isinstance(respuesta_correcta_actual, dict):
                                     print(f"      ERROR Acierto T2: La respuesta guardada no es un dict: {respuesta_correcta_actual}")
                                 elif clave_pregunta_acierto in soluciones_correctas:
@@ -1980,7 +2090,7 @@ try:
                                              soluciones_correctas[clave_pregunta_acierto] = memoria_existente
                                              guardar_memoria_en_disco()
                                          else:
-                                             print("      La solución T2 (frase) ya estaba en memoria. No se necesita guardar.")
+                                             print("      La solución T2 (dict) ya estaba en memoria. No se necesita guardar.")
                                     else:
                                         print(f"      WARN Acierto T2: Memoria existente no era dict. Sobrescribiendo con: {respuesta_correcta_actual}")
                                         soluciones_correctas[clave_pregunta_acierto] = respuesta_correcta_actual
@@ -1993,35 +2103,28 @@ try:
                             
                             elif clave_pregunta_acierto not in soluciones_correctas:
                                # Use 32 spaces for indentation
-                               # ¡NUEVO ACIERTO! Debemos guardarlo en el formato correcto.
+                               # ¡NUEVO ACIERTO! Debemos guardarlo en el formato de LISTA.
                                try:
                                     # Use 36 spaces for indentation
                                     solucion_a_guardar = None
                                     
                                     # Normalizar respuesta (ej. mayúsculas)
                                     if tipo_pregunta == "TIPO_10_ESCRIBIR" and isinstance(respuesta_correcta_actual, list):
-                                         respuesta_correcta_actual = [p.upper() for p in respuesta_correcta_actual]
+                                         solucion_a_guardar = [p.upper() for p in respuesta_correcta_actual]
                                     elif tipo_pregunta == "TIPO_11_ESCRIBIR_OPCIONES" and isinstance(respuesta_correcta_actual, list):
-                                         respuesta_correcta_actual = [p.upper() for p in respuesta_correcta_actual]
+                                         solucion_a_guardar = [p.upper() for p in respuesta_correcta_actual]
                                     elif tipo_pregunta == "TIPO_12_DICTADO" and isinstance(respuesta_correcta_actual, list): # ¡NUEVO T12!
-                                         respuesta_correcta_actual = [p.upper() for p in respuesta_correcta_actual]
+                                         solucion_a_guardar = [p.upper() for p in respuesta_correcta_actual]
                                     elif isinstance(respuesta_correcta_actual, str):
-                                         respuesta_correcta_actual = respuesta_correcta_actual.strip()
+                                         solucion_a_guardar = respuesta_correcta_actual.strip()
+                                    else: # Para otros tipos de LOTE (T1, T3, T4, T6, T7, T8)
+                                         solucion_a_guardar = respuesta_correcta_actual
                                     
-                                    # ¡Envolver en lista de listas para T12!
-                                    if tipo_pregunta == "TIPO_12_DICTADO":
-                                        # Use 40 spaces for indentation
-                                        # `respuesta_correcta_actual` es una lista, ej: ["FRASE A"]
-                                        # La guardamos como lista de listas: [ ["FRASE A"] ]
-                                        solucion_a_guardar = [respuesta_correcta_actual]
-                                        print(f"      ¡SOLUCIÓN (por acierto T12) APRENDIDA! Guardando como lista de listas -> {solucion_a_guardar}")
-                                    else:
-                                        # Use 40 spaces for indentation
-                                        # Es otro tipo (T1, T3, T4, T5, T9, T10, T11, DEFAULT...).
-                                        solucion_a_guardar = respuesta_correcta_actual
-                                        print(f"      ¡SOLUCIÓN (por acierto Estándar) APRENDIDA! -> {solucion_a_guardar}")
+                                    # ¡Envolver en lista!
+                                    solucion_a_guardar_final = [solucion_a_guardar]
+                                    print(f"      ¡SOLUCIÓN (por acierto Estándar) APRENDIDA! Guardando como lista -> {solucion_a_guardar_final}")
 
-                                    soluciones_correctas[clave_pregunta_acierto] = solucion_a_guardar
+                                    soluciones_correctas[clave_pregunta_acierto] = solucion_a_guardar_final
                                     guardar_memoria_en_disco()
                                except Exception as e_acierto:
                                     # Use 36 spaces for indentation
@@ -2031,7 +2134,7 @@ try:
                                  print("      La solución ya estaba en memoria. No se necesita guardar.")
                         else: # clave_pregunta_acierto es None
                              print("      WARN Acierto: No se pudo generar/obtener clave para guardar el acierto.")
-                        # --- ¡FIN LÓGICA DE GUARDADO T12 (ACIERTO)! ---
+                        # --- ¡FIN LÓGICA DE GUARDADO (ACIERTO - ROTACIÓN)! ---
 
                 except Exception as e:
                     # Use 20 spaces for indentation
@@ -2085,3 +2188,4 @@ except Exception as e:
 finally:
     # Use 4 spaces for indentation
     print("\nProceso terminado. Cerrando en 20 seg."); time.sleep(20); driver.quit()
+
