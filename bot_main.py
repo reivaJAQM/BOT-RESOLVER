@@ -32,6 +32,7 @@ try:
     wait_short = WebDriverWait(driver, 5)
     wait_long = WebDriverWait(driver, 15)
     wait_extra_long = WebDriverWait(driver, 25)
+    wait_manual = WebDriverWait(driver, 300) # ¡NUEVO! 5 minutos para intervención manual
     print("Navegador Listo!")
 except Exception as e:
     # Use 4 spaces for indentation
@@ -744,6 +745,60 @@ try:
                     except (JavascriptException, TimeoutException) as e: raise Exception(f"Error extrayendo palabras: {e}")
                     print(f"      Palabras clave encontradas (en orden): {palabras_clave}");
                     
+                    # --- ¡INICIO PARCHE MANUAL (Fertilizer/Environment)! ---
+                    # Identificar la pregunta problemática por su título y las "definiciones" que extrajo
+                    # (que para nosotros son las palabras clave)
+                    titulo_problematico = 'READ THE SENTENCES AND MATCH THE WORDS FROM THE BOX WITH THEM.'
+                    defs_problematicas = ['Fertilizer', 'Environment']
+                    
+                    if (pregunta_actual_texto.strip() == titulo_problematico and 
+                        sorted(definiciones) == sorted(defs_problematicas)):
+                        
+                        print("\n" + "!"*60)
+                        print("      ¡¡¡PREGUNTA PROBLEMÁTICA TIPO 4 DETECTADA (Fertilizer/Environment)!!!")
+                        print("      EL BOT SE PAUSARÁ. POR FAVOR, RESPONDE MANUALMENTE.")
+                        print("      El bot esperará 5 minutos (300 seg) a que completes...")
+                        print("!"*60 + "\n")
+                        
+                        try:
+                            # Pausa larga: Espera a que el usuario haga clic en CHECK y luego en OK,
+                            # y que el modal de OK desaparezca.
+                            
+                            # 1. Esperar a que aparezca el botón OK (después de que TÚ pulses CHECK)
+                            print("      Esperando a que el usuario pulse 'CHECK' y aparezca 'OK'...")
+                            wait_manual.until(EC.element_to_be_clickable(sel.SELECTOR_OK))
+                            
+                            print("      Botón 'OK' detectado. Esperando a que el usuario pulse 'OK'...")
+                            
+                            # 2. Esperar a que desaparezca el botón OK (después de que TÚ pulses OK)
+                            wait_manual.until(EC.invisibility_of_element_located(sel.SELECTOR_OK))
+                            
+                            print("      ¡Modal 'OK' desaparecido! Respuesta manual completada.")
+                            
+                            # --- Lógica Post-Pregunta Manual ---
+                            # Reseteamos las variables clave para la siguiente iteración,
+                            # ya que omitiremos el resto del bucle (CHECK, OK, Aprendizaje).
+                            
+                            pregunta_actual_texto = "" # Forzar relectura del título en la siguiente vuelta
+                            clave_pregunta = None # Evitar que la lógica de aprendizaje se ejecute
+                            ultima_clave_pregunta_procesada = f"MANUAL_OVERRIDE_{titulo_problematico}" # Dejar un rastro
+                            respuesta_fue_incorrecta = False # Asumimos que lo hiciste bien
+                            
+                            print("="*30)
+                            print("Modal desaparecido. Cargando siguiente pregunta..."); time.sleep(1)
+                            
+                            # ¡¡MUY IMPORTANTE!!
+                            # Saltar el resto del bucle while (el 'CHECK', 'OK', y 'aprendizaje')
+                            # porque el usuario ya lo hizo.
+                            continue 
+
+                        except TimeoutException:
+                            print("      ¡Tiempo de espera manual (300s) agotado!")
+                            print("      El bot continuará y probablemente fallará. Refrescando.")
+                            raise Exception("Timeout manual de 5 minutos.")
+
+                    # --- ¡FIN PARCHE MANUAL! ---
+
                     titulo_limpio = pregunta_actual_texto.strip()
                     defs_limpias_sorted = sorted([d.strip() for d in definiciones])
                     
