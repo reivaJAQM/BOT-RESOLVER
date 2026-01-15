@@ -248,6 +248,8 @@ try:
                     else:
                         print(f"      Contenido detectado: [TIPO 5] ({num_cajas_tf} caja)");
                         tipo_pregunta = "TIPO_5_TF_SINGLE"
+                elif len(driver.find_elements(*sel.SELECTOR_TIPO_13_FILAS)) > 0:
+                    print("      Contenido detectado: [TIPO 13] Selección Inline"); tipo_pregunta = "TIPO_13_INLINE"
                 # ¡MOVER TIPO 8 y TIPO 4 AQUÍ! (ANTES DE TIPO 9)
                 elif len(driver.find_elements(*sel.SELECTOR_IMAGEN_EMPAREJAR)) > 0 and len(driver.find_elements(*sel.SELECTOR_DEFINICIONES_AZULES_XPATH)) > 0: 
                     print("      Contenido detectado: [TIPO 8]"); tipo_pregunta = "TIPO_8_IMAGEN"
@@ -1743,6 +1745,68 @@ try:
                     if not exito_global: raise Exception("Fallo al escribir en inputs TIPO 12.")
                 # --- ¡FIN TIPO 12! ---
 
+                # --- TIPO 13: SELECCIÓN EN LÍNEA ---
+                if tipo_pregunta == "TIPO_13_INLINE":
+                    print("Tipo: SELECCIÓN EN LÍNEA (Botones variados).")
+                    filas = driver.find_elements(*sel.SELECTOR_TIPO_13_FILAS)
+                    
+                    lista_items_t13 = []
+                    # Recorremos cada fila detectada
+                    for i, fila in enumerate(filas):
+                        # Extraemos todo el texto visible (Frase + Opciones mezcladas)
+                        texto_completo = fila.text.replace("\n", " ").strip()
+                        
+                        # Buscamos los botones dentro de esta fila
+                        botones = fila.find_elements(By.TAG_NAME, "button")
+                        opciones_texto = [b.text.strip() for b in botones if b.text.strip()]
+                        
+                        if opciones_texto:
+                            clave = f"Item {i+1}: {texto_completo} | Opciones disponibles: {opciones_texto}"
+                            lista_items_t13.append(clave)
+                            print(f"      Fila {i+1}: {opciones_texto}")
+                        else:
+                            print(f"      Warn: Fila {i+1} detectada pero sin botones legibles.")
+
+                    # Enviamos a la IA
+                    prompt_final = f"""
+                    Pregunta de gramática/vocabulario. Selecciona la opción correcta para completar la frase.
+                    Contexto Global: {contexto}
+                    Items:
+                    {chr(10).join(lista_items_t13)}
+                    
+                    Responde SOLO con la palabra exacta de la opción correcta para cada item.
+                    Formato:
+                    Item 1: [Opción]
+                    """
+                    
+                    respuesta_ia = ia_utils.obtener_texto_de_respuesta(ia_utils.model.generate_content(prompt_final))
+                    print(f"      Respuesta IA: {respuesta_ia}")
+
+                    # Procesar respuestas y hacer clic
+                    lineas_resp = respuesta_ia.strip().split('\n')
+                    for linea in lineas_resp:
+                        if "Item" in linea and ":" in linea:
+                            try:
+                                idx_str = linea.split(":")[0].replace("Item", "").strip()
+                                idx = int(idx_str) - 1 # Índice base 0
+                                respuesta_texto = linea.split(":")[1].strip()
+                                
+                                if 0 <= idx < len(filas):
+                                    fila_actual = filas[idx]
+                                    botones_fila = fila_actual.find_elements(By.TAG_NAME, "button")
+                                    clic_hecho = False
+                                    for btn in botones_fila:
+                                        # Compara ignorando mayúsculas/minúsculas
+                                        if btn.text.strip().lower() == respuesta_texto.lower():
+                                            driver.execute_script("arguments[0].click();", btn)
+                                            print(f"      Click en: '{respuesta_texto}' (Item {idx+1})")
+                                            clic_hecho = True
+                                            break
+                                    
+                                    if not clic_hecho:
+                                        print(f"      ERROR: No se encontró botón para '{respuesta_texto}' en Item {idx+1}")
+                            except Exception as e:
+                                print(f"      Error procesando línea '{linea}': {e}")
                 # --- TIPO DEFAULT: OPCIÓN MÚLTIPLE ---
                 elif tipo_pregunta == "TIPO_DEFAULT_OM":
                     # Use 20 spaces for indentation

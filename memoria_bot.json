@@ -14467,7 +14467,10 @@
         "'Mouse' is an irregular plural and 'house' is regular."
     ],
     "T5:Only a few ovens have two independent systems that ensure the electrical activity stops as soon as the door is opened.||CTX:...||True|False": [
-        "Door - timer - energy"
+        "Door - timer - energy",
+        "Timer - door - energy",
+        "Door - energy - timer",
+        "Energy - timer - door"
     ],
     "DEFAULT:PLEASE LISTEN TO THE AUDIO AND CHOOSE THE BEST OPTION ACCORDING TO THE QUESTION: WHAT SHOULD YOU BRING IF YOU GO OUTSIDE?||CTX:A hat...A hat||||||A hat|A jacket|An umbrella|Sunglasses": [
         "An umbrella"
@@ -14483,5 +14486,336 @@
     ],
     "DEFAULT:WHAT CAN YOU INFER ABOUT THE SPEAKER’S FREE TIME?||CTX:He has a lot of free time...He has a lot of free time||||||He doesn’t like painting on weekends|He has a lot of free time|He is very busy during the week|He only paints on holidays": [
         "He is very busy during the week"
+    ],
+    "DEFAULT:READ AND CHOOSE THE CORRECT DEFINITION: WHAT IS COMMUNICATION?||CTX:...||||||All the option|Facts provided or learned about something or someone.|The act of transferring information or news.|What is meant by a word, text, concept, or action.": [
+        "Facts provided or learned about something or someone."
+    ],
+    "DEFAULT:CHOOSE THE CORRECT OPTION: ALE WROTE A _______ TO HIS DAUGHTER WHO LIVES IN THE USA||CTX:...||||||All the options|Book|Computer|Letter": [
+        "Letter"
+    ],
+    "DEFAULT:COMPLETE THE SENTENCE WITH THE CORRECT OPTION: IS A WAY OF COMMUNICATION||CTX:...||||IMG_DIM:382x196||Phone-video chat|Talking- text msg|Text msg-text msg|Videochat-talkin": [
+        "Talking- text msg"
+    ],
+    "DEFAULT:ALL ARE WORDS RELATED OF COMMUNICATION, EXCEPT:||CTX:...||||||Computer|E-mail|Letter|Table": [
+        "Table"
+    ],
+    "DEFAULT:CHOOSE THE CORRECT OPTION: MY MOM HAS TO SEND AN _______ TO MY TEACHER ABOUT MY ABSENCE YESTERDAY||CTX:...||||||Computer|E-mail|Letter|No one": [
+        "E-mail"
+    ],
+    "DEFAULT:CHOOSE THE BEST ALTERNATIVE: THEY ARE WAYS OF COMMUNICATE, EXCEPT:||CTX:...||||IMG_DIM:443x321||E-mail|Facebook Status|Phone call|Text Message": [
+        "Facebook Status"
+    ],
+    "DEFAULT:CHOOSE THE CORRECT OPTION: FRANK USES THE _______ TO COMMUNICATE WITH OTHER PEOPLE||CTX:...||||||All the options are wrong|Computer|E-mail|Letter": [
+        "Computer"
+    ],
+    "DEFAULT:MATCH THE WORDS WITH THE CORRECT PICTURE||CTX:...||||IMG_DIM:443x359||Cell phone|Computer|Talking|Touching": [
+        "Computer"
+    ],
+    "T8:CHOOSE THE BEST ALTERNATIVE: THEY ARE WAYS OF COMMUNICATE, EXCEPT:||IMG_DIM:443x321||E-mail|Facebook Status|Phone call|Text Message": [
+        [
+            "Facebook Status"
+        ]
+    ],
+    "T8:COMPLETE THE SENTENCE WITH THE CORRECT OPTION: IS A WAY OF COMMUNICATION||IMG_DIM:382x196||Phone-video chat|Talking- text msg|Text msg-text msg|Videochat-talkin": [
+        [
+            "Talking- text msg"
+        ]
+    ],
+    "T8:MATCH THE WORDS WITH THE CORRECT PICTURE||IMG_DIM:443x359||Cell phone|Computer|Talking|Touching": [
+        [
+            "Computer"
+        ]
+    ],
+    "T8:MATCH THE WORDS WITH THE CORRECT PICTURE||IMG_DIM:443x413||All the options|Cell phone|E-mail|Letter": [
+        [
+            "Letter"
+        ]
+    ],
+    "T8:MATCH THE WORDS WITH THE CORRECT PICTURE||IMG_DIM:443x300||Cell phone|Computer|E-mail|Touch": [
+        [
+            "E-mail"
+        ]
+    ],
+    "DEFAULT:THERE ARE WAYS OF COMMUNICATE, EXCEPT:||CTX:...||||||Eye contact|Gestures|Play|Text message": [
+        "Play"
+    ],
+    "T11_BATCH:UNSCRAMBLE THE LETTERS TO FIND WORDS RELATED TO COMMUNICATION||CTX:...||D _ _ W _ _ _ ___|W _ _ T T _ _ _ ___|t _ _ C H _ _ _ ___": [
+        [
+            "WRITTING",
+            "DRAWING",
+            "TOUCHING"
+        ]
+    ],
+    "DEFAULT:WHAT IS THE MEANING OF THE WORD DISCOUNT?||CTX:...||||||a deduction from the usual cost of something|a increase from the usual cost of something|someone who buys things|someone who pays a person or organization for a service": [
+        "a deduction from the usual cost of something"
+    ],
+    "DEFAULT:BUDGET IS:||CTX:...||||||an estimate of income and expenditure for a set period of time|very low in price|worth a lot of money|worth little mone": [
+        "an estimate of income and expenditure for a set period of time"
+    ],
+    "T8:WHICH ONE IS THE MOST LUXURIOUS THING?||IMG_DIM:443x136||A, B|A, C|B, C|No one": [
+        [
+            "A, B"
+        ]
+    ],
+    "DEFAULT:CHOOSE THE CORRECT OPTION: THE COMPANY HAS APPROVED THE _______ FOR NEXT YEAR||CTX:...||||||Budget|Client|Fee|People": [
+        "Budget"
+    ],
+    "T8:CHOOSE THE CORRECT OPTION ACCORDING TO THE PICTURE||IMG_DIM:443x332||There are one customer and one seller|There are one seller and and one customer|There are two customers and one seller|There are two customers and two sellers": [
+        [
+            "There are two customers and one seller"
+        ]
+    ],
+    "DEFAULT:CHOOSE THE RIGHT ANSWER ACCORDING TO THE SENTENCE: KAT HAD A _______ ON THE PURCHASE OF HER CELL PHONE FOR BLACK FRIDAY||CTX:...||||||Discount|Insurance|Phone|Seller": [
+        "Discount"
+    ],
+    "DEFAULT:CHOOSE THE RIGHT ANSWER ACCORDING TO THE SENTENCE: THERE WERE TWO _______ WHO BOUGHT THE NEW IPHONE TODAY||CTX:...||||||Customers|Gerent|Person|Phone": [
+        "Customers"
+    ],
+    "DEFAULT:CHOOSE THE RIGHT ANSWER ACCORDING TO THE SENTENCE: LEA IS GOING TO WORK AS A _______ IN THE NEW REAL ESTATE||CTX:...||||||Budget|Client|Customer|Seller": [
+        "Seller"
+    ],
+    "DEFAULT:CHOOSE THE RIGHT OPTION: A THING THAT IS BORROWED, ESPECIALLY A SUM OF MONEY THAT IS EXPECTED TO BE PAID BACK WITH INTEREST.||CTX:...||||||Budget|Deduction|Loan|Value": [
+        "Loan"
+    ],
+    "DEFAULT:CHOOSE THE RIGHT ANSWER ACCORDING TO THE SENTENCE: FRED MADE A _______ TO BUY A NEW CAR||CTX:...||||||Client|House|Loan|Plan": [
+        "Loan"
+    ],
+    "DEFAULT:READ AND CHOOSE THE BEST OPTION TO COMPLETE THE QUESTION: MOST SPORTS CARS ARE TYPICALLY DESIGNED WITH HOW MANY SEATS?||CTX:...||||||1 seat|10 seats|4 seats|7 seats": [
+        "4 seats"
+    ],
+    "T8:LOOK AT THE PICTURE AND ANSWER THE QUESTIONS: TRANSPARENT ELEMENT, USED IN MOST VEHICLES IN ORDER TO ALLOW VISIBILITY, PROTECT PASSENGERS FROM OUTSIDE ELEMENTS.||IMG_DIM:443x256||Headlight|Indicators|Wheel|Windscreen": [
+        [
+            "Windscreen"
+        ]
+    ],
+    "T8:LOOK AT THE PICTURE AND ANSWER THE QUESTIONS: LIGHT PROJECTORS USED TO ILLUMINATE THE PATH OF A VEHICLE AT NIGHT||IMG_DIM:443x256||Headlight|Sun roof|Tyre|Window": [
+        [
+            "Headlight"
+        ]
+    ],
+    "T8:CHOOSE THE CORRECT OPTION||IMG_DIM:293x172||Car|Pickup truck|Truck|Vehicle": [
+        [
+            "Pickup truck"
+        ]
+    ],
+    "T8:LOOK THE PICTURE AND CHOOSE THE CORRECT OPTION: WHAT DESIGN IS THE CAR?||IMG_DIM:357x223||2000 Honda Accord Lx|Chevrolet|Dual Airbag?|Marshall": [
+        [
+            "2000 Honda Accord Lx"
+        ]
+    ],
+    "T8:CHOOSE THE CORRECT OPTION: WHAT IS THAT?||IMG_DIM:298x169||Car|Pickup truck|Truck|Vehicle": [
+        [
+            "Truck"
+        ]
+    ],
+    "T8:LOOK AT THE PICTURE AND ANSWER THE QUESTIONS: PART OF THE CAR THAT WILL ALLOW THE DRIVER TO SEE THE AREA BEHIND THE VEHICLE||IMG_DIM:443x256||Indicator|Sun roof|Windscreen|Wing mirror": [
+        [
+            "Wing mirror"
+        ]
+    ],
+    "T11_BATCH:UNSCRAMBLE THE LETTERS TO FIND WORDS RELATED TO CARS||CTX:...||B _ _ N _ _ ___|N _ _ _ _ _ P _ _ _ _ ___|W _ _ _ L  A _ _ _ ___": [
+        [
+            "NUMBERPLATE",
+            "WHEELARCH",
+            "BONNET"
+        ]
+    ],
+    "T8:READ THE FOLLOWING SENTENCE: 'ALL THINGS AROUND US HAVE DIFFERENT COLORS. NOBODY CAN IMAGINE A MONOCHROMATIC WORLD.' SELECT AN ANTONYM FOR DIFFERENT:||IMG_DIM:443x214||Dissimilar|Opposed|Similar": [
+        [
+            "Similar"
+        ]
+    ],
+    "T8:ANALYZE THE FOLLOWING SENTENCE: 'RED IS THE MOST INTENSE COLOR. IT MEANS PASSION IN ALL ITS FORMS, BUT ALSO ROMANTICISM AND LOVE.'. WHAT DOES THE EXPRESSION 'IN ALL ITS FORMS' MEAN?||IMG_DIM:443x214||in all its aspects|in limited forms|in only one way": [
+        [
+            "in all its aspects"
+        ]
+    ],
+    "T8:READ THE TEXT ONCE AGAIN. CHOOSE THE CORRECT ANSWER TO THE FOLLOWING QUESTIONS: WHAT KINDS OF COLORS MAKE US FEEL CALM?||IMG_DIM:443x214||Bright colors|Dark colors|White": [
+        [
+            "Dark colors"
+        ]
+    ],
+    "T8:SELECT THE WORD THAT COULD REPLACE THE EXPRESSION 'INTERFERE IN' IN THE FOLLOWING SENTENCE: 'COLORS HAVE DIFFERENT MEANINGS ACCORDING TO EACH CULTURE, AND THEY CAN INTERFERE IN YOUR PERSONALITY WHILE YOU ARE WEARING THEM'||IMG_DIM:443x214||a and b|affect|influence": [
+        [
+            "a and b"
+        ]
+    ],
+    "T8:ANALYZE THE FOLLOWING SENTENCE: 'BRIGHT COLORS MAKE US FEEL ENERGETIC AND HAPPY WHILE DARK COLORS MAKE US FEEL SAD OR CALM'. WHAT'S ANOTHER WORD FOR 'WHILE'?||IMG_DIM:443x214||despite|unless|whereas": [
+        [
+            "whereas"
+        ]
+    ],
+    "T8:SELECT THE WORD/EXPRESSION THAT COULD NOT REPLACE THE EXPRESSION 'ACCORDING TO' IN THE FOLLOWING SENTENCE: 'COLORS HAVE DIFFERENT MEANINGS ACCORDING TO EACH CULTURE'||IMG_DIM:443x214||disregarding|in accordance with|in line with": [
+        [
+            "disregarding"
+        ]
+    ],
+    "T8:READ THE TEXT ONCE AGAIN. CHOOSE THE CORRECT ANSWER TO THE FOLLOWING QUESTIONS: WHAT KINDS OF COLORS MAKE US FEEL FULL OF ENERGY?||IMG_DIM:443x214||Black|Bright colors|Dark colors": [
+        [
+            "Bright colors"
+        ]
+    ],
+    "0:Colors have different shades and brightness.": [
+        [
+            "True"
+        ]
+    ],
+    "T8:READ THE FOLLOWING EXTRACT AND ANSWER THE QUESTIONS: WHAT IS ANOTHER WAY OF SAYING 'FEEL FREE TO CALL US'?||IMG_DIM:443x443||Avoid calling us|Check before calling u|Don't call us. Write an email instead|Don't hesitate to call us": [
+        [
+            "Don't hesitate to call us"
+        ]
+    ],
+    "T8:READ THE FOLLOWING EXTRACT OF THE ADVERTISEMENT AND ANSWER THE QUESTIONS: DOES THE ADVERTISEMENT SPECIFY A DEADLINE TO APPLY?||IMG_DIM:443x525||No|Yes": [
+        [
+            "Yes"
+        ]
+    ],
+    "T8:READ THE FOLLOWING EXTRACT OF THE ADVERTISEMENT AND ANSWER THE QUESTIONS: HOW MANY VACANCIES ARE THERE IN TOTAL?||IMG_DIM:443x525||Four|It doesn't say|Six|Two": [
+        [
+            "Six"
+        ]
+    ],
+    "T8:READ THE FOLLOWING EXTRACT OF THE ADVERTISEMENT AND ANSWER THE QUESTIONS: DOES IT SPECIFY THE POSITIONS AND THE NUMBER OF VACANCIES?||IMG_DIM:443x525||No|Only the number of vacancies|Only the positions|Yes": [
+        [
+            "Yes"
+        ]
+    ],
+    "T8:READ THE FOLLOWING EXTRACT AND ANSWER THE QUESTIONS: WHAT IS ANOTHER WORD (SYNONYM) FOR 'PREMIER'?||IMG_DIM:443x443||Extra|First|Last|Secondary": [
+        [
+            "First"
+        ]
+    ],
+    "T8:READ THE FOLLOWING EXTRACT OF THE ADVERTISEMENT AND ANSWER THE QUESTIONS: WHAT IS ANOTHER WORD (SYNONYM) FOR 'LOOKING'?||IMG_DIM:443x525||Avoiding|Ignoring|Rejecting|Searching": [
+        [
+            "Searching"
+        ]
+    ],
+    "DEFAULT:SELECT THE WORD THAT MATCHES THIS DEFINITION: 'ASSOCIATION OF PEOPLE IN A BUSINESS.'||CTX:...||||||International|Local|Partnership|Premiere": [
+        "Partnership"
+    ],
+    "DEFAULT:SELECT THE WORD THAT MATCHES THIS DEFINITION: 'THE INITIATIVE TO TAKE ACTIVITIES WITHOUT SUPERVISION.'||CTX:...||||||Denial|Local|Sadness|Self-motivation": [
+        "Self-motivation"
+    ],
+    "T8:READ THE FOLLOWING EXTRACT OF THE ADVERTISEMENT AND ANSWER THE QUESTIONS: WHICH OF THE FOLLOWING WORDS IS NOT AN ADJECTIVE?||IMG_DIM:443x525||Company|Competent|Dynamic|Prestigious": [
+        [
+            "Company"
+        ]
+    ],
+    "T8:LOOK AT THE FOLLOWING ADVERTISEMENTS. WHAT IS IT BEING OFFERED?||IMG_DIM:443x525||job offer|legal notice|product offer|service offer": [
+        [
+            "job offer"
+        ]
+    ],
+    "T8:WHAT DOES THIS PARAGRAPH TELL YOU?||IMG_DIM:443x64||It explains why bullying is bad for the community|It tells you about the types of bullying that exist|It tells you the history of bullying|It tells you what you should if you are a victim of bullying": [
+        [
+            "It tells you what you should if you are a victim of bullying"
+        ]
+    ],
+    "T8:READ THE TEXT AGAIN. ANSWER THE FOLLOWING QUESTIONS: WHAT DOES BULLYING INCLUDE?||IMG_DIM:443x231||Caring about other people|Hitting people only|Insulting people only|Physical and verbal abuse": [
+        [
+            "Physical and verbal abuse"
+        ]
+    ],
+    "T8:READ THE FOLLOWING PARAGRAPH AND ANSWER THE QUESTIONS BELOW: WHAT DOES 'CALLED' MEAN IN THIS PARAGRAPH?||IMG_DIM:443x62||Dismissed|Named|Ruled out|Silenced": [
+        [
+            "Named"
+        ]
+    ],
+    "T8:READ THE FOLLOWING PARAGRAPH AND ANSWER THE QUESTIONS BELOW: WHAT DOES 'CALLED' MEAN IN THIS PARAGRAPH?||IMG_DIM:443x62||Cruel|Kind|Lovely|Polite": [
+        [
+            "Cruel"
+        ]
+    ],
+    "T8:READ THE FOLLOWING PARAGRAPH AND ANSWER THE QUESTIONS BELOW: WHAT IS ANOTHER WORD FOR 'SEEMS' (SYNONYM) IN THIS PARAGRAPH?||IMG_DIM:443x60||Appears|Cease|Disappear|End": [
+        [
+            "Appears"
+        ]
+    ],
+    "T8:READ THE FOLLOWING PARAGRAPH AND ANSWER THE QUESTIONS BELOW: WHAT DOES 'SEVERAL' MEAN IN THIS PARAGRAPH?||IMG_DIM:443x60||A few|None|One|Various": [
+        [
+            "Various"
+        ]
+    ],
+    "0:This is saying that bullying happens only at one type of school and high school.|1:This is saying that bullying happens only at one type of school and high school.|2:This is saying that bullying happens only at one type of school and high school.|3:This is saying that bullying happens only at one type of school and high school.|4:This is saying that bullying happens only at one type of school and high school.": [
+        [
+            "False",
+            "False",
+            "False",
+            "False",
+            "False"
+        ]
+    ],
+    "T8:READ THE TEXT AGAIN. ANSWER THE FOLLOWING QUESTIONS: WHAT DO YOU CALL BULLYING AT WORK?||IMG_DIM:443x231||Cyberbullying|Labour bullying|Mobbing|Online bullying": [
+        [
+            "Mobbing"
+        ]
+    ],
+    "0:Bullying online is also called computer bullying.|1:Bullying online is also called computer bullying.|2:Bullying online is also called computer bullying.|3:Bullying online is also called computer bullying.|4:Bullying online is also called computer bullying.": [
+        [
+            "True",
+            "True",
+            "True",
+            "True",
+            "True"
+        ]
+    ],
+    "0:Bullying is a repeated, aggressive behavior where somebody hurts others in different ways.|1:Bullying is a repeated, aggressive behavior where somebody hurts others in different ways.|2:Bullying is a repeated, aggressive behavior where somebody hurts others in different ways.|3:Bullying is a repeated, aggressive behavior where somebody hurts others in different ways.|4:Bullying is a repeated, aggressive behavior where somebody hurts others in different ways.": [
+        [
+            "True",
+            "True",
+            "True",
+            "True",
+            "True"
+        ]
+    ],
+    "T8:READ THE FIRST PARAGRAPH OF THE LETTER AND ANSWER THE FOLLOWING QUESTIONS: WHAT DOES THE WORD / EXPRESSION 'CARRY OUT' MEAN?||IMG_DIM:443x548||Execute|Fail|Forget|Skip": [
+        [
+            "Execute"
+        ]
+    ],
+    "T8:READ THE FIRST PARAGRAPH OF THE LETTER AND ANSWER THE FOLLOWING QUESTIONS: WHAT DOES THE EXPRESSION 'I PROMISE THAT I WILL DO EVERYTHING POSSIBLE' MEAN?||IMG_DIM:443x548||She doesn't care|She is not going to try at al|She is not sure what to do|She will try hard": [
+        [
+            "She will try hard"
+        ]
+    ],
+    "T8:WHAT DOES THE WORD 'INDEFINITELY' MEAN IN PARAGRAPH ONE?||IMG_DIM:443x548||A couple of years|A short period of time|None of the above|That there is not a specified time to return": [
+        [
+            "That there is not a specified time to return"
+        ]
+    ],
+    "T8:COMPLETE THE SENTENCES WITH THE CORRECT INFORMATION ACCORDING TO THE LETTER: MRS. HIDALGO'S OFFICIAL SERVING DATE IS _______.||IMG_DIM:443x548||7 years|August 27th|Not specified|September 30th": [
+        [
+            "September 30th"
+        ]
+    ],
+    "T8:COMPLETE THE SENTENCES WITH THE CORRECT INFORMATION ACCORDING TO THE LETTER: MRS. HIDALGO HAS THE POSITION OF CHIEF _______ _______ IN PORTOVIEJO.||IMG_DIM:443x548||Distribution; officer|Duty; manager|Executive; officer|Financing; officer": [
+        [
+            "Distribution; officer"
+        ]
+    ],
+    "T8:READ THE FOLLOWING LETTER AND ANSWER THE QUESTIONS BELOW: WHAT TYPE OF LETTER IS IT?||IMG_DIM:443x548||A love letter|Complaining letter|Enquiring letter|Resignation letter": [
+        [
+            "Resignation letter"
+        ]
+    ],
+    "T8:READ THE FOLLOWING LETTER AND ANSWER THE QUESTIONS BELOW: SELECT THE WORD THAT MATCHES THIS DEFINITION: 'TO GIVE OR ALLOW SOMEONE TO HAVE SOMETHING.'||IMG_DIM:443x548||Grant|Premature|Resignation|Update": [
+        [
+            "Grant"
+        ]
+    ],
+    "T8:READ THE FIRST PARAGRAPH OF THE LETTER AND ANSWER THE FOLLOWING QUESTIONS: WHY IS SHE MOVING TO ANOTHER PLACE INDEFINITELY?||IMG_DIM:443x548||Because she got married and wants to start a family|Not specified|To finish university|To take care of her dad": [
+        [
+            "To take care of her dad"
+        ]
+    ],
+    "T8:READ THE FOLLOWING LETTER AND ANSWER THE QUESTIONS BELOW: SELECT THE WORD THAT MATCHES THIS DEFINITION: 'THE ACT OF TELLING YOUR EMPLOYER THAT YOU ARE LEAVING YOUR JOB.'||IMG_DIM:443x548||Award|Chief|Hometown|Resignation": [
+        [
+            "Resignation"
+        ]
+    ],
+    "T8:READ THE FIRST PARAGRAPH OF THE LETTER AND ANSWER THE FOLLOWING QUESTIONS: WHAT IS THE REASON BEHIND MRS. HIDALGO'S RESIGNATION?||IMG_DIM:443x548||She doesn't specify|She found another job|She had personal problems with co-workers|She has a medical emergency": [
+        [
+            "She has a medical emergency"
+        ]
     ]
 }
