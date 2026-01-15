@@ -239,27 +239,28 @@ try:
                 elif len(driver.find_elements(*sel.SELECTOR_ANSWER_Q_CAJAS)) > 0: print("      Contenido detectado: [TIPO 7]"); tipo_pregunta = "TIPO_7_OM_CARD"
                 elif len(driver.find_elements(*sel.SELECTOR_PARAGRAPH_CAJAS)) > 0: print("      Contenido detectado: [TIPO 6]"); tipo_pregunta = "TIPO_6_PARAGRAPH"
                 
+                
+                elif len(driver.find_elements(*sel.SELECTOR_CAJAS_TF)) > 0:
+                    num_cajas_tf = len(driver.find_elements(*sel.SELECTOR_CAJAS_TF))
+                    if num_cajas_tf >= 1:
+                        print(f"      Contenido detectado: [TIPO 3] ({num_cajas_tf} cajas)");
+                        tipo_pregunta = "TIPO_3_TF_MULTI"
+                    else:
+                        print(f"      Contenido detectado: [TIPO 5] ({num_cajas_tf} caja)");
+                        tipo_pregunta = "TIPO_5_TF_SINGLE"
                 # ¡MOVER TIPO 8 y TIPO 4 AQUÍ! (ANTES DE TIPO 9)
-                elif len(driver.find_elements(*sel.SELECTOR_IMAGEN_EMPAREJAR)) > 0: 
+                elif len(driver.find_elements(*sel.SELECTOR_IMAGEN_EMPAREJAR)) > 0 and len(driver.find_elements(*sel.SELECTOR_DEFINICIONES_AZULES_XPATH)) > 0: 
                     print("      Contenido detectado: [TIPO 8]"); tipo_pregunta = "TIPO_8_IMAGEN"
                 elif len(driver.find_elements(*sel.SELECTOR_FILAS_EMPAREJAR)) > 0: 
                     print("      Contenido detectado: [TIPO 4]"); tipo_pregunta = "TIPO_4_EMPAREJAR"
                 elif len(driver.find_elements(*sel.SELECTOR_CONTENEDOR_ORDENAR)) > 0: print("      Contenido detectado: [TIPO 1]"); tipo_pregunta = "TIPO_1_ORDENAR"
-                
 
                 # TIPO 9 (Audio) ahora va DESPUÉS de los tipos de emparejar
                 # (Así, si una pregunta es T4 + Audio, se detecta como T4, que es correcto)
                 elif len(audio_elem) > 0: 
                     print("      Contenido detectado: [TIPO 9]"); tipo_pregunta = "TIPO_9_AUDIO"
 
-                elif len(driver.find_elements(*sel.SELECTOR_CAJAS_TF)) > 0:
-                    num_cajas_tf = len(driver.find_elements(*sel.SELECTOR_CAJAS_TF))
-                    if num_cajas_tf > 1:
-                        print(f"      Contenido detectado: [TIPO 3] ({num_cajas_tf} cajas)");
-                        tipo_pregunta = "TIPO_3_TF_MULTI"
-                    else:
-                        print(f"      Contenido detectado: [TIPO 5] ({num_cajas_tf} caja)");
-                        tipo_pregunta = "TIPO_5_TF_SINGLE"
+                
                 
                 elif len(driver.find_elements(*sel.SELECTOR_LINEAS_COMPLETAR)) > 0: print("      Contenido detectado: [TIPO 2]"); tipo_pregunta = "TIPO_2_COMPLETAR"
                 
@@ -606,18 +607,31 @@ try:
                         # Use 24 spaces for indentation
                         driver.execute_script("arguments[0].scrollIntoViewIfNeeded(true);", caja); time.sleep(0.1)
                         try:
-                            # Use 28 spaces for indentation
-                            texto_afirmacion_elem = caja.find_element(*sel.SELECTOR_TEXTO_AFIRMACION_TF)
+                            # 1. BUSCAR EL TEXTO (AFIRMACIÓN)
+                            # Buscamos el span con texto gris (clase típica de las preguntas)
+                            texto_afirmacion_elem = caja.find_element(By.XPATH, ".//span[contains(@class, 'text-gray-700')]")
                             wait_short.until(EC.visibility_of(texto_afirmacion_elem))
                             texto_afirmacion = texto_afirmacion_elem.text.strip()
-                            boton_true = caja.find_element(*sel.SELECTOR_BOTON_TRUE_TF)
-                            boton_false = caja.find_element(*sel.SELECTOR_BOTON_FALSE_TF)
+                            
+                            # 2. BUSCAR EL BOTÓN TRUE (Flexible: TRUE o True)
+                            try:
+                                boton_true = caja.find_element(By.XPATH, ".//button[contains(normalize-space(), 'TRUE')]")
+                            except NoSuchElementException:
+                                boton_true = caja.find_element(By.XPATH, ".//button[contains(normalize-space(), 'True')]")
+                            
+                            # 3. BUSCAR EL BOTÓN FALSE (Flexible: FALSE o False)
+                            try:
+                                boton_false = caja.find_element(By.XPATH, ".//button[contains(normalize-space(), 'FALSE')]")
+                            except NoSuchElementException:
+                                boton_false = caja.find_element(By.XPATH, ".//button[contains(normalize-space(), 'False')]")
+
                             if texto_afirmacion:
                                 # Use 32 spaces for indentation
                                 clave_unica_afirmacion = f"{k}:{texto_afirmacion}"
                                 lista_afirmaciones_texto.append(clave_unica_afirmacion)
                                 elementos_cajas_botones.append((caja, boton_true, boton_false))
                             else: print(f"Warn: Caja {k+1} sin texto.")
+                        
                         except (NoSuchElementException, TimeoutException) as e_inner:
                             # Use 28 spaces for indentation
                             print(f"Error leyendo caja {k+1}: {e_inner}"); raise Exception(f"Fallo crítico al leer caja T/F {k+1}")
@@ -798,7 +812,7 @@ try:
                         if len(map_texto_def_a_elemento) != len(definiciones): print("Warn: No se mapearon elementos def.")
                     except (JavascriptException, TimeoutException) as e: raise Exception(f"Error extrayendo def: {e}")
                     print(f"      Definiciones encontradas: {definiciones}"); print("      Extrayendo palabras clave (en orden)...")
-                    js_get_keywords = f"let k=[];document.querySelectorAll('{sel.SELECTOR_FILAS_EMPAREJAR_CSS}').forEach(r=>{{let e=r.querySelector('{sel.SELECTOR_PALABRA_CLAVE_CSS}');if(e)k.push(e.innerText.replace(/_/g,'').replace(/:/g,'').replace(/'/g,'').replace(/\s+/g, ' ').trim());}});return k;"
+                    js_get_keywords = "return Array.from(document.querySelectorAll('h2.text-gray-800.text-base')).map(e => e.innerText.replace(/_/g,'').replace(/:/g,'').replace(/'/g,'').replace(/\\s+/g, ' ').trim());"
                     try:
                         # Use 24 spaces for indentation
                         palabras_clave = driver.execute_script(js_get_keywords); palabras_clave = [p.strip() for p in palabras_clave if p]
@@ -806,59 +820,59 @@ try:
                     except (JavascriptException, TimeoutException) as e: raise Exception(f"Error extrayendo palabras: {e}")
                     print(f"      Palabras clave encontradas (en orden): {palabras_clave}");
                     
-                    # --- ¡INICIO PARCHE MANUAL (Fertilizer/Environment)! ---
-                    # Identificar la pregunta problemática por su título y las "definiciones" que extrajo
-                    # (que para nosotros son las palabras clave)
+                    # --- ¡INICIO SOLUCIÓN AUTOMÁTICA MEJORADA (Fertilizer/Environment)! ---
                     titulo_problematico = 'READ THE SENTENCES AND MATCH THE WORDS FROM THE BOX WITH THEM.'
                     defs_problematicas = ['Fertilizer', 'Environment']
-                    
+        
                     if (pregunta_actual_texto.strip() == titulo_problematico and 
                         sorted(definiciones) == sorted(defs_problematicas)):
-                        
+            
                         print("\n" + "!"*60)
-                        print("      ¡¡¡PREGUNTA PROBLEMÁTICA TIPO 4 DETECTADA (Fertilizer/Environment)!!!")
-                        print("      EL BOT SE PAUSARÁ. POR FAVOR, RESPONDE MANUALMENTE.")
-                        print("      El bot esperará 5 minutos (300 seg) a que completes...")
+                        print("      ¡¡¡PREGUNTA PROBLEMÁTICA DETECTADA (Fertilizer/Environment)!!!")
+                        print("      Aplicando solución forzada: 1. Environment -> 2. Fertilizer")
                         print("!"*60 + "\n")
-                        
-                        try:
-                            # Pausa larga: Espera a que el usuario haga clic en CHECK y luego en OK,
-                            # y que el modal de OK desaparezca.
-                            
-                            # 1. Esperar a que aparezca el botón OK (después de que TÚ pulses CHECK)
-                            print("      Esperando a que el usuario pulse 'CHECK' y aparezca 'OK'...")
-                            wait_manual.until(EC.element_to_be_clickable(sel.SELECTOR_OK))
-                            
-                            print("      Botón 'OK' detectado. Esperando a que el usuario pulse 'OK'...")
-                            
-                            # 2. Esperar a que desaparezca el botón OK (después de que TÚ pulses OK)
-                            wait_manual.until(EC.invisibility_of_element_located(sel.SELECTOR_OK))
-                            
-                            print("      ¡Modal 'OK' desaparecido! Respuesta manual completada.")
-                            
-                            # --- Lógica Post-Pregunta Manual ---
-                            # Reseteamos las variables clave para la siguiente iteración,
-                            # ya que omitiremos el resto del bucle (CHECK, OK, Aprendizaje).
-                            
-                            pregunta_actual_texto = "" # Forzar relectura del título en la siguiente vuelta
-                            clave_pregunta = None # Evitar que la lógica de aprendizaje se ejecute
-                            ultima_clave_pregunta_procesada = f"MANUAL_OVERRIDE_{titulo_problematico}" # Dejar un rastro
-                            respuesta_fue_incorrecta = False # Asumimos que lo hiciste bien
-                            
-                            print("="*30)
-                            print("Modal desaparecido. Cargando siguiente pregunta..."); time.sleep(1)
-                            
-                            # ¡¡MUY IMPORTANTE!!
-                            # Saltar el resto del bucle while (el 'CHECK', 'OK', y 'aprendizaje')
-                            # porque el usuario ya lo hizo.
-                            continue 
+            
+                        orden_forzado = ["Environment", "Fertilizer"]
+                        exito_forzado = True
+            
+                        for def_correcta in orden_forzado:
+                            elemento_origen = map_texto_def_a_elemento.get(def_correcta)
+                            if not elemento_origen:
+                                print(f"      Error: No se encontró el elemento para '{def_correcta}'")
+                                exito_forzado = False
+                                break
+                
+                            try:
+                                print(f"            Clic en '{def_correcta}'...");
+                                driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", elemento_origen)
+                                time.sleep(0.5)
+                                wait_long.until(EC.element_to_be_clickable(elemento_origen)).click()
+                                time.sleep(1.0) 
+                            except Exception as e:
+                                print(f"                  Error en clic forzado: {e}")
+                                exito_forzado = False; break
 
-                        except TimeoutException:
-                            print("      ¡Tiempo de espera manual (300s) agotado!")
-                            print("      El bot continuará y probablemente fallará. Refrescando.")
-                            raise Exception("Timeout manual de 5 minutos.")
-
-                    # --- ¡FIN PARCHE MANUAL! ---
+                        if exito_forzado:
+                            print("      Selección completada. Forzando clic en CHECK...")
+                            try:
+                                # Buscamos el botón CHECK específicamente después de los clics
+                                time.sleep(1) # Pausa de seguridad
+                                boton_check_forzado = wait_long.until(EC.element_to_be_clickable(sel.SELECTOR_CHECK))
+                                driver.execute_script("arguments[0].click();", boton_check_forzado)
+                                print("      ¡CHECK clickeado con éxito!")
+                                
+                                # Importante: No ponemos 'continue' aquí para que el código 
+                                # siga naturalmente hacia la lógica de aprendizaje y el botón OK
+                            except Exception as e_check:
+                                print(f"      Error al intentar dar clic en CHECK tras solución forzada: {e_check}")
+                        else:
+                            print("      Fallo en solución forzada. Intentando SKIP...")
+                            try:
+                                driver.find_element(*sel.SELECTOR_SKIP).click()
+                            except:
+                                driver.refresh()
+                            continue # Solo reintentamos si falló la selección
+                    # --- ¡FIN SOLUCIÓN AUTOMÁTICA! ---
 
                     titulo_limpio = pregunta_actual_texto.strip()
                     defs_limpias_sorted = sorted([d.strip() for d in definiciones])

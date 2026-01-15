@@ -7,7 +7,7 @@ SELECTOR_CERRAR_POPUP = (By.XPATH, "//i[text()='Cerrar']")
 SELECTOR_INICIA_SESION_VERDE = (By.XPATH, "//button[text()='Inicia Sesión']")
 SELECTOR_USUARIO_INPUT = (By.ID, "mail-address")
 SELECTOR_PASSWORD_INPUT = (By.ID, "password")
-SELECTOR_ACCEDER_AMARILLO = (By.XPATH, "//button[text()='Iniciar sesión']")
+SELECTOR_ACCEDER_AMARILLO = (By.XPATH, "//button[text()='INICIAR SESIÓN']")
 # --- ¡MODIFICADO! Unificado Reading, Grammar, Teacher, Writing y Vocabulary ---
 SELECTOR_LECCION_DISPONIBLE = (By.XPATH, 
     # Grupo 1: Busca Reading, Grammar, Teacher, Vocabulary (simples)
@@ -21,21 +21,21 @@ SELECTOR_LECCION_DISPONIBLE = (By.XPATH,
 )
 SELECTOR_BOTON_START = (By.XPATH, "//a[text()='Start']")
 SELECTOR_CONTEXTO = (By.CLASS_NAME, "overflow-y-auto")
-SELECTOR_PREGUNTA = (By.XPATH, "//*[contains(@class, 'text-green-700')]")
-SELECTOR_OPCIONES = (By.XPATH, "//button[contains(@class, 'md:px-8')]") # Opción Múltiple
+SELECTOR_PREGUNTA = (By.XPATH, "//h2[contains(@class, 'text-gray-800')]")
+SELECTOR_OPCIONES = (By.XPATH, "//div[contains(@class, 'cardCheck')]")
 SELECTOR_CONTENEDOR_ORDENAR = (By.XPATH, "//div[@data-rbd-droppable-id='droppable']") # Ordenar
 SELECTOR_CAJAS_ORDENAR = (By.XPATH, ".//div[@data-rbd-draggable-id]") # Ordenar
 SELECTOR_TEXTO_CAJA_ORDENAR = (By.TAG_NAME, "p") # Ordenar (Texto dentro de la caja)
 SELECTOR_LINEAS_COMPLETAR = (By.XPATH, "//div[contains(@class,'card') and .//button[contains(@class,'text-gray-700')]]") # Completar
 SELECTOR_SPANS_LINEA = (By.XPATH, "./div/span[@class='inline-block']") # Completar (No usado directamente)
 SELECTOR_BOTONES_OPCION_COMPLETAR = (By.XPATH, ".//button[contains(@class,'text-gray-700')]") # Completar
-SELECTOR_CAJAS_TF = (By.XPATH, "//div[contains(@class, 'card')][.//button[normalize-space()='True']]") # True/False Múltiple
+SELECTOR_CAJAS_TF = (By.XPATH, "//div[contains(@class, 'flex') and .//span[contains(@class, 'text-gray-700')] and (.//button[contains(normalize-space(), 'TRUE')] or .//button[contains(normalize-space(), 'True')])] ")
 SELECTOR_TEXTO_AFIRMACION_TF = (By.XPATH, ".//span[1]") # True/False Múltiple (Cambiado para ser más robusto)
 SELECTOR_BOTON_TRUE_TF = (By.XPATH, ".//button[normalize-space()='True']") # True/False Múltiple
 SELECTOR_BOTON_FALSE_TF = (By.XPATH, ".//button[normalize-space()='False']") # True/False Múltiple
-SELECTOR_DEFINICIONES_AZULES_XPATH = (By.XPATH, "//span[contains(@class, 'cardCheck')]") # Emparejar (Spans azules movibles)
-SELECTOR_FILAS_EMPAREJAR = (By.XPATH, "//div[contains(@class, 'grid grid-cols-2')][.//button[contains(text(), 'Waiting answer')]]") # Emparejar (Contenedor de palabra y destino)
-SELECTOR_IMAGEN_EMPAREJAR = (By.XPATH, "//div[contains(@class, 'grid grid-cols-2')][.//img][.//button[contains(text(), 'Waiting answer')]]")
+SELECTOR_DEFINICIONES_AZULES_XPATH = (By.XPATH, "//div[contains(@class, 'cardCheck')] | //span[contains(@class, 'border-b-4')]")
+SELECTOR_FILAS_EMPAREJAR = (By.XPATH, "//div[.//h2[contains(@class, 'text-gray-800') and contains(@class, 'text-base')]]")
+SELECTOR_IMAGEN_EMPAREJAR = (By.XPATH, "//div[contains(@class, 'shadow-lg') and contains(@class, 'overflow-hidden')][.//img]")
 SELECTOR_PALABRA_CLAVE_TAG = "h2" # Emparejar - Usamos TAG_NAME para palabra clave
 # SELECTOR_DESTINO_EMPAREJAR_XPATH = (By.XPATH, ".//button[contains(text(), 'Waiting answer')]") # Emparejar (No necesario con cola)
 SELECTOR_CHECK = (By.XPATH, "//button[translate(normalize-space(text()), 'CHECK', 'check')='check' and not(contains(@class, 'text-gray-700'))]")
@@ -58,7 +58,7 @@ SELECTOR_MODAL_CONTENIDO = (By.CLASS_NAME, "swal2-html-container") # Contenido (
 SELECTOR_SKIP = (By.XPATH, "//button[normalize-space()='SKIP']") # Botón Skip
 
 # Selectores CSS para JavaScript (más simples)
-SELECTOR_DEFINICIONES_AZULES_CSS = "span.cardCheck" # Emparejar
+SELECTOR_DEFINICIONES_AZULES_CSS = "div.cardCheck, span.border-b-4"
 SELECTOR_FILAS_EMPAREJAR_CSS = "div.grid.grid-cols-2" # Emparejar
 SELECTOR_PALABRA_CLAVE_CSS = "h2" # Emparejar
 # SELECTOR_DESTINO_EMPAREJAR_CSS = "button" # Emparejar (No necesario con cola)
@@ -78,7 +78,7 @@ SELECTOR_INPUT_ESCRIBIR = (By.XPATH, "//input[@type='text'][contains(@class, 'sh
 # --- Selectores para TIPO 11: Escribir desde Opciones ---
 # (Usa el mismo selector de INPUT que TIPO 10: SELECTOR_INPUT_ESCRIBIR)
 # Busca el texto <p> que está en la misma 'fila' (grid) que el input
-SELECTOR_FRASE_T11 = (By.XPATH, "./ancestor::div[contains(@class,'grid')]//p[1]")
+SELECTOR_FRASE_T11 = (By.XPATH, "./ancestor::*[.//span[contains(@class, 'text-gray-700')]][1]//span[contains(@class, 'text-gray-700')]")
 # --- Selector para el "Cuerpo" de la pregunta (T9 / Default) ---
 # Busca un párrafo <p> dentro de la tarjeta principal que no sea el título
 SELECTOR_CUERPO_PREGUNTA = (By.XPATH, "//div[contains(@class, 'card')]//p[contains(@class, 'text-justify')]")
