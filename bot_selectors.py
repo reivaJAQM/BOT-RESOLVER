@@ -82,4 +82,4 @@ SELECTOR_FRASE_T11 = (By.XPATH, "./ancestor::*[.//span[contains(@class, 'text-gr
 # --- Selector para el "Cuerpo" de la pregunta (T9 / Default) ---
 # Busca un párrafo <p> dentro de la tarjeta principal que no sea el título
 SELECTOR_CUERPO_PREGUNTA = (By.XPATH, "//div[contains(@class, 'card')]//p[contains(@class, 'text-justify')]")
-SELECTOR_TIPO_13_FILAS = (By.XPATH, "//div[contains(@class, 'flex') and .//button[contains(@class, 'activar-btn')]]")
+SELECTOR_TIPO_13_FILAS = (By.XPATH, "//div[contains(@class, 'flex') and .//span[contains(@class, 'text-gray-700')] and .//button[contains(@class, 'activar-btn')]]")
