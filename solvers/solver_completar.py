@@ -5,13 +5,14 @@ import bot_memory as mem
 def resolver(driver, sel, ia_utils, contexto):
     """
     Resuelve TIPO 2: Completar frases (Clic en botones dentro de la línea).
+    Retorna datos para aprendizaje.
     """
     print("   🔍 [Solver Completar] Analizando líneas...")
     
     lineas = driver.find_elements(*sel.SELECTOR_LINEAS_COMPLETAR)
     if not lineas:
         print("      ❌ No se encontraron líneas de completar.")
-        return
+        return None
 
     tareas = []
     
@@ -49,14 +50,20 @@ def resolver(driver, sel, ia_utils, contexto):
             "opciones": opciones, 
             "botones": botones
         })
+    
+    if not tareas: return None
 
-    # 2. Consultar Memoria / IA
-    clave_memoria = f"T2:{'|'.join(sorted([t['frase'] for t in tareas]))}"
+    # --- CLAVE DE MEMORIA ---
+    frases_clave = sorted([t['frase'] for t in tareas])
+    clave_memoria = f"T2_BATCH:||CTX:{contexto[:30]}||FRASES:{'|'.join(frases_clave)}"
+    
+    # --- RESOLUCIÓN ---
+    # 1. MEMORIA (Dict {frase: respuesta})
     solucion_dict = mem.buscar(clave_memoria)
     
+    # 2. IA
     if not solucion_dict:
         print("      🧠 Consultando IA (Lote Completar)...")
-        # IA devuelve una lista de palabras correctas en orden
         respuestas_lista = ia_utils.obtener_palabras_correctas_lote(contexto, tareas)
         
         if respuestas_lista and len(respuestas_lista) == len(tareas):
@@ -66,7 +73,7 @@ def resolver(driver, sel, ia_utils, contexto):
     else:
         print(f"      💾 Memoria: {len(solucion_dict)} respuestas recuperadas.")
 
-    # 3. Ejecutar Clics
+    # 3. CLICK
     if solucion_dict:
         for tarea in tareas:
             frase = tarea["frase"]
@@ -87,3 +94,10 @@ def resolver(driver, sel, ia_utils, contexto):
                     print(f"      ❌ Botón '{respuesta}' no encontrado en opciones.")
             else:
                 print(f"      ⚠️ Sin respuesta para: '{frase}'")
+
+    # --- RETORNO PARA APRENDIZAJE ---
+    # Para T2 devolvemos dicts con frase y opciones para que el extractor sepa qué buscar
+    return {
+        "clave": clave_memoria,
+        "items": [{"frase": t["frase"], "opciones": t["opciones"]} for t in tareas]
+    }

@@ -14817,5 +14817,56 @@
         [
             "She has a medical emergency"
         ]
+    ],
+    "DEFAULT:READ THE TEXT AND CHOOSE THE CORRECT ANSWER: HOW DID DR. LOOR EXAMINE BOBBY?||||Dr. Loor looked at his body.|Dr. Loor looked at his throat.|Dr. Loor took his pressure.|Dr. Loor watched his eyes.": [
+        "Dr. Loor looked at his throat."
+    ],
+    "DEFAULT:WHICH SENTENCE HAS THE SAME MEANING AS THIS ONE?: IF YOU DON’T CARE YOURSELF, FLU CAN BE A SERIOUS ILLNESS.||||The flu can be a serious illness if you don’t treat it on time.|The flu comes and goes for some people.|The flu is a serious illness but don’t worry if you have it.": [
+        "The flu can be a serious illness if you don’t treat it on time."
+    ],
+    "T4:How is the flu transmitted? ____________|What are the common symptoms you feel when you have the flu? ____________|What is the best way to prevent the flu? ____________||DEF:High fever, cough, sore throat, muscular pain.|It is transmitted specially in winter because the germs spread easily with cold and windy days.|Wash your hands often.": [
+        "It is transmitted specially in winter because the germs spread easily with cold and windy days.",
+        "High fever, cough, sore throat, muscular pain.",
+        "Wash your hands often."
+    ],
+    "T8:IMG_DIM:443x140||A cup of coffee|A cup of hot chocolate|A glass of water|Milk": [
+        "A glass of water"
+    ],
+    "DEFAULT:READ THE TEXT AND ANSWER THE QUESTION. CHOOSE THE BEST OPTION. THIS TEXT IS ABOUT:||||Tropical illness|When to go to the doctor if you have flu|hat is the flu and how to treat it": [
+        "hat is the flu and how to treat it"
+    ],
+    "DEFAULT:READ THE TEXT AND ANSWER THE QUESTION. CHOOSE THE BEST OPTION.: THE DOCTOR ASKED BOBBY “HOW DO YOU FELL NOW? AND BOBBY ANSWERED _______||||Fine|Not bad|Not well|Terrible": [
+        "Terrible"
+    ],
+    "DEFAULT:WHICH SENTENCE HAS THE SAME MEANING AS THIS ONE?: IF YOU DON’T CARE YOURSELF, FLU CAN BE A SERIOUS ILLNESS.||CTX:...||||||The flu can be a serious illness if you don’t treat it on time.|The flu comes and goes for some people.|The flu is a serious illness but don’t worry if you have it.": [
+        "The flu can be a serious illness if you don’t treat it on time."
+    ],
+    "T8:READ THE TEXT AND ANSWER THE QUESTION. CHOOSE THE BEST OPTION.: BOBBY HAD IN THE MORNING _______||IMG_DIM:443x140||A cup of coffee|A cup of hot chocolate|A glass of water|Milk": [
+        [
+            "Milk"
+        ]
+    ],
+    "0:Bobby had a cup of coffee for breakfast.|1:Bobby had a cup of coffee for breakfast.|2:Bobby had a cup of coffee for breakfast.|3:Bobby had a cup of coffee for breakfast.|4:Bobby had a cup of coffee for breakfast.|5:Dr. Loor told Bobby “you will die”.|6:Dr. Loor talked with Bobby’s mother.|7:Dr. Loor said “Bobby has a very common sickness”.": [
+        [
+            "False",
+            "False",
+            "True",
+            "True",
+            "False",
+            "False",
+            "True",
+            "True"
+        ]
+    ],
+    "0:Is medicine able to kill the flu virus?|1:Is medicine able to kill the flu virus?|2:Is medicine able to kill the flu virus?|3:Is medicine able to kill the flu virus?|4:Is medicine able to kill the flu virus?|5:Flu is transmitted especially in summer?|6:Fever, cough, sore throat are fly symptoms?": [
+        [
+            "False",
+            "False",
+            "False",
+            "False",
+            "False",
+            "False",
+            "True"
+        ]
     ]
 }
