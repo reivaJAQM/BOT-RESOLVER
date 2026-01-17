@@ -32,7 +32,7 @@ SELECTOR_TEXTO_CAJA_ORDENAR = (By.XPATH, ".")
 
 # --- TIPO 13: INLINE CHOICE ---
 # Blindado para ignorar el contenedor T1
-SELECTOR_TIPO_13_FILAS = (By.XPATH, "//div[contains(@class, 'flex') and .//span[contains(@class, 'text-gray-700')] and .//button[not(contains(@class, 'text-gray-700'))] and not(contains(@data-rbd-droppable-id, 'droppable'))]")
+SELECTOR_TIPO_13_FILAS = (By.XPATH, "//div[contains(@class, 'flex') and .//button and not(.//button[contains(translate(., 'CHECK', 'check'), 'check')]) and not(.//button[contains(translate(., 'SKIP', 'skip'), 'skip')]) and not(contains(@data-rbd-droppable-id, 'droppable'))]")
 
 # --- OTROS TIPOS (Sin cambios) ---
 SELECTOR_LINEAS_COMPLETAR = (By.XPATH, "//div[contains(@class,'card') and .//button[contains(@class,'text-gray-700')]]") 
@@ -51,10 +51,22 @@ SELECTOR_ANSWER_Q_CAJAS = (By.XPATH, "//div[contains(@class, 'card')][.//span[1]
 SELECTOR_ANSWER_Q_TEXTO = (By.XPATH, ".//span[1]")
 SELECTOR_ANSWER_Q_BOTONES = (By.XPATH, ".//button")
 SELECTOR_INPUT_ESCRIBIR = (By.XPATH, "//input[@type='text'] | //textarea")
-SELECTOR_AUDIO = (By.XPATH, "//button[.//svg] | //audio")
+SELECTOR_AUDIO = (By.XPATH, "//button[.//svg] | //audio | //div[contains(@class, 'audio-player')]")
 SELECTOR_LETRAS_DESORDENADAS = (By.XPATH, "//div[contains(@class, 'flex')]//span[contains(@class, 'font-bold')] | //p[contains(@class, 'text-justify') and contains(@class, 'uppercase') and contains(., '/')]")
 SELECTOR_FRASE_T11 = (By.XPATH, "./preceding-sibling::div | ./parent::div//p | ./ancestor::*[.//span[contains(@class, 'text-gray-700')]][1]//span[contains(@class, 'text-gray-700')]")
-SELECTOR_OPCIONES = (By.XPATH, "//div[contains(@class, 'cardCheck')]")
-SELECTOR_CUERPO_PREGUNTA = (By.XPATH, "//div[contains(@class, 'card')]//p[contains(@class, 'text-justify')]")
+SELECTOR_OPCIONES = (By.XPATH, """
+    //div[contains(@class, 'cardCheck')] | 
+    //div[contains(@class, 'option')] | 
+    //button[
+        not(.//svg) and 
+        not(contains(translate(., 'CHECK', 'check'), 'check')) and 
+        not(contains(translate(., 'SKIP', 'skip'), 'skip')) and 
+        not(contains(translate(., 'START', 'start'), 'start')) and
+        string-length(normalize-space(.)) > 0
+    ]
+""")
+
+# Aseguramos que el cuerpo de la pregunta capture texto que pueda estar suelto
+SELECTOR_CUERPO_PREGUNTA = (By.XPATH, "//div[contains(@class, 'card')]//p | //div[contains(@class, 'card')]//span[contains(@class, 'text-justify')]")
 SELECTOR_MODAL_TITULO = (By.CLASS_NAME, "swal2-title")
 SELECTOR_MODAL_CONTENIDO = (By.CLASS_NAME, "swal2-html-container")

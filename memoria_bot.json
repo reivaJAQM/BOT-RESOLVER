@@ -1,0 +1,171 @@
+{
+    "T9:WHAT CAN YOU INFER ABOUT SARAH’S PERSONALITY?||CTX:...||||||She is kind and caring|She is kind and caring|She is lazy|She is lazy|She is selfish|She is selfish|She is unfriendly|She is unfriendly": [
+        "She is kind and caring"
+    ],
+    "T9:HOW LONG HAVE THE SPEAKER AND SARAH KNOWN EACH OTHER?||CTX:...||||||Since college|Since college|Since elementary school|Since elementary school|Since high school|Since high school|Since last year|Since last year": [
+        "Since elementary school"
+    ],
+    "T9:TRUE OR FALSE: SARAH IS VERY HELPFUL.||CTX:...||||||False|False|True|True": [
+        "True"
+    ],
+    "T9:TRUE OR FALSE: THE SPEAKER AND SARAH ENJOY WATCHING MOVIES TOGETHER.||CTX:...||||||False|False|True|True": [
+        "True"
+    ],
+    "T9:WHAT IS THE NAME OF THE SPEAKER’S BEST FRIEND?||CTX:...||||||Emma|Emma|Jessica|Jessica|Lily|Lily|Sarah|Sarah": [
+        "Sarah"
+    ],
+    "T9:WHAT IS THE NAME OF SARAH’S DOG?||CTX:...||||||Buddy|Buddy|Charlie|Charlie|Max|Max|Rocky|Rocky": [
+        "Max"
+    ],
+    "T9:THE WORD “EXCHANGE” MOST LIKELY MEANS:||CTX:...||||||Borrow|Borrow|Buy|Buy|Give away|Give away|Trade|Trade": [
+        "Trade"
+    ],
+    "T9:WHAT DO THE SPEAKER AND SARAH SOMETIMES EXCHANGE?||CTX:...||||||Books|Books|Clothes|Clothes|Music|Music|Recipes|Recipes": [
+        "Books"
+    ],
+    "T9:HOW DOES THE SPEAKER FEEL ABOUT THEIR FRIENDSHIP WITH SARAH?||CTX:...||||||Indifferent|Indifferent|Lucky|Lucky|Upset|Upset|Worried|Worried": [
+        "Lucky"
+    ],
+    "T9:WHAT DOES SARAH HAVE A STRONG INTEREST IN?||CTX:...||||||Animals|Animals|Cooking|Cooking|Painting|Painting|Sports|Sports": [
+        "Animals"
+    ],
+    "T9:WHAT WILL THE SPEAKER LIKELY DO AFTER THE VISIT?||CTX:...||||||Continue the same habits|Continue the same habits|Ignore the doctor’s advice|Ignore the doctor’s advice|Improve their diet and rest more|Improve their diet and rest more|Visit the doctor again next week|Visit the doctor again next week": [
+        "Improve their diet and rest more"
+    ],
+    "T9:WHAT CAN YOU INFER ABOUT THE SPEAKER’S LIFESTYLE BEFORE THE VISIT?||CTX:...||||||The speaker exercised a lot|The speaker exercised a lot|The speaker had a balanced diet|The speaker had a balanced diet|The speaker needed to improve their health habits|The speaker needed to improve their health habits|The speaker was very healthy|The speaker was very healthy": [
+        "The speaker needed to improve their health habits"
+    ],
+    "T9:WHAT ADVICE DID THE DOCTOR GIVE THE SPEAKER?||CTX:...||||||Exercise more|Exercise more|Get more rest and eat healthier foods|Get more rest and eat healthier foods|Take medicine|Take medicine|Visit the doctor again soon|Visit the doctor again soon": [
+        "Get more rest and eat healthier foods"
+    ],
+    "T9:HOW DID THE SPEAKER FEEL AFTER THE VISIT?||CTX:...||||||Anxious|Anxious|Disappointed|Disappointed|Relieved|Relieved|Unhappy|Unhappy": [
+        "Relieved"
+    ],
+    "T9:TRUE OR FALSE: THE SPEAKER WAS FEELING WELL BEFORE THE VISIT.||CTX:...||||||False|False|True|True": [
+        "False"
+    ],
+    "T9:TRUE OR FALSE: THE SPEAKER NEEDED TO TAKE MEDICINE AFTER THE VISIT.||CTX:...||||||False|False|True|True": [
+        "False"
+    ],
+    "T9:WHY DID THE SPEAKER FEEL RELIEVED AFTER THE VISIT?||CTX:...||||||The doctor said everything was fine|The doctor said everything was fine|The speaker didn’t need surgery|The speaker didn’t need surgery|The speaker was feeling better immediately|The speaker was feeling better immediately|The speaker was given medicine|The speaker was given medicine": [
+        "The doctor said everything was fine"
+    ],
+    "T9:WHY DID THE SPEAKER GO TO THE DOCTOR?||CTX:...||||||For a check-up|For a surgery|For a surgery|For a vaccination|For a vaccination|For an emergency|For an emergency": [
+        "For a check-up"
+    ],
+    "T9:WHAT DID THE DOCTOR DO DURING THE CHECK-UP?||CTX:...||||||Gave the speaker a shot|Gave the speaker a shot|Gave the speaker medicine|Gave the speaker medicine|Performed surgery|Performed surgery|Took the speaker’s blood pressure|Took the speaker’s blood pressure": [
+        "Took the speaker’s blood pressure"
+    ],
+    "T9:THE WORD “RELIEVED” MOST LIKELY MEANS:||CTX:...||||||Comforted|Comforted|Confused|Confused|Tired|Tired|Worried|Worried": [
+        "Comforted"
+    ],
+    "T8:READ THE CONTENT OF THE IMAGE AND ANSWER THE QUESTION, CHOOSING THE BEST ALTERNATIVE: WHAT DID THE AUTHOR COMPARE?||IMG_DIM:443x303||Countryside and city life|Houses and buildings|Shopping centers|The environment": [
+        [
+            "Countryside and city life"
+        ]
+    ],
+    "0:People|country|don't|have|hours.|in the|many|to work": [
+        [
+            [
+                "People",
+                "in the",
+                "country",
+                "don't",
+                "have",
+                "to work",
+                "many",
+                "hours."
+            ]
+        ]
+    ],
+    "0:Living in the countryside can be an awesome experience.|1:Living in the countryside can be an awesome experience.|2:Living in the countryside can be an awesome experience.|3:Living in the countryside can be an awesome experience.|4:Living in the countryside can be an awesome experience.|5:The country is more polluted and the traffic isn't heavy.|6:In the cities there are no skyscrapers and modern buildings.": [
+        [
+            "True",
+            "True",
+            "True",
+            "True",
+            "True",
+            "False",
+            "False"
+        ]
+    ],
+    "DEFAULT:CHOOSE THE CORRECT OPTION TO COMPLETE THE SENTENCE: IN THE COUNTRY _______ HUGE BLOCKS OF FLATS.||CTX:...||||||There are any.|There are any.|There are some|There are some|There aren't any|There aren't any": [
+        "There aren't any"
+    ],
+    "0:Country|and|is|life|peaceful|silent|very": [
+        [
+            [
+                "Country",
+                "life",
+                "is",
+                "very",
+                "peaceful",
+                "and",
+                "silent"
+            ]
+        ]
+    ],
+    "T8:MATCH THE MAIN IDEA OF EACH PARAGRAPH WITH THE INFORMATION PROVIDED IN THE TEXT.||IMG_DIM:341x128|IMG_DIM:341x289|IMG_DIM:341x461||Advantages of living in the countryside.|Disadvantages of living in the countryside.|The writer's opinion.": [
+        [
+            "Advantages of living in the countryside.",
+            "Disadvantages of living in the countryside.",
+            "The writer's opinion."
+        ]
+    ],
+    "DEFAULT:CHOOSE THE CORRECT OPTION TO COMPLETE THE SENTENCE: _______ IN THE COUNTRYSIDE IS CHEAPER THAN IN THE CITY.||CTX:...||||||Live|Live|Lives|Lives|Living|Living": [
+        "Living"
+    ],
+    "DEFAULT:CHOOSE THE CORRECT OPTION TO COMPLETE THE SENTENCE: THE COUNTRY IS _______ THE CITY.||CTX:...||||||less polluted|less polluted|polluted|polluted|pollutes|pollutes": [
+        "less polluted"
+    ],
+    "T8:MATCH THE SENTENCE THAT CORRESPONDS TO THE CORRECT OPTION.||IMG_DIM:341x254|IMG_DIM:341x337|IMG_DIM:341x456||Brochure|Magazine|Newspaper": [
+        [
+            "Magazine",
+            "Brochure",
+            "Newspaper"
+        ]
+    ],
+    "DEFAULT:CHOOSE THE CORRECT OPTION TO COMPLETE THE SENTENCE.||CTX:...||||||BROCHURE|TOURISM": [
+        "BROCHURE"
+    ],
+    "0:Accommodation|Activities to do|Food|Location|Places to visit": [
+        [
+            [
+                "Location",
+                "Food",
+                "Accommodation",
+                "Activities to do",
+                "Places to visit"
+            ]
+        ]
+    ],
+    "T8:CHOOSE THE CORRECT ANSWER: WHERE IS PUERTO LOPEZ LOCATED?||IMG_DIM:443x588||In a fantastic beach of the world|In an archeological community|In small villages|In the south of Ecuador": [
+        [
+            "In the south of Ecuador"
+        ]
+    ],
+    "0:Brochures are written in a very formal way|1:Brochures are written in a very formal way|2:Brochures are written in a very formal way|3:Brochures are written in a very formal way|4:Brochures are written in a very formal way|5:Brochures have many colorful pictures|6:Brochures contain relevant summarized information": [
+        [
+            "True",
+            "True",
+            "True",
+            "True",
+            "True",
+            "True",
+            "True"
+        ]
+    ],
+    "T8:CHOOSE THE CORRECT ANSWER: HOW MANY TOURISTS VISIT PUERTO LOPEZ EVERY YEAR?||IMG_DIM:443x588||Hundred tourists|Million tourists|Not defined|Thousands of tourists": [
+        [
+            "Thousands of tourists"
+        ]
+    ],
+    "DEFAULT:CHOOSE THE CORRECT OPTION TO COMPLETE THE SENTENCE.||CTX:...||||||ACCOMMODATION|TOURISM": [
+        "TOURISM"
+    ],
+    "T8:CHOOSE THE CORRECT ANSWER: DOES PUERTO LOPEZ HAVE HIDDEN BEACHES AND ISLANDS?||IMG_DIM:443x588||No, it don't|No, it haven't|Yes, it does|Yes, it have": [
+        [
+            "Yes, it does"
+        ]
+    ]
+}

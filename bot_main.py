@@ -12,6 +12,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException, NoSuchElementException, JavascriptException
 from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver import ActionChains
 
 # --- ¡NUESTROS MÓdulos! ---
 import config
@@ -248,8 +249,6 @@ try:
                     else:
                         print(f"      Contenido detectado: [TIPO 5] ({num_cajas_tf} caja)");
                         tipo_pregunta = "TIPO_5_TF_SINGLE"
-                elif len(driver.find_elements(*sel.SELECTOR_TIPO_13_FILAS)) > 0:
-                    print("      Contenido detectado: [TIPO 13] Selección Inline"); tipo_pregunta = "TIPO_13_INLINE"
                 # ¡MOVER TIPO 8 y TIPO 4 AQUÍ! (ANTES DE TIPO 9)
                 elif len(driver.find_elements(*sel.SELECTOR_IMAGEN_EMPAREJAR)) > 0 and len(driver.find_elements(*sel.SELECTOR_DEFINICIONES_AZULES_XPATH)) > 0: 
                     print("      Contenido detectado: [TIPO 8]"); tipo_pregunta = "TIPO_8_IMAGEN"
@@ -447,44 +446,72 @@ try:
                     if len(lista_ordenes_ia) != len(lista_de_tareas_ordenar):
                         # Use 24 spaces for indentation
                         raise Exception("Fallo crítico: El número de soluciones no coincide con el de tareas TIPO 1.")
-                    print("Reordenando JS (Lote)...")
-                    exito_global = True
-                    js = "var c=arguments[0],ids=arguments[1],m={};for(let i=0;i<c.children.length;i++){let o=c.children[i],d=o.firstElementChild;if(d&&d.getAttribute('data-rbd-draggable-id')){m[d.getAttribute('data-rbd-draggable-id')]=o;}}while(c.firstChild)c.removeChild(c.firstChild);ids.forEach(id=>{if(m[id])c.appendChild(m[id]);else console.error('JS Err ID:',id);});console.log('JS OK.');"
-                    for orden_ia, tarea in zip(lista_ordenes_ia, lista_de_tareas_ordenar):
-                        # Use 24 spaces for indentation
-                        map_texto_lower_a_ids_lista = {}
-                        for id_val, texto_val in tarea["map_id_a_texto"].items():
-                            # Use 28 spaces for indentation
-                            texto_lower = texto_val.lower().strip()
-                            if texto_lower not in map_texto_lower_a_ids_lista:
-                                # Use 32 spaces for indentation
-                                map_texto_lower_a_ids_lista[texto_lower] = []
-                            map_texto_lower_a_ids_lista[texto_lower].append(id_val)
-                        map_ids_disponibles = copy.deepcopy(map_texto_lower_a_ids_lista)
-                        ids_ok_filtrado = []
-                        mapeo_fallido = False
-                        for texto_ia in orden_ia:
-                            # Use 28 spaces for indentation
-                            texto_ia_lower = texto_ia.lower().strip()
-                            if texto_ia_lower in map_ids_disponibles and map_ids_disponibles[texto_ia_lower]:
-                                # Use 32 spaces for indentation
-                                id_para_usar = map_ids_disponibles[texto_ia_lower].pop(0)
-                                ids_ok_filtrado.append(id_para_usar)
-                            else:
-                                # Use 32 spaces for indentation
-                                print(f"Error Mapeo T1: No hay ID disponible para '{texto_ia}' (Buscando: '{texto_ia_lower}')")
-                                mapeo_fallido = True; break
-                        if mapeo_fallido or len(ids_ok_filtrado) != len(tarea["frases"]):
-                            # Use 28 spaces for indentation
-                            print(f"Error: Fallo mapeo IDs JS para tarea {tarea['frases']}"); exito_global = False; continue
-                        try:
-                            # Use 28 spaces for indentation
-                            driver.execute_script(js, tarea["contenedor_elem"], ids_ok_filtrado); time.sleep(0.5)
-                        except JavascriptException as e:
-                            # Use 28 spaces for indentation
-                            print(f"Error JS en TIPO 1 Lote: {e}"); exito_global = False; continue
-                    print("JS OK (Lote).")
-                    if not exito_global: raise Exception("Fallo JS durante reordenamiento TIPO 1 Lote.")
+                    # --- INICIO REEMPLAZO: EJECUCIÓN FÍSICA ULTRA-ROBUSTA (ANTI-STALE) ---
+                    print(f"      Órdenes a aplicar: {lista_ordenes_ia}")
+                    action = ActionChains(driver)
+                    
+                    # Recorremos cada tarea/solución
+                    # OJO: Ya no usamos 'zip(contenedores)' porque esas referencias caducan.
+                    # Usamos solo la solución e iteramos buscando el contenedor fresco cada vez.
+                    for i_cont, solucion in enumerate(lista_ordenes_ia):
+                        print(f"      Ordenando contenedor {i_cont+1}...")
+                        
+                        for i_meta, palabra_objetivo in enumerate(solucion):
+                            try:
+                                # --- PASO CRÍTICO: RE-CAPTURAR EL CONTENEDOR PADRE ---
+                                # Tras cada movimiento, React destruye y crea el contenedor de nuevo.
+                                # Buscamos la lista fresca y cogemos el índice correspondiente.
+                                time.sleep(0.2) # Pequeño respiro para asegurar que el DOM se asentó
+                                cons_frescos = driver.find_elements(*sel.SELECTOR_CONTENEDOR_ORDENAR)
+                                
+                                if i_cont >= len(cons_frescos):
+                                    print(f"      ERR: Contenedor {i_cont+1} perdido tras repintado.")
+                                    break
+                                
+                                # Esta es la referencia válida AHORA MISMO
+                                contenedor_actual = cons_frescos[i_cont]
+                                # -----------------------------------------------------
+
+                                # 1. Refrescamos referencias de las palabras dentro del contenedor fresco
+                                cajas_actuales = contenedor_actual.find_elements(*sel.SELECTOR_CAJAS_ORDENAR)
+                                
+                                # 2. Buscamos dónde está la palabra AHORA
+                                elemento_a_mover = None
+                                indice_actual = -1
+                                
+                                for idx, caja in enumerate(cajas_actuales):
+                                    if caja.text.strip() == palabra_objetivo:
+                                        elemento_a_mover = caja
+                                        indice_actual = idx
+                                        break
+                                
+                                if elemento_a_mover is None:
+                                    print(f"      ERR: No encontré '{palabra_objetivo}' para mover.")
+                                    continue
+
+                                # 3. Si no está en su sitio, arrastramos
+                                if indice_actual != i_meta:
+                                    elemento_destino = cajas_actuales[i_meta]
+                                    
+                                    # TRUCO REACT: Hold -> Shake -> Move -> Release
+                                    action.click_and_hold(elemento_a_mover).perform()
+                                    time.sleep(0.1)
+                                    action.move_by_offset(10, 0).perform() # Sacudón
+                                    action.move_to_element(elemento_destino).perform()
+                                    time.sleep(0.1)
+                                    action.release().perform()
+                                    action.reset_actions()
+                                    
+                                    time.sleep(0.6) # Espera OBLIGATORIA para que React repinte antes del siguiente bucle
+                            except Exception as e_drag:
+                                print(f"      Fallo arrastrando '{palabra_objetivo}': {e_drag}")
+                                try:
+                                    action.release().perform()
+                                    action.reset_actions()
+                                except: pass
+
+                    print("      Ordenamiento físico finalizado.")
+                    # --- FIN REEMPLAZO ---
 
                 #--- TIPO 2: COMPLETAR ---
                 elif tipo_pregunta == "TIPO_2_COMPLETAR":
@@ -1744,69 +1771,6 @@ try:
                             exito_global = False; break
                     if not exito_global: raise Exception("Fallo al escribir en inputs TIPO 12.")
                 # --- ¡FIN TIPO 12! ---
-
-                # --- TIPO 13: SELECCIÓN EN LÍNEA ---
-                if tipo_pregunta == "TIPO_13_INLINE":
-                    print("Tipo: SELECCIÓN EN LÍNEA (Botones variados).")
-                    filas = driver.find_elements(*sel.SELECTOR_TIPO_13_FILAS)
-                    
-                    lista_items_t13 = []
-                    # Recorremos cada fila detectada
-                    for i, fila in enumerate(filas):
-                        # Extraemos todo el texto visible (Frase + Opciones mezcladas)
-                        texto_completo = fila.text.replace("\n", " ").strip()
-                        
-                        # Buscamos los botones dentro de esta fila
-                        botones = fila.find_elements(By.TAG_NAME, "button")
-                        opciones_texto = [b.text.strip() for b in botones if b.text.strip()]
-                        
-                        if opciones_texto:
-                            clave = f"Item {i+1}: {texto_completo} | Opciones disponibles: {opciones_texto}"
-                            lista_items_t13.append(clave)
-                            print(f"      Fila {i+1}: {opciones_texto}")
-                        else:
-                            print(f"      Warn: Fila {i+1} detectada pero sin botones legibles.")
-
-                    # Enviamos a la IA
-                    prompt_final = f"""
-                    Pregunta de gramática/vocabulario. Selecciona la opción correcta para completar la frase.
-                    Contexto Global: {contexto}
-                    Items:
-                    {chr(10).join(lista_items_t13)}
-                    
-                    Responde SOLO con la palabra exacta de la opción correcta para cada item.
-                    Formato:
-                    Item 1: [Opción]
-                    """
-                    
-                    respuesta_ia = ia_utils.obtener_texto_de_respuesta(ia_utils.model.generate_content(prompt_final))
-                    print(f"      Respuesta IA: {respuesta_ia}")
-
-                    # Procesar respuestas y hacer clic
-                    lineas_resp = respuesta_ia.strip().split('\n')
-                    for linea in lineas_resp:
-                        if "Item" in linea and ":" in linea:
-                            try:
-                                idx_str = linea.split(":")[0].replace("Item", "").strip()
-                                idx = int(idx_str) - 1 # Índice base 0
-                                respuesta_texto = linea.split(":")[1].strip()
-                                
-                                if 0 <= idx < len(filas):
-                                    fila_actual = filas[idx]
-                                    botones_fila = fila_actual.find_elements(By.TAG_NAME, "button")
-                                    clic_hecho = False
-                                    for btn in botones_fila:
-                                        # Compara ignorando mayúsculas/minúsculas
-                                        if btn.text.strip().lower() == respuesta_texto.lower():
-                                            driver.execute_script("arguments[0].click();", btn)
-                                            print(f"      Click en: '{respuesta_texto}' (Item {idx+1})")
-                                            clic_hecho = True
-                                            break
-                                    
-                                    if not clic_hecho:
-                                        print(f"      ERROR: No se encontró botón para '{respuesta_texto}' en Item {idx+1}")
-                            except Exception as e:
-                                print(f"      Error procesando línea '{linea}': {e}")
                 # --- TIPO DEFAULT: OPCIÓN MÚLTIPLE ---
                 elif tipo_pregunta == "TIPO_DEFAULT_OM":
                     # Use 20 spaces for indentation
