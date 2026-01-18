@@ -30,10 +30,6 @@ SELECTOR_CAJAS_ORDENAR = (By.XPATH, ".//div[@data-rbd-draggable-id]")
 # El texto está directo en el div o en un hijo simple
 SELECTOR_TEXTO_CAJA_ORDENAR = (By.XPATH, ".") 
 
-# --- TIPO 13: INLINE CHOICE ---
-# Blindado para ignorar el contenedor T1
-SELECTOR_TIPO_13_FILAS = (By.XPATH, "//div[contains(@class, 'flex') and .//button and not(.//button[contains(translate(., 'CHECK', 'check'), 'check')]) and not(.//button[contains(translate(., 'SKIP', 'skip'), 'skip')]) and not(contains(@data-rbd-droppable-id, 'droppable'))]")
-
 # --- OTROS TIPOS (Sin cambios) ---
 SELECTOR_LINEAS_COMPLETAR = (By.XPATH, "//div[contains(@class,'card') and .//button[contains(@class,'text-gray-700')]]") 
 SELECTOR_BOTONES_OPCION_COMPLETAR = (By.XPATH, ".//button[contains(@class,'text-gray-700')]") 

@@ -1,171 +1,165 @@
 {
-    "T9:WHAT CAN YOU INFER ABOUT SARAH’S PERSONALITY?||CTX:...||||||She is kind and caring|She is kind and caring|She is lazy|She is lazy|She is selfish|She is selfish|She is unfriendly|She is unfriendly": [
-        "She is kind and caring"
+    "DEFAULT:SELECT THE CORRECT PHRASAL VERB TO COMPLETE: LET'S DO EXERCISE. PLEASE _______.||CTX:...||||||||Come back|Come back|Lie down|Lie down|Pull out|Pull out|Wear off|Wear off": [
+        "Lie down"
     ],
-    "T9:HOW LONG HAVE THE SPEAKER AND SARAH KNOWN EACH OTHER?||CTX:...||||||Since college|Since college|Since elementary school|Since elementary school|Since high school|Since high school|Since last year|Since last year": [
-        "Since elementary school"
+    "DEFAULT:SELECT THE CORRECT PHRASAL VERB TO COMPLETE: MY SISTER HAS TOLD ME SHE BOUGHT A NEW APARTMENT. LET'S _______.||CTX:...||||||||Check it out|Cut it out|Cut it out|Pull it out|Pull it out|Spit it out|Spit it out": [
+        "Check it out"
     ],
-    "T9:TRUE OR FALSE: SARAH IS VERY HELPFUL.||CTX:...||||||False|False|True|True": [
-        "True"
+    "DEFAULT:SELECT THE CORRECT PHRASAL VERB TO COMPLETE: THE DIRECTOR IS NOT HERE. CAN YOU _______ ?||CTX:...||||||||Come back later|Come back later|Cut down later|Cut down later|Keep up later|Keep up later|Wash out later|Wash out later": [
+        "Come back later"
     ],
-    "T9:TRUE OR FALSE: THE SPEAKER AND SARAH ENJOY WATCHING MOVIES TOGETHER.||CTX:...||||||False|False|True|True": [
-        "True"
+    "DEFAULT:SELECT THE CORRECT PHRASAL VERB TO COMPLETE: I AM LEARNING A LOT. LET'S _______ PRACTICING EVERYDAY.||CTX:...||||||||Cut out|Cut out|Keep up|Keep up|Lie down|Lie down|Spit out|Spit out": [
+        "Keep up"
     ],
-    "T9:WHAT IS THE NAME OF THE SPEAKER’S BEST FRIEND?||CTX:...||||||Emma|Emma|Jessica|Jessica|Lily|Lily|Sarah|Sarah": [
-        "Sarah"
+    "DEFAULT:SELECT THE CORRECT PHRASAL VERB TO COMPLETE: MY DAD _______ FROM SMOKING TOO MANY CIGARETTES, SMOKING IS VERY DANGEROUS.||CTX:...||||||||Cut down|Cut down|Fall out|Fall out|Pull out|Pull out|Wear off|Wear off": [
+        "Cut down"
     ],
-    "T9:WHAT IS THE NAME OF SARAH’S DOG?||CTX:...||||||Buddy|Buddy|Charlie|Charlie|Max|Max|Rocky|Rocky": [
-        "Max"
+    "DEFAULT:SELECT THE CORRECT PHRASAL VERB TO COMPLETE: THE PILLS FOR THE STOMACHACHE STARTED TO _______ TWO HOURS AGO.||CTX:...||||||||Check out|Spit out|Spit out|Wash out|Wash out|Wear off|Wear off": [
+        "Wear off"
     ],
-    "T9:THE WORD “EXCHANGE” MOST LIKELY MEANS:||CTX:...||||||Borrow|Borrow|Buy|Buy|Give away|Give away|Trade|Trade": [
-        "Trade"
+    "DEFAULT:CHOOSE THE RIGHT WORD TO COMPLETE THE PHRASAL VERB.||CTX:...||||EXTRACT:My boy was very tired so he lay on the armchair and he slept...mchair and he slept.||||DOWN|UP": [
+        "DOWN"
     ],
-    "T9:WHAT DO THE SPEAKER AND SARAH SOMETIMES EXCHANGE?||CTX:...||||||Books|Books|Clothes|Clothes|Music|Music|Recipes|Recipes": [
-        "Books"
+    "DEFAULT:CHOOSE THE RIGHT WORD TO COMPLETE THE PHRASAL VERB.||CTX:...||||EXTRACT:Please be patient. The cocktail effects will wear slowly....ts will wear slowly.||||OFF|OUT": [
+        "OFF"
     ],
-    "T9:HOW DOES THE SPEAKER FEEL ABOUT THEIR FRIENDSHIP WITH SARAH?||CTX:...||||||Indifferent|Indifferent|Lucky|Lucky|Upset|Upset|Worried|Worried": [
-        "Lucky"
+    "DEFAULT:CHOOSE THE RIGHT WORD TO COMPLETE THE PHRASAL VERB.||CTX:...||||EXTRACT:The weather kept foggy yesterday....ept foggy yesterday.||||DOWM|UP": [
+        "UP"
     ],
-    "T9:WHAT DOES SARAH HAVE A STRONG INTEREST IN?||CTX:...||||||Animals|Animals|Cooking|Cooking|Painting|Painting|Sports|Sports": [
-        "Animals"
+    "DEFAULT:CHOOSE THE BEST OPTION IN THE FOLLOWING SENTENCES USING THE GERUND FOR EACH VERB:||CTX:...||||EXTRACT:My best friends like bikes. They love...ike bikes. They love||||RIDE A BIKE|RIDING A BIKE": [
+        "RIDING A BIKE"
     ],
-    "T9:WHAT WILL THE SPEAKER LIKELY DO AFTER THE VISIT?||CTX:...||||||Continue the same habits|Continue the same habits|Ignore the doctor’s advice|Ignore the doctor’s advice|Improve their diet and rest more|Improve their diet and rest more|Visit the doctor again next week|Visit the doctor again next week": [
-        "Improve their diet and rest more"
+    "DEFAULT:READ THE TEXT AND CHOOSE IF THE VERB IS GERUND OR INFINITIVE TO COMPLETE IT.||CTX:...||||||DRINK|DRINKING|EAT|EATING|GARDEN|GARDENING|HATE|HATING|LIKE|LIKING|PLANT|PLANTING": [
+        "EAT"
     ],
-    "T9:WHAT CAN YOU INFER ABOUT THE SPEAKER’S LIFESTYLE BEFORE THE VISIT?||CTX:...||||||The speaker exercised a lot|The speaker exercised a lot|The speaker had a balanced diet|The speaker had a balanced diet|The speaker needed to improve their health habits|The speaker needed to improve their health habits|The speaker was very healthy|The speaker was very healthy": [
-        "The speaker needed to improve their health habits"
-    ],
-    "T9:WHAT ADVICE DID THE DOCTOR GIVE THE SPEAKER?||CTX:...||||||Exercise more|Exercise more|Get more rest and eat healthier foods|Get more rest and eat healthier foods|Take medicine|Take medicine|Visit the doctor again soon|Visit the doctor again soon": [
-        "Get more rest and eat healthier foods"
-    ],
-    "T9:HOW DID THE SPEAKER FEEL AFTER THE VISIT?||CTX:...||||||Anxious|Anxious|Disappointed|Disappointed|Relieved|Relieved|Unhappy|Unhappy": [
-        "Relieved"
-    ],
-    "T9:TRUE OR FALSE: THE SPEAKER WAS FEELING WELL BEFORE THE VISIT.||CTX:...||||||False|False|True|True": [
-        "False"
-    ],
-    "T9:TRUE OR FALSE: THE SPEAKER NEEDED TO TAKE MEDICINE AFTER THE VISIT.||CTX:...||||||False|False|True|True": [
-        "False"
-    ],
-    "T9:WHY DID THE SPEAKER FEEL RELIEVED AFTER THE VISIT?||CTX:...||||||The doctor said everything was fine|The doctor said everything was fine|The speaker didn’t need surgery|The speaker didn’t need surgery|The speaker was feeling better immediately|The speaker was feeling better immediately|The speaker was given medicine|The speaker was given medicine": [
-        "The doctor said everything was fine"
-    ],
-    "T9:WHY DID THE SPEAKER GO TO THE DOCTOR?||CTX:...||||||For a check-up|For a surgery|For a surgery|For a vaccination|For a vaccination|For an emergency|For an emergency": [
-        "For a check-up"
-    ],
-    "T9:WHAT DID THE DOCTOR DO DURING THE CHECK-UP?||CTX:...||||||Gave the speaker a shot|Gave the speaker a shot|Gave the speaker medicine|Gave the speaker medicine|Performed surgery|Performed surgery|Took the speaker’s blood pressure|Took the speaker’s blood pressure": [
-        "Took the speaker’s blood pressure"
-    ],
-    "T9:THE WORD “RELIEVED” MOST LIKELY MEANS:||CTX:...||||||Comforted|Comforted|Confused|Confused|Tired|Tired|Worried|Worried": [
-        "Comforted"
-    ],
-    "T8:READ THE CONTENT OF THE IMAGE AND ANSWER THE QUESTION, CHOOSING THE BEST ALTERNATIVE: WHAT DID THE AUTHOR COMPARE?||IMG_DIM:443x303||Countryside and city life|Houses and buildings|Shopping centers|The environment": [
-        [
-            "Countryside and city life"
-        ]
-    ],
-    "0:People|country|don't|have|hours.|in the|many|to work": [
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION IN THE FOLLOWING SENTENCES USING THE GERUND FOR EACH VERB:||||RIDE A BIKE|RIDING A BIKE": "RIDING A BIKE",
+    "DEFAULT_MULTI:READ THE TEXT AND CHOOSE IF THE VERB IS GERUND OR INFINITIVE TO COMPLETE IT.||||LIKE|LIKING": "LIKING",
+    "DEFAULT_MULTI:READ THE TEXT AND CHOOSE IF THE VERB IS GERUND OR INFINITIVE TO COMPLETE IT.||||GARDEN|GARDENING": "GARDENING",
+    "DEFAULT_MULTI:READ THE TEXT AND CHOOSE IF THE VERB IS GERUND OR INFINITIVE TO COMPLETE IT.||||HATE|HATING": "HATING",
+    "DEFAULT_MULTI:READ THE TEXT AND CHOOSE IF THE VERB IS GERUND OR INFINITIVE TO COMPLETE IT.||||DRINK|DRINKING": "DRINKING",
+    "DEFAULT_MULTI:READ THE TEXT AND CHOOSE IF THE VERB IS GERUND OR INFINITIVE TO COMPLETE IT.||||PLANT|PLANTING": "PLANTING",
+    "DEFAULT_MULTI:READ THE TEXT AND CHOOSE IF THE VERB IS GERUND OR INFINITIVE TO COMPLETE IT.||||EAT|EATING": "EATING",
+    "0:Swimming|exercise|for|heart|is|the": [
         [
             [
-                "People",
-                "in the",
-                "country",
-                "don't",
-                "have",
-                "to work",
-                "many",
-                "hours."
+                "Swimming",
+                "is",
+                "exercise",
+                "for",
+                "the",
+                "heart"
             ]
         ]
     ],
-    "0:Living in the countryside can be an awesome experience.|1:Living in the countryside can be an awesome experience.|2:Living in the countryside can be an awesome experience.|3:Living in the countryside can be an awesome experience.|4:Living in the countryside can be an awesome experience.|5:The country is more polluted and the traffic isn't heavy.|6:In the cities there are no skyscrapers and modern buildings.": [
+    "0:Reading|a|activity|is|relaxing|very": [
         [
-            "True",
-            "True",
-            "True",
-            "True",
+            [
+                "Reading",
+                "is",
+                "a",
+                "very",
+                "relaxing",
+                "activity"
+            ]
+        ]
+    ],
+    "0:I|in|love|net|surfing|the": [
+        [
+            [
+                "I",
+                "love",
+                "surfing",
+                "in",
+                "the",
+                "net"
+            ]
+        ]
+    ],
+    "0:We stopped talking because someone interrupted us.|5:Know how to speak English is amazing!|6:I hate bing cold. I find it really depressing.|7:Martin enjoys writing good poems.": [
+        [
             "True",
             "False",
-            "False"
-        ]
-    ],
-    "DEFAULT:CHOOSE THE CORRECT OPTION TO COMPLETE THE SENTENCE: IN THE COUNTRY _______ HUGE BLOCKS OF FLATS.||CTX:...||||||There are any.|There are any.|There are some|There are some|There aren't any|There aren't any": [
-        "There aren't any"
-    ],
-    "0:Country|and|is|life|peaceful|silent|very": [
-        [
-            [
-                "Country",
-                "life",
-                "is",
-                "very",
-                "peaceful",
-                "and",
-                "silent"
-            ]
-        ]
-    ],
-    "T8:MATCH THE MAIN IDEA OF EACH PARAGRAPH WITH THE INFORMATION PROVIDED IN THE TEXT.||IMG_DIM:341x128|IMG_DIM:341x289|IMG_DIM:341x461||Advantages of living in the countryside.|Disadvantages of living in the countryside.|The writer's opinion.": [
-        [
-            "Advantages of living in the countryside.",
-            "Disadvantages of living in the countryside.",
-            "The writer's opinion."
-        ]
-    ],
-    "DEFAULT:CHOOSE THE CORRECT OPTION TO COMPLETE THE SENTENCE: _______ IN THE COUNTRYSIDE IS CHEAPER THAN IN THE CITY.||CTX:...||||||Live|Live|Lives|Lives|Living|Living": [
-        "Living"
-    ],
-    "DEFAULT:CHOOSE THE CORRECT OPTION TO COMPLETE THE SENTENCE: THE COUNTRY IS _______ THE CITY.||CTX:...||||||less polluted|less polluted|polluted|polluted|pollutes|pollutes": [
-        "less polluted"
-    ],
-    "T8:MATCH THE SENTENCE THAT CORRESPONDS TO THE CORRECT OPTION.||IMG_DIM:341x254|IMG_DIM:341x337|IMG_DIM:341x456||Brochure|Magazine|Newspaper": [
-        [
-            "Magazine",
-            "Brochure",
-            "Newspaper"
-        ]
-    ],
-    "DEFAULT:CHOOSE THE CORRECT OPTION TO COMPLETE THE SENTENCE.||CTX:...||||||BROCHURE|TOURISM": [
-        "BROCHURE"
-    ],
-    "0:Accommodation|Activities to do|Food|Location|Places to visit": [
-        [
-            [
-                "Location",
-                "Food",
-                "Accommodation",
-                "Activities to do",
-                "Places to visit"
-            ]
-        ]
-    ],
-    "T8:CHOOSE THE CORRECT ANSWER: WHERE IS PUERTO LOPEZ LOCATED?||IMG_DIM:443x588||In a fantastic beach of the world|In an archeological community|In small villages|In the south of Ecuador": [
-        [
-            "In the south of Ecuador"
-        ]
-    ],
-    "0:Brochures are written in a very formal way|1:Brochures are written in a very formal way|2:Brochures are written in a very formal way|3:Brochures are written in a very formal way|4:Brochures are written in a very formal way|5:Brochures have many colorful pictures|6:Brochures contain relevant summarized information": [
-        [
-            "True",
-            "True",
-            "True",
-            "True",
-            "True",
-            "True",
+            "False",
             "True"
         ]
     ],
-    "T8:CHOOSE THE CORRECT ANSWER: HOW MANY TOURISTS VISIT PUERTO LOPEZ EVERY YEAR?||IMG_DIM:443x588||Hundred tourists|Million tourists|Not defined|Thousands of tourists": [
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION IN THE FOLLOWING SENTENCES USING THE GERUND FOR EACH VERB:||||TAKEING|TAKING": "TAKING",
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION IN THE FOLLOWING SENTENCES USING THE GERUND FOR EACH VERB:||||PLAING|PLAYING": "PLAYING",
+    "DEFAULT_MULTI:CHOOSE IN THE SENTENCES IF IT IS AN ACTIVITY OR AN ACTION:||||ACTION|ACTIVITY": "ACTION",
+    "DEFAULT_MULTI:CHOOSE THE CORRECT WORD: HOW _______ IS YOUR HUSBAND?||||Attractive|Far|Important|Short": "Attractive",
+    "DEFAULT_MULTI:CHOOSE THE CORRECT WORD: HOW _______ IS YOUR HUSBAND?||Attractive Short Far||Important": "Important",
+    "DEFAULT_MULTI:CHOOSE THE CORRECT WORD: HOW _______ IS YOUR HUSBAND?||Important Short Far||Attractive": "Attractive",
+    "DEFAULT_MULTI:CHOOSE THE CORRECT WORD: HOW _______ IS YOUR HUSBAND?||Important Attractive Far||Short": "Short",
+    "DEFAULT_MULTI:CHOOSE THE CORRECT WORD: HOW _______ IS YOUR HUSBAND?||Important Attractive Short||Far": "Far",
+    "DEFAULT_MULTI:CHOOSE THE CORRECT WORD: HOW _______ IS YOUR HAIR?||||Far|Long|Often|Tall": "Long",
+    "DEFAULT_MULTI:CHOOSE THE CORRECT WORD: HOW _______ IS YOUR HAIR?||Tall Often Far||Long": "Long",
+    "DEFAULT_MULTI:CHOOSE THE CORRECT WORD: HOW _______ IS YOUR HAIR?||Long Often Far||Tall": "Tall",
+    "DEFAULT_MULTI:CHOOSE THE CORRECT WORD: HOW _______ IS YOUR HAIR?||Long Tall Far||Often": "Often",
+    "DEFAULT_MULTI:CHOOSE THE CORRECT WORD: HOW _______ IS YOUR HAIR?||Long Tall Often||Far": "Far",
+    "DEFAULT_MULTI:CHOOSE THE CORRECT WORD: HOW _______ IS YOUR FRENCH CLASS?||||Fast|Interesting|Short|Tall": "Interesting",
+    "DEFAULT_MULTI:CHOOSE THE CORRECT WORD: HOW _______ IS YOUR FRENCH CLASS?||Tall Short Fast||Interesting": "Interesting",
+    "DEFAULT_MULTI:CHOOSE THE CORRECT WORD: HOW _______ IS YOUR FRENCH CLASS?||Interesting Tall Fast||Short": "Short",
+    "DEFAULT_MULTI:CHOOSE THE CORRECT WORD: HOW _______ IS YOUR FRENCH CLASS?||Interesting Tall Short||Fast": "Fast",
+    "DEFAULT_MULTI:CHOOSE THE CORRECT WORD: HOW _______ ARE YOU?||||Far|Long|Often|Tall": "Tall",
+    "DEFAULT_MULTI:CHOOSE THE CORRECT WORD: HOW _______ ARE YOU?||Tall Often Far||Long": "Long",
+    "DEFAULT_MULTI:CHOOSE THE CORRECT WORD: HOW _______ ARE YOU?||Long Often Far||Tall": "Tall",
+    "DEFAULT_MULTI:CHOOSE THE CORRECT WORD: HOW _______ ARE YOU?||Long Tall Far||Often": "Often",
+    "DEFAULT_MULTI:CHOOSE THE CORRECT WORD: HOW _______ ARE YOU?||Long Tall Often||Far": "Far",
+    "DEFAULT_MULTI:CHOOSE THE CORRECT WORD: HOW _______ DO YOU DRIVE?||||Amazing|Interesting|Short|Well": "Well",
+    "DEFAULT_MULTI:CHOOSE THE CORRECT WORD: HOW _______ DO YOU DRIVE?||Well Amazing Short||Interesting": "Interesting",
+    "DEFAULT_MULTI:CHOOSE THE CORRECT WORD: HOW _______ DO YOU DRIVE?||Interesting Amazing Short||Well": "Well",
+    "DEFAULT_MULTI:CHOOSE THE CORRECT WORD: HOW _______ DO YOU DRIVE?||Interesting Well Short||Amazing": "Amazing",
+    "DEFAULT_MULTI:CHOOSE THE CORRECT WORD: HOW _______ DO YOU DRIVE?||Interesting Well Amazing||Short": "Short",
+    "0:How|big|is|room?|your": [
         [
-            "Thousands of tourists"
+            [
+                "room?",
+                "your",
+                "big",
+                "is",
+                "How"
+            ]
         ]
     ],
-    "DEFAULT:CHOOSE THE CORRECT OPTION TO COMPLETE THE SENTENCE.||CTX:...||||||ACCOMMODATION|TOURISM": [
-        "TOURISM"
-    ],
-    "T8:CHOOSE THE CORRECT ANSWER: DOES PUERTO LOPEZ HAVE HIDDEN BEACHES AND ISLANDS?||IMG_DIM:443x588||No, it don't|No, it haven't|Yes, it does|Yes, it have": [
+    "0:How ugly is that witch?|5:How the worst is your best friend?|6:How cheap is your computer?|7:How the girl arrived home?": [
         [
-            "Yes, it does"
+            "True",
+            "False",
+            "True",
+            "False"
         ]
-    ]
+    ],
+    "DEFAULT_MULTI:CHOOSE THE CORRECT WORD: HOW _______ IS YOUR FRENCH CLASS?||Interesting Short Fast||Tall": "Tall",
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION IN THE FOLLOWING SENTENCE INDICATING IF THE WORD IS AN ADJECTIVE OR AN ADVERB:||||ADJECTIVE|ADVERB": "ADVERB",
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION IN THE FOLLOWING SENTENCE INDICATING IF THE WORD IS AN ADJECTIVE OR AN ADVERB.||||ADJECTIVE|ADVERB": "ADJECTIVE",
+    "DEFAULT_MULTI:CHOOSE THE RIGHT WORD IN THE FOLLOWING SENTENCE TO COMPLETE IT: HOW _______ IS THE ENGLISH CLASS?||||Big|Far|Interesting|Often": "Interesting",
+    "DEFAULT_MULTI:CHOOSE THE RIGHT WORD IN THE FOLLOWING SENTENCE TO COMPLETE IT: HOW _______ IS THE ENGLISH CLASS?||Often Interesting Far||Big": "Big",
+    "DEFAULT_MULTI:CHOOSE THE RIGHT WORD IN THE FOLLOWING SENTENCE TO COMPLETE IT: HOW _______ IS THE ENGLISH CLASS?||Big Interesting Far||Often": "Often",
+    "DEFAULT_MULTI:CHOOSE THE RIGHT WORD IN THE FOLLOWING SENTENCE TO COMPLETE IT: HOW _______ IS THE ENGLISH CLASS?||Big Often Far||Interesting": "Interesting",
+    "DEFAULT_MULTI:CHOOSE THE RIGHT WORD IN THE FOLLOWING SENTENCE TO COMPLETE IT: HOW _______ IS THE ENGLISH CLASS?||Big Often Interesting||Far": "Far",
+    "DEFAULT_MULTI:CHOOSE THE RIGHT WORD IN THE FOLLOWING SENTENCE TO COMPLETE IT: HOW _______ IS YOUR FATHER´S CAR?||||Far|Fast|Important|Long": "Fast",
+    "DEFAULT_MULTI:CHOOSE THE RIGHT WORD IN THE FOLLOWING SENTENCE TO COMPLETE IT: HOW _______ IS YOUR FATHER´S CAR?||Far Important Long||Fast": "Fast",
+    "DEFAULT_MULTI:CHOOSE THE RIGHT WORD IN THE FOLLOWING SENTENCE TO COMPLETE IT: HOW _______ IS YOUR FATHER´S CAR?||Fast Important Long||Far": "Far",
+    "DEFAULT_MULTI:CHOOSE THE RIGHT WORD IN THE FOLLOWING SENTENCE TO COMPLETE IT: HOW _______ IS YOUR FATHER´S CAR?||Fast Far Long||Important": "Important",
+    "DEFAULT_MULTI:CHOOSE THE RIGHT WORD IN THE FOLLOWING SENTENCE TO COMPLETE IT: HOW _______ IS YOUR FATHER´S CAR?||Fast Far Important||Long": "Long",
+    "0:?|How|another|hard|is|it|language|learn|to": [
+        [
+            [
+                "How",
+                "hard",
+                "is",
+                "it",
+                "to",
+                "learn",
+                "another",
+                "language",
+                "?"
+            ]
+        ]
+    ],
+    "DEFAULT_MULTI:CHOOSE THE CORRECT WORD: HOW _______ DO YOU SPEAK IN ENGLISH?||||High|Important|Often|Tall": "Often",
+    "DEFAULT_MULTI:CHOOSE THE CORRECT WORD: HOW _______ DO YOU SPEAK IN ENGLISH?||Often Tall High||Important": "Important",
+    "DEFAULT_MULTI:CHOOSE THE CORRECT WORD: HOW _______ DO YOU SPEAK IN ENGLISH?||Important Tall High||Often": "Often",
+    "DEFAULT_MULTI:CHOOSE THE CORRECT WORD: HOW _______ DO YOU SPEAK IN ENGLISH?||Important Often High||Tall": "Tall",
+    "DEFAULT_MULTI:CHOOSE THE CORRECT WORD: HOW _______ DO YOU SPEAK IN ENGLISH?||Important Often Tall||High": "High"
 }
