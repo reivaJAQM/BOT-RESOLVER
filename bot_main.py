@@ -1875,81 +1875,179 @@ try:
                             exito_global = False; break
                     if not exito_global: raise Exception("Fallo al escribir en inputs TIPO 12.")
                 # --- ¡FIN TIPO 12! ---
-                # --- TIPO DEFAULT: OPCIÓN MÚLTIPLE ---
-                # --- TIPO DEFAULT: OPCIÓN MÚLTIPLE (SOPORTE MULTI-PREGUNTA + GUARDADO) ---
+                # --- TIPO DEFAULT: OPCIÓN MÚLTIPLE (V11 - ESCÁNER CON LÍMITE DE LONGITUD) ---
                 elif tipo_pregunta == "TIPO_DEFAULT_OM":
-                    print("Tipo: OPCIÓN MÚLTIPLE (Default - Multi-Grupo V2).")
+                    print("Tipo: OPCIÓN MÚLTIPLE (Default - V11 Length Check).")
                     
                     opciones_elementos = wait_long.until(EC.presence_of_all_elements_located(sel.SELECTOR_OPCIONES))
                     opciones_visibles = [e for e in opciones_elementos if e.is_displayed()]
                     if not opciones_visibles: raise Exception("No opciones visibles.")
 
-                    # Agrupar por padre
-                    grupos_preguntas = defaultdict(list)
+                    # 1. AGRUPACIÓN PRELIMINAR
+                    grupos_base = defaultdict(list)
                     for op in opciones_visibles:
                         try:
-                            padre = op.find_element(By.XPATH, "..")
-                            grupos_preguntas[padre].append(op)
+                            abuelo = op.find_element(By.XPATH, "./../..")
+                            grupos_base[abuelo].append(op)
                         except: pass
                     
-                    print(f"      Detectados {len(grupos_preguntas)} grupos.")
+                    cajas_candidatas = sorted(grupos_base.items(), key=lambda x: x[0].location['y'] if x[0] else 0)
+                    
+                    # 2. ESCÁNER DE TEXTO (Con filtro de longitud)
+                    cajas_confirmadas = []
+                    opciones_sin_contexto = []
 
-                    for i_grupo, (padre_grupo, opciones_grupo_elems) in enumerate(grupos_preguntas.items()):
-                        # A. Contexto y Opciones
-                        opciones_texto_grupo = [e.text.strip() for e in opciones_grupo_elems if e.text.strip()]
-                        if not opciones_texto_grupo: continue
+                    for contenedor_base, ops_grupo in cajas_candidatas:
+                        texto_encontrado = ""
+                        elemento_actual = contenedor_base
+
+                        for i in range(3): # Subimos hasta 3 niveles
+                            try:
+                                txt_total = elemento_actual.text.strip()
+                                residuo = txt_total
+                                for o in ops_grupo: residuo = residuo.replace(o.text.strip(), "")
+                                residuo = residuo.replace(pregunta_actual_texto, "") 
+                                residuo = " ".join(residuo.split())
+                                
+                                # --- CORRECCIÓN CRÍTICA ---
+                                # Si el "residuo" es muy largo (>120 chars), probablemente sea un párrafo de opción
+                                # que no se restó bien, NO el título de la pregunta. Lo ignoramos como contexto.
+                                if len(residuo) > 2 and len(residuo) < 120:
+                                    texto_encontrado = residuo
+                                    contenedor_base = elemento_actual 
+                                    break
+                                
+                                elemento_actual = elemento_actual.find_element(By.XPATH, "..")
+                            except: break
                         
-                        contexto_especifico_grupo = ""
-                        try:
-                            texto_padre = padre_grupo.text.strip()
-                            if len(texto_padre) < len("".join(opciones_texto_grupo)) + 5:
-                                abuelo = padre_grupo.find_element(By.XPATH, "..")
-                                texto_padre = abuelo.text.strip()
-                            
-                            texto_limpio = texto_padre.replace(pregunta_actual_texto, "")
-                            for op_txt in opciones_texto_grupo: texto_limpio = texto_limpio.replace(op_txt, "")
-                            contexto_especifico_grupo = " ".join(texto_limpio.split())
-                        except: pass
-
-                        # B. Generar Clave Única
-                        titulo_clean = pregunta_actual_texto.strip()
-                        ops_sorted = sorted(opciones_texto_grupo)
-                        clave_grupo = f"DEFAULT_MULTI:{titulo_clean}||{contexto_especifico_grupo}||" + "|".join(ops_sorted)
-                        
-                        # C. ¡GUARDAR EN LISTA PARA MEMORIA POSTERIOR!
-                        ctx_final = contexto_especifico_grupo if contexto_especifico_grupo else contexto
-                        lista_tareas_multi_om.append({
-                            "clave": clave_grupo,
-                            "frase": ctx_final, # Para la IA si falla
-                            "opciones": opciones_texto_grupo
-                        })
-
-                        # D. Resolver
-                        respuesta_ia = None
-                        if clave_grupo in soluciones_correctas:
-                             sol_memoria = soluciones_correctas[clave_grupo]
-                             respuesta_ia = sol_memoria[0] if isinstance(sol_memoria, list) else sol_memoria
-                             print(f"      [G{i_grupo+1}] Memoria: {respuesta_ia}")
-                             preguntas_ya_vistas[clave_grupo] = respuesta_ia
+                        if texto_encontrado:
+                            print(f"      [Scanner] Contexto corto hallado: '{texto_encontrado[:30]}...'")
+                            cajas_confirmadas.append({
+                                "contenedor": contenedor_base, "opciones": ops_grupo, "texto": texto_encontrado
+                            })
                         else:
-                             print(f"      [G{i_grupo+1}] IA (Contexto: '{ctx_final[:30]}...')...")
-                             respuesta_ia = ia_utils.obtener_respuesta_opcion_multiple(ctx_final, pregunta_actual_texto, opciones_texto_grupo)
-                             if respuesta_ia: preguntas_ya_vistas[clave_grupo] = respuesta_ia
+                            opciones_sin_contexto.extend(ops_grupo)
 
-                        # E. Clic
-                        if respuesta_ia:
-                            boton_clic = None
-                            for b in opciones_grupo_elems:
-                                if ' '.join(b.text.split()) == ' '.join(respuesta_ia.split()):
-                                    boton_clic = b; break
-                            if boton_clic:
-                                try:
-                                    driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", boton_clic)
-                                    time.sleep(0.1); boton_clic.click(); time.sleep(0.2)
-                                except: pass
+                    # 3. DECISIÓN DE MODO
+                    num_preguntas = len(cajas_confirmadas)
                     
-                    # Hack para que el guardado genérico no explote (usamos una clave dummy, el guardado real lo hacemos nosotros)
-                    clave_pregunta = "MULTI_BATCH_PROCESSED"
+                    # ==============================================================================
+                    # CASO A: MODO MULTI (Estructura Clara Detectada)
+                    # ==============================================================================
+                    if num_preguntas > 0: 
+                        print(f"      [MODO MULTI/CONTEXTO] {num_preguntas} bloques válidos.")
+                        lista_tareas_multi_om = []
+                        
+                        for i, caja in enumerate(cajas_confirmadas):
+                            ctx_local = caja["texto"]
+                            ops_txt = [o.text.strip() for o in caja["opciones"]]
+                            
+                            titulo_clean = pregunta_actual_texto.strip()
+                            clave_grupo = f"DEFAULT_MULTI:{titulo_clean}||{ctx_local}||" + "|".join(sorted(ops_txt))
+                            
+                            lista_tareas_multi_om.append({
+                                "clave": clave_grupo, "frase": ctx_local, "opciones": ops_txt
+                            })
+                            
+                            respuesta_ia = None
+                            if clave_grupo in soluciones_correctas:
+                                sol = soluciones_correctas[clave_grupo]
+                                respuesta_ia = sol[0] if isinstance(sol, list) else sol
+                                preguntas_ya_vistas[clave_grupo] = respuesta_ia
+                            else:
+                                respuesta_ia = ia_utils.obtener_respuesta_opcion_multiple(ctx_local, pregunta_actual_texto, ops_txt)
+                                if respuesta_ia: preguntas_ya_vistas[clave_grupo] = respuesta_ia
+                            
+                            if respuesta_ia:
+                                boton_clic = None
+                                for b in caja["opciones"]:
+                                    if ' '.join(b.text.split()) == ' '.join(respuesta_ia.split()):
+                                        boton_clic = b; break
+                                
+                                if boton_clic:
+                                    try:
+                                        driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", boton_clic)
+                                        time.sleep(0.1)
+                                        # CLIC JS REFORZADO
+                                        driver.execute_script("arguments[0].click();", boton_clic)
+                                        time.sleep(0.1)
+                                    except: pass
+                        
+                        if num_preguntas > 1: clave_pregunta = "MULTI_BATCH_PROCESSED"
+                        else: 
+                            item = lista_tareas_multi_om[0]
+                            clave_pregunta = item["clave"]
+                            lista_tareas_multi_om = [] 
+
+                    # ==============================================================================
+                    # CASO B: MODO SIMPLE (Fallback robusto para Párrafos y Grids)
+                    # ==============================================================================
+                    else:
+                        print("      [MODO SIMPLE] Tratando como lista única de opciones.")
+                        # Usamos TODAS las opciones visibles si no hay contextos claros
+                        opciones_finales = opciones_sin_contexto if opciones_sin_contexto else opciones_visibles
+                        opciones = [e.text.strip() for e in opciones_finales if e.text]
+
+                        # Raspado de Emergencia (Solo busca títulos cortos arriba)
+                        texto_completo_raspado = ""
+                        contexto_extra_key = ""
+                        
+                        if (not contexto or len(contexto) < 5) and (not body_hash):
+                            try:
+                                ref = opciones_finales[0]
+                                ancestro = ref.find_element(By.XPATH, "./../..")
+                                for _ in range(4):
+                                    try:
+                                        ancestro = ancestro.find_element(By.XPATH, "..")
+                                        txt = ancestro.text.strip()
+                                        txt_limpio = txt.replace(pregunta_actual_texto, "")
+                                        for op in opciones: txt_limpio = txt_limpio.replace(op, "")
+                                        txt_limpio = " ".join(txt_limpio.split())
+                                        
+                                        # Solo aceptamos textos cortos/medianos como contexto (Quickly)
+                                        # Si es muy largo, es basura del layout
+                                        if len(txt_limpio) > 2 and len(txt_limpio) < 150: 
+                                            texto_completo_raspado = txt_limpio
+                                            contexto_extra_key = f"EXTRACT:{txt_limpio[:60]}...{txt_limpio[-20:]}"
+                                            print(f"      [Robustez] Contexto recuperado: '{txt_limpio[:40]}...'")
+                                            break
+                                    except: break
+                            except: pass
+
+                        # Clave y Resolución
+                        titulo_limpio_def = pregunta_actual_texto.strip()
+                        opciones_limpias_sorted_def = sorted([o.strip() for o in opciones])
+                        img_hash_local = imagen_hash if 'imagen_hash' in locals() else ""
+                        
+                        clave_pregunta = f"DEFAULT:{titulo_limpio_def}||{contexto_hash}||{body_hash}||{contexto_extra_key}||{img_hash_local}||" + "|".join(opciones_limpias_sorted_def)
+                        opciones_ya_vistas[clave_pregunta] = opciones
+
+                        respuesta_ia = None
+                        if clave_pregunta in soluciones_correctas:
+                            print("      SOLUCIÓN SIMPLE EN MEMORIA.")
+                            sol = soluciones_correctas[clave_pregunta]
+                            respuesta_ia = sol[0] if isinstance(sol, list) else sol
+                            preguntas_ya_vistas[clave_pregunta] = respuesta_ia
+                        else:
+                            ctx_ia = contexto
+                            if not ctx_ia and texto_completo_raspado: ctx_ia = texto_completo_raspado
+                            print("      IA (Simple)...")
+                            ant = preguntas_ya_vistas.get(clave_pregunta)
+                            respuesta_ia = ia_utils.obtener_respuesta_opcion_multiple(ctx_ia, pregunta_actual_texto, opciones, ant)
+                            if respuesta_ia: preguntas_ya_vistas[clave_pregunta] = respuesta_ia
+
+                        if respuesta_ia:
+                            boton_encontrado = None
+                            for b in opciones_finales:
+                                if ' '.join(b.text.split()) == ' '.join(respuesta_ia.split()):
+                                    boton_encontrado = b; break
+                            if boton_encontrado:
+                                driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", boton_encontrado)
+                                time.sleep(0.1)
+                                # CLIC JS REFORZADO (Importante para tarjetas grandes)
+                                driver.execute_script("arguments[0].click();", boton_encontrado)
+                                time.sleep(0.2)
+                            else: raise Exception(f"Botón '{respuesta_ia}' no encontrado.")
                 # --- FIN TIPOS ---
 
                 # --- Común: CHECK y OK ---
