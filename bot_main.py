@@ -362,32 +362,39 @@ try:
                     lista_de_claves_individuales = []
                     lista_de_tareas_ordenar = []
                     for k, contenedor in enumerate(contenedores):
-                        # Use 24 spaces for indentation
                         driver.execute_script("arguments[0].scrollIntoViewIfNeeded(true);", contenedor); time.sleep(0.1)
+                        
+                        # --- FIX: Guardar ID único del contenedor ---
+                        contenedor_id = contenedor.get_attribute("data-rbd-droppable-id")
+                        # --------------------------------------------
+
                         cajas_inicial = contenedor.find_elements(*sel.SELECTOR_CAJAS_ORDENAR)
                         frases_des_individual = []
                         map_id_a_texto_individual = {}
                         for i, c in enumerate(cajas_inicial):
-                            # Use 28 spaces for indentation
                             try:
-                                # Use 32 spaces for indentation
                                 text_element = c.find_element(*sel.SELECTOR_TEXTO_CAJA_ORDENAR)
                                 t = text_element.text.strip()
                                 d_id = c.get_attribute("data-rbd-draggable-id")
                                 if t and d_id:
-                                    # Use 36 spaces for indentation
                                     frases_des_individual.append(t)
                                     map_id_a_texto_individual[d_id] = t
                             except NoSuchElementException: continue
                         if not frases_des_individual:
-                            # Use 28 spaces for indentation
                             print(f"Warn: Contenedor {k+1} sin frases. Omitiendo.")
                             continue
                         print(f"      Tarea {k+1} Frases: {frases_des_individual}")
                         frases_ordenadas_para_clave = sorted(frases_des_individual)
                         clave_ind = "|".join(frases_ordenadas_para_clave)
                         lista_de_claves_individuales.append(f"{k}:{clave_ind}")
-                        lista_de_tareas_ordenar.append({"frases": frases_des_individual,"map_id_a_texto": map_id_a_texto_individual,"contenedor_elem": contenedor})
+                        
+                        # Guardamos contenedor_id en la tarea
+                        lista_de_tareas_ordenar.append({
+                            "frases": frases_des_individual,
+                            "map_id_a_texto": map_id_a_texto_individual,
+                            "contenedor_elem": contenedor,
+                            "contenedor_id": contenedor_id 
+                        })
                     if not lista_de_tareas_ordenar: raise Exception("No se recolectaron tareas TIPO 1 válidas.")
                     clave_pregunta = "|".join(lista_de_claves_individuales)
 
@@ -449,42 +456,60 @@ try:
                     if len(lista_ordenes_ia) != len(lista_de_tareas_ordenar):
                         # Use 24 spaces for indentation
                         raise Exception("Fallo crítico: El número de soluciones no coincide con el de tareas TIPO 1.")
-                    # --- INICIO REEMPLAZO: EJECUCIÓN VÍA JAVASCRIPT (DOM APPEND) ---
+                    
+                    # --- INICIO REEMPLAZO: EJECUCIÓN VÍA JAVASCRIPT (DOM APPEND) CON ID ROBUSTO ---
                     print(f"      Órdenes a aplicar (JS): {lista_ordenes_ia}")
                     
                     for i_cont, solucion in enumerate(lista_ordenes_ia):
                         print(f"      Ordenando contenedor {i_cont+1} con JS...")
                         try:
-                            # 1. Obtener el contenedor fresco
-                            contenedores_frescos = driver.find_elements(*sel.SELECTOR_CONTENEDOR_ORDENAR)
-                            if i_cont >= len(contenedores_frescos):
-                                print(f"      ERR: Contenedor {i_cont+1} no encontrado.")
-                                break
-                            contenedor_actual = contenedores_frescos[i_cont]
+                            # 1. Obtener el contenedor fresco USANDO SU ID (Más robusto que el índice)
+                            target_id = lista_de_tareas_ordenar[i_cont].get("contenedor_id")
+                            contenedor_actual = None
+                            
+                            if target_id:
+                                try:
+                                    # Buscamos específicamente el div con ese droppable-id
+                                    contenedor_actual = driver.find_element(By.XPATH, f"//div[@data-rbd-droppable-id='{target_id}']")
+                                except NoSuchElementException:
+                                    print(f"      WARN: No se pudo re-encontrar contenedor por ID '{target_id}'. Intentando fallback por índice.")
+                            
+                            # Fallback: Si no hay ID o falla, usamos la lógica antigua de índice
+                            if not contenedor_actual:
+                                contenedores_frescos = driver.find_elements(*sel.SELECTOR_CONTENEDOR_ORDENAR)
+                                if i_cont < len(contenedores_frescos):
+                                    contenedor_actual = contenedores_frescos[i_cont]
+
+                            if not contenedor_actual:
+                                print(f"      ERR: Contenedor {i_cont+1} perdido definitivamente.")
+                                continue
+
+                            # Scroll al contenedor actual para asegurar carga
+                            driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", contenedor_actual)
 
                             # 2. Iterar sobre la solución CORRECTA
                             for palabra_objetivo in solucion:
-                                # Buscar la caja que contiene esa palabra DENTRO del contenedor actual
+                                # Buscar la caja que contiene esa palabra DENTRO del contenedor actual fresco
                                 cajas_en_contenedor = contenedor_actual.find_elements(*sel.SELECTOR_CAJAS_ORDENAR)
                                 elemento_a_mover = None
                                 
                                 for caja in cajas_en_contenedor:
+                                    # Normalizamos texto para comparación
                                     if caja.text.strip() == palabra_objetivo:
                                         elemento_a_mover = caja
                                         break
                                 
                                 if elemento_a_mover:
                                     # 3. MOVER AL FINAL (appendChild)
-                                    # Al hacerlo secuencialmente según la solución, la lista queda ordenada visualmente.
                                     driver.execute_script("arguments[0].appendChild(arguments[1]);", contenedor_actual, elemento_a_mover)
                                     time.sleep(0.05) 
                                 else:
-                                    print(f"      WARN: No se encontró la caja '{palabra_objetivo}' para mover.")
+                                    print(f"      WARN: No se encontró la caja '{palabra_objetivo}' para mover en Contenedor {i_cont+1}.")
                             
                             time.sleep(0.5) 
 
                         except Exception as e_js:
-                             print(f"      Error ordenando con JS: {e_js}")
+                             print(f"      Error ordenando contenedor {i_cont+1} con JS: {e_js}")
 
                     print("      Ordenamiento JS finalizado.")
                     # --- FIN REEMPLAZO ---
@@ -1209,83 +1234,51 @@ try:
                         # Use 24 spaces for indentation
                         filas_imagenes = wait_long.until(EC.presence_of_all_elements_located(sel.SELECTOR_IMAGEN_EMPAREJAR))
                         if not filas_imagenes: raise Exception("Selenium no encontró filas de imagen TIPO 8.")
-                        # --- LÓGICA INTELIGENTE DE DETECCIÓN DE HASH VISUAL ---
-                        # Preparamos la firma de la pregunta actual (Título + Definiciones)
-                        firma_pregunta = f"{pregunta_actual_texto}||{'|'.join(sorted(definiciones))}"
+                        # --- LÓGICA DE COLISIONES TIPO 8 (OPTIMIZADA V5 - MEMORY FIRST) ---
+                        titulo_check = pregunta_actual_texto.strip()
+                        opciones_check_str = "|".join(sorted(definiciones))
+                        firma_logica = f"{titulo_check}||{opciones_check_str}"
                         
-                        # A) Chequeo de Sesión: ¿Ya salió esta pregunta hoy?
-                        es_duplicada_sesion = tracker_colisiones_t8[firma_pregunta] > 0
-                        tracker_colisiones_t8[firma_pregunta] += 1
-
-                        # B) Chequeo de Memoria: ¿Esta pregunta solía requerir hash visual en el pasado?
-                        # (Esto evita que el bot falle la primera vez si reinicias el programa)
-                        requiere_hash_historico = False
+                        # 1. Consultar Memoria
+                        # Verificamos si ya tenemos una solución guardada para este texto+opciones
+                        # y si esa solución usa hashes visuales o estándares (IMG_DIM/ALT).
+                        tiene_solucion_estandar = False
+                        tiene_solucion_visual = False
+                        
                         for key in soluciones_correctas:
-                            # Buscamos si existe alguna clave en memoria con este título que use IMG_VISUAL
-                            if pregunta_actual_texto in key and "IMG_VISUAL" in key:
-                                requiere_hash_historico = True
-                                break
+                            # Chequeo de subcadena para encontrar la firma
+                            if titulo_check in key and opciones_check_str in key:
+                                if "IMG_VISUAL" in key:
+                                    tiene_solucion_visual = True
+                                else:
+                                    tiene_solucion_estandar = True
                         
-                        activar_modo_visual = es_duplicada_sesion or requiere_hash_historico
-                        
-                        if activar_modo_visual:
-                            print(f"      [Modo Estricto] Detectada colisión o historial. SE ACTIVARÁ HASH VISUAL.")
-
-                        # --- LÓGICA INTELIGENTE DE DETECCIÓN DE HASH VISUAL ---
-                        firma_pregunta = f"{pregunta_actual_texto}||{'|'.join(sorted(definiciones))}"
-                        
-                        # A) Chequeo de Sesión: ¿Ya salió esta pregunta hoy?
-                        es_duplicada_sesion = tracker_colisiones_t8[firma_pregunta] > 0
-                        tracker_colisiones_t8[firma_pregunta] += 1
-
-                        # B) Chequeo de Memoria: ¿Esta pregunta solía requerir hash visual?
-                        requiere_hash_historico = False
-                        for key in soluciones_correctas:
-                            if pregunta_actual_texto in key and "IMG_VISUAL" in key:
-                                requiere_hash_historico = True
-                                break
-                        
-                        activar_modo_visual = es_duplicada_sesion or requiere_hash_historico
-                        
-                        if activar_modo_visual:
-                            print(f"      [Modo Estricto] Detectada colisión o historial. SE ACTIVARÁ HASH VISUAL.")
-
-                        # --- LÓGICA INTELIGENTE DE COLISIONES (TIPO 8) ---
-                        # Identificamos la pregunta por su texto y sus opciones.
-                        firma_pregunta = f"{pregunta_actual_texto}||{'|'.join(sorted(definiciones))}"
-                        
-                        # Chequeo ESTRICTO de Sesión:
-                        # Solo activamos modo visual si esta EXACTA combinación (Título + Opciones)
-                        # aparece por segunda vez en la misma sesión.
-                        veces_vistas = tracker_colisiones_t8[firma_pregunta]
-                        tracker_colisiones_t8[firma_pregunta] += 1
-
-                        activar_modo_visual = (veces_vistas > 0)
-                        
-                        if activar_modo_visual:
-                            print(f"      [!] Colisión detectada (Intento #{veces_vistas+1}). Activando HASH VISUAL.")
-
-                        # --- LÓGICA INTELIGENTE DE COLISIONES (TIPO 8 - V3 BLINDADA) ---
+                        # 2. Decidir Estrategia
                         activar_modo_visual = False
                         
-                        # Solo aplicamos lógica de colisión si tenemos opciones para diferenciar
-                        if definiciones and len(definiciones) > 1:
-                            # Creamos una firma única basada en: Título + Opciones Ordenadas
-                            firma_pregunta = f"{pregunta_actual_texto}||{'|'.join(sorted(definiciones))}"
+                        if tiene_solucion_estandar:
+                            # PRIORIDAD 1: Si ya funciona con dimensiones (estándar), NO activamos visual.
+                            # Esto evita que una "colisión de sesión" fuerce capturas innecesarias cuando ya sabemos la respuesta.
+                            print(f"      [i] Memoria Estándar (IMG_DIM/ALT) detectada. Bloqueando Hash Visual para usar solución existente.")
+                            activar_modo_visual = False
                             
-                            # Consultamos el tracker
-                            veces_vistas = tracker_colisiones_t8[firma_pregunta]
-                            tracker_colisiones_t8[firma_pregunta] += 1
+                        elif tiene_solucion_visual:
+                            # PRIORIDAD 2: Si la memoria dice explícitamente que requiere visual, lo activamos.
+                            print(f"      [!] Memoria Visual detectada. Activando Hash Visual.")
+                            activar_modo_visual = True
+                            
+                        else:
+                            # PRIORIDAD 3: Sin memoria. Chequeamos colisiones en la sesión actual.
+                            veces_vistas = tracker_colisiones_t8[firma_logica]
+                            tracker_colisiones_t8[firma_logica] += 1
                             
                             if veces_vistas > 0:
+                                print(f"      [!] Colisión detectada en sesión (Sin memoria). Activando HASH VISUAL.")
                                 activar_modo_visual = True
-                                print(f"      [!] COLISIÓN REAL (Intento #{veces_vistas+1}). Activando HASH VISUAL.")
                             else:
-                                print(f"      [i] Pregunta Nueva (Firma única). Hash Visual DESACTIVADO.")
-                        else:
-                            # Si no hay definiciones (error de lectura o tipo raro), no arriesgamos captura
-                            print(f"      [!] Sin definiciones claras. Usando Dimensiones por defecto.")
-                            activar_modo_visual = False
+                                print(f"      [i] Pregunta Nueva (Sin memoria). Hash Visual DESACTIVADO.")
+                                activar_modo_visual = False
+                        # -------------------------------------------------------
 
                         for i, fila in enumerate(filas_imagenes):
                             # Use 28 spaces for indentation
@@ -1716,7 +1709,8 @@ try:
                     else:
                         # --- ¡NUEVA LÓGICA DE BIFURCACIÓN T11! ---
                         titulo_lower = pregunta_actual_texto.lower()
-                        if "order the letters" in titulo_lower or "put in order" in titulo_lower:
+                        # AGREGADO: "complete the word" para detectar anagramas como 'anticrom' -> 'romantic'
+                        if "order the letters" in titulo_lower or "put in order" in titulo_lower or "complete the word" in titulo_lower:
                             # Use 24 spaces for indentation
                             print("      ¡T11 detectado como ANAGRAMA (T10)! Llamando a IA (Ordenar Palabra Lote)...")
                             # Usamos 'lista_frases_t11_raw' (ej: "NTESNI")
@@ -1877,6 +1871,7 @@ try:
                 # --- ¡FIN TIPO 12! ---
                 # --- TIPO DEFAULT: OPCIÓN MÚLTIPLE (V11 - ESCÁNER CON LÍMITE DE LONGITUD) ---
                 elif tipo_pregunta == "TIPO_DEFAULT_OM":
+                    lista_tareas_multi_om = [] # <--- ¡AGREGA ESTA LÍNEA DE SEGURIDAD AQUÍ!
                     print("Tipo: OPCIÓN MÚLTIPLE (Default - V11 Length Check).")
                     
                     opciones_elementos = wait_long.until(EC.presence_of_all_elements_located(sel.SELECTOR_OPCIONES))
@@ -1893,7 +1888,7 @@ try:
                     
                     cajas_candidatas = sorted(grupos_base.items(), key=lambda x: x[0].location['y'] if x[0] else 0)
                     
-                    # 2. ESCÁNER DE TEXTO (Con filtro de longitud)
+                    # 2. ESCÁNER DE TEXTO (Mejorado V2: Mayor Rango y Longitud)
                     cajas_confirmadas = []
                     opciones_sin_contexto = []
 
@@ -1901,7 +1896,8 @@ try:
                         texto_encontrado = ""
                         elemento_actual = contenedor_base
 
-                        for i in range(3): # Subimos hasta 3 niveles
+                        # CAMBIO 1: Subimos hasta 5 niveles (antes 3) para encontrar el texto en estructuras anidadas
+                        for i in range(5): 
                             try:
                                 txt_total = elemento_actual.text.strip()
                                 residuo = txt_total
@@ -1910,9 +1906,8 @@ try:
                                 residuo = " ".join(residuo.split())
                                 
                                 # --- CORRECCIÓN CRÍTICA ---
-                                # Si el "residuo" es muy largo (>120 chars), probablemente sea un párrafo de opción
-                                # que no se restó bien, NO el título de la pregunta. Lo ignoramos como contexto.
-                                if len(residuo) > 2 and len(residuo) < 120:
+                                # CAMBIO 2: Aumentamos límite a 350 chars (antes 120) para aceptar definiciones largas.
+                                if len(residuo) > 2 and len(residuo) < 350:
                                     texto_encontrado = residuo
                                     contenedor_base = elemento_actual 
                                     break
@@ -1921,7 +1916,7 @@ try:
                             except: break
                         
                         if texto_encontrado:
-                            print(f"      [Scanner] Contexto corto hallado: '{texto_encontrado[:30]}...'")
+                            print(f"      [Scanner] Contexto hallado: '{texto_encontrado[:40]}...'")
                             cajas_confirmadas.append({
                                 "contenedor": contenedor_base, "opciones": ops_grupo, "texto": texto_encontrado
                             })
@@ -1977,7 +1972,7 @@ try:
                         else: 
                             item = lista_tareas_multi_om[0]
                             clave_pregunta = item["clave"]
-                            lista_tareas_multi_om = [] 
+                            
 
                     # ==============================================================================
                     # CASO B: MODO SIMPLE (Fallback robusto para Párrafos y Grids)
@@ -2004,8 +1999,18 @@ try:
                                         for op in opciones: txt_limpio = txt_limpio.replace(op, "")
                                         txt_limpio = " ".join(txt_limpio.split())
                                         
+                                        # --- FILTRO ANTI-RUIDO UNIVERSAL ---
+                                        # Ignora cualquier línea que parezca un encabezado de libro/unidad
+                                        # Ej: "9/10 READING • BOOK 2 • MOD 1" o "VOCABULARY..."
+                                        txt_up = txt_limpio.upper()
+                                        if ("BOOK" in txt_up and "UNIT" in txt_up) or \
+                                           ("BOOK" in txt_up and "MOD" in txt_up) or \
+                                           ("/10" in txt_up and ("READING" in txt_up or "VOCABULARY" in txt_up or "GRAMMAR" in txt_up)):
+                                            print(f"      [Scanner] Ignorando header variable: '{txt_limpio[:30]}...'")
+                                            continue 
+                                        # ----------------------------------------------------
+
                                         # Solo aceptamos textos cortos/medianos como contexto (Quickly)
-                                        # Si es muy largo, es basura del layout
                                         if len(txt_limpio) > 2 and len(txt_limpio) < 150: 
                                             texto_completo_raspado = txt_limpio
                                             contexto_extra_key = f"EXTRACT:{txt_limpio[:60]}...{txt_limpio[-20:]}"
@@ -2014,7 +2019,7 @@ try:
                                     except: break
                             except: pass
 
-                        # Clave y Resolución
+                        # Clave y Resolución (Con Búsqueda Flexible)
                         titulo_limpio_def = pregunta_actual_texto.strip()
                         opciones_limpias_sorted_def = sorted([o.strip() for o in opciones])
                         img_hash_local = imagen_hash if 'imagen_hash' in locals() else ""
@@ -2023,12 +2028,43 @@ try:
                         opciones_ya_vistas[clave_pregunta] = opciones
 
                         respuesta_ia = None
+                        soluciones_halladas = None
+                        
+                        # 1. Búsqueda Exacta
                         if clave_pregunta in soluciones_correctas:
-                            print("      SOLUCIÓN SIMPLE EN MEMORIA.")
-                            sol = soluciones_correctas[clave_pregunta]
-                            respuesta_ia = sol[0] if isinstance(sol, list) else sol
-                            preguntas_ya_vistas[clave_pregunta] = respuesta_ia
+                            print("      SOLUCIÓN SIMPLE EN MEMORIA (Exacta).")
+                            soluciones_halladas = soluciones_correctas[clave_pregunta]
+                        
+                        # 2. Búsqueda Flexible (Fuzzy) - Si cambió el contexto/scanner
                         else:
+                            print("      [Memoria] Clave exacta no hallada. Intentando coincidencia flexible...")
+                            part_titulo = f"DEFAULT:{titulo_limpio_def}"
+                            part_opciones = "|".join(opciones_limpias_sorted_def)
+                            
+                            for k_mem in soluciones_correctas:
+                                # Coincidencia de Título (inicio) y Opciones (final)
+                                if k_mem.startswith(part_titulo) and k_mem.endswith(part_opciones):
+                                    soluciones_halladas = soluciones_correctas[k_mem]
+                                    print(f"      [Memoria] ¡Recuperada respuesta de clave antigua/sucia!")
+                                    clave_pregunta = k_mem # Usamos la clave vieja para que el sistema sepa qué respuesta usar
+                                    break
+                        
+                        # 3. Procesar Solución o Llamar IA
+                        if soluciones_halladas:
+                            # Manejo de formatos legacy (lista vs string vs lista de listas)
+                            if isinstance(soluciones_halladas, list):
+                                if soluciones_halladas and isinstance(soluciones_halladas[0], list):
+                                    # Si es lista de listas [[A],[B]], tomamos la primera
+                                    respuesta_ia = soluciones_halladas[0][0] if soluciones_halladas[0] else None
+                                else:
+                                    respuesta_ia = soluciones_halladas[0]
+                            else:
+                                respuesta_ia = soluciones_halladas
+                            
+                            preguntas_ya_vistas[clave_pregunta] = respuesta_ia
+                        
+                        else:
+                            # No hay memoria -> IA
                             ctx_ia = contexto
                             if not ctx_ia and texto_completo_raspado: ctx_ia = texto_completo_raspado
                             print("      IA (Simple)...")
@@ -2170,7 +2206,8 @@ try:
                             elif tipo_pregunta == "TIPO_11_ESCRIBIR_OPCIONES":
                                 # --- ¡BIFURCACIÓN T11! ---
                                 titulo_lower = pregunta_actual_texto.lower()
-                                if "order the letters" in titulo_lower or "put in order" in titulo_lower:
+                                # AGREGADO: "complete the word" para usar el extractor de anagramas
+                                if "order the letters" in titulo_lower or "put in order" in titulo_lower or "complete the word" in titulo_lower:
                                     print("      Usando extractor T10 (Anagrama) para T11...")
                                     preguntas_para_ia_raw = lista_frases_t11_raw if 'lista_frases_t11_raw' in locals() else None
                                     if preguntas_para_ia_raw:
@@ -2379,6 +2416,9 @@ try:
                                  if 'lista_de_tareas_escribir' in locals() and lista_de_tareas_escribir:
                                      claves_ordenadas_str = "|".join(sorted([t["letras_clave"] for t in lista_de_tareas_escribir]))
                                      clave_pregunta_acierto = f"T10_BATCH:{titulo_limpio}||{claves_ordenadas_str}"
+                            elif tipo_pregunta == "TIPO_1_ORDENAR":
+                                if 'lista_de_claves_individuales' in locals() and lista_de_claves_individuales:
+                                     clave_pregunta_acierto = "|".join([p.strip() for p in lista_de_claves_individuales])
                             elif tipo_pregunta == "TIPO_11_ESCRIBIR_OPCIONES":
                                  # Use 32 spaces for indentation
                                  titulo_limpio = pregunta_actual_texto.strip()
