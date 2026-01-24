@@ -263,67 +263,95 @@ def obtener_true_false(contexto, afirmacion):
     except Exception as e: print(f"Error API IA (T/F): {e}"); return None
 
 def obtener_emparejamientos(palabras, definiciones):
-    """Obtiene los emparejamientos correctos entre palabras clave y definiciones."""
+    """Obtiene los emparejamientos correctos (Robusto ante listas y errores gramaticales)."""
     palabras_texto = "\n".join(f'- "{p}"' for p in palabras)
     definiciones_texto = "\n".join(f'- "{d}"' for d in definiciones)
     
-    # --- ¡INICIO DE LA MODIFICACIÓN! ---
     prompt = f"""
-Rol: Emparejador de datos estricto.
-Tu única tarea es crear un diccionario Python.
-Te daré dos listas: [LISTA_CLAVE] y [LISTA_OPCIONES].
+Rol: Robot de copiado exacto y emparejamiento.
+Tu MÁXIMA PRIORIDAD es conservar el texto original de las claves, INCLUYENDO ERRORES GRAMATICALES O DE TIPEO.
 
-REGLAS ABSOLUTAS:
-1.  El diccionario de respuesta debe tener exactamente {len(palabras)} pares.
-2.  Las 'keys' (claves) del diccionario deben ser COPIADAS EXACTAMENTE de [LISTA_CLAVE]. ¡Es vital que uses el texto exacto, INCLUSO SI CONTIENE ERRORES ORTOGRÁFICOS! (Ej: si [LISTA_CLAVE] dice "a profesional", DEBES usar "a profesional" como clave, NO "a professional").
-3.  Los 'values' (valores) del diccionario deben ser strings tomados de [LISTA_OPCIONES].
+Instrucciones:
+1. Genera un diccionario Python emparejando elementos de [LISTA_CLAVE] con [LISTA_OPCIONES].
+2. Las 'keys' deben ser COPIAS EXACTAS (Copy-Paste literal) de [LISTA_CLAVE].
+3. PROHIBIDO CORREGIR GRAMÁTICA: Si el texto original tiene errores, déjalos tal cual.
+4. Los 'values' deben ser strings simples (NO listas).
 
-[LISTA_CLAVE] (Estas deben ser las 'keys' exactas)
+[LISTA_CLAVE]
 {palabras_texto}
 
-[LISTA_OPCIONES] (Estos deben ser los 'values')
+[LISTA_OPCIONES]
 {definiciones_texto}
 ---
 Diccionario de Pares (Responde SÓLO el diccionario Python):
 """
-    # --- FIN DE LA MODIFICACIÓN ---
-    
     try:
-        # Use 8 spaces for indentation
         response = model.generate_content(prompt)
         respuesta_texto = obtener_texto_de_respuesta(response)
         if respuesta_texto is None: return None
 
+        # Limpieza básica
         if respuesta_texto.startswith("```python"): respuesta_texto = respuesta_texto[9:]
         if respuesta_texto.startswith("```json"): respuesta_texto = respuesta_texto[7:]
         if respuesta_texto.endswith("```"): respuesta_texto = respuesta_texto[:-3]
         respuesta_texto = respuesta_texto.strip()
-        if not respuesta_texto.startswith("{") or not respuesta_texto.endswith("}"): print(f"IA (Emp) no es dicc: {respuesta_texto}"); return None
 
-        pares = ast.literal_eval(respuesta_texto)
-
-        # Validación más robusta
-        claves_esperadas_set = set(palabras)
-        claves_recibidas_set = set(pares.keys())
-        valores_recibidos_set = set(pares.values())
-        definiciones_set = set(definiciones)
-
-        if (isinstance(pares, dict) and
-            len(pares) == len(palabras) and
-            claves_recibidas_set == claves_esperadas_set and # ¡Esta validación ahora debería pasar!
-            valores_recibidos_set.issubset(definiciones_set)):
-            # Use 12 spaces for indentation
-            return pares
-        else:
-            # Use 12 spaces for indentation
-            print(f"IA (Emp) inválido o incompleto. Claves esperadas: {len(palabras)}, Recibidas: {len(pares)}. Resp: {respuesta_texto[:200]}...");
-            print(f"      Claves esperadas (Set): {claves_esperadas_set}")
-            print(f"      Claves recibidas (Set): {claves_recibidas_set}")
-            print(f"      ¿Sets iguales?: {claves_recibidas_set == claves_esperadas_set}")
+        # Parseo seguro
+        try:
+            pares = ast.literal_eval(respuesta_texto)
+        except:
+            try:
+                pares = json.loads(respuesta_texto)
+            except:
+                print(f"IA (Emp) error de formato: {respuesta_texto}")
+                return None
+        
+        if not isinstance(pares, dict):
+            print(f"IA (Emp) no devolvió un dict: {type(pares)}")
             return None
 
-    except (SyntaxError, ValueError) as e: print(f"Error parse AST IA (Emp): {e}\nResp: {respuesta_texto}"); return None
-    except Exception as e: print(f"Error API IA (Emp): {e}"); return None
+        # --- SANITIZACIÓN DE VALORES (FIX: unhashable type list) ---
+        pares_limpios = {}
+        for k, v in pares.items():
+            valor_final = v
+            # Si la IA devolvió una lista ['valor'], tomamos el primero
+            if isinstance(v, list):
+                print(f"      [Fix IA] Convirtiendo lista {v} a string.")
+                valor_final = v[0] if v else ""
+            # Aseguramos que sea string
+            pares_limpios[k] = str(valor_final)
+        pares = pares_limpios
+        # -----------------------------------------------------------
+
+        # Validación
+        claves_esperadas_set = set(palabras)
+        claves_recibidas_set = set(pares.keys())
+        
+        # Comprobación de integridad
+        if len(pares) == len(palabras):
+            # Si coinciden exactamente las claves
+            if claves_recibidas_set == claves_esperadas_set:
+                return pares
+            else:
+                # Fallback simple: Si la IA cambió ligeramente alguna clave, intentamos recuperarla
+                print("      [IA Utils] Claves no coinciden exacto. Intentando mapeo por aproximación...")
+                pares_corregidos = {}
+                for clave_real in palabras:
+                    # Buscamos si la clave real está contenida en alguna clave de la IA o viceversa
+                    for k_ia, v_ia in pares.items():
+                        if clave_real in k_ia or k_ia in clave_real:
+                            pares_corregidos[clave_real] = v_ia
+                            break
+                
+                if len(pares_corregidos) == len(palabras):
+                    return pares_corregidos
+
+        print(f"IA (Emp) datos incompletos o incorrectos. Esperados: {len(palabras)}, Recibidos: {len(pares)}.")
+        return None
+
+    except Exception as e:
+        print(f"Error API IA (Emp): {e}")
+        return None
 
 def obtener_true_false_lote(contexto, afirmaciones_lista):
     """Obtiene respuestas True/False para una lista de afirmaciones."""

@@ -1953,20 +1953,28 @@ try:
                                 respuesta_ia = ia_utils.obtener_respuesta_opcion_multiple(ctx_local, pregunta_actual_texto, ops_txt)
                                 if respuesta_ia: preguntas_ya_vistas[clave_grupo] = respuesta_ia
                             
+                            # --- BLOQUE CON FALLBACK ---
+                            boton_clic = None
+                            
+                            # 1. Intentar buscar el botón de la respuesta IA
                             if respuesta_ia:
-                                boton_clic = None
                                 for b in caja["opciones"]:
                                     if ' '.join(b.text.split()) == ' '.join(respuesta_ia.split()):
                                         boton_clic = b; break
-                                
-                                if boton_clic:
-                                    try:
-                                        driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", boton_clic)
-                                        time.sleep(0.1)
-                                        # CLIC JS REFORZADO
-                                        driver.execute_script("arguments[0].click();", boton_clic)
-                                        time.sleep(0.1)
-                                    except: pass
+                            
+                            # 2. FALLBACK: Si no hay respuesta IA o no se encontró botón, usar el PRIMERO
+                            if not boton_clic and caja["opciones"]:
+                                print(f"      [Fallback] IA falló o no match. Eligiendo primera opción aleatoria para avanzar...")
+                                boton_clic = caja["opciones"][0]
+
+                            # 3. Ejecutar Click
+                            if boton_clic:
+                                try:
+                                    driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", boton_clic)
+                                    time.sleep(0.1)
+                                    driver.execute_script("arguments[0].click();", boton_clic)
+                                    time.sleep(0.1)
+                                except: pass
                         
                         if num_preguntas > 1: clave_pregunta = "MULTI_BATCH_PROCESSED"
                         else: 

@@ -2946,5 +2946,1680 @@
     ],
     "T9:ANA ORDERS A COFFEE WITH MILK AND A CROISSANT. WHICH OF THE FOLLOWING STATEMENTS IS TRUE?||CTX:...||||||The coffee and the croissant cost the same amount.|The coffee and the croissant cost the same amount.|The coffee costs more than the croissant.|The coffee costs more than the croissant.|The croissant costs more than the coffee.|The croissant costs more than the coffee.": [
         "The coffee costs more than the croissant."
-    ]
+    ],
+    "T9:WHAT CAN BE INFERRED ABOUT CARLOS'S SHOPPING LIST?||CTX:...||||||Carlos bought all items and paid too much.|Carlos bought all items and paid too much.|Carlos bought exactly what he needed except for one item.|Carlos bought exactly what he needed except for one item.|Carlos bought more items than he needed.|Carlos bought more items than he needed.": [
+        "Carlos bought exactly what he needed except for one item."
+    ],
+    "T4:MATCH EACH ITEM CARLOS BOUGHT WITH ITS COST:||KW:APPLES|BREAD|MILK||DEF:1 euro|2 euros|3 euros": [
+        [
+            "1 euro",
+            "2 euros",
+            "3 euros"
+        ]
+    ],
+    "T9:CARLOS BOUGHT THREE ITEMS AT THE SUPERMARKET. BASED ON THEIR PRICES, WHICH OF THE FOLLOWING IS THE CORRECT TOTAL COST FOR JUST THE MILK AND THE BREAD?||CTX:...||||||Five euros|Five euros|Four euros|Four euros|Three euros|Three euros": [
+        "Four euros"
+    ],
+    "T9:WHY DOES CARLOS NEED TO GO BACK TO THE SUPERMARKET?||CTX:...||||||To buy eggs|To buy eggs|To buy more apples|To buy more apples|To get more bread|To get more bread": [
+        "To buy eggs"
+    ],
+    "T9:WHAT DID CARLOS FORGET TO BUY?||CTX:...||||||Butter|Butter|Cheese|Cheese|Eggs|Eggs": [
+        "Eggs"
+    ],
+    "T9:HOW MUCH DOES THE BREAD COST?||CTX:...||||||One euro|One euro|Three euros|Three euros|Two euros|Two euros": [
+        "Two euros"
+    ],
+    "T9:HOW MUCH DID CARLOS PAY IN TOTAL?||CTX:...||||||Five euros|Five euros|Seven euros|Seven euros|Six euros|Six euros": [
+        "Six euros"
+    ],
+    "T4:FILL IN THE BLANKS:||KW:Carlos paid a total of euros for milk, bread, and apples.|He forgot to buy , so he needs to return to the supermarket.||DEF:eggs|six": [
+        [
+            "six",
+            "eggs"
+        ]
+    ],
+    "T9:WHAT DID CARLOS BUY AT THE SUPERMARKET?||CTX:...||||||Bread, eggs, and apples|Bread, eggs, and apples|Milk, bread, and apples|Milk, bread, and apples|Milk, cheese, and bread|Milk, cheese, and bread": [
+        "Milk, bread, and apples"
+    ],
+    "DEFAULT_MULTI:CHOOSE THE RIGHT OPTION: WHAT DO YOU CARRY YOUR CLOTHES AND PERSONAL ITEMS IN WHEN TRAVELING?||1/10 WRITING • BOOK 3 • MOD 1 • UNIT 2||Baggage|Box|Gate": "Baggage",
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION TO ANSWER THE FOLLOWING QUESTION: WHAT DO YOU DO FOR YOUR MOTHER IN YOUR MOTHER'S DAY?||2/10 WRITING • BOOK 3 • MOD 1 • UNIT 2||I never visit my mother on this date.|I visit her with my family.": "I visit her with my family.",
+    "DEFAULT_MULTI:CHOOSE THE RIGHT OPTION: WHAT DO YOU NEED FOR PLANNING A PARTY?||3/10 WRITING • BOOK 3 • MOD 1 • UNIT 2||Balloons, party hats, ice cream|Pair of shoes, lantern, balloons|Party hats, math books, lanterns": "Balloons, party hats, ice cream",
+    "DEFAULT_MULTI:CHOOSE THE RIGHT OPTION: THE THING YOU MUST WEAR WHEN THE PLANES TAKE OFF AND LANDS.||4/10 WRITING • BOOK 3 • MOD 1 • UNIT 2||Baggage|Overhead locker|Seat belt": "Seat belt",
+    "DEFAULT_MULTI:CHOOSE THE THINGS THAT YOU NEED TO CELEBRATE A PARTY:||5/10 WRITING • BOOK 3 • MOD 1 • UNIT 2||Balloons, party hats, ice cream|Pair of shoes, lantern, balloons|Party hats, math books, lanterns": "Balloons, party hats, ice cream",
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION TO ANSWER THE FOLLOWING QUESTION: WHAT DO YOU DO TO CELEBRATE YOUR BIRTHDAY PARTY?||6/10 WRITING • BOOK 3 • MOD 1 • UNIT 2||I do not celebrate my Birthday party, it is boring.|Sing happy birthday with a chocolate Cake.": "Sing happy birthday with a chocolate Cake.",
+    "DEFAULT_MULTI:CHOOSE THE RIGHT OPTION: WHICH OF THE FOLLOWING IS REQUIRED TO GET ON A FLIGHT?||6/10 WRITING • BOOK 3 • MOD 1 • UNIT 2||Airport|Baggage|Boarding pass": "Boarding pass",
+    "T4:MATCH THE COLUMNS:||KW:A person who shows tourists the city|A short journey taken for a pleasure|A small house in the country|The places that visitors go||DEF:Cottage|Destination|Excursion|Guide": [
+        [
+            "Excursion",
+            "Cottage",
+            "Guide",
+            "Destination"
+        ]
+    ],
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION TO ANSWER THE FOLLOWING QUESTION: WHAT COUPLES DO IN VALENTINE'S DAY IN YOUR COUNTRY?||8/10 WRITING • BOOK 3 • MOD 1 • UNIT 2||They go out and drink wine.|Wear yellow Clothes.": "They go out and drink wine.",
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION TO ANSWER THE FOLLOWING QUESTION: HOW DO YOU CELEBRATE CHRISTMAS?||9/10 WRITING • BOOK 3 • MOD 1 • UNIT 2||Go to church.|Spend time with family and friends.": "Spend time with family and friends.",
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION TO ANSWER THE FOLLOWING QUESTION: WHAT DO YOU DO TO CELEBRATE YOUR BIRTHDAY PARTY?||10/10 WRITING • BOOK 3 • MOD 1 • UNIT 2||I do not celebrate my Birthday party, it is boring.|Sing happy birthday with a chocolate Cake.": "Sing happy birthday with a chocolate Cake.",
+    "DEFAULT_MULTI:COMPLETE THE SENTENCE: AMELIA WANTS TO _______ A _______ FOR HER BIRTHDAY||1/10 WRITING • BOOK 3 • MOD 1 • UNIT 2||Buy/ cake|Loan/a cottage|Rent / a cottage": "Buy/ cake",
+    "DEFAULT_MULTI:CHOOSE THE RIGHT ANSWER: WHAT ARE THE THINGS DO YOU NEED TO PLAN A BIRTHDAY PARTY?||2/10 WRITING • BOOK 3 • MOD 1 • UNIT 2||Invitations, Food, Guest list|Invitations, Food, Guest list, Activities": "Invitations, Food, Guest list, Activities",
+    "0:It is Accepting an invitation": [
+        [
+            "False"
+        ]
+    ],
+    "T4:MATCH THE PARTS OF INVITATION WITH THE INFORMATION.||KW:Address|Date|To||DEF:America Avenue|July 4th|Pedro Jones": [
+        [
+            "Pedro Jones",
+            "July 4th",
+            "America Avenue"
+        ]
+    ],
+    "0:It is an Accepting invitation.": [
+        [
+            "True"
+        ]
+    ],
+    "T8:WRITE THE CORRECT NAME UNDER THE PICTURES:||IMG_DIM:341x191|IMG_DIM:341x226|IMG_DIM:341x227||Birthday party|Graduating party|Wedding party": [
+        [
+            "Wedding party",
+            "Birthday party",
+            "Graduating party"
+        ]
+    ],
+    "0:It is an accepting invitation": [
+        [
+            "False"
+        ]
+    ],
+    "T4:COMPLETE AND MATCH THE PARTS OF THE INVITATION WITH THE INFORMATION:||KW:Address|Date|From||DEF:Brenda Watson|December 20th|Urbina Avenue": [
+        [
+            "Brenda Watson",
+            "December 20th",
+            "Urbina Avenue"
+        ]
+    ],
+    "DEFAULT_MULTI:CHOOSE THE RIGHT ANSWER: THE MOST IMPORTANT PART IN AN INVITATION CARD.||7/10 WRITING • BOOK 3 • MOD 1 • UNIT 2||Address|Clothes|Number of people": "Address",
+    "T8:IDENTIFY THE TYPE OF INVITATION:||IMG_DIM:341x107|IMG_DIM:341x122||Christmas invitation|Party Invitation": [
+        [
+            "Christmas invitation",
+            "Party Invitation"
+        ]
+    ],
+    "T4:MATCH THE COLUMNS USING THE FOLLOWING WORDS.||KW:The neighborhood|The number of rooms|The price of rent|The services||DEF:$ 450|4 rooms|A shopping center and a Drugstore|Universitario Avenue": [
+        [
+            "$ 450",
+            "A shopping center and a Drugstore",
+            "4 rooms",
+            "Universitario Avenue"
+        ]
+    ],
+    "DEFAULT_MULTI:READ THE TEXT AND MATCH THE COLUMNS ACCORDING TO THE FOLLOWING INFORMATION.||Does Gaby want to rent?||NO, SHE DOES NOT.|YES, SHE DOES.": "YES, SHE DOES.",
+    "DEFAULT_MULTI:READ THE TEXT AND MATCH THE COLUMNS ACCORDING TO THE FOLLOWING INFORMATION.||Does she need a garage?||NO, SHE DOES NOT.|YES, SHE DOES.": "NO, SHE DOES NOT.",
+    "DEFAULT_MULTI:READ THE TEXT AND MATCH THE COLUMNS ACCORDING TO THE FOLLOWING INFORMATION.||How many rooms does it have?||2 ROOMS|4 ROOMS": "2 ROOMS",
+    "DEFAULT_MULTI:READ THE TEXT AND MATCH THE COLUMNS ACCORDING TO THE FOLLOWING INFORMATION.||Does she know the price of the rent?||NO, SHE DOES NOT.|YES, SHE DOES.": "YES, SHE DOES.",
+    "DEFAULT_MULTI:READ THE E-MAIL AND CIRCLE THE RIGHT INFORMATION:||Amelia wants to rent a||APARTMENT|HOUSE": "APARTMENT",
+    "DEFAULT_MULTI:READ THE E-MAIL AND CIRCLE THE RIGHT INFORMATION:||She has a||DAUGHTER|DOG": "DOG",
+    "DEFAULT_MULTI:READ THE E-MAIL AND CIRCLE THE RIGHT INFORMATION:||She wants to know the price of included in the rent.||THE RENT|THE SERVICE": "THE SERVICE",
+    "DEFAULT_MULTI:COMPLETE THE SENTENCE WITH THE RIGHT WORD:||To finish an informal letter you have to use the phrase 'All The '||BEST|BETTER|LOVE": "BEST",
+    "DEFAULT_MULTI:READ AND CHOOSE THE WORDS RELATED TO THE OPTIONS FOR RENTING AN APARTMENT OR HOUSE.||3/9 WRITING • BOOK 3 • MOD 1 • UNIT 2||The neighbors, the services available, the numbers of rooms.|The rent, how big is it, the numbers of rooms.|The rent, the neighbors, how big is it.": "The rent, how big is it, the numbers of rooms.",
+    "DEFAULT_MULTI:COMPLETE THE SENTENCE WITH THE RIGHT WORD: YOU CAN INVITE SOMEONE INFORMALLY USING THIS PHRASE IN A FORMAL LETTER:||4/9 WRITING • BOOK 3 • MOD 1 • UNIT 2||Do you have to go?|Would you like to go?|You must go?": "Would you like to go?",
+    "0:The person who sent the letter was Gaby Poveda.": [
+        [
+            "True"
+        ]
+    ],
+    "DEFAULT_MULTI:COMPLETE THE SENTENCE WITH THE RIGHT WORD:||me know if my help has been useful.||ALLOW|LET|SAY": "LET",
+    "T4:MATCH THE COLUMNS USING THE FOLLOWING WORDS.||KW:The neighborhood|The number of rooms|The price of rent|The services||DEF:$ 350|5 rooms|America Avenue|Store": [
+        [
+            "$ 350",
+            "Store",
+            "5 rooms",
+            "America Avenue"
+        ]
+    ],
+    "DEFAULT_MULTI:CHOOSE THE RIGHT WORD TO COMPLETE THE SENTENCE:||The city has an nightlife that is popular among locals||FASCINATING|INTERESTING": "INTERESTING",
+    "0:Ecuador is located in North America": [
+        [
+            "False"
+        ]
+    ],
+    "T8:READ THE TEXT AND ANSWER THE FOLLOWING QUESTION: HOW MANY REGIONS DOES ECUADOR HAVE?||IMG_DIM:443x76||Four|Three|Two": [
+        [
+            "Four"
+        ]
+    ],
+    "DEFAULT_MULTI:CHOOSE THE RIGHT WORD TO COMPLETE THE SENTENCE.||We went to watch the carnival but it was absolutely There were so many people you could hardly see anything.||BUSY|CROWD": "CROWD",
+    "DEFAULT_MULTI:CHOOSE THE RIGHT WORD TO COMPLETE THE SENTENCE.||There are some Pubs in the centre that have bands playing most nights.||BORING|EXCITING": "EXCITING",
+    "T8:READ THE TEXT BELOW AND CHOOSE THE BEST TITLE FOR IT:||IMG_DIM:443x76||People of Highland Region|Quilotoa lake|Zimbabua river": [
+        [
+            "People of Highland Region"
+        ]
+    ],
+    "DEFAULT_MULTI:ACCORDING TO THE TEXT, CHOOSE THE BEST INFORMATION MATCHING THE COLUMNS.||It has many beaches||GUAYAS|MANABÍ": "MANABÍ",
+    "DEFAULT_MULTI:ACCORDING TO THE TEXT, CHOOSE THE BEST INFORMATION MATCHING THE COLUMNS.||Country||COLOMBIA|ECUADOR": "ECUADOR",
+    "DEFAULT_MULTI:ACCORDING TO THE TEXT, CHOOSE THE BEST INFORMATION MATCHING THE COLUMNS.||Capital||PICHINCHA|QUITO": "QUITO",
+    "DEFAULT_MULTI:ACCORDING TO THE TEXT, CHOOSE THE BEST INFORMATION MATCHING THE COLUMNS.||Famous gastronomy||GUAYAQUIL|PORTOVIEJO": "PORTOVIEJO",
+    "DEFAULT_MULTI:CHOOSE THE RIGHT WORD TO COMPLETE THE SENTENCE.||Ecuador is located in||NORTH AMERICA|SOUTH AMERICA": "SOUTH AMERICA",
+    "DEFAULT_MULTI:READ THE TEXT AND ANSWER THE FOLLOWING QUESTION:||Is Ecuador located in North America?||NO|YES": "NO",
+    "DEFAULT_MULTI:CHOOSE THE RIGHT WORD TO COMPLETE THE SENTENCE||This is a very City. You can find people from all over the world living here.||METROPOLITAN|NATURAL": "METROPOLITAN",
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION: 789 IS EQUAL TO||1/10 VOCABULARY • BOOK 3 • MOD 1 • UNIT 2||700 + 8 + 90|700 + 80 + 9|700 + 90 + 8": "700 + 80 + 9",
+    "DEFAULT_MULTI:CHOOSE THE CORRECT OPTION: HOW IS THE FOLLOWING NUMBER WRITTEN IN DIGITS: 'FOURTEEN' ?||2/10 VOCABULARY • BOOK 3 • MOD 1 • UNIT 2||14|34|4": "14",
+    "DEFAULT_MULTI:USE ONE OF THE SYMBOLS TO MAKE EACH EQUATION TRUE||Four hundred fifty-eight 60 + 600 + 3||<|=|>": "<",
+    "DEFAULT_MULTI:COMPLETE THE SENTENCE.||The mathematical symbol, which represents a quantity given as a fraction in 100 equal parts is:||DISCOUNT|PERCENTAGE": "PERCENTAGE",
+    "0:'Natural numbers have a first and last element'": [
+        [
+            "False"
+        ]
+    ],
+    "DEFAULT_MULTI:CHOOSE THE OPTION THAT USES <(GREATER THAN),> (LESS THAN) OR = (EQUAL) SIGNS CORRECTLY.||6/10 VOCABULARY • BOOK 3 • MOD 1 • UNIT 2||22 < 15 + 9|29 = 19 + 7|49 > 100": "22 < 15 + 9",
+    "DEFAULT_MULTI:COMPLETE WITH THE RIGHT NUMBER.||What number is missing to complete the multiplication: X = 54||6|8|9": "9",
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION: WHICH OF THE FOLLOWING IS TRUE?||7/10 VOCABULARY • BOOK 3 • MOD 1 • UNIT 2||700 is a group of seven tens.|700 is a group of seventy ones.|700 is a group of seventy tens.": "700 is a group of seventy tens.",
+    "DEFAULT_MULTI:CHOOSE THE OPERATION THAT RESULTS IN 38.||8/10 VOCABULARY • BOOK 3 • MOD 1 • UNIT 2||28 + 5|40 - 2|60 - 12": "40 - 2",
+    "DEFAULT_MULTI:CIRCLE THE CORRECT OPTION.||9/10 VOCABULARY • BOOK 3 • MOD 1 • UNIT 2||24,157 in word form is written as.|Four thousand one hundred and fifty-seven|Twenty-four thousand one hundred and fifty-seven": "Twenty-four thousand one hundred and fifty-seven",
+    "DEFAULT_MULTI:FILL IN THE BLANK WITH THE RIGHT ANSWER.||I'm sorry I lied to you. Do you want to get together with me?||BACK|FOR|ON|WITH": "BACK",
+    "DEFAULT_MULTI:CHOOSE THE CORRECT WORD: DO YOU GET ON WELL WITH HER?||1/9 VOCABULARY • BOOK 3 • MOD 1 • UNIT 2||No way, he is really sick.|Yes, please.|Yes, we have a lot in common.|You are welcome.": "Yes, we have a lot in common.",
+    "DEFAULT_MULTI:CHOOSE THE CORRECT OPTION: THEY HAVE A LOT IN COMMON MEANS...||2/9 VOCABULARY • BOOK 3 • MOD 1 • UNIT 2||they are dating.|they fancy each other.|they live together.|they share similar ideas and interests.": "they share similar ideas and interests.",
+    "DEFAULT_MULTI:COMPLETE THE FOLLOWING SENTENCE WITH THE RIGHT WORD.||If you fancy him, why don't you ask him on a date?||FOR|OUT|UP|WITH": "OUT",
+    "DEFAULT_MULTI:CIRCLE THE BEST OPTION:||We are not together now. she took the kids and moved to her home town. We are||SEPARATED|SINGLE": "SEPARATED",
+    "DEFAULT_MULTI:READ AND COMPLETE THE SENTENCE: IF THEY ______ (NOT ARGUE) SO MUCH, THEY ______ (BE) A LOT HAPPIER||5/9 VOCABULARY • BOOK 3 • MOD 1 • UNIT 2||did not argue/were|did not argue/will be|do not argue/are|do not argue/were": "did not argue/were",
+    "DEFAULT_MULTI:COMPLETE THE SENTENCE:||She is not my wife. We are||JUST FRIENDS|MARRIED": "JUST FRIENDS",
+    "DEFAULT_MULTI:READ AND COMPLETE THE QUESTION.||did she play with? She played with her friends.||HOW|WHAT|WHEN|WHO": "WHO",
+    "DEFAULT_MULTI:COMPLETE WITH THE CORRECT WORD.||Carlos and I had a big row, but we yesterday so we're happy again.||FELL OUT|MADE UP": "MADE UP",
+    "DEFAULT_MULTI:SELECT AND COMPLETE THE BEST OPTION||Tomorrow, we will have a barbecue in the||GARDEN|LIVING ROOM": "GARDEN",
+    "DEFAULT_MULTI:SELECT AND COMPLETE THE BEST OPTION||The was dirty after dinner.||BEDROOM|KITCHEN": "KITCHEN",
+    "DEFAULT_MULTI:SELECT AND COMPLETE THE BEST OPTION||The family meets in the every Friday.||LAUNDRY ROOM|LIVING ROOM": "LIVING ROOM",
+    "DEFAULT_MULTI:CHOOSE THE RIGHT OPTIONS TO ANSWER THE QUESTIONS.:||Where do you take a shower?||IN THE BATHROOM|IN THE BEDROOM": "IN THE BATHROOM",
+    "0:I|a|can|find|garden|in|my|tree|2:I|a|can|find|in|living|my|room|sofa": [
+        [
+            [
+                "I",
+                "can",
+                "find",
+                "a",
+                "tree",
+                "in",
+                "my",
+                "garden"
+            ],
+            [
+                "I",
+                "can",
+                "find",
+                "a",
+                "sofa",
+                "in",
+                "my",
+                "living",
+                "room"
+            ]
+        ]
+    ],
+    "T4:MATCH THE HALVES WITH A LINE.||KW:We can cook in the|We have a meeting in the|We keep the car in the|We take a shower in the||DEF:Bathroom|Garage|Kitchen|Living room": [
+        [
+            "Kitchen",
+            "Bathroom",
+            "Garage",
+            "Living room"
+        ]
+    ],
+    "DEFAULT_MULTI:CHOOSE THE CORRECT SENTENCE.||5/10 VOCABULARY • BOOK 3 • MOD 1 • UNIT 2||This is my garden. It has got blue, green and red flowers|Those is my garden. It has got green and flowers red.": "This is my garden. It has got blue, green and red flowers",
+    "DEFAULT_MULTI:READ. CHOOSE THE CORRECT SENTENCE.||6/10 VOCABULARY • BOOK 3 • MOD 1 • UNIT 2||These is my living room. It have got three chairs and two tables.|This is my dining room. It has got four brown chairs and a brown table.": "This is my dining room. It has got four brown chairs and a brown table.",
+    "0:Concrete|are|much|ones|safer|than|walls|wooden|2:That|balcony|beautiful|flowers|has|some": [
+        [
+            [
+                "Concrete",
+                "walls",
+                "are",
+                "much",
+                "safer",
+                "than",
+                "wooden",
+                "ones"
+            ],
+            [
+                "That",
+                "balcony",
+                "has",
+                "some",
+                "beautiful",
+                "flowers"
+            ]
+        ]
+    ],
+    "T4:READ THE FOLLOWING RIDDLE AND MATCH THEM WITH THE RIGHT WORD. WHAT IS IT?||KW:Little house in the field|The classic flat in a residential building, very common in the city.|Urbanization, a fenced housing complex that only its inhabitants can access.||DEF:Apartment|Cottage|Gated community": [
+        [
+            "Apartment",
+            "Gated community",
+            "Cottage"
+        ]
+    ],
+    "0:A bed is in the bedroom|5:A sofa is in the bathroom|6:A chair is in the kitchen": [
+        [
+            "True",
+            "False",
+            "True"
+        ]
+    ],
+    "DEFAULT_MULTI:CHOOSE THE RIGHT OPTIONS TO ANSWER THE QUESTIONS:||Where do you have breakfast?||IN THE DINING ROOM|IN THE LIVING ROOM": "IN THE DINING ROOM",
+    "DEFAULT_MULTI:SELECT THE CORRECT WORD||Juan always falls asleep during||HISTORY|KITCHEN": "HISTORY",
+    "DEFAULT_MULTI:SELECT THE CORRECT WORD||My brother always practices on weekends||COOK|ENGLISH": "ENGLISH",
+    "T8:LOOK AT THE PICTURE AND SELECT THE CORRECT WORD: WHAT ARE THEY?||IMG_DIM:443x249||Boys|Mechanic|Players|Teachers": [
+        [
+            "Teachers"
+        ]
+    ],
+    "DEFAULT_MULTI:COMPLETE THE SENTENCE WITH THE BEST OPTION||Learn about the past is||COMPUTER SCIENCE|HISTORY": "HISTORY",
+    "T8:LOOK AT THE PICTURE AND SELEC THE CORRECT WORD: HOW DO YOU SAY THIS IN ENGLISH?||IMG_DIM:232x300||Ruler|Table|pencil case": [
+        [
+            "Ruler"
+        ]
+    ],
+    "T8:LOOK AT THE FOLLOWING PICTURES. MATCH THE PICTURES WITH THE WORDS.||IMG_DIM:341x281|IMG_DIM:341x322||Music|Science": [
+        [
+            "Music",
+            "Science"
+        ]
+    ],
+    "DEFAULT_MULTI:COMPLETE THE SENTENCE WITH THE BEST OPTION||Do vocabulary exercises and use them in a sentence is||BIOLOGY|ENGLISH": "ENGLISH",
+    "T4:MATCH THE SENTENCES WITH THE CORRECT SUBJECT IT DESCRIBES.||KW:Draw or paint and other visual things|Play team sports and other physical activities|Solve numerical problems.||DEF:Art|Mathematics|Physical education": [
+        [
+            "Physical education",
+            "Mathematics",
+            "Art"
+        ]
+    ],
+    "T8:LOOK AT THE FOLLOWING PICTURES. MATCH THE PICTURES WITH THE WORDS.||IMG_DIM:341x341|IMG_DIM:341x521||Biology|Geography": [
+        [
+            "Geography",
+            "Biology"
+        ]
+    ],
+    "0:Ms. Garcia was putting red balloons on the wall while Bryan, Kevin and Irina were doing other activities.": [
+        [
+            "True"
+        ]
+    ],
+    "0:Bryan took a red envelope from his pocket.": [
+        [
+            "False"
+        ]
+    ],
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION. ACCORDING TO THE TEXT, WHAT WERE THE CHILDREN DOING?||Today was a special day in Ms. Garcia’s class. Some of the children were standing in small groups around their desks while others were walking in various directions through the classroom. All of them were painting and putting finishing details on a cardboard mailbox that Ms. Garcia brought last class.||They were helping to Ms. Garcia|They were making a mailbox|They were working in small groups to prepare something": "They were working in small groups to prepare something",
+    "DEFAULT_MULTI:COMPLETE THE SENTENCE. ACCORDING TO THE TEXT, WHERE ARE MS. GARCIA AND HER STUDENTS?||Today was a special day in Ms. Garcia’s class. Some of the children were standing in small groups around their desks while others were walking in various directions through the classroom. All of them were painting and putting finishing details on a cardboard mailbox that Ms. Garcia brought last class.||In groups|In the classroom|Various directions": "In the classroom",
+    "DEFAULT_MULTI:CHOOSE THE CORRECT ANSWER. ACCORDING TO THE TEXT, WHAT DID CESAR DO?||After coloring a nice heart on the side of his envelope, César got off his chair. He went to Irina’s desk, and left his small envelope into her rainbow lunchbox. Irina smiled and played with her little friend but she didn’t open the envelope yet.||He colored a nice heart on an envelope and left it Irina's chair.|He colored a nice heart on an envelope and left it Irina's desk.|He colored a nice heart on an envelope and left it Irina's rainbow lunchbox.": "He colored a nice heart on an envelope and left it Irina's rainbow lunchbox.",
+    "DEFAULT_MULTI:COMPLETE THE SENTENCE. ACCORDING TO THE TEXT, WHAT IS MS. GARCIA OCCUPATION?: SHE IS _______||Today was a special day in Ms. Garcia’s class. Some of the children were standing in small groups around their desks while others were walking in various directions through the classroom. All of them were painting and putting finishing details on a cardboard mailbox that Ms. Garcia brought last class.||A doctor|A teacher|An engineer": "A teacher",
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION. ACCORDING TO THE TEXT, WHAT DID MS. GARCIA BRING TO THE CLASSROOM?||Today was a special day in Ms. Garcia’s class. Some of the children were standing in small groups around their desks while others were walking in various directions through the classroom. All of them were painting and putting finishing details on a cardboard mailbox that Ms. Garcia brought last class.||Cardboard|Cardboard mailbox|Details": "Cardboard mailbox",
+    "DEFAULT_MULTI:COMPLETE THE INFORMATION. CHOOSE THE RIGHT WORDS: WHILE _____ WAS TRYING TO PUT AN ENVELOPE INTO THE MAILBOX _____ TOOK A RED ENVELOPE AND TRIED TO PUT IT ON _____ DESK BUT _____ SAW HIM AND HE FELT EMBARRASSED AND RAN WITH THE ENVELOPE.||7/8 READING • BOOK 3 • MOD 1 • UNIT 2||Bryan/Cesar/Kevin's/Irina|Bryan/Kevin/Irina's/Cesar|Kevin/Bryan/Cesar's/Irina": "Bryan/Kevin/Irina's/Cesar",
+    "DEFAULT_MULTI:COMPLETE THE INFORMATION. CHOOSE THE RIGHT WORDS: WHILE _____ WAS TRYING TO PUT AN ENVELOPE INTO THE MAILBOX _____ TOOK A RED ENVELOPE AND TRIED TO PUT IT ON _____ DESK BUT _____ SAW HIM AND HE FELT EMBARRASSED AND RAN WITH THE ENVELOPE.||8/8 READING • BOOK 3 • MOD 1 • UNIT 2||Bryan/Cesar/Kevin's/Irina|Bryan/Kevin/Irina's/Cesar|Kevin/Bryan/Cesar's/Irina": "Bryan/Kevin/Irina's/Cesar",
+    "DEFAULT:ACCORDING TO THE TEXT. SELECT FALSE SENTENCE||CTX:(1) Many people need only a cup of coffee to start...inegar and voila! You can enjoy your coffee again.||||||||Inside the coffee maker there are many candies and lollypops.|Inside the coffee maker there are many candies and lollypops.|The power on/off coed is bad: It is best to replace it or buy a new coffee maker.|The power on/off coed is bad: It is best to replace it or buy a new coffee maker.|The valve which lets the water pass can get clogged because of the coffee's remains.|The valve which lets the water pass can get clogged because of the coffee's remains.": [
+        "Inside the coffee maker there are many candies and lollypops."
+    ],
+    "0:Coffee and its social use|Internal parts of a coffee maker|Main parts of a coffee maker|Solutions for common problems related to coffee machines.": [
+        [
+            [
+                "Coffee and its social use",
+                "Main parts of a coffee maker",
+                "Internal parts of a coffee maker",
+                "Solutions for common problems related to coffee machines."
+            ]
+        ]
+    ],
+    "DEFAULT_MULTI:READ THESE IDEAS AND MATCH THEM WITH A PARAGRAPH.||Having coffee as a part of a daily habit.||1|2|3": "2",
+    "DEFAULT_MULTI:READ THESE IDEAS AND MATCH THEM WITH A PARAGRAPH.||The reservoir, tube and shower are parts of a coffee maker.||1|2|3": "3",
+    "DEFAULT_MULTI:READ THESE IDEAS AND MATCH THEM WITH A PARAGRAPH.||Having coffee for breakfast or in a meeting.||1|2|3": "1",
+    "DEFAULT:ACCORDING TO THE TEXT, ANSWER THE QUESTION: WHAT ARE THE MAIN PARTS OF THE COFFEE MAKER?||CTX:(1) Many people need only a cup of coffee to start...inegar and voila! You can enjoy your coffee again.||||||||The reservoir, the tube and a shower head.|The reservoir, the tube and a shower head.|The valve, the power on/off cord and a cup.|The valve, the power on/off cord and a cup.|Water, coffee and milk.|Water, coffee and milk.": [
+        "The reservoir, the tube and a shower head."
+    ],
+    "T4:MATCH THE WORDS WITH THEIR MEANINGS.||KW:Device for detonating an explosive charge|To pick something up using a spoon|To take something somewhere|blocked by something||DEF:Fuse|Get clogged|Lead|Scoop": [
+        [
+            "Lead",
+            "Get clogged",
+            "Scoop",
+            "Fuse"
+        ]
+    ],
+    "T8:LOOK AT THE PICTURES, CHOOSE THE RIGHT OPTION: WHICH OF THEM IS THE MOST USED BY HOUSEWIVES?||IMG_DIM:443x220||Coffee machine.|Ice cream machine.|Popcorn machine.": [
+        [
+            "Coffee machine."
+        ]
+    ],
+    "T4:MATCH THE COMMON PROBLEMS YOU CAN HAVE WITH YOUR COFFEE MACHINE AND ITS SOLUTIONS.||KW:The on/off power cord doesnt work|The tube is clogged with calcium.|The valve is clogged with coffees remains||DEF:Buy a new one.|Put vinegar and water to clean it.|Use a toothpick to remove it.": [
+        [
+            "Put vinegar and water to clean it.",
+            "Buy a new one.",
+            "Use a toothpick to remove it."
+        ]
+    ],
+    "DEFAULT:READ THE TEXT QUICKLY AND SELECT THE CORRECT ANSWER: WHAT THIS TEXT TALKS ABOUT?||CTX:(1) Many people need only a cup of coffee to start...inegar and voila! You can enjoy your coffee again.||||||||How does coffee maker work?|How does coffee maker work?|How to prepare coffee in a coffee maker?|How to prepare coffee in a coffee maker?|Mr. Martinez would like to reserve five rooms.|Mr. Martinez would like to reserve five rooms.": [
+        "How does coffee maker work?"
+    ],
+    "DEFAULT:ACCORDING TO THE TEXT, ANSWER THE QUESTION: WHAT DEVICES ARE THERE INSIDE A COFFEE MACHINE AND WHAT ARE THEIR FUNCTIONS?||CTX:(1) Many people need only a cup of coffee to start...inegar and voila! You can enjoy your coffee again.||||||||On/off cord to replace or buy a new coffee maker.|On/off cord to replace or buy a new coffee maker.|Sensors and fuses to heat water and keep coffee warm.|Sensors and fuses to heat water and keep coffee warm.|The valve to let the water pass.|The valve to let the water pass.": [
+        "Sensors and fuses to heat water and keep coffee warm."
+    ],
+    "DEFAULT_MULTI:ACCORDING TO THE TEXT. SELECT TRUE SENTENCE:||Many people don't need a cup of coffee to start their day.||A coffee maker is a very complicated machine.|The tube can get clogged with calcium.": "The tube can get clogged with calcium.",
+    "DEFAULT_MULTI:ACCORDING TO THE TEXT CHOOSE THE CORRECT OPTION AND ANSWER THE QUESTION.||What is the relationship between Sarah and Susana?||SUSANA IS SARAH'S AUNT|SUSANA IS SARAH'S GRANDMA.": "SUSANA IS SARAH'S GRANDMA.",
+    "DEFAULT_MULTI:READ THE TEXT AGAIN, LOOK AT THE PART WITH NUMBERS AND MATCH THEM WITH THE DIFFERENT PARTS OF THE LETTER.||Signature||1|2|3|4|5": "5",
+    "DEFAULT_MULTI:READ THE TEXT AGAIN, LOOK AT THE PART WITH NUMBERS AND MATCH THEM WITH THE DIFFERENT PARTS OF THE LETTER.||Salutation||1|2|3|4|5": "2",
+    "DEFAULT_MULTI:READ THE TEXT AGAIN, LOOK AT THE PART WITH NUMBERS AND MATCH THEM WITH THE DIFFERENT PARTS OF THE LETTER.||Closing||1|2|3|4|5": "4",
+    "DEFAULT_MULTI:READ THE TEXT AGAIN, LOOK AT THE PART WITH NUMBERS AND MATCH THEM WITH THE DIFFERENT PARTS OF THE LETTER.||Body||1|2|3|4|5": "3",
+    "DEFAULT_MULTI:READ THE TEXT AGAIN, LOOK AT THE PART WITH NUMBERS AND MATCH THEM WITH THE DIFFERENT PARTS OF THE LETTER.||Heading||1|2|3|4|5": "1",
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION: WHICH OF THE FOLLOWING IS NOT A FEATURE OF A FRIENDLY LETTER?||1/10 READING • BOOK 3 • MOD 1 • UNIT 2||closing|greeting|materials list|signature": "materials list",
+    "T8:READ THE FOLLOWING LETTER. CHOOSE THE BEST OPTION: THE MAIN AIM OF THIS LETTER IS:||IMG_DIM:299x343||To apologize for something.|To ask for a product.|To congratulate for something.": [
+        [
+            "To apologize for something."
+        ]
+    ],
+    "0:The Greeting looks like this: Dear Sally": [
+        [
+            "True"
+        ]
+    ],
+    "DEFAULT:READ THE FOLLOWING LETTER. CHOOSE THE BEST OPTION: THE TEXT IS:||CTX:Sarah Medina 205 Manabí Avenue Portoviejo (1) Dear...aughter. With best wishes and love, (4) Susana (5)||||||||A business letter.|A business letter.|A personal letter.|A personal letter.|An personal letter.|An personal letter.": [
+        "A personal letter."
+    ],
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION: A LETTER IS _____||5/10 READING • BOOK 3 • MOD 1 • UNIT 2||a medium of a vacation.|a medium of communication.|a medium of photography session.": "a medium of communication.",
+    "DEFAULT:READ THE TEXT AGAIN AND ANSWER THE QUESTION:WHY COULD NOT SUSANA ATTEND SARAH'S PARTY?||CTX:Sarah Medina 205 Manabí Avenue Portoviejo (1) Dear...aughter. With best wishes and love, (4) Susana (5)||||||||Susana had an important meeting.|Susana had an important meeting.|Susana had no money to buy a gift.|Susana had no money to buy a gift.|Susana missed the plane.|Susana missed the plane.": [
+        "Susana had an important meeting."
+    ],
+    "0:A Friendly Letter has 5 parts.": [
+        [
+            "True"
+        ]
+    ],
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION: WHERE DO YOU WRITE YOUR ADDRESS?||8/10 READING • BOOK 3 • MOD 1 • UNIT 2||Bottom left|Bottom right|Top left|Top right": "Top right",
+    "DEFAULT:READ THE ARTICLE AGAIN. CHOOSE THE BEST OPTION TO COMPLETE THE SENTENCE: THE ARTICLE MENTIONS _______ TO IDENTIFY THE SAFETY SIGNS.||CTX:Safety signs are very important tools for communic...gs provide vital information to protect everybody.||||||||Objects and colors|Objects and colors|Shapes and colors|Shapes and colors|Signs and objects|Signs and objects": [
+        "Shapes and colors"
+    ],
+    "DEFAULT_MULTI:READ THE TEXT. MATCH THE FOLLOWING TYPES OF SAFETY SIGNS WITH THE DESCRIPTION IN THE TEXT.||( ) They are used to provide general information like evacuation routes or meeting points. They have a square or rectangular shape and a green background. Remember that safety sings provide vital information to protect everybody.||Definition of safety signs|Emergency scape or first-aids signs|Mandatory signs|Prohibitory signs|Warning signs": "Emergency scape or first-aids signs",
+    "0:Red round signs are used for actions and prevention.|5:Blue background indicates meeting points.|6:Triangle signs are used for warnings.|7:Rectangles are only used for prohibition.": [
+        [
+            "True",
+            "False",
+            "True",
+            "False"
+        ]
+    ],
+    "DEFAULT_MULTI:READ THE TEXT. MATCH THE FOLLOWING TYPES OF SAFETY SIGNS WITH THE DESCRIPTION IN THE TEXT.||( ) These signs have a triangular shape with a yellow background and a black edging. The yellow indicates caution, so people can stay alert to any danger around them and reduce unnecessary risks.||Definition of safety signs|Emergency scape or first-aids signs|Mandatory signs|Prohibitory signs|Warning signs": "Warning signs",
+    "DEFAULT_MULTI:READ THE TEXT. MATCH THE FOLLOWING TYPES OF SAFETY SIGNS WITH THE DESCRIPTION IN THE TEXT.||( ) They usually indicate actions that must be taken. These signs have a round shape with a white pictogram on a blue background||Definition of safety signs|Emergency scape or first-aids signs|Mandatory signs|Prohibitory signs|Warning signs": "Mandatory signs",
+    "DEFAULT_MULTI:READ THE TEXT. MATCH THE FOLLOWING TYPES OF SAFETY SIGNS WITH THE DESCRIPTION IN THE TEXT.||( ) These signs are used for prevention and points out actions that are forbidden. They are commonly round shaped and they have a red edging as well as a red diagonal line across them.||Definition of safety signs|Emergency scape or first-aids signs|Mandatory signs|Prohibitory signs|Warning signs": "Prohibitory signs",
+    "DEFAULT:READ THE ARTICLE, CHOOSE THE MAIN IDEA, CIRCLE IT||CTX:Safety signs are very important tools for communic...gs provide vital information to protect everybody.||||||||How to prevent risk.|How to prevent risk.|The importance and use of safety signs.|The importance and use of safety signs.|Where should safety signs be placed.|Where should safety signs be placed.": [
+        "The importance and use of safety signs."
+    ],
+    "DEFAULT_MULTI:READ THE TEXT. MATCH THE FOLLOWING TYPES OF SAFETY SIGNS WITH THE DESCRIPTION IN THE TEXT.||Safety signs are very important tools for communicating any kind of warning at school, streets or workplace. They help to identify hazards, prevent risks, protect people from injuries and they make prohibitions when necessary. There are four different types of sings that everyone needs to be aware of:||Definition of safety signs|Emergency scape or first-aids signs|Mandatory signs|Prohibitory signs|Warning signs": "Definition of safety signs",
+    "T4:MATCH THE NUMBER WITH THE CORRECT OPTION: IN SAFETY SIGNS COLOR ARE VERY IMPORTANT TO DETERMINE THE INFORMATION THEY ARE PROVIDE THEY ARE PROVIDING. IN THAT WAY:||KW:Blue is used for|Green is used for|Red is used for|Yellow is used for||DEF:Caution|Mandatory actions|Positive actions|Prohibition": [
+        [
+            "Caution",
+            "Prohibition",
+            "Positive actions",
+            "Mandatory actions"
+        ]
+    ],
+    "T8:LOOK AT THE PICTURE AND ANSWER THE QUESTION: WHAT KIND OF SIGNS DOES THE PHOTO SHOW?||IMG_DIM:360x175||Advertising signs|Mandatory signs|Safety signs": [
+        [
+            "Safety signs"
+        ]
+    ],
+    "DEFAULT_MULTI:COMPLETE THE SENTENCES WITH ENOUGH OR TOO.||THIS WATER IS NOT WARM .||ENOUGH|TOO": "ENOUGH",
+    "DEFAULT_MULTI:COMPLETE THE SENTENCES WITH ENOUGH OR TOO.||I CAN'T MAKE A HAMBURGUER. THERE ISN'T BREAD.||ENOUGH|TOO": "ENOUGH",
+    "DEFAULT_MULTI:COMPLETE THE SENTENCES WITH AN INDEFINITE PRONOUN.||WANTS TO SEE YOU.||SOMEBODY|SOMETHING|SOMEWHERE": "SOMEBODY",
+    "DEFAULT_MULTI:COMPLETE THE SENTENCES WITH AN INDEFINITE PRONOUN.||I GAVE TO SALLY.||ANYTHING|EVERYONE|EVERYTHING": "EVERYTHING",
+    "DEFAULT_MULTI:COMPLETE THE SENTENCES WITH AN INDEFINITE PRONOUN.||I BOUGHT AT THE MALL.||EVERYONE|EVERYTHING|EVERYWHERE": "EVERYTHING",
+    "DEFAULT_MULTI:COMPLETE THE SENTENCES WITH AN INDEFINITE PRONOUN.||GAVE ME THIS BOOK.||SOMEONE|SOMETHING|SOMEWHERE": "SOMEONE",
+    "DEFAULT_MULTI:COMPLETE THE SENTENCES WITH AN INDEFINITE PRONOUN.||I WOULD LIKE TO GO THIS SUMMER.||SOMEBODY|SOMEONE|SOMEWHERE": "SOMEWHERE",
+    "DEFAULT_MULTI:COMPLETE THE SENTENCES WITH AN INDEFINITE PRONOUN.||THERE IS AT THE DOOR.||ANYBODY|EVERYBODY|SOMEONE": "SOMEONE",
+    "DEFAULT_MULTI:COMPLETE THE SENTENCES WITH AN INDEFINITE PRONOUN.||I HAVE IN MY EYE.||EVERYTHING|SOMEONE|SOMETHING": "SOMETHING",
+    "DEFAULT_MULTI:COMPLETE THE SENTENCES WITH AN INDEFINITE PRONOUN.||DO YOU LIVE NEAR COLON?||ANYONE|ANYTHING|ANYWHERE": "ANYWHERE",
+    "DEFAULT_MULTI:COMPLETE THE SENTENCES WITH AN INDEFINITE PRONOUN.||I DON'T KNOW ABOUT IT.||ANYBODY|ANYONE|ANYTHING": "ANYTHING",
+    "DEFAULT_MULTI:COMPLETE THE SENTENCES WITH WH QUESTIONS.||DO YOU KNOW THE POLICE STATION IS?||WHEN|WHERE|WHY": "WHERE",
+    "DEFAULT_MULTI:COMPLETE THE SENTENCES WITH WH QUESTIONS.||DO YOU KNOW IS THE TEACHER'S DAY?||WHEN|WHERE|WHY": "WHEN",
+    "DEFAULT_MULTI:COMPLETE THE SENTENCES WITH WH QUESTIONS.||DO YOU KNOW THE BUS STOP IS?||WHEN|WHERE|WHY": "WHERE",
+    "DEFAULT_MULTI:COMPLETE THE SENTENCES WITH WH QUESTIONS.||DO YOU KNOW WE CANNOT ENTER IF WE ARE 18?||WHEN|WHERE|WHY": "WHY",
+    "DEFAULT_MULTI:COMPLETE THE SENTENCES WITH WH QUESTIONS.||DO YOU KNOW IS OUR NEXT EXAM?||WHEN|WHERE|WHY": "WHEN",
+    "DEFAULT_MULTI:COMPLETE THE SENTENCES WITH WH QUESTIONS.||DO YOU KNOW THIS ROAD GO?||WHEN|WHERE|WHY": "WHERE",
+    "DEFAULT_MULTI:COMPLETE THE SENTENCES WITH WH QUESTIONS.||DO YOU KNOW SHE WAS CRYING?||WHEN|WHERE|WHY": "WHY",
+    "DEFAULT_MULTI:COMPLETE THE SENTENCES WITH WH QUESTIONS.||DO YOU KNOW HE WENT TO?||WHEN|WHERE|WHY": "WHERE",
+    "DEFAULT_MULTI:COMPLETE THE SENTENCES WITH WH QUESTIONS.||DO YOU KNOW HE LOOKS SAD?||WHEN|WHERE|WHY": "WHY",
+    "DEFAULT_MULTI:CHOOSE THE BEST ANSWER||MICHELLE HAS BROTHERS BUT JUST ONE SISTER.||A FEW|MANY": "MANY",
+    "DEFAULT_MULTI:CHOOSE THE BEST ANSWER||JULIA ATE CHIPS, SHE WASN'T VERY HUNGRY.||A FEW|MANY": "A FEW",
+    "DEFAULT_MULTI:CHOOSE THE BEST ANSWER||PEOPLE DON'T WRITE LETTERS NOWADAYS.||A FEW|MANY": "MANY",
+    "DEFAULT_MULTI:READ THE SENTENCES AND CIRCLE THE CORRECT OPTION (QUANTIFIERS):||ISABEL WENT ON VACATION. SHE TOOK PICTURES.||FEW|SEVERAL": "SEVERAL",
+    "DEFAULT_MULTI:CHOOSE THE BEST ANSWER||HE FOUND COOKIES UNDER HIS BED. HE ATE HIS 2 COOKIES AFTER THAT||A FEW|MANY": "A FEW",
+    "DEFAULT_MULTI:READ THE SENTENCES AND CIRCLE THE CORRECT OPTION (QUANTIFIERS):||THERE WAS A CAR ACCIDENT LAST NIGHT. LUCKILY OF THEM WERE HURT.||FEW|MANY": "FEW",
+    "DEFAULT_MULTI:CHOOSE THE BEST ANSWER||I HAVE COUSINS THAT SPEAK FRENCH, THE REST OF THEM SPEAK ENGLISH.||A FEW|MANY": "A FEW",
+    "DEFAULT_MULTI:READ THE SENTENCES AND CIRCLE THE CORRECT OPTION (QUANTIFIERS):||KARLA TOOK DAYS OFF FROM WORK. SHE HAD TO BE IN BED FOR SIX DAYS.||FEW|SEVERAL": "SEVERAL",
+    "DEFAULT_MULTI:READ THE SENTENCES AND CIRCLE THE CORRECT OPTION (QUANTIFIERS):||YESTERDAY, THE CLASS WAS QUIET. STUDENTS WERE ABSENT.||FEW|SEVERAL": "SEVERAL",
+    "DEFAULT_MULTI:READ THE SENTENCES AND CIRCLE THE CORRECT OPTION (QUANTIFIERS):||SHE IS VERY TIMID. SHE HAS FRIENDS.||FEW|MANY": "FEW",
+    "T9:WHAT DOES LAURA ENJOY ABOUT SPENDING TIME AT THE LIBRARY?||CTX:...||||||The library's café|The library's café|The library's collection of books|The library's collection of books|The library’s quiet atmosphere|The library’s quiet atmosphere": [
+        "The library’s quiet atmosphere"
+    ],
+    "T4:MATCH EACH STATEMENT WITH ITS CORRESPONDING DETAIL FROM THE SCRIPT||KW:Laura’s plan for the books is to|The library is described as||DEF:Quiet|Read both books this week": [
+        [
+            "Quiet",
+            "Read both books this week"
+        ]
+    ],
+    "T4:FILL IN THE BLANKS:||KW:Laura borrowed books from the library.|One on and the other on science.|She describes the library as and enjoys spending time there.||DEF:history|quiet|two": [
+        [
+            "two",
+            "history",
+            "quiet"
+        ]
+    ],
+    "T9:ACCORDING TO LAURA, WHICH STATEMENT BEST DESCRIBES HER FEELINGS ABOUT THE BOOKS SHE BORROWED?||CTX:...||||||She finds both books equally interesting.|She finds both books equally interesting.|She finds the history book very interesting, but does not mention her opinion about the science book.|She finds the history book very interesting, but does not mention her opinion about the science book.|She plans to read only the history book this week.|She plans to read only the history book this week.": [
+        "She finds the history book very interesting, but does not mention her opinion about the science book."
+    ],
+    "T9:WHAT ARE THE SUBJECTS OF THE BOOKS LAURA BORROWED?||CTX:...||||||Art and literature|Art and literature|History and science|History and science|Math and geography|Math and geography": [
+        "History and science"
+    ],
+    "T9:HOW DOES LAURA FEEL ABOUT THE LIBRARY?||CTX:...||||||It is quiet and enjoyable|It is quiet and enjoyable|It is too noisy|It is too noisy|It is very interesting|It is very interesting": [
+        "It is quiet and enjoyable"
+    ],
+    "T9:HOW MANY BOOKS DOES LAURA PLAN TO READ THIS WEEK?||CTX:...||||||One|One|Three|Three|Two|Two": [
+        "Two"
+    ],
+    "T9:WHAT IS THE LIBRARY LIKE?||CTX:...||||||Busy and noisy|Busy and noisy|Quiet|Quiet|Small and crowded|Small and crowded": [
+        "Quiet"
+    ],
+    "T9:WHAT DID LAURA DO AT THE LIBRARY?||CTX:...||||||Borrowed some movies|Borrowed some movies|Borrowed two books|Borrowed two books|Bought some books|Bought some books": [
+        "Borrowed two books"
+    ],
+    "T9:WHAT DID JOHN DO FIRST DURING HIS VISIT TO THE PARK?||CTX:...||||||He ate a sandwich.|He ate a sandwich.|He observed children playing.|He observed children playing.|He sat on a bench to rest.|He sat on a bench to rest.|He walked for about an hour.|He walked for about an hour.": [
+        "He walked for about an hour."
+    ],
+    "T9:WHAT DID JOHN DO AT THE PARK?||CTX:...||||||Had a picnic|Had a picnic|Played soccer|Played soccer|Went for a walk|Went for a walk": [
+        "Went for a walk"
+    ],
+    "T9:WHAT DID JOHN EAT?||CTX:...||||||A burger|A burger|A salad|A salad|A sandwich|A sandwich": [
+        "A sandwich"
+    ],
+    "T9:HOW LONG DID JOHN WALK?||CTX:...||||||For about 30 minutes|For about 30 minutes|For about an hour|For about an hour|For about two hours|For about two hours": [
+        "For about an hour"
+    ],
+    "T4:COMPLETE THE FOLLOWING SENTENCES BASED ON JOHN’S VISIT TO THE PARK:||KW:John enjoyed the air while resting on the bench.|John walked for before sitting on the bench.|While at the park, John observed and children playing.||DEF:about an hour|fresh|people jogging": [
+        [
+            "about an hour",
+            "people jogging",
+            "fresh"
+        ]
+    ],
+    "T4:FILL IN THE BLANKS||KW:After walking for about an hour, he sat on a and ate a sandwich.|He saw people and children playing.|John went to the park for a .||DEF:bench|jogging|walk": [
+        [
+            "walk",
+            "jogging",
+            "bench"
+        ]
+    ],
+    "T9:WHAT DID JOHN DO AFTER WALKING?||CTX:...||||||Bought ice cream|Bought ice cream|Sat on a bench to rest|Sat on a bench to rest|Went home|Went home": [
+        "Sat on a bench to rest"
+    ],
+    "T9:WHAT DID JOHN SEE AT THE PARK?||CTX:...||||||Cars and buses|Cars and buses|Dogs and cats|Dogs and cats|People jogging and children playing|People jogging and children playing": [
+        "People jogging and children playing"
+    ],
+    "DEFAULT_MULTI:CHOOSE THE RIGHT ANSWER ACCORDING TO THE QUESTION: A PERSON ON HOLIDAY IS A:||1/10 WRITING • BOOK 3 • MOD 1 • UNIT 1||Tourist|Traveler|Vacationer": "Tourist",
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION TO ANSWER THE FOLLOWING QUESTION: WHO DO YOU GO WITH?||1/10 WRITING • BOOK 3 • MOD 1 • UNIT 1||Canada|With my Family": "With my Family",
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION TO ANSWER THE FOLLOWING QUESTION: WHAT IS YOUR FAVORITE ACTIVITY TO DO ON A HOT SUMMER VACATION?||2/10 WRITING • BOOK 3 • MOD 1 • UNIT 1||Go swimming|Read a book|Watch movies": "Go swimming",
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION TO ANSWER THE FOLLOWING QUESTION: WHERE DO YOU USUALLY GO ON HOLYDAYS?||3/10 WRITING • BOOK 3 • MOD 1 • UNIT 1||Camping|Take a nap": "Camping",
+    "T8:READ THE SENTENCES AND CHOOSE THE BEST OPTION TO THE FOLLOWING QUESTION: WHAT DID YOU DO IN MEXICO?||IMG_DIM:443x37||We played the guitar.|We visited the Frida Kahlo Museum": [
+        [
+            "We visited the Frida Kahlo Museum"
+        ]
+    ],
+    "DEFAULT_MULTI:CHOOSE THE RIGHT ANSWER ACCORDING TO THE QUESTION: WHAT DO PEOPLE COMMONLY WEAR AT VALENTINE'S DAY?||4/10 WRITING • BOOK 3 • MOD 1 • UNIT 1||Orange shoes|Red Clothes|Yellow shirts": "Red Clothes",
+    "DEFAULT_MULTI:CHOOSE THE RIGHT ANSWER ACCORDING TO THE QUESTION: A PERSON ON HOLIDAY IS A:||5/10 WRITING • BOOK 3 • MOD 1 • UNIT 1||Tourist|Traveler|Vacationer": "Tourist",
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION TO ANSWER THE FOLLOWING QUESTION: WHAT DO YOU LIKE TO DO IN YOUR SUMMER VACATIONS?||6/10 WRITING • BOOK 3 • MOD 1 • UNIT 1||I am from New England.|Watching movies and hiking": "Watching movies and hiking",
+    "DEFAULT_MULTI:CHOOSE THE RIGHT ANSWER ACCORDING TO THE QUESTION: WHAT DO YOU NEED TO TRAVEL TO ANOTHER COUNTRY?||7/10 WRITING • BOOK 3 • MOD 1 • UNIT 1||ID. Card|Passport|Ticket": "Passport",
+    "T4:MATCH THE TWO COLUMNS TO COMPLETE THE MEANINGS:||KW:A person who shows tourists the city|A short journey taken for a pleasure|A small house in the country|The places that visitors go||DEF:Cottage|Destination|Excursion|Guide": [
+        [
+            "Excursion",
+            "Cottage",
+            "Guide",
+            "Destination"
+        ]
+    ],
+    "0:A holiday is a period when a break is taken from work or studies.": [
+        [
+            "True"
+        ]
+    ],
+    "DEFAULT_MULTI:CHOOSE THE RIGHT ANSWER ACCORDING TO THE QUESTION: A PERSON ON HOLIDAY IS A:||10/10 WRITING • BOOK 3 • MOD 1 • UNIT 1||Tourist|Traveler|Vacationer": "Tourist",
+    "DEFAULT_MULTI:ACCORDING TO THE INFORMATION PROVIDED CHOOSE THE RIGHT OPTION TO COMPLETE THE SENTENCE.||My favorite season is because it is hot and sunny.||SPRING|SUMMER|WINTER": "SUMMER",
+    "DEFAULT_MULTI:READ AND CHOOSE THE INFORMATION YOU SHOULD NOT INCLUDE IN AN INVITATION.||2/10 WRITING • BOOK 3 • MOD 1 • UNIT 1||Date, time|Music, food|Place, address|To, from": "Music, food",
+    "DEFAULT_MULTI:CHOOSE THE RIGHT OPTION TO ANSWER THE QUESTION: WHAT DO YOU USUALLY DO AT CHRISTMAS'EVE?||3/10 WRITING • BOOK 3 • MOD 1 • UNIT 1||Give gifts|Go to the mountains|Play football": "Give gifts",
+    "DEFAULT_MULTI:READ AND CHOOSE THE INFORMATION YOU SHOULD INCLUDE IN AN INVITATION||4/10 WRITING • BOOK 3 • MOD 1 • UNIT 1||Date|Decorations|Guests": "Date",
+    "DEFAULT_MULTI:CHOOSE THE BEST ANSWER FOR THE QUESTION: WHAT DO YOU CELEBRATE ON THIS DAYS?||October 31st.||HALLOWEEN|VALENTINE'S DAY": "HALLOWEEN",
+    "DEFAULT_MULTI:COMPLETE AND CHOOSE THE BEST OPTION: NEW YEAR'S EVE IS CELEBRATED ON:||6/10 WRITING • BOOK 3 • MOD 1 • UNIT 1||December 31st|February 14th|July 4th|October 18th": "December 31st",
+    "DEFAULT_MULTI:COMPLETE THE FOLLOWING SENTENCE WITH THE CORRECT VERB: (GIVE, BRING)||You need to a gift.||BRING|GIVE": "BRING",
+    "DEFAULT_MULTI:READ AND CHOOSE THE THINGS THAT YOU NEED FOR A PARTY.||7/10 WRITING • BOOK 3 • MOD 1 • UNIT 1||Books, food, music|Date, Time, Place, Address|Food, date, place, music, books, pencils|Invitation, food, music, place": "Invitation, food, music, place",
+    "T8:READ AND CHOOSE THE RIGHT OCCASION.||IMG_DIM:387x120||Christmas|Halloween|Valentine's day": [
+        [
+            "Valentine's day"
+        ]
+    ],
+    "0:On December 31st we celebrate Christmas Party|5:On December 25th we celebrate Christmas": [
+        [
+            "False",
+            "True"
+        ]
+    ],
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION TO COMPLETE THE SENTENCE.||Do not be late for your English exam. You be at school on time.||CAN|MAY|MUST": "MUST",
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION TO COMPLETE THE QUESTION.||we leave or do you want to wait?||DO|HAD|HAVE": "DO",
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION TO COMPLETE THE SENTENCE.||You help me!||CAN TO|HAVE TO|SHOULD TO": "HAVE TO",
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION TO COMPLETE THE SENTENCE.||We have to rush. We miss the last bus to go home||COULDN'T|MUSTN'T|NEEDN'T": "MUSTN'T",
+    "T4:COMPLETE THE FOLLOWING SENTENCES USING THE INFORMATION PROVIDED.||KW:Are you eating a lot of junk food. You will be|I should to get strong bones|You should run to keep fit. You need to|You should visit||DEF:do exercises|drink milk|sick|the dentist": [
+        [
+            "sick",
+            "drink milk",
+            "the dentist",
+            "do exercises"
+        ]
+    ],
+    "T8:READ THE ARTICLE. CHOOSE THE BEST OPTION TO ANSWER THE QUESTION: WHAT IS THE TOPIC ABOUT?||IMG_DIM:268x108||General information about obesity|Obesity and its benefits|Obesity and its consequences": [
+        [
+            "General information about obesity"
+        ]
+    ],
+    "T8:LOOK AT THE PICTURES AND MATCH THEM WITH THE WORDS.||IMG_DIM:341x194|IMG_DIM:341x258|IMG_DIM:341x365||dancing|doing exercises|drink water": [
+        [
+            "dancing",
+            "drink water",
+            "doing exercises"
+        ]
+    ],
+    "0:This is some advice 'You should see the doctor'.": [
+        [
+            "True"
+        ]
+    ],
+    "T4:READ AND MATCH SOME ADVICE WITH THE ADVISOR.||KW:You should always put the seat bell|You should read to improve your vocabulary|You should take a pill everyday||DEF:Doctor|Police officer|Teacher": [
+        [
+            "Doctor",
+            "Teacher",
+            "Police officer"
+        ]
+    ],
+    "DEFAULT_MULTI:COMPLETE WITH THE CORRECT PHRASES THE FOLLOWING EMAIL||, Ana. I hope.||DAER|DEAR": "DEAR",
+    "DEFAULT_MULTI:COMPLETE WITH THE CORRECT PHRASES THE FOLLOWING EMAIL||You are our meeting is about the Tuitions.||DO WELL|DOING WELL": "DOING WELL",
+    "DEFAULT_MULTI:COMPLETE WITH THE CORRECT PHRASES THE FOLLOWING EMAIL||It is becoming longer. Could you buy the snacks and drinks for them, please?||TANK YOU|THANK YOU": "THANK YOU",
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION TO ANSWER THE QUESTION: HOW DID YOU NOT SEND A FORMAL LETTER?||2/10 WRITING • BOOK 3 • MOD 1 • UNIT 1||By email|By hand|By post": "By hand",
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION TO COMPLETE INFORMATION: A FORMAL LETTER SHOULD START WITH THE FOLLOWING PHRASE:||3/10 WRITING • BOOK 3 • MOD 1 • UNIT 1||Dear Mrs. Bidden|Hi|What's up?": "Dear Mrs. Bidden",
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION TO ANSWER THE QUESTION: WHICH OF THE FOLLOWING WOULD BE A SUITABLE GREETING?||4/10 WRITING • BOOK 3 • MOD 1 • UNIT 1||Dear Mr. Hopkins|Hi|What about you Mr. Moya?": "Dear Mr. Hopkins",
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION TO ANSWER THE FOLLOWING QUESTION: HAVE YOUR EVER WRITTEN A FORMAL LETTER?||5/10 WRITING • BOOK 3 • MOD 1 • UNIT 1||No, I do not|No, I has not|Yes, I have": "Yes, I have",
+    "0:An informal email is: It straight to the point, less detailed and it uses passive voice.": [
+        [
+            "False"
+        ]
+    ],
+    "DEFAULT_MULTI:READ THE ACTIVITIES AND CHOOSE THE PHRASES OR WORDS USED TO WRITE LETTERS.||7/10 WRITING • BOOK 3 • MOD 1 • UNIT 1||Dear, thanks, see you|Do homework and clean the house|Read a book and play football": "Dear, thanks, see you",
+    "T4:READ THESE 2 EMAILS. WHICH OF THEM ARE FORMAL OR INFORMAL?||KW:Dear Emily. How are you? I hope you are fine. Let me know when are you arriving to the airport? Bye, Laura.|HI Celene, I hope you are enjoying the warm weather. I just want to request the contact information of Martha Loor. Thanks, Viviana Gómez||DEF:Formal|Informal": [
+        [
+            "Informal",
+            "Formal"
+        ]
+    ],
+    "T4:IDENTIFY AND CHOOSE THE BEST OPTION FOR THE OPENING AND ENDING OF THESE EMAILS.||KW:Andrew I hope you are doing well. Can you go shopping and bring some tomatoes? Remember tonight dinner with the Cantos Family. Try to come early, Lily|Susan Please get the material for the Science project. We can meet in the library in the afternoon. What do you think? Thanks in advance. Leopold||DEF:Ending|Opening": [
+        [
+            "Opening",
+            "Ending"
+        ]
+    ],
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION TO COMPLETE INFORMATION: START A FORMAL LETTER WITH:||9/10 WRITING • BOOK 3 • MOD 1 • UNIT 1||Dear Sir or Madam|Elizabeth|I need to tell you": "Dear Sir or Madam",
+    "0:She|blading|doesn't|like|roller|2:She|likes|play|tennis": [
+        [
+            [
+                "She",
+                "doesn't",
+                "like",
+                "roller",
+                "blading"
+            ],
+            [
+                "She",
+                "likes",
+                "play",
+                "tennis"
+            ]
+        ]
+    ],
+    "T11_BATCH:ORDER AND FORM THE WORD ACCORDING TO THE SPORT.||CTX:...||CCEROS ___|GIPNPNGO ___|KBASBLLAET ___": [
+        [
+            "SOCCER",
+            "BASKETBALL",
+            "PINGPONG"
+        ]
+    ],
+    "DEFAULT_MULTI:COMPLETE THE SENTENCES.||She listening to music.||ARE|IS": "IS",
+    "DEFAULT_MULTI:COMPLETE THE SENTENCES.||He running today.||AM|IS": "IS",
+    "DEFAULT_MULTI:COMPLETE THE SENTENCES.||I snowboarding in Canada.||AM|IS": "AM",
+    "T8:LOOK AT THE PICTURE AND ANSWER THE QUESTION: WHAT IS SHE DOING?||IMG_DIM:443x333||HE IS PLAYING SOCCER.|SHE IS WORKING ON THE COMPUTER.": [
+        [
+            "SHE IS WORKING ON THE COMPUTER."
+        ]
+    ],
+    "T8:MATCH THE CORRECT THING WITH A LINE.||IMG_DIM:341x266|IMG_DIM:341x299|IMG_DIM:341x311|IMG_DIM:341x341||Basket|Bat|Cricket|Roller skates": [
+        [
+            "Bat",
+            "Cricket",
+            "Roller skates",
+            "Basket"
+        ]
+    ],
+    "0:Can I use my hands to play football?": [
+        [
+            "False"
+        ]
+    ],
+    "DEFAULT_MULTI:COMPLETE THE SENTENCE.||I never do||BOOK|SWIMMING": "SWIMMING",
+    "DEFAULT_MULTI:COMPLETE THE SENTENCE.||What do you need to play tennis?||THE POOL|THE RACKET": "THE RACKET",
+    "DEFAULT_MULTI:CHOOSE THE CORRECT SENTENCE.||6/9 VOCABULARY • BOOK 3 • MOD 1 • UNIT 1||Every day I play football.|I play every day football.": "Every day I play football.",
+    "T8:LOOK AT THE PICTURE AND COMPLETE THE SENTENCE: WE ARE PLAYING ________||IMG_DIM:262x198||SOCCER|TENNIS|VOLLEYBALL": [
+        [
+            "VOLLEYBALL"
+        ]
+    ],
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION: KEEP THEM IN CUSTODY FOR A PERIOD OF TIME.||1/10 VOCABULARY • BOOK 3 • MOD 1 • UNIT 1||Counseling|Detain|Waive": "Detain",
+    "0:The decisions made by the Supreme court are final.": [
+        [
+            "True"
+        ]
+    ],
+    "0:A judge has the right to make up laws while presiding over a case?": [
+        [
+            "False"
+        ]
+    ],
+    "DEFAULT_MULTI:CHOOSE THE CORRECT ANSWER: THE HIGHEST APPEALS COURT IN THE NATION?||4/10 VOCABULARY • BOOK 3 • MOD 1 • UNIT 1||Circuit Court|Justice Court|Supreme Court": "Supreme Court",
+    "0:?|How|all|did|steal|this|you|2:He|newspaper|steal|to|tried|your": [
+        [
+            [
+                "How",
+                "did",
+                "you",
+                "steal",
+                "all",
+                "this",
+                "?"
+            ],
+            [
+                "He",
+                "tried",
+                "to",
+                "steal",
+                "your",
+                "newspaper"
+            ]
+        ]
+    ],
+    "DEFAULT_MULTI:CHOOSE THE RIGHT WORD ACCORDING TO THE DESCRIPTION TO COMPLETE THE SENTENCES.||The use of physical force generates||DISCIPLINE|VIOLENCE": "VIOLENCE",
+    "DEFAULT_MULTI:CHOOSE THE RIGHT WORD ACCORDING TO THE DESCRIPTION TO COMPLETE THE SENTENCES.||Hurting a person physically or emotionally is||ABUSE|THEFT": "ABUSE",
+    "T8:MATCH AS APPROPRIATE||IMG_DIM:341x227|IMG_DIM:341x227_1|IMG_DIM:341x228||CRIME|JAIL|JUDGE": [
+        [
+            "JAIL",
+            "CRIME",
+            "JUDGE"
+        ]
+    ],
+    "T8:CHOOSE THE BEST OPTION: WHAT IS THIS?||IMG_DIM:398x399||JAIL|POLICE|THEFT": [
+        [
+            "THEFT"
+        ]
+    ],
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION: A PLACE FOR PEOPLE ACCUSED OF CRIME.||9/10 VOCABULARY • BOOK 3 • MOD 1 • UNIT 1||ABUSE|ALLOW|JAIL": "JAIL",
+    "T8:LOOK AT THE PICTURE. GUESS THE WORD.||IMG_DIM:443x571||go shopping|watch TV": [
+        [
+            "go shopping"
+        ]
+    ],
+    "DEFAULT_MULTI:COMPLETE THE QUESTION AND ANSWER WITH THE RIGHT WORDS: A: WHAT ____ YOU DO AFTER SCHOOL? B: I _____.||2/10 VOCABULARY • BOOK 3 • MOD 1 • UNIT 1||Do/eat|Does/eats|Is/eat": "Do/eat",
+    "DEFAULT_MULTI:CIRCLE THE CORRECT WORD IN EACH SENTENCE.||My sister S fried rice.||COOK|COOKS": "COOKS",
+    "DEFAULT_MULTI:CIRCLE THE CORRECT WORD IN EACH SENTENCE.||My father his car.||WASH|WASHES": "WASHES",
+    "DEFAULT_MULTI:CIRCLE THE CORRECT WORD IN EACH SENTENCE.||They S under the tree.||PLAY|PLAYS": "PLAY",
+    "DEFAULT_MULTI:COMPLETE THE SENTENCES WITH THE BEST OPTION: ____ THEY _____ FOOTBALL EVERY DAY?||4/10 VOCABULARY • BOOK 3 • MOD 1 • UNIT 1||Do / play|Does / play|Does / plays": "Do / play",
+    "0:They|dancing|go|on|the|weekends": [
+        [
+            [
+                "They",
+                "go",
+                "dancing",
+                "on",
+                "the",
+                "weekends"
+            ]
+        ]
+    ],
+    "DEFAULT_MULTI:COMPLETE THE QUESTION||Do you want to hiking with me?||DO|GO|PLAY": "GO",
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION.||I am yoga right now.||DOING|GOING|PLAYING": "DOING",
+    "0:I|everyday|running|2:He|camping|goes|4:Ping Pong|We|play": [
+        [
+            [
+                "I",
+                "running",
+                "everyday"
+            ],
+            [
+                "He",
+                "goes",
+                "camping"
+            ],
+            [
+                "We",
+                "play",
+                "Ping Pong"
+            ]
+        ]
+    ],
+    "T8:MATCH THE CORRECT PICTURE WITH THE LINE.||IMG_DIM:341x180|IMG_DIM:341x273|IMG_DIM:341x341|IMG_DIM:341x341_1||go swimming|listen to music|play an instrument|play computer games": [
+        [
+            "play computer games",
+            "play an instrument",
+            "listen to music",
+            "go swimming"
+        ]
+    ],
+    "DEFAULT_MULTI:CHOOSE THE SENTENCE WITH THE RIGHT ORDER: SCHOOL - SWIM - AFTER - THEY.||9/10 VOCABULARY • BOOK 3 • MOD 1 • UNIT 1||School swim after they|Swim they after school|They swim after school": "They swim after school",
+    "T8:LOOK AT PICTURE AND CHOOSE THE RIGHT ANSWER: WHAT DOES THIS ICON REPRESENT?||IMG_DIM:443x527||Android|Apple|Microsoft": [
+        [
+            "Android"
+        ]
+    ],
+    "DEFAULT_MULTI:COMPLETE THE SENTENCE WITH THE RIGHT ANSWER: THE PART OF A COMPUTER WHERE YOU TYPE IS _______||1/10 VOCABULARY • BOOK 3 • MOD 1 • UNIT 1||Password|keyboard|screen": "keyboard",
+    "T8:LOOK AT PICTURE AND CHOOSE THE RIGHT ANSWER: NAME THIS LOGO IS ________||IMG_DIM:300x264||Bing|Windows|Yahoo": [
+        [
+            "Windows"
+        ]
+    ],
+    "DEFAULT_MULTI:CIRCLE THE CORRECT ANSWER: WHAT IS THE CPU?||3/10 VOCABULARY • BOOK 3 • MOD 1 • UNIT 1||soft drive|the brain of the computer|the main circuit board": "the brain of the computer",
+    "DEFAULT_MULTI:CIRCLE THE CORRECT ANSWER: WHAT DOES THE TERM 'BUG' MEAN FOR TECHNOLOGY?||4/10 VOCABULARY • BOOK 3 • MOD 1 • UNIT 1||an insect|not enough memory|problem": "problem",
+    "DEFAULT_MULTI:CIRCLE THE CORRECT ANSWER: A COMPUTER YOU CARRY AROUND WITH YOU.||5/10 VOCABULARY • BOOK 3 • MOD 1 • UNIT 1||laptop|password|surf": "laptop",
+    "DEFAULT_MULTI:CIRCLE THE CORRECT ANSWER: 1) A WORD THAT MEANS TO MOVE AROUND THE INTERNET.||6/10 VOCABULARY • BOOK 3 • MOD 1 • UNIT 1||hardware|surf|upload": "surf",
+    "0:A Browser is an example of a software program or application.": [
+        [
+            "True"
+        ]
+    ],
+    "DEFAULT_MULTI:CHOOSE A, B, OR C: WHAT PROVIDES LONG TERM MEMORY FOR YOUR COMPUTER.||8/10 VOCABULARY • BOOK 3 • MOD 1 • UNIT 1||disk drive|hard drive|soft drive": "hard drive",
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION: WEBSITE THAT'S A BIT LIKE A DIARY.||9/10 VOCABULARY • BOOK 3 • MOD 1 • UNIT 1||Blog|Laptop|Password": "Blog",
+    "DEFAULT:READ THE FLYER AND CHOOSE THE RIGHT ANSWER FOR THE QUESTION: THE TOPIC FOR THE CONGRESS IS:||CTX:SECOND ELT CONGRESS: PORTOVIEJO IMPLICATIONS AND A...nformation: roispoma@yahoo.com 05 2632677 ext. 196||||||||Implications and applications of modern language teaching approaches and methodologies.|Implications and applications of modern language teaching approaches and methodologies.|Second ELT Congress: Portoviejo|Second ELT Congress: Portoviejo": [
+        "Implications and applications of modern language teaching approaches and methodologies."
+    ],
+    "0:The information provided in a flyer is more basic than a brochure.|5:A": [
+        [
+            "True",
+            "False"
+        ]
+    ],
+    "DEFAULT:READ THE TEXT BELOW AND ANSWER THE QUESTION: THIS FLYER PROVIDES INFORMATION ABOUT:||CTX:SECOND ELT CONGRESS: PORTOVIEJO IMPLICATIONS AND A...nformation: roispoma@yahoo.com 05 2632677 ext. 196||||||||A concert at the university|A concert at the university|A new academic semester|A new academic semester|An academic event|An academic event": [
+        "An academic event"
+    ],
+    "DEFAULT:READ THE FLYER AND CHOOSE THE RIGHT ANSWER FOR THE QUESTION: HOW MUCH DO YOU HAVE TO PAY FOR THE CONGRESS IF YOU ARE A STUDENT?||CTX:SECOND ELT CONGRESS: PORTOVIEJO IMPLICATIONS AND A...nformation: roispoma@yahoo.com 05 2632677 ext. 196||||||||$10,00|$10,00|$15,00|$15,00": [
+        "$10,00"
+    ],
+    "T8:READ THE FLYER AND CHOOSE THE RIGHT ANSWER FOR THE QUESTION: HOW LONG WILL THIS EVENT LAST?||IMG_DIM:380x325||8:30 am|October 24th, 25th": [
+        [
+            "October 24th, 25th"
+        ]
+    ],
+    "T8:MATCH THE PICTURES WITH THEIR NAMES.||IMG_DIM:341x242|IMG_DIM:341x314||A brochure|A flyer": [
+        [
+            "A flyer",
+            "A brochure"
+        ],
+        [
+            "A brochure",
+            "A flyer"
+        ]
+    ],
+    "DEFAULT_MULTI:COMPLETE THE SENTENCES USING THE WORDS:||A is more like a poster.||BROCHURE|FLYER": "FLYER",
+    "DEFAULT_MULTI:COMPLETE THE SENTENCES USING THE WORDS:||A is a folded piece with two or three panels.||BROCHURE|FLYER": "BROCHURE",
+    "DEFAULT:READ THE PARAGRAPH AND CHOOSE THE BEST ANSWER FOR THE QUESTION. WHAT DOES MONICA ATTACH WITH THIS LETTER?||CTX:Routine technical difficulties are not extraordina...s sincerely, Monica Lissette Domo AIRLINE CUSTOMER||||||||A copy of the tickets and correspondence|A copy of the tickets and correspondence|The sum of $2500 in compensation|The sum of $2500 in compensation": [
+        "A copy of the tickets and correspondence"
+    ],
+    "DEFAULT:READ THE PARAGRAPH AND CHOOSE THE BEST ANSWER FOR THE QUESTION: WHY WAS THE FLIGHT CANCELLED SPECIFICALLY?||CTX:September 25th, 2017 Monica Lissette Domo Urbina A...canceled because of an extraordinary circumstance.||||||||The reason is not clearly explained|The reason is not clearly explained|There was an extraordinary circumstance|There was an extraordinary circumstance": [
+        "There was an extraordinary circumstance"
+    ],
+    "DEFAULT:READ THE PARAGRAPH AND CHOOSE THE BEST ANSWER FOR THE QUESTION: HOW MUCH DOES MONICA WILL RECEIVE AS COMPENSATION?||CTX:Routine technical difficulties are not extraordina...s sincerely, Monica Lissette Domo AIRLINE CUSTOMER||||||||A copy of the tickets and correspondence|A copy of the tickets and correspondence|The sum of $2500 in compensation|The sum of $2500 in compensation": [
+        "The sum of $2500 in compensation"
+    ],
+    "DEFAULT:READ THE PARAGRAPH AND CHOOSE THE BEST ANSWER FOR THE QUESTION: WHAT WAS MONICA DESTINATION?||CTX:September 25th, 2017 Monica Lissette Domo Urbina A...canceled because of an extraordinary circumstance.||||||||José Joaquín de Olmedo|José Joaquín de Olmedo|New Jersey|New Jersey": [
+        "New Jersey"
+    ],
+    "DEFAULT:READ THE LETTER. CHOOSE THE BEST OPTION TO COMPLETE THE IDEA: THIS LETTER IS BECAUSE _______||CTX:September 25th, 2017 Monica Lissette Domo Urbina A...s sincerely, Monica Lissette Domo AIRLINE CUSTOMER||||||||Monica wants to thank the airline for its services.|Monica wants to thank the airline for its services.|She wants to claim compensation for a canceled flight.|She wants to claim compensation for a canceled flight.|She wants to complain about bad service.|She wants to complain about bad service.": [
+        "She wants to claim compensation for a canceled flight."
+    ],
+    "DEFAULT:READ THE LETTER AGAIN: DESTINATION WAS||CTX:September 25th, 2017 Monica Lissette Domo Urbina A...s sincerely, Monica Lissette Domo AIRLINE CUSTOMER||||||||277GYE-NJ EC|277GYE-NJ EC|to New Jersey|to New Jersey": [
+        "to New Jersey"
+    ],
+    "DEFAULT:READ THE LETTER AGAIN: MONICA'S FLIGHT NUMBER WAS||CTX:September 25th, 2017 Monica Lissette Domo Urbina A...s sincerely, Monica Lissette Domo AIRLINE CUSTOMER||||||||277GYE-NJ EC|277GYE-NJ EC|to New Jersey|to New Jersey": [
+        "277GYE-NJ EC"
+    ],
+    "DEFAULT:READ THE PARAGRAPH AND CHOOSE THE BEST ANSWER FOR THE QUESTION: WHY IS MONICA AFFECTED?||CTX:Routine technical difficulties are not extraordina...s sincerely, Monica Lissette Domo AIRLINE CUSTOMER||||||||Because she spent time and money and exposed her children|Because she spent time and money and exposed her children|Because she will receive some money as compensation|Because she will receive some money as compensation": [
+        "Because she spent time and money and exposed her children"
+    ],
+    "DEFAULT:READ THE PARAGRAPH AND CHOOSE THE BEST ANSWER FOR THE QUESTION: WHEN SHOULD MONICA BOARD THE FLIGHT?||CTX:September 25th, 2017 Monica Lissette Domo Urbina A...canceled because of an extraordinary circumstance.||||||||September 23rd, 2017|September 23rd, 2017|September 25th, 2017|September 25th, 2017": [
+        "September 23rd, 2017"
+    ],
+    "DEFAULT_MULTI:READ THE PARAGRAPH AND CHOOSE THE BEST TITLE FOR IT.||The Ecuadorian government should generate plans focused on education, employment, and leisure programs, as well as assisted guides for those girls and boys who come from broken families or have dropped out of school.||Factors for antisocial behaviors|Last recommendation|Legal systems procedures|Plans in different areas": "Plans in different areas",
+    "DEFAULT_MULTI:READ THE PARAGRAPH AND CHOOSE THE BEST TITLE FOR IT.||It is not enough to have laws that repress disorientated adolescents, but also provide measures to show equality and justice by creating an atmosphere of hope and peace for our children.||Factors for antisocial behaviors|Last recommendation|Legal systems procedures|Plans in different areas": "Last recommendation",
+    "DEFAULT:READ THE PARAGRAPH ONE MORE TIME. CHOOSE THE RIGHT ANSWER FOR THE QUESTION: WHAT IS THE MOST COMMON PROCEDURE THAT LEGAL SYSTEM PRESCRIBES TO DEAL WITH YOUNG CRIMINALS?||CTX:Our country is also affected by this situation. Al...and the necessity of communicate without violence.||||||||Prevention of juvenile delinquency and the necessity of communicate without violence.|Prevention of juvenile delinquency and the necessity of communicate without violence.|The detention centers, the first step to control this group is to promote campaigns planned to sensitixe youth aboute the negative effects.|The detention centers, the first step to control this group is to promote campaigns planned to sensitixe youth aboute the negative effects.": [
+        "The detention centers, the first step to control this group is to promote campaigns planned to sensitixe youth aboute the negative effects."
+    ],
+    "DEFAULT_MULTI:READ THE PARAGRAPH ONE MORE TIME. CHOOSE THE RIGHT ANSWER FOR THE QUESTION: WHAT IS THE RECONMENDATION TO THE END OF THE TEXT?||It is not enough to have laws that repress disorientated adolescents, but also provide measures to show equality and justice by creating an atmosphere of hope and peace for our children.||To have laws that repress disorientated adolescents.|To provide measures to show equality and justice for a peaceful and hopeful environment.": "To provide measures to show equality and justice for a peaceful and hopeful environment.",
+    "DEFAULT_MULTI:READ THE PARAGRAPH ONE MORE TIME. CHOOSE THE RIGHT ANSWER FOR THE QUESTION: WHAT OTHER ALTERNATIVES SHOULD LAWS IN ECUADOR PROVIDE TO HELP DISORIENTATED ADOLESCENTS?||The Ecuadorian government should generate plans focused on education, employment and leisure programs, as well as assisted guides for those girls and boys who come from broken families or have dropped out school.||Plan focused on educative, employment and leisure programs.|Provide measures to show equality and justice by creating an atmosphere of hope and peace for children.": "Plan focused on educative, employment and leisure programs.",
+    "DEFAULT:READ THE PARAGRAPH ONE MORE TIME. CHOOSE THE RIGHT ANSWER FOR THE QUESTION: WHAT ARE THE CAUSES WHICH PROVOKE THE ANTISOCIAL BEHAVIOR IN OUR CHILDREN AND TEENAGERS?||CTX:Nowadays, the antisocial behavior of children or t... results in serious cases of juvenile delinquency.||||||||Antisocial behavior is caused by economic, social and cultural factors.|Antisocial behavior is caused by economic, social and cultural factors.|Children are exposed to violence and juvenile delinquency.|Children are exposed to violence and juvenile delinquency.": [
+        "Antisocial behavior is caused by economic, social and cultural factors."
+    ],
+    "DEFAULT:READ THE PARAGRAPH AND CHOOSE THE BEST TITLE FOR IT||CTX:Our country is also affected by this situation. Al...and the necessity of communicate without violence.||||||Factors for antisocial behaviors|Factors for antisocial behaviors|Last recommendation|Last recommendation|Legal systems procedures|Legal systems procedures|Plans in different areas|Plans in different areas": [
+        "Legal systems procedures"
+    ],
+    "DEFAULT_MULTI:READ THE TEXT AGAIN AND COMPLETE (T) FOR TRUE SENTENCES AND AN (F) TO THE FALSE ONES:||Juvenile delinquency is caused by cultural factors.||F|T": "T",
+    "DEFAULT_MULTI:READ THE TEXT AGAIN AND COMPLETE (T) FOR TRUE SENTENCES AND AN (F) TO THE FALSE ONES:||Children are exposed to violence in many cities.||F|T": "T",
+    "DEFAULT_MULTI:READ THE TEXT AGAIN AND COMPLETE (T) FOR TRUE SENTENCES AND AN (F) TO THE FALSE ONES:||Ecuadorian government should generate a plan for good students only.||F|T": "F",
+    "DEFAULT:READ THE PARAGRAPH AND CHOOSE THE BEST TITLE FOR IT.||CTX:Nowadays, the antisocial behavior of children or t...s results in serious cases of juvenile delinquency||||||||Factors for antisocial behaviors|Factors for antisocial behaviors|Last recommendation|Last recommendation|Legal systems procedures|Legal systems procedures|Plans in different areas|Plans in different areas": [
+        "Factors for antisocial behaviors"
+    ],
+    "DEFAULT:READ THE ARTICLE AND CHOOSE THE BEST TITLE FOR THE TEXT. CIRCLE THE RIGHT OPTION.||CTX:Nowadays, the antisocial behavior of children or t... an atmosphere of hope and peace for our children.||||||||Familiar violence|Familiar violence|Juvenile delinquency|Juvenile delinquency|Legal systems|Legal systems": [
+        "Juvenile delinquency"
+    ],
+    "DEFAULT_MULTI:TRUE OR FALSE||Michael Jackson was born in New Jersey.||F|T": "F",
+    "DEFAULT_MULTI:TRUE OR FALSE||He married Lisa Marie Presley, Elvis Presley's daughter in 1994.||F|T": "T",
+    "DEFAULT_MULTI:TRUE OR FALSE||Who was Michael Jackson?||A FAMOUS PAINTER.|A FAMOUS SINGER.": "A FAMOUS SINGER.",
+    "DEFAULT_MULTI:TRUE OR FALSE||When did he died?||ON 11TH SEPTEMBER,2001|ON JUNE 25TH, 2009": "ON JUNE 25TH, 2009",
+    "DEFAULT_MULTI:READ THE PARAGRAPH AND CHOOSE THE BEST TITLE FOR IT.||He married Lisa Marie Presley, Elvis Presley’s daughter in 1994 and got divorced a few months later. He had three children with his second wife Deborah Rowe.||Childhood and family|Marriage|Popularity|Succesful songs": "Marriage",
+    "DEFAULT_MULTI:READ THE PARAGRAPH AND CHOOSE THE BEST TITLE FOR IT.||He died on June 25th, 2009, at age 50 in a cruel medical tragedy. He will be remembered as a great artist, singer, dancer, writer and businessman. Among his most heard songs besides “Thriller”, are “Don’t stop till you get enough”, “Billie Jean” “We are the world”, “Smooth criminal”, “Black or white”, and “Earth song”.||Childhood and family|Marriage|Popularity|Succesful songs": "Succesful songs",
+    "DEFAULT_MULTI:READ THE PARAGRAPH AND CHOOSE THE BEST TITLE FOR IT.||Solo success for Michael was inevitable, and by the 1980s, he became more popular than his brotherly group. He sold millions of records culminating in the biggest-selling album of all the time, “Thriller” in 1982.||Childhood and family|Marriage|Popularity|Succesful songs": "Popularity",
+    "DEFAULT_MULTI:READ THE PARAGRAPH AND CHOOSE THE BEST TITLE FOR IT.||The American superstar Michael Jackson was born in Gary, Indiana, on August 29th, 1958. He wanted to be an artist since he was a child. In 1964, Michael began to perform with his brothers Jackie, Tito, Jermaine, and Marlon and soon he became the dominant voice of The Jackson 5.||Childhood and family|Marriage|Popularity|Succesful songs": "Childhood and family",
+    "DEFAULT:READ THE TEXT. ANSWER THE QUESTION: THIS ARTICLE IS ABOUT:||CTX:The American superstar Michael Jackson was born in...oth criminal”, “Black or white”, and “Earth song”.||||||||A biography|A biography|A scientific article|A scientific article|A story|A story": [
+        "A biography"
+    ],
+    "DEFAULT_MULTI:TRUE OR FALSE||Michael become the dominant voice of||AEROSMITH|JACKSON 5": "JACKSON 5",
+    "DEFAULT_MULTI:TRUE OR FALSE||He had children with his second wife.||SEVEN|THREE": "THREE",
+    "DEFAULT_MULTI:TRUE OR FALSE||He died in 2009 at||50|75": "50",
+    "DEFAULT_MULTI:TRUE OR FALSE||Michael become the dominant voice of Backstreet boys.||F|T": "F",
+    "DEFAULT_MULTI:TRUE OR FALSE||Michael has 3 children with his second wife.||F|T": "T",
+    "T8:LOOK AT THESE PICTURES. MATCH THE NAME WITH THE CORRECT OPTION.||IMG_DIM:341x346|IMG_DIM:341x348|IMG_DIM:341x371||Bob Marley|Elvis Presley|Michael Jackson": [
+        [
+            "Bob Marley",
+            "Michael Jackson",
+            "Elvis Presley"
+        ]
+    ],
+    "DEFAULT_MULTI:CHOOSE THE RIGHT ANSWER USING HAVE TO/ HAS TO:||THE TEACHER SEND A TEXT MESSAGE.||HAS TO|HAVE TO": "HAS TO",
+    "DEFAULT_MULTI:CHOOSE THE RIGHT ANSWER USING HAVE TO/ HAS TO:||VICTORIA READ THE NEWSPAPER.||HAS TO|HAVE TO": "HAS TO",
+    "DEFAULT_MULTI:CHOOSE THE RIGHT ANSWER USING HAVE TO/ HAS TO:||YOU TAKE PHOTOS.||HAS TO|HAVE TO": "HAVE TO",
+    "DEFAULT_MULTI:CHOOSE THE RIGHT ANSWER USING HAVE TO/ HAS TO:||ANDRES WRITE WITH PENCIL.||HAS TO|HAVE TO": "HAS TO",
+    "DEFAULT_MULTI:CHOOSE THE RIGHT ANSWER USING HAVE TO/ HAS TO:||HE WRITE IN ENGLISH.||HAS TO|HAVE TO": "HAS TO",
+    "T4:MATCH THE HALVES TO MAKE SENTENCES.||KW:Sarah|We||DEF:has to feed her pet every day.|have to finish this task for tomorrow.": [
+        [
+            "have to finish this task for tomorrow.",
+            "has to feed her pet every day."
+        ]
+    ],
+    "T4:MATCH THE HALVES TO MAKE SENTENCES.||KW:Andree|Ecuadorians||DEF:has to help his little brother.|have to learn English.": [
+        [
+            "have to learn English.",
+            "has to help his little brother."
+        ]
+    ],
+    "T4:MATCH THE HALVES TO MAKE SENTENCES.||KW:Carolina|They||DEF:has to write a letter to her room.|have to clean the desk.": [
+        [
+            "have to clean the desk.",
+            "has to write a letter to her room."
+        ]
+    ],
+    "DEFAULT_MULTI:CHOOSE THE RIGHT ANSWER USING HAVE TO/ HAS TO:||UTM STUDENTS LEARN ENGLISH.||HAS TO|HAVE TO": "HAVE TO",
+    "DEFAULT_MULTI:CHOOSE THE RIGHT QUESTION USING MUST/ MUST NOT:||NOT||MUST|MUST NOT": "MUST NOT",
+    "DEFAULT_MULTI:ORDER THE FOLLOWING QUESTION: USE/ CAN / PEN / YOUR / I||1/10 GRAMMAR • BOOK 3 • MOD 1 • UNIT 1||CAN I USE PEN YOUR?|CAN I USE YOUR PEN?|I CAN USE YOUR PEN?": "CAN I USE YOUR PEN?",
+    "DEFAULT_MULTI:ORDER THE FOLLOWING QUESTION: COME IN / MAY / I||2/10 GRAMMAR • BOOK 3 • MOD 1 • UNIT 1||MAY COME I IN?|MAY I COME IN?|MAY I IN COME?": "MAY I COME IN?",
+    "DEFAULT_MULTI:ORDER THE FOLLOWING QUESTION: YOUR ATTENTION / MAY / I / HAVE||3/10 GRAMMAR • BOOK 3 • MOD 1 • UNIT 1||MAY HAVE I YOUR ATTENTION?|MAY I HAVE YOUR ATTENTION?|MAY I YOUR ATTENTION HAVE?": "MAY I HAVE YOUR ATTENTION?",
+    "DEFAULT_MULTI:ORDER THE FOLLOWING QUESTION: A SECOND / MAY WE / FOR / TALK||4/10 GRAMMAR • BOOK 3 • MOD 1 • UNIT 1||MAY WE FOR A SECOND TALK?|MAY WE FOR TALK A SECOND?|MAY WE TALK FOR A SECOND?": "MAY WE TALK FOR A SECOND?",
+    "DEFAULT_MULTI:ORDER THE FOLLOWING QUESTION: EARLY / LEAVE / MAY / I||5/10 GRAMMAR • BOOK 3 • MOD 1 • UNIT 1||EARLY MAY I LEAVE?|MAY I LEAVE EARLY?|MAY LEAVE I EARLY?": "MAY I LEAVE EARLY?",
+    "DEFAULT_MULTI:ORDER THE FOLLOWING QUESTION: PARK / I / HERE / MAY||6/10 GRAMMAR • BOOK 3 • MOD 1 • UNIT 1||MAY I PARK HERE?|MAY PARK HERE I?|MAY PARK I HERE?": "MAY I PARK HERE?",
+    "DEFAULT_MULTI:ORDER THE FOLLOWING QUESTION: OPEN / MAY / I / WINDOW / THE||7/10 GRAMMAR • BOOK 3 • MOD 1 • UNIT 1||MAY I OPEN THE WINDOW?|MAY I THE OPEN WINDOW?|MAY OPEN I THE WINDOW?": "MAY I OPEN THE WINDOW?",
+    "DEFAULT_MULTI:ORDER THE FOLLOWING QUESTION: TOMORROW / LATE / BE / MAY I||8/10 GRAMMAR • BOOK 3 • MOD 1 • UNIT 1||MAY I BE LATE TOMORROW?|MAY I BE TOMORROW LATE?|TOMORROW MAY I BE LATE?": "MAY I BE LATE TOMORROW?",
+    "DEFAULT_MULTI:ORDER THE FOLLOWING QUESTION: CAN / START / I / A QUESTION||9/10 GRAMMAR • BOOK 3 • MOD 1 • UNIT 1||CAN I A QUESTION START?|CAN I START A QUESTION?|CAN START I A QUESTION?": "CAN I START A QUESTION?",
+    "DEFAULT_MULTI:USE COULD OR COULDN'T TO COMPLETE THE QUESTION||N'T||COULD|COULDN'T": "COULD",
+    "DEFAULT_MULTI:USE COULD OR COULDN'T TO COMPLETE THE QUESTION.||N'T||COULD|COULDN'T": "COULDN'T",
+    "T8:MATCH THE WORD WITH THE CORRECT PICTURE.||IMG_DIM:341x221|IMG_DIM:341x227|IMG_DIM:341x244|IMG_DIM:341x341||doctor|medicine|sore throat|water": [
+        [
+            "sore throat",
+            "medicine",
+            "water",
+            "doctor"
+        ]
+    ],
+    "T9:WHAT SHOULD MARIA DO ACCORDING TO THE DOCTOR?||CTX:...||||||Drink plenty of water|Drink plenty of water|Go to work|Go to work|Travel|Travel": [
+        "Drink plenty of water"
+    ],
+    "T9:WHAT DID THE DOCTOR GIVE MARIA?||CTX:...||||||A book|A book|A prescription for medicine|A prescription for medicine|A thermometer|A thermometer": [
+        "A prescription for medicine"
+    ],
+    "T4:COMPLETE THE TEXT||KW:Maria needs to and come back if she doesn’t feel better in a week.|Maria visited the doctor because she had a .|She gave Maria some and advised her to drink plenty of water.|The doctor examined her and said it was a infection.||DEF:medicine|minor|rest|sore throat": [
+        [
+            "sore throat",
+            "minor",
+            "medicine",
+            "rest"
+        ]
+    ],
+    "T9:WHY DID MARIA VISIT THE DOCTOR?||CTX:...||||||Because of a sore throat|Because of a sore throat|For a check-up|For a vaccination|For a vaccination": [
+        "Because of a sore throat"
+    ],
+    "T9:WHAT WILL MARIA DO IF SHE DOES NOT FEEL BETTER?||CTX:...||||||Call her friends|Call her friends|Come back to the doctor|Come back to the doctor|Go to a new doctor|Go to a new doctor": [
+        "Come back to the doctor"
+    ],
+    "T9:WHAT DID THE DOCTOR SAY ABOUT MARIA’S CONDITION?||CTX:...||||||It was a cold|It was a cold|It was a minor infection|It was a minor infection|It was a serious illness|It was a serious illness": [
+        "It was a minor infection"
+    ],
+    "T9:TRUE OR FALSE: MARK FELT GREAT AFTER EXERCISING AND HAD A PROTEIN SHAKE AFTER HIS WORKOUT.||CTX:...||||||False|False|True|True": [
+        "True"
+    ],
+    "T9:WHAT DID MARK DO FIRST AT THE GYM?||CTX:...||||||Did a workout on the treadmill|Did a workout on the treadmill|Lifted weights|Lifted weights|Took a shower|Took a shower": [
+        "Did a workout on the treadmill"
+    ],
+    "T9:HOW LONG DID MARK LIFT WEIGHTS?||CTX:...||||||15 minutes|15 minutes|30 minutes|30 minutes|45 minutes|45 minutes": [
+        "30 minutes"
+    ],
+    "T9:WHAT DID MARK DO AFTER HIS WORKOUT?||CTX:...||||||Ate a meal|Ate a meal|Took a shower|Took a shower|Went for a run|Went for a run": [
+        "Took a shower"
+    ],
+    "T9:HOW DOES MARK FEEL AFTER EXERCISING?||CTX:...||||||Great|Great|Hungry|Hungry|Tired and weak|Tired and weak": [
+        "Great"
+    ],
+    "T4:FILL IN THE BLANKS||KW:After his workout, he took a and drank a protein shake.|Mark goes to the gym times a week.|Today, he did a -minute workout on the treadmill|and then lifted for another 30 minutes.||DEF:30|shower|three|weights": [
+        [
+            "three",
+            "30",
+            "weights",
+            "shower"
+        ]
+    ],
+    "T9:TRUE OR FALSE: MARK'S WORKOUT ROUTINE INCLUDED LIFTING WEIGHTS BEFORE DOING THE TREADMILL EXERCISE.||CTX:...||||||False|False|True|True": [
+        "False"
+    ],
+    "T9:TRUE OR FALSE: MARK ONLY DID A 15-MINUTE WORKOUT ON THE TREADMILL TODAY.||CTX:...||||||False|False|True|True": [
+        "False"
+    ],
+    "T9:HOW OFTEN DOES MARK GO TO THE GYM?||CTX:...||||||Once a week|Once a week|Three times a week|Three times a week|Twice a week|Twice a week": [
+        "Three times a week"
+    ],
+    "T4:MATCH THE DEFINITION WITH THE ILLNESS.||KW:Cough|Fever|Sore throat|Stomachache||DEF:An act of coughing|Feel ache in your stomach|Get red and hot|Have swollen throat": [
+        [
+            "An act of coughing",
+            "Get red and hot",
+            "Feel ache in your stomach",
+            "Have swollen throat"
+        ]
+    ],
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION TO ANSWER THE QUESTION: ARE YOU TAKING ANY MEDICATION LILY?||2/8 WRITING • BOOK 3 • MOD 1 • UNIT 2||No, I do no|No. I am not|Yes, only two tablets": "Yes, only two tablets",
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION TO ANSWER THE QUESTION: WHICH OF THE OPTIONS BELOW IS AN EXAMPLE OF TRANSMISSIBLE DISEASE?||2/8 WRITING • BOOK 3 • MOD 1 • UNIT 2||Cholera|Obesity|Tooth decay": "Cholera",
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION TO ANSWER THE QUESTION: WHICH SYSTEM OF THE BODY IS INFECTED BY HIV?||3/8 WRITING • BOOK 3 • MOD 1 • UNIT 2||Digestive|Immune|Nervous": "Immune",
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION TO ANSWER THE QUESTION: WHICH ILLNESSES DO YOU KNOW?||4/8 WRITING • BOOK 3 • MOD 1 • UNIT 2||Broken leg|Cough|Fever": "Cough",
+    "T8:LOOK AT THE PICTURES. DO YOU KNOW THESE ILLNESSES? COMPLETE THEIR NAMES UNDER EACH PICTURE.||IMG_DIM:341x227|IMG_DIM:341x227_1|IMG_DIM:341x246||Cough|Got fever|Toothache": [
+        [
+            "Cough",
+            "Got fever",
+            "Toothache"
+        ]
+    ],
+    "0:Gerardo is forty years old|5:He is allergy to the salty food|6:He does not take any medicine|7:He lives in Portoviejo": [
+        [
+            "False",
+            "True",
+            "False",
+            "True"
+        ]
+    ],
+    "T8:IDENTIFY THE ILLNESSES ACCORDING TO EACH PICTURE. COMPLETE THEIR NAMES UNDER EACH PICTURE.||IMG_DIM:341x209|IMG_DIM:341x227|IMG_DIM:341x227_1||Headache|Stomachache|toothache": [
+        [
+            "Stomachache",
+            "Headache",
+            "toothache"
+        ]
+    ],
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION TO ANSWER THE QUESTION: ARE YOU TAKING ANY MEDICATION LILY?||7/8 WRITING • BOOK 3 • MOD 1 • UNIT 2||No, I do no|No. I am not|Yes, only two tablets": "Yes, only two tablets",
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION TO ANSWER THE QUESTION: ARE YOU TAKING ANY MEDICATION LILY?||8/8 WRITING • BOOK 3 • MOD 1 • UNIT 2||No, I do no|No. I am not|Yes, only two tablets": "Yes, only two tablets",
+    "T4:MATCH THE PHRASES ON THE LEFT WITH THE CORRECT ENDING ON THE RIGHT.||KW:I am so sorry because|I really appreciate your help with|I want to thank you for|I would like to apologize for||DEF:I could send your invitation.|not being able to attend your event.|the vaccination campaign.|your help with my homework.": [
+        [
+            "I could send your invitation.",
+            "your help with my homework.",
+            "not being able to attend your event.",
+            "the vaccination campaign."
+        ],
+        [
+            "not being able to attend your event.",
+            "your help with my homework.",
+            "I could send your invitation.",
+            "the vaccination campaign."
+        ]
+    ],
+    "DEFAULT_MULTI:CHOOSE THE RIGHT OPTION TO COMPLETE THE INFORMATION: THE CORRECT DEFINITION OF AN EMAIL IS ______||1/9 WRITING • BOOK 3 • MOD 1 • UNIT 2||It is a method to exchanging messages through electronic devices.|Written messages sending by post office": "It is a method to exchanging messages through electronic devices.",
+    "DEFAULT_MULTI:CHOOSE THE RIGHT OPTION TO COMPLETE THE INFORMATION: PLEASE ______ . MY SINCERE APOLOGIES FOR THE MISTAKE. IT WILL NOT HAPPEN AGAIN.||2/9 WRITING • BOOK 3 • MOD 1 • UNIT 2||Accept|Excuse|Have|Pardon": "Accept",
+    "DEFAULT_MULTI:CHOOSE THE RIGHT OPTION TO COMPLETE THE INFORMATION: LINCON: I AM SO ______ . I AM LATE. THERE WAS SO MUCH TRAFFIC.||2/9 WRITING • BOOK 3 • MOD 1 • UNIT 2||Apologize|Excuse|Forgive|Sorry": "Sorry",
+    "T4:MATCH THE PHRASES ON THE LEFT WITH THE APPROPRIATE RESPONSE ON THE RIGHT. CHOOSE BETWEEN 'THANKS' AND 'APOLOGY'.||KW:I am sorry for|You are so helpful||DEF:apology|thanks": [
+        [
+            "thanks",
+            "apology"
+        ]
+    ],
+    "DEFAULT_MULTI:CHOOSE THE RIGHT OPTION TO COMPLETE THE INFORMATION: I AM ______ BUT YOU ARE SITTING ON MY SOFA.||4/9 WRITING • BOOK 3 • MOD 1 • UNIT 2||Excuse|Have|Pardon|Sorry": "Sorry",
+    "DEFAULT_MULTI:READ THE FOLLOWING EMAIL AND COMPLETE THE INFORMATION.||The writer's name is||ANTONIETTA|MAURICIO": "ANTONIETTA",
+    "DEFAULT_MULTI:READ THE FOLLOWING EMAIL AND COMPLETE THE INFORMATION.||The receiver's name is||ANTONIETTA|MAURICIO": "MAURICIO",
+    "DEFAULT_MULTI:CHOOSE THE RIGHT OPTION TO ANSWER THE QUESTION: WHICH ONE OF BELOW IS APOLOGIZING AND MAKING A PROMISE?||6/9 WRITING • BOOK 3 • MOD 1 • UNIT 2||I am ashamed of being late.|I am terribly sorry. I shouldn't have done that.|Please forgive me to forget your birthday.": "I am terribly sorry. I shouldn't have done that.",
+    "DEFAULT_MULTI:CHOOSE THE RIGHT OPTION TO COMPLETE THE INFORMATION: I AM ______ BUT YOU ARE SITTING ON MY SOFA.||1/9 WRITING • BOOK 3 • MOD 1 • UNIT 2||Excuse|Have|Pardon|Sorry": "Sorry",
+    "DEFAULT_MULTI:CHOOSE THE RIGHT OPTION TO COMPLETE THE INFORMATION: I WOULD LIKE TO ______ . FOR MY FAULT. I SHOULD NOT DONE HAVE THAT.||2/9 WRITING • BOOK 3 • MOD 1 • UNIT 2||Accept|Apologize|Forgive|Sorry": "Apologize",
+    "DEFAULT_MULTI:CHOOSE THE RIGHT OPTION TO COMPLETE THE INFORMATION: THE CORRECT DEFINITION OF AN EMAIL IS ______||3/9 WRITING • BOOK 3 • MOD 1 • UNIT 2||It is a method to exchanging messages through electronic devices.|Written messages sending by post office": "It is a method to exchanging messages through electronic devices.",
+    "DEFAULT_MULTI:CHOOSE THE RIGHT OPTION TO ANSWER THE QUESTION: WHICH ONE OF BELOW IS APOLOGIZING AND MAKING A PROMISE?||4/9 WRITING • BOOK 3 • MOD 1 • UNIT 2||I am ashamed of being late.|I am terribly sorry. I shouldn't have done that.|Please forgive me to forget your birthday.": "I am terribly sorry. I shouldn't have done that.",
+    "DEFAULT_MULTI:CHOOSE THE RIGHT OPTION TO COMPLETE THE INFORMATION: LINCON: I AM SO ______ . I AM LATE. THERE WAS SO MUCH TRAFFIC.||5/9 WRITING • BOOK 3 • MOD 1 • UNIT 2||Apologize|Excuse|Forgive|Sorry": "Sorry",
+    "DEFAULT_MULTI:CHOOSE THE RIGHT OPTION TO COMPLETE THE INFORMATION: PLEASE ______ . MY SINCERE APOLOGIES FOR THE MISTAKE. IT WILL NOT HAPPEN AGAIN.||6/9 WRITING • BOOK 3 • MOD 1 • UNIT 2||Accept|Excuse|Have|Pardon": "Accept",
+    "DEFAULT_MULTI:CHOOSE THE RIGHT OPTION TO COMPLETE THE INFORMATION: PLEASE ______ . MY SINCERE APOLOGIES FOR THE MISTAKE. IT WILL NOT HAPPEN AGAIN.||9/9 WRITING • BOOK 3 • MOD 1 • UNIT 2||Accept|Excuse|Have|Pardon": "Accept",
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION: IS ANITA AKIMOTO FROM CHINA?||1/10 WRITING • BOOK 3 • MOD 1 • UNIT 2||No, she is not.|Yes, Anita is.|Yes, she does": "No, she is not.",
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION: WHAT IS YOUR NATIONALITY?||2/10 WRITING • BOOK 3 • MOD 1 • UNIT 2||I am Italian|I am Italy|I am from Italian": "I am Italian",
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION: WHERE ARE YOU FROM?||3/10 WRITING • BOOK 3 • MOD 1 • UNIT 2||I am American|I am United States|I am from the United States": "I am from the United States",
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION: JUAN IS FROM MEXICO. HE IS||4/10 WRITING • BOOK 3 • MOD 1 • UNIT 2||Guatemalan|Korean|Mexican": "Mexican",
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION: TAMARA IS FROM RUSSIA: SHE IS||5/10 WRITING • BOOK 3 • MOD 1 • UNIT 2||Canadian|Russa|Russian": "Russian",
+    "DEFAULT_MULTI:LOOK AT THE PICTURE (FLAG) AND THE INFORMATION PROVIDED TO FILL IN THE BLANKS||My name is Liz. I am 22 years old. I was born in||ENGLAND|ENGLISH": "ENGLAND",
+    "DEFAULT_MULTI:LOOK AT THE PICTURE (FLAG) AND THE INFORMATION PROVIDED TO FILL IN THE BLANKS||I am||ENGLAND|ENGLISH": "ENGLISH",
+    "T4:COMPLETE THE SENTENCES WITH THE COUNTRIES ABOUT YOUR NATIONALITY.||KW:I am Australian I am from|I am Chinese. I am from|I am Italian. We are from||DEF:AUSTRALIA|CHINA|ITALY": [
+        [
+            "AUSTRALIA",
+            "ITALY",
+            "CHINA"
+        ]
+    ],
+    "T4:MATCH THE COLUMNS ABOUT ECUADOR AND ITS REGIONS.||KW:Esmeraldas|Puyo|Quito|San Cristobal||DEF:Amazon or Orient Region|Coast or Litoral Region|Galapagos Islands|Highland Region": [
+        [
+            "Galapagos Islands",
+            "Coast or Litoral Region",
+            "Highland Region",
+            "Amazon or Orient Region"
+        ]
+    ],
+    "T8:ACCORDING TO THESE PICTURES, IDENTIFY THE COUNTRIES: COMPLETE THE INFORMATION||IMG_DIM:341x227|IMG_DIM:341x227_1|IMG_DIM:341x227_2||Brazil|Colombia|Peru": [
+        [
+            "Brazil",
+            "Colombia",
+            "Peru"
+        ]
+    ],
+    "T8:LOOK AT THE PICTURES. DO YOU KNOW WHICH COUNTRIES ARE THEM? CHOOSE THE RIGHT NAMES.||IMG_DIM:341x222|IMG_DIM:341x227|IMG_DIM:341x232||Brazil|Canada|Ecuador": [
+        [
+            "Ecuador",
+            "Canada",
+            "Brazil"
+        ]
+    ],
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION TO ANSWER THE QUESTION: WHAT IS YOUR FAVORITE DRINK?||1/10 WRITING • BOOK 3 • MOD 1 • UNIT 2||Chicken soup|Milkshake|jelly": "Milkshake",
+    "DEFAULT_MULTI:CHOOSE THE RIGHT INGREDIENTS FOR PREPARING A CEVICHE.||2/10 WRITING • BOOK 3 • MOD 1 • UNIT 2||Fish, lemon. Salt, oil, sugar, water|Fish, water, salt, lemons, oil, tomatoes, onions, mustard|Fish, water, salt, oil, lemon, onions, tomatoes, honey": "Fish, water, salt, lemons, oil, tomatoes, onions, mustard",
+    "DEFAULT_MULTI:CHOOSE THE ADEQUATE OPTION TO COMPLETE THE INFORMATION: A PERSON WHO SERVES ALCOHOLIC BEVERAGES IN A RESTAURANT IS CALLED A:||3/10 WRITING • BOOK 3 • MOD 1 • UNIT 2||Barman|Chef|Waiter": "Barman",
+    "DEFAULT_MULTI:CHOOSE THE ADEQUATE OPTION TO ANSWER THE QUESTION: WHAT IS YOUR FAVORITE FOOD?||4/10 WRITING • BOOK 3 • MOD 1 • UNIT 2||Mustard|Shrimp soup|Sugar": "Shrimp soup",
+    "DEFAULT_MULTI:CHOOSE THE INGREDIENTS TO PREPARE A 'TUNA SANDWICH'||5/10 WRITING • BOOK 3 • MOD 1 • UNIT 2||Tuna fish, mustard, lemon, sugar, tomatoes|Tuna fish, mustard, salt, lemons, bread|Tuna fish, tomatoes, onions, mustard, lemons": "Tuna fish, mustard, salt, lemons, bread",
+    "T8:LABEL THE PICTURES WITH THEIR NAMES.||IMG_DIM:341x248|IMG_DIM:341x313|IMG_DIM:341x368||Tomatoes|honey|meat": [
+        [
+            "Tomatoes",
+            "honey",
+            "meat"
+        ]
+    ],
+    "T4:LOOK AT THE TEXTS. IDENTIFY WHAT TYPE OF TEXTS ARE THEY? CHOOSE THE RIGHT ANSWER.||KW:Alejandro Its great to know you are coming. Im going to be glad to show you all the city. See you soon, Susan.|Ecuador is in South America. It has four important regions which are Litoral or Coast, Highland or Sierra, Amazon or Orient and Galapagos Islands.|First put the beef in a pan. Add the chopped onions and garlic. Then, pour a cup of red wine. Add a pinch of salt and pepper. After that bake the beef for about an hour. Serve with fried potatoes and some salad.||DEF:a letter|a recipe|a simple description": [
+        [
+            "a letter",
+            "a recipe",
+            "a simple description"
+        ]
+    ],
+    "DEFAULT_MULTI:CHOOSE AND CIRCLE THE RIGHT INGREDIENTS TO PREPARE “CEVICHE”.||7/10 WRITING • BOOK 3 • MOD 1 • UNIT 2||Fish, lemons, salt, oil, mustard, tomato sauce, onions.|Fish, lemons, vinegar, mustard, tomato sauce, salt, honey, onions, cucumber.": "Fish, lemons, salt, oil, mustard, tomato sauce, onions.",
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION TO COMPLETE THE INFORMATIO: A PERSON WHO PREPARES IN A RESTAURANT THE FOOD IS CALLED:||8/10 WRITING • BOOK 3 • MOD 1 • UNIT 2||Barman|Chef|Waiter": "Chef",
+    "DEFAULT_MULTI:CHOOSE THE CORRECT INGREDIENTS FOR MAKING AN OMELET ACCORDING TO THE RECIPE: TO PREPARE AN OMELETE, WE NEED THE FOLLOWING INGREDIENTS:||9/10 WRITING • BOOK 3 • MOD 1 • UNIT 2||Eggs, salt, oil, vinegar, coke|Oil, mustard, tomato sauce, candies|Salt, eggs, oil, bacon|Vinegar, mustard, eggs, tomato sauce, milk": "Salt, eggs, oil, bacon",
+    "T8:LOOK AT THE PICTURE. WHAT MONTH OF THE YEAR IS IT?||IMG_VISUAL:3ef97dd3ad98||December|January|November": [
+        [
+            "December"
+        ]
+    ],
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION||In which month do we celebrate Christmas?||DECEMBER|JANUARY": "DECEMBER",
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION||What is the first month of the year?||FEBRUARY|JANUARY": "JANUARY",
+    "DEFAULT_MULTI:CHOOSE THE RIGHT OPTION TO ANSWER THE QUESTION: IN WHICH MONTH DO WE CELEBRATE HALLOWEEN?||2/10 VOCABULARY • BOOK 3 • MOD 1 • UNIT 2||November|October": "October",
+    "DEFAULT_MULTI:COMPLETE THE SENTENCE.||I've been waiting for your phone call||FOR MONDAY|SINCE YESTERDAY": "SINCE YESTERDAY",
+    "DEFAULT_MULTI:CHOOSE THE RIGHT OPTION TO ANSWER THE QUESTION: WHAT ARE THE TWO WEEKEND DAYS?||4/10 VOCABULARY • BOOK 3 • MOD 1 • UNIT 2||Saturday Sunday|Thursday Friday": "Saturday Sunday",
+    "DEFAULT_MULTI:CHOOSE THE RIGHT OPTION TO ANSWER THE QUESTION: WHICH OF THE FOLLOWING SENTENCES IS CORRECT?||5/10 VOCABULARY • BOOK 3 • MOD 1 • UNIT 2||I'm so tired. I have been working for 6 o'clockthis morning!|I'm so tired. I have been working since 6 o'clock this morning!|I'm so tired. I have worked since 6 o'clockthis morning ago!": "I'm so tired. I have been working since 6 o'clock this morning!",
+    "DEFAULT_MULTI:CHOOSE THE RIGHT OPTION TO ANSWER THE QUESTION: WHAT DAY COMES BEFORE THURSDAY?||6/10 VOCABULARY • BOOK 3 • MOD 1 • UNIT 2||Friday|Monday|Saturday|Wednesday": "Wednesday",
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION: WHAT PAIR OF DAYS ARE IN ORDER?||7/10 VOCABULARY • BOOK 3 • MOD 1 • UNIT 2||Saturday Friday|Thursday Sunday|Tuesday Monday|Wednesday Thursday": "Wednesday Thursday",
+    "DEFAULT_MULTI:CHOOSE THE RIGHT OPTION TO ANSWER THE QUESTION: WHICH OF THE FOLLOWING SENTENCES IS CORRECT?||8/10 VOCABULARY • BOOK 3 • MOD 1 • UNIT 2||He has been writing that book now for two years.|He have been writes this book now for two years.": "He has been writing that book now for two years.",
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION||She never sleeps the day.||DURING|SINCE": "DURING",
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION||We are used to celebrate with a special dinner Christmas||AT|IN": "AT",
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION||He is punctual. He always arrives time||FOR|ON": "ON",
+    "T8:CHOOSE THE MAIN IDEA: WHAT IS THE CONVESATION ABOUT?||IMG_DIM:443x398||The man is sick|The man is very good|They are really good friends": [
+        [
+            "The man is sick"
+        ]
+    ],
+    "DEFAULT_MULTI:CHOOSE THE CORRECT SENTENCE||2/10 VOCABULARY • BOOK 3 • MOD 1 • UNIT 2||In order to stay health, you need to exercise regularly.|In order to stay healthy, you need to exercise regularly.": "In order to stay healthy, you need to exercise regularly.",
+    "DEFAULT_MULTI:CHOOSE THE RIGHT SENTENCE||3/10 VOCABULARY • BOOK 3 • MOD 1 • UNIT 2||I am in good healthy.|I'm in good health.": "I'm in good health.",
+    "0:5|I|day|eat|every|fruit|of|portions|2:She's|and|broken|crutches|her|leg|needs": [
+        [
+            [
+                "I",
+                "eat",
+                "5",
+                "portions",
+                "of",
+                "fruit",
+                "every",
+                "day"
+            ],
+            [
+                "She's",
+                "broken",
+                "her",
+                "leg",
+                "and",
+                "needs",
+                "crutches"
+            ]
+        ]
+    ],
+    "DEFAULT_MULTI:CHOOSE THE CORRECT WORD||The doctor gave me an to relieve the pain.||EPIDEMIC|INJECTION": "INJECTION",
+    "DEFAULT_MULTI:CHOOSE THE CORRECT WORD||I have a headache. I'll take||AN ALLERGY|AN ASPIRIN": "AN ASPIRIN",
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION.||The lady has a fever and a cough. She is||GOOD|ILL": "ILL",
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION.||He is sick. He does not have||ENERGY|FRIENDS": "ENERGY",
+    "T8:MATCH THE CORRECT THING WITH A LINE||IMG_DIM:341x255|IMG_DIM:341x341|IMG_DIM:341x341_1||I have the flu|I've got a terrible headache|I've got a terrible stomach": [
+        [
+            "I've got a terrible stomach",
+            "I've got a terrible headache",
+            "I have the flu"
+        ]
+    ],
+    "0:Other healthy habits may make up for smoking.|5:There are good ways to manage stress without smoking.": [
+        [
+            "False",
+            "True"
+        ]
+    ],
+    "DEFAULT_MULTI:LOOK AT THE PICTURE AND COMPLETE THE SENTENCE WITH FEVER/STOMACHACHE.||I have a||FEVER|STOMACHACHE": "FEVER",
+    "T8:CHOOSE THE BEST OPTION TO ANSWER THE QUESTION: WHAT DO THESE PICTURES REPRESENT?||IMG_DIM:443x444||Emoticons|Feelings|health problems": [
+        [
+            "health problems"
+        ]
+    ],
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION||Karla and Luis visit to talk about their trip.||THE AIRLINE|THE TRAVEL AGENCY": "THE TRAVEL AGENCY",
+    "DEFAULT_MULTI:CHOOSE THE VERB CORRECTLY TO COMPLETE THE SENTENCE||s you||arrive|arrives|you arrive": "arrives",
+    "0:Flights|are|cheaper|in|winter|2:I|hotel|like|my|room": [
+        [
+            [
+                "Flights",
+                "are",
+                "cheaper",
+                "in",
+                "winter"
+            ],
+            [
+                "I",
+                "like",
+                "my",
+                "hotel",
+                "room"
+            ]
+        ]
+    ],
+    "DEFAULT_MULTI:CHOOSE THE VERB CORRECTLY TO COMPLETE THE SENTENCE||THEY||THEY TRAVEL|TRAVEL|TRAVELS": "TRAVEL",
+    "T4:MATCH THE INFORMATION TO COMPLETE THE SENTENCES||KW:I swim on the|My flight leaves at 3pm. I must be at the at 12.|Well meet at the to begin our trip.||DEF:airport|beach|train station": [
+        [
+            "beach",
+            "airport",
+            "train station"
+        ]
+    ],
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION: WHICH SENTENCES IS CORRECT.||5/9 VOCABULARY • BOOK 3 • MOD 1 • UNIT 2||Every passenger are in his seat.|Every passenger has in his seat.|Every passenger is in his seat.": "Every passenger is in his seat.",
+    "DEFAULT_MULTI:COMPLETE THE SENTENCE||Robert takes a plane trip. Now he goes to the||AIRPORT|LABORATORY": "AIRPORT",
+    "DEFAULT_MULTI:COMPLETE THE SENTENCE||The plane reached the destination on time. Now, the passengers on the plane.||DISEMBARK|THEY SING": "DISEMBARK",
+    "0:Alberto travels to an island by motorcycle.|5:The subway has a train.|6:There are ships in the sea.": [
+        [
+            "False",
+            "True",
+            "True"
+        ]
+    ],
+    "DEFAULT_MULTI:CHOOSE DE BEST OPTION||My mum and dad have booked a Greece for our holidays this August.||GO|TRIP": "TRIP",
+    "DEFAULT_MULTI:CHOOSE DE BEST OPTION||Excuse me, I'm a bit lost. Can you tell me the best to the bus station?||TRIP|WAY": "WAY",
+    "T11_BATCH:COMPLETE THE WORDS WITH THE CORRECT VOWELS.||CTX:...||T_M_T_ ___|_PPL_ ___|_R_NG_ ___|_V_C_D_ ___": [
+        [
+            "APPLE",
+            "TOMATO",
+            "AVOCADO",
+            "ORANGE"
+        ]
+    ],
+    "DEFAULT_MULTI:CHOOSE AND COMPLETE THE CORRECT ANSWER.||The most common type of pasta is||ONION|RICE|SPAGHETTI": "SPAGHETTI",
+    "0:Tomorrow|and I|are|chicken wings|going|my best friend|to eat|with chili": [
+        [
+            [
+                "Tomorrow",
+                "my best friend",
+                "and I",
+                "are",
+                "going",
+                "to eat",
+                "chicken wings",
+                "with chili"
+            ]
+        ]
+    ],
+    "DEFAULT_MULTI:CHOOSE THE RIGHT SENTENCE: WICH THE SENTENCES IS CORRECT.||4/8 VOCABULARY • BOOK 3 • MOD 1 • UNIT 2||I does go to eat rice and beans.|I were going to eat rice and beans.|I will go to eat rice and beans.": "I will go to eat rice and beans.",
+    "DEFAULT_MULTI:COMPLETE THE SENTENCES||Let's buy burgers for us.||APPLE|LEMON|MEAT": "MEAT",
+    "DEFAULT_MULTI:COMPLETE THE SENTENCES||My favorite food is with salad.||CHAIR|FISH|WINDOW": "FISH",
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION.||My mother doesn't like spaghetti with||FISH|TOMATO": "TOMATO",
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION.||I am going to eat an apple and a in the school.||BANANA|CHILI": "BANANA",
+    "T4:MATCH THE RIGHT THING WITH A LINE||KW:Argentina|China|Ecuador|Italy|Japan|Mexico||DEF:banana|chili|fish|meat|rice|tomato": [
+        [
+            "chili",
+            "rice",
+            "fish",
+            "tomato",
+            "meat",
+            "banana"
+        ]
+    ],
+    "T11_BATCH:PUT IN ORDER THE FOLLOWING LETTERS TO CREATE TO WORDS RELATED TO FOOD.||CTX:...||betaleveg ___|ciuje ___|ladas ___|riftu ___": [
+        [
+            "SALAD",
+            "VEGETABLE",
+            "FRUIT",
+            "JUICE"
+        ]
+    ],
+    "DEFAULT:CHOOSE THE RIGHT OPTION ACCORDING TO THE REGISTRATION FORM. WHICH ASPECTS ARE ASKED IN A PATIENT REGISTRATION FORM?||CTX:PATIENT REGISTRATION FORM Name: __________________...__ Monthly ______ Occasionally ______ Never ______||||||||frequency of drugs|frequency of drugs|frequency of medication|frequency of medication|medication, alcohol, drugs|medication, alcohol, drugs": [
+        "medication, alcohol, drugs"
+    ],
+    "0:Cardiac disease, epilepsy, cancer, asthma, diabetes, psychiatric disorder and hypertension.": [
+        [
+            "True"
+        ]
+    ],
+    "T4:MATCH THE QUESTIONS WITH THEIR ANSWERS.||KW:What is your full name?|When were you born?|Where do you live?|Why are you here?||DEF:Because I feel very tired and I have a terrible back pain.|Carlos Alberto Mendoza|On August 29th, 1998|On Pedro Gual St. Portoviejo": [
+        [
+            "Carlos Alberto Mendoza",
+            "On August 29th, 1998",
+            "On Pedro Gual St. Portoviejo",
+            "Because I feel very tired and I have a terrible back pain."
+        ]
+    ],
+    "T4:MATCH THE WORDS ACCORDING TO ANY CHARACTERISTIC IN COMMON.||KW:Condition|Height|Patient|Weight||DEF:asthma|inches|pounds|sick person": [
+        [
+            "sick person",
+            "inches",
+            "asthma",
+            "pounds"
+        ]
+    ],
+    "DEFAULT:READ THE PATIENT REGISTRATION FORM. WHAT INFORMATION DOES IT REQUEST? CHOOSE THE BEST OPTION.||CTX:PATIENT REGISTRATION FORM Name: __________________...__ Monthly ______ Occasionally ______ Never ______||||||Academic information|Academic information|Medical information|Medical information|Personal information|Personal information": [
+        "Personal information",
+        "Medical information"
+    ],
+    "DEFAULT:READ THIS SHORT ARTICLE. CHOOSE THE MAIN OPTION TO COMPLETE THE IDEA: THIS TEXT IS ABOUT||CTX:When you travel to your job or study center by usi...k while traveling if you do not meet one of these.||||||People who commute to their job or university by bus.|People who commute to their job or university by bus.|People who don't like to travel by bus.|People who don't like to travel by bus.|People who have terrible habits when they travel by bus.|People who have terrible habits when they travel by bus.": [
+        "People who commute to their job or university by bus."
+    ],
+    "DEFAULT:READ THE TEXT AGAIN AND ANSWER THE QUESTIONS: WHAT IS THE WORST HABIT OF AN INVADER?||CTX:When you travel to your job or study center by usi...k while traveling if you do not meet one of these.||||||They don't respect your space .|They don't respect your space .|They fall asleep on your shoulder.|They fall asleep on your shoulder.": [
+        "They don't respect your space ."
+    ],
+    "DEFAULT_MULTI:READ THIS SHORT ARTICLE. COMPLETE THE SENTENCES WITH THE RIGHT INFORMATION.||You can find passengers in a bus.||TALKATIVE|YOUNG": "TALKATIVE",
+    "DEFAULT_MULTI:READ THIS SHORT ARTICLE. COMPLETE THE SENTENCES WITH THE RIGHT INFORMATION.||passengers don't respect your space and they usually have a lot of hand luggage with them.||CRAZY|INVADER": "INVADER",
+    "DEFAULT_MULTI:READ THIS SHORT ARTICLE. COMPLETE THE SENTENCES WITH THE RIGHT INFORMATION.||There are people that fall asleep on your shoulder.||DIRTY|UNPLEASANT": "UNPLEASANT",
+    "DEFAULT_MULTI:READ THIS SHORT ARTICLE. COMPLETE THE SENTENCES WITH THE RIGHT INFORMATION.||passengers even ask for personal information.||SOCIABLE|UNLIKEABLE": "UNLIKEABLE",
+    "DEFAULT_MULTI:READ THE PARAGRAPH. MATCH THE PARAGRAGH WITH THE RIGHT IDEA.||They start talking about the weather, politicians or the economic condition in the country. Sometimes, they ask you about personal issues like where do you work and your phone number. It is very difficult not to talk to these people, and you have to deal with the situation until you reach your destination.||Children as passengers|Different unpleasant passengers|Passengers bigger than you|Passengers who like to talk a lot": "Passengers who like to talk a lot",
+    "DEFAULT_MULTI:READ THE PARAGRAPH. MATCH THE PARAGRAGH WITH THE RIGHT IDEA.||When you travel to your job or study center by using public transportation like buses, you can find unpleasant passengers you don’t want to have next to you. Here there is a list of the most common:||Children as passengers|Different unpleasant passengers|Passengers bigger than you|Passengers who like to talk a lot": "Different unpleasant passengers",
+    "DEFAULT:READ THE PARAGRAPH. MATCH THE PARAGRAGH WITH THE RIGHT IDEA.||CTX:They usually spend the time by moving around their...k while traveling if you do not meet one of these.||||||||Children as passengers|Children as passengers|Different unpleasant passengers|Different unpleasant passengers|Passengers bigger than you|Passengers bigger than you|Passengers who like to talk a lot|Passengers who like to talk a lot": [
+        "Children as passengers"
+    ],
+    "T8:ACCORDING TO THE PICTURE, CHOOSE THE CORRECT OPTION: WHAT TYPE OF PASSENGER IS?||IMG_DIM:285x121||Quiet passenger|Talkative passenger": [
+        [
+            "Quiet passenger"
+        ]
+    ],
+    "DEFAULT:READ THE TEXT AGAIN AND ANSWER THE QUESTIONS: WHAT DO THE CHILDREN USUALLY DO WHEN THEY TRAVEL BY BUS?||CTX:When you travel to your job or study center by usi...k while traveling if you do not meet one of these.||||||||They always were quiet.|They always were quiet.|They usually spend the time by moving around their seats and they cry a lot.|They usually spend the time by moving around their seats and they cry a lot.": [
+        "They usually spend the time by moving around their seats and they cry a lot."
+    ],
+    "DEFAULT_MULTI:READ THE PARAGRAPH. MATCH THE PARAGRAGH WITH THE RIGHT IDEA.||They are not necessarily big, but they take up all their space and some of yours. You can’t move because their legs and arms are really close to you or they have a lot of hand luggage. Some of them are so unlikable that they even fall asleep on your shoulder.||Children as passengers|Different unpleasant passengers|Passengers bigger than you|Passengers who like to talk a lot": "Passengers bigger than you",
+    "0:After a few months, my granny felt better.|Dr. Ponce recommended eating healthier and exercising.|My grandmother started a routine.|Now, she helps people in the community.|One day, my grandmother didn't feel well.|She has tea meetings with friends on Friday afternoons.": [
+        [
+            [
+                "One day, my grandmother didn't feel well.",
+                "Dr. Ponce recommended eating healthier and exercising.",
+                "My grandmother started a routine.",
+                "After a few months, my granny felt better.",
+                "Now, she helps people in the community.",
+                "She has tea meetings with friends on Friday afternoons."
+            ]
+        ]
+    ],
+    "DEFAULT_MULTI:READ THE PARAGRAGH AND MATCH IT WITH THE IDEA THAT BEST DESCRIBE IT.||Dr. Ponce did some blood tests on my grandmother. He found that his blood contained very little vitamins and minerals. He recommended my granny begin to eat more fruits and vegetables. In addition, she should exercise every day for thirty minutes at least.||A special routine|Discovering the health problem|Last results|When the problem started": "Discovering the health problem",
+    "DEFAULT_MULTI:READ THE PARAGRAGH AND MATCH IT WITH THE IDEA THAT BEST DESCRIBE IT.||When the problem started||A special routine|Discovering the health problem|Last results": "Discovering the health problem",
+    "DEFAULT_MULTI:READ THE PARAGRAGH AND MATCH IT WITH THE IDEA THAT BEST DESCRIBE IT.||Months went on and my grandmother feels better now. She began to help Mrs. Moreira with some work for the community and they usually have a cup of tea on Friday afternoons.||A special routine|Discovering the health problem|Last results|When the problem started": "Last results",
+    "DEFAULT_MULTI:READ THE PARAGRAGH AND MATCH IT WITH THE IDEA THAT BEST DESCRIBE IT.||My grandmother is a well-liked person in the neighborhood. One day she woke up and she didn’t feel so well. She decided to go to see Dr. Ponce to know what the problem could be.||A special routine|Discovering the health problem|Last results|When the problem started": "When the problem started",
+    "T4:MATCH THE HALVES TO COMPLETE THE SENTENCES.||KW:She had a very light lunch|She has some bread|She walked around the park|She went back home||DEF:eggs and tea for breakfast|for a healthy dinner|for one hour|with some chicken or fish": [
+        [
+            "eggs and tea for breakfast",
+            "with some chicken or fish",
+            "for one hour",
+            "for a healthy dinner"
+        ]
+    ],
+    "DEFAULT:READ THE TEXT AGAIN ANSWER THE FOLLOWING QUESTIONS: WHY DID MY GRANDMOTHER DECIDE TO VISIT DR PONCE?||CTX:My grandmother is a well-liked person in the neigh...ey usually have a cup of tea on Friday afternoons.||||||||Because she didn't feel so well.|Because she didn't feel so well.|Because she is the girlfriend of the Dr.|Because she is the girlfriend of the Dr.|Because she wanted to a buy a pizza.|Because she wanted to a buy a pizza.": [
+        "Because she didn't feel so well."
+    ],
+    "0:The grandmother went to sleep when she started to feel bad.|5:Dr. Ponce did some blood tests to the grandmother.|6:Dr. Ponce advised her to eat healthy food and do exercises.": [
+        [
+            "False",
+            "True",
+            "True"
+        ]
+    ],
+    "T8:READ THE PARAGRAGH AND MATCH IT WITH THE IDEA THAT BEST DESCRIBE IT.||IMG_DIM:337x144||A special routine|Discovering the health problem|Last results|When the problem started": [
+        [
+            "A special routine"
+        ]
+    ],
+    "DEFAULT:READ THE TEXT. CHOOSE AN APPROPRIATE TITLE FOR IT.||CTX:My grandmother is a well-liked person in the neigh...ey usually have a cup of tea on Friday afternoons.||||||||A special routine|A special routine|Blood test results|Blood test results|My grandmother's medical appointment|My grandmother's medical appointment": [
+        "A special routine"
+    ],
+    "DEFAULT:READ THE TEXT AGAIN AND CHOOSE THE CORRECT OPTION TO ANSWER THE QUESTIONS: WHY DID THE HARE LOSE THE RACE?||CTX:There was once a hare who made fun of a tortoise b... win the race. An Aesop’s Fable. Taken from Eureka||||||||Because the hare got sick.|Because the hare got sick.|Because the hare to take a little nap.|Because the hare to take a little nap.|Because the tortoise wore turbo shoes.|Because the tortoise wore turbo shoes.": [
+        "Because the hare to take a little nap."
+    ],
+    "DEFAULT_MULTI:READ THE PARAGRAPH AND MATCH IT WITH THE BEST IDEA||\"I can get where I’m going sooner than you think,\" said the tortoise, and with that he challenged the hare to a race.||Beginning of the fable|Crossing the finish line|Excessive hare's confidence|Tortoise's challenge": "Tortoise's challenge",
+    "DEFAULT_MULTI:READ THE PARAGRAPH AND MATCH IT WITH THE BEST IDEA||The hare thought this was a great joke. The race began, and the hare was soon far ahead. Knowing he would win, he lay down to take a little nap while he waited for the tortoise to catch up.||Beginning of the fable|Crossing the finish line|Excessive hare's confidence|Tortoise's challenge": "Crossing the finish line",
+    "DEFAULT:READ THE TEXT AND COMPLETE THE SENTENCE: THE HARE MADE FUN OF A TORTOISE _______||CTX:There was once a hare who made fun of a tortoise b... win the race. An Aesop’s Fable. Taken from Eureka||||||||Because he was too slow.|Because he was too slow.|Slowly and steadily.|Slowly and steadily.|Was soon far ahead.|Was soon far ahead.": [
+        "Because he was too slow."
+    ],
+    "T8:LOOK AT THE PICTURES. ANSWER THE QUESTION: WHAT IS THE FABLE THAT YOU REMEMBER WITH THIS PICTURE?||IMG_DIM:323x233||The ant and the grasshopper|The hare and the tortoise|The mouse and the lion": [
+        [
+            "The hare and the tortoise"
+        ]
+    ],
+    "DEFAULT_MULTI:MARK TRUE (T) OR FALSE (F)||he hare laughs at the tortoise||F|T": "T",
+    "DEFAULT_MULTI:MARK TRUE (T) OR FALSE (F)||he tortoise loses the race||F|T": "F",
+    "T4:MATCH THE HALVES TO COMPLETE THE IDEAS.||KW:He saw the tortoise|I can get where|The hare take|You will never||DEF:I am going sonner than you think'|a little nap|crossing the finish line|get anywhere'": [
+        [
+            "get anywhere'",
+            "I am going sonner than you think'",
+            "a little nap",
+            "crossing the finish line"
+        ]
+    ],
+    "DEFAULT_MULTI:MARK TRUE (T) OR FALSE (F)||he race was in a park||F|T": "F",
+    "DEFAULT_MULTI:MARK TRUE (T) OR FALSE (F)||he hare wins the race||F|T": "F",
+    "DEFAULT_MULTI:COMPLETE THE SENTENCES WITH THE CORRECT PAST FORM||THE MIXER BROKE DOWN WHEN I WAS DINNER.||COOK|COOKED|COOKING": "COOKING",
+    "DEFAULT_MULTI:COMPLETE THE SENTENCES WITH THE CORRECT PAST FORM||WHEN THEY WE WERE WAITING FOR THE BUS.||ARRIVE|ARRIVED|ARRIVING": "ARRIVED",
+    "DEFAULT_MULTI:COMPLETE THE SENTENCES WITH THE CORRECT PAST FORM||ING||DID|DO|DOING": "DOING",
+    "DEFAULT_MULTI:COMPLETE THE SENTENCES WITH THE CORRECT PAST FORM||AS SOON AS WE THE ACCIDENT I CALLED THE POLICE.||SAW|SEE|SEEING": "SAW",
+    "DEFAULT_MULTI:COMPLETE THE SENTENCES WITH THE CORRECT PAST FORM||WE WERE TO GET TO THE GOAL.||RUN|RUNNING": "RUNNING",
+    "DEFAULT_MULTI:COMPLETE THE SENTENCES WITH THE CORRECT PAST FORM||ING||FIND|FINDING|FOUND": "FOUND",
+    "DEFAULT_MULTI:COMPLETE THE SENTENCES WITH THE CORRECT PAST FORM||I WAS HOMEWORK WHEN MY BESTFRIEND CAME.||DID|DOING|DONE": "DOING",
+    "DEFAULT_MULTI:COMPLETE THE SENTENCES WITH THE CORRECT PAST FORM||ED ING||WALK|WALKED|WALKING": "WALKED",
+    "DEFAULT_MULTI:COMPLETE THE SENTENCES WITH THE CORRECT PAST FORM||I NE THE DISHES LAST NIGHT.||DID|DO|DONE": "DID",
+    "DEFAULT_MULTI:COMPLETE THE SENTENCES WITH THE CORRECT PAST FORM||SHE WAS READING A BOOK WHEN THE PHONE||RANG|RING|RINGING": "RANG",
+    "DEFAULT_MULTI:COMPLETE THE SENTENCES WITH THE PRESENT PERFECT FORM.||PAUL AN ACCIDENT.||HAS HAD|HAS HAVE|HAVE HAD": "HAS HAD",
+    "DEFAULT_MULTI:COMPLETE THE SENTENCES WITH THE PRESENT PERFECT FORM.||WHO E HE MET RECENTLY?||HAS|HASE|HAVE": "HAS",
+    "DEFAULT_MULTI:COMPLETE THE SENTENCES WITH THE PRESENT PERFECT FORM.||I MY KEYS.||HAS LOST|HAVE LOSING|HAVE LOST": "HAVE LOST",
+    "DEFAULT_MULTI:COMPLETE THE SENTENCES WITH THE PRESENT PERFECT FORM.||WE TENNIS.||HASN'T PLAYED|HASN'T PLAYING|HAVEN'T PLAYED": "HAVEN'T PLAYED",
+    "DEFAULT_MULTI:COMPLETE THE SENTENCES WITH THE PRESENT PERFECT FORM.||IT A LOT.||HAS RAINED|HAS RAINING|HAVE RAINED": "HAS RAINED",
+    "DEFAULT_MULTI:COMPLETE THE SENTENCES WITH THE PRESENT PERFECT FORM.||CAROL TWO BOOKS.||HAS PUBLISHED|HAS PUBLISHING|HAVE PUBLISHED": "HAS PUBLISHED",
+    "DEFAULT_MULTI:COMPLETE THE SENTENCES WITH THE PRESENT PERFECT FORM.||THEY MANY TROPHIES.||HAS WON|HAVE WINNING|HAVE WON": "HAVE WON",
+    "DEFAULT_MULTI:COMPLETE THE SENTENCES WITH THE PRESENT PERFECT FORM.||WE TOGETHER FOR MANY YEARS.||HAS PLAYED|HAVE PLAYED|HAVE PLAYING": "HAVE PLAYED",
+    "DEFAULT_MULTI:COMPLETE THE SENTENCES WITH THE PRESENT PERFECT FORM.||SHE TO USA THREE TIMES.||HAS GOING|HAS GONE|HAVE GONE": "HAS GONE",
+    "DEFAULT_MULTI:CHOOSE THE RIGHT SENTENCES WITH THE PRESENT CONTINUOUS FOR FUTURE||1/10 GRAMMAR • BOOK 3 • MOD 1 • UNIT 2||JIM IS TAKING THE DOG FOR A WALK TONIGHT.|JIM TAKES THE DOG FOR A WALK TONIGHT.": "JIM IS TAKING THE DOG FOR A WALK TONIGHT.",
+    "DEFAULT_MULTI:CHOOSE THE RIGHT SENTENCES WITH THE PRESENT CONTINUOUS FOR FUTURE||2/10 GRAMMAR • BOOK 3 • MOD 1 • UNIT 2||ARE YOU GETTING READY FOR NEXT CLASS?|ARE YOU READY FOR SCHOOL?": "ARE YOU GETTING READY FOR NEXT CLASS?",
+    "DEFAULT_MULTI:CHOOSE THE RIGHT SENTENCES WITH THE PRESENT CONTINUOUS FOR FUTURE||3/10 GRAMMAR • BOOK 3 • MOD 1 • UNIT 2||WE ARE HAVING A STAFF MEETING NEXT MONDAY.|WE HAVE A STAFF MEETING NEXT MONDAY.": "WE ARE HAVING A STAFF MEETING NEXT MONDAY.",
+    "DEFAULT_MULTI:CHOOSE THE RIGHT SENTENCES WITH THE PRESENT CONTINUOUS FOR FUTURE||4/10 GRAMMAR • BOOK 3 • MOD 1 • UNIT 2||I AM LEAVING TOMORROW.|I LEAVE TOMORROW.": "I AM LEAVING TOMORROW.",
+    "DEFAULT_MULTI:CHOOSE THE RIGHT SENTENCES WITH THE PRESENT CONTINUOUS FOR FUTURE||5/10 GRAMMAR • BOOK 3 • MOD 1 • UNIT 2||THEY ARE PLANNING A TRIP TO PUYO NEXT YEAR.|THEY PLAN A TRIP TO PUYO.": "THEY ARE PLANNING A TRIP TO PUYO NEXT YEAR.",
+    "DEFAULT_MULTI:CHOOSE THE RIGHT SENTENCES WITH THE PRESENT CONTINUOUS FOR FUTURE||6/10 GRAMMAR • BOOK 3 • MOD 1 • UNIT 2||LUIS AND ALBERT ARE GOING TO THE BEACH IN THE SUMMER.|LUIS AND ALBERT GOES TO THE BEACH.": "LUIS AND ALBERT ARE GOING TO THE BEACH IN THE SUMMER.",
+    "DEFAULT_MULTI:CHOOSE THE RIGHT SENTENCES WITH THE PRESENT CONTINUOUS FOR FUTURE||7/10 GRAMMAR • BOOK 3 • MOD 1 • UNIT 2||I AM STUDYING FOR THE EXAM THIS WEEKEND.|I AM STUDYING FOR THE EXAM.": "I AM STUDYING FOR THE EXAM THIS WEEKEND.",
+    "DEFAULT_MULTI:CHOOSE THE RIGHT SENTENCES WITH THE PRESENT CONTINUOUS FOR FUTURE||8/10 GRAMMAR • BOOK 3 • MOD 1 • UNIT 2||I AM SENDING MY CURRICULUM VITAE TOMORROW.|I SEND MY CURRICULUM VITAE TOMORROW.": "I AM SENDING MY CURRICULUM VITAE TOMORROW.",
+    "DEFAULT_MULTI:CHOOSE THE RIGHT SENTENCES WITH THE PRESENT CONTINUOUS FOR FUTURE||9/10 GRAMMAR • BOOK 3 • MOD 1 • UNIT 2||I AM GOING TO THE PARTY IN THE EVENING.|I WILL GO TO THE PARTY IN THE EVENING.": "I AM GOING TO THE PARTY IN THE EVENING.",
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION TO COMPLEMENT THE CLAUSES.||I SELECT A MOVIE THE KIDS COME HOME.||AFTER|BEFORE|WHEN": "WHEN",
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION TO COMPLEMENT THE CLAUSES.||I PICK UP SOME SNACKS MY FATHER ARRIVES.||AFTER|BEFORE|WHEN": "BEFORE",
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION TO COMPLEMENT THE CLAUSES.||WE LEFT, WE VISITED OUR FRIENDS.||AFTER|BEFORE|WHEN": "BEFORE",
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION TO COMPLEMENT THE CLAUSES.||FIRST, I GET UP THAT I GET A SHOWER.||AFTER|BEFORE|WHEN": "AFTER",
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION TO COMPLEMENT THE CLAUSES.||SHE BRUSHED HER TEETH SHE WENT TO SLEEP.||AFTER|BEFORE|WHEN": "BEFORE",
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION TO COMPLEMENT THE CLAUSES.||I MADE THE PRESENTATION, I HAD PRACTICED IT.||AFTER|BEFORE|WHEN": "BEFORE",
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION TO COMPLEMENT THE CLAUSES.||SOMEBODY TAKES MY STUFF, I GET REALLY ANGRY.||AFTER|BEFORE|WHEN": "WHEN",
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION TO COMPLEMENT THE CLAUSES.||I TOOK A SHOWER, I DRESSED UP.||AFTER|BEFORE|WHEN": "AFTER",
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION TO COMPLEMENT THE CLAUSES.||I AM OLD ENOUGH. I WANT TO HAVE MY OWN COMPANY.||AFTER|BEFORE|WHEN": "BEFORE",
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION TO COMPLEMENT THE CLAUSES.||WE HAVE DISCUSSED THE PROBLEM, WE CAN MAKE A DECISION.||AFTER|BEFORE|WHEN": "AFTER",
+    "T9:HOW MUCH DOES IT COST TO SEND THE PACKAGE?||CTX:...||||||Fifteen dollars|Fifteen dollars|Five dollars|Five dollars|Ten dollars|Ten dollars": [
+        "Ten dollars"
+    ],
+    "T9:WHY DID EMILY GO TO THE POST OFFICE?||CTX:...||||||To buy stamps|To buy stamps|To send a package|To send a package|To withdraw money|To withdraw money": [
+        "To send a package"
+    ],
+    "T9:HOW LONG WILL IT TAKE FOR THE PACKAGE TO ARRIVE?||CTX:...||||||A few days|A few days|A week|A week|Two weeks|Two weeks": [
+        "A week"
+    ],
+    "T9:WHO IS THE PACKAGE FOR?||CTX:...||||||Emily’s colleague|Emily’s colleague|Her family member|Her family member|Her friend|Her friend": [
+        "Her friend"
+    ],
+    "T9:BASED ON THE AUDIO, WHY MIGHT EMILY HAVE CHOSEN TO SEND THE PACKAGE VIA THE POST OFFICE RATHER THAN ANOTHER METHOD?||CTX:...||||||She might have wanted a more personal delivery.|She might have wanted a more personal delivery.|The post office offered the most affordable shipping option.|The post office offered the most affordable shipping option.|The post office was the only option available.|The post office was the only option available.": [
+        "The post office offered the most affordable shipping option."
+    ],
+    "T9:HOW MIGHT EMILY HAVE FELT AFTER THE POST OFFICE CLERK HELPED HER WITH THE FORMS?||CTX:...||||||Frustrated due to the extra effort required.|Frustrated due to the extra effort required.|Indifferent as it was part of her routine.|Indifferent as it was part of her routine.|Relieved because she received assistance.|Relieved because she received assistance.": [
+        "Relieved because she received assistance."
+    ],
+    "T9:TRUE OR FALSE: EMILY’S PACKAGE IS EXPECTED TO ARRIVE IN TWO WEEKS.||CTX:...||||||False|False|True|True": [
+        "False"
+    ],
+    "T9:HOW MUCH DOES THE PACKAGE WEIGH?||CTX:...||||||One kilogram|One kilogram|Three kilograms|Three kilograms|Two kilograms|Two kilograms": [
+        "Two kilograms"
+    ],
+    "T9:BASED ON TOM’S REVIEW, WHICH OF THE FOLLOWING STATEMENTS ABOUT THE STEAK AND VEGETABLES CAN BE INFERRED?||CTX:...||||||The steak was cooked to Tom’s liking, and the vegetables were of high quality.|The steak was cooked to Tom’s liking, and the vegetables were of high quality.|The steak was overcooked and the vegetables were bland.|The steak was overcooked and the vegetables were bland.|The steak was undercooked, but Tom liked the vegetables.|The steak was undercooked, but Tom liked the vegetables.": [
+        "The steak was cooked to Tom’s liking, and the vegetables were of high quality."
+    ],
+    "T9:TRUE OR FALSE: TOM HAD A STEAK AND A DESSERT WITH HIS DINNER.||CTX:...||||||False|False|True|True": [
+        "False"
+    ],
+    "T9:CONSIDERING TOM’S DESCRIPTION OF THE MEAL AND SERVICE, WHAT MIGHT BE INFERRED ABOUT HIS OVERALL DINING EXPERIENCE?||CTX:...||||||He found the experience unsatisfactory due to high costs.|He found the experience unsatisfactory due to high costs.|He thought the meal was average but was indifferent to the service.|He thought the meal was average but was indifferent to the service.|He was likely impressed with both the quality of the food and the level of service.|He was likely impressed with both the quality of the food and the level of service.": [
+        "He was likely impressed with both the quality of the food and the level of service."
+    ],
+    "T9:HOW WAS THE SERVICE AT THE RESTAURANT?||CTX:...||||||Average|Average|Excellent|Excellent|Poor|Poor": [
+        "Excellent"
+    ],
+    "T9:HOW WAS THE STEAK COOKED?||CTX:...||||||Overcooked|Overcooked|Perfectly cooked|Perfectly cooked|Raw|Raw": [
+        "Perfectly cooked"
+    ],
+    "T9:WHAT WAS TOM’S DRINK?||CTX:...||||||Beer|Beer|Red wine|Red wine|White wine|White wine": [
+        "Red wine"
+    ],
+    "T9:HOW MUCH WAS THE TOTAL BILL?||CTX:...||||||Fifteen dollars|Fifteen dollars|Thirty-five dollars|Thirty-five dollars|Twenty-five dollars|Twenty-five dollars": [
+        "Twenty-five dollars"
+    ],
+    "T9:WHAT DID TOM ORDER FOR DINNER?||CTX:...||||||Pasta and water|Pasta and water|Pizza and soda|Pizza and soda|Steak with vegetables and red wine|Steak with vegetables and red wine": [
+        "Steak with vegetables and red wine"
+    ],
+    "T8:READ AND CHOOSE THE CORRECT OPTION: HOW DID FAITHI HARB DIE?||IMG_DIM:443x189||A soldier killed him.|Along Gaza's border.|His grandfather shot him.|In a street in Gaza City.": [
+        [
+            "In a street in Gaza City."
+        ]
+    ],
+    "T8:READ AND CHOOSE THE CORRECT ANSWER. ACCORDING TO THE READING: WHAT IS KILLING GAZA PEOPLE?||IMG_DIM:443x189||Depression.|Israeli snipers.|People's wounds.|Soldiers.": [
+        [
+            "Depression."
+        ]
+    ],
+    "T8:READ ABOUT FAITHI HARB AND CHOOSE THE CORRECT ALTERNATIVE:||IMG_DIM:443x189||He lived in a safety place.|He shot a soldier.|He shot his grandfather.|He wanted to commit suicide.": [
+        [
+            "He wanted to commit suicide."
+        ]
+    ],
+    "T8:READ AND CHOOSE THE CORRECT. WHEN THE WRITER EXPRESS 'GIVE THEM A SAFETY PLACE TO STAY IN' HE REFERS TO:||IMG_DIM:443x189||Give them a place along Gaza's border.|Give them a place far away from danger.|Give them a place in Gaza City.|Give them a place on a busy street.": [
+        [
+            "Give them a place far away from danger."
+        ]
+    ],
+    "T8:READ AND CHOOSE THE MAIN IDEA OF THIS READING.||IMG_DIM:443x189||Gazans's depression.|Israeli snipers.|People's wounds.|Spring in Gaza.": [
+        [
+            "Gazans's depression."
+        ]
+    ],
+    "T8:READ AND CHOOSE THE CORRECT. HOW OLD WAS FAITHI?||IMG_DIM:443x189||Forty two.|Twelve.|Twenty two.|Twenty.": [
+        [
+            "Twenty two."
+        ]
+    ],
+    "T8:READ AND CHOOSE THE CORRECT ANSWER: FAITHI HARB WENT TO PROTEST IN:||IMG_DIM:443x189||Fall|Spring|Summer|Winter": [
+        [
+            "Spring"
+        ]
+    ],
+    "T8:READ AND CHOOSE THE INCORRECT SENTENCE.||IMG_DIM:443x189||The writer is worried about Gazan people.|The writer is worried about Israeli snipers.|The writer is worried about his grandfather.|The writer is worried about soldiers.": [
+        [
+            "The writer is worried about Gazan people."
+        ]
+    ],
+    "T8:READ AND CHOOSE THE BEST OPTION TO COMPLETE THE SENTENCE. THE WRITER´S PRINCIPAL IDEA IS:||IMG_DIM:443x189||To protest along Gaza's border.|To protest on a street in Gaza City.|To read the news.|To save people from the war, and give them a safe place.": [
+        [
+            "To save people from the war, and give them a safe place."
+        ]
+    ],
+    "T8:READ THE LETTER AND CHOOSE THE ANSWER THAT REFERS TO “BEST WHISHES”.||IMG_DIM:443x139||Closing|Date|Greeting|Signature": [
+        [
+            "Closing"
+        ]
+    ],
+    "T8:READ THE LETTER AND CHOOSE THE CORRECT EVENT:||IMG_DIM:443x139||Baby shower|Birthday|Getting a new job|Graduation": [
+        [
+            "Graduation"
+        ]
+    ],
+    "T8:READ THE LETTER. THE PART: 'CHONE, JULY 29TH, 2021;' REFERS TO:||IMG_DIM:443x139||Closing|Date|Greeting|Signature": [
+        [
+            "Date"
+        ]
+    ],
+    "T8:READ THE LETTER AND CHOOSE THE BEST OPTION TO REFERS TO: 'AMANDA;'||IMG_DIM:443x139||Closing|Date|Greeting|Signature": [
+        [
+            "Signature"
+        ]
+    ],
+    "T8:READ THE LETTER AND CHOOSE THE OPTION TO REFER TO: 'MANTA, JULY 19TH, 2021;' REFERS TO:||IMG_DIM:443x127||Closing|Date|Greeting|Signature": [
+        [
+            "Date"
+        ]
+    ],
+    "T8:READ THE LETTER AND CHOOSE THE OPTION REFERS TO: “YOURS SINCERELY”.||IMG_DIM:443x127||Closing|Date|Greeting|Signature": [
+        [
+            "Closing"
+        ]
+    ],
+    "T8:WHICH PART OF THE LETTER REFERS TO “JOSEPH”:||IMG_DIM:443x127||Closing|Date|Greeting|Signature": [
+        [
+            "Signature"
+        ]
+    ],
+    "T8:READ THE LETTER: WHICH OPTION CORRESPONDS TO “DEAR AMANDA”:||IMG_DIM:443x127||Closing|Date|Greeting|Signature": [
+        [
+            "Greeting"
+        ]
+    ],
+    "T8:READ THE LETTER. THE PART: 'DEAR DANIEL;' REFERS TO:||IMG_DIM:443x139||Closing|Date|Greeting|Signature": [
+        [
+            "Greeting"
+        ]
+    ],
+    "T8:READ AND CHOOSE THE CORRECT ANSWER: WHAT IS THE MAIN IDEA OF THE TEXT?||IMG_DIM:443x189||A description of microwaves.|How microwaves work.|How to clean microwaves.|How to repair microwaves.": [
+        [
+            "A description of microwaves."
+        ]
+    ],
+    "0:Trying to repair your own microwave is a good idea.": [
+        [
+            "False"
+        ]
+    ],
+    "0:Only a few ovens have two independent systems that ensure the electrical activity stops as soon as the door is opened.": [
+        [
+            "False"
+        ]
+    ],
+    "T8:READ AND CHOOSE THE CORRECT WORDS TO COMPLETE THE SENTENCE ABOUT MICROWAVES: THE MICROWAVE ________ WHEN THE HIGH VOLTAGE IS CONVERTED TO _________ OF ELECTROMAGNETIC ENERGY, WHICH IS A COMBINATION OF _________ AND MAGNETIC ENERGY.||IMG_DIM:443x189||Electrical - waves - works|Electrical - works - waves|Waves - works - electrical|Works - waves - electrical": [
+        [
+            "Works - waves - electrical"
+        ]
+    ],
+    "T8:READ AND CHOOSE THE INCORRECT SENTENCE. MICROWAVES _______||IMG_DIM:443x189||Are easy to repair.|Are efficient.|Are quick.|Heat energy directly.": [
+        [
+            "Are easy to repair."
+        ]
+    ],
+    "T8:READ AND CHOOSE THE CORRECT WORDS TO COMPLETE THE SENTENCE ABOUT MICROWAVES: WHEN THE ______ IS OPENED OR THE ________ REACHES ZERO, THE ________ AUTOMATICALLY STOPS, SO NO MICROWAVE RADIATION LEAVES THE OVES.||IMG_DIM:443x189||Door - energy - timer|Door - timer - energy|Energy - timer - door|Timer - door - energy": [
+        [
+            "Door - timer - energy"
+        ]
+    ],
+    "T8:READ AND CHOOSE THE CORRECT WORDS TO COMPLETE THE SENTENCE ABOUT MICROWAVES: NEVER TRY TO _____ YOUR OWN MICROWAVE. IT IS A COMPLEX APPLIANCE THAT ________ A MAGNETRON, HIGH VOLTAGE TRANSFORMER, ______ PROTECTORS, AND COMPLICATED CIRCUITS.||IMG_DIM:443x189||Includes - thermal - repair|Repair - includes - thermal|Repair - thermal - includes|Thermal - includes - repair": [
+        [
+            "Repair - includes - thermal"
+        ]
+    ],
+    "T8:READ AND CHOOSE THE WRONG ANSWER: HOW DO MICROWAVES WORK?||IMG_DIM:443x189||Microwaves heat food by radiation.|They channel heat energy directly to the molecules inside food.|They works when the high voltage is converted to waves of electromagnetic energy.|This energy is in the frecuency band of x-rays.": [
+        [
+            "This energy is in the frecuency band of x-rays."
+        ]
+    ],
+    "T8:READ THE LETTER AND CHOOSE THE CORRECT OPTION: PATRICIA WOULD LIKE TO KNOW:||IMG_DIM:443x144||If there are available places.|If they have an academic group.|What is the objective of the course?|What is the principal topic of the course?": [
+        [
+            "If there are available places."
+        ]
+    ],
+    "T8:READ THE LETTER. THE PART: 'YOURS SINCERELY' REFERS TO:||IMG_DIM:443x144||Closing|Date|Greeting|Signature": [
+        [
+            "Closing"
+        ]
+    ],
+    "T8:READ THE LETTER AND CHOOSE THE CORRECT EVENT.||IMG_DIM:443x144||Getting a new job.|Interested in a course.|Interested in the University.|Meeting with Friends.": [
+        [
+            "Interested in a course."
+        ]
+    ],
+    "T8:READ THE LETTER AND CHOOSE THE OPTION THAT REFERS TO: 'CHONE, JULY 29TH, 2021;' REFERS TO:||IMG_DIM:443x144||Closing|Date|Greeting|Signature": [
+        [
+            "Date"
+        ]
+    ],
+    "T8:READ THE LETTER AND CHOOSE THE CORRECT ONE. PATRICIA HOPES:||IMG_DIM:443x144||Be part of the Academic Group.|Be part of the Investigation Department.|Pay at the University.|Pay some money.": [
+        [
+            "Be part of the Academic Group."
+        ]
+    ],
+    "T8:READ THE LETTER AND CHOOSE THE CORRECT. PATRICIA IS WRITING TO:||IMG_DIM:443x144||Computing Department|Designing Department|Investigation Department|Public Relations Department": [
+        [
+            "Investigation Department"
+        ]
+    ],
+    "T8:READ THE LETTER AND CHOOSE THE CORRECT OPTION: PATRICIA IS INTERESTED IN:||IMG_DIM:443x144||A Computing Course|A Designing Course|A Scientific Writing Course|A Writing Article Course": [
+        [
+            "A Scientific Writing Course"
+        ]
+    ],
+    "T8:READ THE LETTER. THE PART: 'PATRICIA MEJIA;' REFERS TO:||IMG_DIM:443x144||Closing|Date|Greeting|Signature": [
+        [
+            "Signature"
+        ]
+    ],
+    "DEFAULT_MULTI:COMPLETE WITH THE CORRECT WORD: THIS IS THE MAIN TUNA PORT IN ECUADOR _______||1/10 VOCABULARY • BOOK 4 • MOD 1 • UNIT 1||Guayaquil|Manta|Portoviejo|Quito": "Manta",
+    "DEFAULT_MULTI:COMPLETE WITH THE CORRECT WORD: THE AMAZON REGION HAS A LOT OF _______||2/10 VOCABULARY • BOOK 4 • MOD 1 • UNIT 1||Jungles|Volcanos|beaches|buildings": "Jungles",
+    "DEFAULT_MULTI:COMPLETE WITH THE CORRECT WORD: PEOPLE CAN PRACTICE EXTREME SPORTS IN _______||3/10 VOCABULARY • BOOK 4 • MOD 1 • UNIT 1||Baños|Guayaquil|Portoviejo|Quevedo": "Baños",
+    "DEFAULT_MULTI:COMPLETE WITH THE CORRECT WORD: THIS PROVINCE IS LOCATED OUTSIDE OF CONTINENTAL EQUATOR _______||4/10 VOCABULARY • BOOK 4 • MOD 1 • UNIT 1||El Oro|Esmeraldas|Galapagos islands|Manabí": "Galapagos islands",
+    "DEFAULT_MULTI:COMPLETE WITH THE CORRECT WORD: THE CAJAS NATIONAL PARK IS LOCATED IN THE PROVINCE OF _______||5/10 VOCABULARY • BOOK 4 • MOD 1 • UNIT 1||Azuay|Cañar|Guayas|Manabí": "Azuay",
+    "DEFAULT_MULTI:COMPLETE WITH THE CORRECT WORD: THE THREE PRINCIPAL CITIES IN ECUADOR ARE _______||6/10 VOCABULARY • BOOK 4 • MOD 1 • UNIT 1||Cuenca, Guayaquil and Manta|Guayaquil, Quito and Cuenca|Quito, Cuenca and Manta|Quito, Guayaquil and Manta": "Guayaquil, Quito and Cuenca",
+    "DEFAULT_MULTI:COMPLETE WITH THE CORRECT WORD: THIS IS THE CAPITAL CITY OF ECUADOR _______||7/10 VOCABULARY • BOOK 4 • MOD 1 • UNIT 1||Cuenca|Guayaquil|Manta|Quito": "Quito",
+    "DEFAULT_MULTI:COMPLETE WITH THE CORRECT WORD: THE BEACH MORE VISITED IN ECUADOR IS _______||8/10 VOCABULARY • BOOK 4 • MOD 1 • UNIT 1||Guayaquil|Machala|Montañita|Quito": "Montañita",
+    "DEFAULT_MULTI:COMPLETE WITH THE CORRECT WORD: THIS IS THE PRINCIPAL ECONOMIC CITY IN ECUADOR _______||9/10 VOCABULARY • BOOK 4 • MOD 1 • UNIT 1||Ambato|Cuenca|Guayaquil|Portoviejo": "Guayaquil",
+    "DEFAULT_MULTI:COMPLETE WITH THE CORRECT WORD: COTOPAXI VOLCANO IS NEAR _______||10/10 VOCABULARY • BOOK 4 • MOD 1 • UNIT 1||Cuenca|Guayaquil|Loja|Loja": "Loja",
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION TO COMPLETE THE SENTENCE: THIS IS A CLOTH FOR WOMEN:||1/10 VOCABULARY • BOOK 4 • MOD 1 • UNIT 1||Polo shirt|Shirt|Skirt|Tie": "Skirt",
+    "DEFAULT_MULTI:COMPLETE WITH THE CORRECT WORD: JUAN´S HANDS ARE COLD. HE NEEDS TO WEAR SOME _______||2/10 VOCABULARY • BOOK 4 • MOD 1 • UNIT 1||Glasses|Gloves|T-shirt|Tie": "Gloves",
+    "DEFAULT_MULTI:COMPLETE WITH THE CORRECT WORD: JOSÉ CANNOT SEE VERY WELL. HE NEEDS TO BUY SOME _______||3/10 VOCABULARY • BOOK 4 • MOD 1 • UNIT 1||Glasses|Jeans|Shoes|Trousers": "Glasses",
+    "DEFAULT_MULTI:CHOOSE TH BEST ALTERNATIVE TO COMPLETE THE SENTENCE: LAURA GOES TO THE UNIVERSITY EVERY DAY. SHE NEEDS A _______||4/10 VOCABULARY • BOOK 4 • MOD 1 • UNIT 1||Camera|Cellphone|Computer|Watch": "Computer",
+    "DEFAULT_MULTI:CHOOSE THE BEST OPTION: THIS IS A CLOTH FOR MEN _______||5/10 VOCABULARY • BOOK 4 • MOD 1 • UNIT 1||Blouse|Dress|Skirt|Tie": "Tie",
+    "DEFAULT_MULTI:COMPLETE WITH THE CORRECT WORD: JULIO NEEDS TO KNOW THE TIME. HE WANTS TO BUY A _______||6/10 VOCABULARY • BOOK 4 • MOD 1 • UNIT 1||Chain|Hat|Tie|Watch": "Watch",
+    "DEFAULT_MULTI:COMPLETE WITH THE CORRECT WORD: DAVID IS GOING TO THE BEACH. HE IS WEARING A BATHING _______||7/10 VOCABULARY • BOOK 4 • MOD 1 • UNIT 1||Gloves|Shirt|Suit|Tie": "Suit",
+    "DEFAULT_MULTI:COMPLETE WITH THE CORRECT WORD: MY MOTHER IS A FANATIC OF THE BARCELONA SOCCER TEAM. SHE IS WEARING A _______ T-SHIRT.||8/10 VOCABULARY • BOOK 4 • MOD 1 • UNIT 1||Black|Blue|Green|Yellow": "Yellow",
+    "DEFAULT_MULTI:COMPLETE WITH THE CORRECT WORD: MY DAD NEEDS TO WEAR A TIE. HE NEEDS TO BUY A _______||8/10 VOCABULARY • BOOK 4 • MOD 1 • UNIT 1||Blouse|Shirt|T-shirt|Watch": "Shirt",
+    "DEFAULT_MULTI:COMPLETE WITH THE CORRECT WORD: MY KIDS ARE GOING TO PLAY SOCCER. THEY ARE WEARING A PAIR OF _______||9/10 VOCABULARY • BOOK 4 • MOD 1 • UNIT 1||Shoes|Suit|Tie|Under wear": "Shoes",
+    "DEFAULT_MULTI:COMPLETE WITH THE CORRECT WORD: MY MOTHER IS A FANATIC OF THE BARCELONA SOCCER TEAM. SHE IS WEARING A _______ T-SHIRT.||10/10 VOCABULARY • BOOK 4 • MOD 1 • UNIT 1||Black|Blue|Green|Yellow": "Yellow",
+    "DEFAULT_MULTI:COMPLETE WITH THE CORRECT WORD: MY DAD NEEDS TO WEAR A TIE. HE NEEDS TO BUY A _______||9/10 VOCABULARY • BOOK 4 • MOD 1 • UNIT 1||Blouse|Shirt|T-shirt|Watch": "Shirt",
+    "DEFAULT_MULTI:CHOOSE THE CORRECT DEFINITION OF THE WORDS BELOW: TO KNOW WHY OR HOW SOMETHING HAPPENS OR WORKS? REFERS TO?||1/9 VOCABULARY • BOOK 4 • MOD 1 • UNIT 1||Class|Subject|Teachers|Textbook": "Teachers"
 }
