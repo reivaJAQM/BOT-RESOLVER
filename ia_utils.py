@@ -268,14 +268,15 @@ def obtener_emparejamientos(palabras, definiciones):
     definiciones_texto = "\n".join(f'- "{d}"' for d in definiciones)
     
     prompt = f"""
-Rol: Robot de copiado exacto y emparejamiento.
-Tu MÁXIMA PRIORIDAD es conservar el texto original de las claves, INCLUYENDO ERRORES GRAMATICALES O DE TIPEO.
+OBJETIVO: Generar un diccionario de mapeo Python {{clave: valor}}.
+SITUACIÓN: Tienes una [LISTA_CLAVE] (izquierda) y una [LISTA_OPCIONES] (derecha).
+TU TAREA: Asignar a CADA clave de la izquierda una opción de la derecha.
 
-Instrucciones:
-1. Genera un diccionario Python emparejando elementos de [LISTA_CLAVE] con [LISTA_OPCIONES].
-2. Las 'keys' deben ser COPIAS EXACTAS (Copy-Paste literal) de [LISTA_CLAVE].
-3. PROHIBIDO CORREGIR GRAMÁTICA: Si el texto original tiene errores, déjalos tal cual.
-4. Los 'values' deben ser strings simples (NO listas).
+REGLAS ABSOLUTAS (SI LAS ROMPES, FALLAS):
+1. DEBES devolver un diccionario donde las 'keys' sean COPIAS EXACTAS, CARÁCTER POR CARÁCTER, de [LISTA_CLAVE].
+2. NO corrijas nada. Si la clave es "IMG_DIM:443x85" o tiene errores, ÚSALA TAL CUAL.
+3. OBLIGATORIO: Todas las claves de [LISTA_CLAVE] deben estar en el diccionario. Si no sabes la respuesta lógica, ASIGNA CUALQUIER OPCIÓN DISPONIBLE. No dejes claves huérfanas.
+4. Si hay menos claves que opciones, simplemente elige la mejor opción para cada clave y descarta las opciones sobrantes.
 
 [LISTA_CLAVE]
 {palabras_texto}
@@ -310,44 +311,26 @@ Diccionario de Pares (Responde SÓLO el diccionario Python):
             print(f"IA (Emp) no devolvió un dict: {type(pares)}")
             return None
 
-        # --- SANITIZACIÓN DE VALORES (FIX: unhashable type list) ---
+        # --- SANITIZACIÓN DE VALORES ---
         pares_limpios = {}
         for k, v in pares.items():
             valor_final = v
-            # Si la IA devolvió una lista ['valor'], tomamos el primero
             if isinstance(v, list):
-                print(f"      [Fix IA] Convirtiendo lista {v} a string.")
                 valor_final = v[0] if v else ""
-            # Aseguramos que sea string
             pares_limpios[k] = str(valor_final)
         pares = pares_limpios
-        # -----------------------------------------------------------
+        # -------------------------------
 
-        # Validación
+        # Validación Estricta (Tal como pediste)
         claves_esperadas_set = set(palabras)
         claves_recibidas_set = set(pares.keys())
         
-        # Comprobación de integridad
-        if len(pares) == len(palabras):
-            # Si coinciden exactamente las claves
-            if claves_recibidas_set == claves_esperadas_set:
-                return pares
-            else:
-                # Fallback simple: Si la IA cambió ligeramente alguna clave, intentamos recuperarla
-                print("      [IA Utils] Claves no coinciden exacto. Intentando mapeo por aproximación...")
-                pares_corregidos = {}
-                for clave_real in palabras:
-                    # Buscamos si la clave real está contenida en alguna clave de la IA o viceversa
-                    for k_ia, v_ia in pares.items():
-                        if clave_real in k_ia or k_ia in clave_real:
-                            pares_corregidos[clave_real] = v_ia
-                            break
-                
-                if len(pares_corregidos) == len(palabras):
-                    return pares_corregidos
-
-        print(f"IA (Emp) datos incompletos o incorrectos. Esperados: {len(palabras)}, Recibidos: {len(pares)}.")
-        return None
+        if claves_recibidas_set == claves_esperadas_set:
+            return pares
+        else:
+            # Si faltan claves o sobran, fallamos (porque el prompt les obligó a ser exactos)
+            print(f"IA (Emp) claves incorrectas. Esperaba: {claves_esperadas_set}, Recibió: {claves_recibidas_set}")
+            return None
 
     except Exception as e:
         print(f"Error API IA (Emp): {e}")

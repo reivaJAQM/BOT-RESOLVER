@@ -15,7 +15,7 @@ SELECTOR_BOTON_START = (By.XPATH, "//a[text()='Start']")
 # --- NAVEGACIÓN DENTRO DEL TEST ---
 SELECTOR_CONTEXTO = (By.CLASS_NAME, "overflow-y-auto")
 SELECTOR_PREGUNTA = (By.XPATH, "//h2[contains(@class, 'text-gray-800')]")
-SELECTOR_CHECK = (By.XPATH, "//button[translate(normalize-space(text()), 'CHECK', 'check')='check' and not(contains(@class, 'text-gray-700'))]")
+SELECTOR_CHECK = (By.XPATH, "//button[contains(@class, 'bg-green-500') and contains(translate(normalize-space(.), 'CHECK', 'check'), 'check')]")
 SELECTOR_CONTINUE = (By.XPATH, "//button[normalize-space()='CONTINUE']")
 SELECTOR_OK = (By.CLASS_NAME, "swal2-confirm")
 SELECTOR_SKIP = (By.XPATH, "//button[normalize-space()='SKIP']")
@@ -55,7 +55,7 @@ SELECTOR_OPCIONES = (By.XPATH, """
     //div[contains(@class, 'option')] | 
     //button[
         not(.//svg) and 
-        not(contains(translate(., 'CHECK', 'check'), 'check')) and 
+        not(contains(@class, 'bg-green-500')) and 
         not(contains(translate(., 'SKIP', 'skip'), 'skip')) and 
         not(contains(translate(., 'START', 'start'), 'start')) and
         string-length(normalize-space(.)) > 0

@@ -1904,10 +1904,28 @@ try:
                                 for o in ops_grupo: residuo = residuo.replace(o.text.strip(), "")
                                 residuo = residuo.replace(pregunta_actual_texto, "") 
                                 residuo = " ".join(residuo.split())
+
+                                # --- LIMPIEZA AGRESIVA DE BOTONES ---
+                                # Si el texto empieza con "CHECK" (ej: "CHECK To know why..."), lo cortamos.
+                                residuo_upper = residuo.upper()
+                                if residuo_upper.startswith("CHECK ") or residuo_upper.startswith("CKECK "): 
+                                    residuo = residuo[6:].strip() # Quitamos "CHECK " del inicio
+                                elif residuo_upper == "CHECK" or residuo_upper == "CKECK": 
+                                    residuo = "" # Es solo el botón, lo descartamos
+
+                                # --- FILTRO ANTI-RUIDO ---
+                                txt_up = residuo.upper()
+                                es_ruido = False
                                 
-                                # --- CORRECCIÓN CRÍTICA ---
-                                # CAMBIO 2: Aumentamos límite a 350 chars (antes 120) para aceptar definiciones largas.
-                                if len(residuo) > 2 and len(residuo) < 350:
+                                # Headers de libro/unidad
+                                if ("BOOK" in txt_up and ("UNIT" in txt_up or "MOD" in txt_up)): es_ruido = True
+                                elif ("/" in txt_up and ("VOCABULARY" in txt_up or "READING" in txt_up or "GRAMMAR" in txt_up)): es_ruido = True
+                                
+                                if es_ruido:
+                                    pass # Ignoramos este texto
+                                
+                                # --- Validación de longitud ---
+                                elif len(residuo) > 2 and len(residuo) < 350:
                                     texto_encontrado = residuo
                                     contenedor_base = elemento_actual 
                                     break
