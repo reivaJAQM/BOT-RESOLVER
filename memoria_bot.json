@@ -5280,5 +5280,2248 @@
         [
             "Sweater"
         ]
-    ]
+    ],
+    "T8:LOOK AT THE PICTURE AND CHOOSE THE CORRECT FAMILY MEMBER ON EACH NUMBER. WHICH FAMILY MEMBER IS NUMBER 5?||IMG_DIM:422x297||Baby|Daughter|Father|Grandma|Grandpa|Mother|Son": [
+        [
+            "Daughter"
+        ]
+    ],
+    "T8:LOOK AT THE PICTURE. CHOOSE THE CORRECT WORD AND COMPLETE THE SENTENCE ACCORDING TO THE GIVEN FAMILY TREE. HENRY IS EMMA'S _________||IMG_DIM:443x136||Brother|Father|Grandpa|Mother|Sister": [
+        [
+            "Grandpa"
+        ]
+    ],
+    "T4:READ THE SENTENCE AND CHOOSE THE RIGHT OPTION TO COMPLETE IT.||KW:I have three brothers and two sisters. They are my|My is now 91 years old. She married my grandfather 70 years ago.|My sisters daughter is three years old. I love my little so much|Your father and mother are your||DEF:grandma|niece|parents|siblings": [
+        [
+            "parents",
+            "siblings",
+            "grandma",
+            "niece"
+        ]
+    ],
+    "T8:LOOK AT THE PICTURE AND CHOOSE THE CORRECT FAMILY MEMBER ON EACH NUMBER. WHICH FAMILY MEMBER IS NUMBER 7?||IMG_DIM:422x297||Baby|Daughter|Father|Grandma|Grandpa|Mother|Son": [
+        [
+            "Baby"
+        ]
+    ],
+    "T8:LOOK AT THE PICTURE AND CHOOSE THE CORRECT FAMILY MEMBER ON EACH NUMBER. WHICH FAMILY MEMBER IS NUMBER 4?||IMG_DIM:422x297||Baby|Daughter|Father|Grandma|Grandpa|Mother|Son": [
+        [
+            "Mother"
+        ]
+    ],
+    "T8:LOOK AT THE PICTURE. CHOOSE THE CORRECT WORD AND COMPLETE THE SENTENCE ACCORDING TO THE GIVEN FAMILY TREE. ANDREW IS MICHAEL'S _________||IMG_DIM:443x136||Brother|Father|Grandpa|Mother|Sister": [
+        [
+            "Father"
+        ]
+    ],
+    "T8:LOOK AT THE PICTURE. CHOOSE THE CORRECT WORD AND COMPLETE THE SENTENCE ACCORDING TO THE GIVEN FAMILY TREE. OLIVER IS EMMA'S _________||IMG_DIM:443x136||Brother|Father|Grandpa|Mother|Sister": [
+        [
+            "Brother"
+        ]
+    ],
+    "T11_BATCH:READ THE WORDS AND COMPLETE THEM WITH THE MISSING LETTERS.||CTX:...||-hi-d-en ___|D-ug-te- ___|Gra-d-arent- ___|H-sb-nd ___|N-ph-w ___": [
+        [
+            "GRANDPARENTS",
+            "CHILDREN",
+            "DAUGHTER",
+            "HUSBAND",
+            "NEPHEW"
+        ]
+    ],
+    "T8:LOOK AT THE PICTURE AND CHOOSE THE CORRECT FAMILY MEMBER ON EACH NUMBER. WHICH FAMILY MEMBER IS NUMBER 6?||IMG_DIM:422x297||Baby|Daughter|Father|Grandma|Grandpa|Mother|Son": [
+        [
+            "Son"
+        ]
+    ],
+    "T8:LOOK AT THE PICTURE. CHOOSE THE CORRECT WORD AND COMPLETE THE SENTENCE ACCORDING TO THE GIVEN FAMILY TREE. EMMA IS OLIVER'S _________||IMG_DIM:443x136||Brother|Father|Grandpa|Mother|Sister": [
+        [
+            "Sister"
+        ]
+    ],
+    "T8:LOOK AT THE PICTURE AND CHOOSE THE CORRECT FAMILY MEMBER ON EACH NUMBER. WHICH FAMILY MEMBER IS NUMBER 2?||IMG_DIM:422x297||Baby|Daughter|Father|Grandma|Grandpa|Mother|Son": [
+        [
+            "Grandma"
+        ]
+    ],
+    "T8:LOOK AT THE PICTURE AND CHOOSE THE CORRECT FAMILY MEMBER ON EACH NUMBER. WHICH FAMILY MEMBER IS NUMBER 1?||IMG_DIM:422x297||Baby|Daughter|Father|Grandma|Grandpa|Mother|Son": [
+        [
+            "Grandpa"
+        ]
+    ],
+    "T11_BATCH:PUT IN ORDER THE LETTERS TO WRITE THE FAMILY MEMBERS.||CTX:...||E-T-F-A-H-R ___|N-I-C-O-U-S ___|O-M-T-R-E-H ___|R-A-N-M-G-A-D ___|S-S-T-I-E-R ___|T-B-O-H-R-R-E ___": [
+        [
+            "FATHER",
+            "COUSIN",
+            "BROTHER",
+            "GRANDMA",
+            "MOTHER",
+            "SISTER"
+        ]
+    ],
+    "T4:READ THE FOLLOWING SENTENCES AND COMPLETE THEM WITH WORDS FROM THE WORD BANK.||KW:The brother of my mother is my|The mother of my father|The sister my father is my|The son of my aunt is my||DEF:AUNT|COUSIN|GRANDMOTHER|UNCLE": [
+        [
+            "AUNT",
+            "COUSIN",
+            "UNCLE",
+            "GRANDMOTHER"
+        ]
+    ],
+    "T8:LOOK AT THE PICTURES. MATCH THE PICTURES WITH THE SENTENCES THAT DESCRIBE PEOPLE IN EACH ONE.||IMG_DIM:341x213|IMG_DIM:341x223|IMG_DIM:341x227|IMG_DIM:341x228||Mother and son.|Mother, father, daughter, and son.|Mother, father, grandpa, grandma and children.|Two fathers and a baby.": [
+        [
+            "Mother, father, daughter, and son.",
+            "Mother and son.",
+            "Two fathers and a baby.",
+            "Mother, father, grandpa, grandma and children."
+        ]
+    ],
+    "T8:LOOK AT THE PICTURE AND CHOOSE THE CORRECT FAMILY MEMBER ON EACH NUMBER. WHICH FAMILY MEMBER IS NUMBER 3?||IMG_DIM:422x297||Baby|Daughter|Father|Grandma|Grandpa|Mother|Son": [
+        [
+            "Father"
+        ]
+    ],
+    "T8:LOOK AT THE PICTURE. CHOOSE THE CORRECT WORD AND COMPLETE THE SENTENCE ACCORDING TO THE GIVEN FAMILY TREE. SARAH IS MICHAEL'S _________||IMG_DIM:443x136||Brother|Father|Grandpa|Mother|Sister": [
+        [
+            "Mother"
+        ]
+    ],
+    "DEFAULT:LOOK AT THE PICTURE AND SELECT THE CORRECT ANSWER. ARE KEVIN AND ZOE OLD FRIENDS?||CTX:Kevin: Hello. Are you the new student, right? What...ng university. Zoe: Thanks a lot. I appreciate it!||||||||No, they aren´t.|No, they aren´t.|Yes, they are.|Yes, they are.": [
+        "No, they aren´t."
+    ],
+    "DEFAULT:LOOK AT THE PICTURE AND SELECT THE CORRECT ANSWER. WHY IS ZOE LIVING IN ECUADOR?||CTX:Kevin: Hello. Are you the new student, right? What...ng university. Zoe: Thanks a lot. I appreciate it!||||||||She is in Ecuador because she is in an academic exchange program.|She is in Ecuador because she is in an academic exchange program.|She is in Ecuador because she is visiting to her cousins.|She is in Ecuador because she is visiting to her cousins.": [
+        "She is in Ecuador because she is in an academic exchange program."
+    ],
+    "DEFAULT:LOOK AT THE PICTURE AND SELECT THE CORRECT ANSWER. WHAT´S ZOE LAST NAME?||CTX:Kevin: Hello. Are you the new student, right? What...ng university. Zoe: Thanks a lot. I appreciate it!||||||||Cevallos|Cevallos|Thompson|Thompson": [
+        "Thompson"
+    ],
+    "DEFAULT:LOOK AT THE IMAGE AND SELECT THE CORRECT ANSWER. WHAT´S KEVIN LAST NAME?||CTX:Kevin: Hello. Are you the new student, right? What...ng university. Zoe: Thanks a lot. I appreciate it!||||||||Cevallos|Cevallos|Thompson|Thompson": [
+        "Cevallos"
+    ],
+    "DEFAULT:LOOK AT THE IMAGE AND CHOOSE AND ANSWER THE QUESTION ABOUT THE TEXT. WHAT DO THEY DO WHEN KATE IS SAD?||CTX:Hi, Jim! How are you? I’m really fine. I’ve never ...rents together. I’ll see you at school! Love, Kate||||||||They teach her how to dance.|They teach her how to dance.|They tell her amazing and interesting stories.|They tell her amazing and interesting stories.": [
+        "They tell her amazing and interesting stories."
+    ],
+    "DEFAULT:LOOK AT THE IMAGE AND ANSWER THE QUESTION ABOUT THE TEXT. WHAT DOES KATE’S GRANDMOTHER LOVE TO DO?||CTX:Hi, Jim! How are you? I’m really fine. I’ve never ...rents together. I’ll see you at school! Love, Kate||||||||Kate’s grandmother loves to prepare chocolate cookies for Kate.|Kate’s grandmother loves to prepare chocolate cookies for Kate.|Kate’s grandmother loves to prepare pizza for Kate.|Kate’s grandmother loves to prepare pizza for Kate.": [
+        "Kate’s grandmother loves to prepare chocolate cookies for Kate."
+    ],
+    "DEFAULT:LOOK AT THE PICTURE AND CHOOSE THE CORRECT ANSWER. THIS LETTER IS SENT TO:||CTX:Hi, Jim! How are you? I’m really fine. I’ve never ...rents together. I’ll see you at school! Love, Kate||||||||My boss.|My boss.|My classmate.|My classmate.": [
+        "My classmate."
+    ],
+    "DEFAULT:LOOK AT THE PICTURE AND ANSWER THE QUESTION ABOUT THE TEXT. HOW OLD IS KATE´S GRANDFATHER?||CTX:Hi, Jim! How are you? I’m really fine. I’ve never ...rents together. I’ll see you at school! Love, Kate||||||||He is 59 years old.|He is 59 years old.|He is 64 years old.|He is 64 years old.": [
+        "He is 64 years old."
+    ],
+    "DEFAULT:LOOK AT THE PICTURE AND ANSWER THE QUESTION ABOUT THE TEXT. WHERE DO THEY LIVE?||CTX:Hi, Jim! How are you? I’m really fine. I’ve never ...rents together. I’ll see you at school! Love, Kate||||||||They live in Manta.|They live in Manta.|They live in Quito.|They live in Quito.": [
+        "They live in Quito."
+    ],
+    "DEFAULT:LOOK AT THE PICTURE AND CHOOSE THE CORRECT ANSWER. THIS LETTER IS ABOUT:||CTX:Hi, Jim! How are you? I’m really fine. I’ve never ...rents together. I’ll see you at school! Love, Kate||||||||My grandparents’ work.|My grandparents’ work.|My grandparent’s description.|My grandparent’s description.": [
+        "My grandparent’s description."
+    ],
+    "DEFAULT:LOOK AT THE PICTURE AND ANSWER THE QUESTIONS ABOUT THE TEXT. ARE THEIR STORIES BORING?||CTX:Hi, Jim! How are you? I’m really fine. I’ve never ...rents together. I’ll see you at school! Love, Kate||||||||No, they aren´t.|No, they aren´t.|Yes, they are.|Yes, they are.": [
+        "No, they aren´t."
+    ],
+    "DEFAULT_MULTI:TRUE OR FALSE?||Kate grandparent’s names are John and Lucy.||F|T": "F",
+    "DEFAULT_MULTI:TRUE OR FALSE?||He is an army soldier.||F|T": "F",
+    "DEFAULT_MULTI:TRUE OR FALSE?||Kate’s grandparents spend a long time together.||F|T": "T",
+    "DEFAULT_MULTI:TRUE OR FALSE?||hey live in a big house.||F|T": "F",
+    "DEFAULT_MULTI:TRUE OR FALSE?||Kate’s grandmother prepares breakfast every day.||F|T": "T",
+    "DEFAULT_MULTI:LOOK AT THE PICTURE AND SELECT THE CORRECT ADJECTIVE.||Kate´s grandparents live in a house.||BIG|SMALL": "SMALL",
+    "DEFAULT_MULTI:LOOK AT THE PICTURE AND SELECT THE CORRECT ADJECTIVE.||Joseph is a man||SHORT|TALL": "TALL",
+    "DEFAULT_MULTI:LOOK AT THE PICTURE AND SELECT THE CORRECT ADJECTIVE.||Lucy is a woman||SHORT|TALL": "SHORT",
+    "DEFAULT_MULTI:LOOK AT THE PICTURE AND SELECT THE CORRECT ADJECTIVE.||Joseph has eyes||BLACK|GREEN": "BLACK",
+    "DEFAULT_MULTI:LOOK AT THE PICTURE AND SELECT THE CORRECT ADJECTIVE.||Lucy has hair||CURLY|STRAIGHT": "CURLY",
+    "T4:USE THE WORDS FROM THE BOX||KW:What is that on your ?|What is the ?|Who is the teacher?|Who is your friend?||DEF:English|hands|new|problem": [
+        [
+            "new",
+            "English",
+            "problem",
+            "hands"
+        ]
+    ],
+    "DEFAULT_MULTI:SELECT ‘WHAT OR WHO’ TO COMPLETE THE QUESTION.||is the capital of Manabi?||WHAT|WHO": "WHAT",
+    "DEFAULT_MULTI:SELECT ‘WHAT OR WHO’ TO COMPLETE THE QUESTION.||is the best movie in your opinion?||WHAT|WHO": "WHAT",
+    "DEFAULT_MULTI:SELECT ‘WHAT OR WHO’ TO COMPLETE THE QUESTION.||is your favorite English teacher||WHAT|WHO": "WHO",
+    "DEFAULT_MULTI:SELECT ‘WHAT OR WHO’ TO COMPLETE THE QUESTION.||is your favorite subject?||WHAT|WHO": "WHAT",
+    "DEFAULT_MULTI:SELECT ‘WHAT OR WHO’ TO COMPLETE THE QUESTION.||is your significant other?||WHAT|WHO": "WHO",
+    "DEFAULT:CHOOSE THE CORRECT SENTENCE||CTX:...||||||||is it ten o’colck|is it ten o’colck|it is o’clock ten|it is o’clock ten|it is ten clock|it is ten clock|it is ten o’clock|it is ten o’clock": [
+        "it is ten o’clock"
+    ],
+    "T4:MATCH THE TIMES.||KW:1100|500|700||DEF:It’s eleven o’clock|It’s five o’clock|It’s seven o’clock": [
+        [
+            "It’s five o’clock",
+            "It’s seven o’clock",
+            "It’s eleven o’clock"
+        ]
+    ],
+    "0:Carlos: I am fine, thank you and you?|Lucia: Hello. How are you?|Lucia: I’m great.": [
+        [
+            [
+                "Lucia: Hello. How are you?",
+                "Carlos: I am fine, thank you and you?",
+                "Lucia: I’m great."
+            ]
+        ]
+    ],
+    "DEFAULT:READ THE STATEMENTS AND CHOOSE THE CORRECT SENTENCE.||CTX:...||||||||I am isn’t Joseph.|I am isn’t Joseph.|My name am Joseph.|My name am Joseph.|My name are Joseph.|My name are Joseph.|My name is Joseph.|My name is Joseph.": [
+        "My name is Joseph."
+    ],
+    "T4:READ THE SENTENCES AND CHOOSE THE RIGHT OPTION.||KW:How old are you?|How old is you brother?|How old is you father?|How old is your mother?|How old is your sister?||DEF:I am 22 years old.|My brother is 14 years old.|My father is 56 years old.|My mother is 48 years old.|My sister is 9 years old.": [
+        [
+            "My father is 56 years old.",
+            "My mother is 48 years old.",
+            "My brother is 14 years old.",
+            "My sister is 9 years old.",
+            "I am 22 years old."
+        ]
+    ],
+    "DEFAULT:READ THE SENTENCES AND CHOOSE THE RIGHT OPTION.||CTX:...||||||Is she twenty old years.|Is she twenty old years.|Is she twenty years old.|Is she twenty years old.|She is twenty old years.|She is twenty old years.|She is twenty years old.|She is twenty years old.": [
+        "She is twenty years old."
+    ],
+    "0:20|Her|father|is|old|years|2:17|Susan’s|boyfriend|is|old|years|4:35|Celia|is|old|years|6:?|How|are|old|you": [
+        [
+            [
+                "Her",
+                "father",
+                "is",
+                "20",
+                "years",
+                "old"
+            ],
+            [
+                "Susan’s",
+                "boyfriend",
+                "is",
+                "17",
+                "years",
+                "old"
+            ],
+            [
+                "Celia",
+                "is",
+                "35",
+                "years",
+                "old"
+            ],
+            [
+                "How",
+                "old",
+                "are",
+                "you",
+                "?"
+            ]
+        ]
+    ],
+    "DEFAULT:READ THE SENTENCES AND CHOOSE THE CORRECT OPTION.||CTX:...||||||||Will Smith is from Ecuador.|Will Smith is from Ecuador.|Will Smith is from Peru.|Will Smith is from Peru.|Will Smith is from South Africa.|Will Smith is from South Africa.|Will Smith is from the U.S.A|Will Smith is from the U.S.A": [
+        "Will Smith is from the U.S.A"
+    ],
+    "T4:READ THE SENTENCES AND CHOOSE THE WORDS FROM THE BOX TO COMPLETE THE SENTENCES.||KW:Australia|Rebel Wilson is Australia|Scarlett is from the U.S.A|Shakira from Colombia||DEF:Canada|Johansson|from|is": [
+        [
+            "is",
+            "from",
+            "Canada",
+            "Johansson"
+        ]
+    ],
+    "T4:READ THE SENTENCES AND MATCH THE ANSWERS TO THE QUESTIONS.||KW:Where is Adele from?|Where is Eugenio Derbez from?|Where is Lionel Messi from?|Where is Rafael Nadal from?|Where is Tom Cruise from?||DEF:He’s from Mexico.|He’s from Spain.|He’s from U.S.A.|He’s from the Argentina.|She’s from England.": [
+        [
+            "He’s from Mexico.",
+            "He’s from the Argentina.",
+            "She’s from England.",
+            "He’s from U.S.A.",
+            "He’s from Spain."
+        ]
+    ],
+    "0:?|Hello|How|are|you|2:?|What`s|name|your|4:I|am|fine|6:Nice|meet|to|you|8:I|am|great": [
+        [
+            [
+                "Hello",
+                "How",
+                "are",
+                "you",
+                "?"
+            ],
+            [
+                "What`s",
+                "your",
+                "name",
+                "?"
+            ],
+            [
+                "I",
+                "am",
+                "fine"
+            ],
+            [
+                "Nice",
+                "to",
+                "meet",
+                "you"
+            ],
+            [
+                "I",
+                "am",
+                "great"
+            ]
+        ]
+    ],
+    "DEFAULT:READ THE WORDS AND CHOOSE THE CORRECT OPTION.||CTX:...||||||||She am my friend.|She am my friend.|She are my friend.|She are my friend.|She is am my friend.|She is am my friend.|She is my friend.|She is my friend.": [
+        "She is my friend."
+    ],
+    "DEFAULT:READ THE SENTENCES AND CHOOSE THE CORRECT OPTION.||CTX:...||||||||We am best friends forever.|We am best friends forever.|We are best friends forever.|We are best friends forever.|We is best friends forever.|We is best friends forever.|We isn’t best friends forever.|We isn’t best friends forever.": [
+        "We are best friends forever."
+    ],
+    "DEFAULT_MULTI:LOOK AT THE PICTURE AND SELECT THE CORRECT ANSWER.||She next to the window||ARE|IS": "IS",
+    "DEFAULT_MULTI:READ THE FOLLOWING NAMES AND SELECT THE CORRECT SUBJECT PRONOUN.||Cat||I|IT": "IT",
+    "DEFAULT_MULTI:READ THE FOLLOWING NAMES AND SELECT THE CORRECT SUBJECT PRONOUN.||The dogs and I||THEY|WE": "WE",
+    "DEFAULT_MULTI:READ THE FOLLOWING NAMES AND SELECT THE CORRECT SUBJECT PRONOUN.||Mark TY||HE|THEY": "HE",
+    "DEFAULT_MULTI:READ THE FOLLOWING NAMES AND SELECT THE CORRECT SUBJECT PRONOUN.||Barbara||SHE|WE": "SHE",
+    "DEFAULT_MULTI:READ THE FOLLOWING NAMES AND SELECT THE CORRECT SUBJECT PRONOUN.||The student and Rebecca||SHE|THEY": "THEY",
+    "0:She|him|lives|with|2:loves|she|so much|you|4:?|can|hear|me|you|6:explain|they|things|very|well": [
+        [
+            [
+                "She",
+                "lives",
+                "with",
+                "him"
+            ],
+            [
+                "she",
+                "loves",
+                "you",
+                "so much"
+            ],
+            [
+                "can",
+                "you",
+                "hear",
+                "me",
+                "?"
+            ],
+            [
+                "they",
+                "explain",
+                "things",
+                "very",
+                "well"
+            ]
+        ]
+    ],
+    "DEFAULT_MULTI:READ THE SENTENCES AND CHOOSE THE CORRECT OBJECT PRONOUN.||Sandra is my girlfriend. I love||HER|HIM": "HER",
+    "DEFAULT_MULTI:READ THE SENTENCES AND CHOOSE THE CORRECT OBJECT PRONOUN.||Saturday is the best day. I love||IT|ME": "IT",
+    "DEFAULT_MULTI:READ THE SENTENCES AND CHOOSE THE CORRECT OBJECT PRONOUN.||Andrea and I are siblings. Our parents love||THEM|US": "US",
+    "DEFAULT_MULTI:READ THE SENTENCES AND CHOOSE THE CORRECT OBJECT PRONOUN.||David is my son. I love||HER|HIM": "HIM",
+    "DEFAULT_MULTI:READ THE SENTENCES AND CHOOSE THE CORRECT OBJECT PRONOUN.||please give water||I|ME": "ME",
+    "DEFAULT_MULTI:READ THE SENTENCES AND CHOOSE THE CORRECT OBJECT PRONOUN.||I send a letter||HE|HIM": "HIM",
+    "DEFAULT_MULTI:READ THE SENTENCES AND CHOOSE THE CORRECT OBJECT PRONOUN.||Ana cooks dinner for||US|WE": "US",
+    "DEFAULT_MULTI:READ THE SENTENCES AND CHOOSE THE CORRECT OBJECT PRONOUN.||I love so much||HER|SHE": "HER",
+    "DEFAULT_MULTI:READ THE SENTENCES AND SELECT THE CORRECT POSSESSIVE ADJECTIVES:||The book belongs to me. It is book.||MY|OUR": "MY",
+    "DEFAULT_MULTI:READ THE SENTENCES AND SELECT THE CORRECT POSSESSIVE ADJECTIVES:||The bike belongs to him. It is bike.||HIM|HIS": "HIS",
+    "DEFAULT_MULTI:READ THE SENTENCES AND SELECT THE CORRECT POSSESSIVE ADJECTIVES:||The computer belongs to her. It is computer||HER|HIS": "HER",
+    "DEFAULT_MULTI:READ THE SENTENCES AND SELECT THE CORRECT POSSESSIVE ADJECTIVES:||The phone belongs to you. It is phone.||HIS|YOUR": "YOUR",
+    "DEFAULT_MULTI:READ THE SENTENCES AND SELECT THE CORRECT POSSESSIVE ADJECTIVES:||The house belongs to us. It is house.||HER|OUR": "OUR",
+    "DEFAULT_MULTI:READ THE SENTENCES AND CHOOSE THE CORRECT OBJECT PRONOUN.||Marcos and Patricia are my best friends. I love||HER|THEM": "THEM",
+    "DEFAULT_MULTI:READ THE SENTENCES AND CHOOSE THE CORRECT OBJECT PRONOUN.||The children are hungry. Give an apple.||IT|THEM": "THEM",
+    "DEFAULT_MULTI:READ THE SENTENCES AND CHOOSE THE CORRECT OBJECT PRONOUN.||Ann and Paul can't do their homework. Can you help ?||HER|THEM": "THEM",
+    "DEFAULT_MULTI:READ THE SENTENCES AND CHOOSE THE CORRECT OBJECT PRONOUN.||Where is the mouse? I can't see||HER|IT": "IT",
+    "DEFAULT_MULTI:READ THE SENTENCES AND CHOOSE THE CORRECT OBJECT PRONOUN.||We are thirsty. Can you give some juice?||HIM|US": "US",
+    "DEFAULT_MULTI:READ THE SENTENCES AND REPLACE THE PERSONAL PRONOUNS BY POSSESSIVE ADJECTIVES:||(I) husband and I want to go to Paris.||MY|OUR": "MY",
+    "DEFAULT_MULTI:READ THE SENTENCES AND REPLACE THE PERSONAL PRONOUNS BY POSSESSIVE ADJECTIVES:||We want to see (it) historical monuments||ITS|THEIR": "ITS",
+    "DEFAULT_MULTI:READ THE SENTENCES AND REPLACE THE PERSONAL PRONOUNS BY POSSESSIVE ADJECTIVES:||Leila likes (she) dog !||HER|HIS": "HER",
+    "DEFAULT_MULTI:READ THE SENTENCES AND REPLACE THE PERSONAL PRONOUNS BY POSSESSIVE ADJECTIVES:||(It) name is Bobby.||HIS|ITS": "ITS",
+    "DEFAULT:READ THE SENTENCES AND CHOOSE THE CORRECT OPTION.||CTX:...||||||||Andrea drives her car to her work everyday.|Andrea drives her car to her work everyday.|Andrea drives his car to her work everyday.|Andrea drives his car to her work everyday.|Andrea drives my car to their work everyday.|Andrea drives my car to their work everyday.|Andrea drives our car to his work everyday.|Andrea drives our car to his work everyday.": [
+        "Andrea drives her car to her work everyday."
+    ],
+    "T9:ACCORDING TO THE AUDIO ANSWER THE QUESTION: WHAT SHOULD YOU DO BEFORE YOU LEAVE THE HOTEL?||CTX:...||||||Call the front desk|Call the front desk|Have breakfast|Have breakfast|Return the key at the reception|Return the key at the reception|Take the phone|Take the phone": [
+        "Return the key at the reception"
+    ],
+    "T9:ACCORDING TO THE AUDIO ANSWER THE QUESTION: WHAT CAN YOU FIND INSIDE YOUR ROOM?||CTX:...||||||A balcony|A balcony|A bed, a bathroom, and a TV|A bed, a bathroom, and a TV|A gym|A gym|A swimming pool|A swimming pool": [
+        "A bed, a bathroom, and a TV"
+    ],
+    "T9:ACCORDING TO THE AUDIO ANSWER THE QUESTION: HOW DO YOU GET TO YOUR ROOM?||CTX:...||||||By taking the elevator|By taking the elevator|By taking the stairs|By taking the stairs|By using the phone|By using the phone|By walking|By walking": [
+        "By taking the elevator"
+    ],
+    "T9:ACCORDING TO THE AUDIO ANSWER THE QUESTION: WHERE DO YOU GO WHEN YOU ARRIVE AT THE HOTEL?||CTX:...||||||To the elevator|To the elevator|To the reception|To the reception|To the restaurant|To the restaurant|To your room|To your room": [
+        "To the reception"
+    ],
+    "T9:ACCORDING TO THE AUDIO ANSWER THE QUESTION: WHAT DO YOU RECEIVE FROM THE RECEPTIONIST?||CTX:...||||||A key|A key|A map|A map|A phone|A phone|A towel|A towel": [
+        "A key"
+    ],
+    "T9:PLEASE LISTEN TO THE AUDIO AND CHOOSE THE BEST OPTION ACCORDING TO THE QUESTION: WHERE DOES THE FAMILY GO ON VACATION EVERY SUMMER?||CTX:...||||||The beach|The beach|The city|The city|The countryside|The countryside|The mountains|The mountains": [
+        "The beach"
+    ],
+    "T9:PLEASE LISTEN TO THE AUDIO AND CHOOSE THE BEST OPTION ACCORDING TO THE QUESTION: WHAT IS THE PROFESSION OF THE FATHER?||CTX:...||||||Chef|Chef|Doctor|Doctor|Engineer|Engineer|Teacher|Teacher": [
+        "Doctor"
+    ],
+    "T9:PLEASE LISTEN TO THE AUDIO AND CHOOSE THE BEST OPTION ACCORDING TO THE QUESTION: HOW MANY SIBLINGS DOES THE NARRATOR HAVE?||CTX:...||||||Four|Four|One|One|Three|Three|Two|Two": [
+        "Two"
+    ],
+    "T9:PLEASE LISTEN TO THE AUDIO AND CHOOSE THE BEST OPTION ACCORDING TO THE QUESTION: WHAT ACTIVITIES DOES THE FAMILY ENJOY DOING TOGETHER?||CTX:...||||||Hiking and fishing|Hiking and fishing|Reading and gardening|Reading and gardening|Shopping and traveling|Shopping and traveling|Watching movies, playing games, and cooking meals|Watching movies, playing games, and cooking meals": [
+        "Watching movies, playing games, and cooking meals"
+    ],
+    "T9:PLEASE LISTEN TO THE AUDIO AND CHOOSE THE BEST OPTION ACCORDING TO THE QUESTION: HOW MANY PEOPLE ARE IN THE FAMILY?||CTX:...||||||Five|Five|Four|Four|Seven|Seven|Six|Six": [
+        "Five"
+    ],
+    "T9:PLEASE LISTEN TO THE AUDIO AND CHOOSE THE BEST OPTION ACCORDING TO THE QUESTION: WHAT SHOULD YOU BRING IF YOU GO OUTSIDE?||CTX:...||||||A hat|A hat|A jacket|A jacket|An umbrella|An umbrella|Sunglasses|Sunglasses": [
+        "An umbrella"
+    ],
+    "T9:PLEASE LISTEN TO THE AUDIO AND CHOOSE THE BEST OPTION ACCORDING TO THE QUESTION: WHAT IS THE CHANCE OF RAIN IN THE AFTERNOON?||CTX:...||||||10%|10%|20%|20%|40%|40%|60%|60%": [
+        "40%"
+    ],
+    "T9:PLEASE LISTEN TO THE AUDIO AND CHOOSE THE BEST OPTION ACCORDING TO THE QUESTION: WHERE IS THE WIND COMING FROM?||CTX:...||||||East|East|North|North|Northwest|Northwest|South|South": [
+        "Northwest"
+    ],
+    "T9:PLEASE LISTEN TO THE AUDIO AND CHOOSE THE BEST OPTION ACCORDING TO THE QUESTION: WHAT IS THE EXPECTED TEMPERATURE IN THE AFTERNOON?||CTX:...||||||12°C|12°C|15°C|15°C|22°C|22°C|25°C|25°C": [
+        "22°C"
+    ],
+    "T9:PLEASE LISTEN TO THE AUDIO AND CHOOSE THE BEST OPTION ACCORDING TO THE QUESTION: WHAT WILL THE WEATHER BE LIKE IN THE MORNING?||CTX:...||||||Cloudy|Cloudy|Rainy|Rainy|Snowy|Snowy|Sunny|Sunny": [
+        "Cloudy"
+    ],
+    "T9:PLEASE LISTEN TO THE AUDIO AND CHOOSE THE BEST OPTION ACCORDING TO THE QUESTION: WHAT DO YOU DO WITH THE THINGS YOU BUY?||CTX:...||||||Give them away|Give them away|Leave them at the store|Leave them at the store|Return them|Return them|Take them home|Take them home": [
+        "Take them home"
+    ],
+    "T9:PLEASE LISTEN TO THE AUDIO AND CHOOSE THE BEST OPTION ACCORDING TO THE QUESTION: WHAT MIGHT YOU BUY AT THE STORE?||CTX:...||||||A book|A book|A car|A car|A computer|A computer|Food|Food": [
+        "Food"
+    ],
+    "T9:PLEASE LISTEN TO THE AUDIO AND CHOOSE THE BEST OPTION ACCORDING TO THE QUESTION: WHO TELLS YOU HOW MUCH YOUR ITEMS COST?||CTX:...||||||The cashier|The cashier|The customer|The customer|The manager|The manager|The security guard|The security guard": [
+        "The cashier"
+    ],
+    "T9:PLEASE LISTEN TO THE AUDIO AND CHOOSE THE BEST OPTION ACCORDING TO THE QUESTION: WHERE DO YOU GO TO BUY THINGS?||CTX:...||||||The library|The library|The park|The park|The school|The school|The store|The store": [
+        "The store"
+    ],
+    "T9:PLEASE LISTEN TO THE AUDIO AND CHOOSE THE BEST OPTION ACCORDING TO THE QUESTION: WHAT SHOULD YOU CHECK AFTER BUYING THINGS?||CTX:...||||||Your bag|Your bag|Your receipt|Your receipt|Your shoes|Your shoes|Your wallet|Your wallet": [
+        "Your receipt"
+    ],
+    "0:Guadalajara|Sara|last friday|travels to|2:Andree|a ticket|asks for|in the travel agency|4:Patricia’s|is|landing|plane|6:The Travel|agency|in the next street|is|8:I|abroad|live|want to": [
+        [
+            [
+                "Sara",
+                "travels to",
+                "Guadalajara",
+                "last friday"
+            ],
+            [
+                "Andree",
+                "asks for",
+                "a ticket",
+                "in the travel agency"
+            ],
+            [
+                "Patricia’s",
+                "plane",
+                "is",
+                "landing"
+            ],
+            [
+                "The Travel",
+                "agency",
+                "is",
+                "in the next street"
+            ],
+            [
+                "I",
+                "want to",
+                "live",
+                "abroad"
+            ]
+        ]
+    ],
+    "T4:READ THE SENTENCES AND MATCH THE WORDS WITH THE MEANING.||KW:To dislike someone or something very much.|To enjoy or approve of something or someone.|To like, choose, or want one thing rather than another.||DEF:Hate|Like|Prefer": [
+        [
+            "Hate",
+            "Prefer",
+            "Like"
+        ]
+    ],
+    "T4:READ THE PHRASES AND DENTIFY THE PIECES OF WRITING.||KW:Good Morning|Good Night|Maria Andrarde|PEDRO GUAL STREET|mariapia@yahoo.com||DEF:Address|E-mail address|Farewell|Greeting|Name": [
+        [
+            "Name",
+            "E-mail address",
+            "Greeting",
+            "Farewell",
+            "Address"
+        ]
+    ],
+    "T8:LOOK AT THE PICTURE. READ THE REGISTRATION FORM AND CHOOSE WHAT IS IT FOR.||IMG_DIM:387x469||A library|A sport team|A travel agency": [
+        [
+            "A travel agency"
+        ]
+    ],
+    "DEFAULT:READ THE PHRASES. CHOOSE THE CORRECT PLACE ACCORDING TO THE PARAGRAPH. A BUILDING THAT PEOPLE, USUALLY ONE FAMILY, LIVE IN.||CTX:...||||||||A house|A house|A jail|A jail|A room|A room|A school|A school|An office|An office": [
+        "A house"
+    ],
+    "T4:COMPLETE THE REGISTRATION FORM WITH THE CORRECT INFORMATION.||KW:ADDRESS|AGE|CITY|E-MAIL ADDRESS|ID|NAME|NATIONALITY|PHONE NUMBER|TRAVEL DESTINATION||DEF:09987564532|1312435679|32|Ambato|Ecuadorian|Flavio Reyes Avenue|Manta|Maria Andrarde|mariapia@yahoo.com": [
+        [
+            "Maria Andrarde",
+            "Ambato",
+            "1312435679",
+            "32",
+            "Ecuadorian",
+            "Manta",
+            "Flavio Reyes Avenue",
+            "09987564532",
+            "mariapia@yahoo.com"
+        ]
+    ],
+    "T8:LOOK AT THE PICTURES AND MATCH THE WORDS ACCORDING TO THE IMAGES.||IMG_DIM:341x227|IMG_DIM:341x228|IMG_DIM:341x341|IMG_DIM:341x620||market|park|school|travel agency": [
+        [
+            "school",
+            "park",
+            "travel agency",
+            "market"
+        ]
+    ],
+    "T8:READ THE TEXT AND COMPLETE THE SENTENCE. KATHY HAS_______||IMG_DIM:443x133||a best friend|a brother|long dark hair and she has green eyes|short curly hair": [
+        [
+            "a best friend"
+        ]
+    ],
+    "T8:LOOK AT THE PICTURES AND LABEL THEM WITH THE INFORMATION FROM THE BOX.||IMG_DIM:341x222|IMG_DIM:341x227|IMG_DIM:341x227_1|IMG_DIM:341x409||A couple|Friends|Sisters|Twins": [
+        [
+            "Twins",
+            "Sisters",
+            "Friends",
+            "A couple"
+        ]
+    ],
+    "T8:READ THE TEXT AND COMPLETE THE SENTENCE. RODRIGO HAS_______||IMG_DIM:443x133||a best friend|a brother|long dark hair and she has green eyes|short curly hair": [
+        [
+            "a brother"
+        ]
+    ],
+    "T4:READ THE TEXTS AND IDENTIFY THE TITLE FOR EACH ONE.||KW:I’m Rodrigo. I live in El Puyo and I study at the National School. I have a brother. He is Orlando. He is a student too. We are always together. Orlando has short curly hair. He has brown eyes and big ears. He is very friendly and outgoing. We have lots of friends at school.|My name is Kathy. My best friend is Amelia. She is Colombian. We are partners at school. She is not very tall. She has long dark hair and she has green eyes She is not very tall and she is very smart too. She loves Languages and History. We spend all the time together.||DEF:My best friend|My brother": [
+        [
+            "My best friend",
+            "My brother"
+        ]
+    ],
+    "T8:READ THE TEXT AND COMPLETE THE SENTENCE. ORLANDO HAS_______||IMG_DIM:443x133||a best friend|a brother|long dark hair and she has green eyes|short curly hair": [
+        [
+            "short curly hair"
+        ]
+    ],
+    "T8:READ THE TEXT AND COMPLETE THE SENTENCE. AMELIA HAS_______.||IMG_DIM:443x133||a best friend|a brother|long dark hair and she has green eyes|short curly hair": [
+        [
+            "long dark hair and she has green eyes"
+        ]
+    ],
+    "0:I|Science and Math|study|2:You|clean|house|the|4:Chemistry, physics and geography|Like to study|We|6:She|TV everyday|watches": [
+        [
+            [
+                "I",
+                "study",
+                "Science and Math"
+            ],
+            [
+                "You",
+                "clean",
+                "the",
+                "house"
+            ],
+            [
+                "We",
+                "Like to study",
+                "Chemistry, physics and geography"
+            ],
+            [
+                "She",
+                "watches",
+                "TV everyday"
+            ]
+        ]
+    ],
+    "T4:READ THE STATEMENTS. MATCH THE WORDS WITH THE DEFINITIONS.||KW:the symbol ! written immediately after an exclamation|the symbol , used in writing to separate parts of a sentence showing a slight pause, or to separate the single things in a list|the symbol . used in writing at the end of a sentence or at the end of the short form of a word|the symbol ? used in writing at the end of a phrase or sentence to show that it is a question||DEF:Comma|Exclamation marks|Full stops|Question Marks": [
+        [
+            "Comma",
+            "Full stops",
+            "Question Marks",
+            "Exclamation marks"
+        ]
+    ],
+    "T8:LOOK AT THE PICTURE AND MATCH IT WITH THE CORRECT SENTENCE.||IMG_DIM:341x192|IMG_DIM:341x227|IMG_DIM:341x243|IMG_DIM:341x454||He has a cat.|He has some balloons.|She has a blue butterfly.|They have a bicycle.": [
+        [
+            "He has a cat.",
+            "She has a blue butterfly.",
+            "They have a bicycle.",
+            "He has some balloons."
+        ]
+    ],
+    "DEFAULT:READ THE SENTENCE AND CHOOSE THE BEST OPTION: MRS. SILVA IS ALWAYS IN A GOOD MOOD. SHE IS ________SAD.||CTX:...||||||||Always|Always|Never|Never|Rarely|Rarely|Sometimes|Sometimes": [
+        "Never"
+    ],
+    "DEFAULT:READ THE SENTENCE AND CHOOSE THE CORRECT ANSWER: JAMES GOES TO THE BEACH ONLY ONCE A YEAR. HE ……… GOES TO THE BEACH.||CTX:...||||||||Almost never|Almost never|Always|Always|Often|Often|Sometimes|Sometimes": [
+        "Almost never"
+    ],
+    "DEFAULT:READ THE SENTENCE AND CHOOSE THE CORRECT ANSWER: I __________STUDY VERY HARD, SO I GET HIGH GRADES IN SCHOOL.||CTX:...||||||||Always|Always|Never|Never|Rarely|Rarely|Sometimes|Sometimes": [
+        "Always"
+    ],
+    "DEFAULT:READ AND CHOOSE THE INCORRECT SENTENCE.||CTX:...||||||||Diana listen sometimes to music.|Diana listen sometimes to music.|Diana listens to music sometimes.|Diana listens to music sometimes.|Diana sometimes listens to music.|Diana sometimes listens to music.|Sometimes Diana listens to music.|Sometimes Diana listens to music.": [
+        "Diana listen sometimes to music."
+    ],
+    "DEFAULT:READ THE SENTENCE AND CHOOSE THE CORRECT ANSWER: IT [0%] _____ RAINS HERE IN THE SUMMER.||CTX:...||||||||Always|Always|Never|Never|Rarely|Rarely|Sometimes|Sometimes": [
+        "Never"
+    ],
+    "0:He always studies French|5:He rarely studies Mandarin|6:THe never practices soccer|7:He ocassionally goes to acting class": [
+        [
+            "True",
+            "False",
+            "False",
+            "True"
+        ]
+    ],
+    "DEFAULT:READ THE SENTENCE AND CHOOSE THE CORRECT ANSWER: MY SISTER __________ TWO DAYS OF SCHOOL IN A ROW.||CTX:...||||||Has missed often|Has missed often|Has often missed|Has often missed|Missed often has|Missed often has|Often has missed|Often has missed": [
+        "Often has missed"
+    ],
+    "DEFAULT:READ THE SENTENCE AND CHOOSE THE CORRECT ANSWER: I _______ WATCH CARTOONS BECAUSE I HATE THEM. NEWS SHOWS ARE MUCH BETTER.||CTX:...||||||||Always|Always|Never|Never|Rarely|Rarely|Sometimes|Sometimes": [
+        "Never"
+    ],
+    "0:I|early|get|sometimes|up|2:It|here|rains|rarely|4:The|always|bus|is|late|6:Winter|cold|here|is|usually": [
+        [
+            [
+                "I",
+                "sometimes",
+                "get",
+                "up",
+                "early"
+            ],
+            [
+                "It",
+                "rarely",
+                "rains",
+                "here"
+            ],
+            [
+                "The",
+                "bus",
+                "is",
+                "always",
+                "late"
+            ],
+            [
+                "Winter",
+                "is",
+                "usually",
+                "cold",
+                "here"
+            ]
+        ]
+    ],
+    "T8:LOOK AT THE PICTURE AND CHOOSE THE CORRECT ADJECTIVE.||IMG_DIM:443x623||happy|sad": [
+        [
+            "sad"
+        ]
+    ],
+    "T8:LOOK AT THE PICTURE AND CHOOSE THE CORRECT ADJECTIVE.||IMG_DIM:443x443||Old|Young": [
+        [
+            "Old"
+        ]
+    ],
+    "DEFAULT:READ THE PHRASES AND CHOOSE THE CORRECT ORDER OF ADJECTIVE.||CTX:...||||||||Orange shirt|Orange shirt|Shirt orange|Shirt orange": [
+        "Orange shirt"
+    ],
+    "DEFAULT:READ THE SENTENCE AND CHOOSE THE CORRECT ANSWER. I HAVE ______ STRAIGHT BLOND HAIR AND BLUE EYES.||CTX:...||||||||Big|Big|Long|Long|Old|Old|Tall|Tall": [
+        "Long"
+    ],
+    "T8:LOOK AT THE PICTURE AND CHOOSE THE CORRECT ADJECTIVE.||IMG_DIM:443x562||Ugly|beautiful": [
+        [
+            "beautiful"
+        ]
+    ],
+    "DEFAULT:READ THE PHRASES AND CHOOSE THE CORRECT ORDER OF ADJECTIVE.||CTX:...||||||||Delicious meal|Delicious meal|Meal delicious|Meal delicious": [
+        "Delicious meal"
+    ],
+    "T8:LOOK AT THE PICTURE AND CHOOSE THE CORRECT ADJECTIVE.||IMG_DIM:443x397||Cold|Hot": [
+        [
+            "Hot"
+        ]
+    ],
+    "DEFAULT:READ THE PHRASES AND CHOOSE THE CORRECT ORDER OF ADJECTIVE.||CTX:...||||||||Beautiful woman|Beautiful woman|Woman beautiful|Woman beautiful": [
+        "Beautiful woman"
+    ],
+    "DEFAULT:READ THE WORDS AND CHOOSE WHICH TERM IS AN ADJECTIVE.||CTX:...||||||||Apple|Apple|Crazy|Crazy|Dog|Dog|Wear|Wear": [
+        "Crazy"
+    ],
+    "DEFAULT_MULTI:READ AND COMPLETE THE SENTENCE. WORDS THAT MODIFY OR DESCRIBE A NOUN ARE CALLED ________.||ads||adjective|adverbs|pronoun|verb": "adjective",
+    "DEFAULT:SELECT THE ADJECTIVE IN THE NEXT SENTENCE: TANYA IS A GRACEFUL DANCER.||CTX:...||||||||Dancer|Dancer|Graceful|Graceful|Is|Is|Tanya|Tanya": [
+        "Graceful"
+    ],
+    "0:An adjective describe a verb|5:An adjective describe a noun|6:Most adjectives can be used in front of a noun|7:We use the with the comparative adjectives": [
+        [
+            "False",
+            "True",
+            "True",
+            "False"
+        ]
+    ],
+    "DEFAULT:READ AND FIND THE ADJECTIVE.||CTX:...||||||||Book|Book|Bright|Bright|Filled|Filled|Pickture|Pickture": [
+        "Bright"
+    ],
+    "DEFAULT:READ THE PHRASES AND CHOOSE THE CORRECT ORDER OF ADJECTIVE.||CTX:...||||||||Car small|Car small|Small car|Small car": [
+        "Small car"
+    ],
+    "T8:LOOK AT THE PICTURE AND CHOOSE THE CORRECT ADJECTIVE.||IMG_DIM:443x308||Short|Tall": [
+        [
+            "Tall"
+        ]
+    ],
+    "T4:MATCH THE VERBS WITH THE CORRECT MAINS OF TRANSPORTATION.||KW:Drive|Fly|Ride|Sail||DEF:a bicycle|a car|in a boat|in a plane": [
+        [
+            "a bicycle",
+            "a car",
+            "in a boat",
+            "in a plane"
+        ]
+    ],
+    "DEFAULT:READ THE SENTENCE AND CHOOSE THE CORRECT OPTION. WHICH IS LAND TRANSPORT?||CTX:...||||||||Boat|Boat|Bus|Bus|Helicopter|Helicopter|Ship|Ship": [
+        "Bus"
+    ],
+    "DEFAULT:CHOOSE THE CORRECT OPTION. MOST VEHICLES RUN ON __________||CTX:...||||||||Air|Air|Fax|Fax|Fuel|Fuel|Water|Water": [
+        "Fuel"
+    ],
+    "DEFAULT:READ THE SENTENCE AND CHOOSE THE CORRECT OPTION. IT IS GOT FOUR DOORS AND FOUR WHEELS.||CTX:...||||||||Bike|Bike|Car|Car|Plane|Plane|Train|Train": [
+        "Car"
+    ],
+    "DEFAULT:READ THE QUESTIONS AND CHOOSE THE CORRECT OPTION. WHICH TYPE OF VEHICLES DO NOT CAUSE AIR POLLUTION?||CTX:...||||||||Bike|Bike|Bus|Bus|Motorcycle|Motorcycle|Truck|Truck": [
+        "Bike"
+    ],
+    "DEFAULT:READ THE SENTENCE AND CHOOSE THE CORRECT OPTION. IT HASN’T GOT WINGS BUT IT CAN FLY.||CTX:...||||||||Airplane|Airplane|Bike|Bike|Boat|Boat|Motorcycle|Motorcycle": [
+        "Airplane"
+    ],
+    "DEFAULT:READ THE SENTENCE AND CHOOSE THE CORRECT OPTION. IT IS GOT ONLY TWO WHEELS.||CTX:...||||||||Bike|Bike|Boat|Boat|Car|Car|Train|Train": [
+        "Bike"
+    ],
+    "DEFAULT:READ THE SENTENCE AND CHOOSE THE RIGHT ANSWER. FOR PANCAKES. WE NEED _____.||CTX:...||||||||Banana|Banana|Eggs|Eggs|Tea|Tea|Tomatoes|Tomatoes": [
+        "Eggs"
+    ],
+    "DEFAULT:READ THE SENTENCE AND CHOOSE THE CORRECT OPTION. WHAT DO BABIES DRINK?||CTX:...||||||||Beer|Beer|Coffe|Coffe|Milk|Milk|Tea|Tea": [
+        "Milk"
+    ],
+    "T8:LOOK THE PICTURE AND CHOOSE THE CORRECT OPTION.||IMG_DIM:443x235||Bread|Butter|Cheese|Pizza": [
+        [
+            "Cheese"
+        ]
+    ],
+    "DEFAULT:COMPLETE THE SENTENCE AND CHOOSE THE CORRECT OPTION. A TOMATE IS A …||CTX:...||||||Drink|Drink|Fruit|Fruit|Herb|Herb|Vegetable|Vegetable": [
+        "Vegetable"
+    ],
+    "T8:LOOK AT THE PICTURE AND CHOOSE THE CORRECT OPTION.||IMG_DIM:443x310||Chicken|Hamburger|Sandwhich|Toast": [
+        [
+            "Hamburger"
+        ]
+    ],
+    "DEFAULT:COMPLETE THE SENTENCE AND CHOOSE THE CORRECT ANSWER. WE EAT SOUP WITH A _____.||CTX:...||||||||Fork|Fork|Glass|Glass|Knife|Knife|Spoon|Spoon": [
+        "Spoon"
+    ],
+    "T11_BATCH:PUT IN ORDER THE FOLLOWING LETTERS TO CREATED WORDS RELATED TO FOOD AND DRINK.||CTX:...||CIKNEHC ___|EINW ___|ILKM ___|REBTUT ___": [
+        [
+            "BUTTER",
+            "CHICKEN",
+            "MILK",
+            "WINE"
+        ]
+    ],
+    "DEFAULT:COMPLETE THE SENTENCE AND CHOOSE THE CORRECT ANSWER. WHEN I GET UP, I ALWAYS HAVE A ______OF COFFEE.||CTX:...||||||||Bottle|Bottle|Bowl|Bowl|Cup|Cup|Glass|Glass": [
+        "Cup"
+    ],
+    "DEFAULT:READ AND ANSWER THE QUESTION. HOW DO YOU SAY JUGO IN ENGLISH?||CTX:...||||||||Beer|Beer|Juice|Juice|Milk|Milk|Wisky|Wisky": [
+        "Juice"
+    ],
+    "DEFAULT:READ THE DIALOGUE AND SELECT THE CORRECT SENTENCE.||CTX:Receptionist: Good morning. Welcome to Ceibo Real ...ce stay with us Mr. Martinez. Guest: Thanks a lot.||||||||The name of the hotel is “Ceibo Real”|The name of the hotel is “Ceibo Real”|The name of the hotel is “El Dorado”|The name of the hotel is “El Dorado”": [
+        "The name of the hotel is “Ceibo Real”"
+    ],
+    "DEFAULT:READ THE DIALOGUE AND SELECT FALSE SENTENCE||CTX:Receptionist: Good morning. Welcome to Ceibo Real ...ce stay with us Mr. Martinez. Guest: Thanks a lot.||||||||Mr. Martinez wants a double and a twin room.|Mr. Martinez wants a double and a twin room.|Mr. Martinez’s name is David.|Mr. Martinez’s name is David.|The rates for the rooms are $35 per night.|The rates for the rooms are $35 per night.": [
+        "Mr. Martinez’s name is David."
+    ],
+    "DEFAULT:READ THE DIALOGUE AND SELECT THE CORRECT SENTENCE.||CTX:Receptionist: Good morning. Welcome to Ceibo Real ...ce stay with us Mr. Martinez. Guest: Thanks a lot.||||||||The rooms for Mr. Martinez are 212 and 213|The rooms for Mr. Martinez are 212 and 213|The rooms for Mr. Martinez are 212 and 215|The rooms for Mr. Martinez are 212 and 215": [
+        "The rooms for Mr. Martinez are 212 and 213"
+    ],
+    "DEFAULT:READ THE DIALOGUE AND SELECT THE CORRECT SENTENCE.||CTX:Receptionist: Good morning. Welcome to Ceibo Real ...ce stay with us Mr. Martinez. Guest: Thanks a lot.||||||||Mr. Martinez’s ID card is 1304724749|Mr. Martinez’s ID card is 1304724749|Mr. Martinez’s ID card is 1304772749|Mr. Martinez’s ID card is 1304772749": [
+        "Mr. Martinez’s ID card is 1304724749"
+    ],
+    "DEFAULT:READ THE DIALOGUE AND SELECT THE CORRECT SENTENCE.||CTX:Receptionist: Good morning. Welcome to Ceibo Real ...ce stay with us Mr. Martinez. Guest: Thanks a lot.||||||||Mr. Martinez’s registration code is 3484720|Mr. Martinez’s registration code is 3484720|Mr. Martinez’s registration code is 4724749|Mr. Martinez’s registration code is 4724749": [
+        "Mr. Martinez’s registration code is 3484720"
+    ],
+    "DEFAULT_MULTI:READ THE TEXT. SELECT THE CORRECT ANSWER TO COMPLETE THEM ACCORDING TO THE TEXT.||My father is a||DOCTOR|TEACHER": "TEACHER",
+    "DEFAULT_MULTI:READ THE TEXT. SELECT THE CORRECT ANSWER TO COMPLETE THEM ACCORDING TO THE TEXT.||My little sister is Amy she is only years old||4|5": "5",
+    "DEFAULT:LOOK AT THE PICTURE. THEN ANSWER THE QUESTION. WHAT IS THEIR RELATIONSHIP?||CTX:All over the world people have families. They help...ey guide us and make us who we are an I love mine.||||||||They are a family|They are a family|They are classmates|They are classmates|They are friends|They are friends": [
+        "They are a family"
+    ],
+    "DEFAULT:READ THE TEXT AND SELECT THE BEST HEADLINE TO IT.||CTX:All over the world people have families. They help...ey guide us and make us who we are an I love mine.||||||||Families around the world and their importance for people|Families around the world and their importance for people|People who live in foreign countries|People who live in foreign countries|The different types of the house where families live|The different types of the house where families live": [
+        "Families around the world and their importance for people"
+    ],
+    "DEFAULT_MULTI:MARK THE STATEMENTS THAT ARE TRUE (T) OR FALSE (F) ACCORDING TO THE TEXT.||Some families share a big house where you can find aunts, uncles, nieces and nephews, parents and grandparents living together||F|T": "T",
+    "DEFAULT_MULTI:MARK THE STATEMENTS THAT ARE TRUE (T) OR FALSE (F) ACCORDING TO THE TEXT.||Some families have just a small place to live with parents, sons or daughters but they are also happy||F|T": "T",
+    "DEFAULT_MULTI:MARK THE STATEMENTS THAT ARE TRUE (T) OR FALSE (F) ACCORDING TO THE TEXT.||Some families have lots of children and others can have just a child.||F|T": "T",
+    "DEFAULT:READ AND MATCH THE SENTENCES TO COMPLETE THEM. WE LIVE IN A SMALL HOUSE________||CTX:All over the world people have families. They help...ey guide us and make us who we are an I love mine.||||||||near the hospital|near the hospital|to clean the house|to clean the house|to learn new things|to learn new things|twice a week|twice a week": [
+        "near the hospital"
+    ],
+    "DEFAULT:READ THE TEXT. THEN READ AND MATCH THE SENTENCE TO THE CORRECT PHRASE. MY FATHER HELPS________.||CTX:All over the world people have families. They help...ey guide us and make us who we are an I love mine.||||||||near the hospital.|near the hospital.|to clean the house.|to clean the house.|to learn new things.|to learn new things.|twice a week.|twice a week.": [
+        "to clean the house."
+    ],
+    "DEFAULT:READ THE TEXT AND ANSWER THE QUESTION. WHAT KIND OF DRINK DO THEIR FRIENDS PREFER?||CTX:My name is Karen and I live in Quito because of my... some nachos, house salad and cake. We love cakes!||||||||Cappuccino.|Cappuccino.|Ice tea|Ice tea": [
+        "Ice tea"
+    ],
+    "DEFAULT:SELECT THE CORRECT SENTENCE ACCORDING TO THE READING.||CTX:My name is Karen and I live in Quito because of my... some nachos, house salad and cake. We love cakes!||||||||Karen´s father prefers a roast beef sandwich which costs $5,00|Karen´s father prefers a roast beef sandwich which costs $5,00|Karen´s father prefers a roast beef sandwich which costs $7,00|Karen´s father prefers a roast beef sandwich which costs $7,00": [
+        "Karen´s father prefers a roast beef sandwich which costs $5,00"
+    ],
+    "T8:LOOK AT THE PICTURE AND READ THE MENU. THEN MATCH THE CORRECT HEADING ACCORDING TO MENU.||IMG_DIM:341x242|IMG_DIM:341x260|IMG_DIM:341x278||Drinks|Main dishes|Side orders": [
+        [
+            "Main dishes",
+            "Drinks",
+            "Side orders"
+        ]
+    ],
+    "DEFAULT:READ THE TEXT AND ANSWER THE QUESTION. WHAT IS KAREN´S FAVORITE PLACE TO VISIT IN PORTOVIEJO?||CTX:My name is Karen and I live in Quito because of my... some nachos, house salad and cake. We love cakes!||||||||Il Café.|Il Café.|Jean Pierre|Jean Pierre": [
+        "Il Café."
+    ],
+    "DEFAULT:READ THE TEXT AND ANSWER THE QUESTION. WHERE DOES KAREN LIVE?||CTX:My name is Karen and I live in Quito because of my... some nachos, house salad and cake. We love cakes!||||||||Portoviejo|Portoviejo|Quito|Quito": [
+        "Quito"
+    ],
+    "DEFAULT:SELECT THE CORRECT SENTENCE ACCORDING TO THE READING.||CTX:My name is Karen and I live in Quito because of my... some nachos, house salad and cake. We love cakes!||||||||Karen´s mother always drinks a coffee with a piece of cake.|Karen´s mother always drinks a coffee with a piece of cake.|Karen´s mother always drinks a coffee with a sandwich.|Karen´s mother always drinks a coffee with a sandwich.": [
+        "Karen´s mother always drinks a coffee with a piece of cake."
+    ],
+    "DEFAULT:READ THE TEXT AND ANSWER THE QUESTION. WHAT IS HER FAVORITE FOOD?||CTX:My name is Karen and I live in Quito because of my... some nachos, house salad and cake. We love cakes!||||||||Cheese sandwich|Cheese sandwich|Chicken salad sandwich|Chicken salad sandwich": [
+        "Chicken salad sandwich"
+    ],
+    "T8:LOOK THE PHOTO. WHAT KIND OF PLACE DOES THE PHOTO SHOW?||IMG_DIM:362x217||a cinema|a museum|a restaurant": [
+        [
+            "a restaurant"
+        ]
+    ],
+    "0:How much|do you|drink|every day?|water|2:How many|a lemonade?|for|lemons do you|need|4:How many|are|days|in a|there|week?": [
+        [
+            [
+                "How much",
+                "water",
+                "do you",
+                "drink",
+                "every day?"
+            ],
+            [
+                "How many",
+                "lemons do you",
+                "need",
+                "for",
+                "a lemonade?"
+            ],
+            [
+                "How many",
+                "days",
+                "are",
+                "there",
+                "in a",
+                "week?"
+            ]
+        ]
+    ],
+    "DEFAULT_MULTI:READ THE QUESTIONS AND COMPLETE THE SPACES WITH MUCH OR MANY.||There aren’t tortillas in the refrigerator.||MANY|MUCH": "MANY",
+    "DEFAULT_MULTI:READ THE QUESTIONS AND COMPLETE THE SPACES WITH MUCH OR MANY.||We don’t have bread.||MANY|MUCH": "MUCH",
+    "DEFAULT_MULTI:READ THE QUESTIONS AND COMPLETE THE SPACES WITH MUCH OR MANY.||Were there people on the bus?||MANY|MUCH": "MANY",
+    "DEFAULT_MULTI:READ THE QUESTIONS AND COMPLETE THE SPACES WITH MUCH OR MANY.||Did students fail the examination?||MANY|MUCH": "MANY",
+    "DEFAULT_MULTI:READ AND COMPLETE THE QUESTIONS WITH MUCH OR MANY.||How players are in a handball team?||MANY|MUCH": "MANY",
+    "DEFAULT_MULTI:READ AND COMPLETE THE QUESTIONS WITH MUCH OR MANY.||How milk do they have for breakfast?||MANY|MUCH": "MUCH",
+    "DEFAULT_MULTI:READ AND COMPLETE THE QUESTIONS WITH MUCH OR MANY.||How is that refrigerator?||MANY|MUCH": "MUCH",
+    "DEFAULT_MULTI:READ THE QUESTIONS AND COMPLETE WITH ‘HOW MUCH’ OR ‘HOW MANY’||cheese do you eat in a pizza?||HOW MANY|HOW MUCH": "HOW MUCH",
+    "DEFAULT_MULTI:READ THE QUESTIONS AND COMPLETE WITH ‘HOW MUCH’ OR ‘HOW MANY’||calories do you eat every day?||HOW MANY|HOW MUCH": "HOW MANY",
+    "DEFAULT_MULTI:READ THE QUESTIONS AND COMPLETE WITH ‘HOW MUCH’ OR ‘HOW MANY’||coffee do you drink?||HOW MANY|HOW MUCH": "HOW MUCH",
+    "DEFAULT_MULTI:READ THE QUESTIONS AND COMPLETE WITH ‘HOW MUCH’ OR ‘HOW MANY’||languages does your English teacher speak?||HOW MANY|HOW MUCH": "HOW MANY",
+    "DEFAULT_MULTI:READ THE QUESTIONS AND COMPLETE WITH ‘HOW MUCH’ OR ‘HOW MANY’||cities do you know in Ecuador?||HOW MANY|HOW MUCH": "HOW MANY",
+    "DEFAULT_MULTI:READ AND COMPLETE THE QUESTIONS WITH HOW MUCH…? OR HOW MANY…?||bottles of juice are in the fridge? Three.||HOW MANY|HOW MUCH": "HOW MANY",
+    "DEFAULT_MULTI:READ AND COMPLETE THE QUESTIONS WITH HOW MUCH…? OR HOW MANY…?||meat do we have? We have got two steaks.||HOW MANY|HOW MUCH": "HOW MUCH",
+    "DEFAULT_MULTI:READ AND COMPLETE THE QUESTIONS WITH HOW MUCH…? OR HOW MANY…?||bread do we need? Two loafs of bread||HOW MANY|HOW MUCH": "HOW MUCH",
+    "DEFAULT:IN THE BOX, CHOOSE THE CORRECT FORM OF THE SENTENCES JOINED WITH THE USE OF THE POSSESSIVE FORM. READ THE FOLLOWING SENTECES: THE STUDENT HAS A PEN. THE PEN IS ON THE TABLE.||CTX:...||||||The student pen is on the table.|The student pen is on the table.|The students pen is on the table.|The students pen is on the table.|The student’s pen is on the table.|The student’s pen is on the table.": [
+        "The student’s pen is on the table."
+    ],
+    "T4:READ AND MATCH THE SENTENCES WITH THE CORRECT INFORMATION FROM THE BOX.||KW:The bike that belongs to Tommy|The bones that belong to the dog|The house that belongs to my uncle|The laptop that belongs to my son|The shirts that belong to Andrea||DEF:Andrea’s shirts|My son’s laptop|My uncle’s house|The dog’s bones|Tommy’s bike": [
+        [
+            "The dog’s bones",
+            "Tommy’s bike",
+            "Andrea’s shirts",
+            "My son’s laptop",
+            "My uncle’s house"
+        ]
+    ],
+    "0:Martha|big|house|is|very|´s|2:My|bed|comfortable|dog|is|´s|4:Ecuador|are|beaches|beautiful|´s|6:Carolina|brother|fat|is|´s": [
+        [
+            [
+                "Martha",
+                "´s",
+                "house",
+                "is",
+                "very",
+                "big"
+            ],
+            [
+                "My",
+                "dog",
+                "´s",
+                "bed",
+                "is",
+                "comfortable"
+            ],
+            [
+                "Ecuador",
+                "´s",
+                "beaches",
+                "are",
+                "beautiful"
+            ],
+            [
+                "Carolina",
+                "´s",
+                "brother",
+                "is",
+                "fat"
+            ]
+        ]
+    ],
+    "DEFAULT:READ AND WHICH WORD GOES IN THE SPACE? CAN YOU LOOK AFTER THE _______ RABBIT WHILE WE ARE ON HOLIDAY?||CTX:...||||||||childrens’|childrens’|childrens’s|childrens’s|children’s|children’s": [
+        "children’s"
+    ],
+    "DEFAULT:READ AND COMPLETE THE SENTENCE. THAT’S NOT MY BAG. IT’S MY _______.||CTX:...||||||||brothers|brothers|brothers’s|brothers’s|brother’s|brother’s": [
+        "brother’s"
+    ],
+    "DEFAULT:READ AND COMPLETE THE SENTENCE WITH THE INFORMATION FROM THE BOX. WRITE YOUR NAME AT THE _______.||CTX:...||||||||page in the top|page in the top|page’s top|page’s top|top of the page|top of the page": [
+        "top of the page"
+    ],
+    "DEFAULT:IN THE BOX, CHOOSE THE CORRECT FORM OF THE SENTENCES JOINED WITH THE USE OF THE POSSESSIVE FORM. READ THE FOLLOWING SENTECES: THE WOMEN HAVE KIDS. THE KIDS ARE PLAYING.||CTX:...||||||||The womens kids are playing.|The womens kids are playing.|The womens´ kids are playing.|The womens´ kids are playing.|The women’s kids are playing.|The women’s kids are playing.": [
+        "The women’s kids are playing."
+    ],
+    "DEFAULT_MULTI:LOOK AT THE PICTURE AND READ THE PHRASES. CHOOSE THE CORRECT OPTION TO COMPLETE THE SENTENCE.||two sunflowers||THERE ARE|THERE IS": "THERE ARE",
+    "DEFAULT_MULTI:LOOK AT THE PICTURE AND READ THE PHRASES. CHOOSE THE CORRECT OPTION TO COMPLETE THE SENTENCE.||a red notebook||THERE ARE|THERE IS": "THERE IS",
+    "DEFAULT_MULTI:LOOK AT THE PICTURE AND READ THE PHRASES. CHOOSE THE CORRECT OPTION TO COMPLETE THE SENTENCE.||two chalks||THERE ARE|THERE IS": "THERE ARE",
+    "DEFAULT_MULTI:LOOK AT THE PICTURE AND READ THE PHRASES. CHOOSE THE CORRECT OPTION TO COMPLETE THE SENTENCE.||a present||THERE ARE|THERE IS": "THERE IS",
+    "DEFAULT_MULTI:LOOK AT THE PICTURE AND READ THE PHRASES. CHOOSE THE CORRECT OPTION TO COMPLETE THE SENTENCE.||a yellow colored pencil||THERE ARE|THERE IS": "THERE IS",
+    "DEFAULT_MULTI:LOOK AT THE PICTURE AND READ THE PHRASES. CHOOSE THE CORRECT OPTION TO COMPLETE THE SENTENCE.||four colored pencils||THERE ARE|THERE IS": "THERE ARE",
+    "DEFAULT:READ AND COMPLETE THE DIALOGUE WITH THE CORRECT PHRASE FROM THE BOX. A: HOW MANY QUESTIONS _________ IN YOUR EXAMINATION? B: _________ TEN QUESTIONS.||CTX:...||||||||are there / there are|are there / there are|is there / there is|is there / there is|there are / are there|there are / are there|there is / there are|there is / there are": [
+        "are there / there are"
+    ],
+    "DEFAULT_MULTI:READ AND SELECT THE CORRECT OR INCORRECT SENTENCE.||There aren't any computers in the music room. IN||CORRECT|INCORRECT": "CORRECT",
+    "DEFAULT_MULTI:READ AND SELECT THE CORRECT OR INCORRECT SENTENCE.||Are there a wardrobe in your bedroom? IN||CORRECT|INCORRECT": "INCORRECT",
+    "DEFAULT_MULTI:READ AND SELECT THE CORRECT OR INCORRECT SENTENCE.||Is there a swimming pool at your school?' 'Yes, there is. IN||CORRECT|INCORRECT": "CORRECT",
+    "DEFAULT:READ AND SELECT THE CORRECT SENTENCE.||CTX:...||||||||There are some egg in the basket.|There are some egg in the basket.|There are some eggs in the basket.|There are some eggs in the basket.|There is some eggs in the basket.|There is some eggs in the basket.": [
+        "There are some eggs in the basket."
+    ],
+    "0:There|a|bedroom.|in|is|lamp|the|2:There|any|aren't|at|party|people|the|4:Japanese|There|are|class|in|my|students": [
+        [
+            [
+                "There",
+                "is",
+                "a",
+                "lamp",
+                "in",
+                "the",
+                "bedroom."
+            ],
+            [
+                "There",
+                "aren't",
+                "any",
+                "people",
+                "at",
+                "the",
+                "party"
+            ],
+            [
+                "There",
+                "are",
+                "Japanese",
+                "students",
+                "in",
+                "my",
+                "class"
+            ]
+        ]
+    ],
+    "DEFAULT:READ AND SELECT THE CORRECT SENTENCE.||CTX:...||||||||Are there worker in the office?|Are there worker in the office?|Are there workers in the office?|Are there workers in the office?|Aren´t there worker in the office?|Aren´t there worker in the office?": [
+        "Are there workers in the office?"
+    ],
+    "DEFAULT_MULTI:READ AND COMPLETE THE SENTENCE WITH THE CORRECT NOUN ACCORDING TO THE SENTENCE.||There is pencil on the table||A|SOME": "A",
+    "DEFAULT_MULTI:READ AND COMPLETE THE SENTENCE WITH THE CORRECT NOUN ACCORDING TO THE SENTENCE.||There are two S in the kitchen||CHAIR|CHAIRS": "CHAIRS",
+    "DEFAULT_MULTI:READ AND COMPLETE THE SENTENCE WITH THE CORRECT NOUN ACCORDING TO THE SENTENCE.||There are waiting for you||A PERSON|PEOPLE": "PEOPLE",
+    "DEFAULT_MULTI:READ AND COMPLETE THE SENTENCE WITH THE CORRECT NOUN ACCORDING TO THE SENTENCE.||There is problem at work||A|SOME": "A",
+    "DEFAULT_MULTI:READ AND COMPLETE THE SENTENCE WITH THE CORRECT NOUN ACCORDING TO THE SENTENCE.||There is S everywhere||POLLUTION|POLLUTIONS": "POLLUTION",
+    "DEFAULT:READ AND COMPLETE THE SENTENCE WITH THE CORRECT PHRASE. HOW MANY PENCILS _____ ______ IN YOUR BAG?||CTX:...||||||||are there|are there|is there|is there|there are|there are|there is|there is": [
+        "are there"
+    ],
+    "DEFAULT:READ AND SELECT THE CORRECT SENTENCE.||CTX:...||||||||There aren't milks in the bottle.|There aren't milks in the bottle.|There isn't any milk in the bottle.|There isn't any milk in the bottle.|There isn't many milk in the bottle.|There isn't many milk in the bottle.": [
+        "There isn't any milk in the bottle."
+    ],
+    "DEFAULT_MULTI:READ AND COMPLETE THE SENTENCES. CHOOSE IS OR ARE.||There a car||ARE|IS": "IS",
+    "DEFAULT_MULTI:READ AND COMPLETE THE SENTENCES. CHOOSE IS OR ARE.||There two cars||ARE|IS": "ARE",
+    "DEFAULT_MULTI:READ AND COMPLETE THE SENTENCES. CHOOSE IS OR ARE.||There people outside||ARE|IS": "ARE",
+    "DEFAULT_MULTI:READ AND COMPLETE THE SENTENCES. CHOOSE IS OR ARE.||There an elephant||ARE|IS": "IS",
+    "DEFAULT_MULTI:READ AND COMPLETE THE SENTENCES. CHOOSE IS OR ARE.||There a lot of wind outside||ARE|IS": "IS",
+    "DEFAULT_MULTI:READ AND COMPLETE THE SENTENCES USING THE CORRECT INDEFINITE ARTICLE.||We work in N hospital||A|AN": "A",
+    "DEFAULT_MULTI:READ AND COMPLETE THE SENTENCES USING THE CORRECT INDEFINITE ARTICLE.||They have N cellphone||A|AN": "A",
+    "DEFAULT_MULTI:READ AND COMPLETE THE SENTENCES USING THE CORRECT INDEFINITE ARTICLE.||Rafael has N umbrella||A|AN": "AN",
+    "DEFAULT_MULTI:READ AND COMPLETE THE SENTENCES USING THE CORRECT INDEFINITE ARTICLE.||I am N teacher||A|AN": "A",
+    "DEFAULT_MULTI:READ AND COMPLETE THE SENTENCES USING THE CORRECT INDEFINITE ARTICLE.||She works in N office||A|AN": "AN",
+    "DEFAULT_MULTI:READ THE STATEMENTS AND CHOOSE THE CORRECT FORM OF THE PLURAL OF NOUNS TO MAKE SENTENCES.||There are ten in my family||PEOPLE|PERSONS": "PEOPLE",
+    "DEFAULT_MULTI:READ THE STATEMENTS AND CHOOSE THE CORRECT FORM OF THE PLURAL OF NOUNS TO MAKE SENTENCES.||I take various to go to the Amazon||BUSES|BUSSES": "BUSES",
+    "DEFAULT_MULTI:READ THE STATEMENTS AND CHOOSE THE CORRECT FORM OF THE PLURAL OF NOUNS TO MAKE SENTENCES.||transmit diseases||MICE|MOUSES": "MICE",
+    "DEFAULT_MULTI:READ THE STATEMENTS AND CHOOSE THE CORRECT FORM OF THE PLURAL OF NOUNS TO MAKE SENTENCES.||We are thirty five||STUDENTES|STUDENTS": "STUDENTS",
+    "DEFAULT_MULTI:READ THE STATEMENTS AND CHOOSE THE CORRECT FORM OF THE PLURAL OF NOUNS TO MAKE SENTENCES.||Best||WISHES|WISHS": "WISHES",
+    "DEFAULT_MULTI:READ THE WORDS AND IDENTIFY WHAT IS THE PLURAL OF CHURCH?||es ies||church|churches|churchies|churchs": "churches",
+    "DEFAULT:HOW DO 'HOUSE' AND 'MOUSE' DIFFER IN THEIR PLURAL FORMS?||CTX:...||||||||'House' is an irregular plural and 'mouse' is regular.|'House' is an irregular plural and 'mouse' is regular.|'Mouse' is an irregular plural and 'house' is regular.|'Mouse' is an irregular plural and 'house' is regular.|They are not different; both are irregular.|They are not different; both are irregular.|They are not different; both are regular.|They are not different; both are regular.": [
+        "'Mouse' is an irregular plural and 'house' is regular."
+    ],
+    "DEFAULT:READ THE SENTENCE. FROM THE BOX SELECT THE MISTAKE: THOSE CHILD ARE FROM MY CLASS.||CTX:...||||||||Are|Are|Child|Child|Those|Those": [
+        "Child"
+    ],
+    "DEFAULT:READ THE SENTENCE. FROM THE BOX SELECT THE MISTAKE: THESE HORSE ARE BEAUTIFUL.||CTX:...||||||||Beautiful|Beautiful|Horse|Horse|These|These": [
+        "Horse"
+    ],
+    "DEFAULT_MULTI:READ AND COMPLETE THE SENTENCE BY CHOOSING THE APPROPRIATE PLURAL. I WANT TO CATCH A LOT OF…||es s||fish|fishes|fishs": "fish",
+    "DEFAULT:READ THE WORDS AND IDENTIFY WHAT IS THE PLURAL OF TOMATO?||CTX:...||||||||tomato|tomato|tomatoes|tomatoes|tomatoos|tomatoos|tomatos|tomatos": [
+        "tomatoes"
+    ],
+    "DEFAULT:READ AND COMPLETE THE SENTENCE BY CHOOSING THE APPROPRIATE PLURAL. I LOVE…||CTX:...||||||||babies|babies|babyes|babyes|babys|babys": [
+        "babies"
+    ],
+    "DEFAULT:READ AND COMPLETE THE SENTENCE BY CHOOSING THE CORRECT PLURAL. THIS GARDEN HAS BEAUTIFUL….||CTX:...||||||||floweres|floweres|flowereves|flowereves|flowers|flowers": [
+        "flowers"
+    ],
+    "DEFAULT:READ THE WORDS AND IDENTIFY WHAT IS THE PLURAL OF CHEF?||CTX:...||||||||chef|chef|chef|chef|chefs|chefs|cheves|cheves": [
+        "chefs"
+    ],
+    "DEFAULT_MULTI:READ THE SENTENCESS AND CHOOSE THE CORRECT DEFINITE OR INDEFINITE ARTICLE: A, AN, OR X (ZERO ARTICLE)||I bought N pair of shoes.||A|AN|X": "A",
+    "DEFAULT_MULTI:READ THE SENTENCESS AND CHOOSE THE CORRECT DEFINITE OR INDEFINITE ARTICLE: A, AN, OR X (ZERO ARTICLE)||I saw N movie last night.||A|AN|X": "A",
+    "DEFAULT_MULTI:READ THE SENTENCESS AND CHOOSE THE CORRECT DEFINITE OR INDEFINITE ARTICLE: A, AN, OR X (ZERO ARTICLE)||I do not like N basketball.||A|AN|X": "X",
+    "DEFAULT_MULTI:READ THE SENTENCESS AND CHOOSE THE CORRECT DEFINITE OR INDEFINITE ARTICLE: A, AN, OR X (ZERO ARTICLE)||They are staying at N hotel.||A|AN|X": "A",
+    "DEFAULT:READ THE SENTENCE. FROM THE BOX SELECT THE MISTAKE: THERE ARE THREE CATS UNDER THE TREE.||CTX:...||||||||There|There|Tree|Tree|cat|cat": [
+        "cat"
+    ],
+    "DEFAULT:READ THE SENTENCE AND DECIDE WHICH WORDS GO IN THE SPACES? WE SAW ___ FILM YESTERDAY. IT WAS ABOUT ___ EXTREME EXPERIENCE IN THE FOREST.||CTX:...||||||||a / an|a / an|a / the|a / the|the / a|the / a": [
+        "a / an"
+    ],
+    "DEFAULT:READ THE WORDS AND IDENTIFY WHAT IS THE PLURAL OF LEAF?||CTX:...||||||||leafes|leafes|leafs|leafs|leaves|leaves|leavies|leavies": [
+        "leaves"
+    ],
+    "T9:PLEASE LISTEN TO THE AUDIO AND CHOOSE THE RIGHT OPTION FOR THE QUESTION: WHY IS IT IMPORTANT TO WORK HARD AT YOUR JOB?||CTX:...||||||To get famous|To get famous|To have more free time|To have more free time|To help you and your family live well|To help you and your family live well|To travel the world|To travel the world": [
+        "To help you and your family live well"
+    ],
+    "T9:PLEASE LISTEN TO THE AUDIO AND CHOOSE THE RIGHT OPTION FOR THE QUESTION: WHY DO PEOPLE HAVE JOBS?||CTX:...||||||To earn money|To earn money|To have fun|To have fun|To meet new friends|To meet new friends|To travel|To travel": [
+        "To earn money"
+    ],
+    "T9:PLEASE LISTEN TO THE AUDIO AND CHOOSE THE RIGHT OPTION FOR THE QUESTION: WHO HELPS PEOPLE WHEN THEY ARE SICK?||CTX:...||||||A cashier|A cashier|A doctor|A doctor|A farmer|A farmer|A teacher|A teacher": [
+        "A doctor"
+    ],
+    "T9:PLEASE LISTEN TO THE AUDIO AND CHOOSE THE RIGHT OPTION FOR THE QUESTION: WHAT DOES A TEACHER DO?||CTX:...||||||Cooks food|Cooks food|Drives a bus|Drives a bus|Helps students learn|Helps students learn|Sells clothes|Sells clothes": [
+        "Helps students learn"
+    ],
+    "T9:PLEASE LISTEN TO THE AUDIO AND CHOOSE THE RIGHT OPTION FOR THE QUESTION: WHERE DO SOME PEOPLE WORK?||CTX:...||||||At home|At home|In offices|In offices|In parks|In parks|On the moon|On the moon": [
+        "In offices"
+    ],
+    "T4:MATCH THE SPORT WITH ITS DESCRIPTION||KW:Basketball|Playing sports|Soccer|Tennis||DEF:Helps you work with others and stay active|Kicking the ball to score goals.|Played with a racket and a small ball.|Shooting the ball into a ring.": [
+        [
+            "Kicking the ball to score goals.",
+            "Shooting the ball into a ring.",
+            "Played with a racket and a small ball.",
+            "Helps you work with others and stay active"
+        ]
+    ],
+    "T9:ACCORDING TO DE AUDIO, MATCH “PLAYING SPORT” WITH THE DEFINITION: PLAYING SPORTS||CTX:...||||||Helps you work with others and stay active|Helps you work with others and stay active|Kicking the ball to score goals|Kicking the ball to score goals|Played with a racket and a small ball|Played with a racket and a small ball|Shooting the ball into a ring|Shooting the ball into a ring": [
+        "Helps you work with others and stay active"
+    ],
+    "T9:ACCORDING TO DE AUDIO, MATCH THE SPORT WITH THE DEFINITION: TENNIS||CTX:...||||||Helps you work with others and stay active|Helps you work with others and stay active|Kicking the ball to score goals|Kicking the ball to score goals|Played with a racket and a small ball|Played with a racket and a small ball|Shooting the ball into a ring|Shooting the ball into a ring": [
+        "Played with a racket and a small ball"
+    ],
+    "T9:ACCORDING TO DE AUDIO, MATCH THE SPORT WITH THE DEFINITION: SOCCER||CTX:...||||||Helps you work with others and stay active|Helps you work with others and stay active|Kicking the ball to score goals|Kicking the ball to score goals|Played with a racket and a small ball|Played with a racket and a small ball|Shooting the ball into a ring|Shooting the ball into a ring": [
+        "Kicking the ball to score goals"
+    ],
+    "T9:ACCORDING TO DE AUDIO, MATCH THE SPORT WITH THE DEFINITION: BASKETBALL||CTX:...||||||Helps you work with others and stay active|Helps you work with others and stay active|Kicking the ball to score goals|Kicking the ball to score goals|Played with a racket and a small ball|Played with a racket and a small ball|Shooting the ball into a ring|Shooting the ball into a ring": [
+        "Shooting the ball into a ring"
+    ],
+    "T9:PLEASE LISTEN TO THE AUDIO AND FILL IN THE BLANKS WITH THE APPROPRIATE OPTION: THE UNITED STATES HAS A FLAG WITH STARS AND ______.||CTX:...||||||circles|circles|squares|squares|stripes|stripes|triangles|triangles": [
+        "stripes"
+    ],
+    "T9:PLEASE LISTEN TO THE AUDIO AND FILL IN THE BLANKS WITH THE APPROPRIATE OPTION: LEARNING ABOUT DIFFERENT COUNTRIES HELPS US UNDERSTAND AND ______ HOW PEOPLE LIVE.||CTX:...||||||appreciate|appreciate|create|create|enjoy|enjoy|forget|forget": [
+        "appreciate"
+    ],
+    "T9:PLEASE LISTEN TO THE AUDIO AND FILL IN THE BLANKS WITH THE APPROPRIATE OPTION: JAPAN IS FAMOUS FOR ITS CHERRY ______ AND SUSHI.||CTX:...||||||beaches|beaches|flowers|flowers|mountains|mountains|trees|trees": [
+        "flowers"
+    ],
+    "T9:PLEASE LISTEN TO THE AUDIO AND FILL IN THE BLANKS WITH THE APPROPRIATE OPTION: FRANCE IS KNOWN FOR ITS ______ TOWER AND FRENCH LANGUAGE.||CTX:...||||||Eiffel|Eiffel|Freedom|Freedom|Leaning|Leaning|Tokyo|Tokyo": [
+        "Eiffel"
+    ],
+    "T9:PLEASE LISTEN TO THE AUDIO AND FILL IN THE BLANKS WITH THE APPROPRIATE OPTION: EACH COUNTRY HAS ITS OWN FLAG, ______, AND TRADITIONS.||CTX:...||||||food|food|history|history|language|language|music|music": [
+        "language"
+    ],
+    "T9:PLEASE LISTEN TO THE AUDIO AND FILL IN THE BLANKS WITH THE APPROPRIATE OPTION: IT’S IMPORTANT TO EXERCISE REGULARLY TO KEEP YOUR BODY IN GOOD ______.||CTX:...||||||clothes|clothes|health|health|shape|shape|time|time": [
+        "shape"
+    ],
+    "T9:PLEASE LISTEN TO THE AUDIO AND FILL IN THE BLANKS WITH THE APPROPRIATE OPTION: YOU CAN WORK OUT WITH FRIENDS OR ______.||CTX:...||||||alone|alone|family|family|pets|pets|teachers|teachers": [
+        "alone"
+    ],
+    "T9:PLEASE LISTEN TO THE AUDIO AND FILL IN THE BLANKS WITH THE APPROPRIATE OPTION: SOME PEOPLE LIKE TO WORK OUT AT THE ______.||CTX:...||||||gym|gym|office|office|park|park|school|school": [
+        "gym"
+    ],
+    "T9:PLEASE LISTEN TO THE AUDIO AND FILL IN THE BLANKS WITH THE APPROPRIATE OPTION: WORKING OUT IS GOOD FOR YOUR BODY AND ______.||CTX:...||||||clothes|clothes|mind|mind|room|room|shoes|shoes": [
+        "mind"
+    ],
+    "T9:PLEASE LISTEN TO THE AUDIO AND FILL IN THE BLANKS WITH THE APPROPRIATE OPTION: WHEN YOU EXERCISE, YOU CAN RUN, LIFT ______, OR DO YOGA.||CTX:...||||||books|books|chairs|chairs|toys|toys|weights|weights": [
+        "weights"
+    ],
+    "0:cross the street|turn right|walk 2 blocks left and turn right|walk to the corner": [
+        [
+            [
+                "walk 2 blocks left and turn right",
+                "walk to the corner",
+                "cross the street",
+                "turn right"
+            ]
+        ]
+    ],
+    "0:Susana can take the bus from Manta?|5:Did Rita write the email?|6:Does Rita have to walk blocks left and turn right?|7:Is the house behind the drugstore?": [
+        [
+            "False",
+            "False",
+            "True",
+            "False"
+        ]
+    ],
+    "T4:READ AND COMPLETE THE SENTENCES WITH THE WORDS FROM THE BOX.||KW:are your keys (you are holding the keys)|is my house ( you are pointing your house|is new nose (you are touching your nose)|mountains are full of rich history (you are pointing them)||DEF:That|These|This|Those": [
+        [
+            "This",
+            "Those",
+            "That",
+            "These"
+        ]
+    ],
+    "T8:LOOK AT THE MAP. YOU ARE AT THE SCHOOL. HOW DO YOU GET TO THE LIBRARY?||IMG_DIM:443x313||Turn left and walk to the corner, then turn right, the library is next to the bank and the tree.|Turn left and walk to the corner, then turn right, the library is next to the tree.|Turn right and walk to the corner, then turn left, the library is next to the bank.": [
+        [
+            "Turn left and walk to the corner, then turn right, the library is next to the bank and the tree."
+        ]
+    ],
+    "DEFAULT:READ THE SENTENCE AND CHOOSE THE BEST OPTION. IT IS A PLACE WHERE CHILDREN GO TO BE EDUCATED.||CTX:...||||||||Bus Station|Bus Station|Football pitch|Football pitch|Hospital|Hospital|Restaurant|Restaurant|School|School": [
+        "School"
+    ],
+    "T8:LOOK AT THE PICTURES AND LABEL THEM WITH THE INSTRUCTIONS.||IMG_DIM:341x227|IMG_DIM:341x341|IMG_DIM:341x341_1|IMG_DIM:341x362||Cross the street|Stay at the traffic light|Turn left|Turn right|walk to the corner": [
+        [
+            "Turn left",
+            "Turn right",
+            "Cross the street",
+            "walk to the corner"
+        ]
+    ],
+    "DEFAULT:READ THE MEANING AND CHOOSE THE BEST OPTION. IT IS A BUILDING WHERE OBJECTS OF HISTORICAL, SCIENTIFIC, OR ARTISTIC INTEREST ARE KEPT.||CTX:...||||||||Bus Station|Bus Station|Library|Library|Museum|Museum|Restaurant|Restaurant|School|School": [
+        "Museum"
+    ],
+    "0:The basketball court|is|next to|the school|2:The bank|between|is|the library and the drugstore|4:Turn left|to go|to the market|6:Walk|the restaurant|there is|to the corner,|8:Stav|at the|traffic light": [
+        [
+            [
+                "The basketball court",
+                "is",
+                "next to",
+                "the school"
+            ],
+            [
+                "The bank",
+                "is",
+                "between",
+                "the library and the drugstore"
+            ],
+            [
+                "Turn left",
+                "to go",
+                "to the market"
+            ],
+            [
+                "Walk",
+                "to the corner,",
+                "there is",
+                "the restaurant"
+            ],
+            [
+                "Stav",
+                "at the",
+                "traffic light"
+            ]
+        ]
+    ],
+    "DEFAULT_MULTI:READ THE WORDS AND MATCH THEM WITH THE PHRASES FROM THE BOX.||Carpet:||HOME ITEM|SCHOOL ITEM": "HOME ITEM",
+    "DEFAULT_MULTI:READ THE WORDS AND MATCH THEM WITH THE PHRASES FROM THE BOX.||Pencil case:||HOME ITEM|SCHOOL ITEM": "SCHOOL ITEM",
+    "DEFAULT_MULTI:READ THE WORDS AND MATCH THEM WITH THE PHRASES FROM THE BOX.||Television:||HOME ITEM|SCHOOL ITEM": "HOME ITEM",
+    "DEFAULT_MULTI:READ THE WORDS AND MATCH THEM WITH THE PHRASES FROM THE BOX.||Dining table:||HOME ITEM|SCHOOL ITEM": "HOME ITEM",
+    "DEFAULT_MULTI:READ THE WORDS AND MATCH THEM WITH THE PHRASES FROM THE BOX.||Compass:||HOME ITEM|SCHOOL ITEM": "SCHOOL ITEM",
+    "DEFAULT_MULTI:READ THE WORDS AND MATCH THEM WITH THE PHRASES FROM THE BOX.||School bag:||HOME ITEM|SCHOOL ITEM": "SCHOOL ITEM",
+    "0:Desk, notebook, chair are school items?|5:Backpack, scissords are school items?|6:Armchair, sofa are school items?|7:Highlighter, clip, pins are school items?|8:Blanket, pillow, towel are home items?": [
+        [
+            "True",
+            "False",
+            "False",
+            "True",
+            "True"
+        ]
+    ],
+    "T4:READ THE CONVERSATIONS AND COMPLETE THEM USING THE INFORMATION FROM THE BOX.||KW:0900 A Good morning José B How are you today? A Fine, thank you.|1530 A Good afternoon Bety B How are you today? A Fine, thank you.|2000 A BGood evening. How are you today? A Fine, thank you.||DEF:Good Afternoon Mr.|Good evening Jose|Good morning Mr.|How are you?|fine": [
+        [
+            "Good morning Mr.",
+            "Good Afternoon Mr.",
+            "Good evening Jose"
+        ]
+    ],
+    "T8:LOOK AT THE PICTURES. MATCH THE INSTRUCTIONS TO THE PICTURES.||IMG_DIM:341x286|IMG_DIM:341x324|IMG_DIM:341x404||Close the window|Go the board|Let's start|Turn on the computer|Write the date": [
+        [
+            "Turn on the computer",
+            "Close the window",
+            "Write the date"
+        ]
+    ],
+    "T4:COMPLETE THE SENTENCES WITH THE CORRECT PART OF THE BODY WORD.||KW:Long parts of the human body used for walking or standing|One of the five parts at the endo of each hand|One of the hard-white things in your mouth, you use for eating|One of the two parts in your head that you see with|One of the two parts of the body that are used for hearing||DEF:EARS|EYES|FINGER|LEGS|TOOTH": [
+        [
+            "EYES",
+            "EARS",
+            "TOOTH",
+            "LEGS",
+            "FINGER"
+        ]
+    ],
+    "DEFAULT_MULTI:LOOK AT THE PICTURES. READ AND CHOOSE THE WORDS TO COMPLETE THE SENTENCES.||I've got ears||BIG|SMALL": "SMALL",
+    "DEFAULT_MULTI:LOOK AT THE PICTURES. READ AND CHOOSE THE WORDS TO COMPLETE THE SENTENCES.||I have got a body||BLACK|WHITE": "WHITE",
+    "DEFAULT_MULTI:LOOK AT THE PICTURES. READ AND CHOOSE THE WORDS TO COMPLETE THE SENTENCES.||I have got a nose||BLACK|PURPLE": "BLACK",
+    "DEFAULT:READ THE WORDS AND FIND THE ODD WORD.||CTX:...||||||Eye|Eye|ear|ear|hair|hair|hand|hand": [
+        "hand"
+    ],
+    "DEFAULT:READ THE WORDS AND FIND THE ODD WORD.||CTX:...||||||||Mouth|Mouth|feet|feet|tongue|tongue|tooth|tooth": [
+        "feet"
+    ],
+    "T8:LOOK AT THE IMAGES. CHOOSE THE RIGHT OPTION ACCORDING TO THE PICTURE.||IMG_DIM:341x170|IMG_DIM:341x170_1|IMG_DIM:341x170_2|IMG_DIM:341x170_3||ears|eyes|hair|mouth|nose": [
+        [
+            "eyes",
+            "ears",
+            "mouth",
+            "hair"
+        ]
+    ],
+    "DEFAULT:READ THE WORDS AND FIND THE ODD WORD.||CTX:...||||||Toes|Toes|eyes|eyes|fingers|fingers|nails|nails": [
+        "eyes"
+    ],
+    "T8:LOOK AT THE IMAGES MATCH THE ITEMS TO THE PICTURE.||IMG_DIM:341x256|IMG_DIM:341x256_1|IMG_DIM:341x256_2|IMG_DIM:341x256_3|IMG_DIM:341x256_4|IMG_DIM:341x256_5||ears|eyes|hair|mouth|nose|teeth": [
+        [
+            "mouth",
+            "ears",
+            "nose",
+            "eyes",
+            "hair",
+            "teeth"
+        ]
+    ],
+    "T8:LOOK AT THE IMAGES. CHOOSE THE RIGHT PART OF THE HEAD ACCORDING TO THE PICTURE.||IMG_DIM:341x409|IMG_DIM:341x409_1|IMG_DIM:341x409_2|IMG_DIM:341x409_3|IMG_DIM:341x409_4||Ears|Eyes|Hair|Mouth|Nose": [
+        [
+            "Eyes",
+            "Ears",
+            "Mouth",
+            "Nose",
+            "Hair"
+        ]
+    ],
+    "DEFAULT:READ THE WORDS AND FIND THE ODD WORD.||CTX:...||||||||Face|Face|eye|eye|eyebrow|eyebrow|eyelashes|eyelashes": [
+        "Face"
+    ],
+    "DEFAULT:READ THE WORDS AND FIND THE ODD WORD.||CTX:...||||||||Hand|Hand|ear|ear|mouth|mouth|nose|nose": [
+        "Hand"
+    ],
+    "T8:LOOK AT THE PICTURE AND CHOOSE THE RIGHT OPTION. WHERE IS THE BOOK?||IMG_DIM:146x110||It's in the box.|It's on the box.|It's under the box.": [
+        [
+            "It's under the box."
+        ]
+    ],
+    "T8:LOOK AT THE PICTURES AND CHOOSE THE CORRECT ANSWER. THE BALL IS ___ IN THE BOX.||IMG_DIM:341x341|IMG_DIM:341x341_1|IMG_DIM:341x341_2|IMG_DIM:341x341_3|IMG_DIM:341x341_4|IMG_DIM:341x341_5|IMG_DIM:341x341_6|IMG_DIM:341x341_7||BEHIND|BESIDE|BETWEEN|FAR|IN|IN FRONT OF|ON|UNDER": [
+        [
+            "IN",
+            "BEHIND",
+            "BETWEEN",
+            "BESIDE",
+            "FAR",
+            "ON",
+            "UNDER",
+            "IN FRONT OF"
+        ]
+    ],
+    "T8:LOOK AT THE MAP AND CHOOSE THE CORRECT ANSWER: WHAT IS BEHIND THE MARKET?||IMG_DIM:443x209||the park|the train station": [
+        [
+            "the park"
+        ]
+    ],
+    "T8:LOOK AT THE MAP AND CHOOSE THE CORRECT ANSWER: WHERE IS THE POLICE STATION?||IMG_DIM:443x209||It's in behind of the post office.|It's in front of the post office.": [
+        [
+            "It's in behind of the post office."
+        ]
+    ],
+    "T8:LOOK AT THE PICTURE AND CHOOSE THE RIGHT OPTION. WHERE IS THE PARROT?||IMG_DIM:174x120||It's in the branch.|It's on the branch.|It's under the branch.": [
+        [
+            "It's on the branch."
+        ]
+    ],
+    "T8:OBSERVE THE MAP AND CHOOSE THE CORRECT PREPOSITION: THE MUSIC STORE IS ____ SANTOS DUMONT STREET AND ROSA E SILVA AVENUE.||IMG_DIM:443x251||In front of|Next to|On the corner of.": [
+        [
+            "On the corner of."
+        ]
+    ],
+    "T8:LOOK AT THE PICTURE AND CHOOSE THE RIGHT OPTION. WHERE IS THE BOTTLE?||IMG_DIM:175x120||It's in the box.|It's on the box.|It's under the box.": [
+        [
+            "It's in the box."
+        ]
+    ],
+    "T8:LOOK AT THE MAP AND CHOOSE THE CORRECT ANSWER: IS THE TRAIN STATION OPPOSITE THE BANK?||IMG_DIM:443x209||No, it isn't|Yes, it is.": [
+        [
+            "Yes, it is."
+        ]
+    ],
+    "T8:LOOK AT THE MAP AND CHOOSE THE CORRECT ANSWER: WHAT IS NEAR THE RIVER?||IMG_DIM:443x209||the bank|the park": [
+        [
+            "the park"
+        ]
+    ],
+    "T8:LOOK AT THE MAP AND CHOOSE THE CORRECT ANSWER: IS THE BANK NEXT TO THE RIVER?||IMG_DIM:443x209||No, it isn't|Yes, it is.": [
+        [
+            "No, it isn't"
+        ]
+    ],
+    "T8:OBSERVE THE MAP AND CHOOSE THE CORRECT PREPOSITION: THE SUPERMARKET IS ____ THE RESTAURANT.||IMG_DIM:443x251||Behind|Next to|Opposite.": [
+        [
+            "Opposite."
+        ]
+    ],
+    "T8:LOOK AT THE MAP AND CHOOSE THE CORRECT ANSWER: WHAT IS IN FRONT OF THE POLICE STATION?||IMG_DIM:443x209||the post office|the zoo": [
+        [
+            "the post office"
+        ]
+    ],
+    "T8:OBSERVE THE MAP AND CHOOSE THE CORRECT PREPOSITION: THE HOSPITAL IS ____ THE PET SHOP.||IMG_DIM:443x251||Behind|Between|Opposite.": [
+        [
+            "Behind"
+        ]
+    ],
+    "T8:LOOK AT THE MAP AND CHOOSE THE CORRECT ANSWER: ARE THE PARK AND THE HOSPITAL NEAR THE RIVER?||IMG_DIM:443x209||No, they aren't.|Yes, they are.": [
+        [
+            "Yes, they are."
+        ]
+    ],
+    "T8:LOOK AT THE MAP AND CHOOSE THE CORRECT ANSWER: WHAT IS NEXT TO THE HOSPITAL?||IMG_DIM:443x209||the market|the zoom": [
+        [
+            "the market"
+        ]
+    ],
+    "T8:LOOK AT THE MAP AND CHOOSE THE CORRECT ANSWER: WHAT IS NEAR THE TRAIN STATION?||IMG_DIM:443x209||the police station|the zoo": [
+        [
+            "the zoo"
+        ]
+    ],
+    "T8:LOOK AT THE MAP AND CHOOSE THE CORRECT ANSWER: WHAT IS OPPOSITE THE SCHOOL?||IMG_DIM:443x209||the market|the train station": [
+        [
+            "the market"
+        ]
+    ],
+    "T8:OBSERVE THE MAP AND CHOOSE THE CORRECT PREPOSITION: THE TOY STORE IS ____ THE MUSIC STORE AND THE RESTAURANT.||IMG_VISUAL:ab00bcd4cf43||Between|In front of|On the corner of": [
+        [
+            "Between"
+        ]
+    ],
+    "T8:LOOK THE MAP OF THE CITY AND CHOOSE THE CORRECT SENTENCE.||IMG_DIM:431x274||The bank is behind the school.|The bank is behind the school.|The bank is between the school and the pool.|The bank is next to the school.": [
+        [
+            "The bank is next to the school."
+        ]
+    ],
+    "DEFAULT:COMPLETE THE SENTENCE AND CHOSE THE CORRECT OPTION: THERE ARE SEVERAL SOURVENIR SHOPS ON APPLE STREET, ABOUT THREE BLOCKS ________.||CTX:...||||||||Away from|Away from|From here|From here|Near here|Near here|Not far|Not far": [
+        "From here"
+    ],
+    "DEFAULT:COMPLETE THE SENTENCE AND CHOOSE THE CORRECT OPTION. I AM ________ FOR THE NEW CHILDREN’S LIBRARY. LOOKING||CTX:...||||||||Asking|Asking|Finding|Finding|Looking|Looking|Trying|Trying": [
+        "Looking"
+    ],
+    "DEFAULT:COMPLETE THE SENTENCE AND CHOOSE THE CORRECT OPTION: YOU CAN WATCH A FILM AT THE ____.||CTX:...||||||||Bank|Bank|Cinema|Cinema|Hospital|Hospital|Park|Park": [
+        "Cinema"
+    ],
+    "DEFAULT:CHOOSE THE MOST APPROPRIATE ANSWER: CAN YOU TELL ME WHERE ………, PLEASE?||CTX:...||||||is the bank|is the bank|the bank|the bank|the bank is|the bank is|there a bank|there a bank": [
+        "is the bank"
+    ],
+    "DEFAULT:CHOOSE THE MOST APPROPRIATE ANSWER: IN THIS PLACE YOU CAN SEE MANY OLD OBJECTS (AND SOMETIMES PAINTINGS)||CTX:...||||||||Departmen store.|Departmen store.|Library.|Library.|Museum.|Museum.|Zoo.|Zoo.": [
+        "Museum."
+    ],
+    "DEFAULT:ANSWER THE QUESTION AND CHOOSE THE CORRECT OPTION: WHERE CAN I BUY BREAD?||CTX:...||||||||Bakery|Bakery|Bank|Bank|Butcher's|Butcher's|Hospital|Hospital": [
+        "Bakery"
+    ],
+    "DEFAULT:CHOOSE THE CORRECT WORD: THE PLACE YOU GO WHEN YOU WANT TO TRAVEL BY PLANE TO ANOTHER CITY.||CTX:...||||||||Airport|Airport|Bus stop|Bus stop|Shopping|Shopping|Train station|Train station": [
+        "Airport"
+    ],
+    "DEFAULT:CHOOSE THE MOST APPROPRIATE ANSWER: EXCUSE ME! …….. IS THE POST OFFICE, PLEASE?||CTX:...||||||||How|How|What|What|When|When|Where|Where": [
+        "Where"
+    ],
+    "T11_BATCH:PUT IN ORDER THE FOLLOWING LETTERS TO CREATE WORDS RELATED PLACES.||CTX:...||KABEYR ___|KOBORSTEO ___|LOSHCO ___|ORTRAIP ___": [
+        [
+            "SCHOOL",
+            "BAKERY",
+            "AIRPORT",
+            "BOOKSTORE"
+        ]
+    ],
+    "DEFAULT_MULTI:READ THE SENTENCES AND COMPLETE THEM WITH THE RIGHT OPTION.||I am good at cycling swimming.||AND|OR": "AND",
+    "DEFAULT_MULTI:READ THE SENTENCES AND COMPLETE THEM WITH THE RIGHT OPTION.||The students did the homework they didn´t study.||ABOUT|BUT": "BUT",
+    "DEFAULT_MULTI:READ THE SENTENCES AND COMPLETE THEM WITH THE RIGHT OPTION.||My sister always goes to the beach her family.||FOR|WITH": "WITH",
+    "DEFAULT_MULTI:READ THE SENTENCES AND COMPLETE THEM WITH THE RIGHT OPTION.||I don’t like to drink coffee it’s bad for my health.||BECAUSE|WITH": "BECAUSE",
+    "DEFAULT_MULTI:READ THE SENTENCES AND COMPLETE THEM WITH THE RIGHT OPTION.||What do you prefer: soda orange juice?||BY|OR": "OR",
+    "DEFAULT_MULTI:READ THE SENTENCES AND COMPLETE THEM WITH THE RIGHT OPTION.||I buy a present my girlfriend every month.||FOR|OR": "FOR",
+    "DEFAULT_MULTI:READ THE SENTENCES AND COMPLETE THEM WITH THE RIGHT OPTION.||I read a book the Beatles.||ABOUT|AND": "ABOUT",
+    "DEFAULT:READ THE SENTENCE AND COMPLETE IT WITH THE BEST OPTION. I DON´T UNDERSTAND THIS WORD, SO I NEED MY ____.||CTX:...||||||||Book|Book|Dictionary|Dictionary|Lesson|Lesson|Notebook|Notebook": [
+        "Dictionary"
+    ],
+    "DEFAULT:READ AND FIND THE ODD WORD.||CTX:...||||||||desk|desk|listen|listen|notebook|notebook": [
+        "listen"
+    ],
+    "DEFAULT:READ AND FIND THE ODD WORD.||CTX:...||||||||classroom|classroom|small|small|teacher|teacher": [
+        "small"
+    ],
+    "DEFAULT:READ AND FIND THE ODD WORD.||CTX:...||||||||big|big|finish|finish|new|new": [
+        "finish"
+    ],
+    "DEFAULT:READ AND FIND THE ODD WORD.||CTX:...||||||||computer|computer|read|read|write|write": [
+        "computer"
+    ],
+    "T8:DRAG AND DROP THE SENTENCES ACCORDING TO THE PICTURE.||IMG_DIM:341x226|IMG_DIM:341x227|IMG_DIM:341x255|IMG_DIM:341x341||I finish my homework.|Listen the dialogue.|Please, write in your notebook.|Read the book.": [
+        [
+            "Read the book.",
+            "I finish my homework.",
+            "Please, write in your notebook.",
+            "Listen the dialogue."
+        ]
+    ],
+    "DEFAULT:READ AND ANSWER THE QUESTIONG. HOW DO YOU SAY 'GRAPA' IN ENGLISH?||CTX:...||||||||Flah|Flah|Floor|Floor|Scissors|Scissors|Stapler|Stapler": [
+        "Stapler"
+    ],
+    "T11_BATCH:PUT IN ORDER THE FOLLOWING LETTERS TO CREATE WORDS RELATED CLASSROOM OBJECTS.||CTX:...||OKNOETBO ___|PEPRA ___|RSOISCS ___|SERAER ___": [
+        [
+            "NOTEBOOK",
+            "ERASER",
+            "PAPER",
+            "SCISSORS"
+        ]
+    ],
+    "DEFAULT:READ THE SENTENCE AND CHOOSE THE CORRECT WORD: I CAN SEE WHAT THE TEACHER WROTE ON THE ____.||CTX:...||||||||Board|Board|Book|Book|Desk|Desk|Table|Table": [
+        "Board"
+    ],
+    "DEFAULT:ACCORDING TO VOCABULARY RELATED BY EDUCATIONAL ENVIRONMENT. CHOOSE THE INCORRECT WORD.||CTX:...||||||||Backpack|Backpack|Dictionary|Dictionary|Eraser|Eraser|Hospital|Hospital": [
+        "Hospital"
+    ],
+    "T11_BATCH:COMPLETE THE VOCABULARY WITH THE CORRECT VOWELS.||CTX:...||B_CKP_CK ___|C_LC_L_T_R ___|F_LD_R ___|SH_RP_N_R ___|T__CH_R ___": [
+        [
+            "BACKPACK",
+            "FOLDER",
+            "CALCULATOR",
+            "TEACHER",
+            "SHARPENER"
+        ]
+    ],
+    "DEFAULT_MULTI:READ AND CHOOSE THE RIGHT ANSWER.||I a pencil.||SING|WRITE": "WRITE",
+    "DEFAULT_MULTI:READ AND CHOOSE THE RIGHT ANSWER.||I a book||LISTEN|READ": "READ",
+    "DEFAULT_MULTI:READ AND CHOOSE THE RIGHT ANSWER.||I a picture.||DRAW|POINT": "DRAW",
+    "DEFAULT_MULTI:READ AND CHOOSE THE RIGHT ANSWER.||I a song||SING|WALK": "SING",
+    "DEFAULT_MULTI:READ AND CHOOSE THE RIGHT ANSWER.||I the alphabet||POINT|SAY": "SAY",
+    "DEFAULT:READ THE TEXT. ANSWER THE QUESTION ACCORDING TO THE TEXT. WHERE ARE THEY?||CTX:Tourist: Excuse me. Can you help me? I’m lost. Kel...ist: Many thanks for your help. Kelly: Not at all.||||||||They are at the hospital.|They are at the hospital.|They are in the university.|They are in the university.|They are on the street.|They are on the street.": [
+        "They are on the street."
+    ],
+    "DEFAULT_MULTI:READ THE TEXT. SELECT THE CORRECT OPTION ACCORDING TO KELLY´S INSTRUCTIONS.||Walk along one block more. At the end of the road you will see a in the corner||CAFE|RESTAURANT": "CAFE",
+    "DEFAULT:READ THE TEXT. ANSWER THE QUESTION ACCORDING TO THE TEXT. IS THE BUS STATION NEAR THE CAFÉ?||CTX:Tourist: Excuse me. Can you help me? I’m lost. Kel...ist: Many thanks for your help. Kelly: Not at all.||||||||No, it isn´t.|No, it isn´t.|Yes. It is.|Yes. It is.": [
+        "Yes. It is."
+    ],
+    "DEFAULT:READ THE TEXT. ANSWER THE QUESTION ACCORDING TO THE TEXT. WHAT IS THE CONVERSATION ABOUT?||CTX:Tourist: Excuse me. Can you help me? I’m lost. Kel...ist: Many thanks for your help. Kelly: Not at all.||||||||Asking for a hotel information.|Asking for a hotel information.|Asking for a scholarship.|Asking for a scholarship.|Asking for instructions on how to get to a place.|Asking for instructions on how to get to a place.": [
+        "Asking for instructions on how to get to a place."
+    ],
+    "DEFAULT:READ THE TEXT. ANSWER THE QUESTION ACCORDING TO THE TEXT. DOES THE TOURIST KNOW WHERE THE BUS STATION IS?||CTX:Tourist: Excuse me. Can you help me? I’m lost. Kel...ist: Many thanks for your help. Kelly: Not at all.||||||No, he doesn´t.|No, he doesn´t.|Yes, he does.|Yes, he does.": [
+        "No, he doesn´t."
+    ],
+    "DEFAULT:READ THE TEXT. ANSWER THE QUESTION ACCORDING TO THE TEXT. WHERE IS THE TOURIST?||CTX:Tourist: Excuse me. Can you help me? I’m lost. Kel...ist: Many thanks for your help. Kelly: Not at all.||||||He is on Board Street.|He is on Board Street.|He is on Green Street.|He is on Green Street.|He is on King’s road.|He is on King’s road.": [
+        "He is on Green Street."
+    ],
+    "DEFAULT:READ THE TEXT. THEN READ THE SENTENCE AND CHOOSE BEST OPTION ACCORDING TO THE TEXT.||CTX:Tourist: Excuse me. Can you help me? I’m lost. Kel...ist: Many thanks for your help. Kelly: Not at all.||||||||The bus station is 10 minutes by walking.|The bus station is 10 minutes by walking.|The bus station is 5 minutes by walking.|The bus station is 5 minutes by walking.": [
+        "The bus station is 10 minutes by walking."
+    ],
+    "DEFAULT:WHERE DOES HE WANT TO GO?||CTX:Tourist: Excuse me. Can you help me? I’m lost. Kel...ist: Many thanks for your help. Kelly: Not at all.||||||||To the bus station|To the bus station|To the police station|To the police station|To the underground station|To the underground station": [
+        "To the bus station"
+    ],
+    "T8:LOOK AT THE PICTURE AND READ THE TEXT. THIS ARTICLE IS ABOUT …..||IMG_DIM:443x234||Delicious food.|Food in the world.|How to prepare food.": [
+        [
+            "How to prepare food."
+        ]
+    ],
+    "DEFAULT_MULTI:LOOK AT THE PICTURE AND READ THE RECIPE. CHOOSE THE VERB THAT FITS WITH THE SENTENCE.||According to the recipe, what do you have to do with the onion, bacon and red peppers…………||BOIL THEM AND SERVE IN A POT|CUT THEM INTO SMALL PIECES AND FRY THEM|GRILL THEM WITH LITTLE SALT AND SERVE": "CUT THEM INTO SMALL PIECES AND FRY THEM",
+    "DEFAULT_MULTI:LOOK AT THE PICTURE AND READ THE RECIPE. SELECT THE CORRECT WORD TO COMPLETE THE SENTENCE.||In a big pot of boiling water, the pasta.||COOK|PEEL": "COOK",
+    "DEFAULT_MULTI:LOOK AT THE PICTURE AND READ THE RECIPE. SELECT THE CORRECT WORD TO COMPLETE THE SENTENCE.||Serve the pasta with the||SAUCE|WATER": "SAUCE",
+    "T8:LOOK AT THE PICTURE AND READ THE RECIPE. ACCORDING TO THE TEXT, YOU HAVE TO:||IMG_DIM:443x234||Draw a picture.|Follow instructions.|Listen to a friend.": [
+        [
+            "Follow instructions."
+        ]
+    ],
+    "T4:READ THE PHRASES AND MATCH THEM WITH THEIR MEANINGS.||KW:Don’t stress.|It’s a piece of cake.|On my shoulders.||DEF:A big responsibility is trusted to someone.|Not worry about unnecessary things.|Very easy": [
+        [
+            "Not worry about unnecessary things.",
+            "Very easy",
+            "A big responsibility is trusted to someone."
+        ]
+    ],
+    "DEFAULT:READ THE TEXT. ANSWER THE QUESTION ACCORDING TO THE TEXT. HOW MANY FOLDERS DOES HELEN HAVE?||CTX:Helen: I’ve got a new office now! Meg: That sounds...“To Do List” Helen: I really appreciate your help!||||||||Between 40-50.|Between 40-50.|Between 50-60.|Between 50-60.|Between 60-80.|Between 60-80.": [
+        "Between 50-60."
+    ],
+    "DEFAULT:READ THE TEXT. ANSWER THE QUESTION ACCORDING TO THE TEXT. HOW MANY EMPLOYEES ARE THERE IN THE COMPANY?||CTX:Helen: I’ve got a new office now! Meg: That sounds...“To Do List” Helen: I really appreciate your help!||||||||50|50|70|70|75|75": [
+        "75"
+    ],
+    "DEFAULT:READ THE TEXT. ANSWER THE QUESTION ACCORDING TO THE TEXT. WHAT IS THE ADVICE MEG GIVES TO HELEN?||CTX:Helen: I’ve got a new office now! Meg: That sounds...“To Do List” Helen: I really appreciate your help!||||||||Go to the beach and relax.|Go to the beach and relax.|Have fun!.|Have fun!.|Keep calm and breathe.|Keep calm and breathe.": [
+        "Keep calm and breathe."
+    ],
+    "DEFAULT:READ THE TEXT. COMPLETE THE SENTENCE ACCORDING TO THE TEXT. THE PRINCIPAL STAFF IS COMPOSED BY:||CTX:Helen: I’ve got a new office now! Meg: That sounds...“To Do List” Helen: I really appreciate your help!||||||||18 folders.|18 folders.|18 people.|18 people.|18 seats.|18 seats.": [
+        "18 people."
+    ],
+    "0:MP3|brother's|isn't|my|player|this|2:are|my|neighbors|those|4:Miguel's|is|teacher|that": [
+        [
+            [
+                "this",
+                "isn't",
+                "my",
+                "brother's",
+                "MP3",
+                "player"
+            ],
+            [
+                "those",
+                "are",
+                "my",
+                "neighbors"
+            ],
+            [
+                "that",
+                "is",
+                "Miguel's",
+                "teacher"
+            ]
+        ]
+    ],
+    "0:is|phone|this|your|2:are|her|keys|these|4:Simon's|are|photos|these|6:Andy's|ID|card|is|school|that": [
+        [
+            [
+                "this",
+                "is",
+                "your",
+                "phone"
+            ],
+            [
+                "these",
+                "are",
+                "her",
+                "keys"
+            ],
+            [
+                "these",
+                "are",
+                "Simon's",
+                "photos"
+            ],
+            [
+                "that",
+                "is",
+                "Andy's",
+                "school",
+                "ID",
+                "card"
+            ]
+        ]
+    ],
+    "DEFAULT:READ AND SELECT THE CORRECT SENTENCE.||CTX:...||||||||THESE ARE MY SISTERS.|THESE ARE MY SISTERS.|THIS ARE MY SISTERS.|THIS ARE MY SISTERS.": [
+        "THESE ARE MY SISTERS."
+    ],
+    "DEFAULT:READ AND SELECT THE CORRECT SENTENCE.||CTX:...||||||||THESE IS A BEATIFUL CITY.|THESE IS A BEATIFUL CITY.|THIS IS A BEAUTIFUL CITY.|THIS IS A BEAUTIFUL CITY.": [
+        "THIS IS A BEAUTIFUL CITY."
+    ],
+    "DEFAULT:READ AND SELECT THE CORRECT SENTENCE.||CTX:...||||||||THAT CAR IS RED.|THAT CAR IS RED.|THOSE CAR IS RED.|THOSE CAR IS RED.": [
+        "THAT CAR IS RED."
+    ],
+    "DEFAULT:READ AND SELECT THE CORRECT SENTENCE.||CTX:...||||||||THESE ARE MY FRIENDS.|THESE ARE MY FRIENDS.|THIS ARE MY FRIENDS.|THIS ARE MY FRIENDS.": [
+        "THESE ARE MY FRIENDS."
+    ],
+    "DEFAULT:READ AND CHOOOSE THE CORRECT SENTENCE.||CTX:...||||||||That great house is.|That great house is.|That is a great house.|That is a great house.|That is a house great.|That is a house great.|Those is great house.|Those is great house.": [
+        "That is a great house."
+    ],
+    "DEFAULT:READ AND SELECT THE CORRECT SENTENCE.||CTX:...||||||||THAT IS MY FATHER.|THAT IS MY FATHER.|THOSE IS MY FATHER.|THOSE IS MY FATHER.": [
+        "THAT IS MY FATHER."
+    ],
+    "DEFAULT_MULTI:READ AND SELECT THE CORRECT OPTION.||books are blue.||THESE|THIS": "THESE",
+    "DEFAULT_MULTI:READ AND SELECT THE CORRECT OPTION.||pencil is new.||THESE|THIS": "THIS",
+    "DEFAULT_MULTI:READ AND SELECT THE CORRECT OPTION.||pencils are new.||THESE|THIS": "THESE",
+    "DEFAULT_MULTI:READ AND SELECT THE CORRECT OPTION.||book is purple.||THAT|THOSE": "THAT",
+    "DEFAULT_MULTI:READ AND SELECT THE CORRECT OPTION.||car is old.||THAT|THOSE": "THAT",
+    "DEFAULT:READ AND SELECT THE CORRECT SENTENCE.||CTX:...||||||||THESE IS MY HOUSE.|THESE IS MY HOUSE.|THIS IS MY HOUSE.|THIS IS MY HOUSE.": [
+        "THIS IS MY HOUSE."
+    ],
+    "DEFAULT:READ AND SELECT THE CORRECT SENTENCE.||CTX:...||||||||That are the new English teachers.|That are the new English teachers.|This is the new English teachers.|This is the new English teachers.|Those are the new English teachers.|Those are the new English teachers.|Those is the new English teachers.|Those is the new English teachers.": [
+        "Those are the new English teachers."
+    ],
+    "DEFAULT_MULTI:READ THE WORDS AND ACCORTHING TO THEM CHOOSE THE CORRECT DEMONSTRATIVE PRONOUNS.||bike.||THAT|THESE|THOSE": "THAT",
+    "DEFAULT_MULTI:READ THE WORDS AND ACCORTHING TO THEM CHOOSE THE CORRECT DEMONSTRATIVE PRONOUNS.||car.||THESE|THIS|THOSE": "THIS",
+    "DEFAULT_MULTI:READ THE WORDS AND ACCORTHING TO THEM CHOOSE THE CORRECT DEMONSTRATIVE PRONOUNS.||clouds.||THAT|THESE|THIS": "THESE",
+    "DEFAULT_MULTI:READ THE WORDS AND ACCORTHING TO THEM CHOOSE THE CORRECT DEMONSTRATIVE PRONOUNS.||trees.||THAT|THIS|THOSE": "THOSE",
+    "DEFAULT:READ AND SELECT THE CORRECT SENTENCE.||CTX:...||||||||THAT ARE MY CATS.|THAT ARE MY CATS.|THOSE ARE MY CATS.|THOSE ARE MY CATS.": [
+        "THOSE ARE MY CATS."
+    ],
+    "T4:READ THE SENTENCES AND SELECT THE DEMONSTRATIVE PRONOUNS FROM THE BOX TO COMPLETE THEM.||KW:are your keys (you are holding the keys)|is my house ( you are pointing your house|is new nose (you are touching your nose)|mountains are full of rich history (you are pointing them)||DEF:That|These|This|Those": [
+        [
+            "This",
+            "Those",
+            "That",
+            "These"
+        ]
+    ],
+    "DEFAULT:READ AND SELECT THE CORRECT SENTENCE.||CTX:...||||||||THAT PENCILS ARE MINE.|THAT PENCILS ARE MINE.|THOSE PENCILS ARE MINE.|THOSE PENCILS ARE MINE.": [
+        "THOSE PENCILS ARE MINE."
+    ],
+    "DEFAULT_MULTI:READ THE SENTENCES AND CHOOSE THE CORRECT PREPOSITION FOR EACH SENTENCE.||My son is school today.||AT|IN|ON": "AT",
+    "DEFAULT_MULTI:READ THE SENTENCES AND CHOOSE THE CORRECT PREPOSITION FOR EACH SENTENCE.||We always go to school foot.||AT|IN|ON": "ON",
+    "DEFAULT_MULTI:READ THE SENTENCES AND CHOOSE THE CORRECT PREPOSITION FOR EACH SENTENCE.||There are four cats the roof.||AT|IN|ON": "ON",
+    "DEFAULT_MULTI:READ THE SENTENCES AND CHOOSE THE CORRECT PREPOSITION FOR EACH SENTENCE.||The party is the second floor.||AT|IN|ON": "IN",
+    "T8:IN THE FOLLOWING PICTURE, COMPLETE THE SENTENCES WITH THE CORRECT PREPOSITION OF PLACE.||IMG_DIM:443x249||1.IN 2.ON 3.NEXT TO 4.UNDER 5.BEHIND 6.IN FRONT OF|1.ON 2.IN 3.NEXT TO 4.BEHIND 5.UNDER 6.IN FRONT OF|1.ON 2.IN 3.NEXT TO 4.UNDER 5.BEHIND 6.IN FRONT OF": [
+        [
+            "1.ON 2.IN 3.NEXT TO 4.UNDER 5.BEHIND 6.IN FRONT OF"
+        ]
+    ],
+    "T11_BATCH:READ AND COMPLETE THE FOLLOWING SENTENCES USING IN – ON – AT.||CTX:...||I feel safe when I am ___|My father works ___|My keys are ___|There is a beautiful picture ___|There was an accident ___": [
+        [
+            "IN",
+            "ON",
+            "AT",
+            "ON",
+            "AT"
+        ]
+    ],
+    "T4:READ THE SENTENCES AND SELECT THE DEMONSTRATIVE PRONOUNS FROM THE BOX TO COMPLETE THEM.||KW:I your best friend.|She a nice person.|That impossible.|They in a group with me.||DEF:am|are|is|isn't": [
+        [
+            "is",
+            "are",
+            "am",
+            "isn't"
+        ]
+    ],
+    "DEFAULT:READ THE SENTENCE AND CHOOSE THE CORRECT OPTION TO COMPLETE IT. I _____ GET UP EARLY ON WEEKENDS.||CTX:...||||||||Am not|Am not|Doesn't|Doesn't|Don't|Don't": [
+        "Don't"
+    ],
+    "DEFAULT:READ THE SENTENCE AND CHOOSE THE CORRECT OPTION TO COMPLETE IT. SHE ..... COOK DINNER ON WEEKENDS.||CTX:...||||||||Am not|Am not|Doesn't|Doesn't|Don't|Don't": [
+        "Doesn't"
+    ],
+    "DEFAULT:READ THE SENTENCE AND CHOOSE THE CORRECT OPTION TO COMPLETE IT. MY BROTHERS AND I ......GO TO BED LATE.||CTX:...||||||||Am not|Am not|Doesn't|Doesn't|Don't|Don't": [
+        "Don't"
+    ],
+    "DEFAULT:READ THE SENTENCE AND CHOOSE THE CORRECT OPTION TO COMPLETE IT. HE ___________ LIKE ICE CREAM.||CTX:...||||||||Doesn't|Doesn't|Don't|Don't|Is not|Is not": [
+        "Doesn't"
+    ],
+    "DEFAULT:READ THE SENTENCE AND CHOOSE THE CORRECT OPTION TO COMPLETE IT. WE ___________ TIME TO STUDY A LANGUAGE.||CTX:...||||||||Are not|Are not|Doesn't|Doesn't|Don't|Don't": [
+        "Don't"
+    ],
+    "DEFAULT:READ THE SENTENCE AND CHOOSE THE CORRECT OPTION TO COMPLETE IT. THEY ___________ GO TO THE CHURCH ON MONDAYS.||CTX:...||||||||Are not|Are not|Doesn't|Doesn't|Don't|Don't": [
+        "Don't"
+    ],
+    "DEFAULT:READ THE SENTENCE AND CHOOSE THE CORRECT OPTION TO COMPLETE IT. IT ___________ RAIN IN SUMMER.||CTX:...||||||||Doesn't|Doesn't|Don't|Don't|Is not|Is not": [
+        "Doesn't"
+    ],
+    "DEFAULT:READ THE SENTENCE AND CHOOSE THE CORRECT OPTION TO COMPLETE IT. SHE ___________ NEED HELP.||CTX:...||||||||Doesn't|Doesn't|Don't|Don't|Is not|Is not": [
+        "Doesn't"
+    ],
+    "DEFAULT:READ THE SENTENCE AND CHOOSE THE CORRECT OPTION TO COMPLETE IT. MARCIA ___________ LIVE IN PORTOVIEJO. SHE LIVES IN MANTA.||CTX:...||||||||Doesn't|Doesn't|Don't|Don't|Is not|Is not": [
+        "Doesn't"
+    ],
+    "DEFAULT:READ THE SENTENCE AND CHOOSE THE CORRECT OPTION TO COMPLETE IT. MY PARENTS ___________ SPEAK ENGLISH.||CTX:...||||||||Doesn't|Doesn't|Don't|Don't|Is not|Is not": [
+        "Don't"
+    ],
+    "T4:READ THE SENTENCTES AND CHOOSE FROM THE WORDS IN THE BOX TO COMPLETE THEM.||KW:I your best friend.|She a nice person.|That impossible.|They in a group with me.||DEF:am|are|is|isn't": [
+        [
+            "is",
+            "are",
+            "am",
+            "isn't"
+        ]
+    ],
+    "0:a|good|he|is|man|2:are|friendly|they|4:is|it|outside|raining|6:are|at|home|not|we": [
+        [
+            [
+                "he",
+                "is",
+                "a",
+                "good",
+                "man"
+            ],
+            [
+                "they",
+                "are",
+                "friendly"
+            ],
+            [
+                "it",
+                "is",
+                "raining",
+                "outside"
+            ],
+            [
+                "we",
+                "are",
+                "not",
+                "at",
+                "home"
+            ]
+        ]
+    ],
+    "DEFAULT:READ THE SENTENCES AND CHOOSE THE CORRECT OPTION TO COMPLETE THEM.||CTX:...||||||||I am your friends.|I am your friends.|It am summer time.|It am summer time.|It is summer time.|It is summer time.|She are a nice person.|She are a nice person.": [
+        "It is summer time."
+    ],
+    "DEFAULT:READ THE SENTENCES AND CHOOSE THE CORRECT OPTION WITHOUT A MISTAKE.||CTX:...||||||||He is a student in this class.|He is a student in this class.|He is students in this class.|He is students in this class.|We are student in this class.|We are student in this class.|We is student in this class.|We is student in this class.": [
+        "He is a student in this class."
+    ],
+    "DEFAULT:READ THE SENTENCE AND CHOOSE THE CORRECT OPTION TO COMPLETE IT. I ___________ HAVE ANY BROTHERS OR SISTERS.||CTX:...||||||||Are not|Are not|Doesn't|Doesn't|Don't|Don't": [
+        "Don't"
+    ],
+    "DEFAULT:READ THE SENTENCES AND CHOOSE THE CORRECT OPTION WITHOUT A MISTAKE.||CTX:...||||||||He are a good friend.|He are a good friend.|He is a great friend.|He is a great friend.|She is good friends.|She is good friends.|They are the best friend.|They are the best friend.": [
+        "He is a great friend."
+    ],
+    "DEFAULT:READ THE SENTENCE AND CHOOSE THE CORRECT OPTION TO COMPLETE IT. DOGS ___________ WHISTLE. THEY BARK.||CTX:...||||||||Are not|Are not|Doesn't|Doesn't|Don't|Don't": [
+        "Don't"
+    ],
+    "T4:READ AND CHOOSE THE CORRECT QUESTION WORD FROM THE WORD BOX TO COMPLETE THE QUESTION.||KW:do you go to the beach?|do you have a black eye?|do you like to go to have fun?|does your mother sing?||DEF:How|When|Where|Why": [
+        [
+            "When",
+            "Where",
+            "How",
+            "Why"
+        ]
+    ],
+    "DEFAULT:READ THE QUESTIONS AND CHOOSE THE CORRECT OPTION WITHOUT A MISTAKE.||CTX:...||||||||How many brother do you have?|How many brother do you have?|How many candy do you eat?|How many candy do you eat?|How much money do you spend every month?|How much money do you spend every month?|How much shoes do you have?|How much shoes do you have?": [
+        "How much money do you spend every month?"
+    ],
+    "T4:READ THE QUESTIONS. THEN MATCH THE ANSWERS TO THEM.||KW:How many brothers do you have?|How many friends do you have?|How many sisters do you have?|How much money do you have?|How much water do you drink?||DEF:I drink a lot of water|I have a lot of friends|I have one sister|I have seven brothers|I have ten dollars": [
+        [
+            "I have seven brothers",
+            "I have one sister",
+            "I have ten dollars",
+            "I drink a lot of water",
+            "I have a lot of friends"
+        ]
+    ],
+    "DEFAULT:READ THE QUESTIONS AND CHOOSE THE CORRECT ONE.||CTX:...||||||||How do you do for a living?|How do you do for a living?|What do you do for a living?|What do you do for a living?|When do you do for a living?|When do you do for a living?|Where do you do for a living?|Where do you do for a living?": [
+        "What do you do for a living?"
+    ],
+    "0:?|does|eat|he|what|2:?|does|he|live|where|4:?|do|does|he|like|to|what|6:?|do|go|where|you": [
+        [
+            [
+                "what",
+                "does",
+                "he",
+                "eat",
+                "?"
+            ],
+            [
+                "where",
+                "does",
+                "he",
+                "live",
+                "?"
+            ],
+            [
+                "what",
+                "does",
+                "he",
+                "like",
+                "to",
+                "do",
+                "?"
+            ],
+            [
+                "where",
+                "do",
+                "you",
+                "go",
+                "?"
+            ]
+        ]
+    ],
+    "T4:ANSWER THE FOLLOWING QUESTIONS ABOUT ADELE. USE THE CLUES UNDERLINED IN THE ARTICLE.||KW:What does she drink?|What does she eat?|What songs do you know?||DEF:Adele drinks tea.|Hello, Someone like you, Skyfall, Rolling in the deep.|She only eats vegetables, fruits, almonds and dairy products.": [
+        [
+            "She only eats vegetables, fruits, almonds and dairy products.",
+            "Adele drinks tea.",
+            "Hello, Someone like you, Skyfall, Rolling in the deep."
+        ]
+    ],
+    "0:?|are|bananas|basket|how|in|many|the|there|2:?|a|are|days|how|in|many|there|year|4:?|do|how|money|much|need|you|6:?|honey|how|in|is|much|the|there|tin": [
+        [
+            [
+                "how",
+                "many",
+                "bananas",
+                "are",
+                "there",
+                "in",
+                "the",
+                "basket",
+                "?"
+            ],
+            [
+                "how",
+                "many",
+                "days",
+                "are",
+                "there",
+                "in",
+                "a",
+                "year",
+                "?"
+            ],
+            [
+                "how",
+                "much",
+                "money",
+                "do",
+                "you",
+                "need",
+                "?"
+            ],
+            [
+                "how",
+                "much",
+                "honey",
+                "is",
+                "there",
+                "in",
+                "the",
+                "tin",
+                "?"
+            ]
+        ]
+    ],
+    "T9:LISTEN TO THE AUDIO AND SELECT THE APPROPRIATE OPTION: THE CASHIER SCANS YOUR ITEMS AND TELLS YOU THE TOTAL________||CTX:...||||||color|color|cost|cost|size|size|weight|weight": [
+        "cost"
+    ],
+    "T9:LISTEN TO THE AUDIO AND SELECT THE APPROPRIATE OPTION: AT THE GROCERY STORE, YOU PICK WHAT YOU WANT AND PUT IT IN YOUR __________||CTX:...||||||basket|basket|cart|cart|hand|hand|pocket|pocket": [
+        "cart"
+    ],
+    "T9:LISTEN TO THE AUDIO AND SELECT THE APPROPRIATE OPTION: A GROCERY STORE IS A PLACE WHERE YOU BUY________||CTX:...||||||books|books|clothes|clothes|food|food|toys|toys": [
+        "food"
+    ],
+    "T9:LISTEN TO THE AUDIO AND SELECT THE APPROPRIATE OPTION: AFTER SHOPPING, YOU GO TO THE ______ TO PAY||CTX:...||||||cashier|cashier|driver|driver|manager|manager|teacher|teacher": [
+        "cashier"
+    ],
+    "T9:LISTEN TO THE AUDIO AND SELECT THE APPROPRIATE OPTION: SOME PEOPLE USE A SHOPPING _______ TO REMEMBER WHAT THEY NEED.||CTX:...||||||bag|bag|box|box|cart|cart|list|list": [
+        "list"
+    ],
+    "T9:ACCORDING TO THE AUDIO, SELECT THE RIGHT OPTION: WHY IS ECUADOR CALLED A NATURE PARADISE?||CTX:...||||||It has amazing nature for exploring|It has amazing nature for exploring|It has large cities|It has large cities|It is close to the ocean|It is close to the ocean|It is very cold|It is very cold": [
+        "It has amazing nature for exploring"
+    ],
+    "T9:ACCORDING TO THE AUDIO, SELECT THE RIGHT OPTION: WHAT ARE THE GALÁPAGOS ISLANDS FAMOUS FOR?||CTX:...||||||Beautiful beaches|Beautiful beaches|Large cities|Large cities|Tall mountains|Tall mountains|Unique animals like giant tortoises|Unique animals like giant tortoises": [
+        "Unique animals like giant tortoises"
+    ],
+    "T9:ACCORDING TO THE AUDIO, SELECT THE RIGHT OPTION: WHERE IS ECUADOR LOCATED?||CTX:...||||||Asia|Asia|Europe|Europe|North America|North America|South America|South America": [
+        "South America"
+    ],
+    "T9:ACCORDING TO THE AUDIO, SELECT THE RIGHT OPTION: WHAT CAN YOU SEE IN THE ANDES MOUNTAINS?||CTX:...||||||Dunes|Dunes|Oceans|Oceans|Skyscrapers|Skyscrapers|Volcanoes|Volcanoes": [
+        "Volcanoes"
+    ],
+    "T9:ACCORDING TO THE AUDIO, SELECT THE RIGHT OPTION: WHAT CAN YOU FIND IN THE AMAZON RAINFOREST?||CTX:...||||||Deserts|Deserts|Ice and snow|Ice and snow|Many plants and animals|Many plants and animals|Tall buildings|Tall buildings": [
+        "Many plants and animals"
+    ],
+    "T9:ACCORDING TO THE AUDIO, SELECT THE RIGHT OPTION: WHAT IS THE UNIVERSITY FOR?||CTX:...||||||Eating and sleeping|Eating and sleeping|Learning, growing, and discovering who you want to be|Learning, growing, and discovering who you want to be|Playing games|Playing games|Watching movies|Watching movies": [
+        "Learning, growing, and discovering who you want to be"
+    ],
+    "T9:ACCORDING TO THE AUDIO, SELECT THE RIGHT OPTION: WHAT CAN YOU CHOOSE TO STUDY AT THE UNIVERSITY?||CTX:...||||||Cooking|Cooking|Different subjects like science, art, or history|Different subjects like science, art, or history|Movies|Movies|Shopping|Shopping": [
+        "Different subjects like science, art, or history"
+    ],
+    "T9:ACCORDING TO THE AUDIO, SELECT THE RIGHT OPTION: WHAT CAN YOU DO AT THE UNIVERSITY?||CTX:...||||||Learn new things|Learn new things|Play video games|Play video games|Sleep all day|Sleep all day|Travel the world|Travel the world": [
+        "Learn new things"
+    ],
+    "T9:ACCORDING TO THE AUDIO, SELECT THE RIGHT OPTION: WHO WILL HELP YOU UNDERSTAND IMPORTANT IDEAS?||CTX:...||||||Coaches|Coaches|Friends|Friends|Parents|Parents|Professors|Professors": [
+        "Professors"
+    ],
+    "T9:ACCORDING TO THE AUDIO, SELECT THE RIGHT OPTION: WHERE CAN YOU MAKE FRIENDS AND EXPLORE YOUR INTERESTS AT THE UNIVERSITY?||CTX:...||||||At home|At home|In clubs, sports teams, and libraries|In clubs, sports teams, and libraries|In the cafeteria|In the cafeteria|In the parking lot|In the parking lot": [
+        "In clubs, sports teams, and libraries"
+    ],
+    "T9:LISTEN TO THE AUDIO AND MATCH THE PROFESSION WITH THE CORRECT DEFINITION: CHEF.||CTX:...||||||Cooks food|Cooks food|Designs machines|Designs machines|Helps sick people|Helps sick people|Saves people from fires|Saves people from fires": [
+        "Cooks food"
+    ],
+    "T9:LISTEN TO THE AUDIO AND MATCH THE PROFESSION WITH THE CORRECT DEFINITION: TEACHER.||CTX:...||||||Drives a bus|Drives a bus|Keeps the community safe|Keeps the community safe|Saves people from fires|Saves people from fires|Teaches students|Teaches students": [
+        "Teaches students"
+    ],
+    "T9:LISTEN TO THE AUDIO AND MATCH THE PROFESSION WITH THE CORRECT DEFINITION: DOCTOR.||CTX:...||||||Cooks food|Cooks food|Designs buildings|Designs buildings|Helps sick people|Helps sick people|Teaches students|Teaches students": [
+        "Helps sick people"
+    ],
+    "T9:LISTEN TO THE AUDIO AND MATCH THE PROFESSION WITH THE CORRECT DEFINITION: FIREFIGHTER.||CTX:...||||||Builds houses|Builds houses|Cooks food|Cooks food|Keeps the community safe|Keeps the community safe|Saves people from fires|Saves people from fires": [
+        "Saves people from fires"
+    ],
+    "T9:LISTEN TO THE AUDIO AND MATCH THE PROFESSION WITH THE CORRECT DEFINITION: POLICE OFFICER.||CTX:...||||||Cooks food|Cooks food|Drives a train|Drives a train|Keeps the community safe|Keeps the community safe|Teaches students|Teaches students": [
+        "Keeps the community safe"
+    ],
+    "T4:READ THE SENTENCES. MATCH THE WORDS ACCORDING TO THE MEANING.||KW:To dislike someone or something very much.|To enjoy or approve of something or someone.|To like, choose, or want one thing rather than another.||DEF:Hate|Like|Prefer": [
+        [
+            "Hate",
+            "Prefer",
+            "Like"
+        ]
+    ],
+    "DEFAULT_MULTI:LOOK AT THE PICTURE. READ THE E-MAIL AND THE QUESTIONS. THEN DECIDE THEY ARE TRUE (T) OR FALSE (F).||Does he live in Cuenca?||F|T": "T",
+    "DEFAULT_MULTI:LOOK AT THE PICTURE. READ THE E-MAIL AND THE QUESTIONS. THEN DECIDE THEY ARE TRUE (T) OR FALSE (F).||Is he 20 years old?||F|T": "F",
+    "DEFAULT_MULTI:LOOK AT THE PICTURE. READ THE E-MAIL AND THE QUESTIONS. THEN DECIDE THEY ARE TRUE (T) OR FALSE (F).||Does he study engineering?||F|T": "F",
+    "DEFAULT_MULTI:LOOK AT THE PICTURE. READ THE E-MAIL AND THE QUESTIONS. THEN DECIDE THEY ARE TRUE (T) OR FALSE (F).||Does he love reading?||F|T": "T",
+    "DEFAULT_MULTI:LOOK AT THE PICTURE. READ THE E-MAIL AND THE QUESTIONS. THEN DECIDE THEY ARE TRUE (T) OR FALSE (F).||Does he like outdoors activities?||F|T": "F",
+    "DEFAULT:READ THE DESCRIPTION AND CHOOSE THE BEST OPTION: THIS ACTIVITY REFERS TO RECREATION ENGAGED IN OUT OF DOORS, MOST COMMONLY IN NATURAL SETTINGS.||CTX:...||||||||Indoor Activities|Indoor Activities|Outdoor Activities|Outdoor Activities": [
+        "Outdoor Activities"
+    ],
+    "0:I|in the park|like|to play|2:I|at home|enjoy|having lunch|4:I prefer|going|going|rather than|the stadium|to the beach|6:I|going|hate|to the dentist|8:I|love|to go|to the cinema": [
+        [
+            [
+                "I",
+                "like",
+                "in the park",
+                "to play"
+            ],
+            [
+                "I",
+                "enjoy",
+                "having lunch",
+                "at home"
+            ],
+            [
+                "I prefer",
+                "going",
+                "the stadium",
+                "rather than",
+                "going",
+                "to the beach"
+            ],
+            [
+                "I",
+                "hate",
+                "going",
+                "to the dentist"
+            ],
+            [
+                "I",
+                "love",
+                "to go",
+                "to the cinema"
+            ]
+        ]
+    ],
+    "DEFAULT:READ AND CHOOSE THE BEST OPTION: THESE ACTIVITIES ARE CARRIED OUT INSIDE A SPACE. THEY ARE LIMITED TO THE CONDITIONS OF THE PLACE WHERE THEY ARE HELD, TO THE NUMBER OF PEOPLE PARTICIPATING IN THE ACTIVITIES, AMONG OTHER FACTORS.||CTX:...||||||||Indoor Activities|Indoor Activities|Outdoor Activities|Outdoor Activities": [
+        "Indoor Activities"
+    ],
+    "T8:LOOK AT THE PICTURES. MATCH THE WORDS WITH THE IMAGES. WHO CAN WORK IN THESE PLACES?||IMG_DIM:341x226|IMG_DIM:341x227|IMG_DIM:341x256||Nurse|Police Officer|Teacher": [
+        [
+            "Nurse",
+            "Teacher",
+            "Police Officer"
+        ]
+    ],
+    "T8:LOOK AT THE PICTURES. CHOOSE THE NAMES OF THESE JOBS ACCORDING TO THE IMAGES.||IMG_DIM:341x227|IMG_DIM:341x341|IMG_DIM:341x381|IMG_DIM:341x400|IMG_DIM:341x453||Dentist|Engineer|Firefighter|Mechanic|Taxi driver": [
+        [
+            "Firefighter",
+            "Taxi driver",
+            "Engineer",
+            "Mechanic",
+            "Dentist"
+        ]
+    ],
+    "T4:READ THE PHRASES. THEN MATH THE JOB WITH THE ACTIVITY.||KW:Design programs|Repair cars|Take care people from the delinquency|Take care people’s teeth||DEF:Computing programmer|Dentist|Mechanic|Police": [
+        [
+            "Mechanic",
+            "Dentist",
+            "Police",
+            "Computing programmer"
+        ]
+    ],
+    "DEFAULT_MULTI:LOOK AT THE PICTURE AND READ THE TEXT. THEN READ AND COMPLETE THE FORM WITH THE INFORMATION FROM THE TEXT.||Name:||ANNIE|LIZ|MARY": "LIZ",
+    "DEFAULT_MULTI:LOOK AT THE PICTURE AND READ THE TEXT. THEN READ AND COMPLETE THE FORM WITH THE INFORMATION FROM THE TEXT.||Country:||BERLÍN|LONDRES|PARIS": "PARIS",
+    "DEFAULT_MULTI:LOOK AT THE PICTURE AND READ THE TEXT. THEN READ AND COMPLETE THE FORM WITH THE INFORMATION FROM THE TEXT.||Age:||TWENTY-FIVE|TWENTY-ONE|TWENTY-TWO": "TWENTY-ONE",
+    "T8:LOOK AT THE PICTURE AND READ THE TEXT. THEN READ AND COMPLETE THE SENTENCE: SHE HAS A BUSY ______.||IMG_DIM:426x97||breakfast|schedule|tennis player": [
+        [
+            "schedule"
+        ]
+    ],
+    "0:She|breakfast|has|2:She|for about half an hour|swims|4:She|a book|reads": [
+        [
+            [
+                "She",
+                "has",
+                "breakfast"
+            ],
+            [
+                "She",
+                "swims",
+                "for about half an hour"
+            ],
+            [
+                "She",
+                "reads",
+                "a book"
+            ]
+        ]
+    ],
+    "DEFAULT_MULTI:LOOK AT THE PICTURE AND READ THE TEXT. THEN ANSWER THE QUESTIONS. MARK TRUE (T) OR FALSE (F).||Does Liz live in London?||F|T": "F",
+    "DEFAULT_MULTI:LOOK AT THE PICTURE AND READ THE TEXT. THEN ANSWER THE QUESTIONS. MARK TRUE (T) OR FALSE (F).||Is she a tennis player?||F|T": "T",
+    "DEFAULT_MULTI:LOOK AT THE PICTURE AND READ THE TEXT. THEN ANSWER THE QUESTIONS. MARK TRUE (T) OR FALSE (F).||Does she train 4 hours in the morning?||F|T": "T",
+    "DEFAULT_MULTI:LOOK AT THE PICTURE AND READ THE TEXT. THEN ANSWER THE QUESTIONS. MARK TRUE (T) OR FALSE (F).||Does she get ready for interviews before lunch?||F|T": "F",
+    "DEFAULT_MULTI:LOOK AT THE PICTURE AND READ THE TEXT. THEN ANSWER THE QUESTIONS. MARK TRUE (T) OR FALSE (F).||Does she have a healthy breakfast?||F|T": "T",
+    "T8:LOOK AT THE PICTURE AND READ THE TEXT. THEN READ AND COMPLETE THE SENTENCE: SHE GETS UP ______.||IMG_DIM:426x97||early|half an hour|schedule": [
+        [
+            "early"
+        ]
+    ],
+    "T8:LOOK AT THE PICTURE AND READ THE TEXT. THEN READ AND COMPLETE THE SENTENCE: SHE SWIMS FOR ABOUT ______.||IMG_DIM:426x97||early|half an hour|schedule": [
+        [
+            "half an hour"
+        ]
+    ],
+    "T8:LOOK AT THE PICTURE AND READ THE TEXT. THEN READ AND COMPLETE THE SENTENCE: LIZ IS A ______.||IMG_DIM:426x97||half an hour|schedule|tennis player": [
+        [
+            "tennis player"
+        ]
+    ],
+    "T8:LOOK AT THE PICTURES. MATCH THE CORRECT PHRASES WITH THE PICTURES.||IMG_DIM:341x212|IMG_DIM:341x227|IMG_DIM:341x228|IMG_DIM:341x233|IMG_DIM:341x256||Get dressed|Get up|Have breakfast|Have lunch|Take a shower": [
+        [
+            "Have lunch",
+            "Have breakfast",
+            "Take a shower",
+            "Get dressed",
+            "Get up"
+        ]
+    ],
+    "T8:LOOK AT THE PICTURE AND READ THE TEXT. THEN READ AND COMPLETE THE SENTENCE: SHE HAS A HEALTHY ______.||IMG_DIM:426x97||breakfast|early|tennis player": [
+        [
+            "breakfast"
+        ]
+    ],
+    "T11_BATCH:READ THE WORDS AND PUT IN ORDER THE FOLLOWING LETTERS TO CREATE WORDS RELATED TO THE PARTS OF THE HOUSE.||CTX:...||ASEBNMET ___|DBOOERM ___|HEKINTC ___|IINNDG MORO ___|OBTAROHM ___|RDYA ___|USTIOD ___|VLINGI OROM ___": [
+        [
+            "DININGROOM",
+            "KITCHEN",
+            "BEDROOM",
+            "LIVINGROOM",
+            "BATHROOM",
+            "BASEMENT",
+            "STUDIO",
+            "YARD"
+        ]
+    ],
+    "DEFAULT:READ THE WORDS AND CHOOSE IT THAT DOESN´T BELONG TO THE GROUP.||CTX:...||||||||Oven|Oven|chair|chair|refrigerator|refrigerator": [
+        "chair"
+    ],
+    "T8:LOOK AT THE PICTURE AND CHOOSE THE CORRECT OPTION. WHAT PART OF THE HOUSE IS IT? - THIS IS MY COUSIN'S:||IMG_DIM:443x296||bedroom|kitchen": [
+        [
+            "bedroom"
+        ]
+    ],
+    "T8:LOOK AT THE PICTURE AND CHOOSE THE CORRECT OPTION. WHAT PART OF THE HOUSE IS IT? - THIS IS MY MOM'S:||IMG_DIM:443x443||garden|laundry room": [
+        [
+            "laundry room"
+        ]
+    ],
+    "T8:LOOK AT THE PICTURE AND CHOOSE THE CORRECT OPTION. WHAT PART OF THE HOUSE IS IT? - THIS IS MY SISTER'S:||IMG_DIM:443x332||garage|living room": [
+        [
+            "living room"
+        ]
+    ],
+    "T8:LOOK AT THE IMAGES. MATCH THE WORDS TO THE PICTURES.||IMG_DIM:341x206|IMG_DIM:341x221|IMG_DIM:341x225|IMG_DIM:341x249|IMG_DIM:341x341||bottle|fork|mug|pot|spoon": [
+        [
+            "mug",
+            "fork",
+            "bottle",
+            "pot",
+            "spoon"
+        ]
+    ],
+    "T8:LOOK AT THE IMAGES. MATCH THE PICTURES WITH THE CORRECT WORDS RELATED TO FURNITURE.||IMG_DIM:341x341|IMG_DIM:341x341_1|IMG_DIM:341x341_2|IMG_DIM:341x341_3|IMG_DIM:341x341_4|IMG_DIM:341x341_5||ARMCHAIR|CHAIR|LAMP|SOFA|TELEPHONE|TV": [
+        [
+            "ARMCHAIR",
+            "TV",
+            "TELEPHONE",
+            "CHAIR",
+            "LAMP",
+            "SOFA"
+        ]
+    ],
+    "T8:LOOK AT THE PICTURE. READ AND CHOOSE THE CORRECT OPTION.||IMG_DIM:225x225||Bathtub|Lamp|Picture|Plant": [
+        [
+            "Plant"
+        ]
+    ],
+    "T8:LOOK AT THE PICTURE. READ AND CHOOSE THE CORRECT OPTION.||IMG_DIM:225x225||Clock|Computer|Fridge|Rug": [
+        [
+            "Clock"
+        ]
+    ],
+    "DEFAULT:READ THE WORDS AND CHOOSE IT THAT DOESN´T BELONG TO THE GROUP.||CTX:...||||||||Bathtub|Bathtub|kitchen|kitchen|shower|shower": [
+        "kitchen"
+    ],
+    "DEFAULT:READ THE WORDS AND CHOOSE IT THAT DOESN´T BELONG TO THE GROUP.||CTX:...||||||Bed|Bed|bedroom|bedroom|stairs|stairs": [
+        "stairs"
+    ],
+    "DEFAULT:READ THE WORDS AND CHOOSE IT THAT DOESN´T BELONG TO THE GROUP.||CTX:...||||||||Sofa|Sofa|TV|TV|fridge|fridge": [
+        "fridge"
+    ],
+    "DEFAULT:READ THE WORDS AND CHOOSE IT THAT DOESN´T BELONG TO THE GROUP.||CTX:...||||||||Armchair|Armchair|car|car|garage|garage": [
+        "Armchair"
+    ],
+    "T8:LOOK AT THE PICTURE AND CHOOSE THE CORRECT OPTION. WHAT PART OF THE HOUSE IS IT? - THIS IS ROSE'S:||IMG_DIM:443x332||bathroom|bedroom": [
+        [
+            "bathroom"
+        ]
+    ],
+    "T8:LOOK AT THE PICTURE. READ AND CHOOSE THE CORRECT OPTION.||IMG_DIM:258x195||Armchair|Bed|Coach|Radio": [
+        [
+            "Radio"
+        ]
+    ],
+    "T4:READ THE SENTENCES AND COMPLETE THEM WITH THE WORDS IN THE BOX.||KW:AHi Daniela! How are you? BFine Marcela, and you? AI’m fine,|AOk, what are we going to do? B , we have to eat, second, we are going to take a shower and third we are going to brush our teeth.|Look at the sky, the moon the stars.|Mariela has to go to the doctor she is ill.|What color are you going to use? White beige?||DEF:and|because|first|or|too": [
+        [
+            "too",
+            "first",
+            "because",
+            "and",
+            "or"
+        ]
+    ],
+    "DEFAULT_MULTI:READ THE SENTENCES AND CHOOSE THE CORRECT WORD FOR EACH SENTENCE.||I am good at cycling swimming.||AND|OR": "AND",
+    "DEFAULT_MULTI:READ THE SENTENCES AND CHOOSE THE CORRECT WORD FOR EACH SENTENCE.||The students did the homework they didn´t study.||ABOUT|BUT": "BUT",
+    "DEFAULT_MULTI:READ THE SENTENCES AND CHOOSE THE CORRECT WORD FOR EACH SENTENCE.||My sister always goes to the beach her family.||FOR|WITH": "WITH",
+    "DEFAULT_MULTI:READ THE SENTENCES AND CHOOSE THE CORRECT WORD FOR EACH SENTENCE.||I don’t like to drink coffee it’s bad for my health.||BECAUSE|WITH": "BECAUSE",
+    "DEFAULT_MULTI:READ THE SENTENCES AND CHOOSE THE CORRECT OPTION TO COMPLETE THEM.||Some people believe in ghosts and supernatural phenomena others are skeptical about all that.||BESIDE|WHEREAS": "WHEREAS",
+    "DEFAULT_MULTI:READ THE SENTENCES AND CHOOSE THE CORRECT OPTION TO COMPLETE THEM.||She didn’t get the job her brilliant qualifications.||DESPITE|YET": "DESPITE",
+    "DEFAULT_MULTI:READ THE SENTENCES AND CHOOSE THE CORRECT OPTION TO COMPLETE THEM.||“That book you’ve been reading must be very interesting it’s dead boring but I have to read it for school”||ALSO|ON THE CONTRARY": "ON THE CONTRARY",
+    "DEFAULT_MULTI:READ THE SENTENCES AND CHOOSE THE CORRECT OPTION TO COMPLETE THEM.||I’m not going to speak to her she begs me pardon||ALTHOUGH|HOMEVER": "ALTHOUGH",
+    "DEFAULT_MULTI:READ THE SENTENCES AND CHOOSE THE CORRECT OPTION TO COMPLETE THEM.||Do you live in a town city?||AND|BECAUSE|BUT|OR": "OR",
+    "DEFAULT_MULTI:READ THE SENTENCES AND CHOOSE THE CORRECT OPTION TO COMPLETE THEM.||My family I are happier in our new home.||AND|BECAUSE|BUT|OR": "AND",
+    "DEFAULT_MULTI:READ THE SENTENCES AND CHOOSE THE CORRECT OPTION TO COMPLETE THEM.||We live in this flat it is near the beach.||AND|BECAUSE|BUT|OR": "BECAUSE",
+    "DEFAULT_MULTI:READ THE SENTENCES AND CHOOSE THE CORRECT OPTION TO COMPLETE THEM.||I usually have lunch at school not on Friday.||AND|BECAUSE|BUT|OR": "BUT",
+    "DEFAULT_MULTI:READ THE SENTENCES AND CHOOSE THE CORRECT WORD TO COMPLETE THEM.||I like to eat pizza burger.||AND|BECAUSE|OR|SUCH AS": "AND",
+    "DEFAULT_MULTI:READ THE SENTENCES AND CHOOSE THE CORRECT WORD TO COMPLETE THEM.||I will use a skirt a dress.||AND|BECAUSE|OR|SUCH AS": "OR",
+    "DEFAULT_MULTI:READ THE SENTENCES AND CHOOSE THE CORRECT WORD TO COMPLETE THEM.||Sabrina is sleeping she is tired.||AND|BECAUSE|OR|SUCH AS": "BECAUSE",
+    "DEFAULT_MULTI:READ THE SENTENCES AND CHOOSE THE CORRECT WORD TO COMPLETE THEM.||I visited some places Madrid and Rome.||AND|BECAUSE|OR|SUCH AS": "SUCH AS",
+    "DEFAULT:READ AND CHOOSE THE CORRECT OPTION TO COMPLETE THE SENTENCES: PROFESSIONAL SPORTS PEOPLE HAVE TO _____ EVERY DAY.||CTX:...||||||||kick|kick|score|score|train|train": [
+        "train"
+    ],
+    "DEFAULT:READ AND CHOOSE THE CORRECT OPTION TO COMPLETE THE SENTENCES: TO PLAY TABLE TENNIS YOU NEED TO HAVE A:||CTX:...||||||||ball and a helmet|ball and a helmet|ball and a racket|ball and a racket|bar and a ball|bar and a ball": [
+        "ball and a racket"
+    ],
+    "DEFAULT:READ AND CHOOSE THE CORRECT DEFINITION FOR THE SPORT VOCABULARY: WHAT IS THE DEFINITION OF BAT?||CTX:...||||||||A game in which a club is used to hit a small ball into a hole in the ground.|A game in which a club is used to hit a small ball into a hole in the ground.|A thin long object that is held and used to hit another object, often a ball.|A thin long object that is held and used to hit another object, often a ball.|The member of a team that is in charge of all the other players while playing the sport.|The member of a team that is in charge of all the other players while playing the sport.|The things that are needed to be able to play a sport.|The things that are needed to be able to play a sport.": [
+        "A thin long object that is held and used to hit another object, often a ball."
+    ],
+    "T11_BATCH:FILL IN THE BLANKS WITH THE MISSING VOWELS TO FIND OUT THE NAMES OF THE SPORTS.||CTX:...||B _ s _ b _ l l ___|B _ s k _ t b _ l l ___|F _ _ t b _ l l ___|G _ l f ___|H _ c k _ y ___|T _ n n _ s ___": [
+        [
+            "FOOTBALL",
+            "TENNIS",
+            "BASEBALL",
+            "GOLF",
+            "HOCKEY",
+            "BASKETBALL"
+        ]
+    ],
+    "DEFAULT:CHOOSE THE CORRECT DEFINITION FOR THE SPORT VOCABULARY: WHAT IS THE MEANING OF THE FOLLOWING DEFINITION: A SPORT WHERE TWO PEOPLE HIT EACH OTHER AND TRY TO WIN THE FIGHT?||CTX:...||||||||Basketball|Basketball|Boxing|Boxing|Exercise|Exercise|Jockey|Jockey": [
+        "Boxing"
+    ],
+    "T8:LOOK AT THE PICTURE AND READ THE TEXT. THEN READ AND COMPLETE THE SENTENCE WITH THE RIGHT OPTION. PHONE OPERATORS SHOULD BE:||IMG_DIM:385x447||Both|Female|Male": [
+        [
+            "Female"
+        ]
+    ],
+    "T8:LOOK AT THE PICTURE AND CHOOSE THE CORRECT TITLE ACCORDDING TO THE ADVERTISEMENT.||IMG_DIM:341x416|IMG_DIM:341x482||Ad for a job|Ad for information about an event": [
+        [
+            "Ad for a job",
+            "Ad for information about an event"
+        ]
+    ],
+    "T8:THE MOBILE PHONE IN SUBWAY IS _____||IMG_DIM:385x447||0300-4809098|0300-8400898": [
+        [
+            "0300-8400898"
+        ]
+    ],
+    "T8:LOOK AT THE PICTURE AND READ THE TEXT. THEN READ AND COMPLETE THE SENTENCE WITH THE RIGHT OPTION. PEOPLE WHO ARE INTERESTED IN THE JOB SHOULD:||IMG_DIM:385x447||Call for information|Drop their CV|Visit the nearest local": [
+        [
+            "Drop their CV"
+        ]
+    ],
+    "T8:LOOK AT THE PICTURE AND READ THE TEXT. THEN READ AND COMPLETE THE SENTENCE WITH THE RIGHT OPTION. WHEN IS THE LECTURE ON THE IMPACT OF MOSQUITOES?||IMG_DIM:396x457||In Wilson International Campus|In the afternoon|On April 25, 2020": [
+        [
+            "On April 25, 2020"
+        ]
+    ],
+    "DEFAULT_MULTI:0:LOOK AT THE PICTURE AND READ THE TEXT. THEN MATCH THE VACANCIES WITH THEIR REQUIREMENTS.||/ MBA||B.A. / B. COM|GRADUATE|GRADUATE / MBA|MIN. MATRIC": [
+        "GRADUATE / MBA"
+    ],
+    "DEFAULT_MULTI:1:LOOK AT THE PICTURE AND READ THE TEXT. THEN MATCH THE VACANCIES WITH THEIR REQUIREMENTS.||/ MBA||B.A. / B. COM|GRADUATE|GRADUATE / MBA|MIN. MATRIC": [
+        "B.A. / B. COM"
+    ],
+    "DEFAULT_MULTI:2:LOOK AT THE PICTURE AND READ THE TEXT. THEN MATCH THE VACANCIES WITH THEIR REQUIREMENTS.||/ MBA||B.A. / B. COM|GRADUATE|GRADUATE / MBA|MIN. MATRIC": [
+        "MIN. MATRIC"
+    ],
+    "DEFAULT_MULTI:3:LOOK AT THE PICTURE AND READ THE TEXT. THEN MATCH THE VACANCIES WITH THEIR REQUIREMENTS.||/ MBA||B.A. / B. COM|GRADUATE|GRADUATE / MBA|MIN. MATRIC": [
+        "GRADUATE"
+    ],
+    "T8:LOOK AT THE PICTURE AND READ THE TEXT. THEN READ AND COMPLETE THE SENTENCE WITH THE RIGHT OPTION: THE MOST FAMOUS SPORTS TO PRACTICE IN CRUCITA ARE ____________________.||IMG_DIM:443x407||Parasailing and paragliding.|Swimming and jogging.": [
+        [
+            "Parasailing and paragliding."
+        ]
+    ],
+    "T8:LOOK AT THE PICTURE AND READ THE TEXT. THEN READ AND COMPLETE THE SENTENCE WITH THE RIGHT OPTION: ESTEBAN AND LAURA STUDY AT ____.||IMG_DIM:443x407||school|university": [
+        [
+            "university"
+        ]
+    ],
+    "T8:LOOK AT THE PICTURE AND READ THE TEXT. THEN READ AND COMPLETE THE SENTENCE WITH THE RIGHT OPTION: PORTOVIEJO SUFFERED AN ____ IN 2016.||IMG_DIM:443x407||Earthquake|Tsunami": [
+        [
+            "Earthquake"
+        ]
+    ],
+    "T8:LOOK AT THE PICTURE AND READ THE ARTICLE. CHOOSE THE BEST HEADLINE TO THIS ARTICLE.||IMG_DIM:443x407||Economic resources of two places|Main characteristics of two places|People who live in different places": [
+        [
+            "Main characteristics of two places"
+        ]
+    ],
+    "T8:LOOK AT THE PICTURE AND READ THE TEXT. THEN READ AND COMPLETE THE SENTENCE WITH THE RIGHT OPTION: IN CRUCITA PEOPLE ARE VERY ____.||IMG_DIM:443x407||friendly|unfriendly": [
+        [
+            "friendly"
+        ]
+    ],
+    "T8:LOOK AT THE PICTURE AND READ THE TEXT. THEN READ AND COMPLETE THE SENTENCE WITH THE RIGHT OPTION: SANTA ANA IS PART OF MANABÍ’S ________________.||IMG_DIM:443x407||Beaches|Countryside": [
+        [
+            "Countryside"
+        ]
+    ],
+    "T8:LOOK AT THE PICTURE AND READ THE TEXT. THEN READ AND COMPLETE THE SENTENCE WITH THE RIGHT OPTION: CRUCITA IS LOCATED ____________________.||IMG_DIM:443x407||On Ecuador’s south coast.|in the northern highlands of Ecuador.": [
+        [
+            "On Ecuador’s south coast."
+        ]
+    ],
+    "DEFAULT:READ THE SENTENCE AND MAKE IT TO IMPERATIVE NEGATIVE: STOP AT THE NEXT GAS STATION.||CTX:...||||||||Do not stop at the next gas station.|Do not stop at the next gas station.|Not Stop at the next gas station.|Not Stop at the next gas station.|Stop not at the next gas station.|Stop not at the next gas station.": [
+        "Do not stop at the next gas station."
+    ],
+    "DEFAULT:READ THE SENTENCE AND MAKE IT TO IMPERATIVE NEGATIVE: TELL THEM WHAT HAPPENED YESTERDAY.||CTX:...||||||||Don´t tell them what happened yesterday.|Don´t tell them what happened yesterday.|Not tell them what happened yesterday.|Not tell them what happened yesterday.|Tell don´t what happened yesterday.|Tell don´t what happened yesterday.": [
+        "Don´t tell them what happened yesterday."
+    ],
+    "DEFAULT_MULTI:0:CHOOSE THE CORRECT VERB FROM THE BOX TO COMPLETE THE IMPERATIVE SENTENCES.||your shoes.||DON´T HELP|DRIVE|TAKE OUT": "TAKE OUT",
+    "DEFAULT_MULTI:1:CHOOSE THE CORRECT VERB FROM THE BOX TO COMPLETE THE IMPERATIVE SENTENCES.||It's cold outside. the window, please.||CLEAN|CLOSE|OPEN": "CLOSE",
+    "DEFAULT_MULTI:2:CHOOSE THE CORRECT VERB FROM THE BOX TO COMPLETE THE IMPERATIVE SENTENCES.||your dirty boots outside||LEAVE|PHONE|TELL": "LEAVE",
+    "DEFAULT:USE THE CORRECT IMPERATIVE ACCORDING TO EACH SENTENCE: “I´M SICK, I HAVE A STRONG HEADACHE”||CTX:...||||||||Do your homework|Do your homework|Eat your soup|Eat your soup|Go to the doctor|Go to the doctor": [
+        "Go to the doctor"
+    ],
+    "DEFAULT:READ THE SENTECES AND DECIDE WHICH SENTENCE IS BEST FOR A SIGN?||CTX:...||||||||Please sign in, visitors!|Please sign in, visitors!|Visitor, you must sign in please.|Visitor, you must sign in please.|Visitors must sign in.|Visitors must sign in.": [
+        "Visitors must sign in."
+    ],
+    "DEFAULT:READ THE IMPERATIVE SENTENCE AND DECIDE WHICH ONE IS ORRECT?||CTX:...||||||||Please hold the line.|Please hold the line.|Please to hold the line.|Please to hold the line.|Please you hold the line.|Please you hold the line.": [
+        "Please hold the line."
+    ],
+    "DEFAULT_MULTI:0:CHOOSE THE CORRECT OPTION FROM THE BOX TO COMPLETE THE IMPERATIVE SENTENCES.||candy. It's bad for your teeth.||DON'T EAT|LET'S EAT|YOU DON'T EAT": "DON'T EAT",
+    "DEFAULT_MULTI:1:CHOOSE THE CORRECT OPTION FROM THE BOX TO COMPLETE THE IMPERATIVE SENTENCES.||YOU LET'S||COME|LET'S COME|YOU COME": "COME",
+    "DEFAULT_MULTI:2:CHOOSE THE CORRECT OPTION FROM THE BOX TO COMPLETE THE IMPERATIVE SENTENCES.||YOU||DON'T READ|LET'S READ|YOU DON'T READ": "DON'T READ",
+    "DEFAULT:READ THE SENTENCE AND MAKE IT TO IMPERATIVE NEGATIVE: DRIVE HER TO THE SHOPPING MALL.||CTX:...||||||||Don’t drive her to the shopping mall.|Don’t drive her to the shopping mall.|Drive not her to the shopping mall.|Drive not her to the shopping mall.|Not Drive her to the shopping mall.|Not Drive her to the shopping mall.": [
+        "Don’t drive her to the shopping mall."
+    ],
+    "DEFAULT_MULTI:0:CHOOSE THE CORRECT VERB FORM FROM THE BOX TO COMPLETE THE IMPERATIVE SENTENCE.||upstairs.||BE|GO|TAKE": "GO",
+    "DEFAULT_MULTI:1:CHOOSE THE CORRECT VERB FORM FROM THE BOX TO COMPLETE THE IMPERATIVE SENTENCE.||DON'T||DON'T SWIM|DRINK|SWIM": "DON'T SWIM",
+    "DEFAULT_MULTI:2:CHOOSE THE CORRECT VERB FORM FROM THE BOX TO COMPLETE THE IMPERATIVE SENTENCE.||NOT||DON´T PLAY|NOT PLAY|PLAY": "DON´T PLAY",
+    "DEFAULT_MULTI:3:CHOOSE THE CORRECT VERB FORM FROM THE BOX TO COMPLETE THE IMPERATIVE SENTENCE.||NOT||DON´T TURN OF|NOT TURN OFF|TURN OFF": "TURN OFF",
+    "DEFAULT_MULTI:0:READ THE SENTENCE AND DECIDE WHICH WORD GOES IN THE SPACE?||T talk to John, he’s busy.||DON'T|NO|NOT": "DON'T",
+    "DEFAULT:READ THE SENTECES AND DECIDE WHICH ONE IS NOT CORRECT?||CTX:...||||||||Don’t leave the house alone.|Don’t leave the house alone.|Please to take a seat.|Please to take a seat.|Take care when you cross the road.|Take care when you cross the road.": [
+        "Please to take a seat."
+    ],
+    "DEFAULT_MULTI:0:CHOOSE THE CORRECT VERB FROM THE BOX TO COMPLETE THE IMPERATIVE SENTENCES||a minute.||ASK|CLOSE|COME|GIVE|WAIT": "WAIT",
+    "DEFAULT_MULTI:1:CHOOSE THE CORRECT VERB FROM THE BOX TO COMPLETE THE IMPERATIVE SENTENCES||over here, please.||ASK|CLOSE|COME|GIVE|WAIT": "COME",
+    "DEFAULT_MULTI:2:CHOOSE THE CORRECT VERB FROM THE BOX TO COMPLETE THE IMPERATIVE SENTENCES||the door when you go outside.||ASK|CLOSE|COME|GIVE|WAIT": "CLOSE",
+    "DEFAULT_MULTI:3:CHOOSE THE CORRECT VERB FROM THE BOX TO COMPLETE THE IMPERATIVE SENTENCES||your teacher.||ASK|CLOSE|COME|GIVE|WAIT": "ASK",
+    "DEFAULT_MULTI:4:CHOOSE THE CORRECT VERB FROM THE BOX TO COMPLETE THE IMPERATIVE SENTENCES||me your phone number so that I can call you.||ASK|CLOSE|COME|GIVE|WAIT": "GIVE"
 }

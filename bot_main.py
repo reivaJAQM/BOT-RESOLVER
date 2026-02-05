@@ -998,7 +998,9 @@ try:
                         print(f"            Clic en '{definicion_correcta}'...");
                         try:
                             # Use 28 spaces for indentation
-                            driver.execute_script("arguments[0].scrollIntoViewIfNeeded(true);", elemento_origen); time.sleep(0.3)
+                            # Ajuste para evitar que el footer tape el elemento
+                            driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", elemento_origen)
+                            time.sleep(0.5)
                             wait_long.until(EC.element_to_be_clickable(elemento_origen)).click(); print("                  Clic OK."); time.sleep(1.0)
                         except Exception as e: print(f"                  Error CRÍTICO (Click) en '{definicion_correcta}': {e}"); exito_global = False
                     if not exito_global: raise Exception("Fallo emparejar (Clic en orden).")
@@ -1430,7 +1432,9 @@ try:
                         print(f"            Clic en '{definicion_correcta}'...");
                         try:
                             # Use 28 spaces for indentation
-                            driver.execute_script("arguments[0].scrollIntoViewIfNeeded(true);", elemento_origen); time.sleep(0.3)
+                            # Ajuste para evitar que el footer tape el elemento
+                            driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", elemento_origen)
+                            time.sleep(0.5)
                             wait_long.until(EC.element_to_be_clickable(elemento_origen)).click(); print("                  Clic OK."); time.sleep(1.0)
                         except Exception as e: print(f"                  Error CRÍTICO (Click) en '{definicion_correcta}': {e}"); exito_global = False
                     if not exito_global: raise Exception("Fallo emparejar T8 (Clic en orden).")
@@ -1956,8 +1960,8 @@ try:
                             ops_txt = [o.text.strip() for o in caja["opciones"]]
                             
                             titulo_clean = pregunta_actual_texto.strip()
-                            clave_grupo = f"DEFAULT_MULTI:{titulo_clean}||{ctx_local}||" + "|".join(sorted(ops_txt))
-                            
+                            # Añadimos el índice 'i' para evitar colisiones si el contexto es idéntico
+                            clave_grupo = f"DEFAULT_MULTI:{i}:{titulo_clean}||{ctx_local}||" + "|".join(sorted(ops_txt))
                             lista_tareas_multi_om.append({
                                 "clave": clave_grupo, "frase": ctx_local, "opciones": ops_txt
                             })
@@ -2321,9 +2325,11 @@ try:
                             if solucion_lista_ordenada and len(solucion_lista_ordenada) == len(lista_tareas_multi_om):
                                 for i, resp in enumerate(solucion_lista_ordenada):
                                     c_key = lista_tareas_multi_om[i]["clave"]
-                                    soluciones_correctas[c_key] = resp
+                                    # Guardamos como lista para mantener compatibilidad con el sistema de rotación
+                                    soluciones_correctas[c_key] = [resp]
                                 guardar_memoria_en_disco()
-                                solucion_aprendida = None # Evitamos que entre en la lógica antigua
+                                # Marcamos como aprendido para evitar el WARN de abajo
+                                solucion_aprendida = "BATCH_SAVED" 
                                 print(f"      ¡Soluciones Lote OM guardadas!: {solucion_lista_ordenada}")
                         # ---------------------------------------------------------------------
                         elif tipo_pregunta in ["TIPO_5_TF_SINGLE", "TIPO_DEFAULT_OM", "TIPO_9_AUDIO"] and clave_pregunta_aprendizaje and contenido_modal and opciones_para_ia:
@@ -2338,7 +2344,7 @@ try:
 
 
                         # --- ¡INICIO NUEVA LÓGICA DE GUARDADO (ROTACIÓN)! ---
-                        if clave_pregunta_aprendizaje and solucion_aprendida:
+                        if clave_pregunta_aprendizaje and solucion_aprendida and solucion_aprendida != "BATCH_SAVED":
                            # Use 28 spaces for indentation
                            
                            # 1. Normalizar la solución aprendida
