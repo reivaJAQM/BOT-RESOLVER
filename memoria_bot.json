@@ -4146,7 +4146,7 @@
     "DEFAULT:ACCORDING TO THE TEXT. CHOOSE THE CORRECT SENTENCE.||CTX:a. Hello Maria. Do you have a minute?\nb. Hi, Andre...waiting for you.\na. See you on Friday. Bye\nb. Bye.||||||||I promised my mother that I will go with all of them.|I promised my mother that I will go with all of them.|I'm tired because I was in my school all day working with my classmates.|I'm tired because I was in my school all day working with my classmates.|Well Leo it was a nice conversation but it's time to go home, have a nice weekend, bye!|Well Leo it was a nice conversation but it's time to go home, have a nice weekend, bye!": [
         "I promised my mother that I will go with all of them."
     ],
-    "DEFAULT_MULTI:MATCH THE CORRECT SENTENCES.||The movie is going to start at 9 pm. This evening English classes start will.||I next Sunday will go to the beach.": "The movie is going to start at 9 pm.",
+    "DEFAULT_MULTI:MATCH THE CORRECT SENTENCES.||The movie is going to start at 9 pm. This evening English classes start will.||I next Sunday will go to the beach.": "I next Sunday will go to the beach.",
     "DEFAULT_MULTI:ACCORDING TO THE TEXT. ANSWER THE QUESTION: WHAT HAPPENED?||Pichincha Battle The battle of Pichincha was a historical fact that was recorded in Ecuador on May 24, 1922. , the events occurred in Quito. After the battle, Ecuador was free and began its republican life. With this background the other countries of America were liberated and exercised their democracy.||Soldiers from Ecuador commanded by Venezuelan General Antonio Jose de Sucre fought against the Spanish army|Soldiers from Ecuador commanded by Venezuelan General Simon Bolivar fought against the Mexican army.|Soldiers from Peru commanded by Venezuelan General Simon Bolivar fought against the Ecuadorian army.": "Soldiers from Ecuador commanded by Venezuelan General Antonio Jose de Sucre fought against the Spanish army",
     "DEFAULT_MULTI:CHOOSE THE CORRECT OPTION. TRUE OR FALSE.||hat battle was a fictional fact.||F|T": "F",
     "DEFAULT_MULTI:CHOOSE THE CORRECT OPTION. TRUE OR FALSE.||Soldiers from Ecuador commanded by Colombian General.||F|T": "F",
@@ -5066,5 +5066,219 @@
     ],
     "T9:WHO IS THE SPEAKER?||CTX:...||||||A book critic.|A book critic.|A publisher.|A publisher.|An author.|An author.": [
         "A book critic."
+    ],
+    "T4:IDENTIFY THE CORRECT WRITING OF THE FOLLOWING NUMBERS.||KW:11|182|21|8||DEF:Eight|Eihgt|Eleven|One hundre, eighty two|One hundred and eighty two|Twelve-one|Twenty-one": [
+        [
+            "One hundred and eighty two",
+            "Twenty-one",
+            "Eleven",
+            "Eight"
+        ]
+    ],
+    "T4:READ THE NUMBERS AND MATCH THEM WITH THE WORDS FROM THE BOX.||KW:Clap your|Sit|Stamp your|Stand|turn||DEF:around|down|feet|hands|up": [
+        [
+            "down",
+            "up",
+            "hands",
+            "feet",
+            "around"
+        ]
+    ],
+    "DEFAULT:CHOOSE THE BEST OPTION. THESE ARE WHOLE NUMBERS THAT CAN BE DIVIDED EXACTLY INTO PAIRS.||CTX:...||||||||Cardinal numbers|Cardinal numbers|Even numbers|Even numbers|odd numbers|odd numbers|ordinal numbers|ordinal numbers|phone numbers|phone numbers": [
+        "Even numbers"
+    ],
+    "T4:CHOOSE THE CORRECT PIECE OF WRITING ACCORDING TO THE QUESTION.||KW:What’s your name?|Where are you from?||DEF:I am Canadian|I am from Canada|My name is Carlos|She´s my friend": [
+        [
+            "My name is Carlos",
+            "I am from Canada"
+        ]
+    ],
+    "0:Ely.|Good|My|is|morning.|name|2:Ecuador.|I’m|from|4:I|am|ecuadorian.|6:I|Portoviejo.|in|live|8:21|At|Rocafuerte|street.": [
+        [
+            [
+                "Good",
+                "morning.",
+                "My",
+                "name",
+                "is",
+                "Ely."
+            ],
+            [
+                "I’m",
+                "from",
+                "Ecuador."
+            ],
+            [
+                "I",
+                "am",
+                "ecuadorian."
+            ],
+            [
+                "I",
+                "live",
+                "in",
+                "Portoviejo."
+            ],
+            [
+                "At",
+                "21",
+                "Rocafuerte",
+                "street."
+            ]
+        ]
+    ],
+    "T4:READ AND MATCH THE COUNTRIES WITH THE NATIONALITIES.||KW:Argentina|Canada|Chile|China|Japan||DEF:Argentinian|Canadian|Chilean|Chinese|Japanese": [
+        [
+            "Chinese",
+            "Chilean",
+            "Canadian",
+            "Japanese",
+            "Argentinian"
+        ]
+    ],
+    "T8:LOOK AT THE PICTURE. THEN READ THE DESCRIPTION AND CHOOSE THE BEST OPTION.||IMG_DIM:443x61||Ecuador|Germany|Greece|Peru|Spain": [
+        [
+            "Peru"
+        ]
+    ],
+    "DEFAULT_MULTI:MATCH THE NAMES OF THE COUNTRIES TO THE PICTURES.||Loading Image...||Waiting answer...": "Waiting answer...",
+    "DEFAULT_MULTI:MATCH THE NAMES OF THE COUNTRIES TO THE PICTURES.||OPTIONS||BRAZIL|CANADA|COLOMBIA|ECUADOR|ENGLAND|FRANCE|GERMANY|PERU|VENEZUELA": "PERU",
+    "T4:READ THE PHRASES, THEN FILL IN THE GAP WITH THE APPROPRIATE INFORMATION FROM THE CHART.||KW:I live in|I’m from|My name is|at|on street.||DEF:12|Amelia|Ecuador|Quito|Rumiñahui": [
+        [
+            "Amelia",
+            "Ecuador",
+            "Quito",
+            "12",
+            "Rumiñahui"
+        ]
+    ],
+    "T8:MATCH THE NAMES OF THE COUNTRIES TO THE PICTURES.||IMG_DIM:341x192|IMG_DIM:341x227|IMG_DIM:341x227_1|IMG_DIM:341x227_2||BRAZIL|CANADA|COLOMBIA|ECUADOR|ENGLAND|FRANCE|GERMANY|PERU|VENEZUELA": [
+        [
+            "ECUADOR",
+            "FRANCE",
+            "ENGLAND",
+            "BRAZIL"
+        ]
+    ],
+    "T4:READ THE SENTENCE AND COMPLETE IT WITH THE CORRECT WORD.||KW:I’m to hear from you|Say hello to all your|my dear friend.|you are ok.||DEF:Hello|Hope|You|family|glad": [
+        [
+            "Hello",
+            "glad",
+            "Hope",
+            "family"
+        ]
+    ],
+    "T8:LOOK AT THE PICTURE. READ THE TEXT AND CHOOSE THE BEST TITLE FOR IT.||IMG_DIM:443x112||My city|My family|My job": [
+        [
+            "My family"
+        ]
+    ],
+    "DEFAULT_MULTI:READ THE SENTENCE AND CHOOSE TRUE (T) OR FALSE (F).||A greeting is the action of giving a sign of welcome or recognition||F|T": "T",
+    "T4:READ THE SENTENCE AND COMPLETE IT, BY CHOOSING THE CORRECT OPTION.||KW:There are days in a week||DEF:5|6|7|8": [
+        [
+            "7"
+        ]
+    ],
+    "T4:READ THE SENTENCE AND COMPLETE IT, BY CHOOSING THE CORRECT OPTION.||KW:is the shortest month||DEF:February|January|March|November": [
+        [
+            "February"
+        ]
+    ],
+    "T4:READ THE SENTENCE AND COMPLETE IT, BY CHOOSING THE CORRECT OPTION.||KW:What month comes next? January/February /||DEF:April|December|March|October": [
+        [
+            "March"
+        ]
+    ],
+    "T4:READ THE SENTENCE AND COMPLETE IT, BY CHOOSING THE CORRECT OPTION.||KW:What month comes next? June/July /||DEF:August|December|March|October": [
+        [
+            "August"
+        ]
+    ],
+    "DEFAULT:READ THE SENTENCES. AND CHOOSE THE BEST OPTION TO THE QUESTION. WHICH SENTENCE IS CORRECT?||CTX:...||||||||July is a date.|July is a date.|July is a day of the week.|July is a day of the week.|July is a month of the year.|July is a month of the year.|July is a season.|July is a season.": [
+        "July is a month of the year."
+    ],
+    "T8:LOOK AT THE PICTURE. ANSWER THE QUESTION AND CHOOSE THE BEST OPTION. WHEN IS THE ECUADORIAN FLAG’S DAY?||IMG_DIM:443x574||February|June|October|September": [
+        [
+            "September"
+        ]
+    ],
+    "DEFAULT:READ THE WORDS AND CHOOSE THE CORRECT OPTION TO THE QUESTION. WHEN IS CHRISTMAS?||CTX:...||||||||December|December|January|January|June|June|November|November": [
+        "December"
+    ],
+    "T8:LOOK AT THE PICTURE. ANSWER THE QUESTIONS AND CHOOSE THE BEST OPTIONS: WHERE IS ECUADOR LOCATED?||IMG_DIM:443x302||North: Brazil, South and East: Colombia, West: Peru.|North: Colombia, South and East: Peru, West: The Pacific Ocean.|North: Peru, South and East: The Pacific Ocean, West: Colombia.|North: The Pacific Ocean, South and East: Colombia, West: Colombia.": [
+        [
+            "North: Colombia, South and East: Peru, West: The Pacific Ocean."
+        ]
+    ],
+    "T4:READ THE SENTENCE AND COMPLETE IT WITH THE CORRECT OPTION.||KW:The Sierra region is full of||DEF:Islands and mountains|Lands and beaches|Mountains and volcanoes|Rivers and beaches": [
+        [
+            "Mountains and volcanoes"
+        ]
+    ],
+    "T8:LOOK AT THE PICTURES AND CHOOSE THE APPROPRIATE SEASON.||IMG_DIM:341x187|IMG_DIM:341x232|IMG_DIM:341x340|IMG_DIM:341x343||autumn|spring|summer|winter": [
+        [
+            "winter",
+            "summer",
+            "autumn",
+            "spring"
+        ]
+    ],
+    "DEFAULT:READ AND ANSWER THE QUESTION WITH THE INFORMATION FROM THE BOX. WHAT IS THE DEFINITION OF MOUNTAIN?||CTX:...||||||||A large area of water surrounded by land.|A large area of water surrounded by land.|A long area of water that flows into a sea.|A long area of water that flows into a sea.|A very high hill.|A very high hill.|Low temperatura.|Low temperatura.": [
+        "A very high hill."
+    ],
+    "T4:READ THE SENTENCES AND COMPLETE IT WITH THE CORRECT OPTION.||KW:is the capital of Ecuador||DEF:Manta|Pichicha|Portoviejo|Quito": [
+        [
+            "Quito"
+        ]
+    ],
+    "DEFAULT:HOW MANY NATURAL REGIONS DOES ECUADOR HAVE?||CTX:...||||||||3|3|4|4|5|5|6|6": [
+        "4"
+    ],
+    "T4:READ THE SENTENCE AND COMPLETE IT WITH THE CORRECT OPTION.||KW:Ecuador is located in||DEF:Central America|North America|South America": [
+        [
+            "South America"
+        ]
+    ],
+    "DEFAULT:ANSWER THE QUESTION AND CHOOSE THE CORRECT OPTION. HOW MANY PROVINCES ARE THERE IN ECUADOR?||CTX:...||||||||24|24|25|25|26|26|27|27": [
+        "24"
+    ],
+    "DEFAULT:READ THE PHRASE AND CHOOSE THE CORRECT OPTION. WHICH ONE IS THE COLDEST SEASON?||CTX:...||||||||Fall autumn|Fall autumn|Spring|Spring|Summer|Summer|Winter|Winter": [
+        "Winter"
+    ],
+    "T8:LOOK AT THE PICTURE AND COMPLETE THE SENTENCE: HE IS WEARING_____ JEANS.||IMG_DIM:443x626||Blue|Shoes|Skirt|Sweater": [
+        [
+            "Blue"
+        ]
+    ],
+    "T8:LOOK AT THE PICTURE AND COMPLETE THE SENTENCE: HE IS WEARING BROWN _____.||IMG_DIM:443x626||Blue|Shoes|Skirt|Sweater": [
+        [
+            "Shoes"
+        ]
+    ],
+    "T8:LOOK AT THE PICTURE AND CHOOSE THE CORRECT OPTION.||IMG_DIM:341x365|IMG_DIM:341x388|IMG_DIM:341x446||Boots|Dress|Hat|Jacket|Jeans|Shirt|Shoes|Short|Skirt|Sweater|T-shirt|Trainers": [
+        [
+            "T-shirt",
+            "Jeans",
+            "Dress"
+        ]
+    ],
+    "T8:LOOK AT THE PICTURE AND COMPLETE THE SENTENCE: THE BOY IS NOT WEARING A _____.||IMG_DIM:443x626||Blue|Shoes|Skirt|Sweater": [
+        [
+            "Skirt"
+        ]
+    ],
+    "T11_BATCH:PUT IN ORDER THE LETER TO WRITE THE COLOR NAMES.||CTX:...||D-R-E ___|E-B-U-L ___|E-G-N-R-E ___|K-A-L-C-B ___|T-I-H-W-E ___": [
+        [
+            "WHITE",
+            "BLACK",
+            "GREEN",
+            "RED",
+            "BLUE"
+        ]
+    ],
+    "T8:LOOK AT THE PICTURE AND COMPLETE THE SENTENCE: HIS_____ IS YELLOW.||IMG_DIM:443x626||Blue|Shoes|Skirt|Sweater": [
+        [
+            "Sweater"
+        ]
     ]
 }
