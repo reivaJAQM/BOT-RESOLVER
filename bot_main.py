@@ -937,8 +937,9 @@ try:
                     # --- ¡INICIO CORRECCIÓN CLAVE T4! ---
                     # Añadimos las palabras clave (ordenadas) a la clave para diferenciar preguntas
                     # con el mismo título pero diferentes frases.
-                    palabras_clave_limpias_sorted = sorted([p.strip() for p in palabras_clave])
-                    clave_pregunta = f"T4:{titulo_limpio}||KW:" + "|".join(palabras_clave_limpias_sorted) + "||DEF:" + "|".join(defs_limpias_sorted)
+                    # Usamos el orden EXACTO de aparición (sin ordenar) para la clave
+                    palabras_clave_raw = [p.strip() for p in palabras_clave]
+                    clave_pregunta = f"T4:{titulo_limpio}||KW_ORDERED:" + "|".join(palabras_clave_raw) + "||DEF:" + "|".join(defs_limpias_sorted)
                     # --- ¡FIN CORRECCIÓN CLAVE T4! ---
 
                     # --- ¡CHEQUEO DE BUCLE ATASCADO (TIPO 4) ELIMINADO! ---
@@ -1978,15 +1979,25 @@ try:
                             # --- BLOQUE CON FALLBACK ---
                             boton_clic = None
                             
-                            # 1. Intentar buscar el botón de la respuesta IA
+                            # 1. Intentar buscar el botón de la respuesta IA (Match Exacto)
                             if respuesta_ia:
                                 for b in caja["opciones"]:
                                     if ' '.join(b.text.split()) == ' '.join(respuesta_ia.split()):
                                         boton_clic = b; break
-                            
-                            # 2. FALLBACK: Si no hay respuesta IA o no se encontró botón, usar el PRIMERO
+                                
+                                # 2. REFUERZO: Si no hubo match, buscar por texto contenido en la caja (Caso "Start going to the gym")
+                                if not boton_clic:
+                                    print(f"      [Refuerzo] Buscando '{respuesta_ia}' mediante XPATH en el contenedor...")
+                                    try:
+                                        # Buscamos cualquier elemento con el texto exacto dentro de la caja actual
+                                        xpath_busqueda = f".//*[normalize-space(text())='{respuesta_ia}']"
+                                        boton_clic = caja["contenedor"].find_element(By.XPATH, xpath_busqueda)
+                                    except:
+                                        pass
+
+                            # 3. FALLBACK: Si no hay respuesta IA o no se encontró botón, usar el PRIMERO
                             if not boton_clic and caja["opciones"]:
-                                print(f"      [Fallback] IA falló o no match. Eligiendo primera opción aleatoria para avanzar...")
+                                print(f"      [Fallback] No se encontró botón para '{respuesta_ia}'. Usando primera opción disponible.")
                                 boton_clic = caja["opciones"][0]
 
                             # 3. Ejecutar Click
@@ -2010,8 +2021,18 @@ try:
                     else:
                         print("      [MODO SIMPLE] Tratando como lista única de opciones.")
                         # Usamos TODAS las opciones visibles si no hay contextos claros
-                        opciones_finales = opciones_sin_contexto if opciones_sin_contexto else opciones_visibles
-                        opciones = [e.text.strip() for e in opciones_finales if e.text]
+                        # Deduplicación agresiva por texto para evitar claves sucias y fallos de clic
+                        opciones_vistas_texto = set()
+                        opciones_finales = []
+                        opciones = []
+                        
+                        fuente_opciones = opciones_sin_contexto if opciones_sin_contexto else opciones_visibles
+                        for e in fuente_opciones:
+                            txt = e.text.strip()
+                            if txt and txt not in opciones_vistas_texto:
+                                opciones_vistas_texto.add(txt)
+                                opciones_finales.append(e)
+                                opciones.append(txt)
 
                         # Raspado de Emergencia (Solo busca títulos cortos arriba)
                         texto_completo_raspado = ""
@@ -2051,7 +2072,8 @@ try:
 
                         # Clave y Resolución (Con Búsqueda Flexible)
                         titulo_limpio_def = pregunta_actual_texto.strip()
-                        opciones_limpias_sorted_def = sorted([o.strip() for o in opciones])
+                        # Asegurar que no hay duplicados en la clave de memoria
+                        opciones_limpias_sorted_def = sorted(list(set([o.strip() for o in opciones])))
                         img_hash_local = imagen_hash if 'imagen_hash' in locals() else ""
                         
                         clave_pregunta = f"DEFAULT:{titulo_limpio_def}||{contexto_hash}||{body_hash}||{contexto_extra_key}||{img_hash_local}||" + "|".join(opciones_limpias_sorted_def)
@@ -2170,7 +2192,7 @@ try:
                         elif tipo_pregunta == "TIPO_3_TF_MULTI" and 'lista_afirmaciones_texto' in locals(): clave_pregunta_aprendizaje = "|".join([p.strip() for p in lista_afirmaciones_texto])
                         elif tipo_pregunta == "TIPO_DEFAULT_OM" and 'opciones' in locals():
                             titulo_limpio = pregunta_actual_texto.strip() if "pregunta_sin_titulo" not in pregunta_actual_texto else contexto[:150]
-                            opciones_limpias_sorted = sorted(opciones)
+                            opciones_limpias_sorted = sorted(list(set(opciones)))
                             clave_pregunta_aprendizaje = f"DEFAULT:{titulo_limpio}||{contexto_hash}||{body_hash}||{imagen_hash}||" + "|".join(opciones_limpias_sorted)
                         elif tipo_pregunta == "TIPO_9_AUDIO" and 'opciones' in locals():
                             titulo_limpio = pregunta_actual_texto.strip() if "pregunta_sin_titulo" not in pregunta_actual_texto else contexto[:150]
@@ -2204,8 +2226,8 @@ try:
                         elif tipo_pregunta == "TIPO_4_EMPAREJAR" and 'definiciones' in locals() and 'palabras_clave' in locals(): # Añadido 'palabras_clave'
                              titulo_limpio = pregunta_actual_texto.strip()
                              defs_limpias_sorted = sorted([d.strip() for d in definiciones])
-                             palabras_clave_limpias_sorted = sorted([p.strip() for p in palabras_clave])
-                             clave_pregunta_aprendizaje = f"T4:{titulo_limpio}||KW:" + "|".join(palabras_clave_limpias_sorted) + "||DEF:" + "|".join(defs_limpias_sorted)
+                             palabras_clave_raw = [p.strip() for p in palabras_clave]
+                             clave_pregunta_aprendizaje = f"T4:{titulo_limpio}||KW_ORDERED:" + "|".join(palabras_clave_raw) + "||DEF:" + "|".join(defs_limpias_sorted)
                         # --- ¡FIN CORRECCIÓN CLAVE T4 (APRENDIZAJE)! ---
                         
                         elif tipo_pregunta == "TIPO_8_IMAGEN" and 'definiciones' in locals() and 'palabras_clave' in locals():
@@ -2329,7 +2351,7 @@ try:
                                     soluciones_correctas[c_key] = [resp]
                                 guardar_memoria_en_disco()
                                 # Marcamos como aprendido para evitar el WARN de abajo
-                                solucion_aprendida = "BATCH_SAVED" 
+                                solucion_aprendida = solucion_lista_ordenada
                                 print(f"      ¡Soluciones Lote OM guardadas!: {solucion_lista_ordenada}")
                         # ---------------------------------------------------------------------
                         elif tipo_pregunta in ["TIPO_5_TF_SINGLE", "TIPO_DEFAULT_OM", "TIPO_9_AUDIO"] and clave_pregunta_aprendizaje and contenido_modal and opciones_para_ia:

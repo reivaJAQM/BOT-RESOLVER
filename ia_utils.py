@@ -1005,22 +1005,20 @@ Respuesta (Sólo la lista JSON ["opcion_correcta_1", "opcion_correcta_2", ...]):
                 opciones_originales = tareas_lista[i]['opciones']
                 respuesta_ia_limpia = str(respuesta_ia).strip().strip('"\'., ')
 
+                # Validación con Fallback (Si no está en la lista, la agregamos igual para forzar el aprendizaje)
                 if respuesta_ia_limpia in opciones_originales:
-                    # Use 20 spaces for indentation
                     respuestas_verificadas.append(respuesta_ia_limpia)
                 else:
-                    # Use 20 spaces for indentation
                     resp_lower = respuesta_ia_limpia.lower()
                     encontrado = False
                     for op in opciones_originales:
-                        # Use 24 spaces for indentation
                         if op.strip('"\'., ').lower() == resp_lower:
-                            # Use 28 spaces for indentation
                             respuestas_verificadas.append(op)
                             encontrado = True; break
+                    
                     if not encontrado:
-                        # Use 24 spaces for indentation
-                        print(f"IA (Aprendizaje Lote Completar) Tarea {i+1}: '{respuesta_ia}' no en {opciones_originales}"); return None
+                        print(f"IA (Aprendizaje Lote Completar) Tarea {i+1}: '{respuesta_ia_limpia}' no estaba en la lista leída. Forzando aprendizaje para la próxima vuelta.")
+                        respuestas_verificadas.append(respuesta_ia_limpia)
 
             print(f"IA (Aprendizaje Lote Completar) extrajo: {respuestas_verificadas}")
             return respuestas_verificadas
