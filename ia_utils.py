@@ -267,6 +267,7 @@ def obtener_emparejamientos(palabras, definiciones):
     palabras_texto = "\n".join(f'- "{p}"' for p in palabras)
     definiciones_texto = "\n".join(f'- "{d}"' for d in definiciones)
     
+    # --- PROMPT MEJORADO CON REGLA DE DISTRIBUCIÓN 1:1 ---
     prompt = f"""
 OBJETIVO: Generar un diccionario de mapeo Python {{clave: valor}}.
 SITUACIÓN: Tienes una [LISTA_CLAVE] (izquierda) y una [LISTA_OPCIONES] (derecha).
@@ -275,8 +276,8 @@ TU TAREA: Asignar a CADA clave de la izquierda una opción de la derecha.
 REGLAS ABSOLUTAS (SI LAS ROMPES, FALLAS):
 1. DEBES devolver un diccionario donde las 'keys' sean COPIAS EXACTAS, CARÁCTER POR CARÁCTER, de [LISTA_CLAVE].
 2. NO corrijas nada. Si la clave es "IMG_DIM:443x85" o tiene errores, ÚSALA TAL CUAL.
-3. OBLIGATORIO: Todas las claves de [LISTA_CLAVE] deben estar en el diccionario. Si no sabes la respuesta lógica, ASIGNA CUALQUIER OPCIÓN DISPONIBLE. No dejes claves huérfanas.
-4. Si hay menos claves que opciones, simplemente elige la mejor opción para cada clave y descarta las opciones sobrantes.
+3. OBLIGATORIO: Todas las claves de [LISTA_CLAVE] deben estar en el diccionario.
+4. DISTRIBUCIÓN (IMPORTANTE): Si el número de elementos en [LISTA_CLAVE] coincide con el número de opciones disponibles en [LISTA_OPCIONES] (ej: 2 correos y 2 opciones 'Formal'/'Informal'), DEBES ASIGNAR UNA OPCIÓN DISTINTA A CADA CLAVE (Mapeo 1 a 1). No repitas la misma opción para ambas si tienes opciones distintas disponibles.
 
 [LISTA_CLAVE]
 {palabras_texto}

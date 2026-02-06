@@ -134,7 +134,7 @@ try:
         lista_de_tareas_escribir = []; lista_palabras_desordenadas_raw = []; lista_frases_t11 = []; lista_frases_t12 = [] # T12 AÑADIDO
         lista_frases_t11_raw = [] # AÑADIDO PARA FIX T11
         lista_tareas_multi_om = [] # <--- ¡AGREGA ESTO!
-        imagen_hash = ""; audio_hash = ""; contexto_hash = ""; body_hash = "" # Añadido reset body_hash
+        imagen_hash = ""; audio_hash = ""; contexto_hash = ""; body_hash = ""; contexto_extra_key = "" # Añadido reset body_hash y contexto_extra_key
         respuesta_fue_incorrecta = False
 
         while True:
@@ -2193,7 +2193,8 @@ try:
                         elif tipo_pregunta == "TIPO_DEFAULT_OM" and 'opciones' in locals():
                             titulo_limpio = pregunta_actual_texto.strip() if "pregunta_sin_titulo" not in pregunta_actual_texto else contexto[:150]
                             opciones_limpias_sorted = sorted(list(set(opciones)))
-                            clave_pregunta_aprendizaje = f"DEFAULT:{titulo_limpio}||{contexto_hash}||{body_hash}||{imagen_hash}||" + "|".join(opciones_limpias_sorted)
+                            # Corrección: Incluir contexto_extra_key para coincidir con la clave de recuperación
+                            clave_pregunta_aprendizaje = f"DEFAULT:{titulo_limpio}||{contexto_hash}||{body_hash}||{contexto_extra_key}||{imagen_hash}||" + "|".join(opciones_limpias_sorted)
                         elif tipo_pregunta == "TIPO_9_AUDIO" and 'opciones' in locals():
                             titulo_limpio = pregunta_actual_texto.strip() if "pregunta_sin_titulo" not in pregunta_actual_texto else contexto[:150]
                             opciones_limpias_sorted = sorted(opciones)
