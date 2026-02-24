@@ -322,16 +322,34 @@ Diccionario de Pares (Responde SÓLO el diccionario Python):
         pares = pares_limpios
         # -------------------------------
 
-        # Validación Estricta (Tal como pediste)
+        # Validación Estricta con Fallback Posicional
         claves_esperadas_set = set(palabras)
         claves_recibidas_set = set(pares.keys())
         
         if claves_recibidas_set == claves_esperadas_set:
             return pares
         else:
-            # Si faltan claves o sobran, fallamos (porque el prompt les obligó a ser exactos)
-            print(f"IA (Emp) claves incorrectas. Esperaba: {claves_esperadas_set}, Recibió: {claves_recibidas_set}")
-            return None
+            print(f"IA (Emp) claves inexactas (posible corrección ortográfica de IA). Intentando recuperación por posición...")
+            
+            # Fallback: Si la IA corrigió la ortografía (ej. 'profesional' -> 'professional'),
+            # las claves no coinciden texto a texto. 
+            # Como Python 3.7+ mantiene el orden de inserción en diccionarios y la IA suele responder en orden,
+            # reconstruimos el dict usando las claves ORIGINALES y los valores de la IA.
+            
+            if len(pares) == len(palabras):
+                nuevo_pares = {}
+                valores_ia = list(pares.values()) # Valores en el orden que la IA los generó
+                
+                for i, clave_original in enumerate(palabras):
+                    nuevo_pares[clave_original] = valores_ia[i]
+                
+                print(f"IA (Emp) Recuperado por posición. Claves originales restauradas.")
+                return nuevo_pares
+            else:
+                print(f"IA (Emp) Fallo crítico. Cantidad no coincide (Esp:{len(palabras)}, Rec:{len(pares)}).")
+                print(f"Esperaba: {claves_esperadas_set}")
+                print(f"Recibió: {claves_recibidas_set}")
+                return None
 
     except Exception as e:
         print(f"Error API IA (Emp): {e}")
