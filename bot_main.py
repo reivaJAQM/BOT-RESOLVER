@@ -14,6 +14,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException, NoSuchElementException, JavascriptException
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver import ActionChains
+from webdriver_manager.microsoft import EdgeChromiumDriverManager
 
 # --- ¡NUESTROS MÓdulos! ---
 import config
